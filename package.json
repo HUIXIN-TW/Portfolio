@@ -1,9 +1,9 @@
 {
-  "name": "educator-js-codespace-template",
+  "name": "Huixin's Portfolio",
   "version": "1.0.0",
-  "description": "Educator JS Codespace Template",
+  "description": "Introduction of Huixin's Portfolio",
   "source": "src/index.html",
-  "homepage": "https://github.com/microsoft/codespaces-teaching-template-js#readme",
+  "homepage": "https://github.com/HUIXIN-TW/Portfolio#readme",
   "scripts": {
     "start": "parcel",
     "build": "parcel build",
@@ -13,12 +13,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/microsoft/codespaces-teaching-template-js.git"
+    "url": "git+https://github.com/HUIXIN-TW/Portfolio.git"
   },
-  "author": "Microsoft",
+  "author": "Huixin",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/microsoft/codespaces-teaching-template-js/issues"
+    "url": "https://github.com/HUIXIN-TW/Portfolio/issues"
   },
   "dependencies": {
     "react": "^18.2.0",

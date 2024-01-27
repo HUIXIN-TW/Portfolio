@@ -1,8 +1,7 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
-// https://github.com/devcontainers/images/tree/main/src/javascript-node
+// For config options, see the README at: https://github.com/devcontainers/images/tree/main/src/javascript-node
 {
   "name": "JavaScript Portfolio Site with GitHub Codespaces",
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "image": "", // Default or pre-defined environment in GitHub Codespace
   "hostRequirements": {
     "cpus": 4
   },
@@ -21,9 +20,7 @@
       "extensions": [
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
-        "GitHub.copilot",
-        "ms-vscode.azure-account",
-        "ms-azuretools.vscode-azurestaticwebapps"
+        "GitHub.copilot"
       ],
       "settings": {
         "emmet.includeLanguages": {
@@ -35,8 +32,7 @@
   },
 
   "features": {
-    "ghcr.io/devcontainers/features/github-cli:1": {},
-    "ghcr.io/devcontainers/features/azure-cli:1": {}
+    "ghcr.io/devcontainers/features/github-cli:1": {}
   },
 
   "portsAttributes": {
