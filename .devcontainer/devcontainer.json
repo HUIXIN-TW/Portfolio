@@ -17,11 +17,7 @@
     // Configure properties specific to VS Code.
     "vscode": {
       // Add the IDs of extensions you want installed when the container is created.
-      "extensions": [
-        "dbaeumer.vscode-eslint",
-        "esbenp.prettier-vscode",
-        "GitHub.copilot"
-      ],
+      "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode", "GitHub.copilot"],
       "settings": {
         "emmet.includeLanguages": {
           "javascript": "javascriptreact"
