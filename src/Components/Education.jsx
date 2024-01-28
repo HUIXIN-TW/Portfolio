@@ -123,7 +123,7 @@ const Education = () => {
                       <span className="gpa">GPA: {education.gpa}</span>
                     </div>
                     <p className="small">{education.university}</p>
-                    <Disclosure.Button>
+                    <Disclosure.Button className="pt-3 w-full flex items-center justify-center">
                       <ChevronUpIcon
                         className={`${open ? "rotate-180 transform" : ""} h-5 w-5 text-gray-500`}
                       />

@@ -23,13 +23,13 @@ import PropTypes from "prop-types";
 import image from "../images/desk-and-chair.jpg";
 
 const imageAltText =
-  "Adult female in office setting leaning against a glass wall while holding a platinum Microsoft Surface Pro 7 in tablet mode preparing to write with Microsoft Surface Pen";
+  "A desk with a chair and a computer monitor. The monitor displays a code editor with a React project open.";
 
 const Home = ({ name, title }) => {
   return (
     <section id="home" className="min-height">
       <img className="background" src={image} alt="" />
-      <div style={{ position: "absolute", top: "5rem", left: "2rem", width: "17rem" }}>
+      <div style={{ position: "absolute", top: "5rem", left: "2rem", width: "20rem" }}>
         <h1>{name}</h1>
         <h2>{title}</h2>
       </div>
