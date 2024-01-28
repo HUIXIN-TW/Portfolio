@@ -13,7 +13,7 @@ jobs:
         with:
           node-version: "18"
           cache: "npm"
-      - run: npm ci  # It's better to use npm ci in CI/CD environments
+      - run: npm ci # It's better to use npm ci in CI/CD environments
       - run: npm run lint:strict
 
   # tsc:
