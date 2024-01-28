@@ -54,7 +54,7 @@ const About = () => {
       <div
         style={{
           backgroundColor: "white",
-          width: "50%",
+          width: "65%",
           padding: "4rem",
           margin: "3rem auto",
           textAlign: "center",
