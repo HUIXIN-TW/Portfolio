@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2 # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+        uses: actions/checkout@v3 # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
 
       - name: Install and Build
         run: |
@@ -20,7 +20,7 @@ jobs:
         # Add any other build steps if necessary
 
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.4
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages # The branch the action should deploy to.
-          folder: build # The folder the action should deploy. Change this to the folder where your build script outputs the files.
+          folder: / # The folder the action should deploy. Change this to the folder where your build script outputs the files.
