@@ -95,19 +95,10 @@ const educationList = [
 const Education = () => {
   return (
     <section className="padding" id="education">
-      <h2 style={{ textAlign: "center" }}>Education</h2>
-      <div style={{ display: "flex", flexDirection: "row", paddingTop: "3rem" }}>
-        <div style={{ maxWidth: "40%", alignSelf: "center" }}>
-          <img
-            src={image}
-            style={{
-              height: "90%",
-              width: "100%",
-              objectFit: "cover",
-              animation: "1s ease-out 0s 1 slideIn",
-            }}
-            alt={imageAltText}
-          />
+      <h2 className="text-center">Education</h2>
+      <div className="flex flex-row pt-12">
+        <div className="w-3/4 self-center">
+          <img src={image} className="h-9/10 w-full object-cover slide-in" alt={imageAltText} />
         </div>
 
         <div className="verticalContainer">

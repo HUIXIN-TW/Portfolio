@@ -251,6 +251,10 @@ img.socialIcon {
   }
 }
 
+.slide-in {
+  animation: 3s ease-out 0.8s 1 slideIn;
+}
+
 /* add a slide out animation */
 @keyframes bounce {
   0%,
