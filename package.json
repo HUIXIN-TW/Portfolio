@@ -1,5 +1,5 @@
 {
-  "name": "Huixin's Portfolio",
+  "name": "huixin-portfolio",
   "version": "1.0.0",
   "description": "Introduction of Huixin's Portfolio",
   "source": "src/index.html",
@@ -7,7 +7,7 @@
   "scripts": {
     "start": "parcel",
     "build": "parcel build",
-    "build-gh": "parcel build --public-url 'https://huixin-tw.github.io/Portfolio'",
+    "build-gh": "parcel build --public-url 'https://huixin-tw.github.io/Portfolio/'",
     "predeploy": "npm run build-gh",
     "deploy": "gh-pages -d dist",
     "lint:strict": "eslint . --ext .js,.jsx",
