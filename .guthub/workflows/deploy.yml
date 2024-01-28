@@ -16,7 +16,7 @@ jobs:
     - name: Install and Build 
       run: |
         npm install
-        npm run build  # Replace with your build command
+        npm run build
       # Add any other build steps if necessary
 
     - name: Deploy 
