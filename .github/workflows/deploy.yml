@@ -3,24 +3,24 @@ name: Build and Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Set this to the branch you want to trigger the deployment from
+      - main # Set this to the branch you want to trigger the deployment from
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest  # The type of runner that the job will run on
+    runs-on: ubuntu-latest # The type of runner that the job will run on
 
     steps:
-    - name: Checkout 
-      uses: actions/checkout@v2  # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      
-    - name: Install and Build 
-      run: |
-        npm install
-        npm run build
-      # Add any other build steps if necessary
+      - name: Checkout
+        uses: actions/checkout@v2 # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
 
-    - name: Deploy 
-      uses: JamesIves/github-pages-deploy-action@4.1.4
-      with:
-        branch: gh-pages  # The branch the action should deploy to.
-        folder: build  # The folder the action should deploy. Change this to the folder where your build script outputs the files.
+      - name: Install and Build
+        run: |
+          npm install
+          npm run build
+        # Add any other build steps if necessary
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: build # The folder the action should deploy. Change this to the folder where your build script outputs the files.
