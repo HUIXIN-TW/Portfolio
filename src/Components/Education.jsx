@@ -8,11 +8,11 @@ const imageAltText = "School building";
 
 const Education = () => {
   return (
-    <section className="padding" id="education">
+    <section className="p-2 sm:padding" id="education">
       <h2 className="text-center">Education</h2>
-      <div className="flex flex-row pt-12">
-        <div className="w-3/4 self-center">
-          <img src={image} className="h-9/10 w-full object-cover slide-in" alt={imageAltText} />
+      <div className="pictureContainer flex flex-row p-2 lg:pt12 lg:item-center">
+        <div className="w-3/4 self-center hidden lg:block">
+          <img src={image} className="w-full object-cover slide-in" alt={imageAltText} />
         </div>
 
         <div className="verticalContainer">

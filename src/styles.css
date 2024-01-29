@@ -126,11 +126,32 @@ a:hover {
 }
 
 .verticalContainer {
-  width: 100%;
+  max-width: 100rem;
   display: flex;
   flex-direction: column;
   padding-top: 3rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
   align-items: center;
+}
+
+.verticalContainer {
+  max-width: 100rem;
+  display: flex;
+  flex-direction: column;
+  padding-top: 3rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
+  align-items: center;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 640px) {
+  .verticalContainer {
+    padding-top: 1rem; /* Smaller padding-top on mobile */
+    margin-left: 1rem; /* Smaller left margin on mobile */
+    margin-right: 1rem; /* Smaller right margin on mobile */
+  }
 }
 
 .verticalContainer .box {
@@ -141,9 +162,9 @@ a:hover {
   padding: 24px 16px;
   text-align: left;
   position: relative;
-  margin-bottom: 20px; /* Space between boxes */
+  margin-bottom: 1.5rem;
   transition: background-color 0.2s; /* Smooth transition for hover effect */
-  max-width: 45rem;
+  max-width: 100rem;
 }
 
 .box:hover {
@@ -162,6 +183,48 @@ a:hover {
   list-style-type: none; /* Remove bullet points */
   padding: 0; /* Remove padding */
   margin: 1rem 0; /* Space above and below the list */
+}
+
+.horizonalContainer {
+  max-width: 50rem;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  overflow-x: auto;
+  padding-top: 1rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
+/* Media query for smaller screens (e.g., mobile devices) */
+@media (max-width: 300px) {
+  .horizontalContainer {
+    padding-top: 1rem; /* Smaller padding-top on mobile */
+    margin-left: 1rem; /* Smaller left margin on mobile */
+    margin-right: 1rem; /* Smaller right margin on mobile */
+    width: 100%;
+  }
+}
+
+.horizonalContainer .box {
+  border-radius: 10px;
+  border: 1px solid rgb(204, 204, 204);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 24px 16px;
+  text-align: center;
+  flex: 0 0 auto;
+  width: 60rem;
+}
+
+/* Media query for smaller screens (e.g., mobile devices) */
+@media (max-width: 640px) {
+  .horizontalContainer .box {
+    margin: 1rem; /* Smaller margin on smaller screens */
+    padding: 0 0.5vw; /* Smaller padding on smaller screens */
+    max-width: 100%;
+  }
 }
 
 /* Pair Section */
