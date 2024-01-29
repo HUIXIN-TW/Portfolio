@@ -1,96 +1,10 @@
 import React from "react";
 import { Disclosure } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/20/solid";
-import image from "../images/school.jpg"; // Assuming the image is in the src/images folder
+import educationData from "../data/education.json";
+import image from "../images/school.jpg";
 
 const imageAltText = "School building";
-
-const educationList = [
-  {
-    degree: "Master of Information Technology",
-    university: "University of Western Australia (UWA), Perth, Australia",
-    gpa: "6.38 / 7.0",
-    achievements: [
-      {
-        title: "Agile Web application - BrewChat",
-        technologies: "Javascript, Flask, SQLAlchemy, unittest, Git",
-      },
-      {
-        title: "Data Warehousing & Association Rule Mining",
-        technologies: "R, SQL, SSMS, Power BI",
-      },
-      {
-        title: "Graph Database & Graph Data Science",
-        technologies: "Neo4j, Cypher, R",
-      },
-      {
-        title: "Exploratory data analysis and Machine learning models",
-        technologies: "R, RStudio, Git",
-      },
-      {
-        title: "IOT ESP32 Air Quality Detector",
-        technologies: "C++, Flask, HTML, CSS, Javascript, Firebase Real-Time DB, Git",
-      },
-      {
-        title: "Business intelligence report",
-        technologies: "Python, PowerBI",
-      },
-      {
-        title: "Cybersecurity",
-        technologies: "Bash, Virtualisation & Containerisation",
-      },
-      {
-        title: "Rational Database Management System",
-        technologies: "SQL",
-      },
-      {
-        title: "COVID Analysis",
-        technologies: "Python",
-      },
-    ],
-    results: [
-      "HD & Top3 Project",
-      "HD & Top2 Project",
-      "HD & Top4 Project",
-      "Top1 Project",
-      "HD",
-      "HD",
-      "HD",
-      "HD",
-      "HD",
-    ],
-    url: "#",
-  },
-  {
-    degree: "M.S. in Accounting and Information Technology",
-    university: "National Chung Cheng University (CCU), Chiayi, Taiwan",
-    gpa: "3.93 / 4.0",
-    achievements: [
-      {
-        title: "Nationally in CCU’s competitive annual Accounting postgraduate entrance exam.",
-        technologies:
-          "Subjects: English, Intermediate Accounting, and Cost and Management Accounting",
-      },
-      {
-        title:
-          "Conducted research on “Directors’ and Officers’ Liability Insurance and Cost Stickiness.”",
-        technologies: "SAS, SPSS, Excel, Word, and PowerPoint",
-      },
-    ],
-    results: ["TOP2", "HD"],
-    url: "#",
-  },
-  {
-    degree: "B.S. in Accounting and Information Systems",
-    university:
-      "National Kaohsiung University of Science and Technology (NKUST), Kaohsiung, Taiwan",
-    gpa: "80.44 / 100",
-    achievements: [],
-    results: [],
-    url: "#",
-  },
-  // Add more educational experiences if needed
-];
 
 const Education = () => {
   return (
@@ -102,7 +16,7 @@ const Education = () => {
         </div>
 
         <div className="verticalContainer">
-          {educationList.map((education) => (
+          {educationData.map((education) => (
             <div className="box" key={education.degree}>
               <Disclosure>
                 {({ open }) => (
