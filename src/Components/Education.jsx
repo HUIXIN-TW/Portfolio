@@ -8,7 +8,7 @@ const imageAltText = "School building";
 
 const Education = () => {
   return (
-    <section className="p-2 sm:padding" id="education">
+    <section className="padding" id="education">
       <h2 className="text-center">Education</h2>
       <div className="pictureContainer flex flex-row p-2 lg:pt12 lg:item-center">
         <div className="w-3/4 self-center hidden lg:block">

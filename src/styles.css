@@ -185,25 +185,28 @@ a:hover {
   margin: 1rem 0; /* Space above and below the list */
 }
 
-.horizonalContainer {
-  max-width: 50rem;
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  overflow-x: auto;
-  padding-top: 1rem;
-  margin-left: 5rem;
-  margin-right: 5rem;
+@media (min-width: 1280px) {
+  .horizonalContainer {
+    max-width: 50rem;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    overflow-x: auto;
+    padding-top: 1rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
 }
 
 /* Media query for smaller screens (e.g., mobile devices) */
-@media (max-width: 300px) {
-  .horizontalContainer {
-    padding-top: 1rem; /* Smaller padding-top on mobile */
-    margin-left: 1rem; /* Smaller left margin on mobile */
-    margin-right: 1rem; /* Smaller right margin on mobile */
-    width: 100%;
-  }
+.smallHorizonalContainer {
+  padding-top: 5px; /* Smaller padding-top on mobile */
+  margin-left: 1rem; /* Smaller left margin on mobile */
+  margin-right: 1rem; /* Smaller right margin on mobile */
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .horizonalContainer .box {
@@ -219,12 +222,16 @@ a:hover {
 }
 
 /* Media query for smaller screens (e.g., mobile devices) */
-@media (max-width: 640px) {
-  .horizontalContainer .box {
-    margin: 1rem; /* Smaller margin on smaller screens */
-    padding: 0 0.5vw; /* Smaller padding on smaller screens */
-    max-width: 100%;
-  }
+.smallHorizonalContainer .box {
+  border-radius: 10px;
+  border: 1px solid rgb(204, 204, 204);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 24px 16px;
+  text-align: center;
+  flex: 0 0 auto;
+  width: 100%;
 }
 
 /* Pair Section */

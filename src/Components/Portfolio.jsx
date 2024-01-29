@@ -12,7 +12,7 @@ const Portfolio = () => {
   console.log(volunteerData);
 
   return (
-    <section className="p-2 sm:padding" id="portfolio">
+    <section className="padding" id="portfolio">
       <h2 className="text-center">Work & Project Experience</h2>
       <div className="pictureContainer flex flex-row p-2 lg:pt12 lg:item-center">
         <div className="w-3/4 self-center hidden xl:block">
@@ -20,7 +20,7 @@ const Portfolio = () => {
         </div>
         {/* Render Volunteer Experience */}
         {volunteerData && volunteerData.length > 0 && (
-          <div className="horizonalContainer border border-black">
+          <div className="smallHorizonalContainer xl:horizonalContainer">
             {volunteerData.map((item, index) => (
               <VolunteerExperience key={index} data={item} />
             ))}
