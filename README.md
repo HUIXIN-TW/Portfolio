@@ -10,6 +10,7 @@
 - Tailwind CSS
 - JavaScript
 - React
+- Node.js
 - Deploying to a production environment: Vercel
 
 ## 🗃️ JavaScript Portfolio

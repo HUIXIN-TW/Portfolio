@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Introduction of Huixin's Portfolio",
   "source": "src/index.html",
-  "homepage": "https://github.com/HUIXIN-TW/Portfolio/",
+  "homepage": "https://github.com/HUIXIN-TW/Portfolio#readme",
   "scripts": {
     "start": "parcel",
     "build": "parcel build",
