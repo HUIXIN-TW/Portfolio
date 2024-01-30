@@ -223,17 +223,18 @@ a:hover {
 
 /* Media query for smaller screens (e.g., mobile devices) */
 @media (max-width: 640px) {
-.horizonalContainerBox {
-  border-radius: 10px;
-  border: 1px solid rgb(204, 204, 204);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding: 24px 16px;
-  text-align: center;
-  flex: 0 0 auto;
-  width: 100%;
-}}
+  .horizonalContainerBox {
+    border-radius: 10px;
+    border: 1px solid rgb(204, 204, 204);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 24px 16px;
+    text-align: center;
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
 
 /* Pair Section */
 .degreeGpaPair {
