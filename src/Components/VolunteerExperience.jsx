@@ -2,7 +2,7 @@ import React from "react";
 
 const VolunteerExperience = ({ data }) => {
   return (
-    <div className="box">
+    <div className="horizonalContainerBox">
       <a href={data.url} target="_blank" rel="noopener noreferrer">
         <h3 style={{ flexBasis: "40px" }}>
           {data.project} - {data.company}
@@ -21,7 +21,7 @@ const VolunteerExperience = ({ data }) => {
         <ul className="text-left list-disc list-inside">
           {data.description.map((desc, index) => (
             <li className="whitespace-normal" key={index}>
-              - {desc}
+              {desc}
             </li> // Render each description item as a list item
           ))}
         </ul>
