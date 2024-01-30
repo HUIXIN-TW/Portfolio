@@ -10,7 +10,7 @@ const Education = () => {
   return (
     <section className="padding" id="education">
       <h2 className="text-center">Education</h2>
-      <div className="pictureContainer flex flex-row p-2 lg:pt12 lg:item-center">
+      <div className="pictureContainer flex flex-row p-2 lg:pt-12 lg:item-center">
         <div className="w-3/4 self-center hidden lg:block">
           <img src={image} className="w-full object-cover slide-in" alt={imageAltText} />
         </div>
