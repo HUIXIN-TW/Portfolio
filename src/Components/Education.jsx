@@ -15,7 +15,7 @@ const Education = () => {
           <img src={image} className="w-full object-cover slide-in" alt={imageAltText} />
         </div>
 
-        <div className="w-full verticalContainer lg:w-3/5">
+        <div className="w-3/5 verticalContainer">
           {educationData.map((education) => (
             <div className="box" key={education.degree}>
               <Disclosure>
