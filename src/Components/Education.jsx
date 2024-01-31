@@ -11,11 +11,11 @@ const Education = () => {
     <section className="padding" id="education">
       <h2 className="text-center">Education</h2>
       <div className="pictureContainer flex flex-row p-2 lg:pt-12 lg:item-center">
-        <div className="w-2/5 self-center hidden lg:block">
+        <div className="self-center hidden lg:w-2/5 lg:block">
           <img src={image} className="w-full object-cover slide-in" alt={imageAltText} />
         </div>
 
-        <div className="w-3/5 verticalContainer">
+        <div className="w-full verticalContainer lg:w-3/5">
           {educationData.map((education) => (
             <div className="box" key={education.degree}>
               <Disclosure>
