@@ -98,6 +98,7 @@
       {
         "title": "Data Science Hackathon: Prototype Solution Presentation ",
         "company": "SLB",
+        "demo": "../images/Hackathon_poster_Data_Dolphins_Final.pdf",
         "period": "2023.09 - 2023.10",
         "rank": "3rd",
         "technologies": [
@@ -106,7 +107,8 @@
           "Data Collection",
           "Model Development",
           "ETL Process",
-          "ETL Frameworks"
+          "ETL Frameworks",
+          "Feature Engineering"
         ],
         "description": [
           "Developed a mining exploration lithology identification model using LSTM.",
@@ -134,6 +136,7 @@
       {
         "project": "Repair Labs project",
         "company": "CFC",
+        "gifId": "repairlab",
         "url": "https://github.com/codersforcauses/repair-labs",
         "occupation": "Full Stack developer",
         "period": "2023.06 - Current",
@@ -169,9 +172,72 @@
           "Utilized Figma to craft intuitive mobile and desktop layouts.",
           "Collaborated effectively with other student volunteers, utilizing Git version control."
         ]
+      },
+      {
+        "project": "LLM Triple Generator project",
+        "company": "UWA NLP-TLP Team",
+        "url": "https://www.youtube.com/watch?v=wVBYiyJ0u00",
+        "youtubeVideoId": "-58HvQYFij8",
+        "occupation": "Team Leader",
+        "period": "2023.08 - 2023.11",
+        "technologies": [
+          "Python",
+          "networkx",
+          "requests",
+          "React",
+          "ChatGPT API",
+          "ChatGPT Fine Tuning Model",
+          "Prompt engineering & Feature engineering",
+          "Docker",
+          "Git"
+        ],
+        "description": [
+          "Led a team of 5 members in the development of a triple generator for the LLM project.",
+          "The project aimed to transform unstructured text data into a structured knowledge graph using natural language processing techniques.",
+          "Technologies such as Python, networkx, and requests were employed for data processing and retrieval.",
+          "The React framework was used to create a user-friendly interface for interacting with the triple generator.",
+          "Leveraged the ChatGPT API and ChatGPT Fine Tuning Model for advanced natural language understanding and generation.",
+          "Implemented prompt engineering and feature engineering to enhance the accuracy and efficiency of triple generation.",
+          "Docker was utilized for containerization, ensuring easy deployment and scalability of the application.",
+          "Version control and collaborative development were managed using Git, facilitating efficient teamwork and code management."
+        ]
+      },
+      {
+        "project": "QuickRecord Financial Application",
+        "company": "Independent Project",
+        "url": "https://github.com/HUIXIN-TW/QuickRecord",
+        "youtubeVideoId": "LcTDTIHJFMQ",
+        "occupation": "Full Stack Developer",
+        "period": "2021",
+        "technologies": ["Python Flask", "JavaScript", "SQL", "CSS", "HTML"],
+        "description": [
+          "Developed a comprehensive financial recording application, QuickRecord, designed to assist users in managing their financial statements and collaborating with friends or family members.",
+          "Technology Stack: Python Flask for backend services, JavaScript for dynamic client-side functionalities, and SQL for database management; styled with CSS and structured with HTML.",
+          "Implemented core features such as viewing balance and income statements, creating custom accounts, recording transactions, and sending friend requests for collaborative financial management.",
+          "Engineered a system allowing users to share specific account information with friends, displaying all changes on a 'Shared Account Message' page, and ensuring data privacy where necessary.",
+          "Introduced innovative functionalities like historical transaction records, specific date balance checks, and a graphical representation of all account balances using bar charts for enhanced data visualization and user experience.",
+          "Coordinated with a colleague, Remykung, for project development, leveraging collaborative tools and version control systems for efficient project management."
+        ]
+      },
+      {
+        "project": "Notion Sync with Google Calendar - Command Line Interface",
+        "company": "Independent Project",
+        "url": "https://github.com/HUIXIN-TW/NotionSyncGCal",
+        "youtubeVideoId": "9IbUIj8mNl8",
+        "occupation": "Full Stack Developer",
+        "period": "2021 - Current",
+        "technologies": ["Python", "Notion API", "Google Calendar API", "Docker"],
+        "description": [
+          "Developed a command-line interface (CLI) for syncing data between Notion and Google Calendar.",
+          "Implemented the ability to update events from Google Calendar to Notion and vice versa, allowing for seamless management of events between both platforms.",
+          "Offered features such as timezone and date range customization, default length setting for new Google Calendar events, and the option to delete Google Calendar events when marked as 'Done' in Notion.",
+          "Provided support for syncing across multiple calendars and the flexibility to name Notion columns as desired for the code to work.",
+          "Implemented credential and OAuth consent screen integration with Google Calendar scope for secure authentication and access to Google Calendar data."
+        ]
       }
     ]
   },
+
   {
     "academic": [
       {
