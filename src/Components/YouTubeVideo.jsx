@@ -13,7 +13,7 @@ const YouTubeVideo = ({ videoId }) => {
         <iframe
           className="absolute top-0 left-0 w-full h-full"
           src={src}
-          allow="autoplay; encrypted-media"
+          allow="encrypted-media"
           allowFullScreen
           title="Embedded youtube"
         />
