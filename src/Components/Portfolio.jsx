@@ -1,6 +1,6 @@
 import React from "react";
 import profileData from "../data/detailed_profile_data.json";
-import VolunteerExperience from "./VolunteerExperience"; // Import the VolunteerExperience component
+import Volunteer from "./Volunteer";
 
 const Portfolio = () => {
   const volunteerObject = profileData.find((item) => item.volunteer);
@@ -16,7 +16,7 @@ const Portfolio = () => {
         {volunteerData && volunteerData.length > 0 && (
           <div className="horizonalContainer w-full">
             {volunteerData.map((item, index) => (
-              <VolunteerExperience key={index} data={item} />
+              <Volunteer key={index} data={item} />
             ))}
           </div>
         )}

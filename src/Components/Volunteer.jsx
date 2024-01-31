@@ -1,6 +1,9 @@
 import React from "react";
+import YouTubeVideo from "./YouTubeVideo";
+import repairLabGif from "../images/repair-lab.gif";
+import GifDisplay from "./GifDisplay";
 
-const VolunteerExperience = ({ data }) => {
+const Volunteer = ({ data }) => {
   return (
     <div className="horizonalContainerBox">
       <a href={data.url} target="_blank" rel="noopener noreferrer">
@@ -17,7 +20,7 @@ const VolunteerExperience = ({ data }) => {
           </span> // Render each technology as a hashtag
         ))}
       </div>
-      <div>
+      <divx>
         <ul className="text-left list-disc list-inside">
           {data.description.map((desc, index) => (
             <li className="whitespace-normal" key={index}>
@@ -25,9 +28,13 @@ const VolunteerExperience = ({ data }) => {
             </li> // Render each description item as a list item
           ))}
         </ul>
+      </divx>
+      <div className="demo p-10">
+        {data.youtubeVideoId && <YouTubeVideo videoId={data.youtubeVideoId} />}
+        {data.gifId === "repairlab" && <GifDisplay gifUrl={repairLabGif} />}
       </div>
     </div>
   );
 };
 
-export default VolunteerExperience;
+export default Volunteer;
