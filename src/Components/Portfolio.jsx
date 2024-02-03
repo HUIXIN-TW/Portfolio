@@ -10,7 +10,7 @@ const Portfolio = () => {
 
   return (
     <section className="padding" id="portfolio">
-      <h2 className="text-center">Work & Project Experience</h2>
+      <h2 className="text-center">Work & Project Gallery</h2>
       <div className="pictureContainer flex flex-row p-2 lg:pt-12 lg:item-center">
         {/* Render Volunteer Experience */}
         {volunteerData && volunteerData.length > 0 && (
