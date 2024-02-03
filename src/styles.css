@@ -135,16 +135,6 @@ a:hover {
   align-items: center;
 }
 
-.verticalContainer {
-  max-width: 100rem;
-  display: flex;
-  flex-direction: column;
-  padding-top: 3rem;
-  margin-left: 5rem;
-  margin-right: 5rem;
-  align-items: center;
-}
-
 /* Media query for mobile devices */
 @media (max-width: 640px) {
   .verticalContainer {
@@ -218,7 +208,7 @@ a:hover {
   padding: 24px 16px;
   text-align: center;
   flex: 0 0 auto;
-  width: 60rem;
+  width: 55rem;
 }
 
 /* Media query for smaller screens (e.g., mobile devices) */
