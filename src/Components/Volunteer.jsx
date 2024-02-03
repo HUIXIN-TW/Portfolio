@@ -1,7 +1,7 @@
 import React from "react";
-import YouTubeVideo from "./YouTubeVideo";
-import repairLabGif from "../images/repair-lab.gif";
-import GifDisplay from "./GifDisplay";
+import repairLabGif from "../assets/images/repair-lab.gif";
+import YouTubeVideo from "./common/YouTubeVideo";
+import GifDisplay from "./common/GifDisplay";
 
 const Volunteer = ({ data }) => {
   return (

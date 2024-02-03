@@ -5,15 +5,16 @@
  */
 
 import React from "react";
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Footer from "./Components/common/Footer";
+import Header from "./Components/common/Header";
 import About from "./Components/About";
-import Footer from "./Components/Footer";
-import Header from "./Components/Header";
 import Home from "./Components/Home";
 import Education from "./Components/Education";
 import Portfolio from "./Components/Portfolio";
+import Contact from "./Components/Contact";
 
-import "./styles.css";
+import "./styles/main.css";
 
 /**
  * This object represents your information. The project is set so that you
@@ -41,14 +42,20 @@ const secondaryColor = "#D2F1E4";
 
 const App = () => {
   return (
-    <div id="main">
-      <Header />
-      <Home name={siteProps.name} title={siteProps.title} />
-      <About />
-      <Education />
-      <Portfolio />
-      <Footer {...siteProps} primaryColor={primaryColor} secondaryColor={secondaryColor} />
-    </div>
+    <Router>
+      <div id="main">
+        <Header />
+        {/* Define your routes */}
+        <Routes>
+          <Route path="/" element={<Home name={siteProps.name} title={siteProps.title} />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/education" element={<Education />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+        <Footer {...siteProps} primaryColor={primaryColor} secondaryColor={secondaryColor} />
+      </div>
+    </Router>
   );
 };
 

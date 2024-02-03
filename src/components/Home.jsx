@@ -6,7 +6,7 @@
  */
 
 import React from "react";
-import arrowSvg from "../images/down-arrow.svg";
+import arrowSvg from "../assets/images/down-arrow.svg";
 import PropTypes from "prop-types";
 
 /**
@@ -20,7 +20,7 @@ import PropTypes from "prop-types";
  * Need an image? Check out https://unsplash.com to download a photo you
  * freely use on your site.
  */
-import image from "../images/desk-and-chair.jpg";
+import image from "../assets/images/desk-and-chair.jpg";
 
 const imageAltText =
   "A desk with a chair and a computer monitor. The monitor displays a code editor with a React project open.";

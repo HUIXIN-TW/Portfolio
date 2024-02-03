@@ -2,7 +2,7 @@ import React from "react";
 import { Disclosure } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/20/solid";
 import educationData from "../data/education.json";
-import image from "../images/school.jpg";
+import image from "../assets/images/school.jpg";
 
 const imageAltText = "School building";
 

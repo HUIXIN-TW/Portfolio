@@ -1,22 +1,9 @@
-/**
- * About component
- *
- * Space for you to describe more about yourself.
- */
+import React, { useState } from "react";
 
-import React from "react";
-
-/**
- * About background image
- *
- * Below is a sample image. Upload the image of your choice into the "images"
- * directory and import here for use. Then, set imageAltText to string that
- * represents what you see in that image.
- *
- * Need an image? Check out https://unsplash.com to download a image you
- * freely use on your site.
- */
-import image from "../images/motion-background.jpg";
+import image from "../assets/images/motion-background.jpg";
+import Button from "./common/Button";
+import Education from "./Education";
+import Portfolio from "./Portfolio";
 
 const imageAltText = "purple and blue abstract background";
 
@@ -24,7 +11,7 @@ const imageAltText = "purple and blue abstract background";
  * Sort description that expands on your title on the Home component.
  */
 const description =
-  "I'm a software developer and data science enthusiast, passionate about designing elegant and user-friendly interfaces.";
+  "As a dedicated software developer with a fervent interest in data science, I specialize in crafting elegant, user-friendly interfaces that seamlessly integrate sophisticated backend functionalities. My passion lies in harnessing the synergy between aesthetic design and powerful data-driven solutions to deliver interactive, intuitive, and impactful user experiences.";
 
 /**
  * List of some of skills or technologies you work on, are learning,
@@ -45,9 +32,11 @@ const skillsList = [
  * about you on a professional level.
  */
 const detailOrQuote =
-  "I am deeply passionate about pioneering innovative solutions, leveraging my UI/UX expertise to make technology universally accessible and user-friendly";
+  "Driven by a profound dedication to innovation in web development and data science, I excel in blending front-end finesse with robust back-end solutions, ensuring seamless, full-stack integration. My passion extends to leveraging data science proficiency, using insightful analytics and machine learning to transform complex data into actionable, user-centric applications. My goal is to make technology not just accessible, but intuitively intelligent and responsive to user needs.";
 
 const About = () => {
+  const [showDetails, setShowDetails] = useState(false); // State to toggle the visibility of Education and Portfolio
+
   return (
     <section className="padding" id="about">
       <img className="background" src={image} alt={imageAltText} />
@@ -63,6 +52,20 @@ const About = () => {
         <hr />
         <p className="text-xs md:text-xl p-4 md:p-12">{detailOrQuote}</p>
       </div>
+      {/* Button to toggle the visibility of Education and Portfolio */}
+      <div className="flex justify-center items-center">
+        <Button
+          onClick={() => setShowDetails(!showDetails)}
+          text={showDetails ? "Read Less" : "Read More"}
+        ></Button>
+      </div>
+      {/* Conditionally render Education and Portfolio components */}
+      {showDetails && (
+        <>
+          <Education />
+          <Portfolio />
+        </>
+      )}
     </section>
   );
 };
