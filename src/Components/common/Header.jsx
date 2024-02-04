@@ -26,7 +26,7 @@ const Header = () => {
           gap: "1rem", // You can adjust the gap between the logo and name
         }}
       >
-        <img src={photo} alt="Logo" style={{ width: '50px', height: '50px', borderRadius: '100%' }} />
+        <img src={photo} alt="Logo" style={{ width: '40px', height: '40px', borderRadius: '100%' }} />
         <span>Huixin</span>
       </div>
       <div
