@@ -171,7 +171,8 @@
   {
     "academic": [
       {
-        "subject": "Agile Web application - BrewChat",
+        "subject": "Agile Web Development",
+        "project": "BrewChat",
         "url": "",
         "label": "UWA Project",
         "technologies": ["Javascript", "Flask", "SQLAlchemy", "unittest", "Git"],
@@ -180,7 +181,8 @@
         "description": ""
       },
       {
-        "subject": "Data Warehousing & Association Rule Mining",
+        "subject": "Data Warehousing",
+        "project": "Data Warehousing & Association Rule Mining",
         "url": "",
         "label": "UWA Project",
         "technologies": ["R", "SQL", "SSMS", "Power BI"],
@@ -189,7 +191,8 @@
         "description": ""
       },
       {
-        "subject": "Graph Database & Graph Data Science",
+        "subject": "Data Warehousing",
+        "project": "Graph Database & Graph Data Science",
         "url": "",
         "label": "UWA Project",
         "technologies": ["Neo4j", "Cypher", "R"],
@@ -198,7 +201,8 @@
         "description": ""
       },
       {
-        "subject": "Exploratory data analysis and Machine learning models",
+        "subject":"Computational Data Analysis",
+        "project": "Exploratory data analysis and Machine learning models",
         "url": "",
         "label": "UWA Project",
         "technologies": ["R", "RStudio", "Git"],
@@ -207,7 +211,8 @@
         "description": ""
       },
       {
-        "subject": "IOT ESP32 Air Quality Detector",
+        "subject": "Internet of Things",
+        "project": "ESP32 Air Quality Detector",
         "url": "",
         "label": "UWA Project",
         "technologies": [
@@ -224,7 +229,8 @@
         "description": ""
       },
       {
-        "subject": "Business intelligence report",
+        "subject": "Business intelligence",
+        "project": "Business intelligence report",
         "url": "",
         "label": "UWA Project",
         "technologies": ["Python", "PowerBI"],

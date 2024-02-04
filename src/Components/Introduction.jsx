@@ -10,7 +10,7 @@ const Introduction = ({ name, title }) => {
   return (
     <section id="introduction" className="min-height">
       <img className="background" src={image} alt="" />
-      <div style={{ position: "absolute", top: "6rem", left: "2rem", width: "20rem" }}>
+      <div style={{ position: "absolute", top: "7rem", left: "3rem", width: "20rem" }}>
         <h1>{name}</h1>
         <h2>{title}</h2>
       </div>
