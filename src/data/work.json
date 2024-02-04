@@ -1,0 +1,66 @@
+[
+  {
+    "occupation": "Assistant Manager",
+    "industry": "Financial Services",
+    "company": "Deloitte",
+    "period": "2019.03 - 2020.08",
+    "technologies": ["US GAAP", "IFRS", "SOX", "COSO framework", "Microsoft Excel", "Power BI"],
+    "description": [
+      "Possessed sound knowledge of US GAAP, IFRS, and SOX internal control audits.",
+      "Performed financial modelling to support and challenge key assumptions, such as DCF models.",
+      "Performed risk assessment of material financial statement items under the COSO framework.",
+      "Performed valuation analysis of assets, debt, and equity, such as intangible assets impairment and convertible bonds.",
+      "Utilized IT skills for data cleaning, manipulation, and mapping.",
+      "Led 4 members and managed audit plan for listed companies.",
+      "Supervised, coached, and developed junior members of staff within teams, on client premises, and in the office."
+    ]
+  },
+  {
+    "occupation": "Staff - Senior Associate",
+    "industry": "Financial Services",
+    "company": "PwC",
+    "period": "2016.09 - 2019.02",
+    "technologies": [
+      "IFRS9",
+      "Financial Analysis",
+      "Net Asset Value",
+      "Return on Investment",
+      "Cash Flow Forecasting"
+    ],
+    "description": [
+      "Conducted in the Biotechnology Industry’s initial public offering project.",
+      "Evaluated investment profiles including local/international, public/private stocks, and bonds under IFRS9.",
+      "Evaluated derivative financial instruments.",
+      "Recalculated net asset value and return on investment.",
+      "Reviewed cash flow forecasts for the prospectus to assess the feasibility of the assumptions.",
+      "Assessed financial risk information, including market risk, credit risk, liquidity risk, interest rate risk, and sensitive analysis of each."
+    ]
+  },
+  {
+    "occupation": "Intermediate Accounting Instructor",
+    "industry": "Education",
+    "company": "Tekom Technologies, Inc",
+    "period": "2016.03 - 2016.06",
+    "technologies": ["Accounting Instruction", "Educational Facilitation"],
+    "description": [
+      "Provided guidance and delivered effective instruction in Intermediate Accounting, facilitating student understanding and proficiency."
+    ]
+  },
+  {
+    "occupation": "Facilitator",
+    "industry": "Education",
+    "company": "National Chung Cheng University",
+    "period": "2015.02 - 2016.06",
+    "technologies": [
+      "Business Analysis",
+      "Accounting",
+      "Advanced Accounting",
+      "Audit",
+      "Statistics"
+    ],
+    "description": [
+      "Assisted in teaching courses including Business Analysis, Accounting, Advanced Accounting, Audit, and Statistics.",
+      "Provided guidance and handouts."
+    ]
+  }
+]

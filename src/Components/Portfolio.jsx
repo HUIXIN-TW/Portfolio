@@ -1,12 +1,10 @@
 import React from "react";
-import profileData from "../data/detailed_profile_data.json";
+import profileData from "../data/projects.json";
 import Volunteer from "./Volunteer";
 
 const Portfolio = () => {
   const volunteerObject = profileData.find((item) => item.volunteer);
   const volunteerData = volunteerObject ? volunteerObject.volunteer : [];
-
-  console.log(volunteerData);
 
   return (
     <section className="padding" id="portfolio">

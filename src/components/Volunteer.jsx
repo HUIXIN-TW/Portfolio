@@ -9,6 +9,7 @@ const Volunteer = ({ data }) => {
       <a href={data.url} target="_blank" rel="noopener noreferrer">
         <h3 style={{ flexBasis: "40px" }}>
           {data.project} - {data.company}
+          {data.rank && <span> (Rank: {data.rank})</span>}
         </h3>
       </a>
       <p className="text-xs p-3">{data.period}</p>
