@@ -1,0 +1,264 @@
+[
+  {
+    "internship": [
+      {
+        "title": "Practera",
+        "occupation": "Business Consultant",
+        "company": "UseVerb",
+        "period": "2022.07 - 2022.08",
+        "technologies": [
+          "SWOT Analysis",
+          "PESTLE Analysis",
+          "Competitor Analysis",
+          "Digital Marketing"
+        ],
+        "description": [
+          "Collaborated with UseVerb, leveraging my expertise in business consulting to enhance their marketing strategies.",
+          "Conducted a comprehensive SWOT analysis to identify strengths, weaknesses, opportunities, and threats, enabling a more targeted approach to marketing and outreach.",
+          "Utilized PESTLE analysis to understand the macro-environmental factors affecting UseVerb, ensuring that marketing strategies were adaptable and relevant.",
+          "Performed an in-depth competitor analysis to benchmark UseVerb’s services and identify unique positioning and value propositions in the market.",
+          "Developed and proposed innovative marketing strategies, integrating insights from SWOT, PESTLE, and competitor analysis, to effectively reach and engage the target audience.",
+          "Enhanced digital presence and community engagement through data-driven marketing initiatives, leading to measurable increases in service awareness and utilization.",
+          "Collaborated closely with the team to align the marketing plan with organizational goals, ensuring a cohesive and impactful brand message.",
+          "Contributed to a significant improvement in UseVerb’s market positioning and community impact, driven by strategic, analytical, and data-informed decision-making."
+        ]
+      }
+    ]
+  },
+  {
+    "volunteer": [
+      {
+        "project": "Repair Labs project",
+        "company": "CFC",
+        "gifId": "repairlab",
+        "url": "https://github.com/codersforcauses/repair-labs",
+        "occupation": "Full Stack developer",
+        "period": "2023.06 - Current",
+        "technologies": [
+          "Next.js",
+          "TypeScript",
+          "React",
+          "Tailwind CSS",
+          "Vercel",
+          "Prisma",
+          "Postgres",
+          "Docker"
+        ],
+        "description": [
+          "Actively contributing as a member of the Repair Labs Project.",
+          "Technology Stack: Next.js, TypeScript, React, Tailwind CSS, and Vercel; Prisma as ORM, Postgres, and Docker for local DB.",
+          "Designed mobile and desktop layouts using Figma, ensuring a user-friendly interface.",
+          "Developed robust APIs to seamlessly connect frontend pages with the backend database, facilitating efficient data retrieval and updates.",
+          "Achievements: Successfully created and merged three pull requests via GitHub into the main branch within one month."
+        ]
+      },
+      {
+        "project": "Notion Sync with Google Calendar - Command Line Interface",
+        "company": "Independent Project",
+        "url": "https://github.com/HUIXIN-TW/NotionSyncGCal",
+        "youtubeVideoId": "9IbUIj8mNl8",
+        "occupation": "Full Stack Developer",
+        "period": "2021 - Current",
+        "technologies": ["Python", "Notion API", "Google Calendar API", "Docker"],
+        "description": [
+          "Developed a command-line interface (CLI) for syncing data between Notion and Google Calendar.",
+          "Implemented the ability to update events from Google Calendar to Notion and vice versa, allowing for seamless management of events between both platforms.",
+          "Offered features such as timezone and date range customization, default length setting for new Google Calendar events, and the option to delete Google Calendar events when marked as 'Done' in Notion.",
+          "Provided support for syncing across multiple calendars and the flexibility to name Notion columns as desired for the code to work.",
+          "Implemented credential and OAuth consent screen integration with Google Calendar scope for secure authentication and access to Google Calendar data."
+        ]
+      },
+      {
+        "project": "Pets Of Older Persons project",
+        "company": "CFC",
+        "url": "https://github.com/codersforcauses/poops",
+        "occupation": "Full Stack developer",
+        "period": "2022.11 - 2023.02",
+        "label": "",
+        "technologies": ["Next.js", "TypeScript", "React", "Tailwind CSS", "Firebase", "Vercel"],
+        "description": [
+          "Contributed as a team member in the Pets of Older Persons Project.",
+          "Technology Stack: Next.js, TypeScript, React, Tailwind CSS, Firebase, and Vercel.",
+          "Utilized Figma to craft intuitive mobile and desktop layouts.",
+          "Collaborated effectively with other student volunteers, utilizing Git version control."
+        ]
+      },
+      {
+        "project": "LLM Triple Generator project",
+        "company": "UWA NLP-TLP Team",
+        "url": "https://www.youtube.com/watch?v=wVBYiyJ0u00",
+        "youtubeVideoId": "-58HvQYFij8",
+        "occupation": "Team Leader",
+        "period": "2023.08 - 2023.11",
+        "technologies": [
+          "Python",
+          "networkx",
+          "requests",
+          "React",
+          "ChatGPT API",
+          "ChatGPT Fine Tuning Model",
+          "Prompt engineering & Feature engineering",
+          "Docker",
+          "Git"
+        ],
+        "description": [
+          "Led a team of 5 members in the development of a triple generator for the LLM project.",
+          "The project aimed to transform unstructured text data into a structured knowledge graph using natural language processing techniques.",
+          "Technologies such as Python, networkx, and requests were employed for data processing and retrieval.",
+          "The React framework was used to create a user-friendly interface for interacting with the triple generator.",
+          "Leveraged the ChatGPT API and ChatGPT Fine Tuning Model for advanced natural language understanding and generation.",
+          "Implemented prompt engineering and feature engineering to enhance the accuracy and efficiency of triple generation.",
+          "Docker was utilized for containerization, ensuring easy deployment and scalability of the application.",
+          "Version control and collaborative development were managed using Git, facilitating efficient teamwork and code management."
+        ]
+      },
+      {
+        "project": "Data Science Hackathon: Prototype Solution Presentation ",
+        "company": "SLB",
+        "occupation": "Data Science",
+        "gifId": "hackathondatascienceslides",
+        "period": "2023.09 - 2023.10",
+        "rank": "3rd",
+        "technologies": [
+          "Dataiku",
+          "LSTM",
+          "Data Collection",
+          "Model Development",
+          "ETL Process",
+          "ETL Frameworks",
+          "Feature Engineering"
+        ],
+        "description": [
+          "Developed a mining exploration lithology identification model using LSTM.",
+          "Addressed challenges in accurately identifying lithology in mining exploration data.",
+          "Collaborated with a multidisciplinary team on data collection, model development, and ETL frameworks and processes.",
+          "Presented the LSTM solution, showcasing its effectiveness in improving identification accuracy."
+        ]
+      },
+      {
+        "project": "Data Science Hackathon: Creative Poster at the WA Mining Conference",
+        "company": "SLB",
+        "occupation": "Data Science",
+        "gifId": "hackathondatascienceposter",
+        "period": "2023.10",
+        "rank": "4th",
+        "technologies": ["Microsoft PowerPoint", "Dataiku"],
+        "description": [
+          "Designed an engaging and informative poster showcasing the applications and benefits of the developed model.",
+          "Presented findings at the conference, highlighting the impact of accurate lithology identification in mining exploration.",
+          "Received recognition for the innovative approach to solving exploration challenges."
+        ]
+      },
+      {
+        "project": "QuickRecord Financial Application",
+        "company": "Independent Project",
+        "url": "https://github.com/HUIXIN-TW/QuickRecord",
+        "youtubeVideoId": "LcTDTIHJFMQ",
+        "occupation": "Full Stack Developer",
+        "period": "2021",
+        "technologies": ["Python Flask", "JavaScript", "SQL", "CSS", "HTML"],
+        "description": [
+          "Developed a comprehensive financial recording application, QuickRecord, designed to assist users in managing their financial statements and collaborating with friends or family members.",
+          "Technology Stack: Python Flask for backend services, JavaScript for dynamic client-side functionalities, and SQL for database management; styled with CSS and structured with HTML.",
+          "Implemented core features such as viewing balance and income statements, creating custom accounts, recording transactions, and sending friend requests for collaborative financial management.",
+          "Engineered a system allowing users to share specific account information with friends, displaying all changes on a 'Shared Account Message' page, and ensuring data privacy where necessary.",
+          "Introduced innovative functionalities like historical transaction records, specific date balance checks, and a graphical representation of all account balances using bar charts for enhanced data visualization and user experience.",
+          "Coordinated with a colleague, Remykung, for project development, leveraging collaborative tools and version control systems for efficient project management."
+        ]
+      }
+    ]
+  },
+  {
+    "academic": [
+      {
+        "subject": "Agile Web application - BrewChat",
+        "url": "",
+        "label": "UWA Project",
+        "technologies": ["Javascript", "Flask", "SQLAlchemy", "unittest", "Git"],
+        "achievement": "HD",
+        "rank": "Top3",
+        "description": ""
+      },
+      {
+        "subject": "Data Warehousing & Association Rule Mining",
+        "url": "",
+        "label": "UWA Project",
+        "technologies": ["R", "SQL", "SSMS", "Power BI"],
+        "achievement": "HD",
+        "rank": "Top2",
+        "description": ""
+      },
+      {
+        "subject": "Graph Database & Graph Data Science",
+        "url": "",
+        "label": "UWA Project",
+        "technologies": ["Neo4j", "Cypher", "R"],
+        "achievement": "HD",
+        "rank": "Top4",
+        "description": ""
+      },
+      {
+        "subject": "Exploratory data analysis and Machine learning models",
+        "url": "",
+        "label": "UWA Project",
+        "technologies": ["R", "RStudio", "Git"],
+        "achievement": "",
+        "rank": "Top1",
+        "description": ""
+      },
+      {
+        "subject": "IOT ESP32 Air Quality Detector",
+        "url": "",
+        "label": "UWA Project",
+        "technologies": [
+          "C++",
+          "Flask",
+          "HTML",
+          "CSS",
+          "Javascript",
+          "Firebase Real-Time DB",
+          "Git"
+        ],
+        "achievement": "HD",
+        "rank": "",
+        "description": ""
+      },
+      {
+        "subject": "Business intelligence report",
+        "url": "",
+        "label": "UWA Project",
+        "technologies": ["Python", "PowerBI"],
+        "achievement": "HD",
+        "rank": "",
+        "description": ""
+      },
+      {
+        "subject": "Cybersecurity",
+        "url": "",
+        "label": "UWA Project",
+        "technologies": ["Bash", "Virtualisation", "Containerisation"],
+        "achievement": "HD",
+        "rank": "",
+        "description": ""
+      },
+      {
+        "subject": "Rational Database Management System",
+        "url": "",
+        "label": "UWA Project",
+        "technologies": ["SQL"],
+        "achievement": "HD",
+        "rank": "",
+        "description": ""
+      },
+      {
+        "subject": "COVID Analysis",
+        "url": "",
+        "label": "UWA Project",
+        "technologies": ["Python"],
+        "achievement": "HD",
+        "rank": "",
+        "description": ""
+      }
+    ]
+  }
+]

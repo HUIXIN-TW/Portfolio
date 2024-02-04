@@ -1,5 +1,7 @@
 import React from "react";
-import repairLabGif from "../assets/images/repair-lab.gif";
+import repairLab from "../assets/images/repair-lab.gif";
+import hackathonDataSciencePoster from "../assets/images/hackathon-data-science-poster.jpg";
+import hackathonDataScienceSlides from "../assets/images/hackathon-data-science-slides.gif";
 import YouTubeVideo from "./common/YouTubeVideo";
 import GifDisplay from "./common/GifDisplay";
 
@@ -9,6 +11,7 @@ const Volunteer = ({ data }) => {
       <a href={data.url} target="_blank" rel="noopener noreferrer">
         <h3 style={{ flexBasis: "40px" }}>
           {data.project} - {data.company}
+          {data.rank && <span> (Rank: {data.rank})</span>}
         </h3>
       </a>
       <p className="text-xs p-3">{data.period}</p>
@@ -31,7 +34,13 @@ const Volunteer = ({ data }) => {
       </divx>
       <div className="demo p-10">
         {data.youtubeVideoId && <YouTubeVideo videoId={data.youtubeVideoId} />}
-        {data.gifId === "repairlab" && <GifDisplay gifUrl={repairLabGif} />}
+        {data.gifId === "repairlab" && <GifDisplay gifUrl={repairLab} />}
+        {data.gifId === "hackathondatascienceposter" && (
+          <GifDisplay gifUrl={hackathonDataSciencePoster} />
+        )}
+        {data.gifId === "hackathondatascienceslides" && (
+          <GifDisplay gifUrl={hackathonDataScienceSlides} />
+        )}
       </div>
     </div>
   );

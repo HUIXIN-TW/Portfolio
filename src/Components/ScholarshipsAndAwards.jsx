@@ -24,7 +24,7 @@ const AwardHeader = styled.div`
 `;
 
 const AwardTitle = styled.h3`
-  text-align: right;
+  text-align: left;
 `;
 
 const AwardPeriod = styled.span`
