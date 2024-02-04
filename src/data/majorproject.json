@@ -1,31 +1,5 @@
 [
   {
-    "internship": [
-      {
-        "title": "Practera",
-        "occupation": "Business Consultant",
-        "company": "UseVerb",
-        "period": "2022.07 - 2022.08",
-        "technologies": [
-          "SWOT Analysis",
-          "PESTLE Analysis",
-          "Competitor Analysis",
-          "Digital Marketing"
-        ],
-        "description": [
-          "Collaborated with UseVerb, leveraging my expertise in business consulting to enhance their marketing strategies.",
-          "Conducted a comprehensive SWOT analysis to identify strengths, weaknesses, opportunities, and threats, enabling a more targeted approach to marketing and outreach.",
-          "Utilized PESTLE analysis to understand the macro-environmental factors affecting UseVerb, ensuring that marketing strategies were adaptable and relevant.",
-          "Performed an in-depth competitor analysis to benchmark UseVerb’s services and identify unique positioning and value propositions in the market.",
-          "Developed and proposed innovative marketing strategies, integrating insights from SWOT, PESTLE, and competitor analysis, to effectively reach and engage the target audience.",
-          "Enhanced digital presence and community engagement through data-driven marketing initiatives, leading to measurable increases in service awareness and utilization.",
-          "Collaborated closely with the team to align the marketing plan with organizational goals, ensuring a cohesive and impactful brand message.",
-          "Contributed to a significant improvement in UseVerb’s market positioning and community impact, driven by strategic, analytical, and data-informed decision-making."
-        ]
-      }
-    ]
-  },
-  {
     "majorproject": [
       {
         "project": "Repair Labs project",
@@ -93,14 +67,15 @@
         "period": "2023.08 - 2023.11",
         "technologies": [
           "Python",
-          "networkx",
-          "requests",
+          "Python networkx",
+          "Python requests",
           "React",
           "ChatGPT API",
           "ChatGPT Fine Tuning Model",
-          "Prompt engineering & Feature engineering",
+          "Prompt Engineering",
           "Docker",
-          "Git"
+          "Git",
+          "MongoDB"
         ],
         "description": [
           "Led a team of 5 members in the development of a triple generator for the LLM project.",
@@ -126,7 +101,6 @@
           "Data Collection",
           "Model Development",
           "ETL Process",
-          "ETL Frameworks",
           "Feature Engineering"
         ],
         "description": [
@@ -166,114 +140,6 @@
           "Introduced innovative functionalities like historical transaction records, specific date balance checks, and a graphical representation of all account balances using bar charts for enhanced data visualization and user experience.",
           "Coordinated with a colleague, Remykung, for project development, leveraging collaborative tools and version control systems for efficient project management."
         ]
-      }
-    ]
-  },
-  {
-    "mini": [
-      {
-        "project": "FIFA",
-        "company": "Independent Project",
-        "url": ""
-      }
-    ]
-  },
-  {
-    "academic": [
-      {
-        "subject": "Agile Web Development",
-        "project": "BrewChat",
-        "url": "",
-        "label": "UWA Project",
-        "technologies": ["Javascript", "Flask", "SQLAlchemy", "unittest", "Git"],
-        "achievement": "HD",
-        "rank": "Top3",
-        "description": ""
-      },
-      {
-        "subject": "Data Warehousing",
-        "project": "Data Warehousing & Association Rule Mining",
-        "url": "",
-        "label": "UWA Project",
-        "technologies": ["R", "SQL", "SSMS", "Power BI"],
-        "achievement": "HD",
-        "rank": "Top2",
-        "description": ""
-      },
-      {
-        "subject": "Data Warehousing",
-        "project": "Graph Database & Graph Data Science",
-        "url": "",
-        "label": "UWA Project",
-        "technologies": ["Neo4j", "Cypher", "R"],
-        "achievement": "HD",
-        "rank": "Top4",
-        "description": ""
-      },
-      {
-        "subject": "Computational Data Analysis",
-        "project": "Exploratory data analysis and Machine learning models",
-        "url": "",
-        "label": "UWA Project",
-        "technologies": ["R", "RStudio", "Git"],
-        "achievement": "",
-        "rank": "Top1",
-        "description": ""
-      },
-      {
-        "subject": "Internet of Things",
-        "project": "ESP32 Air Quality Detector",
-        "url": "",
-        "label": "UWA Project",
-        "technologies": [
-          "C++",
-          "Flask",
-          "HTML",
-          "CSS",
-          "Javascript",
-          "Firebase Real-Time DB",
-          "Git"
-        ],
-        "achievement": "HD",
-        "rank": "",
-        "description": ""
-      },
-      {
-        "subject": "Business intelligence",
-        "project": "Business intelligence report",
-        "url": "",
-        "label": "UWA Project",
-        "technologies": ["Python", "PowerBI"],
-        "achievement": "HD",
-        "rank": "",
-        "description": ""
-      },
-      {
-        "subject": "Cybersecurity",
-        "url": "",
-        "label": "UWA Project",
-        "technologies": ["Bash", "Virtualisation", "Containerisation"],
-        "achievement": "HD",
-        "rank": "",
-        "description": ""
-      },
-      {
-        "subject": "Rational Database Management System",
-        "url": "",
-        "label": "UWA Project",
-        "technologies": ["SQL"],
-        "achievement": "HD",
-        "rank": "",
-        "description": ""
-      },
-      {
-        "subject": "COVID Analysis",
-        "url": "",
-        "label": "UWA Project",
-        "technologies": ["Python"],
-        "achievement": "HD",
-        "rank": "",
-        "description": ""
       }
     ]
   }
