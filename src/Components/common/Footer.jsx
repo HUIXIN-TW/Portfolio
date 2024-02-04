@@ -10,14 +10,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import devDotToIcon from "../images/socials/devdotto.svg";
-import envelopeIcon from "../images/socials/envelope.svg";
-import gitHubIcon from "../images/socials/github.svg";
-import instagramIcon from "../images/socials/instagram.svg";
-import linkedInIcon from "../images/socials/linkedin.svg";
-import mediumIcon from "../images/socials/medium.svg";
-import twitterIcon from "../images/socials/twitter.svg";
-import youTubeIcon from "../images/socials/youtube.svg";
+import devDotToIcon from "../../assets/images/socials/devdotto.svg";
+import envelopeIcon from "../../assets/images/socials/envelope.svg";
+import gitHubIcon from "../../assets/images/socials/github.svg";
+import instagramIcon from "../../assets/images/socials/instagram.svg";
+import linkedInIcon from "../../assets/images/socials/linkedin.svg";
+import mediumIcon from "../../assets/images/socials/medium.svg";
+import twitterIcon from "../../assets/images/socials/twitter.svg";
+import youTubeIcon from "../../assets/images/socials/youtube.svg";
 
 /**
  * 💡 Learning resources
