@@ -116,7 +116,7 @@
         "project": "Data Science Hackathon: Prototype Solution Presentation ",
         "company": "SLB",
         "occupation": "Data Science",
-        "demo": "../assests/images/Hackathon_poster_Data_Dolphins_Final.pdf",
+        "gifId": "hackathondatascienceslides",
         "period": "2023.09 - 2023.10",
         "rank": "3rd",
         "technologies": [
@@ -139,7 +139,7 @@
         "project": "Data Science Hackathon: Creative Poster at the WA Mining Conference",
         "company": "SLB",
         "occupation": "Data Science",
-        "demo": "../images/Hackathon_poster_Data_Dolphins_Final.pdf",
+        "gifId": "hackathondatascienceposter",
         "period": "2023.10",
         "rank": "4th",
         "technologies": ["Microsoft PowerPoint", "Dataiku"],
