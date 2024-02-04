@@ -67,7 +67,7 @@ const Contact = () => {
             huixin.yang.tw@gmail.com
           </a>{" "}
         </Highlight>
-        or download my
+        or download{" "}
         <a
           href="https://huixin-tw.github.io/Resume/"
           target="_blank"

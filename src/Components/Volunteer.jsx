@@ -35,8 +35,12 @@ const Volunteer = ({ data }) => {
       <div className="demo p-10">
         {data.youtubeVideoId && <YouTubeVideo videoId={data.youtubeVideoId} />}
         {data.gifId === "repairlab" && <GifDisplay gifUrl={repairLab} />}
-        {data.gifId === "hackathondatascienceposter" && <GifDisplay gifUrl={hackathonDataSciencePoster} />}
-        {data.gifId === "hackathondatascienceslides" && <GifDisplay gifUrl={hackathonDataScienceSlides} />}
+        {data.gifId === "hackathondatascienceposter" && (
+          <GifDisplay gifUrl={hackathonDataSciencePoster} />
+        )}
+        {data.gifId === "hackathondatascienceslides" && (
+          <GifDisplay gifUrl={hackathonDataScienceSlides} />
+        )}
       </div>
     </div>
   );
