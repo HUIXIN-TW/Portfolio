@@ -26,11 +26,11 @@
     ]
   },
   {
-    "volunteer": [
+    "majorproject": [
       {
         "project": "Repair Labs project",
         "company": "CFC",
-        "gifId": "repairlab",
+        "imgId": "repairlab",
         "url": "https://github.com/codersforcauses/repair-labs",
         "occupation": "Full Stack developer",
         "period": "2023.06 - Current",
@@ -71,6 +71,7 @@
       {
         "project": "Pets Of Older Persons project",
         "company": "CFC",
+        "imgId": "poops",
         "url": "https://github.com/codersforcauses/poops",
         "occupation": "Full Stack developer",
         "period": "2022.11 - 2023.02",
@@ -116,7 +117,7 @@
         "project": "Data Science Hackathon: Prototype Solution Presentation ",
         "company": "SLB",
         "occupation": "Data Science",
-        "gifId": "hackathondatascienceslides",
+        "imgId": "hackathondatascienceslides",
         "period": "2023.09 - 2023.10",
         "rank": "3rd",
         "technologies": [
@@ -139,7 +140,7 @@
         "project": "Data Science Hackathon: Creative Poster at the WA Mining Conference",
         "company": "SLB",
         "occupation": "Data Science",
-        "gifId": "hackathondatascienceposter",
+        "imgId": "hackathondatascienceposter",
         "period": "2023.10",
         "rank": "4th",
         "technologies": ["Microsoft PowerPoint", "Dataiku"],
@@ -165,6 +166,15 @@
           "Introduced innovative functionalities like historical transaction records, specific date balance checks, and a graphical representation of all account balances using bar charts for enhanced data visualization and user experience.",
           "Coordinated with a colleague, Remykung, for project development, leveraging collaborative tools and version control systems for efficient project management."
         ]
+      }
+    ]
+  },
+  {
+    "mini": [
+      {
+        "project": "FIFA",
+        "company": "Independent Project",
+        "url": ""
       }
     ]
   },
@@ -201,7 +211,7 @@
         "description": ""
       },
       {
-        "subject":"Computational Data Analysis",
+        "subject": "Computational Data Analysis",
         "project": "Exploratory data analysis and Machine learning models",
         "url": "",
         "label": "UWA Project",

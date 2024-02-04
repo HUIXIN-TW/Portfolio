@@ -1,20 +1,20 @@
 import React from "react";
 import profileData from "../data/projects.json";
-import Volunteer from "./Volunteer";
+import MajorProject from "./MajorProject";
 
 const Portfolio = () => {
-  const volunteerObject = profileData.find((item) => item.volunteer);
-  const volunteerData = volunteerObject ? volunteerObject.volunteer : [];
+  const majorprojectObject = profileData.find((item) => item.majorproject);
+  const majorprojectData = majorprojectObject ? majorprojectObject.majorproject : [];
 
   return (
     <section className="padding" id="portfolio">
       <h2 className="text-center">Work & Project Gallery</h2>
       <div className="pictureContainer flex flex-row p-2 lg:pt-12 lg:item-center">
-        {/* Render Volunteer Experience */}
-        {volunteerData && volunteerData.length > 0 && (
+        {/* Render MajorProject Experience */}
+        {majorprojectData && majorprojectData.length > 0 && (
           <div className="horizonalContainer w-full">
-            {volunteerData.map((item, index) => (
-              <Volunteer key={index} data={item} />
+            {majorprojectData.map((item, index) => (
+              <MajorProject key={index} data={item} />
             ))}
           </div>
         )}

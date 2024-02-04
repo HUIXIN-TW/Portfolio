@@ -19,6 +19,7 @@ const TerminalContainer = styled.div`
 const TerminalTitle = styled.h1`
   font-size: 1.5em;
   padding: 5px 10px;
+  margin-top: 75px;
   border-bottom: 2px solid #555; // Separator line
   width: 100%; // Full width
   text-align: center; // Center the title
