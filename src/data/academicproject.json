@@ -46,15 +46,7 @@
         "project": "ESP32 Air Quality Detector",
         "url": "",
         "label": "UWA Project",
-        "technologies": [
-          "C++",
-          "Flask",
-          "HTML",
-          "CSS",
-          "JavaScript",
-          "Firebase",
-          "Git"
-        ],
+        "technologies": ["C++", "Flask", "HTML", "CSS", "JavaScript", "Firebase", "Git"],
         "achievement": "HD",
         "rank": "",
         "description": ""
