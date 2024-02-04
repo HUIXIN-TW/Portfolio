@@ -24,11 +24,11 @@ const AwardHeader = styled.div`
 `;
 
 const AwardTitle = styled.h3`
-  color: #333;
+  text-align: right;
 `;
 
 const AwardPeriod = styled.span`
-  text-align: left;
+  text-align: right;
   font-style: italic;
 `;
 
