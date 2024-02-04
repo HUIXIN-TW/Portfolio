@@ -1,11 +1,12 @@
 import React from "react";
 import repairLab from "../assets/images/repair-lab.gif";
+import poops from "../assets/images/poops.png";
 import hackathonDataSciencePoster from "../assets/images/hackathon-data-science-poster.jpg";
 import hackathonDataScienceSlides from "../assets/images/hackathon-data-science-slides.gif";
 import YouTubeVideo from "./common/YouTubeVideo";
-import GifDisplay from "./common/GifDisplay";
+import ImgDisplay from "./common/ImgDisplay";
 
-const Volunteer = ({ data }) => {
+const MajorProject = ({ data }) => {
   return (
     <div className="horizonalContainerBox">
       <a href={data.url} target="_blank" rel="noopener noreferrer">
@@ -34,16 +35,17 @@ const Volunteer = ({ data }) => {
       </divx>
       <div className="demo p-10">
         {data.youtubeVideoId && <YouTubeVideo videoId={data.youtubeVideoId} />}
-        {data.gifId === "repairlab" && <GifDisplay gifUrl={repairLab} />}
-        {data.gifId === "hackathondatascienceposter" && (
-          <GifDisplay gifUrl={hackathonDataSciencePoster} />
+        {data.imgId === "repairlab" && <ImgDisplay imgUrl={repairLab} />}
+        {data.imgId === "poops" && <ImgDisplay imgUrl={poops} />}
+        {data.imgId === "hackathondatascienceposter" && (
+          <ImgDisplay imgUrl={hackathonDataSciencePoster} />
         )}
-        {data.gifId === "hackathondatascienceslides" && (
-          <GifDisplay gifUrl={hackathonDataScienceSlides} />
+        {data.imgId === "hackathondatascienceslides" && (
+          <ImgDisplay imgUrl={hackathonDataScienceSlides} />
         )}
       </div>
     </div>
   );
 };
 
-export default Volunteer;
+export default MajorProject;

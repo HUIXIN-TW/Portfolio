@@ -1,0 +1,93 @@
+[
+  {
+    "academicproject": [
+      {
+        "subject": "Agile Web Development",
+        "project": "BrewChat",
+        "url": "",
+        "label": "UWA Project",
+        "technologies": ["JavaScript", "Flask", "SQLAlchemy", "unittest", "Git"],
+        "achievement": "HD",
+        "rank": "Top3",
+        "description": ""
+      },
+      {
+        "subject": "Data Warehousing",
+        "project": "Data Warehousing & Association Rule Mining",
+        "url": "",
+        "label": "UWA Project",
+        "technologies": ["R", "SQL", "SSMS", "Power BI"],
+        "achievement": "HD",
+        "rank": "Top2",
+        "description": ""
+      },
+      {
+        "subject": "Data Warehousing",
+        "project": "Graph Database & Graph Data Science",
+        "url": "",
+        "label": "UWA Project",
+        "technologies": ["Neo4j", "Cypher", "R"],
+        "achievement": "HD",
+        "rank": "Top4",
+        "description": ""
+      },
+      {
+        "subject": "Computational Data Analysis",
+        "project": "Exploratory data analysis and Machine learning models",
+        "url": "",
+        "label": "UWA Project",
+        "technologies": ["R", "RStudio", "Git"],
+        "achievement": "",
+        "rank": "Top1",
+        "description": ""
+      },
+      {
+        "subject": "Internet of Things",
+        "project": "ESP32 Air Quality Detector",
+        "url": "",
+        "label": "UWA Project",
+        "technologies": ["C++", "Flask", "HTML", "CSS", "JavaScript", "Firebase", "Git"],
+        "achievement": "HD",
+        "rank": "",
+        "description": ""
+      },
+      {
+        "subject": "Business intelligence",
+        "project": "Business intelligence report",
+        "url": "",
+        "label": "UWA Project",
+        "technologies": ["Python", "Power BI"],
+        "achievement": "HD",
+        "rank": "",
+        "description": ""
+      },
+      {
+        "subject": "Cybersecurity",
+        "url": "",
+        "label": "UWA Project",
+        "technologies": ["Bash", "Virtualisation", "Containerisation"],
+        "achievement": "HD",
+        "rank": "",
+        "description": ""
+      },
+      {
+        "subject": "Rational Database Management System",
+        "url": "",
+        "label": "UWA Project",
+        "technologies": ["SQL"],
+        "achievement": "HD",
+        "rank": "",
+        "description": ""
+      },
+      {
+        "subject": "COVID Analysis",
+        "url": "",
+        "label": "UWA Project",
+        "technologies": ["Python"],
+        "achievement": "HD",
+        "rank": "",
+        "description": ""
+      }
+    ]
+  }
+]

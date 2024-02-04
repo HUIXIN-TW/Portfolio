@@ -1,21 +1,35 @@
-import React from "react";
-import profileData from "../data/projects.json";
-import Volunteer from "./Volunteer";
+import React, { useState } from "react";
+import majorproject from "../data/majorproject.json";
+import MajorProject from "./MajorProject";
+import TechnologiesButton from "./TechnologiesButton";
 
 const Portfolio = () => {
-  const volunteerObject = profileData.find((item) => item.volunteer);
-  const volunteerData = volunteerObject ? volunteerObject.volunteer : [];
+  const [selectedTechnology, setSelectedTechnology] = useState(null);
+
+  const handleTechnologyClick = (technology) => {
+    setSelectedTechnology(technology);
+  };
+
+  const majorprojectObject = majorproject.find((item) => item.majorproject);
+  const majorprojectData = majorprojectObject ? majorprojectObject.majorproject : [];
 
   return (
     <section className="padding" id="portfolio">
       <h2 className="text-center">Work & Project Gallery</h2>
+      <div className="flex justify-center mt-5 mr-20 ml-20 mb-5 p-3">
+        <TechnologiesButton onTechnologyClick={handleTechnologyClick} />
+      </div>
       <div className="pictureContainer flex flex-row p-2 lg:pt-12 lg:item-center">
-        {/* Render Volunteer Experience */}
-        {volunteerData && volunteerData.length > 0 && (
+        {/* Render MajorProject Experience */}
+        {majorprojectData && majorprojectData.length > 0 && (
           <div className="horizonalContainer w-full">
-            {volunteerData.map((item, index) => (
-              <Volunteer key={index} data={item} />
-            ))}
+            {majorprojectData
+              .filter((project) =>
+                selectedTechnology ? project.technologies.includes(selectedTechnology) : true
+              )
+              .map((item, index) => (
+                <MajorProject key={index} data={item} />
+              ))}
           </div>
         )}
       </div>
