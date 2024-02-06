@@ -176,14 +176,15 @@ a:hover {
 }
 
 .horizonalContainer {
-  max-width: 100%;
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  overflow-x: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); 
+  grid-auto-rows: minmax(100px, auto);
+  gap: 20px; /* Ensure this gap is suitable for your new min-width */
   padding-top: 1rem;
   margin-left: 5rem;
   margin-right: 5rem;
+  overflow: hidden;
+  align-items: start;
 }
 
 /* Media query for smaller screens (e.g., mobile devices) */
@@ -207,8 +208,8 @@ a:hover {
   justify-content: flex-start;
   padding: 24px 16px;
   text-align: center;
-  flex: 0 0 auto;
-  width: 55rem;
+  min-width: 500px; /* New minimum width */
+  max-width: 55rem; /* optional, adjust as needed */
 }
 
 /* Media query for smaller screens (e.g., mobile devices) */
