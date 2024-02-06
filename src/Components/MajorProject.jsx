@@ -1,4 +1,5 @@
 import React from "react";
+import { Disclosure } from "@headlessui/react";
 import repairLab from "../assets/images/repair-lab.gif";
 import poops from "../assets/images/poops.png";
 import hackathonDataSciencePoster from "../assets/images/hackathon-data-science-poster.jpg";
@@ -24,15 +25,7 @@ const MajorProject = ({ data }) => {
           </span> // Render each technology as a hashtag
         ))}
       </div>
-      <divx>
-        <ul className="text-left list-disc list-inside">
-          {data.description.map((desc, index) => (
-            <li className="whitespace-normal" key={index}>
-              {desc}
-            </li> // Render each description item as a list item
-          ))}
-        </ul>
-      </divx>
+
       <div className="demo p-10">
         {data.youtubeVideoId && <YouTubeVideo videoId={data.youtubeVideoId} />}
         {data.imgId === "repairlab" && <ImgDisplay imgUrl={repairLab} />}
@@ -44,6 +37,40 @@ const MajorProject = ({ data }) => {
           <ImgDisplay imgUrl={hackathonDataScienceSlides} />
         )}
       </div>
+
+      <Disclosure as="div" className="mt-2">
+        {({ open }) => (
+          <>
+            <Disclosure.Button className="flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-gray-600 rounded-lg hover:bg-gray-200 focus:outline-none focus-visible:ring focus-visible:ring-gray-500 focus-visible:ring-opacity-75">
+              <span>Project Description</span>
+              <svg
+                className={`${open ? "transform rotate-180" : ""} w-5 h-5`}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </Disclosure.Button>
+            <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
+              <div>
+                <ul className="text-left list-disc list-inside">
+                  {data.description.map((desc, index) => (
+                    <li className="whitespace-normal" key={index}>
+                      {desc}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Disclosure.Panel>
+          </>
+        )}
+      </Disclosure>
     </div>
   );
 };

@@ -176,14 +176,17 @@ a:hover {
 }
 
 .horizonalContainer {
-  max-width: 100%;
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  overflow-x: auto;
-  padding-top: 1rem;
-  margin-left: 5rem;
-  margin-right: 5rem;
+  column-count: 3; /* Number of columns */
+  column-gap: 20px;
+  width: 100%;
+}
+
+@media (max-width: 1080px) {
+  .horizonalContainer {
+    column-count: 2; /* Number of columns */
+    column-gap: 20px;
+    width: 100%;
+  }
 }
 
 /* Media query for smaller screens (e.g., mobile devices) */
@@ -200,6 +203,8 @@ a:hover {
 }
 
 .horizonalContainerBox {
+  break-inside: avoid; /* Prevents boxes from being split across columns */
+  margin-bottom: 40px;
   border-radius: 10px;
   border: 1px solid rgb(204, 204, 204);
   display: flex;
@@ -207,8 +212,7 @@ a:hover {
   justify-content: flex-start;
   padding: 24px 16px;
   text-align: center;
-  flex: 0 0 auto;
-  width: 55rem;
+  max-width: 55rem; /* optional, adjust as needed */
 }
 
 /* Media query for smaller screens (e.g., mobile devices) */
