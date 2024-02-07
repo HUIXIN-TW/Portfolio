@@ -26,15 +26,31 @@ const MajorProject = ({ data }) => {
         ))}
       </div>
 
-      <div className="demo p-10">
-        {data.youtubeVideoId && <YouTubeVideo videoId={data.youtubeVideoId} />}
-        {data.imgId === "repairlab" && <ImgDisplay imgUrl={repairLab} />}
-        {data.imgId === "poops" && <ImgDisplay imgUrl={poops} />}
+      <div className="demo p-0 w-full">
+        {data.youtubeVideoId && (
+          <div className="image-wrapper">
+            <YouTubeVideo videoId={data.youtubeVideoId} />
+          </div>
+        )}
+        {data.imgId === "repairlab" && (
+          <div className="image-wrapper">
+            <ImgDisplay imgUrl={repairLab} />
+          </div>
+        )}
+        {data.imgId === "poops" && (
+          <div className="image-wrapper">
+            <ImgDisplay imgUrl={poops} />
+          </div>
+        )}
         {data.imgId === "hackathondatascienceposter" && (
-          <ImgDisplay imgUrl={hackathonDataSciencePoster} />
+          <div className="image-wrapper">
+            <ImgDisplay imgUrl={hackathonDataSciencePoster} />
+          </div>
         )}
         {data.imgId === "hackathondatascienceslides" && (
-          <ImgDisplay imgUrl={hackathonDataScienceSlides} />
+          <div className="image-wrapper">
+            <ImgDisplay imgUrl={hackathonDataScienceSlides} />
+          </div>
         )}
       </div>
 

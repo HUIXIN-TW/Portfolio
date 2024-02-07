@@ -8,17 +8,14 @@ const imageAltText =
 
 const Introduction = ({ name, title }) => {
   return (
-    <section id="introduction" className="min-height">
-      <img className="background" src={image} alt="" />
-      <div style={{ position: "absolute", top: "7rem", left: "3rem", width: "20rem" }}>
+    <section id="introduction" className="min-h-screen relative">
+      <img className="absolute w-full h-full object-cover" src={image} alt={imageAltText} />
+      <div className="absolute top-30 left-1 w-80 md: top-20 md:left-12">
         <h1>{name}</h1>
         <h2>{title}</h2>
       </div>
-      <div
-        className="scroll-down-arrow"
-        style={{ position: "absolute", bottom: "3rem", left: "50%" }}
-      >
-        <img src={arrowSvg} style={{ height: "3rem", width: "3rem" }} alt={imageAltText} />
+      <div className="scroll-down-arrow absolute bottom-12 left-1/2 transform -translate-x-1/2">
+        <img src={arrowSvg} className="h-12 w-12" alt="" />
       </div>
     </section>
   );
