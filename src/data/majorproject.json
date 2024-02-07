@@ -16,7 +16,8 @@
           "Vercel",
           "Prisma",
           "Postgres",
-          "Docker"
+          "Docker",
+          "Git"
         ],
         "description": [
           "Actively contributing as a member of the Repair Labs Project.",
@@ -33,7 +34,7 @@
         "youtubeVideoId": "9IbUIj8mNl8",
         "occupation": "Full Stack Developer",
         "period": "2021 - Current",
-        "technologies": ["Python", "Notion API", "Google Calendar API", "Docker"],
+        "technologies": ["Python", "Notion API", "Google Calendar API", "Docker", "Git"],
         "description": [
           "Developed a command-line interface (CLI) for syncing data between Notion and Google Calendar.",
           "Implemented the ability to update events from Google Calendar to Notion and vice versa, allowing for seamless management of events between both platforms.",
@@ -50,7 +51,15 @@
         "occupation": "Full Stack developer",
         "period": "2022.11 - 2023.02",
         "label": "",
-        "technologies": ["Next.js", "TypeScript", "React", "Tailwind CSS", "Firebase", "Vercel"],
+        "technologies": [
+          "Next.js",
+          "TypeScript",
+          "React",
+          "Tailwind CSS",
+          "Firebase",
+          "Vercel",
+          "Git"
+        ],
         "description": [
           "Contributed as a team member in the Pets of Older Persons Project.",
           "Technology Stack: Next.js, TypeScript, React, Tailwind CSS, Firebase, and Vercel.",
@@ -75,6 +84,7 @@
           "Prompt Engineering",
           "Docker",
           "Git",
+          "Git Actions",
           "MongoDB"
         ],
         "description": [
@@ -131,7 +141,7 @@
         "youtubeVideoId": "LcTDTIHJFMQ",
         "occupation": "Full Stack Developer",
         "period": "2021",
-        "technologies": ["Python Flask", "JavaScript", "SQL", "CSS", "HTML"],
+        "technologies": ["Python Flask", "JavaScript", "SQL", "CSS", "HTML", "Git"],
         "description": [
           "Developed a comprehensive financial recording application, QuickRecord, designed to assist users in managing their financial statements and collaborating with friends or family members.",
           "Technology Stack: Python Flask for backend services, JavaScript for dynamic client-side functionalities, and SQL for database management; styled with CSS and structured with HTML.",
