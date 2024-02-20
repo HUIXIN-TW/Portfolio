@@ -39,6 +39,7 @@ const AwardInstitution = styled.span`
 
 const AwardDescription = styled.p`
   font-size: 0.9em;
+  white-space: pre-line;
 `;
 
 const ScholarshipsAndAwards = () => {
