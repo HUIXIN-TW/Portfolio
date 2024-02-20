@@ -7,9 +7,10 @@ const YouTubeVideo = ({ videoId }) => {
     <iframe
       className="w-full h-full" // Ensure full width and height within its container
       src={src}
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
       title="Embedded YouTube Video"
+      autoPlay="0"
     ></iframe>
   );
 };

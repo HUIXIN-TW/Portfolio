@@ -9,6 +9,7 @@
         "occupation": "Full Stack developer",
         "period": "2023.06 - Current",
         "technologies": [
+          "About Software Development",
           "Next.js",
           "TypeScript",
           "React",
@@ -20,11 +21,11 @@
           "Git"
         ],
         "description": [
-          "Actively contributing as a member of the Repair Labs Project.",
-          "Technology Stack: Next.js, TypeScript, React, Tailwind CSS, and Vercel; Prisma as ORM, Postgres, and Docker for local DB.",
-          "Designed mobile and desktop layouts using Figma, ensuring a user-friendly interface.",
-          "Developed robust APIs to seamlessly connect frontend pages with the backend database, facilitating efficient data retrieval and updates.",
-          "Achievements: Successfully created and merged three pull requests via GitHub into the main branch within one month."
+          "- Actively contributing as a member of the Repair Labs Project.",
+          "- Technology Stack: Next.js, TypeScript, React, Tailwind CSS, and Vercel; Prisma as ORM, Postgres, and Docker for local DB.",
+          "- Designed mobile and desktop layouts using Figma, ensuring a user-friendly interface.",
+          "- Developed robust APIs to seamlessly connect frontend pages with the backend database, facilitating efficient data retrieval and updates.",
+          "- Achievements: Successfully created and merged three pull requests via GitHub into the main branch within one month."
         ]
       },
       {
@@ -34,13 +35,20 @@
         "youtubeVideoId": "9IbUIj8mNl8",
         "occupation": "Full Stack Developer",
         "period": "2021 - Current",
-        "technologies": ["Python", "Notion API", "Google Calendar API", "Docker", "Git"],
+        "technologies": [
+          "About Software Development",
+          "Python",
+          "Notion API",
+          "Google Calendar API",
+          "Docker",
+          "Git"
+        ],
         "description": [
-          "Developed a command-line interface (CLI) for syncing data between Notion and Google Calendar.",
-          "Implemented the ability to update events from Google Calendar to Notion and vice versa, allowing for seamless management of events between both platforms.",
-          "Offered features such as timezone and date range customization, default length setting for new Google Calendar events, and the option to delete Google Calendar events when marked as 'Done' in Notion.",
-          "Provided support for syncing across multiple calendars and the flexibility to name Notion columns as desired for the code to work.",
-          "Implemented credential and OAuth consent screen integration with Google Calendar scope for secure authentication and access to Google Calendar data."
+          "- Developed a command-line interface (CLI) for syncing data between Notion and Google Calendar.",
+          "- Implemented the ability to update events from Google Calendar to Notion and vice versa, allowing for seamless management of events between both platforms.",
+          "- Offered features such as timezone and date range customization, default length setting for new Google Calendar events, and the option to delete Google Calendar events when marked as 'Done' in Notion.",
+          "- Provided support for syncing across multiple calendars and the flexibility to name Notion columns as desired for the code to work.",
+          "- Implemented credential and OAuth consent screen integration with Google Calendar scope for secure authentication and access to Google Calendar data."
         ]
       },
       {
@@ -52,6 +60,7 @@
         "period": "2022.11 - 2023.02",
         "label": "",
         "technologies": [
+          "About Software Development",
           "Next.js",
           "TypeScript",
           "React",
@@ -61,10 +70,40 @@
           "Git"
         ],
         "description": [
-          "Contributed as a team member in the Pets of Older Persons Project.",
-          "Technology Stack: Next.js, TypeScript, React, Tailwind CSS, Firebase, and Vercel.",
-          "Utilized Figma to craft intuitive mobile and desktop layouts.",
-          "Collaborated effectively with other student volunteers, utilizing Git version control."
+          "- Contributed as a team member in the Pets of Older Persons Project.",
+          "- Technology Stack: Next.js, TypeScript, React, Tailwind CSS, Firebase, and Vercel.",
+          "- Utilized Figma to craft intuitive mobile and desktop layouts.",
+          "- Collaborated effectively with other student volunteers, utilizing Git version control."
+        ]
+      },
+      {
+        "project": "Data Analysis Dashboard with ESP32",
+        "company": "University Project (Rank: HD)",
+        "imgId": "ESP32",
+        "url": "https://github.com/HUIXIN-TW/CITS5506IOT",
+        "occupation": "Hardware and Arudino Developer with ESP32",
+        "period": "2023.08 - 2023.11",
+        "technologies": [
+          "About Data Analysis",
+          "ESP32",
+          "Arduino",
+          "C++",
+          "Python",
+          "Flask",
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "Firebase",
+          "Git"
+        ],
+        "description": [
+          "- This report presents a solution to the urgent air quality issues in the Australian mining industry. Extensive research has highlighted the significant health and safety risks faced by mining personnel due to their exposure to toxic gases, such as methane, carbon monoxide, carbon dioxide, nitrogen dioxide, and particulate matter, during various mining operations.",
+          "- To mitigate these risks, the report outlines the development of Smart Air Quality Monitoring System, which integrates hardware and software solutions for real-time air quality monitoring and the immediate issuance of hazard alerts based on predefined thresholds.",
+          "- The system aims to ensure worker safety, regulatory compliance, and environmental impact assessment.",
+          "- The report provides comprehensive insights into the criteria for selecting the hardware components, including considerations such as availability, cost, scalability, power limitations, and ease of integration.",
+          "- Specific sensors tailored to monitor key pollutants are described. ",
+          "- With the ESP32 T-Beam microcontroller used for data collection and transmission through WIFI, data collected securely has been stored in Firebase, and can be accessed through a Flask-based web application for real-time monitoring and data analysis.",
+          "- This solution offers an approach to monitoring and ensuring air quality in mining environments, with a primary focus on worker safety, regulatory compliance, and environmental responsibility."
         ]
       },
       {
@@ -75,6 +114,8 @@
         "occupation": "Team Leader",
         "period": "2023.08 - 2023.11",
         "technologies": [
+          "About Software Development",
+          "About Data Analysis",
           "Python",
           "Python networkx",
           "Python requests",
@@ -88,14 +129,14 @@
           "MongoDB"
         ],
         "description": [
-          "Led a team of 5 members in the development of a triple generator for the LLM project.",
-          "The project aimed to transform unstructured text data into a structured knowledge graph using natural language processing techniques.",
-          "Technologies such as Python, networkx, and requests were employed for data processing and retrieval.",
-          "The React framework was used to create a user-friendly interface for interacting with the triple generator.",
-          "Leveraged the ChatGPT API and ChatGPT Fine Tuning Model for advanced natural language understanding and generation.",
-          "Implemented prompt engineering and feature engineering to enhance the accuracy and efficiency of triple generation.",
-          "Docker was utilized for containerization, ensuring easy deployment and scalability of the application.",
-          "Version control and collaborative development were managed using Git, facilitating efficient teamwork and code management."
+          "- Led a team of 5 members in the development of a triple generator for the LLM project.",
+          "- The project aimed to transform unstructured text data into a structured knowledge graph using natural language processing techniques.",
+          "- Technologies such as Python, networkx, and requests were employed for data processing and retrieval.",
+          "- The React framework was used to create a user-friendly interface for interacting with the triple generator.",
+          "- Leveraged the ChatGPT API and ChatGPT Fine Tuning Model for advanced natural language understanding and generation.",
+          "- Implemented prompt engineering and feature engineering to enhance the accuracy and efficiency of triple generation.",
+          "- Docker was utilized for containerization, ensuring easy deployment and scalability of the application.",
+          "- Version control and collaborative development were managed using Git, facilitating efficient teamwork and code management."
         ]
       },
       {
@@ -106,18 +147,21 @@
         "period": "2023.09 - 2023.10",
         "rank": "3rd",
         "technologies": [
+          "About Data Analysis",
           "Dataiku",
           "LSTM",
           "Data Collection",
           "Model Development",
           "ETL Process",
-          "Feature Engineering"
+          "Feature Engineering",
+          "Python",
+          "Jupyter Notebook"
         ],
         "description": [
-          "Developed a mining exploration lithology identification model using LSTM.",
-          "Addressed challenges in accurately identifying lithology in mining exploration data.",
-          "Collaborated with a multidisciplinary team on data collection, model development, and ETL frameworks and processes.",
-          "Presented the LSTM solution, showcasing its effectiveness in improving identification accuracy."
+          "- Developed a mining exploration lithology identification model using LSTM.",
+          "- Addressed challenges in accurately identifying lithology in mining exploration data.",
+          "- Collaborated with a multidisciplinary team on data collection, model development, and ETL frameworks and processes.",
+          "- Presented the LSTM solution, showcasing its effectiveness in improving identification accuracy."
         ]
       },
       {
@@ -127,12 +171,87 @@
         "imgId": "hackathondatascienceposter",
         "period": "2023.10",
         "rank": "4th",
-        "technologies": ["Microsoft PowerPoint", "Dataiku"],
+        "technologies": ["About Data Analysis", "Dataiku"],
         "description": [
-          "Designed an engaging and informative poster showcasing the applications and benefits of the developed model.",
-          "Presented findings at the conference, highlighting the impact of accurate lithology identification in mining exploration.",
-          "Received recognition for the innovative approach to solving exploration challenges."
+          "- Designed an engaging and informative poster showcasing the applications and benefits of the developed model.",
+          "- Presented findings at the conference, highlighting the impact of accurate lithology identification in mining exploration.",
+          "- Received recognition for the innovative approach to solving exploration challenges."
         ]
+      },
+      {
+        "project": "BrewChat Application",
+        "company": "University Project (Rank: 3th, HD)",
+        "occupation": "Full Stack Developer",
+        "imgId": "brewchat",
+        "period": "2023.04 - 2023.05",
+        "technologies": [
+          "About Software Development",
+          "Python",
+          "Flask",
+          "SQLAlchemy",
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "Unit Testing",
+          "Selenium",
+          "Eliza Chatbot",
+          "Git"
+        ],
+        "description": [
+          "BrewChat is built using HTML, CSS, Flask, AJAX, jQuery, and the SQLAlchemy database framework, with the chat function powered by Socket.IO.",
+          "- Client-side (Frontend): The client-side of BrewChat encompasses the user interface developed using HTML, CSS, and JavaScript. It provides an intuitive and visually appealing experience to users, allowing them to interact with the application. AJAX and jQuery are utilized for asynchronous requests and dynamic UI updates, enhancing the user experience.",
+          "- Server-side (Backend): The server-side of BrewChat is built using the Flask web framework, which handles the server-side logic and serves the application's routes. Flask enables the processing of client requests, performs business logic, and communicates with databases and other services. Flask-SocketIO facilitates real-time bidirectional communication between clients and the server for chat functionality.",
+          "- Chatbot (Backend): BrewChat incorporates the Eliza Chatbot as part of the backend functionality. The Eliza Chatbot, implemented using the Natural Language Toolkit (NLTK), enables chat-based conversations with users. It processes user input, performs natural language processing, generates appropriate responses, and communicates with the client-side interface.",
+          "- Database: BrewChat utilizes the SQLAlchemy database framework to interact with the SQLite database. The SQLite database stores user information, conversation pairings, and relevant chat logs. SQLAlchemy provides an Object-Relational Mapping (ORM) tool, simplifying database operations within the application.",
+          "The BrewChat application includes a suite of unit tests to ensure the correctness and functionality of the various components. These tests are designed to cover different aspects of the application and help identify any potential issues or bugs. The application also includes a suite of Selenium tests to verify the end-to-end functionality and user experience. These tests simulate user interactions with the application in a browser environment."
+        ]
+      },
+      {
+        "project": "Graph Database & Graph Data Science",
+        "company": "University Project (Rank: 4th, HD)",
+        "imgId": "graphql",
+        "url": "https://github.com/HUIXIN-TW/CITS5504",
+        "occupation": "Data Science",
+        "period": "2023.04 - 2023.05",
+        "technologies": ["About Data Analysis", "Neo4j", "Cypher", "R"],
+        "description": []
+      },
+      {
+        "project": "Data Warehousing & Association Rule Mining",
+        "company": "University Project (Rank: 2nd, HD)",
+        "imgId": "OLAP",
+        "url": "https://github.com/HUIXIN-TW/CITS5504",
+        "occupation": "Data Science",
+        "period": "2023.03 - 2023.04",
+        "technologies": [
+          "About Data Analysis",
+          "R",
+          "MySQL",
+          "SSMS",
+          "Visual Studio",
+          "SSAS",
+          "PowerBI"
+        ],
+        "description": [
+          "Dataset:",
+          "- For the purposes of this data warehousing project, we leveraged the Crime in Atlanta dataset spanning the years 2009 to 2017.",
+          "- This dataset encompasses a wealth of information regarding reported crime incidents, including details such as the neighborhood planning unit (NPU) and the assigned police beat for patrolling.",
+          "- Our analysis began with a subset of 225,000 records. Additionally, we supplemented this dataset by manually collecting zone and beat data from maps, enriching our dataset with a comprehensive concept hierarchy illustrating the relationships between zones and beats.",
+          "Purpose:",
+          "- The primary objective of our analysis is to unearth significant patterns and features within the data, thereby facilitating informed decision-making processes.",
+          "- Emphasis is placed on employing visualizations as a powerful tool for insight generation and addressing pertinent business queries.",
+          "- To this end, we harnessed the capabilities of Power BI, enabling the creation of dynamic dashboards and reports. The subsequent sections present our findings and visualizations tailored to address specific business queries."
+        ]
+      },
+      {
+        "project": "Data analysis and Machine learning models",
+        "company": "University Project (Rank: 1th, HD)",
+        "imgId": "cluster",
+        "url": "https://github.com/HUIXIN-TW/RProject",
+        "occupation": "Data Science",
+        "period": "2022.04 - 2022.05",
+        "technologies": ["About Data Analysis", "R", "RStuido", "Git"],
+        "description": []
       },
       {
         "project": "QuickRecord Financial Application",
@@ -140,15 +259,23 @@
         "url": "https://github.com/HUIXIN-TW/QuickRecord",
         "youtubeVideoId": "LcTDTIHJFMQ",
         "occupation": "Full Stack Developer",
-        "period": "2021",
-        "technologies": ["Python Flask", "JavaScript", "SQL", "CSS", "HTML", "Git"],
+        "period": "2021.12 - 2022.06",
+        "technologies": [
+          "About Software Development",
+          "Python Flask",
+          "JavaScript",
+          "SQL",
+          "CSS",
+          "HTML",
+          "Git"
+        ],
         "description": [
-          "Developed a comprehensive financial recording application, QuickRecord, designed to assist users in managing their financial statements and collaborating with friends or family members.",
-          "Technology Stack: Python Flask for backend services, JavaScript for dynamic client-side functionalities, and SQL for database management; styled with CSS and structured with HTML.",
-          "Implemented core features such as viewing balance and income statements, creating custom accounts, recording transactions, and sending friend requests for collaborative financial management.",
-          "Engineered a system allowing users to share specific account information with friends, displaying all changes on a 'Shared Account Message' page, and ensuring data privacy where necessary.",
-          "Introduced innovative functionalities like historical transaction records, specific date balance checks, and a graphical representation of all account balances using bar charts for enhanced data visualization and user experience.",
-          "Coordinated with a colleague, Remykung, for project development, leveraging collaborative tools and version control systems for efficient project management."
+          "- Developed a comprehensive financial recording application, QuickRecord, designed to assist users in managing their financial statements and collaborating with friends or family members.",
+          "- Technology Stack: Python Flask for backend services, JavaScript for dynamic client-side functionalities, and SQL for database management; styled with CSS and structured with HTML.",
+          "- Implemented core features such as viewing balance and income statements, creating custom accounts, recording transactions, and sending friend requests for collaborative financial management.",
+          "- Engineered a system allowing users to share specific account information with friends, displaying all changes on a 'Shared Account Message' page, and ensuring data privacy where necessary.",
+          "- Introduced innovative functionalities like historical transaction records, specific date balance checks, and a graphical representation of all account balances using bar charts for enhanced data visualization and user experience.",
+          "- Coordinated with a colleague, Remykung, for project development, leveraging collaborative tools and version control systems for efficient project management."
         ]
       }
     ]

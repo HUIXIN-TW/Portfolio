@@ -4,8 +4,38 @@ import repairLab from "../assets/images/repair-lab.gif";
 import poops from "../assets/images/poops.png";
 import hackathonDataSciencePoster from "../assets/images/hackathon-data-science-poster.jpg";
 import hackathonDataScienceSlides from "../assets/images/hackathon-data-science-slides.gif";
+import graphql from "../assets/images/graphql.png";
+import cluster from "../assets/images/cluster.png";
+import OLAP from "../assets/images/OLAP.gif";
+import brewchat from "../assets/images/brewchat.jpeg";
+import ESP32 from "../assets/images/ESP32.gif";
 import YouTubeVideo from "./common/YouTubeVideo";
 import ImgDisplay from "./common/ImgDisplay";
+
+const getImageUrl = (imgId) => {
+  switch (imgId) {
+    case "repairlab":
+      return repairLab;
+    case "poops":
+      return poops;
+    case "hackathondatascienceposter":
+      return hackathonDataSciencePoster;
+    case "hackathondatascienceslides":
+      return hackathonDataScienceSlides;
+    case "graphql":
+      return graphql;
+    case "cluster":
+      return cluster;
+    case "OLAP":
+      return OLAP;
+    case "brewchat":
+      return brewchat;
+    case "ESP32":
+      return ESP32;
+    default:
+      return null;
+  }
+};
 
 const MajorProject = ({ data }) => {
   return (
@@ -32,24 +62,9 @@ const MajorProject = ({ data }) => {
             <YouTubeVideo videoId={data.youtubeVideoId} />
           </div>
         )}
-        {data.imgId === "repairlab" && (
+        {data.imgId && (
           <div className="image-wrapper">
-            <ImgDisplay imgUrl={repairLab} />
-          </div>
-        )}
-        {data.imgId === "poops" && (
-          <div className="image-wrapper">
-            <ImgDisplay imgUrl={poops} />
-          </div>
-        )}
-        {data.imgId === "hackathondatascienceposter" && (
-          <div className="image-wrapper">
-            <ImgDisplay imgUrl={hackathonDataSciencePoster} />
-          </div>
-        )}
-        {data.imgId === "hackathondatascienceslides" && (
-          <div className="image-wrapper">
-            <ImgDisplay imgUrl={hackathonDataScienceSlides} />
+            <ImgDisplay imgUrl={getImageUrl(data.imgId)} />
           </div>
         )}
       </div>
@@ -76,11 +91,17 @@ const MajorProject = ({ data }) => {
             <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
               <div>
                 <ul className="text-left list-disc list-inside">
-                  {data.description.map((desc, index) => (
-                    <li className="whitespace-normal" key={index}>
-                      {desc}
-                    </li>
-                  ))}
+                  {data.description.map((desc, index) =>
+                    desc.startsWith("-") ? (
+                      <li className="px-4 pt-3 pb-3 text-sm text-gray-500" key={index}>
+                        {desc.substring(1)}
+                      </li>
+                    ) : (
+                      <span className="pt-6 pb-6 text-sm text-gray-500" key={index}>
+                        {desc}
+                      </span>
+                    )
+                  )}
                 </ul>
               </div>
             </Disclosure.Panel>
