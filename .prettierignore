@@ -3,3 +3,6 @@ build/
 dist/
 logs/
 *.log
+
+# Ignore all files in a folder
+src/assets/pdf/*

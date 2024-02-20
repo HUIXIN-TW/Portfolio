@@ -77,8 +77,8 @@
         ]
       },
       {
-        "project": "Data Analysis Dashboard with ESP32",
-        "company": "University Project (Rank: HD)",
+        "project": "Smart Air Quality Monitoring System with ESP32",
+        "company": "University Project (HD)",
         "imgId": "ESP32",
         "url": "https://github.com/HUIXIN-TW/CITS5506IOT",
         "occupation": "Hardware and Arudino Developer with ESP32",
@@ -97,10 +97,7 @@
           "Git"
         ],
         "description": [
-          "- This report presents a solution to the urgent air quality issues in the Australian mining industry. Extensive research has highlighted the significant health and safety risks faced by mining personnel due to their exposure to toxic gases, such as methane, carbon monoxide, carbon dioxide, nitrogen dioxide, and particulate matter, during various mining operations.",
-          "- To mitigate these risks, the report outlines the development of Smart Air Quality Monitoring System, which integrates hardware and software solutions for real-time air quality monitoring and the immediate issuance of hazard alerts based on predefined thresholds.",
           "- The system aims to ensure worker safety, regulatory compliance, and environmental impact assessment.",
-          "- The report provides comprehensive insights into the criteria for selecting the hardware components, including considerations such as availability, cost, scalability, power limitations, and ease of integration.",
           "- Specific sensors tailored to monitor key pollutants are described. ",
           "- With the ESP32 T-Beam microcontroller used for data collection and transmission through WIFI, data collected securely has been stored in Firebase, and can be accessed through a Flask-based web application for real-time monitoring and data analysis.",
           "- This solution offers an approach to monitoring and ensuring air quality in mining environments, with a primary focus on worker safety, regulatory compliance, and environmental responsibility."
