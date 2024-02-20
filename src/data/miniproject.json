@@ -4,7 +4,27 @@
       {
         "project": "FIFA",
         "company": "Independent Project",
-        "url": ""
+        "url": "https://github.com/HUIXIN-TW/FIFA"
+      },
+      {
+        "project": "react-firebase",
+        "company": "Independent Project",
+        "url": "https://github.com/HUIXIN-TW/react-firebase"
+      },
+      {
+        "project": "HelloDocker",
+        "company": "Independent Project",
+        "url": "https://github.com/HUIXIN-TW/HelloDocker"
+      },
+      {
+        "project": "todoList",
+        "company": "Independent Project",
+        "url": "https://github.com/HUIXIN-TW/todoList"
+      },
+      {
+        "project": "PetAdoption",
+        "company": "Independent Project",
+        "url": "https://github.com/HUIXIN-TW/PetAdoption"
       }
     ]
   }
