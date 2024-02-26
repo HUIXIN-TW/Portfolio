@@ -4,7 +4,7 @@ import Card from "./common/Card";
 const Referee = () => {
   return (
     <section className="padding" id="referee">
-      <div className="max-w-4xl mx-auto py-8 px-4">
+      <div className="max-w-4xl mx-auto">
         <h2 className="text-center">Referee</h2>
         <p className="text-base text-gray-700 italic mt-4 mb-8">
           Should you require further details or wish to establish contact, please do not hesitate to
