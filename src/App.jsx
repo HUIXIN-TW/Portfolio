@@ -7,6 +7,7 @@ import Home from "./Components/Home";
 import Education from "./Components/Education";
 import Portfolio from "./Components/Portfolio";
 import Contact from "./Components/Contact";
+import Referee from "./Components/Referee";
 
 import "./styles/main.css";
 
@@ -37,6 +38,7 @@ const App = () => {
           <Route path="/education" element={<Education />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/referee" element={<Referee />} />
         </Routes>
         <Footer {...siteProps} primaryColor={primaryColor} secondaryColor={secondaryColor} />
       </div>
