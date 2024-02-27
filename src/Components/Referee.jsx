@@ -26,7 +26,7 @@ const Referee = () => {
         <Card
           refereeName="Jamie Tang"
           refereeType="Personal Character"
-          currentPosition="Manager at UniHall"
+          currentPosition="Student Transitions Officer at UniHall"
           relationship="For one and a half years living at the residential college, Jamie, my residential advisor, closely observed my personal growth and adaptation in Australia. Her support was pivotal in navigating this significant phase of my life."
           periodWorking="Jul 2022 - Nov 2023"
         />
