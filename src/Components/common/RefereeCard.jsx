@@ -17,7 +17,13 @@ const RefereePeriod = styled.span`
   font-style: italic;
 `;
 
-const RefereeCard = ({ refereeName, refereeType, currentPosition, relationship, periodWorking }) => {
+const RefereeCard = ({
+  refereeName,
+  refereeType,
+  currentPosition,
+  relationship,
+  periodWorking,
+}) => {
   return (
     <div className="bg-white shadow-md rounded-lg p-6 mb-4">
       <RefereeHeader>
