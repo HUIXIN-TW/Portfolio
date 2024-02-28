@@ -8,6 +8,7 @@ import Education from "./Components/Education";
 import Portfolio from "./Components/Portfolio";
 import Contact from "./Components/Contact";
 import Referee from "./Components/Referee";
+import Experience from "./Components/Experience";
 
 import "./styles/main.css";
 
@@ -36,6 +37,7 @@ const App = () => {
           <Route path="/" element={<Home name={siteProps.name} title={siteProps.title} />} />
           <Route path="/about" element={<About />} />
           <Route path="/education" element={<Education />} />
+          <Route path="/experience" element={<Experience />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/referee" element={<Referee />} />

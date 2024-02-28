@@ -4,6 +4,8 @@ import image from "../assets/images/motion-background.jpg";
 import Button from "./common/Button";
 import Education from "./Education";
 import Portfolio from "./Portfolio";
+import Experience from "./Experience";
+import Referee from "./Referee";
 
 const imageAltText = "purple and blue abstract background";
 
@@ -63,7 +65,9 @@ const About = () => {
       {showDetails && (
         <>
           <Education />
+          <Experience />
           <Portfolio />
+          <Referee />
         </>
       )}
     </section>

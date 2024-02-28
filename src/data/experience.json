@@ -1,10 +1,40 @@
 [
   {
+    "occupation": "Casual Teaching Assistant",
+    "industry": "Education",
+    "company": "University of Western Australia",
+    "period": "2024.02 - Present",
+    "technologies": ["Python", "HTML", "SQL", "CSS", "Linux", "Git"],
+    "description": ["CITS5505 - Agile Web Development", "CITS1003 - Introduction to Cybersecurity"]
+  },
+  {
+    "occupation": "Full Stack Developer",
+    "industry": "Technology",
+    "company": "Coder For Causes",
+    "period": "2022.07 - Present",
+    "technologies": [
+      "Figma",
+      "Typescript",
+      "Javascript",
+      "React",
+      "Next.js",
+      "PostgreSQL",
+      "Prisma",
+      "Firebase",
+      "AWS",
+      "Docker",
+      "Tailwind CSS",
+      "Vercel",
+      "Git"
+    ],
+    "description": ["Developed a web application for a client to manage their business operations."]
+  },
+  {
     "occupation": "Assistant Manager",
     "industry": "Financial Services",
     "company": "Deloitte",
     "period": "2019.03 - 2020.08",
-    "technologies": ["US GAAP", "IFRS", "SOX", "COSO framework", "Microsoft Excel", "Power BI"],
+    "technologies": ["US GAAP", "IFRS", "SOX", "COSO framework", "Excel", "Power BI"],
     "description": [
       "Possessed sound knowledge of US GAAP, IFRS, and SOX internal control audits.",
       "Performed financial modelling to support and challenge key assumptions, such as DCF models.",
@@ -41,7 +71,7 @@
     "industry": "Education",
     "company": "Tekom Technologies, Inc",
     "period": "2016.03 - 2016.06",
-    "technologies": ["Accounting Instruction", "Educational Facilitation"],
+    "technologies": ["Intermedia Accounting", "Educational Facilitation"],
     "description": [
       "Provided guidance and delivered effective instruction in Intermediate Accounting, facilitating student understanding and proficiency."
     ]
