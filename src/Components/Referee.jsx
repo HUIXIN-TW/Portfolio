@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "./common/Card";
+import RefereeCard from "./common/RefereeCard";
 
 const Referee = () => {
   return (
@@ -15,7 +15,7 @@ const Referee = () => {
           . I am more than happy to provide the contact information upon request.
         </p>
 
-        <Card
+        <RefereeCard
           refereeName="Zhi Zhang"
           refereeType="Academic and Professional"
           currentPosition="Lecturer at UWA"
@@ -23,14 +23,14 @@ const Referee = () => {
           periodWorking="Since Feb 2024"
         />
 
-        <Card
+        <RefereeCard
           refereeName="Jamie Tang"
           refereeType="Personal Character"
           currentPosition="Student Transitions Officer at UniHall"
           relationship="For one and a half years living at the residential college, Jamie, my residential advisor, closely observed my personal growth and adaptation in Australia. Her support was pivotal in navigating this significant phase of my life."
           periodWorking="Jul 2022 - Nov 2023"
         />
-        <Card
+        <RefereeCard
           refereeName="Remy Kung"
           refereeType="Professional"
           currentPosition="Frontend Developer at Greenbase"
@@ -38,7 +38,7 @@ const Referee = () => {
           periodWorking="Mar 2019 - Apr 2020"
         />
 
-        <Card
+        <RefereeCard
           refereeName="Ken Pan"
           refereeType="Academic and Professional"
           currentPosition="Assistant Professor at Geneseo State College"
