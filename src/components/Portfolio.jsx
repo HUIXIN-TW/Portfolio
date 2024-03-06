@@ -24,6 +24,7 @@ const Portfolio = () => {
             href="https://what-to-eat-huixin-tw.vercel.app/"
             className="text-blue-500 hover:text-blue-600 underline"
           >
+            {" "}
             What to Eat app{" "}
           </a>
           — your new go-to for discovering and sharing mouth-watering lunch ideas. Whether you are
