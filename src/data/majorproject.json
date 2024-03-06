@@ -2,6 +2,32 @@
   {
     "majorproject": [
       {
+        "project": "WhatToEat app",
+        "company": "Independent Project",
+        "url": "https://github.com/HUIXIN-TW/what-to-eat",
+        "youtubeVideoId": "xVK-zeScOwU",
+        "occupation": "Full Stack developer",
+        "period": "2024.02 - 2024.03",
+        "technologies": [
+          "About Software Development",
+          "Next.js",
+          "JavaScript",
+          "React",
+          "Tailwind CSS",
+          "MongoDB",
+          "Vercel",
+          "Git"
+        ],
+        "description": [
+          "Spearheaded the development of WhatToEat, an intuitive web application aimed at simplifying daily lunch decision-making through a user-friendly interface.",
+          "- Implemented secure user authentication with optional NextAuth.js integration, offering both traditional and Google login methods to accommodate a broad user base.",
+          "- Designed and executed a dynamic search functionality, enabling users to discover lunch options based on preferences or tags.",
+          "- Fostered community engagement by allowing users to share and explore lunch ideas within the platform.",
+          "- Successfully deployed the app using Vercel, ensuring high availability and real-time updates.",
+          "- Managed source control with Git, facilitating collaborative development and version control."
+        ]
+      },
+      {
         "project": "Repair Labs project",
         "company": "CFC",
         "imgId": "repairlab",
