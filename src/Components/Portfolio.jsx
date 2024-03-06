@@ -26,7 +26,7 @@ const Portfolio = () => {
           >
             What to Eat app{" "}
           </a>
-          — your new go-to for discovering and sharing mouth-watering lunch ideas. Whether you're
+          — your new go-to for discovering and sharing mouth-watering lunch ideas. Whether you are
           seeking inspiration or eager to share your culinary adventures, this app is your perfect
           companion. Dive in now for a taste of something new and exciting. Bon appétit!
         </p>
