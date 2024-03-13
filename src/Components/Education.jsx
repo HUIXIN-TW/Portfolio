@@ -3,10 +3,9 @@ import { Disclosure } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/20/solid";
 import educationData from "../data/education.json";
 
-
 import ScholarshipsAndAwards from "./ScholarshipsAndAwards";
 
-const imageAltText = "School building";
+// const imageAltText = "School building";
 
 const Education = () => {
   return (
