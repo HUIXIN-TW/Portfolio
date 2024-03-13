@@ -27076,8 +27076,11 @@ var _education = require("./Components/Education");
 var _educationDefault = parcelHelpers.interopDefault(_education);
 var _portfolio = require("./Components/Portfolio");
 var _portfolioDefault = parcelHelpers.interopDefault(_portfolio);
-var _contact = require("./Components/Contact");
-var _contactDefault = parcelHelpers.interopDefault(_contact);
+// import Contact from "./Components/Contact";
+var _referee = require("./Components/Referee");
+var _refereeDefault = parcelHelpers.interopDefault(_referee);
+var _experience = require("./Components/Experience");
+var _experienceDefault = parcelHelpers.interopDefault(_experience);
 var _mainCss = require("./styles/main.css");
 const siteProps = {
     name: "Huixin Yang",
@@ -27090,7 +27093,7 @@ const siteProps = {
     twitter: "",
     youTube: ""
 };
-const primaryColor = "#4E567E";
+const primaryColor = "#808080";
 const secondaryColor = "#D2F1E4";
 const App = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.BrowserRouter), {
@@ -27099,7 +27102,7 @@ const App = ()=>{
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
                     fileName: "src/App.jsx",
-                    lineNumber: 32,
+                    lineNumber: 34,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Routes), {
@@ -27112,7 +27115,7 @@ const App = ()=>{
                             }, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/App.jsx",
-                            lineNumber: 35,
+                            lineNumber: 37,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27120,7 +27123,7 @@ const App = ()=>{
                             element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _aboutDefault.default), {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/App.jsx",
-                            lineNumber: 36,
+                            lineNumber: 38,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27128,7 +27131,15 @@ const App = ()=>{
                             element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _educationDefault.default), {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/App.jsx",
-                            lineNumber: 37,
+                            lineNumber: 39,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
+                            path: "/experience",
+                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _experienceDefault.default), {}, void 0, false, void 0, void 0)
+                        }, void 0, false, {
+                            fileName: "src/App.jsx",
+                            lineNumber: 40,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27136,21 +27147,21 @@ const App = ()=>{
                             element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _portfolioDefault.default), {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/App.jsx",
-                            lineNumber: 38,
+                            lineNumber: 41,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                            path: "/contact",
-                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contactDefault.default), {}, void 0, false, void 0, void 0)
+                            path: "/referee",
+                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _refereeDefault.default), {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/App.jsx",
-                            lineNumber: 39,
+                            lineNumber: 43,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/App.jsx",
-                    lineNumber: 34,
+                    lineNumber: 36,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerDefault.default), {
@@ -27159,18 +27170,18 @@ const App = ()=>{
                     secondaryColor: secondaryColor
                 }, void 0, false, {
                     fileName: "src/App.jsx",
-                    lineNumber: 41,
+                    lineNumber: 45,
                     columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/App.jsx",
-            lineNumber: 31,
+            lineNumber: 33,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/App.jsx",
-        lineNumber: 30,
+        lineNumber: 32,
         columnNumber: 5
     }, undefined);
 };
@@ -27184,7 +27195,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","./Components/About":"kouZu","./Components/Home":"jIEVO","./Components/Education":"6QZcy","./Components/Portfolio":"lCaEt","./styles/main.css":"clPKd","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./Components/common/Footer":"kxIIv","./Components/common/Header":"3G51o","./Components/Contact":"3ECXD"}],"9xmpe":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","./Components/common/Footer":"kxIIv","./Components/common/Header":"3G51o","./Components/About":"kouZu","./Components/Home":"jIEVO","./Components/Education":"6QZcy","./Components/Portfolio":"lCaEt","./Components/Referee":"dOkIL","./Components/Experience":"kFXFf","./styles/main.css":"clPKd","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9xmpe":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "AbortedDeferredError", ()=>(0, _reactRouter.AbortedDeferredError));
@@ -33705,171 +33716,1008 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"kouZu":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$17a8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{}],"kxIIv":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$f06b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$17a8.prelude(module);
+$parcel$ReactRefreshHelpers$f06b.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
+/**
+ * Footer component
+ *
+ * Displays avenues to contact you.
+ * Contact information is passed in from the App component that
+ * renders the Footer.
+ *
+ * If a social value has an empty string it will not be displayed.
+ */ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-var _motionBackgroundJpg = require("../assets/images/motion-background.jpg");
-var _motionBackgroundJpgDefault = parcelHelpers.interopDefault(_motionBackgroundJpg);
-var _button = require("./common/Button");
-var _buttonDefault = parcelHelpers.interopDefault(_button);
-var _education = require("./Education");
-var _educationDefault = parcelHelpers.interopDefault(_education);
-var _portfolio = require("./Portfolio");
-var _portfolioDefault = parcelHelpers.interopDefault(_portfolio);
-var _s = $RefreshSig$();
-const imageAltText = "purple and blue abstract background";
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _devdottoSvg = require("../../assets/images/socials/devdotto.svg");
+var _devdottoSvgDefault = parcelHelpers.interopDefault(_devdottoSvg);
+var _envelopeSvg = require("../../assets/images/socials/envelope.svg");
+var _envelopeSvgDefault = parcelHelpers.interopDefault(_envelopeSvg);
+var _githubSvg = require("../../assets/images/socials/github.svg");
+var _githubSvgDefault = parcelHelpers.interopDefault(_githubSvg);
+var _instagramSvg = require("../../assets/images/socials/instagram.svg");
+var _instagramSvgDefault = parcelHelpers.interopDefault(_instagramSvg);
+var _linkedinSvg = require("../../assets/images/socials/linkedin.svg");
+var _linkedinSvgDefault = parcelHelpers.interopDefault(_linkedinSvg);
+var _mediumSvg = require("../../assets/images/socials/medium.svg");
+var _mediumSvgDefault = parcelHelpers.interopDefault(_mediumSvg);
+var _twitterSvg = require("../../assets/images/socials/twitter.svg");
+var _twitterSvgDefault = parcelHelpers.interopDefault(_twitterSvg);
+var _youtubeSvg = require("../../assets/images/socials/youtube.svg");
+var _youtubeSvgDefault = parcelHelpers.interopDefault(_youtubeSvg);
 /**
- * Sort description that expands on your title on the Home component.
- */ const description = "As a dedicated software developer with a fervent interest in data science, I specialize in crafting elegant, user-friendly interfaces that seamlessly integrate sophisticated backend functionalities. My passion lies in harnessing the synergy between aesthetic design and powerful data-driven solutions to deliver interactive, intuitive, and impactful user experiences.";
-/**
- * List of some of skills or technologies you work on, are learning,
- * passionate about, or enjoy,
- */ const skillsList = [
-    "Agile Methodologies & Management",
-    "UI/UX Design & Prototyping",
-    "Full Stack Web Development",
-    "Data Warehousing & ETL Processes",
-    "Data Analysis & Visualization",
-    "Machine Learning & Data Mining", 
-];
-/**
- * Use this to give more information about what you are passionate about,
- * how you best work, or even a quote. This will help someone learn more
- * about you on a professional level.
- */ const detailOrQuote = "Driven by a profound dedication to innovation in web development and data science, I excel in blending front-end finesse with robust back-end solutions, ensuring seamless, full-stack integration. My passion extends to leveraging data science proficiency, using insightful analytics and machine learning to transform complex data into actionable, user-centric applications. My goal is to make technology not just accessible, but intuitively intelligent and responsive to user needs.";
-const About = ()=>{
-    _s();
-    const [showDetails, setShowDetails] = (0, _react.useState)(false); // State to toggle the visibility of Education and Portfolio
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
-        className: "padding",
-        id: "about",
+ * 💡 Learning resources
+ *
+ *  HTML hyperlinks: https://www.w3schools.com/html/html_links.asp
+ *  Opening links in new tabs: https://www.freecodecamp.org/news/how-to-use-html-to-open-link-in-new-tab/
+ */ const Footer = (props)=>{
+    const { devDotTo , email , gitHub , instagram , linkedIn , medium , name , primaryColor , twitter , youTube ,  } = props;
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        id: "footer",
+        style: {
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: "2rem",
+            padding: "1rem 0 1rem",
+            backgroundColor: primaryColor,
+            width: "100vw"
+        },
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                className: "background",
-                src: (0, _motionBackgroundJpgDefault.default),
-                alt: imageAltText
-            }, void 0, false, {
-                fileName: "src/Components/About.jsx",
-                lineNumber: 42,
-                columnNumber: 7
-            }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "bg-white w-full p-2 m-auto my-12 text-center sm:p-8 sm:w-3/4",
+                style: {
+                    display: "flex",
+                    justifyContent: "center",
+                    gap: "2.5rem"
+                },
                 children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                        children: "About Myself"
+                    email && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: `mailto:${email}`,
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                            src: (0, _envelopeSvgDefault.default),
+                            alt: "email",
+                            className: "socialIcon"
+                        }, void 0, false, {
+                            fileName: "src/Components/common/Footer.jsx",
+                            lineNumber: 65,
+                            columnNumber: 13
+                        }, undefined)
                     }, void 0, false, {
-                        fileName: "src/Components/About.jsx",
-                        lineNumber: 44,
-                        columnNumber: 9
+                        fileName: "src/Components/common/Footer.jsx",
+                        lineNumber: 64,
+                        columnNumber: 11
                     }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        className: "text-xs md:text-xl",
-                        children: description
+                    devDotTo && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: `https://dev.to/${devDotTo}`,
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                            src: (0, _devdottoSvgDefault.default),
+                            alt: "Dev.to",
+                            className: "socialIcon"
+                        }, void 0, false, {
+                            fileName: "src/Components/common/Footer.jsx",
+                            lineNumber: 70,
+                            columnNumber: 13
+                        }, undefined)
                     }, void 0, false, {
-                        fileName: "src/Components/About.jsx",
-                        lineNumber: 45,
-                        columnNumber: 9
+                        fileName: "src/Components/common/Footer.jsx",
+                        lineNumber: 69,
+                        columnNumber: 11
                     }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
-                        fileName: "src/Components/About.jsx",
-                        lineNumber: 46,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-                        className: "text-left text-sm grid grid-cols-1 md:grid-cols-2 sm:text-lg gap-3 m-8",
-                        children: skillsList.map((skill)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                children: [
-                                    "・",
-                                    skill
-                                ]
-                            }, skill, true, {
-                                fileName: "src/Components/About.jsx",
-                                lineNumber: 49,
-                                columnNumber: 13
-                            }, undefined))
+                    gitHub && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: `https://github.com/${gitHub}`,
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                            src: (0, _githubSvgDefault.default),
+                            alt: "GitHub",
+                            className: "socialIcon"
+                        }, void 0, false, {
+                            fileName: "src/Components/common/Footer.jsx",
+                            lineNumber: 75,
+                            columnNumber: 13
+                        }, undefined)
                     }, void 0, false, {
-                        fileName: "src/Components/About.jsx",
-                        lineNumber: 47,
-                        columnNumber: 9
+                        fileName: "src/Components/common/Footer.jsx",
+                        lineNumber: 74,
+                        columnNumber: 11
                     }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
-                        fileName: "src/Components/About.jsx",
-                        lineNumber: 52,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        className: "text-xs md:text-xl p-4 md:p-12",
-                        children: detailOrQuote
+                    instagram && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: `https://www.instagram.com/${instagram}`,
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                            src: (0, _instagramSvgDefault.default),
+                            alt: "Instagram",
+                            className: "socialIcon"
+                        }, void 0, false, {
+                            fileName: "src/Components/common/Footer.jsx",
+                            lineNumber: 84,
+                            columnNumber: 13
+                        }, undefined)
                     }, void 0, false, {
-                        fileName: "src/Components/About.jsx",
-                        lineNumber: 53,
-                        columnNumber: 9
+                        fileName: "src/Components/common/Footer.jsx",
+                        lineNumber: 79,
+                        columnNumber: 11
+                    }, undefined),
+                    linkedIn && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: `https://www.linkedin.com/in/${linkedIn}`,
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                            src: (0, _linkedinSvgDefault.default),
+                            alt: "LinkedIn",
+                            className: "socialIcon"
+                        }, void 0, false, {
+                            fileName: "src/Components/common/Footer.jsx",
+                            lineNumber: 93,
+                            columnNumber: 13
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/Components/common/Footer.jsx",
+                        lineNumber: 88,
+                        columnNumber: 11
+                    }, undefined),
+                    medium && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: `https://medium.com/@${medium}`,
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                            src: (0, _mediumSvgDefault.default),
+                            alt: "Medium",
+                            className: "socialIcon"
+                        }, void 0, false, {
+                            fileName: "src/Components/common/Footer.jsx",
+                            lineNumber: 98,
+                            columnNumber: 13
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/Components/common/Footer.jsx",
+                        lineNumber: 97,
+                        columnNumber: 11
+                    }, undefined),
+                    twitter && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: `https://twitter.com/${twitter}`,
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                            src: (0, _twitterSvgDefault.default),
+                            alt: "Twitter",
+                            className: "socialIcon"
+                        }, void 0, false, {
+                            fileName: "src/Components/common/Footer.jsx",
+                            lineNumber: 103,
+                            columnNumber: 13
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/Components/common/Footer.jsx",
+                        lineNumber: 102,
+                        columnNumber: 11
+                    }, undefined),
+                    youTube && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: `https://www.youtube.com/c/${youTube}`,
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                            src: (0, _youtubeSvgDefault.default),
+                            alt: "YouTube",
+                            className: "socialIcon"
+                        }, void 0, false, {
+                            fileName: "src/Components/common/Footer.jsx",
+                            lineNumber: 112,
+                            columnNumber: 13
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/Components/common/Footer.jsx",
+                        lineNumber: 107,
+                        columnNumber: 11
                     }, undefined)
                 ]
             }, void 0, true, {
-                fileName: "src/Components/About.jsx",
-                lineNumber: 43,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "flex justify-center items-center",
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
-                    onClick: ()=>setShowDetails(!showDetails),
-                    text: showDetails ? "Read Less" : "Read More"
-                }, void 0, false, {
-                    fileName: "src/Components/About.jsx",
-                    lineNumber: 57,
-                    columnNumber: 9
-                }, undefined)
-            }, void 0, false, {
-                fileName: "src/Components/About.jsx",
+                fileName: "src/Components/common/Footer.jsx",
                 lineNumber: 56,
                 columnNumber: 7
             }, undefined),
-            showDetails && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                className: "small",
+                style: {
+                    marginTop: 0,
+                    color: "white"
+                },
                 children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _educationDefault.default), {}, void 0, false, {
-                        fileName: "src/Components/About.jsx",
-                        lineNumber: 65,
-                        columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _portfolioDefault.default), {}, void 0, false, {
-                        fileName: "src/Components/About.jsx",
-                        lineNumber: 66,
-                        columnNumber: 11
-                    }, undefined)
+                    "Created by ",
+                    name
                 ]
-            }, void 0, true)
+            }, void 0, true, {
+                fileName: "src/Components/common/Footer.jsx",
+                lineNumber: 116,
+                columnNumber: 7
+            }, undefined)
         ]
     }, void 0, true, {
-        fileName: "src/Components/About.jsx",
-        lineNumber: 41,
+        fileName: "src/Components/common/Footer.jsx",
+        lineNumber: 44,
         columnNumber: 5
     }, undefined);
 };
-_s(About, "n2rC7YX8Mzz154E9USQBvseY7a0=");
-_c = About;
-exports.default = About;
+_c = Footer;
+Footer.defaultProps = {
+    name: ""
+};
+Footer.propTypes = {
+    devDotTo: (0, _propTypesDefault.default).string,
+    email: (0, _propTypesDefault.default).string,
+    gitHub: (0, _propTypesDefault.default).string,
+    instagram: (0, _propTypesDefault.default).string,
+    linkedIn: (0, _propTypesDefault.default).string,
+    medium: (0, _propTypesDefault.default).string,
+    name: (0, _propTypesDefault.default).string.isRequired,
+    primaryColor: (0, _propTypesDefault.default).string,
+    twitter: (0, _propTypesDefault.default).string,
+    youTube: (0, _propTypesDefault.default).string
+};
+exports.default = Footer;
 var _c;
-$RefreshReg$(_c, "About");
+$RefreshReg$(_c, "Footer");
 
-  $parcel$ReactRefreshHelpers$17a8.postlude(module);
+  $parcel$ReactRefreshHelpers$f06b.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../assets/images/motion-background.jpg":"cEABq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./Education":"6QZcy","./Portfolio":"lCaEt","./common/Button":"fuQ5z"}],"cEABq":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "motion-background.fb7c14ea.jpg" + "?" + Date.now();
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","../../assets/images/socials/devdotto.svg":"54zY0","../../assets/images/socials/envelope.svg":"aNctG","../../assets/images/socials/github.svg":"8AgJT","../../assets/images/socials/instagram.svg":"butbJ","../../assets/images/socials/linkedin.svg":"e6dcP","../../assets/images/socials/medium.svg":"4A0lt","../../assets/images/socials/twitter.svg":"k6wJd","../../assets/images/socials/youtube.svg":"5AnIx","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"7wKI2":[function(require,module,exports) {
+var ReactIs = require("react-is");
+// By explicitly using `prop-types` you are opting into new development behavior.
+// http://fb.me/prop-types-in-prod
+var throwOnDirectAccess = true;
+module.exports = require("./factoryWithTypeCheckers")(ReactIs.isElement, throwOnDirectAccess);
+
+},{"react-is":"7EuwB","./factoryWithTypeCheckers":"bBUgD"}],"7EuwB":[function(require,module,exports) {
+"use strict";
+module.exports = require("./cjs/react-is.development.js");
+
+},{"./cjs/react-is.development.js":"5DsXl"}],"5DsXl":[function(require,module,exports) {
+/** @license React v16.13.1
+ * react-is.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ "use strict";
+(function() {
+    "use strict";
+    // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+    // nor polyfill, then a plain number is used for performance.
+    var hasSymbol = typeof Symbol === "function" && Symbol.for;
+    var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for("react.element") : 0xeac7;
+    var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for("react.portal") : 0xeaca;
+    var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for("react.fragment") : 0xeacb;
+    var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for("react.strict_mode") : 0xeacc;
+    var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for("react.profiler") : 0xead2;
+    var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for("react.provider") : 0xeacd;
+    var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for("react.context") : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
+    // (unstable) APIs that have been removed. Can we remove the symbols?
+    var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for("react.async_mode") : 0xeacf;
+    var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for("react.concurrent_mode") : 0xeacf;
+    var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for("react.forward_ref") : 0xead0;
+    var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for("react.suspense") : 0xead1;
+    var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for("react.suspense_list") : 0xead8;
+    var REACT_MEMO_TYPE = hasSymbol ? Symbol.for("react.memo") : 0xead3;
+    var REACT_LAZY_TYPE = hasSymbol ? Symbol.for("react.lazy") : 0xead4;
+    var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for("react.block") : 0xead9;
+    var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for("react.fundamental") : 0xead5;
+    var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for("react.responder") : 0xead6;
+    var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for("react.scope") : 0xead7;
+    function isValidElementType(type) {
+        return typeof type === "string" || typeof type === "function" || type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === "object" && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
+    }
+    function typeOf(object) {
+        if (typeof object === "object" && object !== null) {
+            var $$typeof = object.$$typeof;
+            switch($$typeof){
+                case REACT_ELEMENT_TYPE:
+                    var type = object.type;
+                    switch(type){
+                        case REACT_ASYNC_MODE_TYPE:
+                        case REACT_CONCURRENT_MODE_TYPE:
+                        case REACT_FRAGMENT_TYPE:
+                        case REACT_PROFILER_TYPE:
+                        case REACT_STRICT_MODE_TYPE:
+                        case REACT_SUSPENSE_TYPE:
+                            return type;
+                        default:
+                            var $$typeofType = type && type.$$typeof;
+                            switch($$typeofType){
+                                case REACT_CONTEXT_TYPE:
+                                case REACT_FORWARD_REF_TYPE:
+                                case REACT_LAZY_TYPE:
+                                case REACT_MEMO_TYPE:
+                                case REACT_PROVIDER_TYPE:
+                                    return $$typeofType;
+                                default:
+                                    return $$typeof;
+                            }
+                    }
+                case REACT_PORTAL_TYPE:
+                    return $$typeof;
+            }
+        }
+        return undefined;
+    } // AsyncMode is deprecated along with isAsyncMode
+    var AsyncMode = REACT_ASYNC_MODE_TYPE;
+    var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
+    var ContextConsumer = REACT_CONTEXT_TYPE;
+    var ContextProvider = REACT_PROVIDER_TYPE;
+    var Element = REACT_ELEMENT_TYPE;
+    var ForwardRef = REACT_FORWARD_REF_TYPE;
+    var Fragment = REACT_FRAGMENT_TYPE;
+    var Lazy = REACT_LAZY_TYPE;
+    var Memo = REACT_MEMO_TYPE;
+    var Portal = REACT_PORTAL_TYPE;
+    var Profiler = REACT_PROFILER_TYPE;
+    var StrictMode = REACT_STRICT_MODE_TYPE;
+    var Suspense = REACT_SUSPENSE_TYPE;
+    var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecated
+    function isAsyncMode(object) {
+        if (!hasWarnedAboutDeprecatedIsAsyncMode) {
+            hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
+            console["warn"]("The ReactIs.isAsyncMode() alias has been deprecated, and will be removed in React 17+. Update your code to use ReactIs.isConcurrentMode() instead. It has the exact same API.");
+        }
+        return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
+    }
+    function isConcurrentMode(object) {
+        return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
+    }
+    function isContextConsumer(object) {
+        return typeOf(object) === REACT_CONTEXT_TYPE;
+    }
+    function isContextProvider(object) {
+        return typeOf(object) === REACT_PROVIDER_TYPE;
+    }
+    function isElement(object) {
+        return typeof object === "object" && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+    }
+    function isForwardRef(object) {
+        return typeOf(object) === REACT_FORWARD_REF_TYPE;
+    }
+    function isFragment(object) {
+        return typeOf(object) === REACT_FRAGMENT_TYPE;
+    }
+    function isLazy(object) {
+        return typeOf(object) === REACT_LAZY_TYPE;
+    }
+    function isMemo(object) {
+        return typeOf(object) === REACT_MEMO_TYPE;
+    }
+    function isPortal(object) {
+        return typeOf(object) === REACT_PORTAL_TYPE;
+    }
+    function isProfiler(object) {
+        return typeOf(object) === REACT_PROFILER_TYPE;
+    }
+    function isStrictMode(object) {
+        return typeOf(object) === REACT_STRICT_MODE_TYPE;
+    }
+    function isSuspense(object) {
+        return typeOf(object) === REACT_SUSPENSE_TYPE;
+    }
+    exports.AsyncMode = AsyncMode;
+    exports.ConcurrentMode = ConcurrentMode;
+    exports.ContextConsumer = ContextConsumer;
+    exports.ContextProvider = ContextProvider;
+    exports.Element = Element;
+    exports.ForwardRef = ForwardRef;
+    exports.Fragment = Fragment;
+    exports.Lazy = Lazy;
+    exports.Memo = Memo;
+    exports.Portal = Portal;
+    exports.Profiler = Profiler;
+    exports.StrictMode = StrictMode;
+    exports.Suspense = Suspense;
+    exports.isAsyncMode = isAsyncMode;
+    exports.isConcurrentMode = isConcurrentMode;
+    exports.isContextConsumer = isContextConsumer;
+    exports.isContextProvider = isContextProvider;
+    exports.isElement = isElement;
+    exports.isForwardRef = isForwardRef;
+    exports.isFragment = isFragment;
+    exports.isLazy = isLazy;
+    exports.isMemo = isMemo;
+    exports.isPortal = isPortal;
+    exports.isProfiler = isProfiler;
+    exports.isStrictMode = isStrictMode;
+    exports.isSuspense = isSuspense;
+    exports.isValidElementType = isValidElementType;
+    exports.typeOf = typeOf;
+})();
+
+},{}],"bBUgD":[function(require,module,exports) {
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ "use strict";
+var ReactIs = require("react-is");
+var assign = require("object-assign");
+var ReactPropTypesSecret = require("./lib/ReactPropTypesSecret");
+var has = require("./lib/has");
+var checkPropTypes = require("./checkPropTypes");
+var printWarning = function() {};
+printWarning = function(text) {
+    var message = "Warning: " + text;
+    if (typeof console !== "undefined") console.error(message);
+    try {
+        // --- Welcome to debugging React ---
+        // This error was thrown as a convenience so that you can use this stack
+        // to find the callsite that caused this warning to fire.
+        throw new Error(message);
+    } catch (x) {}
+};
+function emptyFunctionThatReturnsNull() {
+    return null;
+}
+module.exports = function(isValidElement, throwOnDirectAccess) {
+    /* global Symbol */ var ITERATOR_SYMBOL = typeof Symbol === "function" && Symbol.iterator;
+    var FAUX_ITERATOR_SYMBOL = "@@iterator"; // Before Symbol spec.
+    /**
+   * Returns the iterator method function contained on the iterable object.
+   *
+   * Be sure to invoke the function with the iterable as context:
+   *
+   *     var iteratorFn = getIteratorFn(myIterable);
+   *     if (iteratorFn) {
+   *       var iterator = iteratorFn.call(myIterable);
+   *       ...
+   *     }
+   *
+   * @param {?object} maybeIterable
+   * @return {?function}
+   */ function getIteratorFn(maybeIterable) {
+        var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
+        if (typeof iteratorFn === "function") return iteratorFn;
+    }
+    /**
+   * Collection of methods that allow declaration and validation of props that are
+   * supplied to React components. Example usage:
+   *
+   *   var Props = require('ReactPropTypes');
+   *   var MyArticle = React.createClass({
+   *     propTypes: {
+   *       // An optional string prop named "description".
+   *       description: Props.string,
+   *
+   *       // A required enum prop named "category".
+   *       category: Props.oneOf(['News','Photos']).isRequired,
+   *
+   *       // A prop named "dialog" that requires an instance of Dialog.
+   *       dialog: Props.instanceOf(Dialog).isRequired
+   *     },
+   *     render: function() { ... }
+   *   });
+   *
+   * A more formal specification of how these methods are used:
+   *
+   *   type := array|bool|func|object|number|string|oneOf([...])|instanceOf(...)
+   *   decl := ReactPropTypes.{type}(.isRequired)?
+   *
+   * Each and every declaration produces a function with the same signature. This
+   * allows the creation of custom validation functions. For example:
+   *
+   *  var MyLink = React.createClass({
+   *    propTypes: {
+   *      // An optional string or URI prop named "href".
+   *      href: function(props, propName, componentName) {
+   *        var propValue = props[propName];
+   *        if (propValue != null && typeof propValue !== 'string' &&
+   *            !(propValue instanceof URI)) {
+   *          return new Error(
+   *            'Expected a string or an URI for ' + propName + ' in ' +
+   *            componentName
+   *          );
+   *        }
+   *      }
+   *    },
+   *    render: function() {...}
+   *  });
+   *
+   * @internal
+   */ var ANONYMOUS = "<<anonymous>>";
+    // Important!
+    // Keep this list in sync with production version in `./factoryWithThrowingShims.js`.
+    var ReactPropTypes = {
+        array: createPrimitiveTypeChecker("array"),
+        bigint: createPrimitiveTypeChecker("bigint"),
+        bool: createPrimitiveTypeChecker("boolean"),
+        func: createPrimitiveTypeChecker("function"),
+        number: createPrimitiveTypeChecker("number"),
+        object: createPrimitiveTypeChecker("object"),
+        string: createPrimitiveTypeChecker("string"),
+        symbol: createPrimitiveTypeChecker("symbol"),
+        any: createAnyTypeChecker(),
+        arrayOf: createArrayOfTypeChecker,
+        element: createElementTypeChecker(),
+        elementType: createElementTypeTypeChecker(),
+        instanceOf: createInstanceTypeChecker,
+        node: createNodeChecker(),
+        objectOf: createObjectOfTypeChecker,
+        oneOf: createEnumTypeChecker,
+        oneOfType: createUnionTypeChecker,
+        shape: createShapeTypeChecker,
+        exact: createStrictShapeTypeChecker
+    };
+    /**
+   * inlined Object.is polyfill to avoid requiring consumers ship their own
+   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+   */ /*eslint-disable no-self-compare*/ function is(x, y) {
+        // SameValue algorithm
+        if (x === y) // Steps 1-5, 7-10
+        // Steps 6.b-6.e: +0 != -0
+        return x !== 0 || 1 / x === 1 / y;
+        else // Step 6.a: NaN == NaN
+        return x !== x && y !== y;
+    }
+    /*eslint-enable no-self-compare*/ /**
+   * We use an Error-like object for backward compatibility as people may call
+   * PropTypes directly and inspect their output. However, we don't use real
+   * Errors anymore. We don't inspect their stack anyway, and creating them
+   * is prohibitively expensive if they are created too often, such as what
+   * happens in oneOfType() for any type before the one that matched.
+   */ function PropTypeError(message, data) {
+        this.message = message;
+        this.data = data && typeof data === "object" ? data : {};
+        this.stack = "";
+    }
+    // Make `instanceof Error` still work for returned errors.
+    PropTypeError.prototype = Error.prototype;
+    function createChainableTypeChecker(validate) {
+        var manualPropTypeCallCache = {};
+        var manualPropTypeWarningCount = 0;
+        function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
+            componentName = componentName || ANONYMOUS;
+            propFullName = propFullName || propName;
+            if (secret !== ReactPropTypesSecret) {
+                if (throwOnDirectAccess) {
+                    // New behavior only for users of `prop-types` package
+                    var err = new Error("Calling PropTypes validators directly is not supported by the `prop-types` package. Use `PropTypes.checkPropTypes()` to call them. Read more at http://fb.me/use-check-prop-types");
+                    err.name = "Invariant Violation";
+                    throw err;
+                } else if (typeof console !== "undefined") {
+                    // Old behavior for people using React.PropTypes
+                    var cacheKey = componentName + ":" + propName;
+                    if (!manualPropTypeCallCache[cacheKey] && // Avoid spamming the console because they are often not actionable except for lib authors
+                    manualPropTypeWarningCount < 3) {
+                        printWarning("You are manually calling a React.PropTypes validation function for the `" + propFullName + "` prop on `" + componentName + "`. This is deprecated " + "and will throw in the standalone `prop-types` package. " + "You may be seeing this warning due to a third-party PropTypes " + "library. See https://fb.me/react-warning-dont-call-proptypes " + "for details.");
+                        manualPropTypeCallCache[cacheKey] = true;
+                        manualPropTypeWarningCount++;
+                    }
+                }
+            }
+            if (props[propName] == null) {
+                if (isRequired) {
+                    if (props[propName] === null) return new PropTypeError("The " + location + " `" + propFullName + "` is marked as required " + ("in `" + componentName + "`, but its value is `null`."));
+                    return new PropTypeError("The " + location + " `" + propFullName + "` is marked as required in " + ("`" + componentName + "`, but its value is `undefined`."));
+                }
+                return null;
+            } else return validate(props, propName, componentName, location, propFullName);
+        }
+        var chainedCheckType = checkType.bind(null, false);
+        chainedCheckType.isRequired = checkType.bind(null, true);
+        return chainedCheckType;
+    }
+    function createPrimitiveTypeChecker(expectedType) {
+        function validate(props, propName, componentName, location, propFullName, secret) {
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== expectedType) {
+                // `propValue` being instance of, say, date/regexp, pass the 'object'
+                // check, but we can offer a more precise error message here rather than
+                // 'of type `object`'.
+                var preciseType = getPreciseType(propValue);
+                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + preciseType + "` supplied to `" + componentName + "`, expected ") + ("`" + expectedType + "`."), {
+                    expectedType: expectedType
+                });
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createAnyTypeChecker() {
+        return createChainableTypeChecker(emptyFunctionThatReturnsNull);
+    }
+    function createArrayOfTypeChecker(typeChecker) {
+        function validate(props, propName, componentName, location, propFullName) {
+            if (typeof typeChecker !== "function") return new PropTypeError("Property `" + propFullName + "` of component `" + componentName + "` has invalid PropType notation inside arrayOf.");
+            var propValue = props[propName];
+            if (!Array.isArray(propValue)) {
+                var propType = getPropType(propValue);
+                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected an array."));
+            }
+            for(var i = 0; i < propValue.length; i++){
+                var error = typeChecker(propValue, i, componentName, location, propFullName + "[" + i + "]", ReactPropTypesSecret);
+                if (error instanceof Error) return error;
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createElementTypeChecker() {
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            if (!isValidElement(propValue)) {
+                var propType = getPropType(propValue);
+                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected a single ReactElement."));
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createElementTypeTypeChecker() {
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            if (!ReactIs.isValidElementType(propValue)) {
+                var propType = getPropType(propValue);
+                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected a single ReactElement type."));
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createInstanceTypeChecker(expectedClass) {
+        function validate(props, propName, componentName, location, propFullName) {
+            if (!(props[propName] instanceof expectedClass)) {
+                var expectedClassName = expectedClass.name || ANONYMOUS;
+                var actualClassName = getClassName(props[propName]);
+                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + actualClassName + "` supplied to `" + componentName + "`, expected ") + ("instance of `" + expectedClassName + "`."));
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createEnumTypeChecker(expectedValues) {
+        if (!Array.isArray(expectedValues)) {
+            {
+                if (arguments.length > 1) printWarning("Invalid arguments supplied to oneOf, expected an array, got " + arguments.length + " arguments. " + "A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z]).");
+                else printWarning("Invalid argument supplied to oneOf, expected an array.");
+            }
+            return emptyFunctionThatReturnsNull;
+        }
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            for(var i = 0; i < expectedValues.length; i++){
+                if (is(propValue, expectedValues[i])) return null;
+            }
+            var valuesString = JSON.stringify(expectedValues, function replacer(key, value) {
+                var type = getPreciseType(value);
+                if (type === "symbol") return String(value);
+                return value;
+            });
+            return new PropTypeError("Invalid " + location + " `" + propFullName + "` of value `" + String(propValue) + "` " + ("supplied to `" + componentName + "`, expected one of " + valuesString + "."));
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createObjectOfTypeChecker(typeChecker) {
+        function validate(props, propName, componentName, location, propFullName) {
+            if (typeof typeChecker !== "function") return new PropTypeError("Property `" + propFullName + "` of component `" + componentName + "` has invalid PropType notation inside objectOf.");
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== "object") return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected an object."));
+            for(var key in propValue)if (has(propValue, key)) {
+                var error = typeChecker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
+                if (error instanceof Error) return error;
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createUnionTypeChecker(arrayOfTypeCheckers) {
+        if (!Array.isArray(arrayOfTypeCheckers)) {
+            printWarning("Invalid argument supplied to oneOfType, expected an instance of array.");
+            return emptyFunctionThatReturnsNull;
+        }
+        for(var i = 0; i < arrayOfTypeCheckers.length; i++){
+            var checker = arrayOfTypeCheckers[i];
+            if (typeof checker !== "function") {
+                printWarning("Invalid argument supplied to oneOfType. Expected an array of check functions, but received " + getPostfixForTypeWarning(checker) + " at index " + i + ".");
+                return emptyFunctionThatReturnsNull;
+            }
+        }
+        function validate(props, propName, componentName, location, propFullName) {
+            var expectedTypes = [];
+            for(var i = 0; i < arrayOfTypeCheckers.length; i++){
+                var checker = arrayOfTypeCheckers[i];
+                var checkerResult = checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret);
+                if (checkerResult == null) return null;
+                if (checkerResult.data && has(checkerResult.data, "expectedType")) expectedTypes.push(checkerResult.data.expectedType);
+            }
+            var expectedTypesMessage = expectedTypes.length > 0 ? ", expected one of type [" + expectedTypes.join(", ") + "]" : "";
+            return new PropTypeError("Invalid " + location + " `" + propFullName + "` supplied to " + ("`" + componentName + "`" + expectedTypesMessage + "."));
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createNodeChecker() {
+        function validate(props, propName, componentName, location, propFullName) {
+            if (!isNode(props[propName])) return new PropTypeError("Invalid " + location + " `" + propFullName + "` supplied to " + ("`" + componentName + "`, expected a ReactNode."));
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function invalidValidatorError(componentName, location, propFullName, key, type) {
+        return new PropTypeError((componentName || "React class") + ": " + location + " type `" + propFullName + "." + key + "` is invalid; " + "it must be a function, usually from the `prop-types` package, but received `" + type + "`.");
+    }
+    function createShapeTypeChecker(shapeTypes) {
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== "object") return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type `" + propType + "` " + ("supplied to `" + componentName + "`, expected `object`."));
+            for(var key in shapeTypes){
+                var checker = shapeTypes[key];
+                if (typeof checker !== "function") return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
+                var error = checker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
+                if (error) return error;
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createStrictShapeTypeChecker(shapeTypes) {
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== "object") return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type `" + propType + "` " + ("supplied to `" + componentName + "`, expected `object`."));
+            // We need to check all keys in case some are required but missing from props.
+            var allKeys = assign({}, props[propName], shapeTypes);
+            for(var key in allKeys){
+                var checker = shapeTypes[key];
+                if (has(shapeTypes, key) && typeof checker !== "function") return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
+                if (!checker) return new PropTypeError("Invalid " + location + " `" + propFullName + "` key `" + key + "` supplied to `" + componentName + "`." + "\nBad object: " + JSON.stringify(props[propName], null, "  ") + "\nValid keys: " + JSON.stringify(Object.keys(shapeTypes), null, "  "));
+                var error = checker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
+                if (error) return error;
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function isNode(propValue) {
+        switch(typeof propValue){
+            case "number":
+            case "string":
+            case "undefined":
+                return true;
+            case "boolean":
+                return !propValue;
+            case "object":
+                if (Array.isArray(propValue)) return propValue.every(isNode);
+                if (propValue === null || isValidElement(propValue)) return true;
+                var iteratorFn = getIteratorFn(propValue);
+                if (iteratorFn) {
+                    var iterator = iteratorFn.call(propValue);
+                    var step;
+                    if (iteratorFn !== propValue.entries) while(!(step = iterator.next()).done){
+                        if (!isNode(step.value)) return false;
+                    }
+                    else // Iterator will provide entry [k,v] tuples rather than values.
+                    while(!(step = iterator.next()).done){
+                        var entry = step.value;
+                        if (entry) {
+                            if (!isNode(entry[1])) return false;
+                        }
+                    }
+                } else return false;
+                return true;
+            default:
+                return false;
+        }
+    }
+    function isSymbol(propType, propValue) {
+        // Native Symbol.
+        if (propType === "symbol") return true;
+        // falsy value can't be a Symbol
+        if (!propValue) return false;
+        // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'
+        if (propValue["@@toStringTag"] === "Symbol") return true;
+        // Fallback for non-spec compliant Symbols which are polyfilled.
+        if (typeof Symbol === "function" && propValue instanceof Symbol) return true;
+        return false;
+    }
+    // Equivalent of `typeof` but with special handling for array and regexp.
+    function getPropType(propValue) {
+        var propType = typeof propValue;
+        if (Array.isArray(propValue)) return "array";
+        if (propValue instanceof RegExp) // Old webkits (at least until Android 4.0) return 'function' rather than
+        // 'object' for typeof a RegExp. We'll normalize this here so that /bla/
+        // passes PropTypes.object.
+        return "object";
+        if (isSymbol(propType, propValue)) return "symbol";
+        return propType;
+    }
+    // This handles more types than `getPropType`. Only used for error messages.
+    // See `createPrimitiveTypeChecker`.
+    function getPreciseType(propValue) {
+        if (typeof propValue === "undefined" || propValue === null) return "" + propValue;
+        var propType = getPropType(propValue);
+        if (propType === "object") {
+            if (propValue instanceof Date) return "date";
+            else if (propValue instanceof RegExp) return "regexp";
+        }
+        return propType;
+    }
+    // Returns a string that is postfixed to a warning about an invalid type.
+    // For example, "undefined" or "of type array"
+    function getPostfixForTypeWarning(value) {
+        var type = getPreciseType(value);
+        switch(type){
+            case "array":
+            case "object":
+                return "an " + type;
+            case "boolean":
+            case "date":
+            case "regexp":
+                return "a " + type;
+            default:
+                return type;
+        }
+    }
+    // Returns class name of the object, if any.
+    function getClassName(propValue) {
+        if (!propValue.constructor || !propValue.constructor.name) return ANONYMOUS;
+        return propValue.constructor.name;
+    }
+    ReactPropTypes.checkPropTypes = checkPropTypes;
+    ReactPropTypes.resetWarningCache = checkPropTypes.resetWarningCache;
+    ReactPropTypes.PropTypes = ReactPropTypes;
+    return ReactPropTypes;
+};
+
+},{"react-is":"7EuwB","object-assign":"7OXxh","./lib/ReactPropTypesSecret":"jZTZJ","./lib/has":"fqKuf","./checkPropTypes":"5VwyJ"}],"7OXxh":[function(require,module,exports) {
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/ "use strict";
+/* eslint-disable no-unused-vars */ var getOwnPropertySymbols = Object.getOwnPropertySymbols;
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+var propIsEnumerable = Object.prototype.propertyIsEnumerable;
+function toObject(val) {
+    if (val === null || val === undefined) throw new TypeError("Object.assign cannot be called with null or undefined");
+    return Object(val);
+}
+function shouldUseNative() {
+    try {
+        if (!Object.assign) return false;
+        // Detect buggy property enumeration order in older V8 versions.
+        // https://bugs.chromium.org/p/v8/issues/detail?id=4118
+        var test1 = new String("abc"); // eslint-disable-line no-new-wrappers
+        test1[5] = "de";
+        if (Object.getOwnPropertyNames(test1)[0] === "5") return false;
+        // https://bugs.chromium.org/p/v8/issues/detail?id=3056
+        var test2 = {};
+        for(var i = 0; i < 10; i++)test2["_" + String.fromCharCode(i)] = i;
+        var order2 = Object.getOwnPropertyNames(test2).map(function(n) {
+            return test2[n];
+        });
+        if (order2.join("") !== "0123456789") return false;
+        // https://bugs.chromium.org/p/v8/issues/detail?id=3056
+        var test3 = {};
+        "abcdefghijklmnopqrst".split("").forEach(function(letter) {
+            test3[letter] = letter;
+        });
+        if (Object.keys(Object.assign({}, test3)).join("") !== "abcdefghijklmnopqrst") return false;
+        return true;
+    } catch (err) {
+        // We don't expect any of the above to throw, but better to be safe.
+        return false;
+    }
+}
+module.exports = shouldUseNative() ? Object.assign : function(target, source) {
+    var from;
+    var to = toObject(target);
+    var symbols;
+    for(var s = 1; s < arguments.length; s++){
+        from = Object(arguments[s]);
+        for(var key in from)if (hasOwnProperty.call(from, key)) to[key] = from[key];
+        if (getOwnPropertySymbols) {
+            symbols = getOwnPropertySymbols(from);
+            for(var i = 0; i < symbols.length; i++)if (propIsEnumerable.call(from, symbols[i])) to[symbols[i]] = from[symbols[i]];
+        }
+    }
+    return to;
+};
+
+},{}],"jZTZJ":[function(require,module,exports) {
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ "use strict";
+var ReactPropTypesSecret = "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED";
+module.exports = ReactPropTypesSecret;
+
+},{}],"fqKuf":[function(require,module,exports) {
+module.exports = Function.call.bind(Object.prototype.hasOwnProperty);
+
+},{}],"5VwyJ":[function(require,module,exports) {
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ "use strict";
+var printWarning = function() {};
+var ReactPropTypesSecret = require("./lib/ReactPropTypesSecret");
+var loggedTypeFailures = {};
+var has = require("./lib/has");
+printWarning = function(text) {
+    var message = "Warning: " + text;
+    if (typeof console !== "undefined") console.error(message);
+    try {
+        // --- Welcome to debugging React ---
+        // This error was thrown as a convenience so that you can use this stack
+        // to find the callsite that caused this warning to fire.
+        throw new Error(message);
+    } catch (x) {}
+};
+/**
+ * Assert that the values match with the type specs.
+ * Error messages are memorized and will only be shown once.
+ *
+ * @param {object} typeSpecs Map of name to a ReactPropType
+ * @param {object} values Runtime values that need to be type-checked
+ * @param {string} location e.g. "prop", "context", "child context"
+ * @param {string} componentName Name of the component for error messages.
+ * @param {?Function} getStack Returns the component stack.
+ * @private
+ */ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
+    for(var typeSpecName in typeSpecs)if (has(typeSpecs, typeSpecName)) {
+        var error;
+        // Prop type validation may throw. In case they do, we don't want to
+        // fail the render phase where it didn't fail before. So we log it.
+        // After these have been cleaned up, we'll let them throw.
+        try {
+            // This is intentionally an invariant that gets caught. It's the same
+            // behavior as without this statement except with a better message.
+            if (typeof typeSpecs[typeSpecName] !== "function") {
+                var err = Error((componentName || "React class") + ": " + location + " type `" + typeSpecName + "` is invalid; " + "it must be a function, usually from the `prop-types` package, but received `" + typeof typeSpecs[typeSpecName] + "`." + "This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.");
+                err.name = "Invariant Violation";
+                throw err;
+            }
+            error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
+        } catch (ex) {
+            error = ex;
+        }
+        if (error && !(error instanceof Error)) printWarning((componentName || "React class") + ": type specification of " + location + " `" + typeSpecName + "` is invalid; the type checker " + "function must return `null` or an `Error` but returned a " + typeof error + ". " + "You may have forgotten to pass an argument to the type checker " + "creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and " + "shape all require an argument).");
+        if (error instanceof Error && !(error.message in loggedTypeFailures)) {
+            // Only monitor this failure once because there tends to be a lot of the
+            // same error.
+            loggedTypeFailures[error.message] = true;
+            var stack = getStack ? getStack() : "";
+            printWarning("Failed " + location + " type: " + error.message + (stack != null ? stack : ""));
+        }
+    }
+}
+/**
+ * Resets warning cache when testing.
+ *
+ * @private
+ */ checkPropTypes.resetWarningCache = function() {
+    loggedTypeFailures = {};
+};
+module.exports = checkPropTypes;
+
+},{"./lib/ReactPropTypesSecret":"jZTZJ","./lib/has":"fqKuf"}],"54zY0":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "devdotto.5742cee9.svg" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"lgJ39"}],"lgJ39":[function(require,module,exports) {
 "use strict";
@@ -33905,7 +34753,28 @@ exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
-},{}],"km3Ru":[function(require,module,exports) {
+},{}],"aNctG":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "envelope.73e9f09d.svg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"8AgJT":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "github.229c2e29.svg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"butbJ":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "instagram.fd25d21e.svg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"e6dcP":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "linkedin.d80c84f0.svg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"4A0lt":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "medium.35f30862.svg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"k6wJd":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "twitter.4b5abd2a.svg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"5AnIx":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "youtube.fea00896.svg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"km3Ru":[function(require,module,exports) {
 "use strict";
 var Refresh = require("react-refresh/runtime");
 function debounce(func, delay) {
@@ -34025,7 +34894,2560 @@ function registerExportsForReactRefresh(module1) {
     }
 }
 
-},{"react-refresh/runtime":"786KC"}],"6QZcy":[function(require,module,exports) {
+},{"react-refresh/runtime":"786KC"}],"3G51o":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$6922 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$6922.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRouterDom = require("react-router-dom");
+var _photoJpg = require("../../assets/images/photo.jpg");
+var _photoJpgDefault = parcelHelpers.interopDefault(_photoJpg);
+const Header = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "fixed top-0 z-10 flex justify-between items-center bg-white bg-opacity-75 p-4 w-full",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "flex items-center gap-4",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                        to: "/",
+                        className: "hover:text-blue-600",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                            src: (0, _photoJpgDefault.default),
+                            alt: "Logo",
+                            className: "w-10 h-10 rounded-full"
+                        }, void 0, false, {
+                            fileName: "src/Components/common/Header.jsx",
+                            lineNumber: 10,
+                            columnNumber: 11
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/Components/common/Header.jsx",
+                        lineNumber: 9,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                        to: "/",
+                        className: "hover:text-blue-600",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            children: "Huixin"
+                        }, void 0, false, {
+                            fileName: "src/Components/common/Header.jsx",
+                            lineNumber: 13,
+                            columnNumber: 11
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/Components/common/Header.jsx",
+                        lineNumber: 12,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Components/common/Header.jsx",
+                lineNumber: 8,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "flex flex-wrap justify-center items-center flex-1 gap-4 md:gap-8",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                        to: "/about",
+                        className: "hover:text-blue-600",
+                        children: "About"
+                    }, void 0, false, {
+                        fileName: "src/Components/common/Header.jsx",
+                        lineNumber: 17,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                        to: "/education",
+                        className: "hover:text-blue-600",
+                        children: "Education"
+                    }, void 0, false, {
+                        fileName: "src/Components/common/Header.jsx",
+                        lineNumber: 20,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                        to: "/experience",
+                        className: "hover:text-blue-600",
+                        children: "Experience"
+                    }, void 0, false, {
+                        fileName: "src/Components/common/Header.jsx",
+                        lineNumber: 23,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                        to: "/portfolio",
+                        className: "hover:text-blue-600",
+                        children: "Portfolio"
+                    }, void 0, false, {
+                        fileName: "src/Components/common/Header.jsx",
+                        lineNumber: 26,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                        to: "/referee",
+                        className: "hover:text-blue-600",
+                        children: "Referee"
+                    }, void 0, false, {
+                        fileName: "src/Components/common/Header.jsx",
+                        lineNumber: 29,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Components/common/Header.jsx",
+                lineNumber: 16,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/Components/common/Header.jsx",
+        lineNumber: 7,
+        columnNumber: 5
+    }, undefined);
+};
+_c = Header;
+exports.default = Header;
+var _c;
+$RefreshReg$(_c, "Header");
+
+  $parcel$ReactRefreshHelpers$6922.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../../assets/images/photo.jpg":"11rba","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"11rba":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "photo.f4681990.jpg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"kouZu":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$17a8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$17a8.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _motionBackgroundJpg = require("../assets/images/motion-background.jpg");
+var _motionBackgroundJpgDefault = parcelHelpers.interopDefault(_motionBackgroundJpg);
+var _button = require("./common/Button");
+var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _education = require("./Education");
+var _educationDefault = parcelHelpers.interopDefault(_education);
+var _portfolio = require("./Portfolio");
+var _portfolioDefault = parcelHelpers.interopDefault(_portfolio);
+var _experience = require("./Experience");
+var _experienceDefault = parcelHelpers.interopDefault(_experience);
+var _referee = require("./Referee");
+var _refereeDefault = parcelHelpers.interopDefault(_referee);
+var _s = $RefreshSig$();
+const imageAltText = "purple and blue abstract background";
+/**
+ * Sort description that expands on your title on the Home component.
+ */ const description = "As a dedicated software developer with a fervent interest in data science, I specialize in crafting elegant, user-friendly interfaces that seamlessly integrate sophisticated backend functionalities. My passion lies in harnessing the synergy between aesthetic design and powerful data-driven solutions to deliver interactive, intuitive, and impactful user experiences.";
+/**
+ * List of some of skills or technologies you work on, are learning,
+ * passionate about, or enjoy,
+ */ const skillsList = [
+    "Agile Methodologies & Management",
+    "UI/UX Design & Prototyping",
+    "Full Stack Web Development",
+    "Data Warehousing & ETL Processes",
+    "Data Analysis & Visualization",
+    "Machine Learning & Data Mining", 
+];
+/**
+ * Use this to give more information about what you are passionate about,
+ * how you best work, or even a quote. This will help someone learn more
+ * about you on a professional level.
+ */ const detailOrQuote = "Driven by a profound dedication to innovation in web development and data science, I excel in blending front-end finesse with robust back-end solutions, ensuring seamless, full-stack integration. My passion extends to leveraging data science proficiency, using insightful analytics and machine learning to transform complex data into actionable, user-centric applications. My goal is to make technology not just accessible, but intuitively intelligent and responsive to user needs.";
+const About = ()=>{
+    _s();
+    const [showDetails, setShowDetails] = (0, _react.useState)(false); // State to toggle the visibility of Education and Portfolio
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
+        className: "padding",
+        id: "about",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                className: "background",
+                src: (0, _motionBackgroundJpgDefault.default),
+                alt: imageAltText
+            }, void 0, false, {
+                fileName: "src/Components/About.jsx",
+                lineNumber: 44,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "bg-white w-full p-2 m-auto my-12 text-center sm:p-8 sm:w-3/4",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                        children: "About Myself"
+                    }, void 0, false, {
+                        fileName: "src/Components/About.jsx",
+                        lineNumber: 46,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "text-xs md:text-xl",
+                        children: description
+                    }, void 0, false, {
+                        fileName: "src/Components/About.jsx",
+                        lineNumber: 47,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
+                        fileName: "src/Components/About.jsx",
+                        lineNumber: 48,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                        className: "text-left text-sm grid grid-cols-1 md:grid-cols-2 sm:text-lg gap-3 m-8",
+                        children: skillsList.map((skill)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                children: [
+                                    "・",
+                                    skill
+                                ]
+                            }, skill, true, {
+                                fileName: "src/Components/About.jsx",
+                                lineNumber: 51,
+                                columnNumber: 13
+                            }, undefined))
+                    }, void 0, false, {
+                        fileName: "src/Components/About.jsx",
+                        lineNumber: 49,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
+                        fileName: "src/Components/About.jsx",
+                        lineNumber: 54,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "text-xs md:text-xl p-4 md:p-12",
+                        children: detailOrQuote
+                    }, void 0, false, {
+                        fileName: "src/Components/About.jsx",
+                        lineNumber: 55,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Components/About.jsx",
+                lineNumber: 45,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "flex justify-center items-center",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
+                    onClick: ()=>setShowDetails(!showDetails),
+                    text: showDetails ? "Read Less" : "Read More"
+                }, void 0, false, {
+                    fileName: "src/Components/About.jsx",
+                    lineNumber: 59,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/Components/About.jsx",
+                lineNumber: 58,
+                columnNumber: 7
+            }, undefined),
+            showDetails && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _educationDefault.default), {}, void 0, false, {
+                        fileName: "src/Components/About.jsx",
+                        lineNumber: 67,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _experienceDefault.default), {}, void 0, false, {
+                        fileName: "src/Components/About.jsx",
+                        lineNumber: 68,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _portfolioDefault.default), {}, void 0, false, {
+                        fileName: "src/Components/About.jsx",
+                        lineNumber: 69,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _refereeDefault.default), {}, void 0, false, {
+                        fileName: "src/Components/About.jsx",
+                        lineNumber: 70,
+                        columnNumber: 11
+                    }, undefined)
+                ]
+            }, void 0, true)
+        ]
+    }, void 0, true, {
+        fileName: "src/Components/About.jsx",
+        lineNumber: 43,
+        columnNumber: 5
+    }, undefined);
+};
+_s(About, "n2rC7YX8Mzz154E9USQBvseY7a0=");
+_c = About;
+exports.default = About;
+var _c;
+$RefreshReg$(_c, "About");
+
+  $parcel$ReactRefreshHelpers$17a8.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../assets/images/motion-background.jpg":"cEABq","./common/Button":"fuQ5z","./Education":"6QZcy","./Portfolio":"lCaEt","./Experience":"kFXFf","./Referee":"dOkIL","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"cEABq":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "motion-background.fb7c14ea.jpg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"fuQ5z":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$91da = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$91da.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _styledComponents = require("styled-components");
+var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
+// Create a StyledButton component that has styles attached to it
+const StyledButton = (0, _styledComponentsDefault.default).button`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 14px;
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", sans-serif;
+  border-radius: 6px;
+  border: none;
+  background: #6e6d70;
+  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.5),
+    0px 0px 0px 0.5px rgba(0, 0, 0, 0.12);
+  color: #dfdedf;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+  &:focus {
+    box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2),
+      0px 0.5px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+    outline: 0;
+  }
+`;
+_c = StyledButton;
+const Button = ({ onClick , text  })=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledButton, {
+        onClick: onClick,
+        children: text
+    }, void 0, false, {
+        fileName: "src/Components/common/Button.jsx",
+        lineNumber: 29,
+        columnNumber: 10
+    }, undefined);
+};
+_c1 = Button;
+exports.default = Button;
+var _c, _c1;
+$RefreshReg$(_c, "StyledButton");
+$RefreshReg$(_c1, "Button");
+
+  $parcel$ReactRefreshHelpers$91da.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","styled-components":"1U3k6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"1U3k6":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "ServerStyleSheet", ()=>mt);
+parcelHelpers.export(exports, "StyleSheetConsumer", ()=>$e);
+parcelHelpers.export(exports, "StyleSheetContext", ()=>Me);
+parcelHelpers.export(exports, "StyleSheetManager", ()=>Le);
+parcelHelpers.export(exports, "ThemeConsumer", ()=>Qe);
+parcelHelpers.export(exports, "ThemeContext", ()=>Ke);
+parcelHelpers.export(exports, "ThemeProvider", ()=>tt);
+parcelHelpers.export(exports, "__PRIVATE__", ()=>yt);
+parcelHelpers.export(exports, "createGlobalStyle", ()=>dt);
+parcelHelpers.export(exports, "css", ()=>at);
+parcelHelpers.export(exports, "default", ()=>ut);
+parcelHelpers.export(exports, "isStyledComponent", ()=>se);
+parcelHelpers.export(exports, "keyframes", ()=>ht);
+parcelHelpers.export(exports, "styled", ()=>ut);
+parcelHelpers.export(exports, "useTheme", ()=>et);
+parcelHelpers.export(exports, "version", ()=>v);
+parcelHelpers.export(exports, "withTheme", ()=>ft);
+var _tslib = require("tslib");
+var _isPropValid = require("@emotion/is-prop-valid");
+var _isPropValidDefault = parcelHelpers.interopDefault(_isPropValid);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _shallowequal = require("shallowequal");
+var _shallowequalDefault = parcelHelpers.interopDefault(_shallowequal);
+var _stylis = require("stylis");
+var _unitless = require("@emotion/unitless");
+var _unitlessDefault = parcelHelpers.interopDefault(_unitless);
+var process = require("process");
+var f = ("undefined" != typeof process && void 0 !== process.env && undefined, "data-styled"), m = "active", y = "data-styled-version", v = "6.1.8", g = "/*!sc*/\n", S = "undefined" != typeof window && "HTMLElement" in window, w = Boolean("boolean" == typeof SC_DISABLE_SPEEDY ? SC_DISABLE_SPEEDY : ("undefined" != typeof process && process.env, "undefined" != typeof process && process.env, true)), b = {}, E = /invalid hook call/i, N = new Set, P = function(t, n) {
+    var o = n ? ' with the id of "'.concat(n, '"') : "", s = "The component ".concat(t).concat(o, " has been created dynamically.\n") + "You may see this warning because you've called styled inside another component.\nTo resolve this only create new StyledComponents outside of any render method and function component.", i = console.error;
+    try {
+        var a = !0;
+        console.error = function(t) {
+            for(var n = [], o = 1; o < arguments.length; o++)n[o - 1] = arguments[o];
+            E.test(t) ? (a = !1, N.delete(s)) : i.apply(void 0, (0, _tslib.__spreadArray)([
+                t
+            ], n, !1));
+        }, (0, _react.useRef)(), a && !N.has(s) && (console.warn(s), N.add(s));
+    } catch (e) {
+        E.test(e.message) && N.delete(s);
+    } finally{
+        console.error = i;
+    }
+}, _ = Object.freeze([]), C = Object.freeze({});
+function I(e, t, n) {
+    return void 0 === n && (n = C), e.theme !== n.theme && e.theme || t || n.theme;
+}
+var A = new Set([
+    "a",
+    "abbr",
+    "address",
+    "area",
+    "article",
+    "aside",
+    "audio",
+    "b",
+    "base",
+    "bdi",
+    "bdo",
+    "big",
+    "blockquote",
+    "body",
+    "br",
+    "button",
+    "canvas",
+    "caption",
+    "cite",
+    "code",
+    "col",
+    "colgroup",
+    "data",
+    "datalist",
+    "dd",
+    "del",
+    "details",
+    "dfn",
+    "dialog",
+    "div",
+    "dl",
+    "dt",
+    "em",
+    "embed",
+    "fieldset",
+    "figcaption",
+    "figure",
+    "footer",
+    "form",
+    "h1",
+    "h2",
+    "h3",
+    "h4",
+    "h5",
+    "h6",
+    "header",
+    "hgroup",
+    "hr",
+    "html",
+    "i",
+    "iframe",
+    "img",
+    "input",
+    "ins",
+    "kbd",
+    "keygen",
+    "label",
+    "legend",
+    "li",
+    "link",
+    "main",
+    "map",
+    "mark",
+    "menu",
+    "menuitem",
+    "meta",
+    "meter",
+    "nav",
+    "noscript",
+    "object",
+    "ol",
+    "optgroup",
+    "option",
+    "output",
+    "p",
+    "param",
+    "picture",
+    "pre",
+    "progress",
+    "q",
+    "rp",
+    "rt",
+    "ruby",
+    "s",
+    "samp",
+    "script",
+    "section",
+    "select",
+    "small",
+    "source",
+    "span",
+    "strong",
+    "style",
+    "sub",
+    "summary",
+    "sup",
+    "table",
+    "tbody",
+    "td",
+    "textarea",
+    "tfoot",
+    "th",
+    "thead",
+    "time",
+    "tr",
+    "track",
+    "u",
+    "ul",
+    "use",
+    "var",
+    "video",
+    "wbr",
+    "circle",
+    "clipPath",
+    "defs",
+    "ellipse",
+    "foreignObject",
+    "g",
+    "image",
+    "line",
+    "linearGradient",
+    "marker",
+    "mask",
+    "path",
+    "pattern",
+    "polygon",
+    "polyline",
+    "radialGradient",
+    "rect",
+    "stop",
+    "svg",
+    "text",
+    "tspan"
+]), O = /[!"#$%&'()*+,./:;<=>?@[\\\]^`{|}~-]+/g, D = /(^-|-$)/g;
+function R(e) {
+    return e.replace(O, "-").replace(D, "");
+}
+var T = /(a)(d)/gi, k = 52, j = function(e) {
+    return String.fromCharCode(e + (e > 25 ? 39 : 97));
+};
+function x(e) {
+    var t, n = "";
+    for(t = Math.abs(e); t > k; t = t / k | 0)n = j(t % k) + n;
+    return (j(t % k) + n).replace(T, "$1-$2");
+}
+var V, F = 5381, M = function(e, t) {
+    for(var n = t.length; n;)e = 33 * e ^ t.charCodeAt(--n);
+    return e;
+}, $ = function(e) {
+    return M(F, e);
+};
+function z(e) {
+    return x($(e) >>> 0);
+}
+function B(e) {
+    return "string" == typeof e && e || e.displayName || e.name || "Component";
+}
+function L(e) {
+    return "string" == typeof e && e.charAt(0) === e.charAt(0).toLowerCase();
+}
+var G = "function" == typeof Symbol && Symbol.for, Y = G ? Symbol.for("react.memo") : 60115, W = G ? Symbol.for("react.forward_ref") : 60112, q = {
+    childContextTypes: !0,
+    contextType: !0,
+    contextTypes: !0,
+    defaultProps: !0,
+    displayName: !0,
+    getDefaultProps: !0,
+    getDerivedStateFromError: !0,
+    getDerivedStateFromProps: !0,
+    mixins: !0,
+    propTypes: !0,
+    type: !0
+}, H = {
+    name: !0,
+    length: !0,
+    prototype: !0,
+    caller: !0,
+    callee: !0,
+    arguments: !0,
+    arity: !0
+}, U = {
+    $$typeof: !0,
+    compare: !0,
+    defaultProps: !0,
+    displayName: !0,
+    propTypes: !0,
+    type: !0
+}, J = ((V = {})[W] = {
+    $$typeof: !0,
+    render: !0,
+    defaultProps: !0,
+    displayName: !0,
+    propTypes: !0
+}, V[Y] = U, V);
+function X(e) {
+    var t;
+    return ("type" in (t = e) && t.type.$$typeof) === Y ? U : "$$typeof" in e ? J[e.$$typeof] : q;
+}
+var Z = Object.defineProperty, K = Object.getOwnPropertyNames, Q = Object.getOwnPropertySymbols, ee = Object.getOwnPropertyDescriptor, te = Object.getPrototypeOf, ne = Object.prototype;
+function oe(e, t, n) {
+    if ("string" != typeof t) {
+        if (ne) {
+            var o = te(t);
+            o && o !== ne && oe(e, o, n);
+        }
+        var r = K(t);
+        Q && (r = r.concat(Q(t)));
+        for(var s = X(e), i = X(t), a = 0; a < r.length; ++a){
+            var c = r[a];
+            if (!(c in H || n && n[c] || i && c in i || s && c in s)) {
+                var l = ee(t, c);
+                try {
+                    Z(e, c, l);
+                } catch (e1) {}
+            }
+        }
+    }
+    return e;
+}
+function re(e) {
+    return "function" == typeof e;
+}
+function se(e) {
+    return "object" == typeof e && "styledComponentId" in e;
+}
+function ie(e, t) {
+    return e && t ? "".concat(e, " ").concat(t) : e || t || "";
+}
+function ae(e, t) {
+    if (0 === e.length) return "";
+    for(var n = e[0], o = 1; o < e.length; o++)n += t ? t + e[o] : e[o];
+    return n;
+}
+function ce(e) {
+    return null !== e && "object" == typeof e && e.constructor.name === Object.name && !("props" in e && e.$$typeof);
+}
+function le(e, t, n) {
+    if (void 0 === n && (n = !1), !n && !ce(e) && !Array.isArray(e)) return t;
+    if (Array.isArray(t)) for(var o = 0; o < t.length; o++)e[o] = le(e[o], t[o]);
+    else if (ce(t)) for(var o in t)e[o] = le(e[o], t[o]);
+    return e;
+}
+function ue(e, t) {
+    Object.defineProperty(e, "toString", {
+        value: t
+    });
+}
+var pe = {
+    1: "Cannot create styled-component for component: %s.\n\n",
+    2: "Can't collect styles once you've consumed a `ServerStyleSheet`'s styles! `ServerStyleSheet` is a one off instance for each server-side render cycle.\n\n- Are you trying to reuse it across renders?\n- Are you accidentally calling collectStyles twice?\n\n",
+    3: "Streaming SSR is only supported in a Node.js environment; Please do not try to call this method in the browser.\n\n",
+    4: "The `StyleSheetManager` expects a valid target or sheet prop!\n\n- Does this error occur on the client and is your target falsy?\n- Does this error occur on the server and is the sheet falsy?\n\n",
+    5: "The clone method cannot be used on the client!\n\n- Are you running in a client-like environment on the server?\n- Are you trying to run SSR on the client?\n\n",
+    6: "Trying to insert a new style tag, but the given Node is unmounted!\n\n- Are you using a custom target that isn't mounted?\n- Does your document not have a valid head element?\n- Have you accidentally removed a style tag manually?\n\n",
+    7: 'ThemeProvider: Please return an object from your "theme" prop function, e.g.\n\n```js\ntheme={() => ({})}\n```\n\n',
+    8: 'ThemeProvider: Please make your "theme" prop an object.\n\n',
+    9: "Missing document `<head>`\n\n",
+    10: "Cannot find a StyleSheet instance. Usually this happens if there are multiple copies of styled-components loaded at once. Check out this issue for how to troubleshoot and fix the common cases where this situation can happen: https://github.com/styled-components/styled-components/issues/1941#issuecomment-417862021\n\n",
+    11: "_This error was replaced with a dev-time warning, it will be deleted for v4 final._ [createGlobalStyle] received children which will not be rendered. Please use the component without passing children elements.\n\n",
+    12: "It seems you are interpolating a keyframe declaration (%s) into an untagged string. This was supported in styled-components v3, but is not longer supported in v4 as keyframes are now injected on-demand. Please wrap your string in the css\\`\\` helper which ensures the styles are injected correctly. See https://www.styled-components.com/docs/api#css\n\n",
+    13: "%s is not a styled component and cannot be referred to via component selector. See https://www.styled-components.com/docs/advanced#referring-to-other-components for more details.\n\n",
+    14: 'ThemeProvider: "theme" prop is required.\n\n',
+    15: "A stylis plugin has been supplied that is not named. We need a name for each plugin to be able to prevent styling collisions between different stylis configurations within the same app. Before you pass your plugin to `<StyleSheetManager stylisPlugins={[]}>`, please make sure each plugin is uniquely-named, e.g.\n\n```js\nObject.defineProperty(importedPlugin, 'name', { value: 'some-unique-name' });\n```\n\n",
+    16: "Reached the limit of how many styled components may be created at group %s.\nYou may only create up to 1,073,741,824 components. If you're creating components dynamically,\nas for instance in your render method then you may be running into this limitation.\n\n",
+    17: "CSSStyleSheet could not be found on HTMLStyleElement.\nHas styled-components' style tag been unmounted or altered by another script?\n",
+    18: "ThemeProvider: Please make sure your useTheme hook is within a `<ThemeProvider>`"
+};
+function de() {
+    for(var e = [], t = 0; t < arguments.length; t++)e[t] = arguments[t];
+    for(var n = e[0], o = [], r = 1, s = e.length; r < s; r += 1)o.push(e[r]);
+    return o.forEach(function(e) {
+        n = n.replace(/%[a-z]/, e);
+    }), n;
+}
+function he(t) {
+    for(var n = [], o = 1; o < arguments.length; o++)n[o - 1] = arguments[o];
+    return new Error(de.apply(void 0, (0, _tslib.__spreadArray)([
+        pe[t]
+    ], n, !1)).trim());
+}
+var fe = function() {
+    function e(e) {
+        this.groupSizes = new Uint32Array(512), this.length = 512, this.tag = e;
+    }
+    return e.prototype.indexOfGroup = function(e) {
+        for(var t = 0, n = 0; n < e; n++)t += this.groupSizes[n];
+        return t;
+    }, e.prototype.insertRules = function(e, t) {
+        if (e >= this.groupSizes.length) {
+            for(var n = this.groupSizes, o = n.length, r = o; e >= r;)if ((r <<= 1) < 0) throw he(16, "".concat(e));
+            this.groupSizes = new Uint32Array(r), this.groupSizes.set(n), this.length = r;
+            for(var s = o; s < r; s++)this.groupSizes[s] = 0;
+        }
+        for(var i = this.indexOfGroup(e + 1), a = (s = 0, t.length); s < a; s++)this.tag.insertRule(i, t[s]) && (this.groupSizes[e]++, i++);
+    }, e.prototype.clearGroup = function(e) {
+        if (e < this.length) {
+            var t = this.groupSizes[e], n = this.indexOfGroup(e), o = n + t;
+            this.groupSizes[e] = 0;
+            for(var r = n; r < o; r++)this.tag.deleteRule(n);
+        }
+    }, e.prototype.getGroup = function(e) {
+        var t = "";
+        if (e >= this.length || 0 === this.groupSizes[e]) return t;
+        for(var n = this.groupSizes[e], o = this.indexOfGroup(e), r = o + n, s = o; s < r; s++)t += "".concat(this.tag.getRule(s)).concat(g);
+        return t;
+    }, e;
+}(), me = new Map, ye = new Map, ve = 1, ge = function(e) {
+    if (me.has(e)) return me.get(e);
+    for(; ye.has(ve);)ve++;
+    var t = ve++;
+    if ((0 | t) < 0 || t > 1073741824) throw he(16, "".concat(t));
+    return me.set(e, t), ye.set(t, e), t;
+}, Se = function(e, t) {
+    ve = t + 1, me.set(e, t), ye.set(t, e);
+}, we = "style[".concat(f, "][").concat(y, '="').concat(v, '"]'), be = new RegExp("^".concat(f, '\\.g(\\d+)\\[id="([\\w\\d-]+)"\\].*?"([^"]*)')), Ee = function(e, t, n) {
+    for(var o, r = n.split(","), s = 0, i = r.length; s < i; s++)(o = r[s]) && e.registerName(t, o);
+}, Ne = function(e, t) {
+    for(var n, o = (null !== (n = t.textContent) && void 0 !== n ? n : "").split(g), r = [], s = 0, i = o.length; s < i; s++){
+        var a = o[s].trim();
+        if (a) {
+            var c = a.match(be);
+            if (c) {
+                var l = 0 | parseInt(c[1], 10), u = c[2];
+                0 !== l && (Se(u, l), Ee(e, u, c[3]), e.getTag().insertRules(l, r)), r.length = 0;
+            } else r.push(a);
+        }
+    }
+};
+function Pe() {
+    return "undefined" != typeof __webpack_nonce__ ? __webpack_nonce__ : null;
+}
+var _e = function(e) {
+    var t = document.head, n = e || t, o = document.createElement("style"), r = function(e) {
+        var t = Array.from(e.querySelectorAll("style[".concat(f, "]")));
+        return t[t.length - 1];
+    }(n), s = void 0 !== r ? r.nextSibling : null;
+    o.setAttribute(f, m), o.setAttribute(y, v);
+    var i = Pe();
+    return i && o.setAttribute("nonce", i), n.insertBefore(o, s), o;
+}, Ce = function() {
+    function e(e) {
+        this.element = _e(e), this.element.appendChild(document.createTextNode("")), this.sheet = function(e) {
+            if (e.sheet) return e.sheet;
+            for(var t = document.styleSheets, n = 0, o = t.length; n < o; n++){
+                var r = t[n];
+                if (r.ownerNode === e) return r;
+            }
+            throw he(17);
+        }(this.element), this.length = 0;
+    }
+    return e.prototype.insertRule = function(e, t) {
+        try {
+            return this.sheet.insertRule(t, e), this.length++, !0;
+        } catch (e1) {
+            return !1;
+        }
+    }, e.prototype.deleteRule = function(e) {
+        this.sheet.deleteRule(e), this.length--;
+    }, e.prototype.getRule = function(e) {
+        var t = this.sheet.cssRules[e];
+        return t && t.cssText ? t.cssText : "";
+    }, e;
+}(), Ie = function() {
+    function e(e) {
+        this.element = _e(e), this.nodes = this.element.childNodes, this.length = 0;
+    }
+    return e.prototype.insertRule = function(e, t) {
+        if (e <= this.length && e >= 0) {
+            var n = document.createTextNode(t);
+            return this.element.insertBefore(n, this.nodes[e] || null), this.length++, !0;
+        }
+        return !1;
+    }, e.prototype.deleteRule = function(e) {
+        this.element.removeChild(this.nodes[e]), this.length--;
+    }, e.prototype.getRule = function(e) {
+        return e < this.length ? this.nodes[e].textContent : "";
+    }, e;
+}(), Ae = function() {
+    function e(e) {
+        this.rules = [], this.length = 0;
+    }
+    return e.prototype.insertRule = function(e, t) {
+        return e <= this.length && (this.rules.splice(e, 0, t), this.length++, !0);
+    }, e.prototype.deleteRule = function(e) {
+        this.rules.splice(e, 1), this.length--;
+    }, e.prototype.getRule = function(e) {
+        return e < this.length ? this.rules[e] : "";
+    }, e;
+}(), Oe = S, De = {
+    isServer: !S,
+    useCSSOMInjection: !w
+}, Re = function() {
+    function e(e, n, o) {
+        void 0 === e && (e = C), void 0 === n && (n = {});
+        var r = this;
+        this.options = (0, _tslib.__assign)((0, _tslib.__assign)({}, De), e), this.gs = n, this.names = new Map(o), this.server = !!e.isServer, !this.server && S && Oe && (Oe = !1, function(e) {
+            for(var t = document.querySelectorAll(we), n = 0, o = t.length; n < o; n++){
+                var r = t[n];
+                r && r.getAttribute(f) !== m && (Ne(e, r), r.parentNode && r.parentNode.removeChild(r));
+            }
+        }(this)), ue(this, function() {
+            return function(e) {
+                for(var t = e.getTag(), n = t.length, o = "", r = function(n) {
+                    var r = function(e) {
+                        return ye.get(e);
+                    }(n);
+                    if (void 0 === r) return "continue";
+                    var s = e.names.get(r), i = t.getGroup(n);
+                    if (void 0 === s || 0 === i.length) return "continue";
+                    var a = "".concat(f, ".g").concat(n, '[id="').concat(r, '"]'), c = "";
+                    void 0 !== s && s.forEach(function(e) {
+                        e.length > 0 && (c += "".concat(e, ","));
+                    }), o += "".concat(i).concat(a, '{content:"').concat(c, '"}').concat(g);
+                }, s = 0; s < n; s++)r(s);
+                return o;
+            }(r);
+        });
+    }
+    return e.registerId = function(e) {
+        return ge(e);
+    }, e.prototype.reconstructWithOptions = function(n, o) {
+        return void 0 === o && (o = !0), new e((0, _tslib.__assign)((0, _tslib.__assign)({}, this.options), n), this.gs, o && this.names || void 0);
+    }, e.prototype.allocateGSInstance = function(e) {
+        return this.gs[e] = (this.gs[e] || 0) + 1;
+    }, e.prototype.getTag = function() {
+        var e;
+        return this.tag || (this.tag = (e = function(e) {
+            var t = e.useCSSOMInjection, n = e.target;
+            return e.isServer ? new Ae(n) : t ? new Ce(n) : new Ie(n);
+        }(this.options), new fe(e)));
+    }, e.prototype.hasNameForId = function(e, t) {
+        return this.names.has(e) && this.names.get(e).has(t);
+    }, e.prototype.registerName = function(e, t) {
+        if (ge(e), this.names.has(e)) this.names.get(e).add(t);
+        else {
+            var n = new Set;
+            n.add(t), this.names.set(e, n);
+        }
+    }, e.prototype.insertRules = function(e, t, n) {
+        this.registerName(e, t), this.getTag().insertRules(ge(e), n);
+    }, e.prototype.clearNames = function(e) {
+        this.names.has(e) && this.names.get(e).clear();
+    }, e.prototype.clearRules = function(e) {
+        this.getTag().clearGroup(ge(e)), this.clearNames(e);
+    }, e.prototype.clearTag = function() {
+        this.tag = void 0;
+    }, e;
+}(), Te = /&/g, ke = /^\s*\/\/.*$/gm;
+function je(e, t) {
+    return e.map(function(e) {
+        return "rule" === e.type && (e.value = "".concat(t, " ").concat(e.value), e.value = e.value.replaceAll(",", ",".concat(t, " ")), e.props = e.props.map(function(e) {
+            return "".concat(t, " ").concat(e);
+        })), Array.isArray(e.children) && "@keyframes" !== e.type && (e.children = je(e.children, t)), e;
+    });
+}
+function xe(e) {
+    var t, n, o, r = void 0 === e ? C : e, s = r.options, i = void 0 === s ? C : s, a = r.plugins, c = void 0 === a ? _ : a, l = function(e, o, r) {
+        return r.startsWith(n) && r.endsWith(n) && r.replaceAll(n, "").length > 0 ? ".".concat(t) : e;
+    }, u = c.slice();
+    u.push(function(e) {
+        e.type === _stylis.RULESET && e.value.includes("&") && (e.props[0] = e.props[0].replace(Te, n).replace(o, l));
+    }), i.prefix && u.push(_stylis.prefixer), u.push(_stylis.stringify);
+    var p = function(e, r, s, a) {
+        void 0 === r && (r = ""), void 0 === s && (s = ""), void 0 === a && (a = "&"), t = a, n = r, o = new RegExp("\\".concat(n, "\\b"), "g");
+        var c = e.replace(ke, ""), l = _stylis.compile(s || r ? "".concat(s, " ").concat(r, " { ").concat(c, " }") : c);
+        i.namespace && (l = je(l, i.namespace));
+        var p = [];
+        return _stylis.serialize(l, _stylis.middleware(u.concat(_stylis.rulesheet(function(e) {
+            return p.push(e);
+        })))), p;
+    };
+    return p.hash = c.length ? c.reduce(function(e, t) {
+        return t.name || he(15), M(e, t.name);
+    }, F).toString() : "", p;
+}
+var Ve = new Re, Fe = xe(), Me = (0, _reactDefault.default).createContext({
+    shouldForwardProp: void 0,
+    styleSheet: Ve,
+    stylis: Fe
+}), $e = Me.Consumer, ze = (0, _reactDefault.default).createContext(void 0);
+function Be() {
+    return (0, _react.useContext)(Me);
+}
+function Le(e) {
+    var t = (0, _react.useState)(e.stylisPlugins), n = t[0], r = t[1], c = Be().styleSheet, l = (0, _react.useMemo)(function() {
+        var t = c;
+        return e.sheet ? t = e.sheet : e.target && (t = t.reconstructWithOptions({
+            target: e.target
+        }, !1)), e.disableCSSOMInjection && (t = t.reconstructWithOptions({
+            useCSSOMInjection: !1
+        })), t;
+    }, [
+        e.disableCSSOMInjection,
+        e.sheet,
+        e.target,
+        c
+    ]), u = (0, _react.useMemo)(function() {
+        return xe({
+            options: {
+                namespace: e.namespace,
+                prefix: e.enableVendorPrefixes
+            },
+            plugins: n
+        });
+    }, [
+        e.enableVendorPrefixes,
+        e.namespace,
+        n
+    ]);
+    (0, _react.useEffect)(function() {
+        (0, _shallowequalDefault.default)(n, e.stylisPlugins) || r(e.stylisPlugins);
+    }, [
+        e.stylisPlugins
+    ]);
+    var d = (0, _react.useMemo)(function() {
+        return {
+            shouldForwardProp: e.shouldForwardProp,
+            styleSheet: l,
+            stylis: u
+        };
+    }, [
+        e.shouldForwardProp,
+        l,
+        u
+    ]);
+    return (0, _reactDefault.default).createElement(Me.Provider, {
+        value: d
+    }, (0, _reactDefault.default).createElement(ze.Provider, {
+        value: u
+    }, e.children));
+}
+var Ge = function() {
+    function e(e, t) {
+        var n = this;
+        this.inject = function(e, t) {
+            void 0 === t && (t = Fe);
+            var o = n.name + t.hash;
+            e.hasNameForId(n.id, o) || e.insertRules(n.id, o, t(n.rules, o, "@keyframes"));
+        }, this.name = e, this.id = "sc-keyframes-".concat(e), this.rules = t, ue(this, function() {
+            throw he(12, String(n.name));
+        });
+    }
+    return e.prototype.getName = function(e) {
+        return void 0 === e && (e = Fe), this.name + e.hash;
+    }, e;
+}(), Ye = function(e) {
+    return e >= "A" && e <= "Z";
+};
+function We(e) {
+    for(var t = "", n = 0; n < e.length; n++){
+        var o = e[n];
+        if (1 === n && "-" === o && "-" === e[0]) return e;
+        Ye(o) ? t += "-" + o.toLowerCase() : t += o;
+    }
+    return t.startsWith("ms-") ? "-" + t : t;
+}
+var qe = function(e) {
+    return null == e || !1 === e || "" === e;
+}, He = function(t) {
+    var n, o, r = [];
+    for(var s in t){
+        var i = t[s];
+        t.hasOwnProperty(s) && !qe(i) && (Array.isArray(i) && i.isCss || re(i) ? r.push("".concat(We(s), ":"), i, ";") : ce(i) ? r.push.apply(r, (0, _tslib.__spreadArray)((0, _tslib.__spreadArray)([
+            "".concat(s, " {")
+        ], He(i), !1), [
+            "}"
+        ], !1)) : r.push("".concat(We(s), ": ").concat((n = s, null == (o = i) || "boolean" == typeof o || "" === o ? "" : "number" != typeof o || 0 === o || n in (0, _unitlessDefault.default) || n.startsWith("--") ? String(o).trim() : "".concat(o, "px")), ";")));
+    }
+    return r;
+};
+function Ue(e, t, n, o) {
+    if (qe(e)) return [];
+    if (se(e)) return [
+        ".".concat(e.styledComponentId)
+    ];
+    if (re(e)) {
+        if (!re(s = e) || s.prototype && s.prototype.isReactComponent || !t) return [
+            e
+        ];
+        var r = e(t);
+        return "object" != typeof r || Array.isArray(r) || r instanceof Ge || ce(r) || null === r || console.error("".concat(B(e), " is not a styled component and cannot be referred to via component selector. See https://www.styled-components.com/docs/advanced#referring-to-other-components for more details.")), Ue(r, t, n, o);
+    }
+    var s;
+    return e instanceof Ge ? n ? (e.inject(n, o), [
+        e.getName(o)
+    ]) : [
+        e
+    ] : ce(e) ? He(e) : Array.isArray(e) ? Array.prototype.concat.apply(_, e.map(function(e) {
+        return Ue(e, t, n, o);
+    })) : [
+        e.toString()
+    ];
+}
+function Je(e) {
+    for(var t = 0; t < e.length; t += 1){
+        var n = e[t];
+        if (re(n) && !se(n)) return !1;
+    }
+    return !0;
+}
+var Xe = $(v), Ze = function() {
+    function e(e, t, n) {
+        this.rules = e, this.staticRulesId = "", this.isStatic = false, this.componentId = t, this.baseHash = M(Xe, t), this.baseStyle = n, Re.registerId(t);
+    }
+    return e.prototype.generateAndInjectStyles = function(e, t, n) {
+        var o = this.baseStyle ? this.baseStyle.generateAndInjectStyles(e, t, n) : "";
+        if (this.isStatic && !n.hash) {
+            if (this.staticRulesId && t.hasNameForId(this.componentId, this.staticRulesId)) o = ie(o, this.staticRulesId);
+            else {
+                var r = ae(Ue(this.rules, e, t, n)), s = x(M(this.baseHash, r) >>> 0);
+                if (!t.hasNameForId(this.componentId, s)) {
+                    var i = n(r, ".".concat(s), void 0, this.componentId);
+                    t.insertRules(this.componentId, s, i);
+                }
+                o = ie(o, s), this.staticRulesId = s;
+            }
+        } else {
+            for(var a = M(this.baseHash, n.hash), c = "", l = 0; l < this.rules.length; l++){
+                var u = this.rules[l];
+                if ("string" == typeof u) c += u, a = M(a, u);
+                else if (u) {
+                    var p = ae(Ue(u, e, t, n));
+                    a = M(a, p + l), c += p;
+                }
+            }
+            if (c) {
+                var d = x(a >>> 0);
+                t.hasNameForId(this.componentId, d) || t.insertRules(this.componentId, d, n(c, ".".concat(d), void 0, this.componentId)), o = ie(o, d);
+            }
+        }
+        return o;
+    }, e;
+}(), Ke = (0, _reactDefault.default).createContext(void 0), Qe = Ke.Consumer;
+function et() {
+    var e = (0, _react.useContext)(Ke);
+    if (!e) throw he(18);
+    return e;
+}
+function tt(e) {
+    var n = (0, _reactDefault.default).useContext(Ke), r = (0, _react.useMemo)(function() {
+        return function(e, n) {
+            if (!e) throw he(14);
+            if (re(e)) {
+                var o = e(n);
+                if (null === o || Array.isArray(o) || "object" != typeof o) throw he(7);
+                return o;
+            }
+            if (Array.isArray(e) || "object" != typeof e) throw he(8);
+            return n ? (0, _tslib.__assign)((0, _tslib.__assign)({}, n), e) : e;
+        }(e.theme, n);
+    }, [
+        e.theme,
+        n
+    ]);
+    return e.children ? (0, _reactDefault.default).createElement(Ke.Provider, {
+        value: r
+    }, e.children) : null;
+}
+var nt = {}, ot = new Set;
+function rt(e, r, s) {
+    var i = se(e), a = e, c = !L(e), p = r.attrs, d = void 0 === p ? _ : p, h = r.componentId, f = void 0 === h ? function(e, t) {
+        var n = "string" != typeof e ? "sc" : R(e);
+        nt[n] = (nt[n] || 0) + 1;
+        var o = "".concat(n, "-").concat(z(v + n + nt[n]));
+        return t ? "".concat(t, "-").concat(o) : o;
+    }(r.displayName, r.parentComponentId) : h, m = r.displayName, y = void 0 === m ? function(e) {
+        return L(e) ? "styled.".concat(e) : "Styled(".concat(B(e), ")");
+    }(e) : m, g = r.displayName && r.componentId ? "".concat(R(r.displayName), "-").concat(r.componentId) : r.componentId || f, S = i && a.attrs ? a.attrs.concat(d).filter(Boolean) : d, w = r.shouldForwardProp;
+    if (i && a.shouldForwardProp) {
+        var b = a.shouldForwardProp;
+        if (r.shouldForwardProp) {
+            var E = r.shouldForwardProp;
+            w = function(e, t) {
+                return b(e, t) && E(e, t);
+            };
+        } else w = b;
+    }
+    var N = new Ze(s, g, i ? a.componentStyle : void 0);
+    function O(e, r) {
+        return function(e, r, s) {
+            var i = e.attrs, a = e.componentStyle, c = e.defaultProps, p = e.foldedComponentIds, d = e.styledComponentId, h = e.target, f = (0, _reactDefault.default).useContext(Ke), m = Be(), y = e.shouldForwardProp || m.shouldForwardProp;
+            (0, _react.useDebugValue)(d);
+            var v = I(r, f, c) || C, g = function(e, n, o) {
+                for(var r, s = (0, _tslib.__assign)((0, _tslib.__assign)({}, n), {
+                    className: void 0,
+                    theme: o
+                }), i = 0; i < e.length; i += 1){
+                    var a = re(r = e[i]) ? r(s) : r;
+                    for(var c in a)s[c] = "className" === c ? ie(s[c], a[c]) : "style" === c ? (0, _tslib.__assign)((0, _tslib.__assign)({}, s[c]), a[c]) : a[c];
+                }
+                return n.className && (s.className = ie(s.className, n.className)), s;
+            }(i, r, v), S = g.as || h, w = {};
+            for(var b in g)void 0 === g[b] || "$" === b[0] || "as" === b || "theme" === b && g.theme === v || ("forwardedAs" === b ? w.as = g.forwardedAs : y && !y(b, S) || (w[b] = g[b], y || false || (0, _isPropValidDefault.default)(b) || ot.has(b) || !A.has(S) || (ot.add(b), console.warn('styled-components: it looks like an unknown prop "'.concat(b, '" is being sent through to the DOM, which will likely trigger a React console error. If you would like automatic filtering of unknown props, you can opt-into that behavior via `<StyleSheetManager shouldForwardProp={...}>` (connect an API like `@emotion/is-prop-valid`) or consider using transient props (`$` prefix for automatic filtering.)')))));
+            var E = function(e, t) {
+                var n = Be(), o = e.generateAndInjectStyles(t, n.styleSheet, n.stylis);
+                return (0, _react.useDebugValue)(o), o;
+            }(a, g);
+            e.warnTooManyClasses && e.warnTooManyClasses(E);
+            var N = ie(p, d);
+            return E && (N += " " + E), g.className && (N += " " + g.className), w[L(S) && !A.has(S) ? "class" : "className"] = N, w.ref = s, (0, _react.createElement)(S, w);
+        }(D, e, r);
+    }
+    O.displayName = y;
+    var D = (0, _reactDefault.default).forwardRef(O);
+    return D.attrs = S, D.componentStyle = N, D.displayName = y, D.shouldForwardProp = w, D.foldedComponentIds = i ? ie(a.foldedComponentIds, a.styledComponentId) : "", D.styledComponentId = g, D.target = i ? a.target : e, Object.defineProperty(D, "defaultProps", {
+        get: function() {
+            return this._foldedDefaultProps;
+        },
+        set: function(e) {
+            this._foldedDefaultProps = i ? function(e) {
+                for(var t = [], n = 1; n < arguments.length; n++)t[n - 1] = arguments[n];
+                for(var o = 0, r = t; o < r.length; o++)le(e, r[o], !0);
+                return e;
+            }({}, a.defaultProps, e) : e;
+        }
+    }), P(y, g), D.warnTooManyClasses = function(e, t) {
+        var n = {}, o = !1;
+        return function(r) {
+            if (!o && (n[r] = !0, Object.keys(n).length >= 200)) {
+                var s = t ? ' with the id of "'.concat(t, '"') : "";
+                console.warn("Over ".concat(200, " classes were generated for component ").concat(e).concat(s, ".\n") + "Consider using the attrs method, together with a style object for frequently changed styles.\nExample:\n  const Component = styled.div.attrs(props => ({\n    style: {\n      background: props.background,\n    },\n  }))`width: 100%;`\n\n  <Component />"), o = !0, n = {};
+            }
+        };
+    }(y, g), ue(D, function() {
+        return ".".concat(D.styledComponentId);
+    }), c && oe(D, e, {
+        attrs: !0,
+        componentStyle: !0,
+        displayName: !0,
+        foldedComponentIds: !0,
+        shouldForwardProp: !0,
+        styledComponentId: !0,
+        target: !0
+    }), D;
+}
+function st(e, t) {
+    for(var n = [
+        e[0]
+    ], o = 0, r = t.length; o < r; o += 1)n.push(t[o], e[o + 1]);
+    return n;
+}
+var it = function(e) {
+    return Object.assign(e, {
+        isCss: !0
+    });
+};
+function at(t) {
+    for(var n = [], o = 1; o < arguments.length; o++)n[o - 1] = arguments[o];
+    if (re(t) || ce(t)) return it(Ue(st(_, (0, _tslib.__spreadArray)([
+        t
+    ], n, !0))));
+    var r = t;
+    return 0 === n.length && 1 === r.length && "string" == typeof r[0] ? Ue(r) : it(Ue(st(r, n)));
+}
+function ct(n, o, r) {
+    if (void 0 === r && (r = C), !o) throw he(1, o);
+    var s = function(t) {
+        for(var s = [], i = 1; i < arguments.length; i++)s[i - 1] = arguments[i];
+        return n(o, r, at.apply(void 0, (0, _tslib.__spreadArray)([
+            t
+        ], s, !1)));
+    };
+    return s.attrs = function(e) {
+        return ct(n, o, (0, _tslib.__assign)((0, _tslib.__assign)({}, r), {
+            attrs: Array.prototype.concat(r.attrs, e).filter(Boolean)
+        }));
+    }, s.withConfig = function(e) {
+        return ct(n, o, (0, _tslib.__assign)((0, _tslib.__assign)({}, r), e));
+    }, s;
+}
+var lt = function(e) {
+    return ct(rt, e);
+}, ut = lt;
+A.forEach(function(e) {
+    ut[e] = lt(e);
+});
+var pt = function() {
+    function e(e, t) {
+        this.rules = e, this.componentId = t, this.isStatic = Je(e), Re.registerId(this.componentId + 1);
+    }
+    return e.prototype.createStyles = function(e, t, n, o) {
+        var r = o(ae(Ue(this.rules, t, n, o)), ""), s = this.componentId + e;
+        n.insertRules(s, s, r);
+    }, e.prototype.removeStyles = function(e, t) {
+        t.clearRules(this.componentId + e);
+    }, e.prototype.renderStyles = function(e, t, n, o) {
+        e > 2 && Re.registerId(this.componentId + e), this.removeStyles(e, n), this.createStyles(e, t, n, o);
+    }, e;
+}();
+function dt(n) {
+    for(var r = [], s = 1; s < arguments.length; s++)r[s - 1] = arguments[s];
+    var i = at.apply(void 0, (0, _tslib.__spreadArray)([
+        n
+    ], r, !1)), a = "sc-global-".concat(z(JSON.stringify(i))), c = new pt(i, a);
+    P(a);
+    var l = function(e) {
+        var t = Be(), n = (0, _reactDefault.default).useContext(Ke), r = (0, _reactDefault.default).useRef(t.styleSheet.allocateGSInstance(a)).current;
+        return (0, _reactDefault.default).Children.count(e.children) && console.warn("The global style component ".concat(a, " was given child JSX. createGlobalStyle does not render children.")), i.some(function(e) {
+            return "string" == typeof e && -1 !== e.indexOf("@import");
+        }) && console.warn("Please do not use @import CSS syntax in createGlobalStyle at this time, as the CSSOM APIs we use in production do not handle it well. Instead, we recommend using a library such as react-helmet to inject a typical <link> meta tag to the stylesheet, or simply embedding it manually in your index.html <head> section for a simpler app."), t.styleSheet.server && u(r, e, t.styleSheet, n, t.stylis), (0, _reactDefault.default).useLayoutEffect(function() {
+            if (!t.styleSheet.server) return u(r, e, t.styleSheet, n, t.stylis), function() {
+                return c.removeStyles(r, t.styleSheet);
+            };
+        }, [
+            r,
+            e,
+            t.styleSheet,
+            n,
+            t.stylis
+        ]), null;
+    };
+    function u(e, n, o, r, s) {
+        if (c.isStatic) c.renderStyles(e, b, o, s);
+        else {
+            var i = (0, _tslib.__assign)((0, _tslib.__assign)({}, n), {
+                theme: I(n, r, l.defaultProps)
+            });
+            c.renderStyles(e, i, o, s);
+        }
+    }
+    return (0, _reactDefault.default).memo(l);
+}
+function ht(t) {
+    for(var n = [], o = 1; o < arguments.length; o++)n[o - 1] = arguments[o];
+    "undefined" != typeof navigator && "ReactNative" === navigator.product && console.warn("`keyframes` cannot be used on ReactNative, only on the web. To do animation in ReactNative please use Animated.");
+    var r = ae(at.apply(void 0, (0, _tslib.__spreadArray)([
+        t
+    ], n, !1))), s = z(r);
+    return new Ge(s, r);
+}
+function ft(e) {
+    var n = (0, _reactDefault.default).forwardRef(function(n, r) {
+        var s = I(n, (0, _reactDefault.default).useContext(Ke), e.defaultProps);
+        return void 0 === s && console.warn('[withTheme] You are not using a ThemeProvider nor passing a theme prop or a theme in defaultProps in component class "'.concat(B(e), '"')), (0, _reactDefault.default).createElement(e, (0, _tslib.__assign)({}, n, {
+            theme: s,
+            ref: r
+        }));
+    });
+    return n.displayName = "WithTheme(".concat(B(e), ")"), oe(n, e);
+}
+var mt = function() {
+    function e() {
+        var e = this;
+        this._emitSheetCSS = function() {
+            var t = e.instance.toString(), n = Pe(), o = ae([
+                n && 'nonce="'.concat(n, '"'),
+                "".concat(f, '="true"'),
+                "".concat(y, '="').concat(v, '"')
+            ].filter(Boolean), " ");
+            return "<style ".concat(o, ">").concat(t, "</style>");
+        }, this.getStyleTags = function() {
+            if (e.sealed) throw he(2);
+            return e._emitSheetCSS();
+        }, this.getStyleElement = function() {
+            var n;
+            if (e.sealed) throw he(2);
+            var r = ((n = {})[f] = "", n[y] = v, n.dangerouslySetInnerHTML = {
+                __html: e.instance.toString()
+            }, n), s = Pe();
+            return s && (r.nonce = s), [
+                (0, _reactDefault.default).createElement("style", (0, _tslib.__assign)({}, r, {
+                    key: "sc-0-0"
+                }))
+            ];
+        }, this.seal = function() {
+            e.sealed = !0;
+        }, this.instance = new Re({
+            isServer: !0
+        }), this.sealed = !1;
+    }
+    return e.prototype.collectStyles = function(e) {
+        if (this.sealed) throw he(2);
+        return (0, _reactDefault.default).createElement(Le, {
+            sheet: this.instance
+        }, e);
+    }, e.prototype.interleaveWithNodeStream = function(e) {
+        throw he(3);
+    }, e;
+}(), yt = {
+    StyleSheet: Re,
+    mainSheet: Ve
+};
+"undefined" != typeof navigator && "ReactNative" === navigator.product && console.warn("It looks like you've imported 'styled-components' on React Native.\nPerhaps you're looking to import 'styled-components/native'?\nRead more about this at https://www.styled-components.com/docs/basics#react-native");
+var vt = "__sc-".concat(f, "__");
+"undefined" != typeof window && (window[vt] || (window[vt] = 0), 1 === window[vt] && console.warn("It looks like there are several instances of 'styled-components' initialized in this application. This may cause dynamic styles to not render properly, errors during the rehydration process, a missing theme prop, and makes your application bigger without good reason.\n\nSee https://s-c.sh/2BAXzed for more info."), window[vt] += 1);
+
+},{"tslib":"lRdW5","@emotion/is-prop-valid":"9JzNk","react":"21dqq","shallowequal":"fjwkp","stylis":"bMCXt","@emotion/unitless":"2Tu84","process":"d5jf4","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lRdW5":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "__extends", ()=>__extends);
+parcelHelpers.export(exports, "__assign", ()=>__assign);
+parcelHelpers.export(exports, "__rest", ()=>__rest);
+parcelHelpers.export(exports, "__decorate", ()=>__decorate);
+parcelHelpers.export(exports, "__param", ()=>__param);
+parcelHelpers.export(exports, "__esDecorate", ()=>__esDecorate);
+parcelHelpers.export(exports, "__runInitializers", ()=>__runInitializers);
+parcelHelpers.export(exports, "__propKey", ()=>__propKey);
+parcelHelpers.export(exports, "__setFunctionName", ()=>__setFunctionName);
+parcelHelpers.export(exports, "__metadata", ()=>__metadata);
+parcelHelpers.export(exports, "__awaiter", ()=>__awaiter);
+parcelHelpers.export(exports, "__generator", ()=>__generator);
+parcelHelpers.export(exports, "__createBinding", ()=>__createBinding);
+parcelHelpers.export(exports, "__exportStar", ()=>__exportStar);
+parcelHelpers.export(exports, "__values", ()=>__values);
+parcelHelpers.export(exports, "__read", ()=>__read);
+/** @deprecated */ parcelHelpers.export(exports, "__spread", ()=>__spread);
+/** @deprecated */ parcelHelpers.export(exports, "__spreadArrays", ()=>__spreadArrays);
+parcelHelpers.export(exports, "__spreadArray", ()=>__spreadArray);
+parcelHelpers.export(exports, "__await", ()=>__await);
+parcelHelpers.export(exports, "__asyncGenerator", ()=>__asyncGenerator);
+parcelHelpers.export(exports, "__asyncDelegator", ()=>__asyncDelegator);
+parcelHelpers.export(exports, "__asyncValues", ()=>__asyncValues);
+parcelHelpers.export(exports, "__makeTemplateObject", ()=>__makeTemplateObject);
+parcelHelpers.export(exports, "__importStar", ()=>__importStar);
+parcelHelpers.export(exports, "__importDefault", ()=>__importDefault);
+parcelHelpers.export(exports, "__classPrivateFieldGet", ()=>__classPrivateFieldGet);
+parcelHelpers.export(exports, "__classPrivateFieldSet", ()=>__classPrivateFieldSet);
+parcelHelpers.export(exports, "__classPrivateFieldIn", ()=>__classPrivateFieldIn);
+/******************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */ /* global Reflect, Promise */ var extendStatics = function(d, b) {
+    extendStatics = Object.setPrototypeOf || ({
+        __proto__: []
+    }) instanceof Array && function(d, b) {
+        d.__proto__ = b;
+    } || function(d, b) {
+        for(var p in b)if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p];
+    };
+    return extendStatics(d, b);
+};
+function __extends(d, b) {
+    if (typeof b !== "function" && b !== null) throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+    extendStatics(d, b);
+    function __() {
+        this.constructor = d;
+    }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+}
+var __assign = function() {
+    __assign = Object.assign || function __assign(t) {
+        for(var s, i = 1, n = arguments.length; i < n; i++){
+            s = arguments[i];
+            for(var p in s)if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+function __rest(s, e) {
+    var t = {};
+    for(var p in s)if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function") {
+        for(var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++)if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
+    }
+    return t;
+}
+function __decorate(decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for(var i = decorators.length - 1; i >= 0; i--)if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+}
+function __param(paramIndex, decorator) {
+    return function(target, key) {
+        decorator(target, key, paramIndex);
+    };
+}
+function __esDecorate(ctor, descriptorIn, decorators, contextIn, initializers, extraInitializers) {
+    function accept(f) {
+        if (f !== void 0 && typeof f !== "function") throw new TypeError("Function expected");
+        return f;
+    }
+    var kind = contextIn.kind, key = kind === "getter" ? "get" : kind === "setter" ? "set" : "value";
+    var target = !descriptorIn && ctor ? contextIn["static"] ? ctor : ctor.prototype : null;
+    var descriptor = descriptorIn || (target ? Object.getOwnPropertyDescriptor(target, contextIn.name) : {});
+    var _, done = false;
+    for(var i = decorators.length - 1; i >= 0; i--){
+        var context = {};
+        for(var p in contextIn)context[p] = p === "access" ? {} : contextIn[p];
+        for(var p in contextIn.access)context.access[p] = contextIn.access[p];
+        context.addInitializer = function(f) {
+            if (done) throw new TypeError("Cannot add initializers after decoration has completed");
+            extraInitializers.push(accept(f || null));
+        };
+        var result = (0, decorators[i])(kind === "accessor" ? {
+            get: descriptor.get,
+            set: descriptor.set
+        } : descriptor[key], context);
+        if (kind === "accessor") {
+            if (result === void 0) continue;
+            if (result === null || typeof result !== "object") throw new TypeError("Object expected");
+            if (_ = accept(result.get)) descriptor.get = _;
+            if (_ = accept(result.set)) descriptor.set = _;
+            if (_ = accept(result.init)) initializers.push(_);
+        } else if (_ = accept(result)) {
+            if (kind === "field") initializers.push(_);
+            else descriptor[key] = _;
+        }
+    }
+    if (target) Object.defineProperty(target, contextIn.name, descriptor);
+    done = true;
+}
+function __runInitializers(thisArg, initializers, value) {
+    var useValue = arguments.length > 2;
+    for(var i = 0; i < initializers.length; i++)value = useValue ? initializers[i].call(thisArg, value) : initializers[i].call(thisArg);
+    return useValue ? value : void 0;
+}
+function __propKey(x) {
+    return typeof x === "symbol" ? x : "".concat(x);
+}
+function __setFunctionName(f, name, prefix) {
+    if (typeof name === "symbol") name = name.description ? "[".concat(name.description, "]") : "";
+    return Object.defineProperty(f, "name", {
+        configurable: true,
+        value: prefix ? "".concat(prefix, " ", name) : name
+    });
+}
+function __metadata(metadataKey, metadataValue) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+}
+function __awaiter(thisArg, _arguments, P, generator) {
+    function adopt(value) {
+        return value instanceof P ? value : new P(function(resolve) {
+            resolve(value);
+        });
+    }
+    return new (P || (P = Promise))(function(resolve, reject) {
+        function fulfilled(value) {
+            try {
+                step(generator.next(value));
+            } catch (e) {
+                reject(e);
+            }
+        }
+        function rejected(value) {
+            try {
+                step(generator["throw"](value));
+            } catch (e) {
+                reject(e);
+            }
+        }
+        function step(result) {
+            result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
+        }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+}
+function __generator(thisArg, body) {
+    var _ = {
+        label: 0,
+        sent: function() {
+            if (t[0] & 1) throw t[1];
+            return t[1];
+        },
+        trys: [],
+        ops: []
+    }, f, y, t, g;
+    return g = {
+        next: verb(0),
+        "throw": verb(1),
+        "return": verb(2)
+    }, typeof Symbol === "function" && (g[Symbol.iterator] = function() {
+        return this;
+    }), g;
+    function verb(n) {
+        return function(v) {
+            return step([
+                n,
+                v
+            ]);
+        };
+    }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while(g && (g = 0, op[0] && (_ = 0)), _)try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [
+                op[0] & 2,
+                t.value
+            ];
+            switch(op[0]){
+                case 0:
+                case 1:
+                    t = op;
+                    break;
+                case 4:
+                    _.label++;
+                    return {
+                        value: op[1],
+                        done: false
+                    };
+                case 5:
+                    _.label++;
+                    y = op[1];
+                    op = [
+                        0
+                    ];
+                    continue;
+                case 7:
+                    op = _.ops.pop();
+                    _.trys.pop();
+                    continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) {
+                        _ = 0;
+                        continue;
+                    }
+                    if (op[0] === 3 && (!t || op[1] > t[0] && op[1] < t[3])) {
+                        _.label = op[1];
+                        break;
+                    }
+                    if (op[0] === 6 && _.label < t[1]) {
+                        _.label = t[1];
+                        t = op;
+                        break;
+                    }
+                    if (t && _.label < t[2]) {
+                        _.label = t[2];
+                        _.ops.push(op);
+                        break;
+                    }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop();
+                    continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) {
+            op = [
+                6,
+                e
+            ];
+            y = 0;
+        } finally{
+            f = t = 0;
+        }
+        if (op[0] & 5) throw op[1];
+        return {
+            value: op[0] ? op[1] : void 0,
+            done: true
+        };
+    }
+}
+var __createBinding = Object.create ? function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) desc = {
+        enumerable: true,
+        get: function() {
+            return m[k];
+        }
+    };
+    Object.defineProperty(o, k2, desc);
+} : function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+};
+function __exportStar(m, o) {
+    for(var p in m)if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding(o, m, p);
+}
+function __values(o) {
+    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+    if (m) return m.call(o);
+    if (o && typeof o.length === "number") return {
+        next: function() {
+            if (o && i >= o.length) o = void 0;
+            return {
+                value: o && o[i++],
+                done: !o
+            };
+        }
+    };
+    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+}
+function __read(o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while((n === void 0 || n-- > 0) && !(r = i.next()).done)ar.push(r.value);
+    } catch (error) {
+        e = {
+            error: error
+        };
+    } finally{
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        } finally{
+            if (e) throw e.error;
+        }
+    }
+    return ar;
+}
+function __spread() {
+    for(var ar = [], i = 0; i < arguments.length; i++)ar = ar.concat(__read(arguments[i]));
+    return ar;
+}
+function __spreadArrays() {
+    for(var s = 0, i = 0, il = arguments.length; i < il; i++)s += arguments[i].length;
+    for(var r = Array(s), k = 0, i = 0; i < il; i++)for(var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)r[k] = a[j];
+    return r;
+}
+function __spreadArray(to, from, pack) {
+    if (pack || arguments.length === 2) {
+        for(var i = 0, l = from.length, ar; i < l; i++)if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+}
+function __await(v) {
+    return this instanceof __await ? (this.v = v, this) : new __await(v);
+}
+function __asyncGenerator(thisArg, _arguments, generator) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function() {
+        return this;
+    }, i;
+    function verb(n) {
+        if (g[n]) i[n] = function(v) {
+            return new Promise(function(a, b) {
+                q.push([
+                    n,
+                    v,
+                    a,
+                    b
+                ]) > 1 || resume(n, v);
+            });
+        };
+    }
+    function resume(n, v) {
+        try {
+            step(g[n](v));
+        } catch (e) {
+            settle(q[0][3], e);
+        }
+    }
+    function step(r) {
+        r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r);
+    }
+    function fulfill(value) {
+        resume("next", value);
+    }
+    function reject(value) {
+        resume("throw", value);
+    }
+    function settle(f, v) {
+        if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]);
+    }
+}
+function __asyncDelegator(o) {
+    var i, p;
+    return i = {}, verb("next"), verb("throw", function(e) {
+        throw e;
+    }), verb("return"), i[Symbol.iterator] = function() {
+        return this;
+    }, i;
+    function verb(n, f) {
+        i[n] = o[n] ? function(v) {
+            return (p = !p) ? {
+                value: __await(o[n](v)),
+                done: false
+            } : f ? f(v) : v;
+        } : f;
+    }
+}
+function __asyncValues(o) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var m = o[Symbol.asyncIterator], i;
+    return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function() {
+        return this;
+    }, i);
+    function verb(n) {
+        i[n] = o[n] && function(v) {
+            return new Promise(function(resolve, reject) {
+                v = o[n](v), settle(resolve, reject, v.done, v.value);
+            });
+        };
+    }
+    function settle(resolve, reject, d, v) {
+        Promise.resolve(v).then(function(v) {
+            resolve({
+                value: v,
+                done: d
+            });
+        }, reject);
+    }
+}
+function __makeTemplateObject(cooked, raw) {
+    if (Object.defineProperty) Object.defineProperty(cooked, "raw", {
+        value: raw
+    });
+    else cooked.raw = raw;
+    return cooked;
+}
+var __setModuleDefault = Object.create ? function(o, v) {
+    Object.defineProperty(o, "default", {
+        enumerable: true,
+        value: v
+    });
+} : function(o, v) {
+    o["default"] = v;
+};
+function __importStar(mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) {
+        for(var k in mod)if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    }
+    __setModuleDefault(result, mod);
+    return result;
+}
+function __importDefault(mod) {
+    return mod && mod.__esModule ? mod : {
+        default: mod
+    };
+}
+function __classPrivateFieldGet(receiver, state, kind, f) {
+    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+}
+function __classPrivateFieldSet(receiver, state, value, kind, f) {
+    if (kind === "m") throw new TypeError("Private method is not writable");
+    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+    return kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value), value;
+}
+function __classPrivateFieldIn(state, receiver) {
+    if (receiver === null || typeof receiver !== "object" && typeof receiver !== "function") throw new TypeError("Cannot use 'in' operator on non-object");
+    return typeof state === "function" ? receiver === state : state.has(receiver);
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9JzNk":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>isPropValid);
+var _memoize = require("@emotion/memoize");
+var _memoizeDefault = parcelHelpers.interopDefault(_memoize);
+var reactPropsRegex = /^((children|dangerouslySetInnerHTML|key|ref|autoFocus|defaultValue|defaultChecked|innerHTML|suppressContentEditableWarning|suppressHydrationWarning|valueLink|abbr|accept|acceptCharset|accessKey|action|allow|allowUserMedia|allowPaymentRequest|allowFullScreen|allowTransparency|alt|async|autoComplete|autoPlay|capture|cellPadding|cellSpacing|challenge|charSet|checked|cite|classID|className|cols|colSpan|content|contentEditable|contextMenu|controls|controlsList|coords|crossOrigin|data|dateTime|decoding|default|defer|dir|disabled|disablePictureInPicture|download|draggable|encType|enterKeyHint|form|formAction|formEncType|formMethod|formNoValidate|formTarget|frameBorder|headers|height|hidden|high|href|hrefLang|htmlFor|httpEquiv|id|inputMode|integrity|is|keyParams|keyType|kind|label|lang|list|loading|loop|low|marginHeight|marginWidth|max|maxLength|media|mediaGroup|method|min|minLength|multiple|muted|name|nonce|noValidate|open|optimum|pattern|placeholder|playsInline|poster|preload|profile|radioGroup|readOnly|referrerPolicy|rel|required|reversed|role|rows|rowSpan|sandbox|scope|scoped|scrolling|seamless|selected|shape|size|sizes|slot|span|spellCheck|src|srcDoc|srcLang|srcSet|start|step|style|summary|tabIndex|target|title|translate|type|useMap|value|width|wmode|wrap|about|datatype|inlist|prefix|property|resource|typeof|vocab|autoCapitalize|autoCorrect|autoSave|color|incremental|fallback|inert|itemProp|itemScope|itemType|itemID|itemRef|on|option|results|security|unselectable|accentHeight|accumulate|additive|alignmentBaseline|allowReorder|alphabetic|amplitude|arabicForm|ascent|attributeName|attributeType|autoReverse|azimuth|baseFrequency|baselineShift|baseProfile|bbox|begin|bias|by|calcMode|capHeight|clip|clipPathUnits|clipPath|clipRule|colorInterpolation|colorInterpolationFilters|colorProfile|colorRendering|contentScriptType|contentStyleType|cursor|cx|cy|d|decelerate|descent|diffuseConstant|direction|display|divisor|dominantBaseline|dur|dx|dy|edgeMode|elevation|enableBackground|end|exponent|externalResourcesRequired|fill|fillOpacity|fillRule|filter|filterRes|filterUnits|floodColor|floodOpacity|focusable|fontFamily|fontSize|fontSizeAdjust|fontStretch|fontStyle|fontVariant|fontWeight|format|from|fr|fx|fy|g1|g2|glyphName|glyphOrientationHorizontal|glyphOrientationVertical|glyphRef|gradientTransform|gradientUnits|hanging|horizAdvX|horizOriginX|ideographic|imageRendering|in|in2|intercept|k|k1|k2|k3|k4|kernelMatrix|kernelUnitLength|kerning|keyPoints|keySplines|keyTimes|lengthAdjust|letterSpacing|lightingColor|limitingConeAngle|local|markerEnd|markerMid|markerStart|markerHeight|markerUnits|markerWidth|mask|maskContentUnits|maskUnits|mathematical|mode|numOctaves|offset|opacity|operator|order|orient|orientation|origin|overflow|overlinePosition|overlineThickness|panose1|paintOrder|pathLength|patternContentUnits|patternTransform|patternUnits|pointerEvents|points|pointsAtX|pointsAtY|pointsAtZ|preserveAlpha|preserveAspectRatio|primitiveUnits|r|radius|refX|refY|renderingIntent|repeatCount|repeatDur|requiredExtensions|requiredFeatures|restart|result|rotate|rx|ry|scale|seed|shapeRendering|slope|spacing|specularConstant|specularExponent|speed|spreadMethod|startOffset|stdDeviation|stemh|stemv|stitchTiles|stopColor|stopOpacity|strikethroughPosition|strikethroughThickness|string|stroke|strokeDasharray|strokeDashoffset|strokeLinecap|strokeLinejoin|strokeMiterlimit|strokeOpacity|strokeWidth|surfaceScale|systemLanguage|tableValues|targetX|targetY|textAnchor|textDecoration|textRendering|textLength|to|transform|u1|u2|underlinePosition|underlineThickness|unicode|unicodeBidi|unicodeRange|unitsPerEm|vAlphabetic|vHanging|vIdeographic|vMathematical|values|vectorEffect|version|vertAdvY|vertOriginX|vertOriginY|viewBox|viewTarget|visibility|widths|wordSpacing|writingMode|x|xHeight|x1|x2|xChannelSelector|xlinkActuate|xlinkArcrole|xlinkHref|xlinkRole|xlinkShow|xlinkTitle|xlinkType|xmlBase|xmlns|xmlnsXlink|xmlLang|xmlSpace|y|y1|y2|yChannelSelector|z|zoomAndPan|for|class|autofocus)|(([Dd][Aa][Tt][Aa]|[Aa][Rr][Ii][Aa]|x)-.*))$/; // https://esbench.com/bench/5bfee68a4cd7e6009ef61d23
+var isPropValid = /* #__PURE__ */ (0, _memoizeDefault.default)(function(prop) {
+    return reactPropsRegex.test(prop) || prop.charCodeAt(0) === 111 && prop.charCodeAt(1) === 110 && prop.charCodeAt(2) < 91;
+});
+
+},{"@emotion/memoize":"2vzJd","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2vzJd":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>memoize);
+function memoize(fn) {
+    var cache = Object.create(null);
+    return function(arg) {
+        if (cache[arg] === undefined) cache[arg] = fn(arg);
+        return cache[arg];
+    };
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fjwkp":[function(require,module,exports) {
+//
+module.exports = function shallowEqual(objA, objB, compare, compareContext) {
+    var ret = compare ? compare.call(compareContext, objA, objB) : void 0;
+    if (ret !== void 0) return !!ret;
+    if (objA === objB) return true;
+    if (typeof objA !== "object" || !objA || typeof objB !== "object" || !objB) return false;
+    var keysA = Object.keys(objA);
+    var keysB = Object.keys(objB);
+    if (keysA.length !== keysB.length) return false;
+    var bHasOwnProperty = Object.prototype.hasOwnProperty.bind(objB);
+    // Test for A's keys different from B.
+    for(var idx = 0; idx < keysA.length; idx++){
+        var key = keysA[idx];
+        if (!bHasOwnProperty(key)) return false;
+        var valueA = objA[key];
+        var valueB = objB[key];
+        ret = compare ? compare.call(compareContext, valueA, valueB, key) : void 0;
+        if (ret === false || ret === void 0 && valueA !== valueB) return false;
+    }
+    return true;
+};
+
+},{}],"bMCXt":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "CHARSET", ()=>f);
+parcelHelpers.export(exports, "COMMENT", ()=>n);
+parcelHelpers.export(exports, "COUNTER_STYLE", ()=>w);
+parcelHelpers.export(exports, "DECLARATION", ()=>s);
+parcelHelpers.export(exports, "DOCUMENT", ()=>v);
+parcelHelpers.export(exports, "FONT_FACE", ()=>b);
+parcelHelpers.export(exports, "FONT_FEATURE_VALUES", ()=>d);
+parcelHelpers.export(exports, "IMPORT", ()=>i);
+parcelHelpers.export(exports, "KEYFRAMES", ()=>h);
+parcelHelpers.export(exports, "LAYER", ()=>g);
+parcelHelpers.export(exports, "MEDIA", ()=>u);
+parcelHelpers.export(exports, "MOZ", ()=>r);
+parcelHelpers.export(exports, "MS", ()=>e);
+parcelHelpers.export(exports, "NAMESPACE", ()=>p);
+parcelHelpers.export(exports, "PAGE", ()=>t);
+parcelHelpers.export(exports, "RULESET", ()=>c);
+parcelHelpers.export(exports, "SUPPORTS", ()=>l);
+parcelHelpers.export(exports, "VIEWPORT", ()=>o);
+parcelHelpers.export(exports, "WEBKIT", ()=>a);
+parcelHelpers.export(exports, "abs", ()=>k);
+parcelHelpers.export(exports, "alloc", ()=>X);
+parcelHelpers.export(exports, "append", ()=>q);
+parcelHelpers.export(exports, "assign", ()=>m);
+parcelHelpers.export(exports, "caret", ()=>U);
+parcelHelpers.export(exports, "char", ()=>P);
+parcelHelpers.export(exports, "character", ()=>I);
+parcelHelpers.export(exports, "characters", ()=>J);
+parcelHelpers.export(exports, "charat", ()=>O);
+parcelHelpers.export(exports, "column", ()=>F);
+parcelHelpers.export(exports, "combine", ()=>B);
+parcelHelpers.export(exports, "comment", ()=>fe);
+parcelHelpers.export(exports, "commenter", ()=>ce);
+parcelHelpers.export(exports, "compile", ()=>te);
+parcelHelpers.export(exports, "copy", ()=>L);
+parcelHelpers.export(exports, "dealloc", ()=>Y);
+parcelHelpers.export(exports, "declaration", ()=>oe);
+parcelHelpers.export(exports, "delimit", ()=>Z);
+parcelHelpers.export(exports, "delimiter", ()=>ne);
+parcelHelpers.export(exports, "escaping", ()=>ae);
+parcelHelpers.export(exports, "filter", ()=>D);
+parcelHelpers.export(exports, "from", ()=>$);
+parcelHelpers.export(exports, "hash", ()=>x);
+parcelHelpers.export(exports, "identifier", ()=>se);
+parcelHelpers.export(exports, "indexof", ()=>C);
+parcelHelpers.export(exports, "length", ()=>G);
+parcelHelpers.export(exports, "lift", ()=>N);
+parcelHelpers.export(exports, "line", ()=>E);
+parcelHelpers.export(exports, "match", ()=>j);
+parcelHelpers.export(exports, "middleware", ()=>he);
+parcelHelpers.export(exports, "namespace", ()=>de);
+parcelHelpers.export(exports, "next", ()=>R);
+parcelHelpers.export(exports, "node", ()=>K);
+parcelHelpers.export(exports, "parse", ()=>ue);
+parcelHelpers.export(exports, "peek", ()=>T);
+parcelHelpers.export(exports, "position", ()=>H);
+parcelHelpers.export(exports, "prefix", ()=>le);
+parcelHelpers.export(exports, "prefixer", ()=>we);
+parcelHelpers.export(exports, "prev", ()=>Q);
+parcelHelpers.export(exports, "replace", ()=>z);
+parcelHelpers.export(exports, "ruleset", ()=>ie);
+parcelHelpers.export(exports, "rulesheet", ()=>be);
+parcelHelpers.export(exports, "serialize", ()=>ve);
+parcelHelpers.export(exports, "sizeof", ()=>S);
+parcelHelpers.export(exports, "slice", ()=>V);
+parcelHelpers.export(exports, "stringify", ()=>pe);
+parcelHelpers.export(exports, "strlen", ()=>M);
+parcelHelpers.export(exports, "substr", ()=>A);
+parcelHelpers.export(exports, "token", ()=>W);
+parcelHelpers.export(exports, "tokenize", ()=>_);
+parcelHelpers.export(exports, "tokenizer", ()=>re);
+parcelHelpers.export(exports, "trim", ()=>y);
+parcelHelpers.export(exports, "whitespace", ()=>ee);
+var e = "-ms-";
+var r = "-moz-";
+var a = "-webkit-";
+var n = "comm";
+var c = "rule";
+var s = "decl";
+var t = "@page";
+var u = "@media";
+var i = "@import";
+var f = "@charset";
+var o = "@viewport";
+var l = "@supports";
+var v = "@document";
+var p = "@namespace";
+var h = "@keyframes";
+var b = "@font-face";
+var w = "@counter-style";
+var d = "@font-feature-values";
+var g = "@layer";
+var k = Math.abs;
+var $ = String.fromCharCode;
+var m = Object.assign;
+function x(e, r) {
+    return O(e, 0) ^ 45 ? (((r << 2 ^ O(e, 0)) << 2 ^ O(e, 1)) << 2 ^ O(e, 2)) << 2 ^ O(e, 3) : 0;
+}
+function y(e) {
+    return e.trim();
+}
+function j(e, r) {
+    return (e = r.exec(e)) ? e[0] : e;
+}
+function z(e, r, a) {
+    return e.replace(r, a);
+}
+function C(e, r, a) {
+    return e.indexOf(r, a);
+}
+function O(e, r) {
+    return e.charCodeAt(r) | 0;
+}
+function A(e, r, a) {
+    return e.slice(r, a);
+}
+function M(e) {
+    return e.length;
+}
+function S(e) {
+    return e.length;
+}
+function q(e, r) {
+    return r.push(e), e;
+}
+function B(e, r) {
+    return e.map(r).join("");
+}
+function D(e, r) {
+    return e.filter(function(e) {
+        return !j(e, r);
+    });
+}
+var E = 1;
+var F = 1;
+var G = 0;
+var H = 0;
+var I = 0;
+var J = "";
+function K(e, r, a, n, c, s, t, u) {
+    return {
+        value: e,
+        root: r,
+        parent: a,
+        type: n,
+        props: c,
+        children: s,
+        line: E,
+        column: F,
+        length: t,
+        return: "",
+        siblings: u
+    };
+}
+function L(e, r) {
+    return m(K("", null, null, "", null, null, 0, e.siblings), e, {
+        length: -e.length
+    }, r);
+}
+function N(e) {
+    while(e.root)e = L(e.root, {
+        children: [
+            e
+        ]
+    });
+    q(e, e.siblings);
+}
+function P() {
+    return I;
+}
+function Q() {
+    I = H > 0 ? O(J, --H) : 0;
+    if (F--, I === 10) F = 1, E--;
+    return I;
+}
+function R() {
+    I = H < G ? O(J, H++) : 0;
+    if (F++, I === 10) F = 1, E++;
+    return I;
+}
+function T() {
+    return O(J, H);
+}
+function U() {
+    return H;
+}
+function V(e, r) {
+    return A(J, e, r);
+}
+function W(e) {
+    switch(e){
+        case 0:
+        case 9:
+        case 10:
+        case 13:
+        case 32:
+            return 5;
+        case 33:
+        case 43:
+        case 44:
+        case 47:
+        case 62:
+        case 64:
+        case 126:
+        case 59:
+        case 123:
+        case 125:
+            return 4;
+        case 58:
+            return 3;
+        case 34:
+        case 39:
+        case 40:
+        case 91:
+            return 2;
+        case 41:
+        case 93:
+            return 1;
+    }
+    return 0;
+}
+function X(e) {
+    return E = F = 1, G = M(J = e), H = 0, [];
+}
+function Y(e) {
+    return J = "", e;
+}
+function Z(e) {
+    return y(V(H - 1, ne(e === 91 ? e + 2 : e === 40 ? e + 1 : e)));
+}
+function _(e) {
+    return Y(re(X(e)));
+}
+function ee(e) {
+    while(I = T())if (I < 33) R();
+    else break;
+    return W(e) > 2 || W(I) > 3 ? "" : " ";
+}
+function re(e) {
+    while(R())switch(W(I)){
+        case 0:
+            q(se(H - 1), e);
+            break;
+        case 2:
+            q(Z(I), e);
+            break;
+        default:
+            q($(I), e);
+    }
+    return e;
+}
+function ae(e, r) {
+    while(--r && R())if (I < 48 || I > 102 || I > 57 && I < 65 || I > 70 && I < 97) break;
+    return V(e, U() + (r < 6 && T() == 32 && R() == 32));
+}
+function ne(e) {
+    while(R())switch(I){
+        case e:
+            return H;
+        case 34:
+        case 39:
+            if (e !== 34 && e !== 39) ne(I);
+            break;
+        case 40:
+            if (e === 41) ne(e);
+            break;
+        case 92:
+            R();
+            break;
+    }
+    return H;
+}
+function ce(e, r) {
+    while(R())if (e + I === 57) break;
+    else if (e + I === 84 && T() === 47) break;
+    return "/*" + V(r, H - 1) + "*" + $(e === 47 ? e : R());
+}
+function se(e) {
+    while(!W(T()))R();
+    return V(e, H);
+}
+function te(e) {
+    return Y(ue("", null, null, null, [
+        ""
+    ], e = X(e), 0, [
+        0
+    ], e));
+}
+function ue(e, r, a, n, c, s, t, u, i) {
+    var f = 0;
+    var o = 0;
+    var l = t;
+    var v = 0;
+    var p = 0;
+    var h = 0;
+    var b = 1;
+    var w = 1;
+    var d = 1;
+    var g = 0;
+    var m = "";
+    var x = c;
+    var y = s;
+    var j = n;
+    var A = m;
+    while(w)switch(h = g, g = R()){
+        case 40:
+            if (h != 108 && O(A, l - 1) == 58) {
+                if (C(A += z(Z(g), "&", "&\f"), "&\f", k(f ? u[f - 1] : 0)) != -1) d = -1;
+                break;
+            }
+        case 34:
+        case 39:
+        case 91:
+            A += Z(g);
+            break;
+        case 9:
+        case 10:
+        case 13:
+        case 32:
+            A += ee(h);
+            break;
+        case 92:
+            A += ae(U() - 1, 7);
+            continue;
+        case 47:
+            switch(T()){
+                case 42:
+                case 47:
+                    q(fe(ce(R(), U()), r, a, i), i);
+                    break;
+                default:
+                    A += "/";
+            }
+            break;
+        case 123 * b:
+            u[f++] = M(A) * d;
+        case 125 * b:
+        case 59:
+        case 0:
+            switch(g){
+                case 0:
+                case 125:
+                    w = 0;
+                case 59 + o:
+                    if (d == -1) A = z(A, /\f/g, "");
+                    if (p > 0 && M(A) - l) q(p > 32 ? oe(A + ";", n, a, l - 1, i) : oe(z(A, " ", "") + ";", n, a, l - 2, i), i);
+                    break;
+                case 59:
+                    A += ";";
+                default:
+                    q(j = ie(A, r, a, f, o, c, u, m, x = [], y = [], l, s), s);
+                    if (g === 123) {
+                        if (o === 0) ue(A, r, j, j, x, s, l, u, y);
+                        else switch(v === 99 && O(A, 3) === 110 ? 100 : v){
+                            case 100:
+                            case 108:
+                            case 109:
+                            case 115:
+                                ue(e, j, j, n && q(ie(e, j, j, 0, 0, c, u, m, c, x = [], l, y), y), c, y, l, u, n ? x : y);
+                                break;
+                            default:
+                                ue(A, j, j, j, [
+                                    ""
+                                ], y, 0, u, y);
+                        }
+                    }
+            }
+            f = o = p = 0, b = d = 1, m = A = "", l = t;
+            break;
+        case 58:
+            l = 1 + M(A), p = h;
+        default:
+            if (b < 1) {
+                if (g == 123) --b;
+                else if (g == 125 && (b++) == 0 && Q() == 125) continue;
+            }
+            switch(A += $(g), g * b){
+                case 38:
+                    d = o > 0 ? 1 : (A += "\f", -1);
+                    break;
+                case 44:
+                    u[f++] = (M(A) - 1) * d, d = 1;
+                    break;
+                case 64:
+                    if (T() === 45) A += Z(R());
+                    v = T(), o = l = M(m = A += se(U())), g++;
+                    break;
+                case 45:
+                    if (h === 45 && M(A) == 2) b = 0;
+            }
+    }
+    return s;
+}
+function ie(e, r, a, n, s, t, u, i, f, o, l, v) {
+    var p = s - 1;
+    var h = s === 0 ? t : [
+        ""
+    ];
+    var b = S(h);
+    for(var w = 0, d = 0, g = 0; w < n; ++w)for(var $ = 0, m = A(e, p + 1, p = k(d = u[w])), x = e; $ < b; ++$)if (x = y(d > 0 ? h[$] + " " + m : z(m, /&\f/g, h[$]))) f[g++] = x;
+    return K(e, r, a, s === 0 ? c : i, f, o, l, v);
+}
+function fe(e, r, a, c) {
+    return K(e, r, a, n, $(P()), A(e, 2, -2), 0, c);
+}
+function oe(e, r, a, n, c) {
+    return K(e, r, a, s, A(e, 0, n), A(e, n + 1, -1), n, c);
+}
+function le(n, c, s) {
+    switch(x(n, c)){
+        case 5103:
+            return a + "print-" + n + n;
+        case 5737:
+        case 4201:
+        case 3177:
+        case 3433:
+        case 1641:
+        case 4457:
+        case 2921:
+        case 5572:
+        case 6356:
+        case 5844:
+        case 3191:
+        case 6645:
+        case 3005:
+        case 6391:
+        case 5879:
+        case 5623:
+        case 6135:
+        case 4599:
+        case 4855:
+        case 4215:
+        case 6389:
+        case 5109:
+        case 5365:
+        case 5621:
+        case 3829:
+            return a + n + n;
+        case 4789:
+            return r + n + n;
+        case 5349:
+        case 4246:
+        case 4810:
+        case 6968:
+        case 2756:
+            return a + n + r + n + e + n + n;
+        case 5936:
+            switch(O(n, c + 11)){
+                case 114:
+                    return a + n + e + z(n, /[svh]\w+-[tblr]{2}/, "tb") + n;
+                case 108:
+                    return a + n + e + z(n, /[svh]\w+-[tblr]{2}/, "tb-rl") + n;
+                case 45:
+                    return a + n + e + z(n, /[svh]\w+-[tblr]{2}/, "lr") + n;
+            }
+        case 6828:
+        case 4268:
+        case 2903:
+            return a + n + e + n + n;
+        case 6165:
+            return a + n + e + "flex-" + n + n;
+        case 5187:
+            return a + n + z(n, /(\w+).+(:[^]+)/, a + "box-$1$2" + e + "flex-$1$2") + n;
+        case 5443:
+            return a + n + e + "flex-item-" + z(n, /flex-|-self/g, "") + (!j(n, /flex-|baseline/) ? e + "grid-row-" + z(n, /flex-|-self/g, "") : "") + n;
+        case 4675:
+            return a + n + e + "flex-line-pack" + z(n, /align-content|flex-|-self/g, "") + n;
+        case 5548:
+            return a + n + e + z(n, "shrink", "negative") + n;
+        case 5292:
+            return a + n + e + z(n, "basis", "preferred-size") + n;
+        case 6060:
+            return a + "box-" + z(n, "-grow", "") + a + n + e + z(n, "grow", "positive") + n;
+        case 4554:
+            return a + z(n, /([^-])(transform)/g, "$1" + a + "$2") + n;
+        case 6187:
+            return z(z(z(n, /(zoom-|grab)/, a + "$1"), /(image-set)/, a + "$1"), n, "") + n;
+        case 5495:
+        case 3959:
+            return z(n, /(image-set\([^]*)/, a + "$1" + "$`$1");
+        case 4968:
+            return z(z(n, /(.+:)(flex-)?(.*)/, a + "box-pack:$3" + e + "flex-pack:$3"), /s.+-b[^;]+/, "justify") + a + n + n;
+        case 4200:
+            if (!j(n, /flex-|baseline/)) return e + "grid-column-align" + A(n, c) + n;
+            break;
+        case 2592:
+        case 3360:
+            return e + z(n, "template-", "") + n;
+        case 4384:
+        case 3616:
+            if (s && s.some(function(e, r) {
+                return c = r, j(e.props, /grid-\w+-end/);
+            })) return ~C(n + (s = s[c].value), "span", 0) ? n : e + z(n, "-start", "") + n + e + "grid-row-span:" + (~C(s, "span", 0) ? j(s, /\d+/) : +j(s, /\d+/) - +j(n, /\d+/)) + ";";
+            return e + z(n, "-start", "") + n;
+        case 4896:
+        case 4128:
+            return s && s.some(function(e) {
+                return j(e.props, /grid-\w+-start/);
+            }) ? n : e + z(z(n, "-end", "-span"), "span ", "") + n;
+        case 4095:
+        case 3583:
+        case 4068:
+        case 2532:
+            return z(n, /(.+)-inline(.+)/, a + "$1$2") + n;
+        case 8116:
+        case 7059:
+        case 5753:
+        case 5535:
+        case 5445:
+        case 5701:
+        case 4933:
+        case 4677:
+        case 5533:
+        case 5789:
+        case 5021:
+        case 4765:
+            if (M(n) - 1 - c > 6) switch(O(n, c + 1)){
+                case 109:
+                    if (O(n, c + 4) !== 45) break;
+                case 102:
+                    return z(n, /(.+:)(.+)-([^]+)/, "$1" + a + "$2-$3" + "$1" + r + (O(n, c + 3) == 108 ? "$3" : "$2-$3")) + n;
+                case 115:
+                    return ~C(n, "stretch", 0) ? le(z(n, "stretch", "fill-available"), c, s) + n : n;
+            }
+            break;
+        case 5152:
+        case 5920:
+            return z(n, /(.+?):(\d+)(\s*\/\s*(span)?\s*(\d+))?(.*)/, function(r, a, c, s, t, u, i) {
+                return e + a + ":" + c + i + (s ? e + a + "-span:" + (t ? u : +u - +c) + i : "") + n;
+            });
+        case 4949:
+            if (O(n, c + 6) === 121) return z(n, ":", ":" + a) + n;
+            break;
+        case 6444:
+            switch(O(n, O(n, 14) === 45 ? 18 : 11)){
+                case 120:
+                    return z(n, /(.+:)([^;\s!]+)(;|(\s+)?!.+)?/, "$1" + a + (O(n, 14) === 45 ? "inline-" : "") + "box$3" + "$1" + a + "$2$3" + "$1" + e + "$2box$3") + n;
+                case 100:
+                    return z(n, ":", ":" + e) + n;
+            }
+            break;
+        case 5719:
+        case 2647:
+        case 2135:
+        case 3927:
+        case 2391:
+            return z(n, "scroll-", "scroll-snap-") + n;
+    }
+    return n;
+}
+function ve(e, r) {
+    var a = "";
+    for(var n = 0; n < e.length; n++)a += r(e[n], n, e, r) || "";
+    return a;
+}
+function pe(e, r, a, t) {
+    switch(e.type){
+        case g:
+            if (e.children.length) break;
+        case i:
+        case s:
+            return e.return = e.return || e.value;
+        case n:
+            return "";
+        case h:
+            return e.return = e.value + "{" + ve(e.children, t) + "}";
+        case c:
+            if (!M(e.value = e.props.join(","))) return "";
+    }
+    return M(a = ve(e.children, t)) ? e.return = e.value + "{" + a + "}" : "";
+}
+function he(e) {
+    var r = S(e);
+    return function(a, n, c, s) {
+        var t = "";
+        for(var u = 0; u < r; u++)t += e[u](a, n, c, s) || "";
+        return t;
+    };
+}
+function be(e) {
+    return function(r) {
+        if (!r.root) {
+            if (r = r.return) e(r);
+        }
+    };
+}
+function we(n, t, u, i) {
+    if (n.length > -1) {
+        if (!n.return) switch(n.type){
+            case s:
+                n.return = le(n.value, n.length, u);
+                return;
+            case h:
+                return ve([
+                    L(n, {
+                        value: z(n.value, "@", "@" + a)
+                    })
+                ], i);
+            case c:
+                if (n.length) return B(u = n.props, function(c) {
+                    switch(j(c, i = /(::plac\w+|:read-\w+)/)){
+                        case ":read-only":
+                        case ":read-write":
+                            N(L(n, {
+                                props: [
+                                    z(c, /:(read-\w+)/, ":" + r + "$1")
+                                ]
+                            }));
+                            N(L(n, {
+                                props: [
+                                    c
+                                ]
+                            }));
+                            m(n, {
+                                props: D(u, i)
+                            });
+                            break;
+                        case "::placeholder":
+                            N(L(n, {
+                                props: [
+                                    z(c, /:(plac\w+)/, ":" + a + "input-$1")
+                                ]
+                            }));
+                            N(L(n, {
+                                props: [
+                                    z(c, /:(plac\w+)/, ":" + r + "$1")
+                                ]
+                            }));
+                            N(L(n, {
+                                props: [
+                                    z(c, /:(plac\w+)/, e + "input-$1")
+                                ]
+                            }));
+                            N(L(n, {
+                                props: [
+                                    c
+                                ]
+                            }));
+                            m(n, {
+                                props: D(u, i)
+                            });
+                            break;
+                    }
+                    return "";
+                });
+        }
+    }
+}
+function de(e) {
+    switch(e.type){
+        case c:
+            e.props = e.props.map(function(r) {
+                return B(_(r), function(r, a, n) {
+                    switch(O(r, 0)){
+                        case 12:
+                            return A(r, 1, M(r));
+                        case 0:
+                        case 40:
+                        case 43:
+                        case 62:
+                        case 126:
+                            return r;
+                        case 58:
+                            if (n[++a] === "global") n[a] = "", n[++a] = "\f" + A(n[a], a = 1, -1);
+                        case 32:
+                            return a === 1 ? "" : r;
+                        default:
+                            switch(a){
+                                case 0:
+                                    e = r;
+                                    return S(n) > 1 ? "" : r;
+                                case a = S(n) - 1:
+                                case 2:
+                                    return a === 2 ? r + e + e : r + e;
+                                default:
+                                    return r;
+                            }
+                    }
+                });
+            });
+    }
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2Tu84":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var unitlessKeys = {
+    animationIterationCount: 1,
+    borderImageOutset: 1,
+    borderImageSlice: 1,
+    borderImageWidth: 1,
+    boxFlex: 1,
+    boxFlexGroup: 1,
+    boxOrdinalGroup: 1,
+    columnCount: 1,
+    columns: 1,
+    flex: 1,
+    flexGrow: 1,
+    flexPositive: 1,
+    flexShrink: 1,
+    flexNegative: 1,
+    flexOrder: 1,
+    gridRow: 1,
+    gridRowEnd: 1,
+    gridRowSpan: 1,
+    gridRowStart: 1,
+    gridColumn: 1,
+    gridColumnEnd: 1,
+    gridColumnSpan: 1,
+    gridColumnStart: 1,
+    msGridRow: 1,
+    msGridRowSpan: 1,
+    msGridColumn: 1,
+    msGridColumnSpan: 1,
+    fontWeight: 1,
+    lineHeight: 1,
+    opacity: 1,
+    order: 1,
+    orphans: 1,
+    tabSize: 1,
+    widows: 1,
+    zIndex: 1,
+    zoom: 1,
+    WebkitLineClamp: 1,
+    // SVG-related properties
+    fillOpacity: 1,
+    floodOpacity: 1,
+    stopOpacity: 1,
+    strokeDasharray: 1,
+    strokeDashoffset: 1,
+    strokeMiterlimit: 1,
+    strokeOpacity: 1,
+    strokeWidth: 1
+};
+exports.default = unitlessKeys;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6QZcy":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$8bef = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -34041,11 +37463,8 @@ var _react1 = require("@headlessui/react");
 var _solid = require("@heroicons/react/20/solid");
 var _educationJson = require("../data/education.json");
 var _educationJsonDefault = parcelHelpers.interopDefault(_educationJson);
-var _schoolJpg = require("../assets/images/school.jpg");
-var _schoolJpgDefault = parcelHelpers.interopDefault(_schoolJpg);
 var _scholarshipsAndAwards = require("./ScholarshipsAndAwards");
 var _scholarshipsAndAwardsDefault = parcelHelpers.interopDefault(_scholarshipsAndAwards);
-const imageAltText = "School building";
 const Education = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
         className: "padding",
@@ -34056,180 +37475,162 @@ const Education = ()=>{
                 children: "Education"
             }, void 0, false, {
                 fileName: "src/Components/Education.jsx",
-                lineNumber: 14,
+                lineNumber: 11,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "pictureContainer flex flex-row p-2 lg:pt-12 lg:item-center",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "self-center hidden lg:w-2/5 lg:block",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                            src: (0, _schoolJpgDefault.default),
-                            className: "w-full object-cover slide-in",
-                            alt: imageAltText
-                        }, void 0, false, {
-                            fileName: "src/Components/Education.jsx",
-                            lineNumber: 17,
-                            columnNumber: 11
-                        }, undefined)
-                    }, void 0, false, {
-                        fileName: "src/Components/Education.jsx",
-                        lineNumber: 16,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "w-full verticalContainer lg:w-3/5",
-                        children: (0, _educationJsonDefault.default).map((education)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "box",
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _react1.Disclosure), {
-                                    children: ({ open  })=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-                                            children: [
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                                    className: "degreeGpaPair",
-                                                    children: [
-                                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                                            href: education.url,
-                                                            target: "_blank",
-                                                            rel: "noopener noreferrer",
-                                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                                                className: "degree",
-                                                                children: education.degree
-                                                            }, void 0, false, {
-                                                                fileName: "src/Components/Education.jsx",
-                                                                lineNumber: 28,
-                                                                columnNumber: 25
-                                                            }, undefined)
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "w-full verticalContainer",
+                    children: (0, _educationJsonDefault.default).map((education)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "box",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _react1.Disclosure), {
+                                children: ({ open  })=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                className: "degreeGpaPair",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                                        href: education.url,
+                                                        target: "_blank",
+                                                        rel: "noopener noreferrer",
+                                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                            className: "degree",
+                                                            children: education.degree
                                                         }, void 0, false, {
                                                             fileName: "src/Components/Education.jsx",
-                                                            lineNumber: 27,
-                                                            columnNumber: 23
-                                                        }, undefined),
-                                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                                            className: "gpa",
-                                                            children: [
-                                                                "GPA: ",
-                                                                education.gpa
-                                                            ]
-                                                        }, void 0, true, {
-                                                            fileName: "src/Components/Education.jsx",
-                                                            lineNumber: 30,
-                                                            columnNumber: 23
+                                                            lineNumber: 25,
+                                                            columnNumber: 25
                                                         }, undefined)
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "src/Components/Education.jsx",
-                                                    lineNumber: 26,
-                                                    columnNumber: 21
-                                                }, undefined),
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                                    className: "small",
-                                                    children: education.university
-                                                }, void 0, false, {
-                                                    fileName: "src/Components/Education.jsx",
-                                                    lineNumber: 32,
-                                                    columnNumber: 21
-                                                }, undefined),
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _react1.Disclosure).Button, {
-                                                    className: "pt-3 w-full flex items-center justify-center",
-                                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _solid.ChevronUpIcon), {
-                                                        className: `${open ? "rotate-180 transform" : ""} h-5 w-5 text-gray-500`
                                                     }, void 0, false, {
                                                         fileName: "src/Components/Education.jsx",
-                                                        lineNumber: 34,
+                                                        lineNumber: 24,
                                                         columnNumber: 23
-                                                    }, undefined)
-                                                }, void 0, false, {
-                                                    fileName: "src/Components/Education.jsx",
-                                                    lineNumber: 33,
-                                                    columnNumber: 21
-                                                }, undefined),
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _react1.Disclosure).Panel, {
-                                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-                                                        children: education.achievements.map((achievement, idx)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                                                className: "achievementResultPair",
-                                                                children: [
-                                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                                                        className: "achievementPair",
-                                                                        children: [
-                                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                                                                className: "achievementTitle",
-                                                                                children: achievement.title
-                                                                            }, void 0, false, {
-                                                                                fileName: "src/Components/Education.jsx",
-                                                                                lineNumber: 43,
-                                                                                columnNumber: 31
-                                                                            }, undefined),
-                                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                                                                className: "achievementTechnologies",
-                                                                                children: achievement.technologies
-                                                                            }, void 0, false, {
-                                                                                fileName: "src/Components/Education.jsx",
-                                                                                lineNumber: 44,
-                                                                                columnNumber: 31
-                                                                            }, undefined)
-                                                                        ]
-                                                                    }, void 0, true, {
-                                                                        fileName: "src/Components/Education.jsx",
-                                                                        lineNumber: 42,
-                                                                        columnNumber: 29
-                                                                    }, undefined),
-                                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                                                        className: "result",
-                                                                        children: education.results[idx]
-                                                                    }, void 0, false, {
-                                                                        fileName: "src/Components/Education.jsx",
-                                                                        lineNumber: 48,
-                                                                        columnNumber: 29
-                                                                    }, undefined)
-                                                                ]
-                                                            }, idx, true, {
-                                                                fileName: "src/Components/Education.jsx",
-                                                                lineNumber: 41,
-                                                                columnNumber: 27
-                                                            }, undefined))
-                                                    }, void 0, false, {
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                        className: "gpa",
+                                                        children: [
+                                                            "GPA: ",
+                                                            education.gpa
+                                                        ]
+                                                    }, void 0, true, {
                                                         fileName: "src/Components/Education.jsx",
-                                                        lineNumber: 39,
+                                                        lineNumber: 27,
                                                         columnNumber: 23
                                                     }, undefined)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "src/Components/Education.jsx",
+                                                lineNumber: 23,
+                                                columnNumber: 21
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                className: "small",
+                                                children: education.university
+                                            }, void 0, false, {
+                                                fileName: "src/Components/Education.jsx",
+                                                lineNumber: 29,
+                                                columnNumber: 21
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _react1.Disclosure).Button, {
+                                                className: "pt-3 w-full flex items-center justify-center",
+                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _solid.ChevronUpIcon), {
+                                                    className: `${open ? "rotate-180 transform" : ""} h-5 w-5 text-gray-500`
                                                 }, void 0, false, {
                                                     fileName: "src/Components/Education.jsx",
-                                                    lineNumber: 38,
-                                                    columnNumber: 21
+                                                    lineNumber: 31,
+                                                    columnNumber: 23
                                                 }, undefined)
-                                            ]
-                                        }, void 0, true)
-                                }, void 0, false, {
-                                    fileName: "src/Components/Education.jsx",
-                                    lineNumber: 23,
-                                    columnNumber: 15
-                                }, undefined)
-                            }, education.degree, false, {
+                                            }, void 0, false, {
+                                                fileName: "src/Components/Education.jsx",
+                                                lineNumber: 30,
+                                                columnNumber: 21
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _react1.Disclosure).Panel, {
+                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                                                    children: education.achievements.map((achievement, idx)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                            className: "achievementResultPair",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                                    className: "achievementPair",
+                                                                    children: [
+                                                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                                            className: "achievementTitle",
+                                                                            children: achievement.title
+                                                                        }, void 0, false, {
+                                                                            fileName: "src/Components/Education.jsx",
+                                                                            lineNumber: 40,
+                                                                            columnNumber: 31
+                                                                        }, undefined),
+                                                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                                            className: "achievementTechnologies",
+                                                                            children: achievement.technologies
+                                                                        }, void 0, false, {
+                                                                            fileName: "src/Components/Education.jsx",
+                                                                            lineNumber: 41,
+                                                                            columnNumber: 31
+                                                                        }, undefined)
+                                                                    ]
+                                                                }, void 0, true, {
+                                                                    fileName: "src/Components/Education.jsx",
+                                                                    lineNumber: 39,
+                                                                    columnNumber: 29
+                                                                }, undefined),
+                                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                                    className: "result",
+                                                                    children: education.results[idx]
+                                                                }, void 0, false, {
+                                                                    fileName: "src/Components/Education.jsx",
+                                                                    lineNumber: 45,
+                                                                    columnNumber: 29
+                                                                }, undefined)
+                                                            ]
+                                                        }, idx, true, {
+                                                            fileName: "src/Components/Education.jsx",
+                                                            lineNumber: 38,
+                                                            columnNumber: 27
+                                                        }, undefined))
+                                                }, void 0, false, {
+                                                    fileName: "src/Components/Education.jsx",
+                                                    lineNumber: 36,
+                                                    columnNumber: 23
+                                                }, undefined)
+                                            }, void 0, false, {
+                                                fileName: "src/Components/Education.jsx",
+                                                lineNumber: 35,
+                                                columnNumber: 21
+                                            }, undefined)
+                                        ]
+                                    }, void 0, true)
+                            }, void 0, false, {
                                 fileName: "src/Components/Education.jsx",
-                                lineNumber: 22,
-                                columnNumber: 13
-                            }, undefined))
-                    }, void 0, false, {
-                        fileName: "src/Components/Education.jsx",
-                        lineNumber: 20,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
+                                lineNumber: 20,
+                                columnNumber: 15
+                            }, undefined)
+                        }, education.degree, false, {
+                            fileName: "src/Components/Education.jsx",
+                            lineNumber: 19,
+                            columnNumber: 13
+                        }, undefined))
+                }, void 0, false, {
+                    fileName: "src/Components/Education.jsx",
+                    lineNumber: 17,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
                 fileName: "src/Components/Education.jsx",
-                lineNumber: 15,
+                lineNumber: 12,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _scholarshipsAndAwardsDefault.default), {}, void 0, false, {
                 fileName: "src/Components/Education.jsx",
-                lineNumber: 60,
+                lineNumber: 57,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/Components/Education.jsx",
-        lineNumber: 13,
+        lineNumber: 10,
         columnNumber: 5
     }, undefined);
 };
@@ -34243,7 +37644,7 @@ $RefreshReg$(_c, "Education");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@headlessui/react":"4Afcd","@heroicons/react/20/solid":"biQa5","../data/education.json":"4QqsZ","../assets/images/school.jpg":"ayeCo","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./ScholarshipsAndAwards":"cBuSa"}],"4Afcd":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@headlessui/react":"4Afcd","@heroicons/react/20/solid":"biQa5","../data/education.json":"4QqsZ","./ScholarshipsAndAwards":"cBuSa","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4Afcd":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Portal", ()=>(0, _portalJs.Portal));
@@ -49175,10 +52576,7 @@ exports.default = ForwardRef;
 },{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4QqsZ":[function(require,module,exports) {
 module.exports = JSON.parse('[{"degree":"Master of Information Technology","university":"University of Western Australia (UWA), Perth, Australia","gpa":"6.38 / 7.0","achievements":[{"title":"Agile Web application - BrewChat","technologies":"Javascript, Flask, SQLAlchemy, unittest, Git"},{"title":"Data Warehousing & Association Rule Mining","technologies":"R, SQL, SSMS, Power BI"},{"title":"Graph Database & Graph Data Science","technologies":"Neo4j, Cypher, R"},{"title":"Exploratory data analysis and Machine learning models","technologies":"R, RStudio, Git"},{"title":"IOT ESP32 Air Quality Detector","technologies":"C++, Flask, HTML, CSS, Javascript, Firebase Real-Time DB, Git"},{"title":"Business intelligence report","technologies":"Python, PowerBI"},{"title":"Cybersecurity","technologies":"Bash, Virtualisation & Containerisation"},{"title":"Rational Database Management System","technologies":"SQL"},{"title":"COVID Analysis","technologies":"Python"}],"results":["HD & Top3 Project","HD & Top2 Project","HD & Top4 Project","Top1 Project","HD","HD","HD","HD","HD"],"url":"#"},{"degree":"M.S. in Accounting and Information Technology","university":"National Chung Cheng University (CCU), Chiayi, Taiwan","gpa":"3.93 / 4.0","achievements":[{"title":"Nationally in CCU’s competitive annual Accounting postgraduate entrance exam.","technologies":"Subjects: English, Intermediate Accounting, and Cost and Management Accounting"},{"title":"Conducted research on “Directors’ and Officers’ Liability Insurance and Cost Stickiness.”","technologies":"SAS, SPSS, Excel, Word, and PowerPoint"}],"results":["TOP2","HD"],"url":"#"},{"degree":"B.S. in Accounting and Information Systems","university":"National Kaohsiung University of Science and Technology (NKUST), Kaohsiung, Taiwan","gpa":"80.44 / 100","achievements":[],"results":[],"url":"#"}]');
 
-},{}],"ayeCo":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "school.9274420c.jpg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"cBuSa":[function(require,module,exports) {
+},{}],"cBuSa":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$1360 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -49196,13 +52594,18 @@ var _scholarshipsAndAwardsJson = require("../data/scholarships_and_awards.json")
 var _scholarshipsAndAwardsJsonDefault = parcelHelpers.interopDefault(_scholarshipsAndAwardsJson);
 // Styled components
 const AwardsContainer = (0, _styledComponentsDefault.default).section`
-  width: 95%;
-  padding: 20px;
+  width: 100%;
+  padding: 70px;
+
+  /* Apply a media query for screens smaller than 768px */
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
 `;
 _c = AwardsContainer;
 const AwardCard = (0, _styledComponentsDefault.default).div`
   background-color: white;
-  padding: 15px;
+  padding: 20px;
   margin-bottom: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
@@ -49231,6 +52634,7 @@ const AwardInstitution = (0, _styledComponentsDefault.default).span`
 _c5 = AwardInstitution;
 const AwardDescription = (0, _styledComponentsDefault.default).p`
   font-size: 0.9em;
+  white-space: pre-line;
 `;
 _c6 = AwardDescription;
 const ScholarshipsAndAwards = ()=>{
@@ -49243,45 +52647,45 @@ const ScholarshipsAndAwards = ()=>{
                                 children: award.name
                             }, void 0, false, {
                                 fileName: "src/Components/ScholarshipsAndAwards.jsx",
-                                lineNumber: 50,
+                                lineNumber: 56,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AwardPeriod, {
                                 children: award.period
                             }, void 0, false, {
                                 fileName: "src/Components/ScholarshipsAndAwards.jsx",
-                                lineNumber: 51,
+                                lineNumber: 57,
                                 columnNumber: 13
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/Components/ScholarshipsAndAwards.jsx",
-                        lineNumber: 49,
+                        lineNumber: 55,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AwardInstitution, {
                         children: award.institution
                     }, void 0, false, {
                         fileName: "src/Components/ScholarshipsAndAwards.jsx",
-                        lineNumber: 53,
+                        lineNumber: 59,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AwardDescription, {
                         children: award.description
                     }, void 0, false, {
                         fileName: "src/Components/ScholarshipsAndAwards.jsx",
-                        lineNumber: 54,
+                        lineNumber: 60,
                         columnNumber: 11
                     }, undefined)
                 ]
             }, index, true, {
                 fileName: "src/Components/ScholarshipsAndAwards.jsx",
-                lineNumber: 48,
+                lineNumber: 54,
                 columnNumber: 9
             }, undefined))
     }, void 0, false, {
         fileName: "src/Components/ScholarshipsAndAwards.jsx",
-        lineNumber: 46,
+        lineNumber: 52,
         columnNumber: 5
     }, undefined);
 };
@@ -49302,2187 +52706,7 @@ $RefreshReg$(_c7, "ScholarshipsAndAwards");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","styled-components":"1U3k6","../data/scholarships_and_awards.json":"8A10H","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"1U3k6":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "ServerStyleSheet", ()=>mt);
-parcelHelpers.export(exports, "StyleSheetConsumer", ()=>$e);
-parcelHelpers.export(exports, "StyleSheetContext", ()=>Me);
-parcelHelpers.export(exports, "StyleSheetManager", ()=>Le);
-parcelHelpers.export(exports, "ThemeConsumer", ()=>Qe);
-parcelHelpers.export(exports, "ThemeContext", ()=>Ke);
-parcelHelpers.export(exports, "ThemeProvider", ()=>tt);
-parcelHelpers.export(exports, "__PRIVATE__", ()=>yt);
-parcelHelpers.export(exports, "createGlobalStyle", ()=>dt);
-parcelHelpers.export(exports, "css", ()=>at);
-parcelHelpers.export(exports, "default", ()=>ut);
-parcelHelpers.export(exports, "isStyledComponent", ()=>se);
-parcelHelpers.export(exports, "keyframes", ()=>ht);
-parcelHelpers.export(exports, "styled", ()=>ut);
-parcelHelpers.export(exports, "useTheme", ()=>et);
-parcelHelpers.export(exports, "version", ()=>v);
-parcelHelpers.export(exports, "withTheme", ()=>ft);
-var _tslib = require("tslib");
-var _isPropValid = require("@emotion/is-prop-valid");
-var _isPropValidDefault = parcelHelpers.interopDefault(_isPropValid);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _shallowequal = require("shallowequal");
-var _shallowequalDefault = parcelHelpers.interopDefault(_shallowequal);
-var _stylis = require("stylis");
-var _unitless = require("@emotion/unitless");
-var _unitlessDefault = parcelHelpers.interopDefault(_unitless);
-var process = require("process");
-var f = ("undefined" != typeof process && void 0 !== process.env && undefined, "data-styled"), m = "active", y = "data-styled-version", v = "6.1.8", g = "/*!sc*/\n", S = "undefined" != typeof window && "HTMLElement" in window, w = Boolean("boolean" == typeof SC_DISABLE_SPEEDY ? SC_DISABLE_SPEEDY : ("undefined" != typeof process && process.env, "undefined" != typeof process && process.env, true)), b = {}, E = /invalid hook call/i, N = new Set, P = function(t, n) {
-    var o = n ? ' with the id of "'.concat(n, '"') : "", s = "The component ".concat(t).concat(o, " has been created dynamically.\n") + "You may see this warning because you've called styled inside another component.\nTo resolve this only create new StyledComponents outside of any render method and function component.", i = console.error;
-    try {
-        var a = !0;
-        console.error = function(t) {
-            for(var n = [], o = 1; o < arguments.length; o++)n[o - 1] = arguments[o];
-            E.test(t) ? (a = !1, N.delete(s)) : i.apply(void 0, (0, _tslib.__spreadArray)([
-                t
-            ], n, !1));
-        }, (0, _react.useRef)(), a && !N.has(s) && (console.warn(s), N.add(s));
-    } catch (e) {
-        E.test(e.message) && N.delete(s);
-    } finally{
-        console.error = i;
-    }
-}, _ = Object.freeze([]), C = Object.freeze({});
-function I(e, t, n) {
-    return void 0 === n && (n = C), e.theme !== n.theme && e.theme || t || n.theme;
-}
-var A = new Set([
-    "a",
-    "abbr",
-    "address",
-    "area",
-    "article",
-    "aside",
-    "audio",
-    "b",
-    "base",
-    "bdi",
-    "bdo",
-    "big",
-    "blockquote",
-    "body",
-    "br",
-    "button",
-    "canvas",
-    "caption",
-    "cite",
-    "code",
-    "col",
-    "colgroup",
-    "data",
-    "datalist",
-    "dd",
-    "del",
-    "details",
-    "dfn",
-    "dialog",
-    "div",
-    "dl",
-    "dt",
-    "em",
-    "embed",
-    "fieldset",
-    "figcaption",
-    "figure",
-    "footer",
-    "form",
-    "h1",
-    "h2",
-    "h3",
-    "h4",
-    "h5",
-    "h6",
-    "header",
-    "hgroup",
-    "hr",
-    "html",
-    "i",
-    "iframe",
-    "img",
-    "input",
-    "ins",
-    "kbd",
-    "keygen",
-    "label",
-    "legend",
-    "li",
-    "link",
-    "main",
-    "map",
-    "mark",
-    "menu",
-    "menuitem",
-    "meta",
-    "meter",
-    "nav",
-    "noscript",
-    "object",
-    "ol",
-    "optgroup",
-    "option",
-    "output",
-    "p",
-    "param",
-    "picture",
-    "pre",
-    "progress",
-    "q",
-    "rp",
-    "rt",
-    "ruby",
-    "s",
-    "samp",
-    "script",
-    "section",
-    "select",
-    "small",
-    "source",
-    "span",
-    "strong",
-    "style",
-    "sub",
-    "summary",
-    "sup",
-    "table",
-    "tbody",
-    "td",
-    "textarea",
-    "tfoot",
-    "th",
-    "thead",
-    "time",
-    "tr",
-    "track",
-    "u",
-    "ul",
-    "use",
-    "var",
-    "video",
-    "wbr",
-    "circle",
-    "clipPath",
-    "defs",
-    "ellipse",
-    "foreignObject",
-    "g",
-    "image",
-    "line",
-    "linearGradient",
-    "marker",
-    "mask",
-    "path",
-    "pattern",
-    "polygon",
-    "polyline",
-    "radialGradient",
-    "rect",
-    "stop",
-    "svg",
-    "text",
-    "tspan"
-]), O = /[!"#$%&'()*+,./:;<=>?@[\\\]^`{|}~-]+/g, D = /(^-|-$)/g;
-function R(e) {
-    return e.replace(O, "-").replace(D, "");
-}
-var T = /(a)(d)/gi, k = 52, j = function(e) {
-    return String.fromCharCode(e + (e > 25 ? 39 : 97));
-};
-function x(e) {
-    var t, n = "";
-    for(t = Math.abs(e); t > k; t = t / k | 0)n = j(t % k) + n;
-    return (j(t % k) + n).replace(T, "$1-$2");
-}
-var V, F = 5381, M = function(e, t) {
-    for(var n = t.length; n;)e = 33 * e ^ t.charCodeAt(--n);
-    return e;
-}, $ = function(e) {
-    return M(F, e);
-};
-function z(e) {
-    return x($(e) >>> 0);
-}
-function B(e) {
-    return "string" == typeof e && e || e.displayName || e.name || "Component";
-}
-function L(e) {
-    return "string" == typeof e && e.charAt(0) === e.charAt(0).toLowerCase();
-}
-var G = "function" == typeof Symbol && Symbol.for, Y = G ? Symbol.for("react.memo") : 60115, W = G ? Symbol.for("react.forward_ref") : 60112, q = {
-    childContextTypes: !0,
-    contextType: !0,
-    contextTypes: !0,
-    defaultProps: !0,
-    displayName: !0,
-    getDefaultProps: !0,
-    getDerivedStateFromError: !0,
-    getDerivedStateFromProps: !0,
-    mixins: !0,
-    propTypes: !0,
-    type: !0
-}, H = {
-    name: !0,
-    length: !0,
-    prototype: !0,
-    caller: !0,
-    callee: !0,
-    arguments: !0,
-    arity: !0
-}, U = {
-    $$typeof: !0,
-    compare: !0,
-    defaultProps: !0,
-    displayName: !0,
-    propTypes: !0,
-    type: !0
-}, J = ((V = {})[W] = {
-    $$typeof: !0,
-    render: !0,
-    defaultProps: !0,
-    displayName: !0,
-    propTypes: !0
-}, V[Y] = U, V);
-function X(e) {
-    var t;
-    return ("type" in (t = e) && t.type.$$typeof) === Y ? U : "$$typeof" in e ? J[e.$$typeof] : q;
-}
-var Z = Object.defineProperty, K = Object.getOwnPropertyNames, Q = Object.getOwnPropertySymbols, ee = Object.getOwnPropertyDescriptor, te = Object.getPrototypeOf, ne = Object.prototype;
-function oe(e, t, n) {
-    if ("string" != typeof t) {
-        if (ne) {
-            var o = te(t);
-            o && o !== ne && oe(e, o, n);
-        }
-        var r = K(t);
-        Q && (r = r.concat(Q(t)));
-        for(var s = X(e), i = X(t), a = 0; a < r.length; ++a){
-            var c = r[a];
-            if (!(c in H || n && n[c] || i && c in i || s && c in s)) {
-                var l = ee(t, c);
-                try {
-                    Z(e, c, l);
-                } catch (e1) {}
-            }
-        }
-    }
-    return e;
-}
-function re(e) {
-    return "function" == typeof e;
-}
-function se(e) {
-    return "object" == typeof e && "styledComponentId" in e;
-}
-function ie(e, t) {
-    return e && t ? "".concat(e, " ").concat(t) : e || t || "";
-}
-function ae(e, t) {
-    if (0 === e.length) return "";
-    for(var n = e[0], o = 1; o < e.length; o++)n += t ? t + e[o] : e[o];
-    return n;
-}
-function ce(e) {
-    return null !== e && "object" == typeof e && e.constructor.name === Object.name && !("props" in e && e.$$typeof);
-}
-function le(e, t, n) {
-    if (void 0 === n && (n = !1), !n && !ce(e) && !Array.isArray(e)) return t;
-    if (Array.isArray(t)) for(var o = 0; o < t.length; o++)e[o] = le(e[o], t[o]);
-    else if (ce(t)) for(var o in t)e[o] = le(e[o], t[o]);
-    return e;
-}
-function ue(e, t) {
-    Object.defineProperty(e, "toString", {
-        value: t
-    });
-}
-var pe = {
-    1: "Cannot create styled-component for component: %s.\n\n",
-    2: "Can't collect styles once you've consumed a `ServerStyleSheet`'s styles! `ServerStyleSheet` is a one off instance for each server-side render cycle.\n\n- Are you trying to reuse it across renders?\n- Are you accidentally calling collectStyles twice?\n\n",
-    3: "Streaming SSR is only supported in a Node.js environment; Please do not try to call this method in the browser.\n\n",
-    4: "The `StyleSheetManager` expects a valid target or sheet prop!\n\n- Does this error occur on the client and is your target falsy?\n- Does this error occur on the server and is the sheet falsy?\n\n",
-    5: "The clone method cannot be used on the client!\n\n- Are you running in a client-like environment on the server?\n- Are you trying to run SSR on the client?\n\n",
-    6: "Trying to insert a new style tag, but the given Node is unmounted!\n\n- Are you using a custom target that isn't mounted?\n- Does your document not have a valid head element?\n- Have you accidentally removed a style tag manually?\n\n",
-    7: 'ThemeProvider: Please return an object from your "theme" prop function, e.g.\n\n```js\ntheme={() => ({})}\n```\n\n',
-    8: 'ThemeProvider: Please make your "theme" prop an object.\n\n',
-    9: "Missing document `<head>`\n\n",
-    10: "Cannot find a StyleSheet instance. Usually this happens if there are multiple copies of styled-components loaded at once. Check out this issue for how to troubleshoot and fix the common cases where this situation can happen: https://github.com/styled-components/styled-components/issues/1941#issuecomment-417862021\n\n",
-    11: "_This error was replaced with a dev-time warning, it will be deleted for v4 final._ [createGlobalStyle] received children which will not be rendered. Please use the component without passing children elements.\n\n",
-    12: "It seems you are interpolating a keyframe declaration (%s) into an untagged string. This was supported in styled-components v3, but is not longer supported in v4 as keyframes are now injected on-demand. Please wrap your string in the css\\`\\` helper which ensures the styles are injected correctly. See https://www.styled-components.com/docs/api#css\n\n",
-    13: "%s is not a styled component and cannot be referred to via component selector. See https://www.styled-components.com/docs/advanced#referring-to-other-components for more details.\n\n",
-    14: 'ThemeProvider: "theme" prop is required.\n\n',
-    15: "A stylis plugin has been supplied that is not named. We need a name for each plugin to be able to prevent styling collisions between different stylis configurations within the same app. Before you pass your plugin to `<StyleSheetManager stylisPlugins={[]}>`, please make sure each plugin is uniquely-named, e.g.\n\n```js\nObject.defineProperty(importedPlugin, 'name', { value: 'some-unique-name' });\n```\n\n",
-    16: "Reached the limit of how many styled components may be created at group %s.\nYou may only create up to 1,073,741,824 components. If you're creating components dynamically,\nas for instance in your render method then you may be running into this limitation.\n\n",
-    17: "CSSStyleSheet could not be found on HTMLStyleElement.\nHas styled-components' style tag been unmounted or altered by another script?\n",
-    18: "ThemeProvider: Please make sure your useTheme hook is within a `<ThemeProvider>`"
-};
-function de() {
-    for(var e = [], t = 0; t < arguments.length; t++)e[t] = arguments[t];
-    for(var n = e[0], o = [], r = 1, s = e.length; r < s; r += 1)o.push(e[r]);
-    return o.forEach(function(e) {
-        n = n.replace(/%[a-z]/, e);
-    }), n;
-}
-function he(t) {
-    for(var n = [], o = 1; o < arguments.length; o++)n[o - 1] = arguments[o];
-    return new Error(de.apply(void 0, (0, _tslib.__spreadArray)([
-        pe[t]
-    ], n, !1)).trim());
-}
-var fe = function() {
-    function e(e) {
-        this.groupSizes = new Uint32Array(512), this.length = 512, this.tag = e;
-    }
-    return e.prototype.indexOfGroup = function(e) {
-        for(var t = 0, n = 0; n < e; n++)t += this.groupSizes[n];
-        return t;
-    }, e.prototype.insertRules = function(e, t) {
-        if (e >= this.groupSizes.length) {
-            for(var n = this.groupSizes, o = n.length, r = o; e >= r;)if ((r <<= 1) < 0) throw he(16, "".concat(e));
-            this.groupSizes = new Uint32Array(r), this.groupSizes.set(n), this.length = r;
-            for(var s = o; s < r; s++)this.groupSizes[s] = 0;
-        }
-        for(var i = this.indexOfGroup(e + 1), a = (s = 0, t.length); s < a; s++)this.tag.insertRule(i, t[s]) && (this.groupSizes[e]++, i++);
-    }, e.prototype.clearGroup = function(e) {
-        if (e < this.length) {
-            var t = this.groupSizes[e], n = this.indexOfGroup(e), o = n + t;
-            this.groupSizes[e] = 0;
-            for(var r = n; r < o; r++)this.tag.deleteRule(n);
-        }
-    }, e.prototype.getGroup = function(e) {
-        var t = "";
-        if (e >= this.length || 0 === this.groupSizes[e]) return t;
-        for(var n = this.groupSizes[e], o = this.indexOfGroup(e), r = o + n, s = o; s < r; s++)t += "".concat(this.tag.getRule(s)).concat(g);
-        return t;
-    }, e;
-}(), me = new Map, ye = new Map, ve = 1, ge = function(e) {
-    if (me.has(e)) return me.get(e);
-    for(; ye.has(ve);)ve++;
-    var t = ve++;
-    if ((0 | t) < 0 || t > 1073741824) throw he(16, "".concat(t));
-    return me.set(e, t), ye.set(t, e), t;
-}, Se = function(e, t) {
-    ve = t + 1, me.set(e, t), ye.set(t, e);
-}, we = "style[".concat(f, "][").concat(y, '="').concat(v, '"]'), be = new RegExp("^".concat(f, '\\.g(\\d+)\\[id="([\\w\\d-]+)"\\].*?"([^"]*)')), Ee = function(e, t, n) {
-    for(var o, r = n.split(","), s = 0, i = r.length; s < i; s++)(o = r[s]) && e.registerName(t, o);
-}, Ne = function(e, t) {
-    for(var n, o = (null !== (n = t.textContent) && void 0 !== n ? n : "").split(g), r = [], s = 0, i = o.length; s < i; s++){
-        var a = o[s].trim();
-        if (a) {
-            var c = a.match(be);
-            if (c) {
-                var l = 0 | parseInt(c[1], 10), u = c[2];
-                0 !== l && (Se(u, l), Ee(e, u, c[3]), e.getTag().insertRules(l, r)), r.length = 0;
-            } else r.push(a);
-        }
-    }
-};
-function Pe() {
-    return "undefined" != typeof __webpack_nonce__ ? __webpack_nonce__ : null;
-}
-var _e = function(e) {
-    var t = document.head, n = e || t, o = document.createElement("style"), r = function(e) {
-        var t = Array.from(e.querySelectorAll("style[".concat(f, "]")));
-        return t[t.length - 1];
-    }(n), s = void 0 !== r ? r.nextSibling : null;
-    o.setAttribute(f, m), o.setAttribute(y, v);
-    var i = Pe();
-    return i && o.setAttribute("nonce", i), n.insertBefore(o, s), o;
-}, Ce = function() {
-    function e(e) {
-        this.element = _e(e), this.element.appendChild(document.createTextNode("")), this.sheet = function(e) {
-            if (e.sheet) return e.sheet;
-            for(var t = document.styleSheets, n = 0, o = t.length; n < o; n++){
-                var r = t[n];
-                if (r.ownerNode === e) return r;
-            }
-            throw he(17);
-        }(this.element), this.length = 0;
-    }
-    return e.prototype.insertRule = function(e, t) {
-        try {
-            return this.sheet.insertRule(t, e), this.length++, !0;
-        } catch (e1) {
-            return !1;
-        }
-    }, e.prototype.deleteRule = function(e) {
-        this.sheet.deleteRule(e), this.length--;
-    }, e.prototype.getRule = function(e) {
-        var t = this.sheet.cssRules[e];
-        return t && t.cssText ? t.cssText : "";
-    }, e;
-}(), Ie = function() {
-    function e(e) {
-        this.element = _e(e), this.nodes = this.element.childNodes, this.length = 0;
-    }
-    return e.prototype.insertRule = function(e, t) {
-        if (e <= this.length && e >= 0) {
-            var n = document.createTextNode(t);
-            return this.element.insertBefore(n, this.nodes[e] || null), this.length++, !0;
-        }
-        return !1;
-    }, e.prototype.deleteRule = function(e) {
-        this.element.removeChild(this.nodes[e]), this.length--;
-    }, e.prototype.getRule = function(e) {
-        return e < this.length ? this.nodes[e].textContent : "";
-    }, e;
-}(), Ae = function() {
-    function e(e) {
-        this.rules = [], this.length = 0;
-    }
-    return e.prototype.insertRule = function(e, t) {
-        return e <= this.length && (this.rules.splice(e, 0, t), this.length++, !0);
-    }, e.prototype.deleteRule = function(e) {
-        this.rules.splice(e, 1), this.length--;
-    }, e.prototype.getRule = function(e) {
-        return e < this.length ? this.rules[e] : "";
-    }, e;
-}(), Oe = S, De = {
-    isServer: !S,
-    useCSSOMInjection: !w
-}, Re = function() {
-    function e(e, n, o) {
-        void 0 === e && (e = C), void 0 === n && (n = {});
-        var r = this;
-        this.options = (0, _tslib.__assign)((0, _tslib.__assign)({}, De), e), this.gs = n, this.names = new Map(o), this.server = !!e.isServer, !this.server && S && Oe && (Oe = !1, function(e) {
-            for(var t = document.querySelectorAll(we), n = 0, o = t.length; n < o; n++){
-                var r = t[n];
-                r && r.getAttribute(f) !== m && (Ne(e, r), r.parentNode && r.parentNode.removeChild(r));
-            }
-        }(this)), ue(this, function() {
-            return function(e) {
-                for(var t = e.getTag(), n = t.length, o = "", r = function(n) {
-                    var r = function(e) {
-                        return ye.get(e);
-                    }(n);
-                    if (void 0 === r) return "continue";
-                    var s = e.names.get(r), i = t.getGroup(n);
-                    if (void 0 === s || 0 === i.length) return "continue";
-                    var a = "".concat(f, ".g").concat(n, '[id="').concat(r, '"]'), c = "";
-                    void 0 !== s && s.forEach(function(e) {
-                        e.length > 0 && (c += "".concat(e, ","));
-                    }), o += "".concat(i).concat(a, '{content:"').concat(c, '"}').concat(g);
-                }, s = 0; s < n; s++)r(s);
-                return o;
-            }(r);
-        });
-    }
-    return e.registerId = function(e) {
-        return ge(e);
-    }, e.prototype.reconstructWithOptions = function(n, o) {
-        return void 0 === o && (o = !0), new e((0, _tslib.__assign)((0, _tslib.__assign)({}, this.options), n), this.gs, o && this.names || void 0);
-    }, e.prototype.allocateGSInstance = function(e) {
-        return this.gs[e] = (this.gs[e] || 0) + 1;
-    }, e.prototype.getTag = function() {
-        var e;
-        return this.tag || (this.tag = (e = function(e) {
-            var t = e.useCSSOMInjection, n = e.target;
-            return e.isServer ? new Ae(n) : t ? new Ce(n) : new Ie(n);
-        }(this.options), new fe(e)));
-    }, e.prototype.hasNameForId = function(e, t) {
-        return this.names.has(e) && this.names.get(e).has(t);
-    }, e.prototype.registerName = function(e, t) {
-        if (ge(e), this.names.has(e)) this.names.get(e).add(t);
-        else {
-            var n = new Set;
-            n.add(t), this.names.set(e, n);
-        }
-    }, e.prototype.insertRules = function(e, t, n) {
-        this.registerName(e, t), this.getTag().insertRules(ge(e), n);
-    }, e.prototype.clearNames = function(e) {
-        this.names.has(e) && this.names.get(e).clear();
-    }, e.prototype.clearRules = function(e) {
-        this.getTag().clearGroup(ge(e)), this.clearNames(e);
-    }, e.prototype.clearTag = function() {
-        this.tag = void 0;
-    }, e;
-}(), Te = /&/g, ke = /^\s*\/\/.*$/gm;
-function je(e, t) {
-    return e.map(function(e) {
-        return "rule" === e.type && (e.value = "".concat(t, " ").concat(e.value), e.value = e.value.replaceAll(",", ",".concat(t, " ")), e.props = e.props.map(function(e) {
-            return "".concat(t, " ").concat(e);
-        })), Array.isArray(e.children) && "@keyframes" !== e.type && (e.children = je(e.children, t)), e;
-    });
-}
-function xe(e) {
-    var t, n, o, r = void 0 === e ? C : e, s = r.options, i = void 0 === s ? C : s, a = r.plugins, c = void 0 === a ? _ : a, l = function(e, o, r) {
-        return r.startsWith(n) && r.endsWith(n) && r.replaceAll(n, "").length > 0 ? ".".concat(t) : e;
-    }, u = c.slice();
-    u.push(function(e) {
-        e.type === _stylis.RULESET && e.value.includes("&") && (e.props[0] = e.props[0].replace(Te, n).replace(o, l));
-    }), i.prefix && u.push(_stylis.prefixer), u.push(_stylis.stringify);
-    var p = function(e, r, s, a) {
-        void 0 === r && (r = ""), void 0 === s && (s = ""), void 0 === a && (a = "&"), t = a, n = r, o = new RegExp("\\".concat(n, "\\b"), "g");
-        var c = e.replace(ke, ""), l = _stylis.compile(s || r ? "".concat(s, " ").concat(r, " { ").concat(c, " }") : c);
-        i.namespace && (l = je(l, i.namespace));
-        var p = [];
-        return _stylis.serialize(l, _stylis.middleware(u.concat(_stylis.rulesheet(function(e) {
-            return p.push(e);
-        })))), p;
-    };
-    return p.hash = c.length ? c.reduce(function(e, t) {
-        return t.name || he(15), M(e, t.name);
-    }, F).toString() : "", p;
-}
-var Ve = new Re, Fe = xe(), Me = (0, _reactDefault.default).createContext({
-    shouldForwardProp: void 0,
-    styleSheet: Ve,
-    stylis: Fe
-}), $e = Me.Consumer, ze = (0, _reactDefault.default).createContext(void 0);
-function Be() {
-    return (0, _react.useContext)(Me);
-}
-function Le(e) {
-    var t = (0, _react.useState)(e.stylisPlugins), n = t[0], r = t[1], c = Be().styleSheet, l = (0, _react.useMemo)(function() {
-        var t = c;
-        return e.sheet ? t = e.sheet : e.target && (t = t.reconstructWithOptions({
-            target: e.target
-        }, !1)), e.disableCSSOMInjection && (t = t.reconstructWithOptions({
-            useCSSOMInjection: !1
-        })), t;
-    }, [
-        e.disableCSSOMInjection,
-        e.sheet,
-        e.target,
-        c
-    ]), u = (0, _react.useMemo)(function() {
-        return xe({
-            options: {
-                namespace: e.namespace,
-                prefix: e.enableVendorPrefixes
-            },
-            plugins: n
-        });
-    }, [
-        e.enableVendorPrefixes,
-        e.namespace,
-        n
-    ]);
-    (0, _react.useEffect)(function() {
-        (0, _shallowequalDefault.default)(n, e.stylisPlugins) || r(e.stylisPlugins);
-    }, [
-        e.stylisPlugins
-    ]);
-    var d = (0, _react.useMemo)(function() {
-        return {
-            shouldForwardProp: e.shouldForwardProp,
-            styleSheet: l,
-            stylis: u
-        };
-    }, [
-        e.shouldForwardProp,
-        l,
-        u
-    ]);
-    return (0, _reactDefault.default).createElement(Me.Provider, {
-        value: d
-    }, (0, _reactDefault.default).createElement(ze.Provider, {
-        value: u
-    }, e.children));
-}
-var Ge = function() {
-    function e(e, t) {
-        var n = this;
-        this.inject = function(e, t) {
-            void 0 === t && (t = Fe);
-            var o = n.name + t.hash;
-            e.hasNameForId(n.id, o) || e.insertRules(n.id, o, t(n.rules, o, "@keyframes"));
-        }, this.name = e, this.id = "sc-keyframes-".concat(e), this.rules = t, ue(this, function() {
-            throw he(12, String(n.name));
-        });
-    }
-    return e.prototype.getName = function(e) {
-        return void 0 === e && (e = Fe), this.name + e.hash;
-    }, e;
-}(), Ye = function(e) {
-    return e >= "A" && e <= "Z";
-};
-function We(e) {
-    for(var t = "", n = 0; n < e.length; n++){
-        var o = e[n];
-        if (1 === n && "-" === o && "-" === e[0]) return e;
-        Ye(o) ? t += "-" + o.toLowerCase() : t += o;
-    }
-    return t.startsWith("ms-") ? "-" + t : t;
-}
-var qe = function(e) {
-    return null == e || !1 === e || "" === e;
-}, He = function(t) {
-    var n, o, r = [];
-    for(var s in t){
-        var i = t[s];
-        t.hasOwnProperty(s) && !qe(i) && (Array.isArray(i) && i.isCss || re(i) ? r.push("".concat(We(s), ":"), i, ";") : ce(i) ? r.push.apply(r, (0, _tslib.__spreadArray)((0, _tslib.__spreadArray)([
-            "".concat(s, " {")
-        ], He(i), !1), [
-            "}"
-        ], !1)) : r.push("".concat(We(s), ": ").concat((n = s, null == (o = i) || "boolean" == typeof o || "" === o ? "" : "number" != typeof o || 0 === o || n in (0, _unitlessDefault.default) || n.startsWith("--") ? String(o).trim() : "".concat(o, "px")), ";")));
-    }
-    return r;
-};
-function Ue(e, t, n, o) {
-    if (qe(e)) return [];
-    if (se(e)) return [
-        ".".concat(e.styledComponentId)
-    ];
-    if (re(e)) {
-        if (!re(s = e) || s.prototype && s.prototype.isReactComponent || !t) return [
-            e
-        ];
-        var r = e(t);
-        return "object" != typeof r || Array.isArray(r) || r instanceof Ge || ce(r) || null === r || console.error("".concat(B(e), " is not a styled component and cannot be referred to via component selector. See https://www.styled-components.com/docs/advanced#referring-to-other-components for more details.")), Ue(r, t, n, o);
-    }
-    var s;
-    return e instanceof Ge ? n ? (e.inject(n, o), [
-        e.getName(o)
-    ]) : [
-        e
-    ] : ce(e) ? He(e) : Array.isArray(e) ? Array.prototype.concat.apply(_, e.map(function(e) {
-        return Ue(e, t, n, o);
-    })) : [
-        e.toString()
-    ];
-}
-function Je(e) {
-    for(var t = 0; t < e.length; t += 1){
-        var n = e[t];
-        if (re(n) && !se(n)) return !1;
-    }
-    return !0;
-}
-var Xe = $(v), Ze = function() {
-    function e(e, t, n) {
-        this.rules = e, this.staticRulesId = "", this.isStatic = false, this.componentId = t, this.baseHash = M(Xe, t), this.baseStyle = n, Re.registerId(t);
-    }
-    return e.prototype.generateAndInjectStyles = function(e, t, n) {
-        var o = this.baseStyle ? this.baseStyle.generateAndInjectStyles(e, t, n) : "";
-        if (this.isStatic && !n.hash) {
-            if (this.staticRulesId && t.hasNameForId(this.componentId, this.staticRulesId)) o = ie(o, this.staticRulesId);
-            else {
-                var r = ae(Ue(this.rules, e, t, n)), s = x(M(this.baseHash, r) >>> 0);
-                if (!t.hasNameForId(this.componentId, s)) {
-                    var i = n(r, ".".concat(s), void 0, this.componentId);
-                    t.insertRules(this.componentId, s, i);
-                }
-                o = ie(o, s), this.staticRulesId = s;
-            }
-        } else {
-            for(var a = M(this.baseHash, n.hash), c = "", l = 0; l < this.rules.length; l++){
-                var u = this.rules[l];
-                if ("string" == typeof u) c += u, a = M(a, u);
-                else if (u) {
-                    var p = ae(Ue(u, e, t, n));
-                    a = M(a, p + l), c += p;
-                }
-            }
-            if (c) {
-                var d = x(a >>> 0);
-                t.hasNameForId(this.componentId, d) || t.insertRules(this.componentId, d, n(c, ".".concat(d), void 0, this.componentId)), o = ie(o, d);
-            }
-        }
-        return o;
-    }, e;
-}(), Ke = (0, _reactDefault.default).createContext(void 0), Qe = Ke.Consumer;
-function et() {
-    var e = (0, _react.useContext)(Ke);
-    if (!e) throw he(18);
-    return e;
-}
-function tt(e) {
-    var n = (0, _reactDefault.default).useContext(Ke), r = (0, _react.useMemo)(function() {
-        return function(e, n) {
-            if (!e) throw he(14);
-            if (re(e)) {
-                var o = e(n);
-                if (null === o || Array.isArray(o) || "object" != typeof o) throw he(7);
-                return o;
-            }
-            if (Array.isArray(e) || "object" != typeof e) throw he(8);
-            return n ? (0, _tslib.__assign)((0, _tslib.__assign)({}, n), e) : e;
-        }(e.theme, n);
-    }, [
-        e.theme,
-        n
-    ]);
-    return e.children ? (0, _reactDefault.default).createElement(Ke.Provider, {
-        value: r
-    }, e.children) : null;
-}
-var nt = {}, ot = new Set;
-function rt(e, r, s) {
-    var i = se(e), a = e, c = !L(e), p = r.attrs, d = void 0 === p ? _ : p, h = r.componentId, f = void 0 === h ? function(e, t) {
-        var n = "string" != typeof e ? "sc" : R(e);
-        nt[n] = (nt[n] || 0) + 1;
-        var o = "".concat(n, "-").concat(z(v + n + nt[n]));
-        return t ? "".concat(t, "-").concat(o) : o;
-    }(r.displayName, r.parentComponentId) : h, m = r.displayName, y = void 0 === m ? function(e) {
-        return L(e) ? "styled.".concat(e) : "Styled(".concat(B(e), ")");
-    }(e) : m, g = r.displayName && r.componentId ? "".concat(R(r.displayName), "-").concat(r.componentId) : r.componentId || f, S = i && a.attrs ? a.attrs.concat(d).filter(Boolean) : d, w = r.shouldForwardProp;
-    if (i && a.shouldForwardProp) {
-        var b = a.shouldForwardProp;
-        if (r.shouldForwardProp) {
-            var E = r.shouldForwardProp;
-            w = function(e, t) {
-                return b(e, t) && E(e, t);
-            };
-        } else w = b;
-    }
-    var N = new Ze(s, g, i ? a.componentStyle : void 0);
-    function O(e, r) {
-        return function(e, r, s) {
-            var i = e.attrs, a = e.componentStyle, c = e.defaultProps, p = e.foldedComponentIds, d = e.styledComponentId, h = e.target, f = (0, _reactDefault.default).useContext(Ke), m = Be(), y = e.shouldForwardProp || m.shouldForwardProp;
-            (0, _react.useDebugValue)(d);
-            var v = I(r, f, c) || C, g = function(e, n, o) {
-                for(var r, s = (0, _tslib.__assign)((0, _tslib.__assign)({}, n), {
-                    className: void 0,
-                    theme: o
-                }), i = 0; i < e.length; i += 1){
-                    var a = re(r = e[i]) ? r(s) : r;
-                    for(var c in a)s[c] = "className" === c ? ie(s[c], a[c]) : "style" === c ? (0, _tslib.__assign)((0, _tslib.__assign)({}, s[c]), a[c]) : a[c];
-                }
-                return n.className && (s.className = ie(s.className, n.className)), s;
-            }(i, r, v), S = g.as || h, w = {};
-            for(var b in g)void 0 === g[b] || "$" === b[0] || "as" === b || "theme" === b && g.theme === v || ("forwardedAs" === b ? w.as = g.forwardedAs : y && !y(b, S) || (w[b] = g[b], y || false || (0, _isPropValidDefault.default)(b) || ot.has(b) || !A.has(S) || (ot.add(b), console.warn('styled-components: it looks like an unknown prop "'.concat(b, '" is being sent through to the DOM, which will likely trigger a React console error. If you would like automatic filtering of unknown props, you can opt-into that behavior via `<StyleSheetManager shouldForwardProp={...}>` (connect an API like `@emotion/is-prop-valid`) or consider using transient props (`$` prefix for automatic filtering.)')))));
-            var E = function(e, t) {
-                var n = Be(), o = e.generateAndInjectStyles(t, n.styleSheet, n.stylis);
-                return (0, _react.useDebugValue)(o), o;
-            }(a, g);
-            e.warnTooManyClasses && e.warnTooManyClasses(E);
-            var N = ie(p, d);
-            return E && (N += " " + E), g.className && (N += " " + g.className), w[L(S) && !A.has(S) ? "class" : "className"] = N, w.ref = s, (0, _react.createElement)(S, w);
-        }(D, e, r);
-    }
-    O.displayName = y;
-    var D = (0, _reactDefault.default).forwardRef(O);
-    return D.attrs = S, D.componentStyle = N, D.displayName = y, D.shouldForwardProp = w, D.foldedComponentIds = i ? ie(a.foldedComponentIds, a.styledComponentId) : "", D.styledComponentId = g, D.target = i ? a.target : e, Object.defineProperty(D, "defaultProps", {
-        get: function() {
-            return this._foldedDefaultProps;
-        },
-        set: function(e) {
-            this._foldedDefaultProps = i ? function(e) {
-                for(var t = [], n = 1; n < arguments.length; n++)t[n - 1] = arguments[n];
-                for(var o = 0, r = t; o < r.length; o++)le(e, r[o], !0);
-                return e;
-            }({}, a.defaultProps, e) : e;
-        }
-    }), P(y, g), D.warnTooManyClasses = function(e, t) {
-        var n = {}, o = !1;
-        return function(r) {
-            if (!o && (n[r] = !0, Object.keys(n).length >= 200)) {
-                var s = t ? ' with the id of "'.concat(t, '"') : "";
-                console.warn("Over ".concat(200, " classes were generated for component ").concat(e).concat(s, ".\n") + "Consider using the attrs method, together with a style object for frequently changed styles.\nExample:\n  const Component = styled.div.attrs(props => ({\n    style: {\n      background: props.background,\n    },\n  }))`width: 100%;`\n\n  <Component />"), o = !0, n = {};
-            }
-        };
-    }(y, g), ue(D, function() {
-        return ".".concat(D.styledComponentId);
-    }), c && oe(D, e, {
-        attrs: !0,
-        componentStyle: !0,
-        displayName: !0,
-        foldedComponentIds: !0,
-        shouldForwardProp: !0,
-        styledComponentId: !0,
-        target: !0
-    }), D;
-}
-function st(e, t) {
-    for(var n = [
-        e[0]
-    ], o = 0, r = t.length; o < r; o += 1)n.push(t[o], e[o + 1]);
-    return n;
-}
-var it = function(e) {
-    return Object.assign(e, {
-        isCss: !0
-    });
-};
-function at(t) {
-    for(var n = [], o = 1; o < arguments.length; o++)n[o - 1] = arguments[o];
-    if (re(t) || ce(t)) return it(Ue(st(_, (0, _tslib.__spreadArray)([
-        t
-    ], n, !0))));
-    var r = t;
-    return 0 === n.length && 1 === r.length && "string" == typeof r[0] ? Ue(r) : it(Ue(st(r, n)));
-}
-function ct(n, o, r) {
-    if (void 0 === r && (r = C), !o) throw he(1, o);
-    var s = function(t) {
-        for(var s = [], i = 1; i < arguments.length; i++)s[i - 1] = arguments[i];
-        return n(o, r, at.apply(void 0, (0, _tslib.__spreadArray)([
-            t
-        ], s, !1)));
-    };
-    return s.attrs = function(e) {
-        return ct(n, o, (0, _tslib.__assign)((0, _tslib.__assign)({}, r), {
-            attrs: Array.prototype.concat(r.attrs, e).filter(Boolean)
-        }));
-    }, s.withConfig = function(e) {
-        return ct(n, o, (0, _tslib.__assign)((0, _tslib.__assign)({}, r), e));
-    }, s;
-}
-var lt = function(e) {
-    return ct(rt, e);
-}, ut = lt;
-A.forEach(function(e) {
-    ut[e] = lt(e);
-});
-var pt = function() {
-    function e(e, t) {
-        this.rules = e, this.componentId = t, this.isStatic = Je(e), Re.registerId(this.componentId + 1);
-    }
-    return e.prototype.createStyles = function(e, t, n, o) {
-        var r = o(ae(Ue(this.rules, t, n, o)), ""), s = this.componentId + e;
-        n.insertRules(s, s, r);
-    }, e.prototype.removeStyles = function(e, t) {
-        t.clearRules(this.componentId + e);
-    }, e.prototype.renderStyles = function(e, t, n, o) {
-        e > 2 && Re.registerId(this.componentId + e), this.removeStyles(e, n), this.createStyles(e, t, n, o);
-    }, e;
-}();
-function dt(n) {
-    for(var r = [], s = 1; s < arguments.length; s++)r[s - 1] = arguments[s];
-    var i = at.apply(void 0, (0, _tslib.__spreadArray)([
-        n
-    ], r, !1)), a = "sc-global-".concat(z(JSON.stringify(i))), c = new pt(i, a);
-    P(a);
-    var l = function(e) {
-        var t = Be(), n = (0, _reactDefault.default).useContext(Ke), r = (0, _reactDefault.default).useRef(t.styleSheet.allocateGSInstance(a)).current;
-        return (0, _reactDefault.default).Children.count(e.children) && console.warn("The global style component ".concat(a, " was given child JSX. createGlobalStyle does not render children.")), i.some(function(e) {
-            return "string" == typeof e && -1 !== e.indexOf("@import");
-        }) && console.warn("Please do not use @import CSS syntax in createGlobalStyle at this time, as the CSSOM APIs we use in production do not handle it well. Instead, we recommend using a library such as react-helmet to inject a typical <link> meta tag to the stylesheet, or simply embedding it manually in your index.html <head> section for a simpler app."), t.styleSheet.server && u(r, e, t.styleSheet, n, t.stylis), (0, _reactDefault.default).useLayoutEffect(function() {
-            if (!t.styleSheet.server) return u(r, e, t.styleSheet, n, t.stylis), function() {
-                return c.removeStyles(r, t.styleSheet);
-            };
-        }, [
-            r,
-            e,
-            t.styleSheet,
-            n,
-            t.stylis
-        ]), null;
-    };
-    function u(e, n, o, r, s) {
-        if (c.isStatic) c.renderStyles(e, b, o, s);
-        else {
-            var i = (0, _tslib.__assign)((0, _tslib.__assign)({}, n), {
-                theme: I(n, r, l.defaultProps)
-            });
-            c.renderStyles(e, i, o, s);
-        }
-    }
-    return (0, _reactDefault.default).memo(l);
-}
-function ht(t) {
-    for(var n = [], o = 1; o < arguments.length; o++)n[o - 1] = arguments[o];
-    "undefined" != typeof navigator && "ReactNative" === navigator.product && console.warn("`keyframes` cannot be used on ReactNative, only on the web. To do animation in ReactNative please use Animated.");
-    var r = ae(at.apply(void 0, (0, _tslib.__spreadArray)([
-        t
-    ], n, !1))), s = z(r);
-    return new Ge(s, r);
-}
-function ft(e) {
-    var n = (0, _reactDefault.default).forwardRef(function(n, r) {
-        var s = I(n, (0, _reactDefault.default).useContext(Ke), e.defaultProps);
-        return void 0 === s && console.warn('[withTheme] You are not using a ThemeProvider nor passing a theme prop or a theme in defaultProps in component class "'.concat(B(e), '"')), (0, _reactDefault.default).createElement(e, (0, _tslib.__assign)({}, n, {
-            theme: s,
-            ref: r
-        }));
-    });
-    return n.displayName = "WithTheme(".concat(B(e), ")"), oe(n, e);
-}
-var mt = function() {
-    function e() {
-        var e = this;
-        this._emitSheetCSS = function() {
-            var t = e.instance.toString(), n = Pe(), o = ae([
-                n && 'nonce="'.concat(n, '"'),
-                "".concat(f, '="true"'),
-                "".concat(y, '="').concat(v, '"')
-            ].filter(Boolean), " ");
-            return "<style ".concat(o, ">").concat(t, "</style>");
-        }, this.getStyleTags = function() {
-            if (e.sealed) throw he(2);
-            return e._emitSheetCSS();
-        }, this.getStyleElement = function() {
-            var n;
-            if (e.sealed) throw he(2);
-            var r = ((n = {})[f] = "", n[y] = v, n.dangerouslySetInnerHTML = {
-                __html: e.instance.toString()
-            }, n), s = Pe();
-            return s && (r.nonce = s), [
-                (0, _reactDefault.default).createElement("style", (0, _tslib.__assign)({}, r, {
-                    key: "sc-0-0"
-                }))
-            ];
-        }, this.seal = function() {
-            e.sealed = !0;
-        }, this.instance = new Re({
-            isServer: !0
-        }), this.sealed = !1;
-    }
-    return e.prototype.collectStyles = function(e) {
-        if (this.sealed) throw he(2);
-        return (0, _reactDefault.default).createElement(Le, {
-            sheet: this.instance
-        }, e);
-    }, e.prototype.interleaveWithNodeStream = function(e) {
-        throw he(3);
-    }, e;
-}(), yt = {
-    StyleSheet: Re,
-    mainSheet: Ve
-};
-"undefined" != typeof navigator && "ReactNative" === navigator.product && console.warn("It looks like you've imported 'styled-components' on React Native.\nPerhaps you're looking to import 'styled-components/native'?\nRead more about this at https://www.styled-components.com/docs/basics#react-native");
-var vt = "__sc-".concat(f, "__");
-"undefined" != typeof window && (window[vt] || (window[vt] = 0), 1 === window[vt] && console.warn("It looks like there are several instances of 'styled-components' initialized in this application. This may cause dynamic styles to not render properly, errors during the rehydration process, a missing theme prop, and makes your application bigger without good reason.\n\nSee https://s-c.sh/2BAXzed for more info."), window[vt] += 1);
-
-},{"tslib":"lRdW5","@emotion/is-prop-valid":"9JzNk","react":"21dqq","shallowequal":"fjwkp","stylis":"bMCXt","@emotion/unitless":"2Tu84","process":"d5jf4","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lRdW5":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "__extends", ()=>__extends);
-parcelHelpers.export(exports, "__assign", ()=>__assign);
-parcelHelpers.export(exports, "__rest", ()=>__rest);
-parcelHelpers.export(exports, "__decorate", ()=>__decorate);
-parcelHelpers.export(exports, "__param", ()=>__param);
-parcelHelpers.export(exports, "__esDecorate", ()=>__esDecorate);
-parcelHelpers.export(exports, "__runInitializers", ()=>__runInitializers);
-parcelHelpers.export(exports, "__propKey", ()=>__propKey);
-parcelHelpers.export(exports, "__setFunctionName", ()=>__setFunctionName);
-parcelHelpers.export(exports, "__metadata", ()=>__metadata);
-parcelHelpers.export(exports, "__awaiter", ()=>__awaiter);
-parcelHelpers.export(exports, "__generator", ()=>__generator);
-parcelHelpers.export(exports, "__createBinding", ()=>__createBinding);
-parcelHelpers.export(exports, "__exportStar", ()=>__exportStar);
-parcelHelpers.export(exports, "__values", ()=>__values);
-parcelHelpers.export(exports, "__read", ()=>__read);
-/** @deprecated */ parcelHelpers.export(exports, "__spread", ()=>__spread);
-/** @deprecated */ parcelHelpers.export(exports, "__spreadArrays", ()=>__spreadArrays);
-parcelHelpers.export(exports, "__spreadArray", ()=>__spreadArray);
-parcelHelpers.export(exports, "__await", ()=>__await);
-parcelHelpers.export(exports, "__asyncGenerator", ()=>__asyncGenerator);
-parcelHelpers.export(exports, "__asyncDelegator", ()=>__asyncDelegator);
-parcelHelpers.export(exports, "__asyncValues", ()=>__asyncValues);
-parcelHelpers.export(exports, "__makeTemplateObject", ()=>__makeTemplateObject);
-parcelHelpers.export(exports, "__importStar", ()=>__importStar);
-parcelHelpers.export(exports, "__importDefault", ()=>__importDefault);
-parcelHelpers.export(exports, "__classPrivateFieldGet", ()=>__classPrivateFieldGet);
-parcelHelpers.export(exports, "__classPrivateFieldSet", ()=>__classPrivateFieldSet);
-parcelHelpers.export(exports, "__classPrivateFieldIn", ()=>__classPrivateFieldIn);
-/******************************************************************************
-Copyright (c) Microsoft Corporation.
-
-Permission to use, copy, modify, and/or distribute this software for any
-purpose with or without fee is hereby granted.
-
-THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
-REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
-AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
-INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
-LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
-OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-PERFORMANCE OF THIS SOFTWARE.
-***************************************************************************** */ /* global Reflect, Promise */ var extendStatics = function(d, b) {
-    extendStatics = Object.setPrototypeOf || ({
-        __proto__: []
-    }) instanceof Array && function(d, b) {
-        d.__proto__ = b;
-    } || function(d, b) {
-        for(var p in b)if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p];
-    };
-    return extendStatics(d, b);
-};
-function __extends(d, b) {
-    if (typeof b !== "function" && b !== null) throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-    extendStatics(d, b);
-    function __() {
-        this.constructor = d;
-    }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-}
-var __assign = function() {
-    __assign = Object.assign || function __assign(t) {
-        for(var s, i = 1, n = arguments.length; i < n; i++){
-            s = arguments[i];
-            for(var p in s)if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-function __rest(s, e) {
-    var t = {};
-    for(var p in s)if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function") {
-        for(var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++)if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
-    }
-    return t;
-}
-function __decorate(decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for(var i = decorators.length - 1; i >= 0; i--)if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-}
-function __param(paramIndex, decorator) {
-    return function(target, key) {
-        decorator(target, key, paramIndex);
-    };
-}
-function __esDecorate(ctor, descriptorIn, decorators, contextIn, initializers, extraInitializers) {
-    function accept(f) {
-        if (f !== void 0 && typeof f !== "function") throw new TypeError("Function expected");
-        return f;
-    }
-    var kind = contextIn.kind, key = kind === "getter" ? "get" : kind === "setter" ? "set" : "value";
-    var target = !descriptorIn && ctor ? contextIn["static"] ? ctor : ctor.prototype : null;
-    var descriptor = descriptorIn || (target ? Object.getOwnPropertyDescriptor(target, contextIn.name) : {});
-    var _, done = false;
-    for(var i = decorators.length - 1; i >= 0; i--){
-        var context = {};
-        for(var p in contextIn)context[p] = p === "access" ? {} : contextIn[p];
-        for(var p in contextIn.access)context.access[p] = contextIn.access[p];
-        context.addInitializer = function(f) {
-            if (done) throw new TypeError("Cannot add initializers after decoration has completed");
-            extraInitializers.push(accept(f || null));
-        };
-        var result = (0, decorators[i])(kind === "accessor" ? {
-            get: descriptor.get,
-            set: descriptor.set
-        } : descriptor[key], context);
-        if (kind === "accessor") {
-            if (result === void 0) continue;
-            if (result === null || typeof result !== "object") throw new TypeError("Object expected");
-            if (_ = accept(result.get)) descriptor.get = _;
-            if (_ = accept(result.set)) descriptor.set = _;
-            if (_ = accept(result.init)) initializers.push(_);
-        } else if (_ = accept(result)) {
-            if (kind === "field") initializers.push(_);
-            else descriptor[key] = _;
-        }
-    }
-    if (target) Object.defineProperty(target, contextIn.name, descriptor);
-    done = true;
-}
-function __runInitializers(thisArg, initializers, value) {
-    var useValue = arguments.length > 2;
-    for(var i = 0; i < initializers.length; i++)value = useValue ? initializers[i].call(thisArg, value) : initializers[i].call(thisArg);
-    return useValue ? value : void 0;
-}
-function __propKey(x) {
-    return typeof x === "symbol" ? x : "".concat(x);
-}
-function __setFunctionName(f, name, prefix) {
-    if (typeof name === "symbol") name = name.description ? "[".concat(name.description, "]") : "";
-    return Object.defineProperty(f, "name", {
-        configurable: true,
-        value: prefix ? "".concat(prefix, " ", name) : name
-    });
-}
-function __metadata(metadataKey, metadataValue) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
-}
-function __awaiter(thisArg, _arguments, P, generator) {
-    function adopt(value) {
-        return value instanceof P ? value : new P(function(resolve) {
-            resolve(value);
-        });
-    }
-    return new (P || (P = Promise))(function(resolve, reject) {
-        function fulfilled(value) {
-            try {
-                step(generator.next(value));
-            } catch (e) {
-                reject(e);
-            }
-        }
-        function rejected(value) {
-            try {
-                step(generator["throw"](value));
-            } catch (e) {
-                reject(e);
-            }
-        }
-        function step(result) {
-            result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
-        }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-}
-function __generator(thisArg, body) {
-    var _ = {
-        label: 0,
-        sent: function() {
-            if (t[0] & 1) throw t[1];
-            return t[1];
-        },
-        trys: [],
-        ops: []
-    }, f, y, t, g;
-    return g = {
-        next: verb(0),
-        "throw": verb(1),
-        "return": verb(2)
-    }, typeof Symbol === "function" && (g[Symbol.iterator] = function() {
-        return this;
-    }), g;
-    function verb(n) {
-        return function(v) {
-            return step([
-                n,
-                v
-            ]);
-        };
-    }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while(g && (g = 0, op[0] && (_ = 0)), _)try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [
-                op[0] & 2,
-                t.value
-            ];
-            switch(op[0]){
-                case 0:
-                case 1:
-                    t = op;
-                    break;
-                case 4:
-                    _.label++;
-                    return {
-                        value: op[1],
-                        done: false
-                    };
-                case 5:
-                    _.label++;
-                    y = op[1];
-                    op = [
-                        0
-                    ];
-                    continue;
-                case 7:
-                    op = _.ops.pop();
-                    _.trys.pop();
-                    continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) {
-                        _ = 0;
-                        continue;
-                    }
-                    if (op[0] === 3 && (!t || op[1] > t[0] && op[1] < t[3])) {
-                        _.label = op[1];
-                        break;
-                    }
-                    if (op[0] === 6 && _.label < t[1]) {
-                        _.label = t[1];
-                        t = op;
-                        break;
-                    }
-                    if (t && _.label < t[2]) {
-                        _.label = t[2];
-                        _.ops.push(op);
-                        break;
-                    }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop();
-                    continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) {
-            op = [
-                6,
-                e
-            ];
-            y = 0;
-        } finally{
-            f = t = 0;
-        }
-        if (op[0] & 5) throw op[1];
-        return {
-            value: op[0] ? op[1] : void 0,
-            done: true
-        };
-    }
-}
-var __createBinding = Object.create ? function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) desc = {
-        enumerable: true,
-        get: function() {
-            return m[k];
-        }
-    };
-    Object.defineProperty(o, k2, desc);
-} : function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-};
-function __exportStar(m, o) {
-    for(var p in m)if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding(o, m, p);
-}
-function __values(o) {
-    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
-    if (m) return m.call(o);
-    if (o && typeof o.length === "number") return {
-        next: function() {
-            if (o && i >= o.length) o = void 0;
-            return {
-                value: o && o[i++],
-                done: !o
-            };
-        }
-    };
-    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
-}
-function __read(o, n) {
-    var m = typeof Symbol === "function" && o[Symbol.iterator];
-    if (!m) return o;
-    var i = m.call(o), r, ar = [], e;
-    try {
-        while((n === void 0 || n-- > 0) && !(r = i.next()).done)ar.push(r.value);
-    } catch (error) {
-        e = {
-            error: error
-        };
-    } finally{
-        try {
-            if (r && !r.done && (m = i["return"])) m.call(i);
-        } finally{
-            if (e) throw e.error;
-        }
-    }
-    return ar;
-}
-function __spread() {
-    for(var ar = [], i = 0; i < arguments.length; i++)ar = ar.concat(__read(arguments[i]));
-    return ar;
-}
-function __spreadArrays() {
-    for(var s = 0, i = 0, il = arguments.length; i < il; i++)s += arguments[i].length;
-    for(var r = Array(s), k = 0, i = 0; i < il; i++)for(var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)r[k] = a[j];
-    return r;
-}
-function __spreadArray(to, from, pack) {
-    if (pack || arguments.length === 2) {
-        for(var i = 0, l = from.length, ar; i < l; i++)if (ar || !(i in from)) {
-            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-            ar[i] = from[i];
-        }
-    }
-    return to.concat(ar || Array.prototype.slice.call(from));
-}
-function __await(v) {
-    return this instanceof __await ? (this.v = v, this) : new __await(v);
-}
-function __asyncGenerator(thisArg, _arguments, generator) {
-    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
-    var g = generator.apply(thisArg, _arguments || []), i, q = [];
-    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function() {
-        return this;
-    }, i;
-    function verb(n) {
-        if (g[n]) i[n] = function(v) {
-            return new Promise(function(a, b) {
-                q.push([
-                    n,
-                    v,
-                    a,
-                    b
-                ]) > 1 || resume(n, v);
-            });
-        };
-    }
-    function resume(n, v) {
-        try {
-            step(g[n](v));
-        } catch (e) {
-            settle(q[0][3], e);
-        }
-    }
-    function step(r) {
-        r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r);
-    }
-    function fulfill(value) {
-        resume("next", value);
-    }
-    function reject(value) {
-        resume("throw", value);
-    }
-    function settle(f, v) {
-        if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]);
-    }
-}
-function __asyncDelegator(o) {
-    var i, p;
-    return i = {}, verb("next"), verb("throw", function(e) {
-        throw e;
-    }), verb("return"), i[Symbol.iterator] = function() {
-        return this;
-    }, i;
-    function verb(n, f) {
-        i[n] = o[n] ? function(v) {
-            return (p = !p) ? {
-                value: __await(o[n](v)),
-                done: false
-            } : f ? f(v) : v;
-        } : f;
-    }
-}
-function __asyncValues(o) {
-    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
-    var m = o[Symbol.asyncIterator], i;
-    return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function() {
-        return this;
-    }, i);
-    function verb(n) {
-        i[n] = o[n] && function(v) {
-            return new Promise(function(resolve, reject) {
-                v = o[n](v), settle(resolve, reject, v.done, v.value);
-            });
-        };
-    }
-    function settle(resolve, reject, d, v) {
-        Promise.resolve(v).then(function(v) {
-            resolve({
-                value: v,
-                done: d
-            });
-        }, reject);
-    }
-}
-function __makeTemplateObject(cooked, raw) {
-    if (Object.defineProperty) Object.defineProperty(cooked, "raw", {
-        value: raw
-    });
-    else cooked.raw = raw;
-    return cooked;
-}
-var __setModuleDefault = Object.create ? function(o, v) {
-    Object.defineProperty(o, "default", {
-        enumerable: true,
-        value: v
-    });
-} : function(o, v) {
-    o["default"] = v;
-};
-function __importStar(mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) {
-        for(var k in mod)if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    }
-    __setModuleDefault(result, mod);
-    return result;
-}
-function __importDefault(mod) {
-    return mod && mod.__esModule ? mod : {
-        default: mod
-    };
-}
-function __classPrivateFieldGet(receiver, state, kind, f) {
-    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
-    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
-    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
-}
-function __classPrivateFieldSet(receiver, state, value, kind, f) {
-    if (kind === "m") throw new TypeError("Private method is not writable");
-    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
-    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
-    return kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value), value;
-}
-function __classPrivateFieldIn(state, receiver) {
-    if (receiver === null || typeof receiver !== "object" && typeof receiver !== "function") throw new TypeError("Cannot use 'in' operator on non-object");
-    return typeof state === "function" ? receiver === state : state.has(receiver);
-}
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9JzNk":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "default", ()=>isPropValid);
-var _memoize = require("@emotion/memoize");
-var _memoizeDefault = parcelHelpers.interopDefault(_memoize);
-var reactPropsRegex = /^((children|dangerouslySetInnerHTML|key|ref|autoFocus|defaultValue|defaultChecked|innerHTML|suppressContentEditableWarning|suppressHydrationWarning|valueLink|abbr|accept|acceptCharset|accessKey|action|allow|allowUserMedia|allowPaymentRequest|allowFullScreen|allowTransparency|alt|async|autoComplete|autoPlay|capture|cellPadding|cellSpacing|challenge|charSet|checked|cite|classID|className|cols|colSpan|content|contentEditable|contextMenu|controls|controlsList|coords|crossOrigin|data|dateTime|decoding|default|defer|dir|disabled|disablePictureInPicture|download|draggable|encType|enterKeyHint|form|formAction|formEncType|formMethod|formNoValidate|formTarget|frameBorder|headers|height|hidden|high|href|hrefLang|htmlFor|httpEquiv|id|inputMode|integrity|is|keyParams|keyType|kind|label|lang|list|loading|loop|low|marginHeight|marginWidth|max|maxLength|media|mediaGroup|method|min|minLength|multiple|muted|name|nonce|noValidate|open|optimum|pattern|placeholder|playsInline|poster|preload|profile|radioGroup|readOnly|referrerPolicy|rel|required|reversed|role|rows|rowSpan|sandbox|scope|scoped|scrolling|seamless|selected|shape|size|sizes|slot|span|spellCheck|src|srcDoc|srcLang|srcSet|start|step|style|summary|tabIndex|target|title|translate|type|useMap|value|width|wmode|wrap|about|datatype|inlist|prefix|property|resource|typeof|vocab|autoCapitalize|autoCorrect|autoSave|color|incremental|fallback|inert|itemProp|itemScope|itemType|itemID|itemRef|on|option|results|security|unselectable|accentHeight|accumulate|additive|alignmentBaseline|allowReorder|alphabetic|amplitude|arabicForm|ascent|attributeName|attributeType|autoReverse|azimuth|baseFrequency|baselineShift|baseProfile|bbox|begin|bias|by|calcMode|capHeight|clip|clipPathUnits|clipPath|clipRule|colorInterpolation|colorInterpolationFilters|colorProfile|colorRendering|contentScriptType|contentStyleType|cursor|cx|cy|d|decelerate|descent|diffuseConstant|direction|display|divisor|dominantBaseline|dur|dx|dy|edgeMode|elevation|enableBackground|end|exponent|externalResourcesRequired|fill|fillOpacity|fillRule|filter|filterRes|filterUnits|floodColor|floodOpacity|focusable|fontFamily|fontSize|fontSizeAdjust|fontStretch|fontStyle|fontVariant|fontWeight|format|from|fr|fx|fy|g1|g2|glyphName|glyphOrientationHorizontal|glyphOrientationVertical|glyphRef|gradientTransform|gradientUnits|hanging|horizAdvX|horizOriginX|ideographic|imageRendering|in|in2|intercept|k|k1|k2|k3|k4|kernelMatrix|kernelUnitLength|kerning|keyPoints|keySplines|keyTimes|lengthAdjust|letterSpacing|lightingColor|limitingConeAngle|local|markerEnd|markerMid|markerStart|markerHeight|markerUnits|markerWidth|mask|maskContentUnits|maskUnits|mathematical|mode|numOctaves|offset|opacity|operator|order|orient|orientation|origin|overflow|overlinePosition|overlineThickness|panose1|paintOrder|pathLength|patternContentUnits|patternTransform|patternUnits|pointerEvents|points|pointsAtX|pointsAtY|pointsAtZ|preserveAlpha|preserveAspectRatio|primitiveUnits|r|radius|refX|refY|renderingIntent|repeatCount|repeatDur|requiredExtensions|requiredFeatures|restart|result|rotate|rx|ry|scale|seed|shapeRendering|slope|spacing|specularConstant|specularExponent|speed|spreadMethod|startOffset|stdDeviation|stemh|stemv|stitchTiles|stopColor|stopOpacity|strikethroughPosition|strikethroughThickness|string|stroke|strokeDasharray|strokeDashoffset|strokeLinecap|strokeLinejoin|strokeMiterlimit|strokeOpacity|strokeWidth|surfaceScale|systemLanguage|tableValues|targetX|targetY|textAnchor|textDecoration|textRendering|textLength|to|transform|u1|u2|underlinePosition|underlineThickness|unicode|unicodeBidi|unicodeRange|unitsPerEm|vAlphabetic|vHanging|vIdeographic|vMathematical|values|vectorEffect|version|vertAdvY|vertOriginX|vertOriginY|viewBox|viewTarget|visibility|widths|wordSpacing|writingMode|x|xHeight|x1|x2|xChannelSelector|xlinkActuate|xlinkArcrole|xlinkHref|xlinkRole|xlinkShow|xlinkTitle|xlinkType|xmlBase|xmlns|xmlnsXlink|xmlLang|xmlSpace|y|y1|y2|yChannelSelector|z|zoomAndPan|for|class|autofocus)|(([Dd][Aa][Tt][Aa]|[Aa][Rr][Ii][Aa]|x)-.*))$/; // https://esbench.com/bench/5bfee68a4cd7e6009ef61d23
-var isPropValid = /* #__PURE__ */ (0, _memoizeDefault.default)(function(prop) {
-    return reactPropsRegex.test(prop) || prop.charCodeAt(0) === 111 && prop.charCodeAt(1) === 110 && prop.charCodeAt(2) < 91;
-});
-
-},{"@emotion/memoize":"2vzJd","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2vzJd":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "default", ()=>memoize);
-function memoize(fn) {
-    var cache = Object.create(null);
-    return function(arg) {
-        if (cache[arg] === undefined) cache[arg] = fn(arg);
-        return cache[arg];
-    };
-}
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fjwkp":[function(require,module,exports) {
-//
-module.exports = function shallowEqual(objA, objB, compare, compareContext) {
-    var ret = compare ? compare.call(compareContext, objA, objB) : void 0;
-    if (ret !== void 0) return !!ret;
-    if (objA === objB) return true;
-    if (typeof objA !== "object" || !objA || typeof objB !== "object" || !objB) return false;
-    var keysA = Object.keys(objA);
-    var keysB = Object.keys(objB);
-    if (keysA.length !== keysB.length) return false;
-    var bHasOwnProperty = Object.prototype.hasOwnProperty.bind(objB);
-    // Test for A's keys different from B.
-    for(var idx = 0; idx < keysA.length; idx++){
-        var key = keysA[idx];
-        if (!bHasOwnProperty(key)) return false;
-        var valueA = objA[key];
-        var valueB = objB[key];
-        ret = compare ? compare.call(compareContext, valueA, valueB, key) : void 0;
-        if (ret === false || ret === void 0 && valueA !== valueB) return false;
-    }
-    return true;
-};
-
-},{}],"bMCXt":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "CHARSET", ()=>f);
-parcelHelpers.export(exports, "COMMENT", ()=>n);
-parcelHelpers.export(exports, "COUNTER_STYLE", ()=>w);
-parcelHelpers.export(exports, "DECLARATION", ()=>s);
-parcelHelpers.export(exports, "DOCUMENT", ()=>v);
-parcelHelpers.export(exports, "FONT_FACE", ()=>b);
-parcelHelpers.export(exports, "FONT_FEATURE_VALUES", ()=>d);
-parcelHelpers.export(exports, "IMPORT", ()=>i);
-parcelHelpers.export(exports, "KEYFRAMES", ()=>h);
-parcelHelpers.export(exports, "LAYER", ()=>g);
-parcelHelpers.export(exports, "MEDIA", ()=>u);
-parcelHelpers.export(exports, "MOZ", ()=>r);
-parcelHelpers.export(exports, "MS", ()=>e);
-parcelHelpers.export(exports, "NAMESPACE", ()=>p);
-parcelHelpers.export(exports, "PAGE", ()=>t);
-parcelHelpers.export(exports, "RULESET", ()=>c);
-parcelHelpers.export(exports, "SUPPORTS", ()=>l);
-parcelHelpers.export(exports, "VIEWPORT", ()=>o);
-parcelHelpers.export(exports, "WEBKIT", ()=>a);
-parcelHelpers.export(exports, "abs", ()=>k);
-parcelHelpers.export(exports, "alloc", ()=>X);
-parcelHelpers.export(exports, "append", ()=>q);
-parcelHelpers.export(exports, "assign", ()=>m);
-parcelHelpers.export(exports, "caret", ()=>U);
-parcelHelpers.export(exports, "char", ()=>P);
-parcelHelpers.export(exports, "character", ()=>I);
-parcelHelpers.export(exports, "characters", ()=>J);
-parcelHelpers.export(exports, "charat", ()=>O);
-parcelHelpers.export(exports, "column", ()=>F);
-parcelHelpers.export(exports, "combine", ()=>B);
-parcelHelpers.export(exports, "comment", ()=>fe);
-parcelHelpers.export(exports, "commenter", ()=>ce);
-parcelHelpers.export(exports, "compile", ()=>te);
-parcelHelpers.export(exports, "copy", ()=>L);
-parcelHelpers.export(exports, "dealloc", ()=>Y);
-parcelHelpers.export(exports, "declaration", ()=>oe);
-parcelHelpers.export(exports, "delimit", ()=>Z);
-parcelHelpers.export(exports, "delimiter", ()=>ne);
-parcelHelpers.export(exports, "escaping", ()=>ae);
-parcelHelpers.export(exports, "filter", ()=>D);
-parcelHelpers.export(exports, "from", ()=>$);
-parcelHelpers.export(exports, "hash", ()=>x);
-parcelHelpers.export(exports, "identifier", ()=>se);
-parcelHelpers.export(exports, "indexof", ()=>C);
-parcelHelpers.export(exports, "length", ()=>G);
-parcelHelpers.export(exports, "lift", ()=>N);
-parcelHelpers.export(exports, "line", ()=>E);
-parcelHelpers.export(exports, "match", ()=>j);
-parcelHelpers.export(exports, "middleware", ()=>he);
-parcelHelpers.export(exports, "namespace", ()=>de);
-parcelHelpers.export(exports, "next", ()=>R);
-parcelHelpers.export(exports, "node", ()=>K);
-parcelHelpers.export(exports, "parse", ()=>ue);
-parcelHelpers.export(exports, "peek", ()=>T);
-parcelHelpers.export(exports, "position", ()=>H);
-parcelHelpers.export(exports, "prefix", ()=>le);
-parcelHelpers.export(exports, "prefixer", ()=>we);
-parcelHelpers.export(exports, "prev", ()=>Q);
-parcelHelpers.export(exports, "replace", ()=>z);
-parcelHelpers.export(exports, "ruleset", ()=>ie);
-parcelHelpers.export(exports, "rulesheet", ()=>be);
-parcelHelpers.export(exports, "serialize", ()=>ve);
-parcelHelpers.export(exports, "sizeof", ()=>S);
-parcelHelpers.export(exports, "slice", ()=>V);
-parcelHelpers.export(exports, "stringify", ()=>pe);
-parcelHelpers.export(exports, "strlen", ()=>M);
-parcelHelpers.export(exports, "substr", ()=>A);
-parcelHelpers.export(exports, "token", ()=>W);
-parcelHelpers.export(exports, "tokenize", ()=>_);
-parcelHelpers.export(exports, "tokenizer", ()=>re);
-parcelHelpers.export(exports, "trim", ()=>y);
-parcelHelpers.export(exports, "whitespace", ()=>ee);
-var e = "-ms-";
-var r = "-moz-";
-var a = "-webkit-";
-var n = "comm";
-var c = "rule";
-var s = "decl";
-var t = "@page";
-var u = "@media";
-var i = "@import";
-var f = "@charset";
-var o = "@viewport";
-var l = "@supports";
-var v = "@document";
-var p = "@namespace";
-var h = "@keyframes";
-var b = "@font-face";
-var w = "@counter-style";
-var d = "@font-feature-values";
-var g = "@layer";
-var k = Math.abs;
-var $ = String.fromCharCode;
-var m = Object.assign;
-function x(e, r) {
-    return O(e, 0) ^ 45 ? (((r << 2 ^ O(e, 0)) << 2 ^ O(e, 1)) << 2 ^ O(e, 2)) << 2 ^ O(e, 3) : 0;
-}
-function y(e) {
-    return e.trim();
-}
-function j(e, r) {
-    return (e = r.exec(e)) ? e[0] : e;
-}
-function z(e, r, a) {
-    return e.replace(r, a);
-}
-function C(e, r, a) {
-    return e.indexOf(r, a);
-}
-function O(e, r) {
-    return e.charCodeAt(r) | 0;
-}
-function A(e, r, a) {
-    return e.slice(r, a);
-}
-function M(e) {
-    return e.length;
-}
-function S(e) {
-    return e.length;
-}
-function q(e, r) {
-    return r.push(e), e;
-}
-function B(e, r) {
-    return e.map(r).join("");
-}
-function D(e, r) {
-    return e.filter(function(e) {
-        return !j(e, r);
-    });
-}
-var E = 1;
-var F = 1;
-var G = 0;
-var H = 0;
-var I = 0;
-var J = "";
-function K(e, r, a, n, c, s, t, u) {
-    return {
-        value: e,
-        root: r,
-        parent: a,
-        type: n,
-        props: c,
-        children: s,
-        line: E,
-        column: F,
-        length: t,
-        return: "",
-        siblings: u
-    };
-}
-function L(e, r) {
-    return m(K("", null, null, "", null, null, 0, e.siblings), e, {
-        length: -e.length
-    }, r);
-}
-function N(e) {
-    while(e.root)e = L(e.root, {
-        children: [
-            e
-        ]
-    });
-    q(e, e.siblings);
-}
-function P() {
-    return I;
-}
-function Q() {
-    I = H > 0 ? O(J, --H) : 0;
-    if (F--, I === 10) F = 1, E--;
-    return I;
-}
-function R() {
-    I = H < G ? O(J, H++) : 0;
-    if (F++, I === 10) F = 1, E++;
-    return I;
-}
-function T() {
-    return O(J, H);
-}
-function U() {
-    return H;
-}
-function V(e, r) {
-    return A(J, e, r);
-}
-function W(e) {
-    switch(e){
-        case 0:
-        case 9:
-        case 10:
-        case 13:
-        case 32:
-            return 5;
-        case 33:
-        case 43:
-        case 44:
-        case 47:
-        case 62:
-        case 64:
-        case 126:
-        case 59:
-        case 123:
-        case 125:
-            return 4;
-        case 58:
-            return 3;
-        case 34:
-        case 39:
-        case 40:
-        case 91:
-            return 2;
-        case 41:
-        case 93:
-            return 1;
-    }
-    return 0;
-}
-function X(e) {
-    return E = F = 1, G = M(J = e), H = 0, [];
-}
-function Y(e) {
-    return J = "", e;
-}
-function Z(e) {
-    return y(V(H - 1, ne(e === 91 ? e + 2 : e === 40 ? e + 1 : e)));
-}
-function _(e) {
-    return Y(re(X(e)));
-}
-function ee(e) {
-    while(I = T())if (I < 33) R();
-    else break;
-    return W(e) > 2 || W(I) > 3 ? "" : " ";
-}
-function re(e) {
-    while(R())switch(W(I)){
-        case 0:
-            q(se(H - 1), e);
-            break;
-        case 2:
-            q(Z(I), e);
-            break;
-        default:
-            q($(I), e);
-    }
-    return e;
-}
-function ae(e, r) {
-    while(--r && R())if (I < 48 || I > 102 || I > 57 && I < 65 || I > 70 && I < 97) break;
-    return V(e, U() + (r < 6 && T() == 32 && R() == 32));
-}
-function ne(e) {
-    while(R())switch(I){
-        case e:
-            return H;
-        case 34:
-        case 39:
-            if (e !== 34 && e !== 39) ne(I);
-            break;
-        case 40:
-            if (e === 41) ne(e);
-            break;
-        case 92:
-            R();
-            break;
-    }
-    return H;
-}
-function ce(e, r) {
-    while(R())if (e + I === 57) break;
-    else if (e + I === 84 && T() === 47) break;
-    return "/*" + V(r, H - 1) + "*" + $(e === 47 ? e : R());
-}
-function se(e) {
-    while(!W(T()))R();
-    return V(e, H);
-}
-function te(e) {
-    return Y(ue("", null, null, null, [
-        ""
-    ], e = X(e), 0, [
-        0
-    ], e));
-}
-function ue(e, r, a, n, c, s, t, u, i) {
-    var f = 0;
-    var o = 0;
-    var l = t;
-    var v = 0;
-    var p = 0;
-    var h = 0;
-    var b = 1;
-    var w = 1;
-    var d = 1;
-    var g = 0;
-    var m = "";
-    var x = c;
-    var y = s;
-    var j = n;
-    var A = m;
-    while(w)switch(h = g, g = R()){
-        case 40:
-            if (h != 108 && O(A, l - 1) == 58) {
-                if (C(A += z(Z(g), "&", "&\f"), "&\f", k(f ? u[f - 1] : 0)) != -1) d = -1;
-                break;
-            }
-        case 34:
-        case 39:
-        case 91:
-            A += Z(g);
-            break;
-        case 9:
-        case 10:
-        case 13:
-        case 32:
-            A += ee(h);
-            break;
-        case 92:
-            A += ae(U() - 1, 7);
-            continue;
-        case 47:
-            switch(T()){
-                case 42:
-                case 47:
-                    q(fe(ce(R(), U()), r, a, i), i);
-                    break;
-                default:
-                    A += "/";
-            }
-            break;
-        case 123 * b:
-            u[f++] = M(A) * d;
-        case 125 * b:
-        case 59:
-        case 0:
-            switch(g){
-                case 0:
-                case 125:
-                    w = 0;
-                case 59 + o:
-                    if (d == -1) A = z(A, /\f/g, "");
-                    if (p > 0 && M(A) - l) q(p > 32 ? oe(A + ";", n, a, l - 1, i) : oe(z(A, " ", "") + ";", n, a, l - 2, i), i);
-                    break;
-                case 59:
-                    A += ";";
-                default:
-                    q(j = ie(A, r, a, f, o, c, u, m, x = [], y = [], l, s), s);
-                    if (g === 123) {
-                        if (o === 0) ue(A, r, j, j, x, s, l, u, y);
-                        else switch(v === 99 && O(A, 3) === 110 ? 100 : v){
-                            case 100:
-                            case 108:
-                            case 109:
-                            case 115:
-                                ue(e, j, j, n && q(ie(e, j, j, 0, 0, c, u, m, c, x = [], l, y), y), c, y, l, u, n ? x : y);
-                                break;
-                            default:
-                                ue(A, j, j, j, [
-                                    ""
-                                ], y, 0, u, y);
-                        }
-                    }
-            }
-            f = o = p = 0, b = d = 1, m = A = "", l = t;
-            break;
-        case 58:
-            l = 1 + M(A), p = h;
-        default:
-            if (b < 1) {
-                if (g == 123) --b;
-                else if (g == 125 && (b++) == 0 && Q() == 125) continue;
-            }
-            switch(A += $(g), g * b){
-                case 38:
-                    d = o > 0 ? 1 : (A += "\f", -1);
-                    break;
-                case 44:
-                    u[f++] = (M(A) - 1) * d, d = 1;
-                    break;
-                case 64:
-                    if (T() === 45) A += Z(R());
-                    v = T(), o = l = M(m = A += se(U())), g++;
-                    break;
-                case 45:
-                    if (h === 45 && M(A) == 2) b = 0;
-            }
-    }
-    return s;
-}
-function ie(e, r, a, n, s, t, u, i, f, o, l, v) {
-    var p = s - 1;
-    var h = s === 0 ? t : [
-        ""
-    ];
-    var b = S(h);
-    for(var w = 0, d = 0, g = 0; w < n; ++w)for(var $ = 0, m = A(e, p + 1, p = k(d = u[w])), x = e; $ < b; ++$)if (x = y(d > 0 ? h[$] + " " + m : z(m, /&\f/g, h[$]))) f[g++] = x;
-    return K(e, r, a, s === 0 ? c : i, f, o, l, v);
-}
-function fe(e, r, a, c) {
-    return K(e, r, a, n, $(P()), A(e, 2, -2), 0, c);
-}
-function oe(e, r, a, n, c) {
-    return K(e, r, a, s, A(e, 0, n), A(e, n + 1, -1), n, c);
-}
-function le(n, c, s) {
-    switch(x(n, c)){
-        case 5103:
-            return a + "print-" + n + n;
-        case 5737:
-        case 4201:
-        case 3177:
-        case 3433:
-        case 1641:
-        case 4457:
-        case 2921:
-        case 5572:
-        case 6356:
-        case 5844:
-        case 3191:
-        case 6645:
-        case 3005:
-        case 6391:
-        case 5879:
-        case 5623:
-        case 6135:
-        case 4599:
-        case 4855:
-        case 4215:
-        case 6389:
-        case 5109:
-        case 5365:
-        case 5621:
-        case 3829:
-            return a + n + n;
-        case 4789:
-            return r + n + n;
-        case 5349:
-        case 4246:
-        case 4810:
-        case 6968:
-        case 2756:
-            return a + n + r + n + e + n + n;
-        case 5936:
-            switch(O(n, c + 11)){
-                case 114:
-                    return a + n + e + z(n, /[svh]\w+-[tblr]{2}/, "tb") + n;
-                case 108:
-                    return a + n + e + z(n, /[svh]\w+-[tblr]{2}/, "tb-rl") + n;
-                case 45:
-                    return a + n + e + z(n, /[svh]\w+-[tblr]{2}/, "lr") + n;
-            }
-        case 6828:
-        case 4268:
-        case 2903:
-            return a + n + e + n + n;
-        case 6165:
-            return a + n + e + "flex-" + n + n;
-        case 5187:
-            return a + n + z(n, /(\w+).+(:[^]+)/, a + "box-$1$2" + e + "flex-$1$2") + n;
-        case 5443:
-            return a + n + e + "flex-item-" + z(n, /flex-|-self/g, "") + (!j(n, /flex-|baseline/) ? e + "grid-row-" + z(n, /flex-|-self/g, "") : "") + n;
-        case 4675:
-            return a + n + e + "flex-line-pack" + z(n, /align-content|flex-|-self/g, "") + n;
-        case 5548:
-            return a + n + e + z(n, "shrink", "negative") + n;
-        case 5292:
-            return a + n + e + z(n, "basis", "preferred-size") + n;
-        case 6060:
-            return a + "box-" + z(n, "-grow", "") + a + n + e + z(n, "grow", "positive") + n;
-        case 4554:
-            return a + z(n, /([^-])(transform)/g, "$1" + a + "$2") + n;
-        case 6187:
-            return z(z(z(n, /(zoom-|grab)/, a + "$1"), /(image-set)/, a + "$1"), n, "") + n;
-        case 5495:
-        case 3959:
-            return z(n, /(image-set\([^]*)/, a + "$1" + "$`$1");
-        case 4968:
-            return z(z(n, /(.+:)(flex-)?(.*)/, a + "box-pack:$3" + e + "flex-pack:$3"), /s.+-b[^;]+/, "justify") + a + n + n;
-        case 4200:
-            if (!j(n, /flex-|baseline/)) return e + "grid-column-align" + A(n, c) + n;
-            break;
-        case 2592:
-        case 3360:
-            return e + z(n, "template-", "") + n;
-        case 4384:
-        case 3616:
-            if (s && s.some(function(e, r) {
-                return c = r, j(e.props, /grid-\w+-end/);
-            })) return ~C(n + (s = s[c].value), "span", 0) ? n : e + z(n, "-start", "") + n + e + "grid-row-span:" + (~C(s, "span", 0) ? j(s, /\d+/) : +j(s, /\d+/) - +j(n, /\d+/)) + ";";
-            return e + z(n, "-start", "") + n;
-        case 4896:
-        case 4128:
-            return s && s.some(function(e) {
-                return j(e.props, /grid-\w+-start/);
-            }) ? n : e + z(z(n, "-end", "-span"), "span ", "") + n;
-        case 4095:
-        case 3583:
-        case 4068:
-        case 2532:
-            return z(n, /(.+)-inline(.+)/, a + "$1$2") + n;
-        case 8116:
-        case 7059:
-        case 5753:
-        case 5535:
-        case 5445:
-        case 5701:
-        case 4933:
-        case 4677:
-        case 5533:
-        case 5789:
-        case 5021:
-        case 4765:
-            if (M(n) - 1 - c > 6) switch(O(n, c + 1)){
-                case 109:
-                    if (O(n, c + 4) !== 45) break;
-                case 102:
-                    return z(n, /(.+:)(.+)-([^]+)/, "$1" + a + "$2-$3" + "$1" + r + (O(n, c + 3) == 108 ? "$3" : "$2-$3")) + n;
-                case 115:
-                    return ~C(n, "stretch", 0) ? le(z(n, "stretch", "fill-available"), c, s) + n : n;
-            }
-            break;
-        case 5152:
-        case 5920:
-            return z(n, /(.+?):(\d+)(\s*\/\s*(span)?\s*(\d+))?(.*)/, function(r, a, c, s, t, u, i) {
-                return e + a + ":" + c + i + (s ? e + a + "-span:" + (t ? u : +u - +c) + i : "") + n;
-            });
-        case 4949:
-            if (O(n, c + 6) === 121) return z(n, ":", ":" + a) + n;
-            break;
-        case 6444:
-            switch(O(n, O(n, 14) === 45 ? 18 : 11)){
-                case 120:
-                    return z(n, /(.+:)([^;\s!]+)(;|(\s+)?!.+)?/, "$1" + a + (O(n, 14) === 45 ? "inline-" : "") + "box$3" + "$1" + a + "$2$3" + "$1" + e + "$2box$3") + n;
-                case 100:
-                    return z(n, ":", ":" + e) + n;
-            }
-            break;
-        case 5719:
-        case 2647:
-        case 2135:
-        case 3927:
-        case 2391:
-            return z(n, "scroll-", "scroll-snap-") + n;
-    }
-    return n;
-}
-function ve(e, r) {
-    var a = "";
-    for(var n = 0; n < e.length; n++)a += r(e[n], n, e, r) || "";
-    return a;
-}
-function pe(e, r, a, t) {
-    switch(e.type){
-        case g:
-            if (e.children.length) break;
-        case i:
-        case s:
-            return e.return = e.return || e.value;
-        case n:
-            return "";
-        case h:
-            return e.return = e.value + "{" + ve(e.children, t) + "}";
-        case c:
-            if (!M(e.value = e.props.join(","))) return "";
-    }
-    return M(a = ve(e.children, t)) ? e.return = e.value + "{" + a + "}" : "";
-}
-function he(e) {
-    var r = S(e);
-    return function(a, n, c, s) {
-        var t = "";
-        for(var u = 0; u < r; u++)t += e[u](a, n, c, s) || "";
-        return t;
-    };
-}
-function be(e) {
-    return function(r) {
-        if (!r.root) {
-            if (r = r.return) e(r);
-        }
-    };
-}
-function we(n, t, u, i) {
-    if (n.length > -1) {
-        if (!n.return) switch(n.type){
-            case s:
-                n.return = le(n.value, n.length, u);
-                return;
-            case h:
-                return ve([
-                    L(n, {
-                        value: z(n.value, "@", "@" + a)
-                    })
-                ], i);
-            case c:
-                if (n.length) return B(u = n.props, function(c) {
-                    switch(j(c, i = /(::plac\w+|:read-\w+)/)){
-                        case ":read-only":
-                        case ":read-write":
-                            N(L(n, {
-                                props: [
-                                    z(c, /:(read-\w+)/, ":" + r + "$1")
-                                ]
-                            }));
-                            N(L(n, {
-                                props: [
-                                    c
-                                ]
-                            }));
-                            m(n, {
-                                props: D(u, i)
-                            });
-                            break;
-                        case "::placeholder":
-                            N(L(n, {
-                                props: [
-                                    z(c, /:(plac\w+)/, ":" + a + "input-$1")
-                                ]
-                            }));
-                            N(L(n, {
-                                props: [
-                                    z(c, /:(plac\w+)/, ":" + r + "$1")
-                                ]
-                            }));
-                            N(L(n, {
-                                props: [
-                                    z(c, /:(plac\w+)/, e + "input-$1")
-                                ]
-                            }));
-                            N(L(n, {
-                                props: [
-                                    c
-                                ]
-                            }));
-                            m(n, {
-                                props: D(u, i)
-                            });
-                            break;
-                    }
-                    return "";
-                });
-        }
-    }
-}
-function de(e) {
-    switch(e.type){
-        case c:
-            e.props = e.props.map(function(r) {
-                return B(_(r), function(r, a, n) {
-                    switch(O(r, 0)){
-                        case 12:
-                            return A(r, 1, M(r));
-                        case 0:
-                        case 40:
-                        case 43:
-                        case 62:
-                        case 126:
-                            return r;
-                        case 58:
-                            if (n[++a] === "global") n[a] = "", n[++a] = "\f" + A(n[a], a = 1, -1);
-                        case 32:
-                            return a === 1 ? "" : r;
-                        default:
-                            switch(a){
-                                case 0:
-                                    e = r;
-                                    return S(n) > 1 ? "" : r;
-                                case a = S(n) - 1:
-                                case 2:
-                                    return a === 2 ? r + e + e : r + e;
-                                default:
-                                    return r;
-                            }
-                    }
-                });
-            });
-    }
-}
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2Tu84":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var unitlessKeys = {
-    animationIterationCount: 1,
-    borderImageOutset: 1,
-    borderImageSlice: 1,
-    borderImageWidth: 1,
-    boxFlex: 1,
-    boxFlexGroup: 1,
-    boxOrdinalGroup: 1,
-    columnCount: 1,
-    columns: 1,
-    flex: 1,
-    flexGrow: 1,
-    flexPositive: 1,
-    flexShrink: 1,
-    flexNegative: 1,
-    flexOrder: 1,
-    gridRow: 1,
-    gridRowEnd: 1,
-    gridRowSpan: 1,
-    gridRowStart: 1,
-    gridColumn: 1,
-    gridColumnEnd: 1,
-    gridColumnSpan: 1,
-    gridColumnStart: 1,
-    msGridRow: 1,
-    msGridRowSpan: 1,
-    msGridColumn: 1,
-    msGridColumnSpan: 1,
-    fontWeight: 1,
-    lineHeight: 1,
-    opacity: 1,
-    order: 1,
-    orphans: 1,
-    tabSize: 1,
-    widows: 1,
-    zIndex: 1,
-    zoom: 1,
-    WebkitLineClamp: 1,
-    // SVG-related properties
-    fillOpacity: 1,
-    floodOpacity: 1,
-    stopOpacity: 1,
-    strokeDasharray: 1,
-    strokeDashoffset: 1,
-    strokeMiterlimit: 1,
-    strokeOpacity: 1,
-    strokeWidth: 1
-};
-exports.default = unitlessKeys;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8A10H":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","styled-components":"1U3k6","../data/scholarships_and_awards.json":"8A10H","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"8A10H":[function(require,module,exports) {
 module.exports = JSON.parse('[{"name":"UWA Global Excellence Scholarship","description":"Awarded for exceptional academic performance, providing partial tuition coverage for the entire postgraduate study period.","period":"2021 - 2023","institution":"University of Western Australia"},{"name":"Scholarships for Top Three Academic Ranking","description":"Recurrently awarded for ranking within the top three students each semester. The scholarship included a complete tuition waiver for the subsequent semester, sponsored by the government. Achieved in: \\n- Grade 10, Semester 1 \\n- Grade 11, Semester 2 \\n- Grade 12, Semesters 1 and 2","period":"2007 - 2010","institution":"Kaohsiung Vocational High School of Commerce (KSVCS)"}]');
 
 },{}],"lCaEt":[function(require,module,exports) {
@@ -51525,17 +52749,58 @@ const Portfolio = ()=>{
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "flex justify-center mt-5 mr-20 ml-20 mb-5 p-3",
+                className: "bg-blue-50 border-l-4 border-blue-500 text-blue-700 p-4 ml-20 mr-20 mt-10 rounded shadow-lg",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "text-lg text-center mb-2",
+                        children: "\uD83C\uDF1F Announcing: Live What to Eat App \uD83C\uDF1F"
+                    }, void 0, false, {
+                        fileName: "src/Components/Portfolio.jsx",
+                        lineNumber: 20,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "text-md md:text-base text-gray-700",
+                        children: [
+                            "Hey foodies! Got the munchies? I am thrilled to unveil the",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                href: "https://what-to-eat-huixin-tw.vercel.app/",
+                                className: "text-blue-500 hover:text-blue-600 underline",
+                                children: [
+                                    " ",
+                                    "What to Eat app",
+                                    " "
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/Components/Portfolio.jsx",
+                                lineNumber: 23,
+                                columnNumber: 11
+                            }, undefined),
+                            "— your new go-to for discovering and sharing mouth-watering lunch ideas. Whether you are seeking inspiration or eager to share your culinary adventures, this app is your perfect companion. Dive in now for a taste of something new and exciting. Bon app\xe9tit!"
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Components/Portfolio.jsx",
+                        lineNumber: 21,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Components/Portfolio.jsx",
+                lineNumber: 19,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "flex justify-center text-xs lg:mt-5 lg:mr-5 lg:ml-5 lg:mb-0 p-3",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _technologiesButtonDefault.default), {
                     onTechnologyClick: handleTechnologyClick
                 }, void 0, false, {
                     fileName: "src/Components/Portfolio.jsx",
-                    lineNumber: 20,
+                    lineNumber: 36,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/Components/Portfolio.jsx",
-                lineNumber: 19,
+                lineNumber: 35,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -51546,17 +52811,17 @@ const Portfolio = ()=>{
                             data: item
                         }, index, false, {
                             fileName: "src/Components/Portfolio.jsx",
-                            lineNumber: 31,
+                            lineNumber: 48,
                             columnNumber: 17
                         }, undefined))
                 }, void 0, false, {
                     fileName: "src/Components/Portfolio.jsx",
-                    lineNumber: 25,
+                    lineNumber: 42,
                     columnNumber: 11
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/Components/Portfolio.jsx",
-                lineNumber: 22,
+                lineNumber: 39,
                 columnNumber: 7
             }, undefined)
         ]
@@ -51577,7 +52842,10 @@ $RefreshReg$(_c, "Portfolio");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./MajorProject":"btBuc","../data/majorproject.json":"jyi7G","./TechnologiesButton":"WNVNu"}],"btBuc":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../data/majorproject.json":"jyi7G","./MajorProject":"btBuc","./TechnologiesButton":"WNVNu","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jyi7G":[function(require,module,exports) {
+module.exports = JSON.parse('[{"majorproject":[{"project":"WhatToEat app","company":"Independent Project","url":"https://github.com/HUIXIN-TW/what-to-eat","youtubeVideoId":"xVK-zeScOwU","occupation":"Full Stack developer","period":"2024.02 - 2024.03","technologies":["About Software Development","Next.js","JavaScript","React","Tailwind CSS","MongoDB","Vercel","Git"],"description":["Spearheaded the development of WhatToEat, an intuitive web application aimed at simplifying daily lunch decision-making through a user-friendly interface.","- Implemented secure user authentication with optional NextAuth.js integration, offering both traditional and Google login methods to accommodate a broad user base.","- Designed and executed a dynamic search functionality, enabling users to discover lunch options based on preferences or tags.","- Fostered community engagement by allowing users to share and explore lunch ideas within the platform.","- Successfully deployed the app using Vercel, ensuring high availability and real-time updates.","- Managed source control with Git, facilitating collaborative development and version control."]},{"project":"Repair Labs project","company":"CFC","imgId":"repairlab","url":"https://github.com/codersforcauses/repair-labs","occupation":"Full Stack developer","period":"2023.06 - Current","technologies":["About Software Development","Next.js","TypeScript","React","Tailwind CSS","Vercel","Prisma","Postgres","Docker","Git"],"description":["- Actively contributing as a member of the Repair Labs Project.","- Technology Stack: Next.js, TypeScript, React, Tailwind CSS, and Vercel; Prisma as ORM, Postgres, and Docker for local DB.","- Designed mobile and desktop layouts using Figma, ensuring a user-friendly interface.","- Developed robust APIs to seamlessly connect frontend pages with the backend database, facilitating efficient data retrieval and updates.","- Achievements: Successfully created and merged three pull requests via GitHub into the main branch within one month."]},{"project":"Notion Sync with Google Calendar - Command Line Interface","company":"Independent Project","url":"https://github.com/HUIXIN-TW/NotionSyncGCal","youtubeVideoId":"9IbUIj8mNl8","occupation":"Full Stack Developer","period":"2021 - Current","technologies":["About Software Development","Python","Notion API","Google Calendar API","Docker","Git"],"description":["- Developed a command-line interface (CLI) for syncing data between Notion and Google Calendar.","- Implemented the ability to update events from Google Calendar to Notion and vice versa, allowing for seamless management of events between both platforms.","- Offered features such as timezone and date range customization, default length setting for new Google Calendar events, and the option to delete Google Calendar events when marked as \'Done\' in Notion.","- Provided support for syncing across multiple calendars and the flexibility to name Notion columns as desired for the code to work.","- Implemented credential and OAuth consent screen integration with Google Calendar scope for secure authentication and access to Google Calendar data."]},{"project":"Pets Of Older Persons project","company":"CFC","imgId":"poops","url":"https://github.com/codersforcauses/poops","occupation":"Full Stack developer","period":"2022.11 - 2023.02","label":"","technologies":["About Software Development","Next.js","TypeScript","React","Tailwind CSS","Firebase","Vercel","Git"],"description":["- Contributed as a team member in the Pets of Older Persons Project.","- Technology Stack: Next.js, TypeScript, React, Tailwind CSS, Firebase, and Vercel.","- Utilized Figma to craft intuitive mobile and desktop layouts.","- Collaborated effectively with other student volunteers, utilizing Git version control."]},{"project":"Smart Air Quality Monitoring System with ESP32","company":"University Project (HD)","imgId":"ESP32","url":"https://github.com/HUIXIN-TW/CITS5506IOT","occupation":"Hardware and Arudino Developer with ESP32","period":"2023.08 - 2023.11","technologies":["About Data Analysis","ESP32","Arduino","C++","Python","Flask","HTML","CSS","JavaScript","Firebase","Git"],"description":["- The system aims to ensure worker safety, regulatory compliance, and environmental impact assessment.","- Specific sensors tailored to monitor key pollutants are described. ","- With the ESP32 T-Beam microcontroller used for data collection and transmission through WIFI, data collected securely has been stored in Firebase, and can be accessed through a Flask-based web application for real-time monitoring and data analysis.","- This solution offers an approach to monitoring and ensuring air quality in mining environments, with a primary focus on worker safety, regulatory compliance, and environmental responsibility."]},{"project":"LLM Triple Generator project","company":"UWA NLP-TLP Team","url":"https://www.youtube.com/watch?v=wVBYiyJ0u00","youtubeVideoId":"-58HvQYFij8","occupation":"Team Leader","period":"2023.08 - 2023.11","technologies":["About Software Development","About Data Analysis","Python","Python networkx","Python requests","React","ChatGPT API","ChatGPT Fine Tuning Model","Prompt Engineering","Docker","Git","Git Actions","MongoDB"],"description":["- Led a team of 5 members in the development of a triple generator for the LLM project.","- The project aimed to transform unstructured text data into a structured knowledge graph using natural language processing techniques.","- Technologies such as Python, networkx, and requests were employed for data processing and retrieval.","- The React framework was used to create a user-friendly interface for interacting with the triple generator.","- Leveraged the ChatGPT API and ChatGPT Fine Tuning Model for advanced natural language understanding and generation.","- Implemented prompt engineering and feature engineering to enhance the accuracy and efficiency of triple generation.","- Docker was utilized for containerization, ensuring easy deployment and scalability of the application.","- Version control and collaborative development were managed using Git, facilitating efficient teamwork and code management."]},{"project":"Data Science Hackathon: Prototype Solution Presentation ","company":"SLB","occupation":"Data Science","imgId":"hackathondatascienceslides","period":"2023.09 - 2023.10","rank":"3rd","technologies":["About Data Analysis","Dataiku","LSTM","Data Collection","Model Development","ETL Process","Feature Engineering","Python","Jupyter Notebook"],"description":["- Developed a mining exploration lithology identification model using LSTM.","- Addressed challenges in accurately identifying lithology in mining exploration data.","- Collaborated with a multidisciplinary team on data collection, model development, and ETL frameworks and processes.","- Presented the LSTM solution, showcasing its effectiveness in improving identification accuracy."]},{"project":"Data Science Hackathon: Creative Poster at the WA Mining Conference","company":"SLB","occupation":"Data Science","imgId":"hackathondatascienceposter","period":"2023.10","rank":"4th","technologies":["About Data Analysis","Dataiku"],"description":["- Designed an engaging and informative poster showcasing the applications and benefits of the developed model.","- Presented findings at the conference, highlighting the impact of accurate lithology identification in mining exploration.","- Received recognition for the innovative approach to solving exploration challenges."]},{"project":"BrewChat Application","company":"University Project (Rank: 3th, HD)","occupation":"Full Stack Developer","imgId":"brewchat","period":"2023.04 - 2023.05","technologies":["About Software Development","Python","Flask","SQLAlchemy","HTML","CSS","JavaScript","Unit Testing","Selenium","Eliza Chatbot","Git"],"description":["BrewChat is built using HTML, CSS, Flask, AJAX, jQuery, and the SQLAlchemy database framework, with the chat function powered by Socket.IO.","- Client-side (Frontend): The client-side of BrewChat encompasses the user interface developed using HTML, CSS, and JavaScript. It provides an intuitive and visually appealing experience to users, allowing them to interact with the application. AJAX and jQuery are utilized for asynchronous requests and dynamic UI updates, enhancing the user experience.","- Server-side (Backend): The server-side of BrewChat is built using the Flask web framework, which handles the server-side logic and serves the application\'s routes. Flask enables the processing of client requests, performs business logic, and communicates with databases and other services. Flask-SocketIO facilitates real-time bidirectional communication between clients and the server for chat functionality.","- Chatbot (Backend): BrewChat incorporates the Eliza Chatbot as part of the backend functionality. The Eliza Chatbot, implemented using the Natural Language Toolkit (NLTK), enables chat-based conversations with users. It processes user input, performs natural language processing, generates appropriate responses, and communicates with the client-side interface.","- Database: BrewChat utilizes the SQLAlchemy database framework to interact with the SQLite database. The SQLite database stores user information, conversation pairings, and relevant chat logs. SQLAlchemy provides an Object-Relational Mapping (ORM) tool, simplifying database operations within the application.","The BrewChat application includes a suite of unit tests to ensure the correctness and functionality of the various components. These tests are designed to cover different aspects of the application and help identify any potential issues or bugs. The application also includes a suite of Selenium tests to verify the end-to-end functionality and user experience. These tests simulate user interactions with the application in a browser environment."]},{"project":"Graph Database & Graph Data Science","company":"University Project (Rank: 4th, HD)","imgId":"graphql","url":"https://github.com/HUIXIN-TW/CITS5504","occupation":"Data Science","period":"2023.04 - 2023.05","technologies":["About Data Analysis","Neo4j","Cypher","R"],"description":[]},{"project":"Data Warehousing & Association Rule Mining","company":"University Project (Rank: 2nd, HD)","imgId":"OLAP","url":"https://github.com/HUIXIN-TW/CITS5504","occupation":"Data Science","period":"2023.03 - 2023.04","technologies":["About Data Analysis","R","MySQL","SSMS","Visual Studio","SSAS","PowerBI"],"description":["Dataset:","- For the purposes of this data warehousing project, we leveraged the Crime in Atlanta dataset spanning the years 2009 to 2017.","- This dataset encompasses a wealth of information regarding reported crime incidents, including details such as the neighborhood planning unit (NPU) and the assigned police beat for patrolling.","- Our analysis began with a subset of 225,000 records. Additionally, we supplemented this dataset by manually collecting zone and beat data from maps, enriching our dataset with a comprehensive concept hierarchy illustrating the relationships between zones and beats.","Purpose:","- The primary objective of our analysis is to unearth significant patterns and features within the data, thereby facilitating informed decision-making processes.","- Emphasis is placed on employing visualizations as a powerful tool for insight generation and addressing pertinent business queries.","- To this end, we harnessed the capabilities of Power BI, enabling the creation of dynamic dashboards and reports. The subsequent sections present our findings and visualizations tailored to address specific business queries."]},{"project":"Data analysis and Machine learning models","company":"University Project (Rank: 1th, HD)","imgId":"cluster","url":"https://github.com/HUIXIN-TW/RProject","occupation":"Data Science","period":"2022.04 - 2022.05","technologies":["About Data Analysis","R","RStuido","Git"],"description":[]},{"project":"QuickRecord Financial Application","company":"Independent Project","url":"https://github.com/HUIXIN-TW/QuickRecord","youtubeVideoId":"LcTDTIHJFMQ","occupation":"Full Stack Developer","period":"2021.12 - 2022.06","technologies":["About Software Development","Python Flask","JavaScript","SQL","CSS","HTML","Git"],"description":["- Developed a comprehensive financial recording application, QuickRecord, designed to assist users in managing their financial statements and collaborating with friends or family members.","- Technology Stack: Python Flask for backend services, JavaScript for dynamic client-side functionalities, and SQL for database management; styled with CSS and structured with HTML.","- Implemented core features such as viewing balance and income statements, creating custom accounts, recording transactions, and sending friend requests for collaborative financial management.","- Engineered a system allowing users to share specific account information with friends, displaying all changes on a \'Shared Account Message\' page, and ensuring data privacy where necessary.","- Introduced innovative functionalities like historical transaction records, specific date balance checks, and a graphical representation of all account balances using bar charts for enhanced data visualization and user experience.","- Coordinated with a colleague, Remykung, for project development, leveraging collaborative tools and version control systems for efficient project management."]}]}]');
+
+},{}],"btBuc":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$3b22 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -51589,6 +52857,7 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+var _react1 = require("@headlessui/react");
 var _repairLabGif = require("../assets/images/repair-lab.gif");
 var _repairLabGifDefault = parcelHelpers.interopDefault(_repairLabGif);
 var _poopsPng = require("../assets/images/poops.png");
@@ -51597,10 +52866,44 @@ var _hackathonDataSciencePosterJpg = require("../assets/images/hackathon-data-sc
 var _hackathonDataSciencePosterJpgDefault = parcelHelpers.interopDefault(_hackathonDataSciencePosterJpg);
 var _hackathonDataScienceSlidesGif = require("../assets/images/hackathon-data-science-slides.gif");
 var _hackathonDataScienceSlidesGifDefault = parcelHelpers.interopDefault(_hackathonDataScienceSlidesGif);
+var _graphqlPng = require("../assets/images/graphql.png");
+var _graphqlPngDefault = parcelHelpers.interopDefault(_graphqlPng);
+var _clusterPng = require("../assets/images/cluster.png");
+var _clusterPngDefault = parcelHelpers.interopDefault(_clusterPng);
+var _olapGif = require("../assets/images/OLAP.gif");
+var _olapGifDefault = parcelHelpers.interopDefault(_olapGif);
+var _brewchatJpeg = require("../assets/images/brewchat.jpeg");
+var _brewchatJpegDefault = parcelHelpers.interopDefault(_brewchatJpeg);
+var _esp32Gif = require("../assets/images/ESP32.gif");
+var _esp32GifDefault = parcelHelpers.interopDefault(_esp32Gif);
 var _youTubeVideo = require("./common/YouTubeVideo");
 var _youTubeVideoDefault = parcelHelpers.interopDefault(_youTubeVideo);
 var _imgDisplay = require("./common/ImgDisplay");
 var _imgDisplayDefault = parcelHelpers.interopDefault(_imgDisplay);
+const getImageUrl = (imgId)=>{
+    switch(imgId){
+        case "repairlab":
+            return 0, _repairLabGifDefault.default;
+        case "poops":
+            return 0, _poopsPngDefault.default;
+        case "hackathondatascienceposter":
+            return 0, _hackathonDataSciencePosterJpgDefault.default;
+        case "hackathondatascienceslides":
+            return 0, _hackathonDataScienceSlidesGifDefault.default;
+        case "graphql":
+            return 0, _graphqlPngDefault.default;
+        case "cluster":
+            return 0, _clusterPngDefault.default;
+        case "OLAP":
+            return 0, _olapGifDefault.default;
+        case "brewchat":
+            return 0, _brewchatJpegDefault.default;
+        case "ESP32":
+            return 0, _esp32GifDefault.default;
+        default:
+            return null;
+    }
+};
 const MajorProject = ({ data  })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "horizonalContainerBox",
@@ -51625,18 +52928,18 @@ const MajorProject = ({ data  })=>{
                             ]
                         }, void 0, true, {
                             fileName: "src/Components/MajorProject.jsx",
-                            lineNumber: 15,
+                            lineNumber: 46,
                             columnNumber: 25
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/Components/MajorProject.jsx",
-                    lineNumber: 13,
+                    lineNumber: 44,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/Components/MajorProject.jsx",
-                lineNumber: 12,
+                lineNumber: 43,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -51644,7 +52947,7 @@ const MajorProject = ({ data  })=>{
                 children: data.period
             }, void 0, false, {
                 fileName: "src/Components/MajorProject.jsx",
-                lineNumber: 18,
+                lineNumber: 49,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -51657,85 +52960,139 @@ const MajorProject = ({ data  })=>{
                         ]
                     }, index, true, {
                         fileName: "src/Components/MajorProject.jsx",
-                        lineNumber: 22,
+                        lineNumber: 53,
                         columnNumber: 11
                     }, undefined) // Render each technology as a hashtag
                 )
             }, void 0, false, {
                 fileName: "src/Components/MajorProject.jsx",
-                lineNumber: 20,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("divx", {
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-                    className: "text-left list-disc list-inside",
-                    children: data.description.map((desc, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                            className: "whitespace-normal",
-                            children: desc
-                        }, index, false, {
-                            fileName: "src/Components/MajorProject.jsx",
-                            lineNumber: 30,
-                            columnNumber: 13
-                        }, undefined) // Render each description item as a list item
-                    )
-                }, void 0, false, {
-                    fileName: "src/Components/MajorProject.jsx",
-                    lineNumber: 28,
-                    columnNumber: 9
-                }, undefined)
-            }, void 0, false, {
-                fileName: "src/Components/MajorProject.jsx",
-                lineNumber: 27,
+                lineNumber: 51,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "demo p-10",
+                className: "demo p-0 w-full",
                 children: [
-                    data.youtubeVideoId && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _youTubeVideoDefault.default), {
-                        videoId: data.youtubeVideoId
+                    data.youtubeVideoId && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "image-wrapper",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _youTubeVideoDefault.default), {
+                            videoId: data.youtubeVideoId
+                        }, void 0, false, {
+                            fileName: "src/Components/MajorProject.jsx",
+                            lineNumber: 62,
+                            columnNumber: 13
+                        }, undefined)
                     }, void 0, false, {
                         fileName: "src/Components/MajorProject.jsx",
-                        lineNumber: 37,
-                        columnNumber: 33
-                    }, undefined),
-                    data.imgId === "repairlab" && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _imgDisplayDefault.default), {
-                        imgUrl: (0, _repairLabGifDefault.default)
-                    }, void 0, false, {
-                        fileName: "src/Components/MajorProject.jsx",
-                        lineNumber: 38,
-                        columnNumber: 40
-                    }, undefined),
-                    data.imgId === "poops" && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _imgDisplayDefault.default), {
-                        imgUrl: (0, _poopsPngDefault.default)
-                    }, void 0, false, {
-                        fileName: "src/Components/MajorProject.jsx",
-                        lineNumber: 39,
-                        columnNumber: 36
-                    }, undefined),
-                    data.imgId === "hackathondatascienceposter" && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _imgDisplayDefault.default), {
-                        imgUrl: (0, _hackathonDataSciencePosterJpgDefault.default)
-                    }, void 0, false, {
-                        fileName: "src/Components/MajorProject.jsx",
-                        lineNumber: 41,
+                        lineNumber: 61,
                         columnNumber: 11
                     }, undefined),
-                    data.imgId === "hackathondatascienceslides" && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _imgDisplayDefault.default), {
-                        imgUrl: (0, _hackathonDataScienceSlidesGifDefault.default)
+                    data.imgId && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "image-wrapper",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _imgDisplayDefault.default), {
+                            imgUrl: getImageUrl(data.imgId)
+                        }, void 0, false, {
+                            fileName: "src/Components/MajorProject.jsx",
+                            lineNumber: 67,
+                            columnNumber: 13
+                        }, undefined)
                     }, void 0, false, {
                         fileName: "src/Components/MajorProject.jsx",
-                        lineNumber: 44,
+                        lineNumber: 66,
                         columnNumber: 11
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/Components/MajorProject.jsx",
-                lineNumber: 36,
+                lineNumber: 59,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _react1.Disclosure), {
+                as: "div",
+                className: "mt-2",
+                children: ({ open  })=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _react1.Disclosure).Button, {
+                                className: "flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-gray-600 rounded-lg hover:bg-gray-200 focus:outline-none focus-visible:ring focus-visible:ring-gray-500 focus-visible:ring-opacity-75",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        children: "Project Description"
+                                    }, void 0, false, {
+                                        fileName: "src/Components/MajorProject.jsx",
+                                        lineNumber: 76,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
+                                        className: `${open ? "transform rotate-180" : ""} w-5 h-5`,
+                                        xmlns: "http://www.w3.org/2000/svg",
+                                        viewBox: "0 0 20 20",
+                                        fill: "currentColor",
+                                        "aria-hidden": "true",
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
+                                            fillRule: "evenodd",
+                                            d: "M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z",
+                                            clipRule: "evenodd"
+                                        }, void 0, false, {
+                                            fileName: "src/Components/MajorProject.jsx",
+                                            lineNumber: 84,
+                                            columnNumber: 17
+                                        }, undefined)
+                                    }, void 0, false, {
+                                        fileName: "src/Components/MajorProject.jsx",
+                                        lineNumber: 77,
+                                        columnNumber: 15
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/Components/MajorProject.jsx",
+                                lineNumber: 75,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _react1.Disclosure).Panel, {
+                                className: "px-4 pt-4 pb-2 text-sm text-gray-500",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                                        className: "text-left list-disc list-inside",
+                                        children: data.description.map((desc, index)=>desc.startsWith("-") ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                className: "px-4 pt-3 pb-3 text-sm text-gray-500",
+                                                children: desc.substring(1)
+                                            }, index, false, {
+                                                fileName: "src/Components/MajorProject.jsx",
+                                                lineNumber: 96,
+                                                columnNumber: 23
+                                            }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                className: "pt-6 pb-6 text-sm text-gray-500",
+                                                children: desc
+                                            }, index, false, {
+                                                fileName: "src/Components/MajorProject.jsx",
+                                                lineNumber: 100,
+                                                columnNumber: 23
+                                            }, undefined))
+                                    }, void 0, false, {
+                                        fileName: "src/Components/MajorProject.jsx",
+                                        lineNumber: 93,
+                                        columnNumber: 17
+                                    }, undefined)
+                                }, void 0, false, {
+                                    fileName: "src/Components/MajorProject.jsx",
+                                    lineNumber: 92,
+                                    columnNumber: 15
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "src/Components/MajorProject.jsx",
+                                lineNumber: 91,
+                                columnNumber: 13
+                            }, undefined)
+                        ]
+                    }, void 0, true)
+            }, void 0, false, {
+                fileName: "src/Components/MajorProject.jsx",
+                lineNumber: 72,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/Components/MajorProject.jsx",
-        lineNumber: 11,
+        lineNumber: 42,
         columnNumber: 5
     }, undefined);
 };
@@ -51749,14 +53106,32 @@ $RefreshReg$(_c, "MajorProject");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../assets/images/repair-lab.gif":"29ebw","../assets/images/hackathon-data-science-poster.jpg":"91TDS","../assets/images/hackathon-data-science-slides.gif":"jIpMf","./common/YouTubeVideo":"gASlk","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../assets/images/poops.png":"lisXr","./common/ImgDisplay":"aFtd8"}],"29ebw":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@headlessui/react":"4Afcd","../assets/images/repair-lab.gif":"29ebw","../assets/images/poops.png":"lisXr","../assets/images/hackathon-data-science-poster.jpg":"91TDS","../assets/images/hackathon-data-science-slides.gif":"jIpMf","../assets/images/graphql.png":"cPwmx","../assets/images/cluster.png":"5buZj","../assets/images/OLAP.gif":"anLWg","../assets/images/brewchat.jpeg":"6Et4u","../assets/images/ESP32.gif":"2Lh1l","./common/YouTubeVideo":"gASlk","./common/ImgDisplay":"aFtd8","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"29ebw":[function(require,module,exports) {
 module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "repair-lab.02953e28.gif" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"lisXr":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "poops.74e9c2f4.png" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"lgJ39"}],"91TDS":[function(require,module,exports) {
 module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "hackathon-data-science-poster.24395dc8.jpg" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"lgJ39"}],"jIpMf":[function(require,module,exports) {
 module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "hackathon-data-science-slides.f0cc494d.gif" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"cPwmx":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "graphql.3a3bc94a.png" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"5buZj":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "cluster.c7eb565d.png" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"anLWg":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "OLAP.47218307.gif" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"6Et4u":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "brewchat.575bbdd8.jpeg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"2Lh1l":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "ESP32.2a0f2eaf.gif" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"lgJ39"}],"gASlk":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$0e10 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
@@ -51773,36 +53148,15 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 // YouTube video component
 const YouTubeVideo = ({ videoId  })=>{
     const src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&playlist=${videoId}&loop=1`; // Add additional parameters as needed
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "video-responsive flex items-center justify-center w-full h-full",
-        children: [
-            " ",
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "relative w-full",
-                style: {
-                    paddingTop: "56.25%"
-                },
-                children: [
-                    " ",
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("iframe", {
-                        className: "absolute top-0 left-0 w-full h-full",
-                        src: src,
-                        allow: "encrypted-media",
-                        allowFullScreen: true,
-                        title: "Embedded youtube"
-                    }, void 0, false, {
-                        fileName: "src/Components/common/YouTubeVideo.jsx",
-                        lineNumber: 13,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/Components/common/YouTubeVideo.jsx",
-                lineNumber: 10,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("iframe", {
+        className: "w-full h-full" // Ensure full width and height within its container
+        ,
+        src: src,
+        allow: "accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
+        allowFullScreen: true,
+        title: "Embedded YouTube Video",
+        autoPlay: "0"
+    }, void 0, false, {
         fileName: "src/Components/common/YouTubeVideo.jsx",
         lineNumber: 7,
         columnNumber: 5
@@ -51818,10 +53172,7 @@ $RefreshReg$(_c, "YouTubeVideo");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"lisXr":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "poops.74e9c2f4.png" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"aFtd8":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"aFtd8":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$f228 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -51835,17 +53186,10 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 const ImgDisplay = ({ imgUrl  })=>{
     if (!imgUrl) return null; // If no imgUrl is provided, don't render the component
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
         className: "gif-responsive flex items-center justify-center w-full h-full",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-            src: imgUrl,
-            alt: "IMG Display",
-            className: "w-full"
-        }, void 0, false, {
-            fileName: "src/Components/common/ImgDisplay.jsx",
-            lineNumber: 8,
-            columnNumber: 7
-        }, undefined)
+        src: imgUrl,
+        alt: "IMG Display"
     }, void 0, false, {
         fileName: "src/Components/common/ImgDisplay.jsx",
         lineNumber: 7,
@@ -51862,10 +53206,7 @@ $RefreshReg$(_c, "ImgDisplay");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jyi7G":[function(require,module,exports) {
-module.exports = JSON.parse('[{"majorproject":[{"project":"Repair Labs project","company":"CFC","imgId":"repairlab","url":"https://github.com/codersforcauses/repair-labs","occupation":"Full Stack developer","period":"2023.06 - Current","technologies":["Next.js","TypeScript","React","Tailwind CSS","Vercel","Prisma","Postgres","Docker"],"description":["Actively contributing as a member of the Repair Labs Project.","Technology Stack: Next.js, TypeScript, React, Tailwind CSS, and Vercel; Prisma as ORM, Postgres, and Docker for local DB.","Designed mobile and desktop layouts using Figma, ensuring a user-friendly interface.","Developed robust APIs to seamlessly connect frontend pages with the backend database, facilitating efficient data retrieval and updates.","Achievements: Successfully created and merged three pull requests via GitHub into the main branch within one month."]},{"project":"Notion Sync with Google Calendar - Command Line Interface","company":"Independent Project","url":"https://github.com/HUIXIN-TW/NotionSyncGCal","youtubeVideoId":"9IbUIj8mNl8","occupation":"Full Stack Developer","period":"2021 - Current","technologies":["Python","Notion API","Google Calendar API","Docker"],"description":["Developed a command-line interface (CLI) for syncing data between Notion and Google Calendar.","Implemented the ability to update events from Google Calendar to Notion and vice versa, allowing for seamless management of events between both platforms.","Offered features such as timezone and date range customization, default length setting for new Google Calendar events, and the option to delete Google Calendar events when marked as \'Done\' in Notion.","Provided support for syncing across multiple calendars and the flexibility to name Notion columns as desired for the code to work.","Implemented credential and OAuth consent screen integration with Google Calendar scope for secure authentication and access to Google Calendar data."]},{"project":"Pets Of Older Persons project","company":"CFC","imgId":"poops","url":"https://github.com/codersforcauses/poops","occupation":"Full Stack developer","period":"2022.11 - 2023.02","label":"","technologies":["Next.js","TypeScript","React","Tailwind CSS","Firebase","Vercel"],"description":["Contributed as a team member in the Pets of Older Persons Project.","Technology Stack: Next.js, TypeScript, React, Tailwind CSS, Firebase, and Vercel.","Utilized Figma to craft intuitive mobile and desktop layouts.","Collaborated effectively with other student volunteers, utilizing Git version control."]},{"project":"LLM Triple Generator project","company":"UWA NLP-TLP Team","url":"https://www.youtube.com/watch?v=wVBYiyJ0u00","youtubeVideoId":"-58HvQYFij8","occupation":"Team Leader","period":"2023.08 - 2023.11","technologies":["Python","Python networkx","Python requests","React","ChatGPT API","ChatGPT Fine Tuning Model","Prompt Engineering","Docker","Git","MongoDB"],"description":["Led a team of 5 members in the development of a triple generator for the LLM project.","The project aimed to transform unstructured text data into a structured knowledge graph using natural language processing techniques.","Technologies such as Python, networkx, and requests were employed for data processing and retrieval.","The React framework was used to create a user-friendly interface for interacting with the triple generator.","Leveraged the ChatGPT API and ChatGPT Fine Tuning Model for advanced natural language understanding and generation.","Implemented prompt engineering and feature engineering to enhance the accuracy and efficiency of triple generation.","Docker was utilized for containerization, ensuring easy deployment and scalability of the application.","Version control and collaborative development were managed using Git, facilitating efficient teamwork and code management."]},{"project":"Data Science Hackathon: Prototype Solution Presentation ","company":"SLB","occupation":"Data Science","imgId":"hackathondatascienceslides","period":"2023.09 - 2023.10","rank":"3rd","technologies":["Dataiku","LSTM","Data Collection","Model Development","ETL Process","Feature Engineering"],"description":["Developed a mining exploration lithology identification model using LSTM.","Addressed challenges in accurately identifying lithology in mining exploration data.","Collaborated with a multidisciplinary team on data collection, model development, and ETL frameworks and processes.","Presented the LSTM solution, showcasing its effectiveness in improving identification accuracy."]},{"project":"Data Science Hackathon: Creative Poster at the WA Mining Conference","company":"SLB","occupation":"Data Science","imgId":"hackathondatascienceposter","period":"2023.10","rank":"4th","technologies":["Microsoft PowerPoint","Dataiku"],"description":["Designed an engaging and informative poster showcasing the applications and benefits of the developed model.","Presented findings at the conference, highlighting the impact of accurate lithology identification in mining exploration.","Received recognition for the innovative approach to solving exploration challenges."]},{"project":"QuickRecord Financial Application","company":"Independent Project","url":"https://github.com/HUIXIN-TW/QuickRecord","youtubeVideoId":"LcTDTIHJFMQ","occupation":"Full Stack Developer","period":"2021","technologies":["Python Flask","JavaScript","SQL","CSS","HTML"],"description":["Developed a comprehensive financial recording application, QuickRecord, designed to assist users in managing their financial statements and collaborating with friends or family members.","Technology Stack: Python Flask for backend services, JavaScript for dynamic client-side functionalities, and SQL for database management; styled with CSS and structured with HTML.","Implemented core features such as viewing balance and income statements, creating custom accounts, recording transactions, and sending friend requests for collaborative financial management.","Engineered a system allowing users to share specific account information with friends, displaying all changes on a \'Shared Account Message\' page, and ensuring data privacy where necessary.","Introduced innovative functionalities like historical transaction records, specific date balance checks, and a graphical representation of all account balances using bar charts for enhanced data visualization and user experience.","Coordinated with a colleague, Remykung, for project development, leveraging collaborative tools and version control systems for efficient project management."]}]}]');
-
-},{}],"WNVNu":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"WNVNu":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$abec = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -51980,11 +53321,75 @@ const uniqueTechnologies = [
     ...new Set(allTechnologies)
 ]; // Get unique values
 
-},{"../data/majorproject.json":"jyi7G","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fuQ5z":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$91da = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"../data/majorproject.json":"jyi7G","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kFXFf":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$8b00 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$91da.prelude(module);
+$parcel$ReactRefreshHelpers$8b00.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _experienceCard = require("./common/ExperienceCard");
+var _experienceCardDefault = parcelHelpers.interopDefault(_experienceCard);
+var _experienceJson = require("../data/experience.json");
+var _experienceJsonDefault = parcelHelpers.interopDefault(_experienceJson);
+const Experience = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
+        className: "padding",
+        id: "experience",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "max-w-4xl mx-auto",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                    className: "text-center",
+                    children: "Experience"
+                }, void 0, false, {
+                    fileName: "src/Components/Experience.jsx",
+                    lineNumber: 9,
+                    columnNumber: 9
+                }, undefined),
+                (0, _experienceJsonDefault.default).map((exp, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _experienceCardDefault.default), {
+                        occupation: exp.occupation,
+                        technologies: exp.technologies,
+                        period: exp.period,
+                        company: exp.company,
+                        description: exp.description
+                    }, index, false, {
+                        fileName: "src/Components/Experience.jsx",
+                        lineNumber: 11,
+                        columnNumber: 11
+                    }, undefined))
+            ]
+        }, void 0, true, {
+            fileName: "src/Components/Experience.jsx",
+            lineNumber: 8,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/Components/Experience.jsx",
+        lineNumber: 7,
+        columnNumber: 5
+    }, undefined);
+};
+_c = Experience;
+exports.default = Experience;
+var _c;
+$RefreshReg$(_c, "Experience");
+
+  $parcel$ReactRefreshHelpers$8b00.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./common/ExperienceCard":"5qYsW","../data/experience.json":"rSCF7","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"5qYsW":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$3649 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$3649.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -51994,52 +53399,323 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _styledComponents = require("styled-components");
 var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
-// Create a StyledButton component that has styles attached to it
-const StyledButton = (0, _styledComponentsDefault.default).button`
+const ExperienceHeader = (0, _styledComponentsDefault.default).div`
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  padding: 6px 14px;
-  font-family: -apple-system, BlinkMacSystemFont, "Roboto", sans-serif;
-  border-radius: 6px;
-  border: none;
-  background: #6e6d70;
-  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.5),
-    0px 0px 0px 0.5px rgba(0, 0, 0, 0.12);
-  color: #dfdedf;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-
-  &:focus {
-    box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2),
-      0px 0.5px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
-    outline: 0;
-  }
+  margin-bottom: 15px;
 `;
-_c = StyledButton;
-const Button = ({ onClick , text  })=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledButton, {
-        onClick: onClick,
-        children: text
-    }, void 0, false, {
-        fileName: "src/Components/common/Button.jsx",
-        lineNumber: 29,
-        columnNumber: 10
+_c = ExperienceHeader;
+const ExperienceTitle = (0, _styledComponentsDefault.default).h3`
+  text-align: left;
+`;
+_c1 = ExperienceTitle;
+const ExperiencePeriod = (0, _styledComponentsDefault.default).span`
+  text-align: right;
+  font-style: italic;
+`;
+_c2 = ExperiencePeriod;
+const ExperienceCard = ({ occupation , technologies , company , description , period  })=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "bg-white shadow-md rounded-lg p-6 mb-4",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(ExperienceHeader, {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(ExperienceTitle, {
+                        children: [
+                            occupation,
+                            ", ",
+                            company
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Components/common/ExperienceCard.jsx",
+                        lineNumber: 24,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(ExperiencePeriod, {
+                        className: "text-gray-600",
+                        children: period
+                    }, void 0, false, {
+                        fileName: "src/Components/common/ExperienceCard.jsx",
+                        lineNumber: 27,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Components/common/ExperienceCard.jsx",
+                lineNumber: 23,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "text-sm text-gray-900 flex flex-wrap gap-2",
+                children: technologies.map((technology, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        className: "text-xs italic bg-gray-200 text-gray-900 rounded-md px-2 py-1",
+                        children: [
+                            "#",
+                            technology
+                        ]
+                    }, index, true, {
+                        fileName: "src/Components/common/ExperienceCard.jsx",
+                        lineNumber: 31,
+                        columnNumber: 11
+                    }, undefined))
+            }, void 0, false, {
+                fileName: "src/Components/common/ExperienceCard.jsx",
+                lineNumber: 29,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                className: "text-sm text-gray-500 m-5",
+                children: description.map((desc, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                        className: "list-disc list-inside",
+                        children: desc
+                    }, index, false, {
+                        fileName: "src/Components/common/ExperienceCard.jsx",
+                        lineNumber: 41,
+                        columnNumber: 11
+                    }, undefined))
+            }, void 0, false, {
+                fileName: "src/Components/common/ExperienceCard.jsx",
+                lineNumber: 39,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/Components/common/ExperienceCard.jsx",
+        lineNumber: 22,
+        columnNumber: 5
     }, undefined);
 };
-_c1 = Button;
-exports.default = Button;
-var _c, _c1;
-$RefreshReg$(_c, "StyledButton");
-$RefreshReg$(_c1, "Button");
+_c3 = ExperienceCard;
+exports.default = ExperienceCard;
+var _c, _c1, _c2, _c3;
+$RefreshReg$(_c, "ExperienceHeader");
+$RefreshReg$(_c1, "ExperienceTitle");
+$RefreshReg$(_c2, "ExperiencePeriod");
+$RefreshReg$(_c3, "ExperienceCard");
 
-  $parcel$ReactRefreshHelpers$91da.postlude(module);
+  $parcel$ReactRefreshHelpers$3649.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","styled-components":"1U3k6"}],"jIEVO":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","styled-components":"1U3k6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"rSCF7":[function(require,module,exports) {
+module.exports = JSON.parse('[{"occupation":"Casual Teaching Assistant","industry":"Education","company":"University of Western Australia","period":"2024.02 - Present","technologies":["Python","HTML","SQL","CSS","Linux","Git"],"description":["CITS5505 - Agile Web Development","CITS1003 - Introduction to Cybersecurity"]},{"occupation":"Full Stack Developer","industry":"Technology","company":"Coder For Causes","period":"2022.07 - Present","technologies":["Figma","Typescript","Javascript","React","Next.js","PostgreSQL","Prisma","Firebase","AWS","Docker","Tailwind CSS","Vercel","Git"],"description":["Developed a web application for a client to manage their business operations."]},{"occupation":"Assistant Manager","industry":"Financial Services","company":"Deloitte","period":"2019.03 - 2020.08","technologies":["US GAAP","IFRS","SOX","COSO framework","Excel","Power BI"],"description":["Possessed sound knowledge of US GAAP, IFRS, and SOX internal control audits.","Performed financial modelling to support and challenge key assumptions, such as DCF models.","Performed risk assessment of material financial statement items under the COSO framework.","Performed valuation analysis of assets, debt, and equity, such as intangible assets impairment and convertible bonds.","Utilized IT skills for data cleaning, manipulation, and mapping.","Led 4 members and managed audit plan for listed companies.","Supervised, coached, and developed junior members of staff within teams, on client premises, and in the office."]},{"occupation":"Staff - Senior Associate","industry":"Financial Services","company":"PwC","period":"2016.09 - 2019.02","technologies":["IFRS9","Financial Analysis","Net Asset Value","Return on Investment","Cash Flow Forecasting"],"description":["Conducted in the Biotechnology Industry’s initial public offering project.","Evaluated investment profiles including local/international, public/private stocks, and bonds under IFRS9.","Evaluated derivative financial instruments.","Recalculated net asset value and return on investment.","Reviewed cash flow forecasts for the prospectus to assess the feasibility of the assumptions.","Assessed financial risk information, including market risk, credit risk, liquidity risk, interest rate risk, and sensitive analysis of each."]},{"occupation":"Intermediate Accounting Instructor","industry":"Education","company":"Tekom Technologies, Inc","period":"2016.03 - 2016.06","technologies":["Intermedia Accounting","Educational Facilitation"],"description":["Provided guidance and delivered effective instruction in Intermediate Accounting, facilitating student understanding and proficiency."]},{"occupation":"Facilitator","industry":"Education","company":"National Chung Cheng University","period":"2015.02 - 2016.06","technologies":["Business Analysis","Accounting","Advanced Accounting","Audit","Statistics"],"description":["Assisted in teaching courses including Business Analysis, Accounting, Advanced Accounting, Audit, and Statistics.","Provided guidance and handouts."]}]');
+
+},{}],"dOkIL":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$af24 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$af24.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _refereeCard = require("./common/RefereeCard");
+var _refereeCardDefault = parcelHelpers.interopDefault(_refereeCard);
+const Referee = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
+        className: "padding",
+        id: "referee",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "max-w-4xl mx-auto",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                    className: "text-center",
+                    children: "Referee"
+                }, void 0, false, {
+                    fileName: "src/Components/Referee.jsx",
+                    lineNumber: 8,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                    className: "text-base text-gray-700 italic mt-4 mb-8",
+                    children: [
+                        "Should you require further details or wish to establish contact, please do not hesitate to reach out to me directly at",
+                        " ",
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                            href: "mailto:huixin.yang.tw@gmail.com",
+                            className: "underline text-gray-900",
+                            children: "huixin.yang.tw@gmail.com"
+                        }, void 0, false, {
+                            fileName: "src/Components/Referee.jsx",
+                            lineNumber: 12,
+                            columnNumber: 11
+                        }, undefined),
+                        ". I am more than happy to provide the contact information upon request."
+                    ]
+                }, void 0, true, {
+                    fileName: "src/Components/Referee.jsx",
+                    lineNumber: 9,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _refereeCardDefault.default), {
+                    refereeName: "Zhi Zhang",
+                    refereeType: "Academic and Professional",
+                    currentPosition: "Lecturer at UWA",
+                    relationship: "Initially my supervisor in 2023, Zhi has been a mentor to me both academically and professionally. Currently, I assist in his lab, reinforcing our collaborative efforts.",
+                    periodWorking: "Since Feb 2024"
+                }, void 0, false, {
+                    fileName: "src/Components/Referee.jsx",
+                    lineNumber: 18,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _refereeCardDefault.default), {
+                    refereeName: "Jamie Tang",
+                    refereeType: "Personal Character",
+                    currentPosition: "Student Transitions Officer at UniHall",
+                    relationship: "For one and a half years living at the residential college, Jamie, my residential advisor, closely observed my personal growth and adaptation in Australia. Her support was pivotal in navigating this significant phase of my life.",
+                    periodWorking: "Jul 2022 - Nov 2023"
+                }, void 0, false, {
+                    fileName: "src/Components/Referee.jsx",
+                    lineNumber: 26,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _refereeCardDefault.default), {
+                    refereeName: "Remy Kung",
+                    refereeType: "Professional",
+                    currentPosition: "Frontend Developer at Greenbase",
+                    relationship: "As a co-worker at Deloitte, Remy and I collaborated closely on several key projects, which showcased my expertise and teamwork abilities.",
+                    periodWorking: "Mar 2019 - Apr 2020"
+                }, void 0, false, {
+                    fileName: "src/Components/Referee.jsx",
+                    lineNumber: 33,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _refereeCardDefault.default), {
+                    refereeName: "Ken Pan",
+                    refereeType: "Academic and Professional",
+                    currentPosition: "Assistant Professor at Geneseo State College",
+                    relationship: "I was a statistics tutor for Ken's class at CCU, and he was my academic advisor. Ken has seen my academic performance and work ethic, and he can attest to my dedication and commitment to my studies.",
+                    periodWorking: "Feb 2015 - Jul 2015"
+                }, void 0, false, {
+                    fileName: "src/Components/Referee.jsx",
+                    lineNumber: 41,
+                    columnNumber: 9
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/Components/Referee.jsx",
+            lineNumber: 7,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/Components/Referee.jsx",
+        lineNumber: 6,
+        columnNumber: 5
+    }, undefined);
+};
+_c = Referee;
+exports.default = Referee;
+var _c;
+$RefreshReg$(_c, "Referee");
+
+  $parcel$ReactRefreshHelpers$af24.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./common/RefereeCard":"aCzN8","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"aCzN8":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$fdad = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$fdad.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _styledComponents = require("styled-components");
+var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
+const RefereeHeader = (0, _styledComponentsDefault.default).div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+`;
+_c = RefereeHeader;
+const RefereeTitle = (0, _styledComponentsDefault.default).h3`
+  text-align: left;
+`;
+_c1 = RefereeTitle;
+const RefereePeriod = (0, _styledComponentsDefault.default).span`
+  text-align: right;
+  font-style: italic;
+`;
+_c2 = RefereePeriod;
+const RefereeCard = ({ refereeName , refereeType , currentPosition , relationship , periodWorking ,  })=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "bg-white shadow-md rounded-lg p-6 mb-4",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RefereeHeader, {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RefereeTitle, {
+                        children: [
+                            refereeName,
+                            ", ",
+                            currentPosition
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Components/common/RefereeCard.jsx",
+                        lineNumber: 30,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RefereePeriod, {
+                        className: "text-gray-600",
+                        children: periodWorking
+                    }, void 0, false, {
+                        fileName: "src/Components/common/RefereeCard.jsx",
+                        lineNumber: 33,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Components/common/RefereeCard.jsx",
+                lineNumber: 29,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                className: "text-sm text-gray-900",
+                children: refereeType
+            }, void 0, false, {
+                fileName: "src/Components/common/RefereeCard.jsx",
+                lineNumber: 35,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                className: "text-sm text-gray-500",
+                children: relationship
+            }, void 0, false, {
+                fileName: "src/Components/common/RefereeCard.jsx",
+                lineNumber: 36,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/Components/common/RefereeCard.jsx",
+        lineNumber: 28,
+        columnNumber: 5
+    }, undefined);
+};
+_c3 = RefereeCard;
+exports.default = RefereeCard;
+var _c, _c1, _c2, _c3;
+$RefreshReg$(_c, "RefereeHeader");
+$RefreshReg$(_c1, "RefereeTitle");
+$RefreshReg$(_c2, "RefereePeriod");
+$RefreshReg$(_c3, "RefereeCard");
+
+  $parcel$ReactRefreshHelpers$fdad.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","styled-components":"1U3k6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jIEVO":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$0d4d = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -52089,7 +53765,7 @@ $RefreshReg$(_c, "Home");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","./About":"kouZu","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react/jsx-dev-runtime":"iTorj","./Introduction":"1ZEkf"}],"1ZEkf":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./Introduction":"1ZEkf","./About":"kouZu","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"1ZEkf":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$ae2b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -52111,24 +53787,19 @@ const imageAltText = "A desk with a chair and a computer monitor. The monitor di
 const Introduction = ({ name , title  })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
         id: "introduction",
-        className: "min-height",
+        className: "min-h-screen relative",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                className: "background",
+                className: "absolute w-full h-full object-cover",
                 src: (0, _deskAndChairJpgDefault.default),
-                alt: ""
+                alt: imageAltText
             }, void 0, false, {
                 fileName: "src/Components/Introduction.jsx",
                 lineNumber: 12,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                style: {
-                    position: "absolute",
-                    top: "7rem",
-                    left: "3rem",
-                    width: "20rem"
-                },
+                className: "absolute top-30 left-1 w-80 md: top-20 md:left-12",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                         children: name
@@ -52151,22 +53822,14 @@ const Introduction = ({ name , title  })=>{
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "scroll-down-arrow",
-                style: {
-                    position: "absolute",
-                    bottom: "3rem",
-                    left: "50%"
-                },
+                className: "scroll-down-arrow absolute bottom-12 left-1/2 transform -translate-x-1/2",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                     src: (0, _downArrowSvgDefault.default),
-                    style: {
-                        height: "3rem",
-                        width: "3rem"
-                    },
-                    alt: imageAltText
+                    className: "h-12 w-12",
+                    alt: ""
                 }, void 0, false, {
                     fileName: "src/Components/Introduction.jsx",
-                    lineNumber: 21,
+                    lineNumber: 18,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
@@ -52199,1347 +53862,12 @@ $RefreshReg$(_c, "Introduction");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","../assets/images/down-arrow.svg":"4KEfH","../assets/images/desk-and-chair.jpg":"7LdEr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"7wKI2":[function(require,module,exports) {
-var ReactIs = require("react-is");
-// By explicitly using `prop-types` you are opting into new development behavior.
-// http://fb.me/prop-types-in-prod
-var throwOnDirectAccess = true;
-module.exports = require("./factoryWithTypeCheckers")(ReactIs.isElement, throwOnDirectAccess);
-
-},{"react-is":"7EuwB","./factoryWithTypeCheckers":"bBUgD"}],"7EuwB":[function(require,module,exports) {
-"use strict";
-module.exports = require("./cjs/react-is.development.js");
-
-},{"./cjs/react-is.development.js":"5DsXl"}],"5DsXl":[function(require,module,exports) {
-/** @license React v16.13.1
- * react-is.development.js
- *
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */ "use strict";
-(function() {
-    "use strict";
-    // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
-    // nor polyfill, then a plain number is used for performance.
-    var hasSymbol = typeof Symbol === "function" && Symbol.for;
-    var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for("react.element") : 0xeac7;
-    var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for("react.portal") : 0xeaca;
-    var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for("react.fragment") : 0xeacb;
-    var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for("react.strict_mode") : 0xeacc;
-    var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for("react.profiler") : 0xead2;
-    var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for("react.provider") : 0xeacd;
-    var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for("react.context") : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
-    // (unstable) APIs that have been removed. Can we remove the symbols?
-    var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for("react.async_mode") : 0xeacf;
-    var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for("react.concurrent_mode") : 0xeacf;
-    var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for("react.forward_ref") : 0xead0;
-    var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for("react.suspense") : 0xead1;
-    var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for("react.suspense_list") : 0xead8;
-    var REACT_MEMO_TYPE = hasSymbol ? Symbol.for("react.memo") : 0xead3;
-    var REACT_LAZY_TYPE = hasSymbol ? Symbol.for("react.lazy") : 0xead4;
-    var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for("react.block") : 0xead9;
-    var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for("react.fundamental") : 0xead5;
-    var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for("react.responder") : 0xead6;
-    var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for("react.scope") : 0xead7;
-    function isValidElementType(type) {
-        return typeof type === "string" || typeof type === "function" || type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === "object" && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
-    }
-    function typeOf(object) {
-        if (typeof object === "object" && object !== null) {
-            var $$typeof = object.$$typeof;
-            switch($$typeof){
-                case REACT_ELEMENT_TYPE:
-                    var type = object.type;
-                    switch(type){
-                        case REACT_ASYNC_MODE_TYPE:
-                        case REACT_CONCURRENT_MODE_TYPE:
-                        case REACT_FRAGMENT_TYPE:
-                        case REACT_PROFILER_TYPE:
-                        case REACT_STRICT_MODE_TYPE:
-                        case REACT_SUSPENSE_TYPE:
-                            return type;
-                        default:
-                            var $$typeofType = type && type.$$typeof;
-                            switch($$typeofType){
-                                case REACT_CONTEXT_TYPE:
-                                case REACT_FORWARD_REF_TYPE:
-                                case REACT_LAZY_TYPE:
-                                case REACT_MEMO_TYPE:
-                                case REACT_PROVIDER_TYPE:
-                                    return $$typeofType;
-                                default:
-                                    return $$typeof;
-                            }
-                    }
-                case REACT_PORTAL_TYPE:
-                    return $$typeof;
-            }
-        }
-        return undefined;
-    } // AsyncMode is deprecated along with isAsyncMode
-    var AsyncMode = REACT_ASYNC_MODE_TYPE;
-    var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
-    var ContextConsumer = REACT_CONTEXT_TYPE;
-    var ContextProvider = REACT_PROVIDER_TYPE;
-    var Element = REACT_ELEMENT_TYPE;
-    var ForwardRef = REACT_FORWARD_REF_TYPE;
-    var Fragment = REACT_FRAGMENT_TYPE;
-    var Lazy = REACT_LAZY_TYPE;
-    var Memo = REACT_MEMO_TYPE;
-    var Portal = REACT_PORTAL_TYPE;
-    var Profiler = REACT_PROFILER_TYPE;
-    var StrictMode = REACT_STRICT_MODE_TYPE;
-    var Suspense = REACT_SUSPENSE_TYPE;
-    var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecated
-    function isAsyncMode(object) {
-        if (!hasWarnedAboutDeprecatedIsAsyncMode) {
-            hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
-            console["warn"]("The ReactIs.isAsyncMode() alias has been deprecated, and will be removed in React 17+. Update your code to use ReactIs.isConcurrentMode() instead. It has the exact same API.");
-        }
-        return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
-    }
-    function isConcurrentMode(object) {
-        return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
-    }
-    function isContextConsumer(object) {
-        return typeOf(object) === REACT_CONTEXT_TYPE;
-    }
-    function isContextProvider(object) {
-        return typeOf(object) === REACT_PROVIDER_TYPE;
-    }
-    function isElement(object) {
-        return typeof object === "object" && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
-    }
-    function isForwardRef(object) {
-        return typeOf(object) === REACT_FORWARD_REF_TYPE;
-    }
-    function isFragment(object) {
-        return typeOf(object) === REACT_FRAGMENT_TYPE;
-    }
-    function isLazy(object) {
-        return typeOf(object) === REACT_LAZY_TYPE;
-    }
-    function isMemo(object) {
-        return typeOf(object) === REACT_MEMO_TYPE;
-    }
-    function isPortal(object) {
-        return typeOf(object) === REACT_PORTAL_TYPE;
-    }
-    function isProfiler(object) {
-        return typeOf(object) === REACT_PROFILER_TYPE;
-    }
-    function isStrictMode(object) {
-        return typeOf(object) === REACT_STRICT_MODE_TYPE;
-    }
-    function isSuspense(object) {
-        return typeOf(object) === REACT_SUSPENSE_TYPE;
-    }
-    exports.AsyncMode = AsyncMode;
-    exports.ConcurrentMode = ConcurrentMode;
-    exports.ContextConsumer = ContextConsumer;
-    exports.ContextProvider = ContextProvider;
-    exports.Element = Element;
-    exports.ForwardRef = ForwardRef;
-    exports.Fragment = Fragment;
-    exports.Lazy = Lazy;
-    exports.Memo = Memo;
-    exports.Portal = Portal;
-    exports.Profiler = Profiler;
-    exports.StrictMode = StrictMode;
-    exports.Suspense = Suspense;
-    exports.isAsyncMode = isAsyncMode;
-    exports.isConcurrentMode = isConcurrentMode;
-    exports.isContextConsumer = isContextConsumer;
-    exports.isContextProvider = isContextProvider;
-    exports.isElement = isElement;
-    exports.isForwardRef = isForwardRef;
-    exports.isFragment = isFragment;
-    exports.isLazy = isLazy;
-    exports.isMemo = isMemo;
-    exports.isPortal = isPortal;
-    exports.isProfiler = isProfiler;
-    exports.isStrictMode = isStrictMode;
-    exports.isSuspense = isSuspense;
-    exports.isValidElementType = isValidElementType;
-    exports.typeOf = typeOf;
-})();
-
-},{}],"bBUgD":[function(require,module,exports) {
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */ "use strict";
-var ReactIs = require("react-is");
-var assign = require("object-assign");
-var ReactPropTypesSecret = require("./lib/ReactPropTypesSecret");
-var has = require("./lib/has");
-var checkPropTypes = require("./checkPropTypes");
-var printWarning = function() {};
-printWarning = function(text) {
-    var message = "Warning: " + text;
-    if (typeof console !== "undefined") console.error(message);
-    try {
-        // --- Welcome to debugging React ---
-        // This error was thrown as a convenience so that you can use this stack
-        // to find the callsite that caused this warning to fire.
-        throw new Error(message);
-    } catch (x) {}
-};
-function emptyFunctionThatReturnsNull() {
-    return null;
-}
-module.exports = function(isValidElement, throwOnDirectAccess) {
-    /* global Symbol */ var ITERATOR_SYMBOL = typeof Symbol === "function" && Symbol.iterator;
-    var FAUX_ITERATOR_SYMBOL = "@@iterator"; // Before Symbol spec.
-    /**
-   * Returns the iterator method function contained on the iterable object.
-   *
-   * Be sure to invoke the function with the iterable as context:
-   *
-   *     var iteratorFn = getIteratorFn(myIterable);
-   *     if (iteratorFn) {
-   *       var iterator = iteratorFn.call(myIterable);
-   *       ...
-   *     }
-   *
-   * @param {?object} maybeIterable
-   * @return {?function}
-   */ function getIteratorFn(maybeIterable) {
-        var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
-        if (typeof iteratorFn === "function") return iteratorFn;
-    }
-    /**
-   * Collection of methods that allow declaration and validation of props that are
-   * supplied to React components. Example usage:
-   *
-   *   var Props = require('ReactPropTypes');
-   *   var MyArticle = React.createClass({
-   *     propTypes: {
-   *       // An optional string prop named "description".
-   *       description: Props.string,
-   *
-   *       // A required enum prop named "category".
-   *       category: Props.oneOf(['News','Photos']).isRequired,
-   *
-   *       // A prop named "dialog" that requires an instance of Dialog.
-   *       dialog: Props.instanceOf(Dialog).isRequired
-   *     },
-   *     render: function() { ... }
-   *   });
-   *
-   * A more formal specification of how these methods are used:
-   *
-   *   type := array|bool|func|object|number|string|oneOf([...])|instanceOf(...)
-   *   decl := ReactPropTypes.{type}(.isRequired)?
-   *
-   * Each and every declaration produces a function with the same signature. This
-   * allows the creation of custom validation functions. For example:
-   *
-   *  var MyLink = React.createClass({
-   *    propTypes: {
-   *      // An optional string or URI prop named "href".
-   *      href: function(props, propName, componentName) {
-   *        var propValue = props[propName];
-   *        if (propValue != null && typeof propValue !== 'string' &&
-   *            !(propValue instanceof URI)) {
-   *          return new Error(
-   *            'Expected a string or an URI for ' + propName + ' in ' +
-   *            componentName
-   *          );
-   *        }
-   *      }
-   *    },
-   *    render: function() {...}
-   *  });
-   *
-   * @internal
-   */ var ANONYMOUS = "<<anonymous>>";
-    // Important!
-    // Keep this list in sync with production version in `./factoryWithThrowingShims.js`.
-    var ReactPropTypes = {
-        array: createPrimitiveTypeChecker("array"),
-        bigint: createPrimitiveTypeChecker("bigint"),
-        bool: createPrimitiveTypeChecker("boolean"),
-        func: createPrimitiveTypeChecker("function"),
-        number: createPrimitiveTypeChecker("number"),
-        object: createPrimitiveTypeChecker("object"),
-        string: createPrimitiveTypeChecker("string"),
-        symbol: createPrimitiveTypeChecker("symbol"),
-        any: createAnyTypeChecker(),
-        arrayOf: createArrayOfTypeChecker,
-        element: createElementTypeChecker(),
-        elementType: createElementTypeTypeChecker(),
-        instanceOf: createInstanceTypeChecker,
-        node: createNodeChecker(),
-        objectOf: createObjectOfTypeChecker,
-        oneOf: createEnumTypeChecker,
-        oneOfType: createUnionTypeChecker,
-        shape: createShapeTypeChecker,
-        exact: createStrictShapeTypeChecker
-    };
-    /**
-   * inlined Object.is polyfill to avoid requiring consumers ship their own
-   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
-   */ /*eslint-disable no-self-compare*/ function is(x, y) {
-        // SameValue algorithm
-        if (x === y) // Steps 1-5, 7-10
-        // Steps 6.b-6.e: +0 != -0
-        return x !== 0 || 1 / x === 1 / y;
-        else // Step 6.a: NaN == NaN
-        return x !== x && y !== y;
-    }
-    /*eslint-enable no-self-compare*/ /**
-   * We use an Error-like object for backward compatibility as people may call
-   * PropTypes directly and inspect their output. However, we don't use real
-   * Errors anymore. We don't inspect their stack anyway, and creating them
-   * is prohibitively expensive if they are created too often, such as what
-   * happens in oneOfType() for any type before the one that matched.
-   */ function PropTypeError(message, data) {
-        this.message = message;
-        this.data = data && typeof data === "object" ? data : {};
-        this.stack = "";
-    }
-    // Make `instanceof Error` still work for returned errors.
-    PropTypeError.prototype = Error.prototype;
-    function createChainableTypeChecker(validate) {
-        var manualPropTypeCallCache = {};
-        var manualPropTypeWarningCount = 0;
-        function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
-            componentName = componentName || ANONYMOUS;
-            propFullName = propFullName || propName;
-            if (secret !== ReactPropTypesSecret) {
-                if (throwOnDirectAccess) {
-                    // New behavior only for users of `prop-types` package
-                    var err = new Error("Calling PropTypes validators directly is not supported by the `prop-types` package. Use `PropTypes.checkPropTypes()` to call them. Read more at http://fb.me/use-check-prop-types");
-                    err.name = "Invariant Violation";
-                    throw err;
-                } else if (typeof console !== "undefined") {
-                    // Old behavior for people using React.PropTypes
-                    var cacheKey = componentName + ":" + propName;
-                    if (!manualPropTypeCallCache[cacheKey] && // Avoid spamming the console because they are often not actionable except for lib authors
-                    manualPropTypeWarningCount < 3) {
-                        printWarning("You are manually calling a React.PropTypes validation function for the `" + propFullName + "` prop on `" + componentName + "`. This is deprecated " + "and will throw in the standalone `prop-types` package. " + "You may be seeing this warning due to a third-party PropTypes " + "library. See https://fb.me/react-warning-dont-call-proptypes " + "for details.");
-                        manualPropTypeCallCache[cacheKey] = true;
-                        manualPropTypeWarningCount++;
-                    }
-                }
-            }
-            if (props[propName] == null) {
-                if (isRequired) {
-                    if (props[propName] === null) return new PropTypeError("The " + location + " `" + propFullName + "` is marked as required " + ("in `" + componentName + "`, but its value is `null`."));
-                    return new PropTypeError("The " + location + " `" + propFullName + "` is marked as required in " + ("`" + componentName + "`, but its value is `undefined`."));
-                }
-                return null;
-            } else return validate(props, propName, componentName, location, propFullName);
-        }
-        var chainedCheckType = checkType.bind(null, false);
-        chainedCheckType.isRequired = checkType.bind(null, true);
-        return chainedCheckType;
-    }
-    function createPrimitiveTypeChecker(expectedType) {
-        function validate(props, propName, componentName, location, propFullName, secret) {
-            var propValue = props[propName];
-            var propType = getPropType(propValue);
-            if (propType !== expectedType) {
-                // `propValue` being instance of, say, date/regexp, pass the 'object'
-                // check, but we can offer a more precise error message here rather than
-                // 'of type `object`'.
-                var preciseType = getPreciseType(propValue);
-                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + preciseType + "` supplied to `" + componentName + "`, expected ") + ("`" + expectedType + "`."), {
-                    expectedType: expectedType
-                });
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createAnyTypeChecker() {
-        return createChainableTypeChecker(emptyFunctionThatReturnsNull);
-    }
-    function createArrayOfTypeChecker(typeChecker) {
-        function validate(props, propName, componentName, location, propFullName) {
-            if (typeof typeChecker !== "function") return new PropTypeError("Property `" + propFullName + "` of component `" + componentName + "` has invalid PropType notation inside arrayOf.");
-            var propValue = props[propName];
-            if (!Array.isArray(propValue)) {
-                var propType = getPropType(propValue);
-                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected an array."));
-            }
-            for(var i = 0; i < propValue.length; i++){
-                var error = typeChecker(propValue, i, componentName, location, propFullName + "[" + i + "]", ReactPropTypesSecret);
-                if (error instanceof Error) return error;
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createElementTypeChecker() {
-        function validate(props, propName, componentName, location, propFullName) {
-            var propValue = props[propName];
-            if (!isValidElement(propValue)) {
-                var propType = getPropType(propValue);
-                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected a single ReactElement."));
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createElementTypeTypeChecker() {
-        function validate(props, propName, componentName, location, propFullName) {
-            var propValue = props[propName];
-            if (!ReactIs.isValidElementType(propValue)) {
-                var propType = getPropType(propValue);
-                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected a single ReactElement type."));
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createInstanceTypeChecker(expectedClass) {
-        function validate(props, propName, componentName, location, propFullName) {
-            if (!(props[propName] instanceof expectedClass)) {
-                var expectedClassName = expectedClass.name || ANONYMOUS;
-                var actualClassName = getClassName(props[propName]);
-                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + actualClassName + "` supplied to `" + componentName + "`, expected ") + ("instance of `" + expectedClassName + "`."));
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createEnumTypeChecker(expectedValues) {
-        if (!Array.isArray(expectedValues)) {
-            {
-                if (arguments.length > 1) printWarning("Invalid arguments supplied to oneOf, expected an array, got " + arguments.length + " arguments. " + "A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z]).");
-                else printWarning("Invalid argument supplied to oneOf, expected an array.");
-            }
-            return emptyFunctionThatReturnsNull;
-        }
-        function validate(props, propName, componentName, location, propFullName) {
-            var propValue = props[propName];
-            for(var i = 0; i < expectedValues.length; i++){
-                if (is(propValue, expectedValues[i])) return null;
-            }
-            var valuesString = JSON.stringify(expectedValues, function replacer(key, value) {
-                var type = getPreciseType(value);
-                if (type === "symbol") return String(value);
-                return value;
-            });
-            return new PropTypeError("Invalid " + location + " `" + propFullName + "` of value `" + String(propValue) + "` " + ("supplied to `" + componentName + "`, expected one of " + valuesString + "."));
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createObjectOfTypeChecker(typeChecker) {
-        function validate(props, propName, componentName, location, propFullName) {
-            if (typeof typeChecker !== "function") return new PropTypeError("Property `" + propFullName + "` of component `" + componentName + "` has invalid PropType notation inside objectOf.");
-            var propValue = props[propName];
-            var propType = getPropType(propValue);
-            if (propType !== "object") return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected an object."));
-            for(var key in propValue)if (has(propValue, key)) {
-                var error = typeChecker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
-                if (error instanceof Error) return error;
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createUnionTypeChecker(arrayOfTypeCheckers) {
-        if (!Array.isArray(arrayOfTypeCheckers)) {
-            printWarning("Invalid argument supplied to oneOfType, expected an instance of array.");
-            return emptyFunctionThatReturnsNull;
-        }
-        for(var i = 0; i < arrayOfTypeCheckers.length; i++){
-            var checker = arrayOfTypeCheckers[i];
-            if (typeof checker !== "function") {
-                printWarning("Invalid argument supplied to oneOfType. Expected an array of check functions, but received " + getPostfixForTypeWarning(checker) + " at index " + i + ".");
-                return emptyFunctionThatReturnsNull;
-            }
-        }
-        function validate(props, propName, componentName, location, propFullName) {
-            var expectedTypes = [];
-            for(var i = 0; i < arrayOfTypeCheckers.length; i++){
-                var checker = arrayOfTypeCheckers[i];
-                var checkerResult = checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret);
-                if (checkerResult == null) return null;
-                if (checkerResult.data && has(checkerResult.data, "expectedType")) expectedTypes.push(checkerResult.data.expectedType);
-            }
-            var expectedTypesMessage = expectedTypes.length > 0 ? ", expected one of type [" + expectedTypes.join(", ") + "]" : "";
-            return new PropTypeError("Invalid " + location + " `" + propFullName + "` supplied to " + ("`" + componentName + "`" + expectedTypesMessage + "."));
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createNodeChecker() {
-        function validate(props, propName, componentName, location, propFullName) {
-            if (!isNode(props[propName])) return new PropTypeError("Invalid " + location + " `" + propFullName + "` supplied to " + ("`" + componentName + "`, expected a ReactNode."));
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function invalidValidatorError(componentName, location, propFullName, key, type) {
-        return new PropTypeError((componentName || "React class") + ": " + location + " type `" + propFullName + "." + key + "` is invalid; " + "it must be a function, usually from the `prop-types` package, but received `" + type + "`.");
-    }
-    function createShapeTypeChecker(shapeTypes) {
-        function validate(props, propName, componentName, location, propFullName) {
-            var propValue = props[propName];
-            var propType = getPropType(propValue);
-            if (propType !== "object") return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type `" + propType + "` " + ("supplied to `" + componentName + "`, expected `object`."));
-            for(var key in shapeTypes){
-                var checker = shapeTypes[key];
-                if (typeof checker !== "function") return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
-                var error = checker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
-                if (error) return error;
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createStrictShapeTypeChecker(shapeTypes) {
-        function validate(props, propName, componentName, location, propFullName) {
-            var propValue = props[propName];
-            var propType = getPropType(propValue);
-            if (propType !== "object") return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type `" + propType + "` " + ("supplied to `" + componentName + "`, expected `object`."));
-            // We need to check all keys in case some are required but missing from props.
-            var allKeys = assign({}, props[propName], shapeTypes);
-            for(var key in allKeys){
-                var checker = shapeTypes[key];
-                if (has(shapeTypes, key) && typeof checker !== "function") return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
-                if (!checker) return new PropTypeError("Invalid " + location + " `" + propFullName + "` key `" + key + "` supplied to `" + componentName + "`." + "\nBad object: " + JSON.stringify(props[propName], null, "  ") + "\nValid keys: " + JSON.stringify(Object.keys(shapeTypes), null, "  "));
-                var error = checker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
-                if (error) return error;
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function isNode(propValue) {
-        switch(typeof propValue){
-            case "number":
-            case "string":
-            case "undefined":
-                return true;
-            case "boolean":
-                return !propValue;
-            case "object":
-                if (Array.isArray(propValue)) return propValue.every(isNode);
-                if (propValue === null || isValidElement(propValue)) return true;
-                var iteratorFn = getIteratorFn(propValue);
-                if (iteratorFn) {
-                    var iterator = iteratorFn.call(propValue);
-                    var step;
-                    if (iteratorFn !== propValue.entries) while(!(step = iterator.next()).done){
-                        if (!isNode(step.value)) return false;
-                    }
-                    else // Iterator will provide entry [k,v] tuples rather than values.
-                    while(!(step = iterator.next()).done){
-                        var entry = step.value;
-                        if (entry) {
-                            if (!isNode(entry[1])) return false;
-                        }
-                    }
-                } else return false;
-                return true;
-            default:
-                return false;
-        }
-    }
-    function isSymbol(propType, propValue) {
-        // Native Symbol.
-        if (propType === "symbol") return true;
-        // falsy value can't be a Symbol
-        if (!propValue) return false;
-        // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'
-        if (propValue["@@toStringTag"] === "Symbol") return true;
-        // Fallback for non-spec compliant Symbols which are polyfilled.
-        if (typeof Symbol === "function" && propValue instanceof Symbol) return true;
-        return false;
-    }
-    // Equivalent of `typeof` but with special handling for array and regexp.
-    function getPropType(propValue) {
-        var propType = typeof propValue;
-        if (Array.isArray(propValue)) return "array";
-        if (propValue instanceof RegExp) // Old webkits (at least until Android 4.0) return 'function' rather than
-        // 'object' for typeof a RegExp. We'll normalize this here so that /bla/
-        // passes PropTypes.object.
-        return "object";
-        if (isSymbol(propType, propValue)) return "symbol";
-        return propType;
-    }
-    // This handles more types than `getPropType`. Only used for error messages.
-    // See `createPrimitiveTypeChecker`.
-    function getPreciseType(propValue) {
-        if (typeof propValue === "undefined" || propValue === null) return "" + propValue;
-        var propType = getPropType(propValue);
-        if (propType === "object") {
-            if (propValue instanceof Date) return "date";
-            else if (propValue instanceof RegExp) return "regexp";
-        }
-        return propType;
-    }
-    // Returns a string that is postfixed to a warning about an invalid type.
-    // For example, "undefined" or "of type array"
-    function getPostfixForTypeWarning(value) {
-        var type = getPreciseType(value);
-        switch(type){
-            case "array":
-            case "object":
-                return "an " + type;
-            case "boolean":
-            case "date":
-            case "regexp":
-                return "a " + type;
-            default:
-                return type;
-        }
-    }
-    // Returns class name of the object, if any.
-    function getClassName(propValue) {
-        if (!propValue.constructor || !propValue.constructor.name) return ANONYMOUS;
-        return propValue.constructor.name;
-    }
-    ReactPropTypes.checkPropTypes = checkPropTypes;
-    ReactPropTypes.resetWarningCache = checkPropTypes.resetWarningCache;
-    ReactPropTypes.PropTypes = ReactPropTypes;
-    return ReactPropTypes;
-};
-
-},{"react-is":"7EuwB","object-assign":"7OXxh","./lib/ReactPropTypesSecret":"jZTZJ","./lib/has":"fqKuf","./checkPropTypes":"5VwyJ"}],"7OXxh":[function(require,module,exports) {
-/*
-object-assign
-(c) Sindre Sorhus
-@license MIT
-*/ "use strict";
-/* eslint-disable no-unused-vars */ var getOwnPropertySymbols = Object.getOwnPropertySymbols;
-var hasOwnProperty = Object.prototype.hasOwnProperty;
-var propIsEnumerable = Object.prototype.propertyIsEnumerable;
-function toObject(val) {
-    if (val === null || val === undefined) throw new TypeError("Object.assign cannot be called with null or undefined");
-    return Object(val);
-}
-function shouldUseNative() {
-    try {
-        if (!Object.assign) return false;
-        // Detect buggy property enumeration order in older V8 versions.
-        // https://bugs.chromium.org/p/v8/issues/detail?id=4118
-        var test1 = new String("abc"); // eslint-disable-line no-new-wrappers
-        test1[5] = "de";
-        if (Object.getOwnPropertyNames(test1)[0] === "5") return false;
-        // https://bugs.chromium.org/p/v8/issues/detail?id=3056
-        var test2 = {};
-        for(var i = 0; i < 10; i++)test2["_" + String.fromCharCode(i)] = i;
-        var order2 = Object.getOwnPropertyNames(test2).map(function(n) {
-            return test2[n];
-        });
-        if (order2.join("") !== "0123456789") return false;
-        // https://bugs.chromium.org/p/v8/issues/detail?id=3056
-        var test3 = {};
-        "abcdefghijklmnopqrst".split("").forEach(function(letter) {
-            test3[letter] = letter;
-        });
-        if (Object.keys(Object.assign({}, test3)).join("") !== "abcdefghijklmnopqrst") return false;
-        return true;
-    } catch (err) {
-        // We don't expect any of the above to throw, but better to be safe.
-        return false;
-    }
-}
-module.exports = shouldUseNative() ? Object.assign : function(target, source) {
-    var from;
-    var to = toObject(target);
-    var symbols;
-    for(var s = 1; s < arguments.length; s++){
-        from = Object(arguments[s]);
-        for(var key in from)if (hasOwnProperty.call(from, key)) to[key] = from[key];
-        if (getOwnPropertySymbols) {
-            symbols = getOwnPropertySymbols(from);
-            for(var i = 0; i < symbols.length; i++)if (propIsEnumerable.call(from, symbols[i])) to[symbols[i]] = from[symbols[i]];
-        }
-    }
-    return to;
-};
-
-},{}],"jZTZJ":[function(require,module,exports) {
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */ "use strict";
-var ReactPropTypesSecret = "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED";
-module.exports = ReactPropTypesSecret;
-
-},{}],"fqKuf":[function(require,module,exports) {
-module.exports = Function.call.bind(Object.prototype.hasOwnProperty);
-
-},{}],"5VwyJ":[function(require,module,exports) {
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */ "use strict";
-var printWarning = function() {};
-var ReactPropTypesSecret = require("./lib/ReactPropTypesSecret");
-var loggedTypeFailures = {};
-var has = require("./lib/has");
-printWarning = function(text) {
-    var message = "Warning: " + text;
-    if (typeof console !== "undefined") console.error(message);
-    try {
-        // --- Welcome to debugging React ---
-        // This error was thrown as a convenience so that you can use this stack
-        // to find the callsite that caused this warning to fire.
-        throw new Error(message);
-    } catch (x) {}
-};
-/**
- * Assert that the values match with the type specs.
- * Error messages are memorized and will only be shown once.
- *
- * @param {object} typeSpecs Map of name to a ReactPropType
- * @param {object} values Runtime values that need to be type-checked
- * @param {string} location e.g. "prop", "context", "child context"
- * @param {string} componentName Name of the component for error messages.
- * @param {?Function} getStack Returns the component stack.
- * @private
- */ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
-    for(var typeSpecName in typeSpecs)if (has(typeSpecs, typeSpecName)) {
-        var error;
-        // Prop type validation may throw. In case they do, we don't want to
-        // fail the render phase where it didn't fail before. So we log it.
-        // After these have been cleaned up, we'll let them throw.
-        try {
-            // This is intentionally an invariant that gets caught. It's the same
-            // behavior as without this statement except with a better message.
-            if (typeof typeSpecs[typeSpecName] !== "function") {
-                var err = Error((componentName || "React class") + ": " + location + " type `" + typeSpecName + "` is invalid; " + "it must be a function, usually from the `prop-types` package, but received `" + typeof typeSpecs[typeSpecName] + "`." + "This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.");
-                err.name = "Invariant Violation";
-                throw err;
-            }
-            error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
-        } catch (ex) {
-            error = ex;
-        }
-        if (error && !(error instanceof Error)) printWarning((componentName || "React class") + ": type specification of " + location + " `" + typeSpecName + "` is invalid; the type checker " + "function must return `null` or an `Error` but returned a " + typeof error + ". " + "You may have forgotten to pass an argument to the type checker " + "creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and " + "shape all require an argument).");
-        if (error instanceof Error && !(error.message in loggedTypeFailures)) {
-            // Only monitor this failure once because there tends to be a lot of the
-            // same error.
-            loggedTypeFailures[error.message] = true;
-            var stack = getStack ? getStack() : "";
-            printWarning("Failed " + location + " type: " + error.message + (stack != null ? stack : ""));
-        }
-    }
-}
-/**
- * Resets warning cache when testing.
- *
- * @private
- */ checkPropTypes.resetWarningCache = function() {
-    loggedTypeFailures = {};
-};
-module.exports = checkPropTypes;
-
-},{"./lib/ReactPropTypesSecret":"jZTZJ","./lib/has":"fqKuf"}],"4KEfH":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","../assets/images/down-arrow.svg":"4KEfH","../assets/images/desk-and-chair.jpg":"7LdEr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4KEfH":[function(require,module,exports) {
 module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "down-arrow.ed59e2cd.svg" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"lgJ39"}],"7LdEr":[function(require,module,exports) {
 module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "desk-and-chair.0b5a4278.jpg" + "?" + Date.now();
 
-},{"./helpers/bundle-url":"lgJ39"}],"clPKd":[function() {},{}],"kxIIv":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$f06b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$f06b.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-/**
- * Footer component
- *
- * Displays avenues to contact you.
- * Contact information is passed in from the App component that
- * renders the Footer.
- *
- * If a social value has an empty string it will not be displayed.
- */ var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _devdottoSvg = require("../../assets/images/socials/devdotto.svg");
-var _devdottoSvgDefault = parcelHelpers.interopDefault(_devdottoSvg);
-var _envelopeSvg = require("../../assets/images/socials/envelope.svg");
-var _envelopeSvgDefault = parcelHelpers.interopDefault(_envelopeSvg);
-var _githubSvg = require("../../assets/images/socials/github.svg");
-var _githubSvgDefault = parcelHelpers.interopDefault(_githubSvg);
-var _instagramSvg = require("../../assets/images/socials/instagram.svg");
-var _instagramSvgDefault = parcelHelpers.interopDefault(_instagramSvg);
-var _linkedinSvg = require("../../assets/images/socials/linkedin.svg");
-var _linkedinSvgDefault = parcelHelpers.interopDefault(_linkedinSvg);
-var _mediumSvg = require("../../assets/images/socials/medium.svg");
-var _mediumSvgDefault = parcelHelpers.interopDefault(_mediumSvg);
-var _twitterSvg = require("../../assets/images/socials/twitter.svg");
-var _twitterSvgDefault = parcelHelpers.interopDefault(_twitterSvg);
-var _youtubeSvg = require("../../assets/images/socials/youtube.svg");
-var _youtubeSvgDefault = parcelHelpers.interopDefault(_youtubeSvg);
-/**
- * 💡 Learning resources
- *
- *  HTML hyperlinks: https://www.w3schools.com/html/html_links.asp
- *  Opening links in new tabs: https://www.freecodecamp.org/news/how-to-use-html-to-open-link-in-new-tab/
- */ const Footer = (props)=>{
-    const { devDotTo , email , gitHub , instagram , linkedIn , medium , name , primaryColor , twitter , youTube ,  } = props;
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        id: "footer",
-        style: {
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            gap: "2.5rem",
-            padding: "5rem 0 3rem",
-            backgroundColor: primaryColor,
-            width: "100vw"
-        },
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                style: {
-                    display: "flex",
-                    justifyContent: "center",
-                    gap: "2.5rem"
-                },
-                children: [
-                    email && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                        href: `mailto:${email}`,
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                            src: (0, _envelopeSvgDefault.default),
-                            alt: "email",
-                            className: "socialIcon"
-                        }, void 0, false, {
-                            fileName: "src/Components/common/Footer.jsx",
-                            lineNumber: 65,
-                            columnNumber: 13
-                        }, undefined)
-                    }, void 0, false, {
-                        fileName: "src/Components/common/Footer.jsx",
-                        lineNumber: 64,
-                        columnNumber: 11
-                    }, undefined),
-                    devDotTo && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                        href: `https://dev.to/${devDotTo}`,
-                        target: "_blank",
-                        rel: "noopener noreferrer",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                            src: (0, _devdottoSvgDefault.default),
-                            alt: "Dev.to",
-                            className: "socialIcon"
-                        }, void 0, false, {
-                            fileName: "src/Components/common/Footer.jsx",
-                            lineNumber: 70,
-                            columnNumber: 13
-                        }, undefined)
-                    }, void 0, false, {
-                        fileName: "src/Components/common/Footer.jsx",
-                        lineNumber: 69,
-                        columnNumber: 11
-                    }, undefined),
-                    gitHub && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                        href: `https://github.com/${gitHub}`,
-                        target: "_blank",
-                        rel: "noopener noreferrer",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                            src: (0, _githubSvgDefault.default),
-                            alt: "GitHub",
-                            className: "socialIcon"
-                        }, void 0, false, {
-                            fileName: "src/Components/common/Footer.jsx",
-                            lineNumber: 75,
-                            columnNumber: 13
-                        }, undefined)
-                    }, void 0, false, {
-                        fileName: "src/Components/common/Footer.jsx",
-                        lineNumber: 74,
-                        columnNumber: 11
-                    }, undefined),
-                    instagram && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                        href: `https://www.instagram.com/${instagram}`,
-                        target: "_blank",
-                        rel: "noopener noreferrer",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                            src: (0, _instagramSvgDefault.default),
-                            alt: "Instagram",
-                            className: "socialIcon"
-                        }, void 0, false, {
-                            fileName: "src/Components/common/Footer.jsx",
-                            lineNumber: 84,
-                            columnNumber: 13
-                        }, undefined)
-                    }, void 0, false, {
-                        fileName: "src/Components/common/Footer.jsx",
-                        lineNumber: 79,
-                        columnNumber: 11
-                    }, undefined),
-                    linkedIn && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                        href: `https://www.linkedin.com/in/${linkedIn}`,
-                        target: "_blank",
-                        rel: "noopener noreferrer",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                            src: (0, _linkedinSvgDefault.default),
-                            alt: "LinkedIn",
-                            className: "socialIcon"
-                        }, void 0, false, {
-                            fileName: "src/Components/common/Footer.jsx",
-                            lineNumber: 93,
-                            columnNumber: 13
-                        }, undefined)
-                    }, void 0, false, {
-                        fileName: "src/Components/common/Footer.jsx",
-                        lineNumber: 88,
-                        columnNumber: 11
-                    }, undefined),
-                    medium && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                        href: `https://medium.com/@${medium}`,
-                        target: "_blank",
-                        rel: "noopener noreferrer",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                            src: (0, _mediumSvgDefault.default),
-                            alt: "Medium",
-                            className: "socialIcon"
-                        }, void 0, false, {
-                            fileName: "src/Components/common/Footer.jsx",
-                            lineNumber: 98,
-                            columnNumber: 13
-                        }, undefined)
-                    }, void 0, false, {
-                        fileName: "src/Components/common/Footer.jsx",
-                        lineNumber: 97,
-                        columnNumber: 11
-                    }, undefined),
-                    twitter && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                        href: `https://twitter.com/${twitter}`,
-                        target: "_blank",
-                        rel: "noopener noreferrer",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                            src: (0, _twitterSvgDefault.default),
-                            alt: "Twitter",
-                            className: "socialIcon"
-                        }, void 0, false, {
-                            fileName: "src/Components/common/Footer.jsx",
-                            lineNumber: 103,
-                            columnNumber: 13
-                        }, undefined)
-                    }, void 0, false, {
-                        fileName: "src/Components/common/Footer.jsx",
-                        lineNumber: 102,
-                        columnNumber: 11
-                    }, undefined),
-                    youTube && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                        href: `https://www.youtube.com/c/${youTube}`,
-                        target: "_blank",
-                        rel: "noopener noreferrer",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                            src: (0, _youtubeSvgDefault.default),
-                            alt: "YouTube",
-                            className: "socialIcon"
-                        }, void 0, false, {
-                            fileName: "src/Components/common/Footer.jsx",
-                            lineNumber: 112,
-                            columnNumber: 13
-                        }, undefined)
-                    }, void 0, false, {
-                        fileName: "src/Components/common/Footer.jsx",
-                        lineNumber: 107,
-                        columnNumber: 11
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/Components/common/Footer.jsx",
-                lineNumber: 56,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                className: "small",
-                style: {
-                    marginTop: 0,
-                    color: "white"
-                },
-                children: [
-                    "Created by ",
-                    name
-                ]
-            }, void 0, true, {
-                fileName: "src/Components/common/Footer.jsx",
-                lineNumber: 116,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/Components/common/Footer.jsx",
-        lineNumber: 44,
-        columnNumber: 5
-    }, undefined);
-};
-_c = Footer;
-Footer.defaultProps = {
-    name: ""
-};
-Footer.propTypes = {
-    devDotTo: (0, _propTypesDefault.default).string,
-    email: (0, _propTypesDefault.default).string,
-    gitHub: (0, _propTypesDefault.default).string,
-    instagram: (0, _propTypesDefault.default).string,
-    linkedIn: (0, _propTypesDefault.default).string,
-    medium: (0, _propTypesDefault.default).string,
-    name: (0, _propTypesDefault.default).string.isRequired,
-    primaryColor: (0, _propTypesDefault.default).string,
-    twitter: (0, _propTypesDefault.default).string,
-    youTube: (0, _propTypesDefault.default).string
-};
-exports.default = Footer;
-var _c;
-$RefreshReg$(_c, "Footer");
-
-  $parcel$ReactRefreshHelpers$f06b.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../assets/images/socials/devdotto.svg":"54zY0","../../assets/images/socials/envelope.svg":"aNctG","../../assets/images/socials/github.svg":"8AgJT","../../assets/images/socials/instagram.svg":"butbJ","../../assets/images/socials/linkedin.svg":"e6dcP","../../assets/images/socials/medium.svg":"4A0lt","../../assets/images/socials/twitter.svg":"k6wJd","../../assets/images/socials/youtube.svg":"5AnIx"}],"54zY0":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "devdotto.5742cee9.svg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"aNctG":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "envelope.73e9f09d.svg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"8AgJT":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "github.229c2e29.svg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"butbJ":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "instagram.fd25d21e.svg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"e6dcP":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "linkedin.d80c84f0.svg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"4A0lt":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "medium.35f30862.svg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"k6wJd":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "twitter.4b5abd2a.svg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"5AnIx":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "youtube.fea00896.svg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"3G51o":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$6922 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$6922.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _reactRouterDom = require("react-router-dom");
-var _photoJpg = require("../../assets/images/photo.jpg");
-var _photoJpgDefault = parcelHelpers.interopDefault(_photoJpg);
-const Header = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        style: {
-            position: "fixed",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            background: "rgba(255,255,255,0.75)",
-            padding: "1rem",
-            top: 0,
-            width: "100%",
-            zIndex: 10
-        },
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                style: {
-                    // Logo and Name Container
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "1rem"
-                },
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                        src: (0, _photoJpgDefault.default),
-                        alt: "Logo",
-                        style: {
-                            width: "40px",
-                            height: "40px",
-                            borderRadius: "100%"
-                        }
-                    }, void 0, false, {
-                        fileName: "src/Components/common/Header.jsx",
-                        lineNumber: 29,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: "Huixin"
-                    }, void 0, false, {
-                        fileName: "src/Components/common/Header.jsx",
-                        lineNumber: 34,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/Components/common/Header.jsx",
-                lineNumber: 21,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                style: {
-                    // Navigation Links Container
-                    display: "flex",
-                    flexWrap: "wrap",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    flex: 1,
-                    gap: "2rem"
-                },
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                        to: "/",
-                        children: "Home"
-                    }, void 0, false, {
-                        fileName: "src/Components/common/Header.jsx",
-                        lineNumber: 47,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                        to: "/about",
-                        children: "About"
-                    }, void 0, false, {
-                        fileName: "src/Components/common/Header.jsx",
-                        lineNumber: 48,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                        to: "/education",
-                        children: "Education"
-                    }, void 0, false, {
-                        fileName: "src/Components/common/Header.jsx",
-                        lineNumber: 49,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                        to: "/portfolio",
-                        children: "Portfolio"
-                    }, void 0, false, {
-                        fileName: "src/Components/common/Header.jsx",
-                        lineNumber: 50,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                        to: "/contact",
-                        children: "Contact"
-                    }, void 0, false, {
-                        fileName: "src/Components/common/Header.jsx",
-                        lineNumber: 51,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/Components/common/Header.jsx",
-                lineNumber: 36,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/Components/common/Header.jsx",
-        lineNumber: 8,
-        columnNumber: 5
-    }, undefined);
-};
-_c = Header;
-exports.default = Header;
-var _c;
-$RefreshReg$(_c, "Header");
-
-  $parcel$ReactRefreshHelpers$6922.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../assets/images/photo.jpg":"11rba"}],"11rba":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "photo.f4681990.jpg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"3ECXD":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$26ef = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$26ef.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _styledComponents = require("styled-components");
-var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
-var _underConstructureJpg = require("../assets/images/under-constructure.jpg");
-var _underConstructureJpgDefault = parcelHelpers.interopDefault(_underConstructureJpg);
-// Styled components
-const TerminalContainer = (0, _styledComponentsDefault.default).div`
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #333;
-  color: #8ec07c;
-  font-family: "Courier New", Courier, monospace; // Monospaced font
-  padding: 20px;
-`;
-_c = TerminalContainer;
-const TerminalTitle = (0, _styledComponentsDefault.default).h1`
-  font-size: 1.5em;
-  padding: 5px 10px;
-  margin-top: 75px;
-  border-bottom: 2px solid #555; // Separator line
-  width: 100%; // Full width
-  text-align: center; // Center the title
-`;
-_c1 = TerminalTitle;
-const TerminalText = (0, _styledComponentsDefault.default).div`
-  font-size: 1em;
-  padding: 10px;
-  margin-top: 10px;
-  text-align: left; // Align text to the left
-  width: 100%; // Full width
-
-  a {
-    color: #8ec07c;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-`;
-_c2 = TerminalText;
-const Highlight = (0, _styledComponentsDefault.default).span`
-  color: #d3d3d3;
-  padding: 2px 5px;
-  background-color: #444; // Slight background for highlight
-  border-radius: 3px; // Rounded corners for highlight
-`;
-_c3 = Highlight;
-const StyledImage = (0, _styledComponentsDefault.default).img`
-  max-width: 100%; // Ensure the image is not larger than its container
-  height: auto; // Keep image aspect ratio
-  margin-top: 20px; // Space between text and image
-  border: 2px solid #555; // Border to match the terminal style
-`;
-_c4 = StyledImage;
-const Contact = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(TerminalContainer, {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(TerminalTitle, {
-                children: "Stay Tuned!"
-            }, void 0, false, {
-                fileName: "src/Components/Contact.jsx",
-                lineNumber: 62,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(TerminalText, {
-                children: [
-                    "Our contact form is currently under construction. In the meantime, feel free to reach out to us at",
-                    " ",
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Highlight, {
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                href: "mailto:huixin.yang.tw@gmail.com",
-                                className: "highlight",
-                                children: "huixin.yang.tw@gmail.com"
-                            }, void 0, false, {
-                                fileName: "src/Components/Contact.jsx",
-                                lineNumber: 67,
-                                columnNumber: 11
-                            }, undefined),
-                            " "
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/Components/Contact.jsx",
-                        lineNumber: 66,
-                        columnNumber: 9
-                    }, undefined),
-                    "or download",
-                    " ",
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                        href: "https://huixin-tw.github.io/Resume/",
-                        target: "_blank",
-                        rel: "noopener noreferrer",
-                        className: "highlight",
-                        children: "Resume powered by github.io."
-                    }, void 0, false, {
-                        fileName: "src/Components/Contact.jsx",
-                        lineNumber: 72,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/Components/Contact.jsx",
-                lineNumber: 63,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(TerminalText, {
-                children: [
-                    "Our new feature harnesses ",
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Highlight, {
-                        children: "Firebase"
-                    }, void 0, false, {
-                        fileName: "src/Components/Contact.jsx",
-                        lineNumber: 82,
-                        columnNumber: 35
-                    }, undefined),
-                    " for seamless real-time data synchronization and secure backend operations."
-                ]
-            }, void 0, true, {
-                fileName: "src/Components/Contact.jsx",
-                lineNumber: 81,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledImage, {
-                src: (0, _underConstructureJpgDefault.default),
-                alt: "Under Construction"
-            }, void 0, false, {
-                fileName: "src/Components/Contact.jsx",
-                lineNumber: 85,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/Components/Contact.jsx",
-        lineNumber: 61,
-        columnNumber: 5
-    }, undefined);
-};
-_c5 = Contact;
-exports.default = Contact;
-var _c, _c1, _c2, _c3, _c4, _c5;
-$RefreshReg$(_c, "TerminalContainer");
-$RefreshReg$(_c1, "TerminalTitle");
-$RefreshReg$(_c2, "TerminalText");
-$RefreshReg$(_c3, "Highlight");
-$RefreshReg$(_c4, "StyledImage");
-$RefreshReg$(_c5, "Contact");
-
-  $parcel$ReactRefreshHelpers$26ef.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","styled-components":"1U3k6","../assets/images/under-constructure.jpg":"avxrc"}],"avxrc":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "under-constructure.a186c17b.jpg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}]},["1xC6H","ShInH","8lqZg"], "8lqZg", "parcelRequire2359")
+},{"./helpers/bundle-url":"lgJ39"}],"clPKd":[function() {},{}]},["1xC6H","ShInH","8lqZg"], "8lqZg", "parcelRequire2359")
 
 //# sourceMappingURL=index.975ef6c8.js.map
