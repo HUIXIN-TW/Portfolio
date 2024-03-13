@@ -24,6 +24,20 @@ div#main {
   width: 100vw;
 }
 
+#main::after {
+  content: "";
+  display: block;
+  position: absolute; /* Positioning inside the #main element */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("/src/assets/images/scattered-forcefields.svg");
+  background-size: cover; /* Or 'contain', depending on how you want to size the image */
+  pointer-events: none; /* Prevents the pseudo-element from capturing clicks */
+  z-index: -1; /* Ensures the background is behind the content */
+}
+
 /* Section Styles */
 section {
   position: relative;
