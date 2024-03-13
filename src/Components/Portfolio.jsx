@@ -16,7 +16,7 @@ const Portfolio = () => {
   return (
     <section className="padding" id="portfolio">
       <h2 className="text-center">Work & Project Gallery</h2>
-      <div className="bg-blue-50 border-l-4 border-blue-500 text-blue-700 p-4 ml-20 mr-20 mt-10 rounded shadow-lg">
+      <div className="bg-blue-50 text-blue-700 p-4 ml-20 mr-20 mt-10 rounded shadow-lg">
         <p className="text-lg text-center mb-2">🌟 Announcing: Live What to Eat App 🌟</p>
         <p className="text-md md:text-base text-gray-700">
           Hey foodies! Got the munchies? I am thrilled to unveil the

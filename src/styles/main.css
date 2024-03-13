@@ -24,16 +24,18 @@ div#main {
   width: 100vw;
 }
 
-div#main:after {
+#main::after {
   content: "";
-  background-image: url("/src/assets/images/grid.svg");
-  z-index: 1;
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  display: block;
+  position: absolute; /* Positioning inside the #main element */
   top: 0;
-  opacity: 0.3;
-  filter: invert(1);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("/src/assets/images/scattered-forcefields.svg");
+  background-size: cover; /* Or 'contain', depending on how you want to size the image */
+  pointer-events: none; /* Prevents the pseudo-element from capturing clicks */
+  z-index: -1; /* Ensures the background is behind the content */
 }
 
 /* Section Styles */
@@ -398,4 +400,46 @@ img.socialIcon {
 
 .scroll-down-arrow {
   animation: bounce 2s infinite;
+}
+
+/* Customised */
+
+.black_btn {
+  border-radius: 9999px; /* rounded-full */
+  border: 1px solid black; /* border border-black */
+  background-color: black; /* bg-black */
+  padding: 6px 20px; /* py-1.5 px-5, approximately */
+  color: white; /* text-white */
+  transition: all 0.3s ease; /* transition-all */
+  text-align: center; /* text-center */
+  font-size: 0.875rem; /* text-sm */
+  font-family: "Inter", sans-serif; /* font-inter */
+  display: flex; /* flex */
+  align-items: center; /* items-center */
+  justify-content: center; /* justify-center */
+}
+
+.black_btn:hover {
+  background-color: white; /* hover:bg-white */
+  color: black; /* hover:text-black */
+}
+
+.outline_btn {
+  border-radius: 9999px; /* rounded-full */
+  border: 1px solid black; /* border border-black */
+  background-color: transparent; /* bg-transparent */
+  padding: 6px 20px; /* py-1.5 px-5, approximately */
+  color: black; /* text-black */
+  transition: all 0.3s ease; /* transition-all */
+  text-align: center; /* text-center */
+  font-size: 0.875rem; /* text-sm */
+  font-family: "Inter", sans-serif; /* font-inter */
+  display: flex; /* flex */
+  align-items: center; /* items-center */
+  justify-content: center; /* justify-center */
+}
+
+.outline_btn:hover {
+  background-color: black; /* hover:bg-black */
+  color: white; /* hover:text-white */
 }

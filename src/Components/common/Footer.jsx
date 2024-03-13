@@ -57,7 +57,7 @@ const Footer = (props) => {
         style={{
           display: "flex",
           justifyContent: "center",
-          gap: "2.5rem",
+          gap: "2rem",
         }}
       >
         {email && (
