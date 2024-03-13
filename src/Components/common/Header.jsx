@@ -14,9 +14,14 @@ const Header = () => {
           <Link to="/" onClick={toggleDropdown} className="hover:text-blue-600">
             <img src={photo} alt="Logo" className="w-10 h-10 rounded-full" />
           </Link>
-          <Link to="https://github.com/HUIXIN-TW" className="hover:text-blue-600">
+          <a
+            href="https://github.com/HUIXIN-TW"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-blue-600"
+          >
             <span>HUIXIN-TW</span>
-          </Link>
+          </a>
         </div>
         <div className="flex flex-wrap justify-center items-center flex-1 gap-4 md:gap-8">
           <Link to="/about" className="hover:text-blue-600">
