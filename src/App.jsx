@@ -6,7 +6,7 @@ import About from "./Components/About";
 import Home from "./Components/Home";
 import Education from "./Components/Education";
 import Portfolio from "./Components/Portfolio";
-import Contact from "./Components/Contact";
+// import Contact from "./Components/Contact";
 import Referee from "./Components/Referee";
 import Experience from "./Components/Experience";
 
@@ -24,7 +24,7 @@ const siteProps = {
   youTube: "",
 };
 
-const primaryColor = "#4E567E";
+const primaryColor = "#808080";
 const secondaryColor = "#D2F1E4";
 
 const App = () => {
@@ -39,7 +39,7 @@ const App = () => {
           <Route path="/education" element={<Education />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/contact" element={<Contact />} />
+          {/* <Route path="/contact" element={<Contact />} /> */}
           <Route path="/referee" element={<Referee />} />
         </Routes>
         <Footer {...siteProps} primaryColor={primaryColor} secondaryColor={secondaryColor} />
