@@ -401,3 +401,45 @@ img.socialIcon {
 .scroll-down-arrow {
   animation: bounce 2s infinite;
 }
+
+/* Customised */
+
+.black_btn {
+  border-radius: 9999px; /* rounded-full */
+  border: 1px solid black; /* border border-black */
+  background-color: black; /* bg-black */
+  padding: 6px 20px; /* py-1.5 px-5, approximately */
+  color: white; /* text-white */
+  transition: all 0.3s ease; /* transition-all */
+  text-align: center; /* text-center */
+  font-size: 0.875rem; /* text-sm */
+  font-family: "Inter", sans-serif; /* font-inter */
+  display: flex; /* flex */
+  align-items: center; /* items-center */
+  justify-content: center; /* justify-center */
+}
+
+.black_btn:hover {
+  background-color: white; /* hover:bg-white */
+  color: black; /* hover:text-black */
+}
+
+.outline_btn {
+  border-radius: 9999px; /* rounded-full */
+  border: 1px solid black; /* border border-black */
+  background-color: transparent; /* bg-transparent */
+  padding: 6px 20px; /* py-1.5 px-5, approximately */
+  color: black; /* text-black */
+  transition: all 0.3s ease; /* transition-all */
+  text-align: center; /* text-center */
+  font-size: 0.875rem; /* text-sm */
+  font-family: "Inter", sans-serif; /* font-inter */
+  display: flex; /* flex */
+  align-items: center; /* items-center */
+  justify-content: center; /* justify-center */
+}
+
+.outline_btn:hover {
+  background-color: black; /* hover:bg-black */
+  color: white; /* hover:text-white */
+}
