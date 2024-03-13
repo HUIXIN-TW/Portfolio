@@ -4,13 +4,18 @@ import scholarships_and_awardsData from "../data/scholarships_and_awards.json";
 
 // Styled components
 const AwardsContainer = styled.section`
-  width: 95%;
-  padding: 20px;
+  width: 100%;
+  padding: 70px;
+
+  /* Apply a media query for screens smaller than 768px */
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
 `;
 
 const AwardCard = styled.div`
   background-color: white;
-  padding: 15px;
+  padding: 20px;
   margin-bottom: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);

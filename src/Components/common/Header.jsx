@@ -29,9 +29,9 @@ const Header = () => {
         <Link to="/referee" className="hover:text-blue-600">
           Referee
         </Link>
-        <Link to="/contact" className="hover:text-blue-600">
+        {/* <Link to="/contact" className="hover:text-blue-600">
           Contact
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
