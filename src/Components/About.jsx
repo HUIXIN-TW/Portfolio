@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 
 import image from "../assets/images/motion-background.jpg";
-import Button from "./common/Button";
-import Education from "./Education";
-import Portfolio from "./Portfolio";
-import Experience from "./Experience";
-import Referee from "./Referee";
+// import Button from "./common/Button";
+// import Education from "./Education";
+// import Portfolio from "./Portfolio";
+// import Experience from "./Experience";
+// import Referee from "./Referee";
 
 const imageAltText = "purple and blue abstract background";
 
@@ -37,7 +37,7 @@ const detailOrQuote =
   "Driven by a profound dedication to innovation in web development and data science, I excel in blending front-end finesse with robust back-end solutions, ensuring seamless, full-stack integration. My passion extends to leveraging data science proficiency, using insightful analytics and machine learning to transform complex data into actionable, user-centric applications. My goal is to make technology not just accessible, but intuitively intelligent and responsive to user needs.";
 
 const About = () => {
-  const [showDetails, setShowDetails] = useState(false); // State to toggle the visibility of Education and Portfolio
+  // const [showDetails, setShowDetails] = useState(false); // State to toggle the visibility of Education and Portfolio
 
   return (
     <section className="padding" id="about">
@@ -62,14 +62,14 @@ const About = () => {
         ></Button>
       </div> */}
       {/* Conditionally render Education and Portfolio components */}
-      {showDetails && (
+      {/* {showDetails && (
         <>
           <Education />
           <Experience />
           <Portfolio />
           <Referee />
         </>
-      )}
+      )} */}
     </section>
   );
 };
