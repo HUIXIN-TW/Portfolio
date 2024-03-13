@@ -2,22 +2,15 @@ import React from "react";
 import { Disclosure } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/20/solid";
 import educationData from "../data/education.json";
-import image from "../assets/images/school.jpg";
 
 import ScholarshipsAndAwards from "./ScholarshipsAndAwards";
-
-const imageAltText = "School building";
 
 const Education = () => {
   return (
     <section className="padding" id="education">
       <h2 className="text-center">Education</h2>
-      <div className="pictureContainer flex flex-row p-2 lg:pt-12 lg:item-center">
-        <div className="self-center hidden lg:w-2/5 lg:block">
-          <img src={image} className="w-full object-cover slide-in" alt={imageAltText} />
-        </div>
-
-        <div className="w-full verticalContainer lg:w-3/5">
+      <div className="pictureContainer flex flex-row lg:item-center">
+        <div className="w-full verticalContainer">
           {educationData.map((education) => (
             <div className="box" key={education.degree}>
               <Disclosure>
