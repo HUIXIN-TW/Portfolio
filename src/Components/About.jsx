@@ -55,12 +55,12 @@ const About = () => {
         <p className="text-xs md:text-xl p-4 md:p-12">{detailOrQuote}</p>
       </div>
       {/* Button to toggle the visibility of Education and Portfolio */}
-      <div className="flex justify-center items-center">
+      {/* <div className="flex justify-center items-center">
         <Button
           onClick={() => setShowDetails(!showDetails)}
           text={showDetails ? "Read Less" : "Read More"}
         ></Button>
-      </div>
+      </div> */}
       {/* Conditionally render Education and Portfolio components */}
       {showDetails && (
         <>
