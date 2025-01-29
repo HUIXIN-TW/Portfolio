@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import photo from "../../assets/images/photo.jpg";
+import photo from "../../assets/images/avatar.webp";
 import GitHubButton from "./GitHubButton";
 
 const Header = () => {
