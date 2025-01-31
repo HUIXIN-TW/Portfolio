@@ -1,5 +1,32 @@
 [
   {
+    "occupation": "Data Engineer II",
+    "industry": "Technology",
+    "company": "The U Group & Co",
+    "period": "2025.01 - Present",
+    "technologies": ["Python", "SQL", "Bash", "AWS Cloud", "Git", "snowflake"],
+    "description": [
+      "Managed and optimized data pipelines, utilizing Snowflake, dbt, and SQL to streamline data transformation and storage processes.",
+      "Developed and maintained Python-based machine learning pipelines for predictive analytics and data processing tasks.",
+      "Used ETLeap to automate data integration and migration tasks, improving efficiency in data workflows.",
+      "Designed and orchestrated data pipelines with Dagster, ensuring reliability, monitoring, and efficient task execution.",
+      "Leveraged AWS cloud technologies to build scalable, secure data infrastructure."
+    ]
+  },
+  {
+    "occupation": "Data Engineer I",
+    "industry": "Technology",
+    "company": "The U Group & Co",
+    "period": "2024.03 - 2025.01",
+    "technologies": ["Python", "SQL", "Bash", "AWS Cloud", "Git", "snowflake"],
+    "description": [
+      "Delivered high-quality data sets to clients, ensuring timely and accurate reporting",
+      "Troubleshot and resolved complex data flow, storage, and accessibility challenges, improving system performance.",
+      "Managed and optimized data pipelines, utilizing Snowflake, dbt, and SQL to streamline data transformation and storage processes.",
+      "Collaborated with cross-functional teams to ensure data integrity, efficiency, and alignment with client needs."
+    ]
+  },
+  {
     "occupation": "Casual Teaching Assistant",
     "industry": "Education",
     "company": "University of Western Australia",
