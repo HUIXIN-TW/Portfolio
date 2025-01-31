@@ -1,13 +1,13 @@
 import React from "react";
 
-import image from "../assets/images/motion-background.jpg";
+// import image from "../assets/images/motion-background.jpg";
 // import Button from "./common/Button";
 // import Education from "./Education";
 // import Portfolio from "./Portfolio";
 // import Experience from "./Experience";
 // import Referee from "./Referee";
 
-const imageAltText = "purple and blue abstract background";
+// const imageAltText = "purple and blue abstract background";
 
 /**
  * Sort description that expands on your title on the Home component.
