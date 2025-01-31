@@ -19,8 +19,8 @@ const Referee = () => {
           refereeName="Zhi Zhang"
           refereeType="Academic and Professional"
           currentPosition="Lecturer at UWA"
-          relationship="Initially my supervisor in 2023, Zhi has been a mentor to me both academically and professionally. Currently, I assist in his lab, reinforcing our collaborative efforts."
-          periodWorking="Since Feb 2024"
+          relationship="Initially my supervisor in 2023, Zhi has been a mentor to me both academically and professionally. After graduation, I assisted in his lab, reinforcing our collaborative efforts."
+          periodWorking="Feb 2023 - Mar 2024"
         />
 
         <RefereeCard

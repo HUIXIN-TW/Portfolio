@@ -14,7 +14,7 @@ import "./styles/main.css";
 
 const siteProps = {
   name: "Huixin Yang",
-  title: "Software Developer & CPA Australia",
+  title: "Software Developer & Data Engineer & CPA Australia",
   email: "huixin.yang.tw@gmail.com",
   gitHub: "HUIXIN-TW",
   instagram: "",

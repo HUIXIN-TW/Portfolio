@@ -12,7 +12,7 @@ const TerminalContainer = styled.div`
   justify-content: center;
   background-color: #333;
   color: #8ec07c;
-  font-family: "Courier New", Courier, monospace; // Monospaced font
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", sans-serif;
   padding: 20px;
 `;
 

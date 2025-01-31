@@ -41,7 +41,23 @@ const About = () => {
 
   return (
     <section className="padding" id="about">
-      <img className="background" src={image} alt={imageAltText} />
+      {/* <img className="background" src={image} alt={imageAltText} /> */}
+      <div className="bg-blue-50 text-blue-700 p-4 ml-20 mr-20 mt-10 rounded shadow-lg">
+        <p className="text-lg text-center mb-2">🌟 Announcing: Live What to Eat App 🌟</p>
+        <p className="text-md md:text-base text-gray-700">
+          Hey foodies! Got the munchies? I am thrilled to unveil the
+          <a
+            href="https://what-to-eat-huixin-tw.vercel.app/"
+            className="text-blue-500 hover:text-blue-600 underline"
+          >
+            {" "}
+            What to Eat app{" "}
+          </a>
+          — your new go-to for discovering and sharing mouth-watering lunch ideas. Whether you are
+          seeking inspiration or eager to share your culinary adventures, this app is your perfect
+          companion. Dive in now for a taste of something new and exciting. Bon appétit!
+        </p>
+      </div>
       <div className="bg-white w-full p-2 m-auto my-12 text-center sm:p-8 sm:w-3/4">
         <h2>About Myself</h2>
         <p className="text-xs md:text-xl">{description}</p>

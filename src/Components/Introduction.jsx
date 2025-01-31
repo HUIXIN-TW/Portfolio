@@ -1,16 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 import arrowSvg from "../assets/images/down-arrow.svg";
-import image from "../assets/images/desk-and-chair.jpg";
+import image from "../assets/images/motion-background.jpg";
 
-const imageAltText =
-  "A desk with a chair and a computer monitor. The monitor displays a code editor with a React project open.";
+const imageAltText = "";
 
 const Introduction = ({ name, title }) => {
   return (
     <section id="introduction" className="min-h-screen relative">
       <img className="absolute w-full h-full object-cover" src={image} alt={imageAltText} />
-      <div className="absolute top-30 left-1 w-80 md: top-20 md:left-12">
+      <div className="absolute top-1/2 left-1 w-160 md:left-12 transform -translate-y-1/2">
         <h1>{name}</h1>
         <h2>{title}</h2>
       </div>

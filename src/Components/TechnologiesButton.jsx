@@ -13,7 +13,7 @@ const StyledButton = styled.button`
   color: #39739d;
   cursor: pointer;
   display: inline-block;
-  font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", sans-serif;
   font-size: 10px;
   font-weight: 400;
   line-height: 1.15385;
