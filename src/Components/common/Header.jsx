@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import photo from "../../assets/images/avatar.webp";
 import GitHubButton from "./GitHubButton";
+import ResumeButton from "./ResumeButton";
 
 const Header = () => {
   const [toggleDropdown, setToggleDropdown] = useState(false);
@@ -14,14 +15,7 @@ const Header = () => {
           <Link to="/" onClick={toggleDropdown} className="hover:text-blue-600">
             <img src={photo} alt="Logo" className="w-10 h-10 rounded-full" />
           </Link>
-          <a
-            href="https://github.com/HUIXIN-TW"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-blue-600"
-          >
-            <span>HUIXIN-TW</span>
-          </a>
+          <GitHubButton name="HUIXIN_TW" />
         </div>
         <div className="flex flex-wrap justify-center items-center flex-1 gap-4 md:gap-8">
           <Link to="/about" className="hover:text-blue-600">
@@ -101,7 +95,8 @@ const Header = () => {
             >
               Referee
             </Link>
-            <GitHubButton />
+            <GitHubButton name="HUIXIN-TW" />
+            <ResumeButton name="Resume" />
           </div>
         )}
       </div>
