@@ -113,7 +113,7 @@ const Footer = (props) => {
           </a>
         )}
       </div>
-      <p className="small" style={{ marginTop: 0, color: "white" }}>
+      <p className="text-xs" style={{ marginTop: 0, color: "black" }}>
         Created by {name}
       </p>
     </div>

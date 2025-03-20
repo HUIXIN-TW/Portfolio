@@ -16,7 +16,7 @@ const Portfolio = () => {
   return (
     <section className="padding" id="portfolio">
       <h2 className="text-center">Work & Project Gallery</h2>
-      <div className="flex justify-center text-xs lg:mt-5 lg:mr-5 lg:ml-5 lg:mb-0 p-3">
+      <div className="p-3 justify-center text-xs hidden md:flex lg:mt-5 lg:mr-5 lg:ml-5 lg:mb-0">
         <TechnologiesButton onTechnologyClick={handleTechnologyClick} />
       </div>
 

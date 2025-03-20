@@ -5,12 +5,11 @@ import { uniqueTechnologies } from "./UniqueTechnologies";
 const sortedTechnologies = [...uniqueTechnologies].sort();
 
 const StyledButton = styled.button`
-  background-color: #e1ecf4;
+  background-color: #f0f1f2;
   border-radius: 3px;
   border: 0px solid #7aa7c7;
   box-shadow: rgba(255, 255, 255, 0.7) 0 1px 0 0 inset;
   box-sizing: border-box;
-  color: #39739d;
   cursor: pointer;
   display: inline-block;
   font-family: -apple-system, BlinkMacSystemFont, "Roboto", sans-serif;

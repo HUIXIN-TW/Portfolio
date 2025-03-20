@@ -14,7 +14,7 @@ import "./styles/main.css";
 
 const siteProps = {
   name: "Huixin Yang",
-  title: "Software Developer & Data Engineer & CPA Australia",
+  title: "Software Engineer & CPA Australia",
   email: "huixin.yang.tw@gmail.com",
   gitHub: "HUIXIN-TW",
   instagram: "",
@@ -24,7 +24,7 @@ const siteProps = {
   youTube: "",
 };
 
-const primaryColor = "#808080";
+const primaryColor = "#e5e7eb";
 const secondaryColor = "#D2F1E4";
 
 const App = () => {

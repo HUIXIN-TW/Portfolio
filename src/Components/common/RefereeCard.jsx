@@ -25,7 +25,7 @@ const RefereeCard = ({
   periodWorking,
 }) => {
   return (
-    <div className="bg-white shadow-md rounded-lg p-6 mb-4">
+    <div className="bg-white shadow-md rounded-lg p-6 mb-4 ml-5 mr-5">
       <RefereeHeader>
         <RefereeTitle>
           {refereeName}, {currentPosition}

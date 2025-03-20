@@ -19,7 +19,7 @@ const ExperiencePeriod = styled.span`
 
 const ExperienceCard = ({ occupation, technologies, company, description, period }) => {
   return (
-    <div className="bg-white shadow-md rounded-lg p-6 mb-4">
+    <div className="bg-white shadow-md rounded-lg p-6 mb-4 ml-5 mr-5">
       <ExperienceHeader>
         <ExperienceTitle>
           {occupation}, {company}
