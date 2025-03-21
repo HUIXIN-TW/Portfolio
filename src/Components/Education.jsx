@@ -9,7 +9,7 @@ const Education = () => {
   return (
     <section className="padding" id="education">
       <h2 className="text-center">Education</h2>
-      <div className="pictureContainer flex flex-row lg:item-center">
+      <div className="flex flex-row lg:item-center">
         <div className="w-full verticalContainer">
           {educationData.map((education) => (
             <div className="box" key={education.degree}>

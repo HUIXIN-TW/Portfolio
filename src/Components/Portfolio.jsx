@@ -20,7 +20,7 @@ const Portfolio = () => {
         <TechnologiesButton onTechnologyClick={handleTechnologyClick} />
       </div>
 
-      <div className="pictureContainer flex flex-row p-2 lg:pt-12 lg:item-center">
+      <div className="flex flex-row p-2 lg:pt-12 lg:item-center">
         {/* Render MajorProject Experience */}
         {majorprojectData && majorprojectData.length > 0 && (
           <div className="horizonalContainer w-full">

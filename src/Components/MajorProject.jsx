@@ -39,7 +39,7 @@ const getImageUrl = (imgId) => {
 
 const MajorProject = ({ data }) => {
   return (
-    <div className="horizonalContainerBox">
+    <div className="horizonalContainerBox bg-white">
       <a href={data.url} target="_blank" rel="noopener noreferrer">
         <h3 style={{ flexBasis: "40px" }}>
           {data.project} - {data.company}

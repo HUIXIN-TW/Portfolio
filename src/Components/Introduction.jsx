@@ -23,16 +23,16 @@ const Introduction = ({ name, title }) => {
           Live What to Eat App. Hey foodies! Got the munchies idea?
           <a
             href="https://what-to-eat-huixin-tw.vercel.app/"
-            className="text-blue-400 hover:text-blue-600 underline"
+            className="text-blue-800 hover:text-blue-600 underline"
             target="_blank" // Open link in a new tab
             rel="noopener noreferrer" // Security for opening links in a new tab
           >
-            {"  "}
+            {" "}
             🌟 What to Eat app 🌟
           </a>
         </p>
       </div>
-      <div className="scroll-down-arrow absolute inset-0 flex items-end justify-center pb-12">
+      <div className="scroll-down-arrow absolute inset-0 flex items-end justify-center pb-12 pointer-events-none">
         <img src={arrowSvg} className="h-12 w-12" alt="" />
       </div>
     </section>
