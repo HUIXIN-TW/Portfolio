@@ -30,7 +30,7 @@ const StyledButton = styled.button`
 
   &:hover,
   &:focus {
-    background-color: #b3d3ea;
+    background-color: #f1f1f9;
     color: #2c5777;
   }
 
