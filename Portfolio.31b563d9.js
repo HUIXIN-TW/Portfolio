@@ -36186,7 +36186,7 @@ var _introduction = require("./Introduction");
 var _introductionDefault = parcelHelpers.interopDefault(_introduction);
 var _about = require("./About");
 var _aboutDefault = parcelHelpers.interopDefault(_about);
-const Home = ({ name = 'HUIXIN', title })=>{
+const Home = ({ name, title })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
         id: "home",
         children: [
@@ -36240,7 +36240,7 @@ var _downArrowSvgDefault = parcelHelpers.interopDefault(_downArrowSvg);
 var _motionBackgroundJpg = require("../assets/images/motion-background.jpg");
 var _motionBackgroundJpgDefault = parcelHelpers.interopDefault(_motionBackgroundJpg);
 const imageAltText = "";
-const Introduction = ({ name = "HUIXIN", title })=>{
+const Introduction = ({ name, title })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
         id: "introduction",
         className: "min-h-screen relative",
