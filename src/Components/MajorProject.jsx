@@ -7,7 +7,7 @@ import hackathonDataScienceSlides from "../assets/images/hackathon-data-science-
 import graphql from "../assets/images/graphql.png";
 import cluster from "../assets/images/cluster.png";
 import OLAP from "../assets/images/OLAP.gif";
-import brewchat from "../assets/images/brewchat.jpeg";
+import brewchat from "../assets/images/brewchat.gif";
 import ESP32 from "../assets/images/ESP32.gif";
 import YouTubeVideo from "./common/YouTubeVideo";
 import ImgDisplay from "./common/ImgDisplay";
