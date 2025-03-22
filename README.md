@@ -1,7 +1,6 @@
 ## 🔗 Demo
 
-- GitHub Pages [click](https://huixin-tw.github.io/Portfolio/)
-- Vercel: [click](https://portfolio-huixin-tw.vercel.app)
+- Portfolio [click](https://huixinyang.com)
 
 ## 🎮 Tech Stack
 
