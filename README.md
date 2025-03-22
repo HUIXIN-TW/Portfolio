@@ -25,6 +25,7 @@
 
 - **Environment:** Staging (Preview or Development)
 - **Workflow:**
+
   - The project uses Parcel to build static assets into the `dist` folder.
   - To deploy the staging version, simply run:
 
