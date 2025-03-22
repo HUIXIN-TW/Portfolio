@@ -1,7 +1,6 @@
 ## 🔗 Demo
 
 - [Live Portfolio](https://huixinyang.com)
-- [Vercel Deployment](https://portfolio-huixintws-projects.vercel.app/)
 - [GitHub Pages Deployment](https://huixintws.github.io/portfolio/)
 
 ## 🎮 Tech Stack
@@ -12,7 +11,7 @@
 - JavaScript
 - React
 - Node.js
-- Deploying to a production environment: AWS Amplify & Vercel
+- Deploying to a production environment: AWS Amplify
 
 ## Deployment Instructions
 
