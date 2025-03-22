@@ -1,6 +1,8 @@
 ## 🔗 Demo
 
-- Portfolio [click](https://huixinyang.com)
+- [Live Portfolio](https://huixinyang.com)
+- [Vercel Deployment](https://portfolio-huixintws-projects.vercel.app/)
+- [GitHub Pages Deployment](https://huixintws.github.io/portfolio/)
 
 ## 🎮 Tech Stack
 
@@ -10,7 +12,26 @@
 - JavaScript
 - React
 - Node.js
-- Deploying to a production environment: Vercel
+- Deploying to a production environment: AWS Amplify & Vercel
+
+## Deployment Instructions
+
+### Production: AWS Amplify
+
+- **Environment:** Production
+- **Workflow:**
+  - When your changes are merged to the `main` branch, AWS Amplify automatically builds and deploys your site.
+
+### Staging / Testing Preview: GitHub Pages
+
+- **Environment:** Staging (Preview or Development)
+- **Workflow:**
+  - The project uses Parcel to build static assets into the `dist` folder.
+  - To deploy the staging version, simply run:
+
+  ```bash
+  npm run deploy
+  ```
 
 ## 🗃️ JavaScript Portfolio
 
