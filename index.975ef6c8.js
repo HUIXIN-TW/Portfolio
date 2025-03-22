@@ -27084,7 +27084,7 @@ var _experienceDefault = parcelHelpers.interopDefault(_experience);
 var _mainCss = require("./styles/main.css");
 const siteProps = {
     name: "Huixin Yang",
-    title: "Software Developer & CPA Australia",
+    title: "Software Engineer & CPA Australia",
     email: "huixin.yang.tw@gmail.com",
     gitHub: "HUIXIN-TW",
     instagram: "",
@@ -27093,7 +27093,7 @@ const siteProps = {
     twitter: "",
     youTube: ""
 };
-const primaryColor = "#808080";
+const primaryColor = "#e5e7eb";
 const secondaryColor = "#D2F1E4";
 const App = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.BrowserRouter), {
@@ -33767,8 +33767,8 @@ var _youtubeSvgDefault = parcelHelpers.interopDefault(_youtubeSvg);
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            gap: "2rem",
-            padding: "1rem 0 1rem",
+            gap: "0.5rem",
+            padding: "0.5rem 0 0.5rem",
             backgroundColor: primaryColor,
             width: "100vw"
         },
@@ -33929,10 +33929,10 @@ var _youtubeSvgDefault = parcelHelpers.interopDefault(_youtubeSvg);
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                className: "small",
+                className: "text-xs",
                 style: {
                     marginTop: 0,
-                    color: "white"
+                    color: "black"
                 },
                 children: [
                     "Created by ",
@@ -34907,10 +34907,12 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactRouterDom = require("react-router-dom");
-var _photoJpg = require("../../assets/images/photo.jpg");
-var _photoJpgDefault = parcelHelpers.interopDefault(_photoJpg);
+var _avatarWebp = require("../../assets/images/avatar.webp");
+var _avatarWebpDefault = parcelHelpers.interopDefault(_avatarWebp);
 var _gitHubButton = require("./GitHubButton");
 var _gitHubButtonDefault = parcelHelpers.interopDefault(_gitHubButton);
+var _resumeButton = require("./ResumeButton");
+var _resumeButtonDefault = parcelHelpers.interopDefault(_resumeButton);
 var _s = $RefreshSig$();
 const Header = ()=>{
     _s();
@@ -34928,40 +34930,30 @@ const Header = ()=>{
                                 onClick: toggleDropdown,
                                 className: "hover:text-blue-600",
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                    src: (0, _photoJpgDefault.default),
+                                    src: (0, _avatarWebpDefault.default),
                                     alt: "Logo",
                                     className: "w-10 h-10 rounded-full"
                                 }, void 0, false, {
                                     fileName: "src/Components/common/Header.jsx",
-                                    lineNumber: 15,
+                                    lineNumber: 16,
                                     columnNumber: 13
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/Components/common/Header.jsx",
-                                lineNumber: 14,
+                                lineNumber: 15,
                                 columnNumber: 11
                             }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                href: "https://github.com/HUIXIN-TW",
-                                target: "_blank",
-                                rel: "noopener noreferrer",
-                                className: "hover:text-blue-600",
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                    children: "HUIXIN-TW"
-                                }, void 0, false, {
-                                    fileName: "src/Components/common/Header.jsx",
-                                    lineNumber: 23,
-                                    columnNumber: 13
-                                }, undefined)
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _gitHubButtonDefault.default), {
+                                name: "HUIXIN-TW"
                             }, void 0, false, {
                                 fileName: "src/Components/common/Header.jsx",
-                                lineNumber: 17,
+                                lineNumber: 18,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/Components/common/Header.jsx",
-                        lineNumber: 13,
+                        lineNumber: 14,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34973,7 +34965,7 @@ const Header = ()=>{
                                 children: "About"
                             }, void 0, false, {
                                 fileName: "src/Components/common/Header.jsx",
-                                lineNumber: 27,
+                                lineNumber: 21,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -34982,7 +34974,7 @@ const Header = ()=>{
                                 children: "Education"
                             }, void 0, false, {
                                 fileName: "src/Components/common/Header.jsx",
-                                lineNumber: 30,
+                                lineNumber: 24,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -34991,7 +34983,7 @@ const Header = ()=>{
                                 children: "Experience"
                             }, void 0, false, {
                                 fileName: "src/Components/common/Header.jsx",
-                                lineNumber: 33,
+                                lineNumber: 27,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -35000,7 +34992,7 @@ const Header = ()=>{
                                 children: "Portfolio"
                             }, void 0, false, {
                                 fileName: "src/Components/common/Header.jsx",
-                                lineNumber: 36,
+                                lineNumber: 30,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -35009,19 +35001,19 @@ const Header = ()=>{
                                 children: "Referee"
                             }, void 0, false, {
                                 fileName: "src/Components/common/Header.jsx",
-                                lineNumber: 39,
+                                lineNumber: 33,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/Components/common/Header.jsx",
-                        lineNumber: 26,
+                        lineNumber: 20,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/Components/common/Header.jsx",
-                lineNumber: 12,
+                lineNumber: 13,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35046,17 +35038,17 @@ const Header = ()=>{
                             outline: "none"
                         },
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                            src: (0, _photoJpgDefault.default),
+                            src: (0, _avatarWebpDefault.default),
                             alt: "profile",
                             className: "h-10 w-10 rounded-full"
                         }, void 0, false, {
                             fileName: "src/Components/common/Header.jsx",
-                            lineNumber: 64,
+                            lineNumber: 58,
                             columnNumber: 11
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/Components/common/Header.jsx",
-                        lineNumber: 49,
+                        lineNumber: 43,
                         columnNumber: 9
                     }, undefined),
                     toggleDropdown && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35069,7 +35061,7 @@ const Header = ()=>{
                                 children: "About"
                             }, void 0, false, {
                                 fileName: "src/Components/common/Header.jsx",
-                                lineNumber: 69,
+                                lineNumber: 63,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -35079,7 +35071,7 @@ const Header = ()=>{
                                 children: "Education"
                             }, void 0, false, {
                                 fileName: "src/Components/common/Header.jsx",
-                                lineNumber: 76,
+                                lineNumber: 70,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -35089,7 +35081,7 @@ const Header = ()=>{
                                 children: "Experience"
                             }, void 0, false, {
                                 fileName: "src/Components/common/Header.jsx",
-                                lineNumber: 83,
+                                lineNumber: 77,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -35099,7 +35091,7 @@ const Header = ()=>{
                                 children: "Portfolio"
                             }, void 0, false, {
                                 fileName: "src/Components/common/Header.jsx",
-                                lineNumber: 90,
+                                lineNumber: 84,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -35109,30 +35101,39 @@ const Header = ()=>{
                                 children: "Referee"
                             }, void 0, false, {
                                 fileName: "src/Components/common/Header.jsx",
-                                lineNumber: 97,
+                                lineNumber: 91,
                                 columnNumber: 13
                             }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _gitHubButtonDefault.default), {}, void 0, false, {
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _gitHubButtonDefault.default), {
+                                name: "HUIXIN-TW"
+                            }, void 0, false, {
                                 fileName: "src/Components/common/Header.jsx",
-                                lineNumber: 104,
+                                lineNumber: 98,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resumeButtonDefault.default), {
+                                name: "Resume"
+                            }, void 0, false, {
+                                fileName: "src/Components/common/Header.jsx",
+                                lineNumber: 99,
                                 columnNumber: 13
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/Components/common/Header.jsx",
-                        lineNumber: 68,
+                        lineNumber: 62,
                         columnNumber: 11
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/Components/common/Header.jsx",
-                lineNumber: 48,
+                lineNumber: 42,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/Components/common/Header.jsx",
-        lineNumber: 10,
+        lineNumber: 11,
         columnNumber: 5
     }, undefined);
 };
@@ -35147,8 +35148,8 @@ $RefreshReg$(_c, "Header");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../../assets/images/photo.jpg":"11rba","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./GitHubButton":"jLUME"}],"11rba":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "photo.f4681990.jpg" + "?" + Date.now();
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../../assets/images/avatar.webp":"eygTv","./GitHubButton":"jLUME","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./ResumeButton":"5askK"}],"eygTv":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "avatar.1d60af7c.webp" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"lgJ39"}],"jLUME":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$7fbe = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
@@ -35167,7 +35168,7 @@ var _githubMarkSvgDefault = parcelHelpers.interopDefault(_githubMarkSvg);
 var _githubMarkWhiteSvg = require("../../assets/images/socials/github-mark-white.svg");
 var _githubMarkWhiteSvgDefault = parcelHelpers.interopDefault(_githubMarkWhiteSvg);
 var _s = $RefreshSig$();
-const GitHubButton = ()=>{
+const GitHubButton = ({ name  })=>{
     _s();
     const [isHovered, setIsHovered] = (0, _react.useState)(false);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35194,7 +35195,7 @@ const GitHubButton = ()=>{
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                     className: "ml-2",
-                    children: "GitHub"
+                    children: name
                 }, void 0, false, {
                     fileName: "src/Components/common/GitHubButton.jsx",
                     lineNumber: 19,
@@ -35223,11 +35224,90 @@ $RefreshReg$(_c, "GitHubButton");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../assets/images/socials/github-mark.svg":"guGch","../../assets/images/socials/github-mark-white.svg":"4igVF"}],"guGch":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../../assets/images/socials/github-mark.svg":"guGch","../../assets/images/socials/github-mark-white.svg":"4igVF","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"guGch":[function(require,module,exports) {
 module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "github-mark.7b7d24c1.svg" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"lgJ39"}],"4igVF":[function(require,module,exports) {
 module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "github-mark-white.3e23b898.svg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"5askK":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$f0ad = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$f0ad.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _resumeSvg = require("../../assets/images/resume.svg");
+var _resumeSvgDefault = parcelHelpers.interopDefault(_resumeSvg);
+var _resumeWhiteSvg = require("../../assets/images/resume-white.svg");
+var _resumeWhiteSvgDefault = parcelHelpers.interopDefault(_resumeWhiteSvg);
+var _s = $RefreshSig$();
+const ResumeButton = ({ name  })=>{
+    _s();
+    const [isHovered, setIsHovered] = (0, _react.useState)(false);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+            href: "https://huixin-tw.github.io/Resume/",
+            className: "black_btn" // Use hover state to toggle class names
+            ,
+            onMouseEnter: ()=>setIsHovered(true),
+            onMouseLeave: ()=>setIsHovered(false),
+            target: "_blank" // Open link in a new tab
+            ,
+            rel: "noopener noreferrer" // Security for opening links in a new tab
+            ,
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                    src: isHovered ? (0, _resumeSvgDefault.default) : (0, _resumeWhiteSvgDefault.default),
+                    alt: "Resume Logo",
+                    width: 20,
+                    height: 20
+                }, void 0, false, {
+                    fileName: "src/Components/common/ResumeButton.jsx",
+                    lineNumber: 18,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                    className: "ml-2",
+                    children: name
+                }, void 0, false, {
+                    fileName: "src/Components/common/ResumeButton.jsx",
+                    lineNumber: 19,
+                    columnNumber: 9
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/Components/common/ResumeButton.jsx",
+            lineNumber: 10,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/Components/common/ResumeButton.jsx",
+        lineNumber: 9,
+        columnNumber: 5
+    }, undefined);
+};
+_s(ResumeButton, "FPQn8a98tPjpohC7NUYORQR8GJE=");
+_c = ResumeButton;
+exports.default = ResumeButton;
+var _c;
+$RefreshReg$(_c, "ResumeButton");
+
+  $parcel$ReactRefreshHelpers$f0ad.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../../assets/images/resume.svg":"f38At","../../assets/images/resume-white.svg":"i8Lzp","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"f38At":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "resume.e28004f8.svg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"i8Lzp":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "resume-white.4c208614.svg" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"lgJ39"}],"kouZu":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$17a8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
@@ -35241,14 +35321,13 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-var _motionBackgroundJpg = require("../assets/images/motion-background.jpg");
-var _motionBackgroundJpgDefault = parcelHelpers.interopDefault(_motionBackgroundJpg);
+// import image from "../assets/images/motion-background.jpg";
 // import Button from "./common/Button";
 // import Education from "./Education";
 // import Portfolio from "./Portfolio";
 // import Experience from "./Experience";
 // import Referee from "./Referee";
-const imageAltText = "purple and blue abstract background";
+// const imageAltText = "purple and blue abstract background";
 /**
  * Sort description that expands on your title on the Home component.
  */ const description = "As a dedicated software developer with a fervent interest in data science, I specialize in crafting elegant, user-friendly interfaces that seamlessly integrate sophisticated backend functionalities. My passion lies in harnessing the synergy between aesthetic design and powerful data-driven solutions to deliver interactive, intuitive, and impactful user experiences.";
@@ -35256,11 +35335,12 @@ const imageAltText = "purple and blue abstract background";
  * List of some of skills or technologies you work on, are learning,
  * passionate about, or enjoy,
  */ const skillsList = [
-    "Agile Methodologies & Management",
+    "Agile Methodologies",
     "UI/UX Design & Prototyping",
     "Full Stack Web Development",
-    "Data Warehousing & ETL Processes",
-    "Data Analysis & Visualization",
+    "Data Warehousing",
+    "ETL Processes & Automation",
+    "Data Engineer & Pipeline",
     "Machine Learning & Data Mining", 
 ];
 /**
@@ -35273,79 +35353,68 @@ const About = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
         className: "padding",
         id: "about",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                className: "background",
-                src: (0, _motionBackgroundJpgDefault.default),
-                alt: imageAltText
-            }, void 0, false, {
-                fileName: "src/Components/About.jsx",
-                lineNumber: 44,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "bg-white w-full p-2 m-auto my-12 text-center sm:p-8 sm:w-3/4",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                        children: "About Myself"
-                    }, void 0, false, {
-                        fileName: "src/Components/About.jsx",
-                        lineNumber: 46,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        className: "text-xs md:text-xl",
-                        children: description
-                    }, void 0, false, {
-                        fileName: "src/Components/About.jsx",
-                        lineNumber: 47,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
-                        fileName: "src/Components/About.jsx",
-                        lineNumber: 48,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-                        className: "text-left text-sm grid grid-cols-1 md:grid-cols-2 sm:text-lg gap-3 m-8",
-                        children: skillsList.map((skill)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                children: [
-                                    "・",
-                                    skill
-                                ]
-                            }, skill, true, {
-                                fileName: "src/Components/About.jsx",
-                                lineNumber: 51,
-                                columnNumber: 13
-                            }, undefined))
-                    }, void 0, false, {
-                        fileName: "src/Components/About.jsx",
-                        lineNumber: 49,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
-                        fileName: "src/Components/About.jsx",
-                        lineNumber: 54,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        className: "text-xs md:text-xl p-4 md:p-12",
-                        children: detailOrQuote
-                    }, void 0, false, {
-                        fileName: "src/Components/About.jsx",
-                        lineNumber: 55,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/Components/About.jsx",
-                lineNumber: 45,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "bg-white w-full p-2 m-auto my-12 text-center sm:p-8 sm:w-3/4",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                    children: "About Myself"
+                }, void 0, false, {
+                    fileName: "src/Components/About.jsx",
+                    lineNumber: 47,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                    className: "text-left text-wrap text-s md:text-xl p-4 md:p-12",
+                    children: description
+                }, void 0, false, {
+                    fileName: "src/Components/About.jsx",
+                    lineNumber: 48,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
+                    fileName: "src/Components/About.jsx",
+                    lineNumber: 49,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                    className: "text-left text-s grid grid-cols-1 md:grid-cols-2 sm:text-lg gap-3 m-8",
+                    children: skillsList.map((skill)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: [
+                                "・",
+                                skill
+                            ]
+                        }, skill, true, {
+                            fileName: "src/Components/About.jsx",
+                            lineNumber: 52,
+                            columnNumber: 13
+                        }, undefined))
+                }, void 0, false, {
+                    fileName: "src/Components/About.jsx",
+                    lineNumber: 50,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
+                    fileName: "src/Components/About.jsx",
+                    lineNumber: 55,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                    className: "text-left text-wrap text-s md:text-xl p-4 md:p-12",
+                    children: detailOrQuote
+                }, void 0, false, {
+                    fileName: "src/Components/About.jsx",
+                    lineNumber: 56,
+                    columnNumber: 9
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/Components/About.jsx",
+            lineNumber: 46,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
         fileName: "src/Components/About.jsx",
-        lineNumber: 43,
+        lineNumber: 44,
         columnNumber: 5
     }, undefined);
 };
@@ -35359,10 +35428,7 @@ $RefreshReg$(_c, "About");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../assets/images/motion-background.jpg":"cEABq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"cEABq":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "motion-background.fb7c14ea.jpg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"jIEVO":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jIEVO":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$0d4d = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -35428,9 +35494,9 @@ var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _downArrowSvg = require("../assets/images/down-arrow.svg");
 var _downArrowSvgDefault = parcelHelpers.interopDefault(_downArrowSvg);
-var _deskAndChairJpg = require("../assets/images/desk-and-chair.jpg");
-var _deskAndChairJpgDefault = parcelHelpers.interopDefault(_deskAndChairJpg);
-const imageAltText = "A desk with a chair and a computer monitor. The monitor displays a code editor with a React project open.";
+var _motionBackgroundJpg = require("../assets/images/motion-background.jpg");
+var _motionBackgroundJpgDefault = parcelHelpers.interopDefault(_motionBackgroundJpg);
+const imageAltText = "";
 const Introduction = ({ name , title  })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
         id: "introduction",
@@ -35438,56 +35504,104 @@ const Introduction = ({ name , title  })=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                 className: "absolute w-full h-full object-cover",
-                src: (0, _deskAndChairJpgDefault.default),
+                src: (0, _motionBackgroundJpgDefault.default),
                 alt: imageAltText
             }, void 0, false, {
                 fileName: "src/Components/Introduction.jsx",
-                lineNumber: 12,
+                lineNumber: 11,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "absolute top-30 left-1 w-80 md: top-20 md:left-12",
+                className: "absolute top-1/2 left-1 w-160 m-5 md:left-12 transform -translate-y-1/2",
                 children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                        children: name
-                    }, void 0, false, {
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "https://huixin-tw.github.io/Resume/",
+                        target: "_blank" // Open link in a new tab
+                        ,
+                        rel: "noopener noreferrer" // Security for opening links in a new tab
+                        ,
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                                className: "text-8xl font-normal leading-tight m-0",
+                                children: name
+                            }, void 0, false, {
+                                fileName: "src/Components/Introduction.jsx",
+                                lineNumber: 18,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                                className: "text-3xl font-normal m-0 pt-4",
+                                children: title
+                            }, void 0, false, {
+                                fileName: "src/Components/Introduction.jsx",
+                                lineNumber: 19,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                children: "Click for Resume"
+                            }, void 0, false, {
+                                fileName: "src/Components/Introduction.jsx",
+                                lineNumber: 20,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
                         fileName: "src/Components/Introduction.jsx",
-                        lineNumber: 14,
+                        lineNumber: 13,
                         columnNumber: 9
                     }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                        children: title
-                    }, void 0, false, {
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "text-lg mt-10",
+                        children: [
+                            "Live What to Eat App. Hey foodies! Got the munchies idea?",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                href: "https://what-to-eat-huixin-tw.vercel.app/",
+                                className: "text-blue-800 hover:text-blue-600 underline",
+                                target: "_blank" // Open link in a new tab
+                                ,
+                                rel: "noopener noreferrer" // Security for opening links in a new tab
+                                ,
+                                children: [
+                                    " ",
+                                    "\uD83C\uDF1F What to Eat app \uD83C\uDF1F"
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/Components/Introduction.jsx",
+                                lineNumber: 24,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
                         fileName: "src/Components/Introduction.jsx",
-                        lineNumber: 15,
+                        lineNumber: 22,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/Components/Introduction.jsx",
-                lineNumber: 13,
+                lineNumber: 12,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "scroll-down-arrow absolute bottom-12 left-1/2 transform -translate-x-1/2",
+                className: "scroll-down-arrow absolute inset-0 flex items-end justify-center pb-12 pointer-events-none",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                     src: (0, _downArrowSvgDefault.default),
                     className: "h-12 w-12",
                     alt: ""
                 }, void 0, false, {
                     fileName: "src/Components/Introduction.jsx",
-                    lineNumber: 18,
+                    lineNumber: 36,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/Components/Introduction.jsx",
-                lineNumber: 17,
+                lineNumber: 35,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/Components/Introduction.jsx",
-        lineNumber: 11,
+        lineNumber: 10,
         columnNumber: 5
     }, undefined);
 };
@@ -35509,11 +35623,11 @@ $RefreshReg$(_c, "Introduction");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","../assets/images/down-arrow.svg":"4KEfH","../assets/images/desk-and-chair.jpg":"7LdEr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4KEfH":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","../assets/images/down-arrow.svg":"4KEfH","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../assets/images/motion-background.jpg":"cEABq"}],"4KEfH":[function(require,module,exports) {
 module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "down-arrow.ed59e2cd.svg" + "?" + Date.now();
 
-},{"./helpers/bundle-url":"lgJ39"}],"7LdEr":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "desk-and-chair.0b5a4278.jpg" + "?" + Date.now();
+},{"./helpers/bundle-url":"lgJ39"}],"cEABq":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "motion-background.fb7c14ea.jpg" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"lgJ39"}],"6QZcy":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$8bef = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
@@ -35547,7 +35661,7 @@ const Education = ()=>{
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "pictureContainer flex flex-row lg:item-center",
+                className: "flex flex-row lg:item-center",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     className: "w-full verticalContainer",
                     children: (0, _educationJsonDefault.default).map((education)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -52997,79 +53111,38 @@ const Portfolio = ()=>{
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "bg-blue-50 text-blue-700 p-4 ml-20 mr-20 mt-10 rounded shadow-lg",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        className: "text-lg text-center mb-2",
-                        children: "\uD83C\uDF1F Announcing: Live What to Eat App \uD83C\uDF1F"
-                    }, void 0, false, {
-                        fileName: "src/Components/Portfolio.jsx",
-                        lineNumber: 20,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        className: "text-md md:text-base text-gray-700",
-                        children: [
-                            "Hey foodies! Got the munchies? I am thrilled to unveil the",
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                href: "https://what-to-eat-huixin-tw.vercel.app/",
-                                className: "text-blue-500 hover:text-blue-600 underline",
-                                children: [
-                                    " ",
-                                    "What to Eat app",
-                                    " "
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/Components/Portfolio.jsx",
-                                lineNumber: 23,
-                                columnNumber: 11
-                            }, undefined),
-                            "— your new go-to for discovering and sharing mouth-watering lunch ideas. Whether you are seeking inspiration or eager to share your culinary adventures, this app is your perfect companion. Dive in now for a taste of something new and exciting. Bon app\xe9tit!"
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/Components/Portfolio.jsx",
-                        lineNumber: 21,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
+                className: "p-3 justify-center text-xs hidden md:flex lg:mt-5 lg:mr-5 lg:ml-5 lg:mb-0",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _technologiesButtonDefault.default), {
+                    onTechnologyClick: handleTechnologyClick
+                }, void 0, false, {
+                    fileName: "src/Components/Portfolio.jsx",
+                    lineNumber: 20,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
                 fileName: "src/Components/Portfolio.jsx",
                 lineNumber: 19,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "flex justify-center text-xs lg:mt-5 lg:mr-5 lg:ml-5 lg:mb-0 p-3",
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _technologiesButtonDefault.default), {
-                    onTechnologyClick: handleTechnologyClick
-                }, void 0, false, {
-                    fileName: "src/Components/Portfolio.jsx",
-                    lineNumber: 36,
-                    columnNumber: 9
-                }, undefined)
-            }, void 0, false, {
-                fileName: "src/Components/Portfolio.jsx",
-                lineNumber: 35,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "pictureContainer flex flex-row p-2 lg:pt-12 lg:item-center",
+                className: "flex flex-row p-2 lg:pt-12 lg:item-center",
                 children: majorprojectData && majorprojectData.length > 0 && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     className: "horizonalContainer w-full",
                     children: majorprojectData.filter((project)=>selectedTechnology ? project.technologies.includes(selectedTechnology) : true).map((item, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _majorProjectDefault.default), {
                             data: item
                         }, index, false, {
                             fileName: "src/Components/Portfolio.jsx",
-                            lineNumber: 48,
+                            lineNumber: 32,
                             columnNumber: 17
                         }, undefined))
                 }, void 0, false, {
                     fileName: "src/Components/Portfolio.jsx",
-                    lineNumber: 42,
+                    lineNumber: 26,
                     columnNumber: 11
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/Components/Portfolio.jsx",
-                lineNumber: 39,
+                lineNumber: 23,
                 columnNumber: 7
             }, undefined)
         ]
@@ -53091,7 +53164,7 @@ $RefreshReg$(_c, "Portfolio");
   window.$RefreshSig$ = prevRefreshSig;
 }
 },{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../data/majorproject.json":"jyi7G","./MajorProject":"btBuc","./TechnologiesButton":"WNVNu","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jyi7G":[function(require,module,exports) {
-module.exports = JSON.parse('[{"majorproject":[{"project":"WhatToEat app","company":"Independent Project","url":"https://github.com/HUIXIN-TW/what-to-eat","youtubeVideoId":"xVK-zeScOwU","occupation":"Full Stack developer","period":"2024.02 - 2024.03","technologies":["About Software Development","Next.js","JavaScript","React","Tailwind CSS","MongoDB","Vercel","Git"],"description":["Spearheaded the development of WhatToEat, an intuitive web application aimed at simplifying daily lunch decision-making through a user-friendly interface.","- Implemented secure user authentication with optional NextAuth.js integration, offering both traditional and Google login methods to accommodate a broad user base.","- Designed and executed a dynamic search functionality, enabling users to discover lunch options based on preferences or tags.","- Fostered community engagement by allowing users to share and explore lunch ideas within the platform.","- Successfully deployed the app using Vercel, ensuring high availability and real-time updates.","- Managed source control with Git, facilitating collaborative development and version control."]},{"project":"Repair Labs project","company":"CFC","imgId":"repairlab","url":"https://github.com/codersforcauses/repair-labs","occupation":"Full Stack developer","period":"2023.06 - Current","technologies":["About Software Development","Next.js","TypeScript","React","Tailwind CSS","Vercel","Prisma","Postgres","Docker","Git"],"description":["- Actively contributing as a member of the Repair Labs Project.","- Technology Stack: Next.js, TypeScript, React, Tailwind CSS, and Vercel; Prisma as ORM, Postgres, and Docker for local DB.","- Designed mobile and desktop layouts using Figma, ensuring a user-friendly interface.","- Developed robust APIs to seamlessly connect frontend pages with the backend database, facilitating efficient data retrieval and updates.","- Achievements: Successfully created and merged three pull requests via GitHub into the main branch within one month."]},{"project":"Notion Sync with Google Calendar - Command Line Interface","company":"Independent Project","url":"https://github.com/HUIXIN-TW/NotionSyncGCal","youtubeVideoId":"9IbUIj8mNl8","occupation":"Full Stack Developer","period":"2021 - Current","technologies":["About Software Development","Python","Notion API","Google Calendar API","Docker","Git"],"description":["- Developed a command-line interface (CLI) for syncing data between Notion and Google Calendar.","- Implemented the ability to update events from Google Calendar to Notion and vice versa, allowing for seamless management of events between both platforms.","- Offered features such as timezone and date range customization, default length setting for new Google Calendar events, and the option to delete Google Calendar events when marked as \'Done\' in Notion.","- Provided support for syncing across multiple calendars and the flexibility to name Notion columns as desired for the code to work.","- Implemented credential and OAuth consent screen integration with Google Calendar scope for secure authentication and access to Google Calendar data."]},{"project":"Pets Of Older Persons project","company":"CFC","imgId":"poops","url":"https://github.com/codersforcauses/poops","occupation":"Full Stack developer","period":"2022.11 - 2023.02","label":"","technologies":["About Software Development","Next.js","TypeScript","React","Tailwind CSS","Firebase","Vercel","Git"],"description":["- Contributed as a team member in the Pets of Older Persons Project.","- Technology Stack: Next.js, TypeScript, React, Tailwind CSS, Firebase, and Vercel.","- Utilized Figma to craft intuitive mobile and desktop layouts.","- Collaborated effectively with other student volunteers, utilizing Git version control."]},{"project":"Smart Air Quality Monitoring System with ESP32","company":"University Project (HD)","imgId":"ESP32","url":"https://github.com/HUIXIN-TW/CITS5506IOT","occupation":"Hardware and Arudino Developer with ESP32","period":"2023.08 - 2023.11","technologies":["About Data Analysis","ESP32","Arduino","C++","Python","Flask","HTML","CSS","JavaScript","Firebase","Git"],"description":["- The system aims to ensure worker safety, regulatory compliance, and environmental impact assessment.","- Specific sensors tailored to monitor key pollutants are described. ","- With the ESP32 T-Beam microcontroller used for data collection and transmission through WIFI, data collected securely has been stored in Firebase, and can be accessed through a Flask-based web application for real-time monitoring and data analysis.","- This solution offers an approach to monitoring and ensuring air quality in mining environments, with a primary focus on worker safety, regulatory compliance, and environmental responsibility."]},{"project":"LLM Triple Generator project","company":"UWA NLP-TLP Team","url":"https://www.youtube.com/watch?v=wVBYiyJ0u00","youtubeVideoId":"-58HvQYFij8","occupation":"Team Leader","period":"2023.08 - 2023.11","technologies":["About Software Development","About Data Analysis","Python","Python networkx","Python requests","React","ChatGPT API","ChatGPT Fine Tuning Model","Prompt Engineering","Docker","Git","Git Actions","MongoDB"],"description":["- Led a team of 5 members in the development of a triple generator for the LLM project.","- The project aimed to transform unstructured text data into a structured knowledge graph using natural language processing techniques.","- Technologies such as Python, networkx, and requests were employed for data processing and retrieval.","- The React framework was used to create a user-friendly interface for interacting with the triple generator.","- Leveraged the ChatGPT API and ChatGPT Fine Tuning Model for advanced natural language understanding and generation.","- Implemented prompt engineering and feature engineering to enhance the accuracy and efficiency of triple generation.","- Docker was utilized for containerization, ensuring easy deployment and scalability of the application.","- Version control and collaborative development were managed using Git, facilitating efficient teamwork and code management."]},{"project":"Data Science Hackathon: Prototype Solution Presentation ","company":"SLB","occupation":"Data Science","imgId":"hackathondatascienceslides","period":"2023.09 - 2023.10","rank":"3rd","technologies":["About Data Analysis","Dataiku","LSTM","Data Collection","Model Development","ETL Process","Feature Engineering","Python","Jupyter Notebook"],"description":["- Developed a mining exploration lithology identification model using LSTM.","- Addressed challenges in accurately identifying lithology in mining exploration data.","- Collaborated with a multidisciplinary team on data collection, model development, and ETL frameworks and processes.","- Presented the LSTM solution, showcasing its effectiveness in improving identification accuracy."]},{"project":"Data Science Hackathon: Creative Poster at the WA Mining Conference","company":"SLB","occupation":"Data Science","imgId":"hackathondatascienceposter","period":"2023.10","rank":"4th","technologies":["About Data Analysis","Dataiku"],"description":["- Designed an engaging and informative poster showcasing the applications and benefits of the developed model.","- Presented findings at the conference, highlighting the impact of accurate lithology identification in mining exploration.","- Received recognition for the innovative approach to solving exploration challenges."]},{"project":"BrewChat Application","company":"University Project (Rank: 3th, HD)","occupation":"Full Stack Developer","imgId":"brewchat","period":"2023.04 - 2023.05","technologies":["About Software Development","Python","Flask","SQLAlchemy","HTML","CSS","JavaScript","Unit Testing","Selenium","Eliza Chatbot","Git"],"description":["BrewChat is built using HTML, CSS, Flask, AJAX, jQuery, and the SQLAlchemy database framework, with the chat function powered by Socket.IO.","- Client-side (Frontend): The client-side of BrewChat encompasses the user interface developed using HTML, CSS, and JavaScript. It provides an intuitive and visually appealing experience to users, allowing them to interact with the application. AJAX and jQuery are utilized for asynchronous requests and dynamic UI updates, enhancing the user experience.","- Server-side (Backend): The server-side of BrewChat is built using the Flask web framework, which handles the server-side logic and serves the application\'s routes. Flask enables the processing of client requests, performs business logic, and communicates with databases and other services. Flask-SocketIO facilitates real-time bidirectional communication between clients and the server for chat functionality.","- Chatbot (Backend): BrewChat incorporates the Eliza Chatbot as part of the backend functionality. The Eliza Chatbot, implemented using the Natural Language Toolkit (NLTK), enables chat-based conversations with users. It processes user input, performs natural language processing, generates appropriate responses, and communicates with the client-side interface.","- Database: BrewChat utilizes the SQLAlchemy database framework to interact with the SQLite database. The SQLite database stores user information, conversation pairings, and relevant chat logs. SQLAlchemy provides an Object-Relational Mapping (ORM) tool, simplifying database operations within the application.","The BrewChat application includes a suite of unit tests to ensure the correctness and functionality of the various components. These tests are designed to cover different aspects of the application and help identify any potential issues or bugs. The application also includes a suite of Selenium tests to verify the end-to-end functionality and user experience. These tests simulate user interactions with the application in a browser environment."]},{"project":"Graph Database & Graph Data Science","company":"University Project (Rank: 4th, HD)","imgId":"graphql","url":"https://github.com/HUIXIN-TW/CITS5504","occupation":"Data Science","period":"2023.04 - 2023.05","technologies":["About Data Analysis","Neo4j","Cypher","R"],"description":[]},{"project":"Data Warehousing & Association Rule Mining","company":"University Project (Rank: 2nd, HD)","imgId":"OLAP","url":"https://github.com/HUIXIN-TW/CITS5504","occupation":"Data Science","period":"2023.03 - 2023.04","technologies":["About Data Analysis","R","MySQL","SSMS","Visual Studio","SSAS","PowerBI"],"description":["Dataset:","- For the purposes of this data warehousing project, we leveraged the Crime in Atlanta dataset spanning the years 2009 to 2017.","- This dataset encompasses a wealth of information regarding reported crime incidents, including details such as the neighborhood planning unit (NPU) and the assigned police beat for patrolling.","- Our analysis began with a subset of 225,000 records. Additionally, we supplemented this dataset by manually collecting zone and beat data from maps, enriching our dataset with a comprehensive concept hierarchy illustrating the relationships between zones and beats.","Purpose:","- The primary objective of our analysis is to unearth significant patterns and features within the data, thereby facilitating informed decision-making processes.","- Emphasis is placed on employing visualizations as a powerful tool for insight generation and addressing pertinent business queries.","- To this end, we harnessed the capabilities of Power BI, enabling the creation of dynamic dashboards and reports. The subsequent sections present our findings and visualizations tailored to address specific business queries."]},{"project":"Data analysis and Machine learning models","company":"University Project (Rank: 1th, HD)","imgId":"cluster","url":"https://github.com/HUIXIN-TW/RProject","occupation":"Data Science","period":"2022.04 - 2022.05","technologies":["About Data Analysis","R","RStuido","Git"],"description":[]},{"project":"QuickRecord Financial Application","company":"Independent Project","url":"https://github.com/HUIXIN-TW/QuickRecord","youtubeVideoId":"LcTDTIHJFMQ","occupation":"Full Stack Developer","period":"2021.12 - 2022.06","technologies":["About Software Development","Python Flask","JavaScript","SQL","CSS","HTML","Git"],"description":["- Developed a comprehensive financial recording application, QuickRecord, designed to assist users in managing their financial statements and collaborating with friends or family members.","- Technology Stack: Python Flask for backend services, JavaScript for dynamic client-side functionalities, and SQL for database management; styled with CSS and structured with HTML.","- Implemented core features such as viewing balance and income statements, creating custom accounts, recording transactions, and sending friend requests for collaborative financial management.","- Engineered a system allowing users to share specific account information with friends, displaying all changes on a \'Shared Account Message\' page, and ensuring data privacy where necessary.","- Introduced innovative functionalities like historical transaction records, specific date balance checks, and a graphical representation of all account balances using bar charts for enhanced data visualization and user experience.","- Coordinated with a colleague, Remykung, for project development, leveraging collaborative tools and version control systems for efficient project management."]}]}]');
+module.exports = JSON.parse('[{"majorproject":[{"project":"WhatToEat app","company":"Independent Project","url":"https://github.com/HUIXIN-TW/what-to-eat","youtubeVideoId":"xVK-zeScOwU","occupation":"Full Stack developer","period":"2024.02 - Current","technologies":["About Software Development","Next.js","JavaScript","React","Tailwind CSS","MongoDB","Vercel","Git"],"description":["Spearheaded the development of WhatToEat, an intuitive web application aimed at simplifying daily lunch decision-making through a user-friendly interface.","- Implemented secure user authentication with optional NextAuth.js integration, offering both traditional and Google login methods to accommodate a broad user base.","- Designed and executed a dynamic search functionality, enabling users to discover lunch options based on preferences or tags.","- Fostered community engagement by allowing users to share and explore lunch ideas within the platform.","- Successfully deployed the app using Vercel, ensuring high availability and real-time updates.","- Managed source control with Git, facilitating collaborative development and version control."]},{"project":"Repair Labs project","company":"CFC","imgId":"repairlab","url":"https://github.com/codersforcauses/repair-labs","occupation":"Full Stack developer","period":"2023.06 - 2024.02","technologies":["About Software Development","Next.js","TypeScript","React","Tailwind CSS","Vercel","Prisma","Postgres","Docker","Git"],"description":["- Actively contributing as a member of the Repair Labs Project.","- Technology Stack: Next.js, TypeScript, React, Tailwind CSS, and Vercel; Prisma as ORM, Postgres, and Docker for local DB.","- Designed mobile and desktop layouts using Figma, ensuring a user-friendly interface.","- Developed robust APIs to seamlessly connect frontend pages with the backend database, facilitating efficient data retrieval and updates.","- Achievements: Successfully created and merged three pull requests via GitHub into the main branch within one month."]},{"project":"Notion Sync with Google Calendar - Command Line Interface","company":"Independent Project","url":"https://github.com/HUIXIN-TW/NotionSyncGCal","youtubeVideoId":"9IbUIj8mNl8","occupation":"Full Stack Developer","period":"2021 - Current","technologies":["About Software Development","Python","Notion API","Google Calendar API","Docker","Git"],"description":["- Developed a command-line interface (CLI) for syncing data between Notion and Google Calendar.","- Implemented the ability to update events from Google Calendar to Notion and vice versa, allowing for seamless management of events between both platforms.","- Offered features such as timezone and date range customization, default length setting for new Google Calendar events, and the option to delete Google Calendar events when marked as \'Done\' in Notion.","- Provided support for syncing across multiple calendars and the flexibility to name Notion columns as desired for the code to work.","- Implemented credential and OAuth consent screen integration with Google Calendar scope for secure authentication and access to Google Calendar data."]},{"project":"Pets Of Older Persons project","company":"CFC","imgId":"poops","url":"https://github.com/codersforcauses/poops","occupation":"Full Stack developer","period":"2022.11 - 2023.02","label":"","technologies":["About Software Development","Next.js","TypeScript","React","Tailwind CSS","Firebase","Vercel","Git"],"description":["- Contributed as a team member in the Pets of Older Persons Project.","- Technology Stack: Next.js, TypeScript, React, Tailwind CSS, Firebase, and Vercel.","- Utilized Figma to craft intuitive mobile and desktop layouts.","- Collaborated effectively with other student volunteers, utilizing Git version control."]},{"project":"Smart Air Quality Monitoring System with ESP32","company":"University Project (HD)","imgId":"ESP32","url":"https://github.com/HUIXIN-TW/CITS5506IOT","occupation":"Hardware and Arudino Developer with ESP32","period":"2023.08 - 2023.11","technologies":["About Data Analysis","ESP32","Arduino","C++","Python","Flask","HTML","CSS","JavaScript","Firebase","Git"],"description":["- The system aims to ensure worker safety, regulatory compliance, and environmental impact assessment.","- Specific sensors tailored to monitor key pollutants are described. ","- With the ESP32 T-Beam microcontroller used for data collection and transmission through WIFI, data collected securely has been stored in Firebase, and can be accessed through a Flask-based web application for real-time monitoring and data analysis.","- This solution offers an approach to monitoring and ensuring air quality in mining environments, with a primary focus on worker safety, regulatory compliance, and environmental responsibility."]},{"project":"LLM Triple Generator project","company":"UWA NLP-TLP Team","url":"https://www.youtube.com/watch?v=wVBYiyJ0u00","youtubeVideoId":"-58HvQYFij8","occupation":"Team Leader","period":"2023.08 - 2023.11","technologies":["About Software Development","About Data Analysis","Python","Python networkx","Python requests","React","ChatGPT API","ChatGPT Fine Tuning Model","Prompt Engineering","Docker","Git","Git Actions","MongoDB"],"description":["- Led a team of 5 members in the development of a triple generator for the LLM project.","- The project aimed to transform unstructured text data into a structured knowledge graph using natural language processing techniques.","- Technologies such as Python, networkx, and requests were employed for data processing and retrieval.","- The React framework was used to create a user-friendly interface for interacting with the triple generator.","- Leveraged the ChatGPT API and ChatGPT Fine Tuning Model for advanced natural language understanding and generation.","- Implemented prompt engineering and feature engineering to enhance the accuracy and efficiency of triple generation.","- Docker was utilized for containerization, ensuring easy deployment and scalability of the application.","- Version control and collaborative development were managed using Git, facilitating efficient teamwork and code management."]},{"project":"Data Science Hackathon: Prototype Solution Presentation ","company":"SLB","occupation":"Data Science","imgId":"hackathondatascienceslides","period":"2023.09 - 2023.10","rank":"3rd","technologies":["About Data Analysis","Dataiku","LSTM","Data Collection","Model Development","ETL Process","Feature Engineering","Python","Jupyter Notebook"],"description":["- Developed a mining exploration lithology identification model using LSTM.","- Addressed challenges in accurately identifying lithology in mining exploration data.","- Collaborated with a multidisciplinary team on data collection, model development, and ETL frameworks and processes.","- Presented the LSTM solution, showcasing its effectiveness in improving identification accuracy."]},{"project":"Data Science Hackathon: Creative Poster at the WA Mining Conference","company":"SLB","occupation":"Data Science","imgId":"hackathondatascienceposter","period":"2023.10","rank":"4th","technologies":["About Data Analysis","Dataiku"],"description":["- Designed an engaging and informative poster showcasing the applications and benefits of the developed model.","- Presented findings at the conference, highlighting the impact of accurate lithology identification in mining exploration.","- Received recognition for the innovative approach to solving exploration challenges."]},{"project":"BrewChat Application","company":"University Project (Rank: 3th, HD)","occupation":"Full Stack Developer","imgId":"brewchat","period":"2023.04 - 2023.05","technologies":["About Software Development","Python","Flask","SQLAlchemy","HTML","CSS","JavaScript","Unit Testing","Selenium","Eliza Chatbot","Git"],"description":["BrewChat is built using HTML, CSS, Flask, AJAX, jQuery, and the SQLAlchemy database framework, with the chat function powered by Socket.IO.","- Client-side (Frontend): The client-side of BrewChat encompasses the user interface developed using HTML, CSS, and JavaScript. It provides an intuitive and visually appealing experience to users, allowing them to interact with the application. AJAX and jQuery are utilized for asynchronous requests and dynamic UI updates, enhancing the user experience.","- Server-side (Backend): The server-side of BrewChat is built using the Flask web framework, which handles the server-side logic and serves the application\'s routes. Flask enables the processing of client requests, performs business logic, and communicates with databases and other services. Flask-SocketIO facilitates real-time bidirectional communication between clients and the server for chat functionality.","- Chatbot (Backend): BrewChat incorporates the Eliza Chatbot as part of the backend functionality. The Eliza Chatbot, implemented using the Natural Language Toolkit (NLTK), enables chat-based conversations with users. It processes user input, performs natural language processing, generates appropriate responses, and communicates with the client-side interface.","- Database: BrewChat utilizes the SQLAlchemy database framework to interact with the SQLite database. The SQLite database stores user information, conversation pairings, and relevant chat logs. SQLAlchemy provides an Object-Relational Mapping (ORM) tool, simplifying database operations within the application.","The BrewChat application includes a suite of unit tests to ensure the correctness and functionality of the various components. These tests are designed to cover different aspects of the application and help identify any potential issues or bugs. The application also includes a suite of Selenium tests to verify the end-to-end functionality and user experience. These tests simulate user interactions with the application in a browser environment."]},{"project":"Graph Database & Graph Data Science","company":"University Project (Rank: 4th, HD)","imgId":"graphql","url":"https://github.com/HUIXIN-TW/CITS5504","occupation":"Data Science","period":"2023.04 - 2023.05","technologies":["About Data Analysis","Neo4j","Cypher","R"],"description":[]},{"project":"Data Warehousing & Association Rule Mining","company":"University Project (Rank: 2nd, HD)","imgId":"OLAP","url":"https://github.com/HUIXIN-TW/CITS5504","occupation":"Data Science","period":"2023.03 - 2023.04","technologies":["About Data Analysis","R","MySQL","SSMS","Visual Studio","SSAS","PowerBI"],"description":["Dataset:","- For the purposes of this data warehousing project, we leveraged the Crime in Atlanta dataset spanning the years 2009 to 2017.","- This dataset encompasses a wealth of information regarding reported crime incidents, including details such as the neighborhood planning unit (NPU) and the assigned police beat for patrolling.","- Our analysis began with a subset of 225,000 records. Additionally, we supplemented this dataset by manually collecting zone and beat data from maps, enriching our dataset with a comprehensive concept hierarchy illustrating the relationships between zones and beats.","Purpose:","- The primary objective of our analysis is to unearth significant patterns and features within the data, thereby facilitating informed decision-making processes.","- Emphasis is placed on employing visualizations as a powerful tool for insight generation and addressing pertinent business queries.","- To this end, we harnessed the capabilities of Power BI, enabling the creation of dynamic dashboards and reports. The subsequent sections present our findings and visualizations tailored to address specific business queries."]},{"project":"Data analysis and Machine learning models","company":"University Project (Rank: 1th, HD)","imgId":"cluster","url":"https://github.com/HUIXIN-TW/RProject","occupation":"Data Science","period":"2022.04 - 2022.05","technologies":["About Data Analysis","R","RStuido","Git"],"description":[]},{"project":"QuickRecord Financial Application","company":"Independent Project","url":"https://github.com/HUIXIN-TW/QuickRecord","youtubeVideoId":"LcTDTIHJFMQ","occupation":"Full Stack Developer","period":"2021.12 - 2022.06","technologies":["About Software Development","Python Flask","JavaScript","SQL","CSS","HTML","Git"],"description":["- Developed a comprehensive financial recording application, QuickRecord, designed to assist users in managing their financial statements and collaborating with friends or family members.","- Technology Stack: Python Flask for backend services, JavaScript for dynamic client-side functionalities, and SQL for database management; styled with CSS and structured with HTML.","- Implemented core features such as viewing balance and income statements, creating custom accounts, recording transactions, and sending friend requests for collaborative financial management.","- Engineered a system allowing users to share specific account information with friends, displaying all changes on a \'Shared Account Message\' page, and ensuring data privacy where necessary.","- Introduced innovative functionalities like historical transaction records, specific date balance checks, and a graphical representation of all account balances using bar charts for enhanced data visualization and user experience.","- Coordinated with a colleague, Remykung, for project development, leveraging collaborative tools and version control systems for efficient project management."]}]}]');
 
 },{}],"btBuc":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$3b22 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
@@ -53154,7 +53227,7 @@ const getImageUrl = (imgId)=>{
 };
 const MajorProject = ({ data  })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "horizonalContainerBox",
+        className: "horizonalContainerBox bg-white",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
                 href: data.url,
@@ -53473,15 +53546,14 @@ const sortedTechnologies = [
     ...(0, _uniqueTechnologies.uniqueTechnologies)
 ].sort();
 const StyledButton = (0, _styledComponentsDefault.default).button`
-  background-color: #e1ecf4;
+  background-color: #f0f1f2;
   border-radius: 3px;
   border: 0px solid #7aa7c7;
   box-shadow: rgba(255, 255, 255, 0.7) 0 1px 0 0 inset;
   box-sizing: border-box;
-  color: #39739d;
   cursor: pointer;
   display: inline-block;
-  font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", sans-serif;
   font-size: 10px;
   font-weight: 400;
   line-height: 1.15385;
@@ -53499,7 +53571,7 @@ const StyledButton = (0, _styledComponentsDefault.default).button`
 
   &:hover,
   &:focus {
-    background-color: #b3d3ea;
+    background-color: #f1f1f9;
     color: #2c5777;
   }
 
@@ -53522,7 +53594,7 @@ const TechnologiesButton = ({ onTechnologyClick  })=>{
                 children: "#All"
             }, void 0, false, {
                 fileName: "src/Components/TechnologiesButton.jsx",
-                lineNumber: 52,
+                lineNumber: 51,
                 columnNumber: 7
             }, undefined),
             sortedTechnologies.map((technology, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledButton, {
@@ -53533,13 +53605,13 @@ const TechnologiesButton = ({ onTechnologyClick  })=>{
                     ]
                 }, index, true, {
                     fileName: "src/Components/TechnologiesButton.jsx",
-                    lineNumber: 54,
+                    lineNumber: 53,
                     columnNumber: 9
                 }, undefined))
         ]
     }, void 0, true, {
         fileName: "src/Components/TechnologiesButton.jsx",
-        lineNumber: 51,
+        lineNumber: 50,
         columnNumber: 5
     }, undefined);
 };
@@ -53599,7 +53671,7 @@ const Referee = ()=>{
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                    className: "text-base text-gray-700 italic mt-4 mb-8",
+                    className: "text-base text-gray-700 italic mt-4 mb-8 ml-3 mr-3",
                     children: [
                         "Should you require further details or wish to establish contact, please do not hesitate to reach out to me directly at",
                         " ",
@@ -53623,8 +53695,8 @@ const Referee = ()=>{
                     refereeName: "Zhi Zhang",
                     refereeType: "Academic and Professional",
                     currentPosition: "Lecturer at UWA",
-                    relationship: "Initially my supervisor in 2023, Zhi has been a mentor to me both academically and professionally. Currently, I assist in his lab, reinforcing our collaborative efforts.",
-                    periodWorking: "Since Feb 2024"
+                    relationship: "Initially my supervisor in 2023, Zhi has been a mentor to me both academically and professionally. After graduation, I assisted in his lab, reinforcing our collaborative efforts.",
+                    periodWorking: "Feb 2023 - Mar 2024"
                 }, void 0, false, {
                     fileName: "src/Components/Referee.jsx",
                     lineNumber: 18,
@@ -53717,7 +53789,7 @@ const RefereePeriod = (0, _styledComponentsDefault.default).span`
 _c2 = RefereePeriod;
 const RefereeCard = ({ refereeName , refereeType , currentPosition , relationship , periodWorking ,  })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "bg-white shadow-md rounded-lg p-6 mb-4",
+        className: "bg-white shadow-md rounded-lg p-6 mb-4 ml-5 mr-5",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RefereeHeader, {
                 children: [
@@ -53878,7 +53950,7 @@ const ExperiencePeriod = (0, _styledComponentsDefault.default).span`
 _c2 = ExperiencePeriod;
 const ExperienceCard = ({ occupation , technologies , company , description , period  })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "bg-white shadow-md rounded-lg p-6 mb-4",
+        className: "bg-white shadow-md rounded-lg p-6 mb-4 ml-5 mr-5",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(ExperienceHeader, {
                 children: [
@@ -53961,7 +54033,7 @@ $RefreshReg$(_c3, "ExperienceCard");
   window.$RefreshSig$ = prevRefreshSig;
 }
 },{"react/jsx-dev-runtime":"iTorj","react":"21dqq","styled-components":"1U3k6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"rSCF7":[function(require,module,exports) {
-module.exports = JSON.parse('[{"occupation":"Casual Teaching Assistant","industry":"Education","company":"University of Western Australia","period":"2024.02 - Present","technologies":["Python","HTML","SQL","CSS","Linux","Git"],"description":["CITS5505 - Agile Web Development","CITS1003 - Introduction to Cybersecurity"]},{"occupation":"Full Stack Developer","industry":"Technology","company":"Coder For Causes","period":"2022.07 - Present","technologies":["Figma","Typescript","Javascript","React","Next.js","PostgreSQL","Prisma","Firebase","AWS","Docker","Tailwind CSS","Vercel","Git"],"description":["Developed a web application for a client to manage their business operations."]},{"occupation":"Assistant Manager","industry":"Financial Services","company":"Deloitte","period":"2019.03 - 2020.08","technologies":["US GAAP","IFRS","SOX","COSO framework","Excel","Power BI"],"description":["Possessed sound knowledge of US GAAP, IFRS, and SOX internal control audits.","Performed financial modelling to support and challenge key assumptions, such as DCF models.","Performed risk assessment of material financial statement items under the COSO framework.","Performed valuation analysis of assets, debt, and equity, such as intangible assets impairment and convertible bonds.","Utilized IT skills for data cleaning, manipulation, and mapping.","Led 4 members and managed audit plan for listed companies.","Supervised, coached, and developed junior members of staff within teams, on client premises, and in the office."]},{"occupation":"Staff - Senior Associate","industry":"Financial Services","company":"PwC","period":"2016.09 - 2019.02","technologies":["IFRS9","Financial Analysis","Net Asset Value","Return on Investment","Cash Flow Forecasting"],"description":["Conducted in the Biotechnology Industry’s initial public offering project.","Evaluated investment profiles including local/international, public/private stocks, and bonds under IFRS9.","Evaluated derivative financial instruments.","Recalculated net asset value and return on investment.","Reviewed cash flow forecasts for the prospectus to assess the feasibility of the assumptions.","Assessed financial risk information, including market risk, credit risk, liquidity risk, interest rate risk, and sensitive analysis of each."]},{"occupation":"Intermediate Accounting Instructor","industry":"Education","company":"Tekom Technologies, Inc","period":"2016.03 - 2016.06","technologies":["Intermedia Accounting","Educational Facilitation"],"description":["Provided guidance and delivered effective instruction in Intermediate Accounting, facilitating student understanding and proficiency."]},{"occupation":"Facilitator","industry":"Education","company":"National Chung Cheng University","period":"2015.02 - 2016.06","technologies":["Business Analysis","Accounting","Advanced Accounting","Audit","Statistics"],"description":["Assisted in teaching courses including Business Analysis, Accounting, Advanced Accounting, Audit, and Statistics.","Provided guidance and handouts."]}]');
+module.exports = JSON.parse('[{"occupation":"Data Engineer II","industry":"Technology","company":"The U Group & Co","period":"2025.01 - Present","technologies":["Python","SQL","Bash","AWS Cloud","Git","snowflake"],"description":["Managed and optimized data pipelines, utilizing Snowflake, dbt, and SQL to streamline data transformation and storage processes.","Developed and maintained Python-based machine learning pipelines for predictive analytics and data processing tasks.","Used ETLeap to automate data integration and migration tasks, improving efficiency in data workflows.","Designed and orchestrated data pipelines with Dagster, ensuring reliability, monitoring, and efficient task execution.","Leveraged AWS cloud technologies to build scalable, secure data infrastructure."]},{"occupation":"Data Engineer I","industry":"Technology","company":"The U Group & Co","period":"2024.03 - 2025.01","technologies":["Python","SQL","Bash","AWS Cloud","Git","snowflake"],"description":["Delivered high-quality data sets to clients, ensuring timely and accurate reporting","Troubleshot and resolved complex data flow, storage, and accessibility challenges, improving system performance.","Managed and optimized data pipelines, utilizing Snowflake, dbt, and SQL to streamline data transformation and storage processes.","Collaborated with cross-functional teams to ensure data integrity, efficiency, and alignment with client needs."]},{"occupation":"Casual Teaching Assistant","industry":"Education","company":"University of Western Australia","period":"2024.02 - 2024.03","technologies":["Python","HTML","SQL","CSS","Linux","Git"],"description":["CITS5505 - Agile Web Development","CITS1003 - Introduction to Cybersecurity"]},{"occupation":"Full Stack Developer","industry":"Technology","company":"Coder For Causes","period":"2022.07 - 2024.02","technologies":["Figma","Typescript","Javascript","React","Next.js","PostgreSQL","Prisma","Firebase","AWS","Docker","Tailwind CSS","Vercel","Git"],"description":["Developed a web application for a client to manage their business operations."]},{"occupation":"Assistant Manager","industry":"Financial Services","company":"Deloitte","period":"2019.03 - 2020.08","technologies":["US GAAP","IFRS","SOX","COSO framework","Excel","Power BI"],"description":["Possessed sound knowledge of US GAAP, IFRS, and SOX internal control audits.","Performed financial modelling to support and challenge key assumptions, such as DCF models.","Performed risk assessment of material financial statement items under the COSO framework.","Performed valuation analysis of assets, debt, and equity, such as intangible assets impairment and convertible bonds.","Utilized IT skills for data cleaning, manipulation, and mapping.","Led 4 members and managed audit plan for listed companies.","Supervised, coached, and developed junior members of staff within teams, on client premises, and in the office."]},{"occupation":"Staff - Senior Associate","industry":"Financial Services","company":"PwC","period":"2016.09 - 2019.02","technologies":["IFRS9","Financial Analysis","Net Asset Value","Return on Investment","Cash Flow Forecasting"],"description":["Conducted in the Biotechnology Industry’s initial public offering project.","Evaluated investment profiles including local/international, public/private stocks, and bonds under IFRS9.","Evaluated derivative financial instruments.","Recalculated net asset value and return on investment.","Reviewed cash flow forecasts for the prospectus to assess the feasibility of the assumptions.","Assessed financial risk information, including market risk, credit risk, liquidity risk, interest rate risk, and sensitive analysis of each."]},{"occupation":"Intermediate Accounting Instructor","industry":"Education","company":"Tekom Technologies, Inc","period":"2016.03 - 2016.06","technologies":["Intermedia Accounting","Educational Facilitation"],"description":["Provided guidance and delivered effective instruction in Intermediate Accounting, facilitating student understanding and proficiency."]},{"occupation":"Facilitator","industry":"Education","company":"National Chung Cheng University","period":"2015.02 - 2016.06","technologies":["Business Analysis","Accounting","Advanced Accounting","Audit","Statistics"],"description":["Assisted in teaching courses including Business Analysis, Accounting, Advanced Accounting, Audit, and Statistics.","Provided guidance and handouts."]}]');
 
 },{}],"clPKd":[function() {},{}]},["1xC6H","ShInH","8lqZg"], "8lqZg", "parcelRequire2359")
 
