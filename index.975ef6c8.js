@@ -35148,7 +35148,7 @@ $RefreshReg$(_c, "Header");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../../assets/images/avatar.webp":"eygTv","./GitHubButton":"jLUME","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./ResumeButton":"5askK"}],"eygTv":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../../assets/images/avatar.webp":"eygTv","./GitHubButton":"jLUME","./ResumeButton":"5askK","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"eygTv":[function(require,module,exports) {
 module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "avatar.1d60af7c.webp" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"lgJ39"}],"jLUME":[function(require,module,exports) {
@@ -35623,7 +35623,7 @@ $RefreshReg$(_c, "Introduction");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","../assets/images/down-arrow.svg":"4KEfH","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../assets/images/motion-background.jpg":"cEABq"}],"4KEfH":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","../assets/images/down-arrow.svg":"4KEfH","../assets/images/motion-background.jpg":"cEABq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4KEfH":[function(require,module,exports) {
 module.exports = require("./helpers/bundle-url").getBundleURL("bLxZJ") + "down-arrow.ed59e2cd.svg" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"lgJ39"}],"cEABq":[function(require,module,exports) {
