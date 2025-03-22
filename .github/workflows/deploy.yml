@@ -20,7 +20,7 @@ jobs:
         run: npm ci
 
       - name: Build for GitHub Pages
-        run: npm run build-gh -- --no-minify
+        run: npm run build-gh -- --no-optimize
 
       - name: Deploy to GitHub Pages
         run: npm run deploy
