@@ -2,6 +2,8 @@ name: Deploy to GitHub Pages
 
 on:
   push:
+    branches:
+      - '*'
 
 jobs:
   deploy:
@@ -19,10 +21,21 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Build for GitHub Pages
-        run: npm run build-gh -- --no-optimize
+      # Try using a pre-build step to install lightningcss binary directly
+      - name: Fix LightningCSS installation
+        run: |
+          npm uninstall lightningcss || true
+          npm install lightningcss@latest --no-save
 
+      # Use alternative build command for GitHub Pages
+      - name: Build for GitHub Pages
+        run: |
+          export NODE_OPTIONS=--max_old_space_size=4096
+          PARCEL_WORKERS=1 npm run build-gh
+
+      # Use a dedicated GitHub Pages action instead
       - name: Deploy to GitHub Pages
-        run: npm run deploy
-        env:
-          GH_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.DEPLOY_TOKEN }}
+          publish_dir: ./dist
