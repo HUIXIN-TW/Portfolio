@@ -1,7 +1,6 @@
 ## 🔗 Demo
 
 - [Live Portfolio](https://huixinyang.com)
-- [GitHub Pages Deployment](https://huixintws.github.io/portfolio/)
 
 ## 🎮 Tech Stack
 
