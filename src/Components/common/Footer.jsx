@@ -120,10 +120,6 @@ const Footer = (props) => {
   );
 };
 
-Footer.defaultProps = {
-  name: "",
-};
-
 Footer.propTypes = {
   devDotTo: PropTypes.string,
   email: PropTypes.string,

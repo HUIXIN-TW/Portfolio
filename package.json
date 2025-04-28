@@ -7,7 +7,7 @@
   "scripts": {
     "start": "parcel",
     "build": "parcel build",
-    "build-gh": "parcel build src/index.html --public-url 'https://huixin-tw.github.io/portfolio/'",
+    "build-gh": "parcel build src/index.html --public-url 'https://huixin-tw.github.io/Portfolio/'",
     "predeploy": "npm run build-gh",
     "deploy": "gh-pages -d dist",
     "lint:strict": "eslint . --ext .js,.jsx",

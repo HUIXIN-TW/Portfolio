@@ -39,11 +39,6 @@ const Introduction = ({ name, title }) => {
   );
 };
 
-Introduction.defaultProps = {
-  name: "",
-  title: "",
-};
-
 Introduction.propTypes = {
   name: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,

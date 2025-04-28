@@ -2,6 +2,37 @@
   {
     "majorproject": [
       {
+        "project": "NotionSyncGCal Website",
+        "company": "Independent Project",
+        "url": "https://github.com/HUIXIN-TW/NotionSyncGCalFrontend",
+        "youtubeVideoId": "e36DuQ0zaLk",
+        "occupation": "Full Stack Developer",
+        "period": "2024.04 - Current",
+        "technologies": [
+          "About Software Development",
+          "Next.js",
+          "TypeScript",
+          "React",
+          "Tailwind CSS",
+          "AWS Amplify",
+          "NextAuth.js",
+          "DynamoDB",
+          "AWS Lambda",
+          "API Gateway",
+          "S3",
+          "Git"
+        ],
+        "description": [
+          "- Designed a fully serverless architecture controlled entirely from the frontend, connecting users directly to AWS-powered backend services.",
+          "- Built a Next.js 14+ web application with secure login flows using NextAuth.js, integrating both Google OAuth and Credentials authentication.",
+          "- Developed server actions to register users and perform authenticated API calls from the frontend to AWS Lambda functions for syncing operations.",
+          "- Enabled real-time Notion and Google Calendar synchronization via frontend-triggered serverless workflows.",
+          "- Integrated DynamoDB and S3 for user data and credential storage, ensuring scalable and secure backend infrastructure.",
+          "- Deployed with AWS Amplify for server-side rendering (SSR) and continuous deployment from GitHub.",
+          "- Focused on secure API communication, efficient session management, and a future-proof serverless design."
+        ]
+      },
+      {
         "project": "WhatToEat app",
         "company": "Independent Project",
         "url": "https://github.com/HUIXIN-TW/what-to-eat",

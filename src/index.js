@@ -1,10 +1,12 @@
-/**
- * Entry point of application, where App is rendered within the div with the id of "app"
- */
-
 import React from "react";
-import { render } from "react-dom";
-
+import ReactDOM from "react-dom/client";
 import App from "./App";
 
-render(<App></App>, document.getElementById("app"));
+const rootElement = document.getElementById("root");
+
+if (rootElement) {
+  const root = ReactDOM.createRoot(rootElement);
+  root.render(<App />);
+} else {
+  console.error("No root element found!");
+}
