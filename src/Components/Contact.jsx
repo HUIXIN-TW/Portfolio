@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import image from "../assets/images/under-constructure.jpg";
+
+const image = new URL("../assets/images/under-constructure.jpg", import.meta.url).href;
 
 // Styled components
 const TerminalContainer = styled.div`

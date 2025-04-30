@@ -1,16 +1,23 @@
 import React from "react";
 import { Disclosure } from "@headlessui/react";
-import repairLab from "../assets/images/repair-lab.gif";
-import poops from "../assets/images/poops.png";
-import hackathonDataSciencePoster from "../assets/images/hackathon-data-science-poster.jpg";
-import hackathonDataScienceSlides from "../assets/images/hackathon-data-science-slides.gif";
-import graphql from "../assets/images/graphql.png";
-import cluster from "../assets/images/cluster.png";
-import OLAP from "../assets/images/OLAP.gif";
-import brewchat from "../assets/images/brewchat.gif";
-import ESP32 from "../assets/images/ESP32.gif";
 import YouTubeVideo from "./common/YouTubeVideo";
 import ImgDisplay from "./common/ImgDisplay";
+
+const repairLab = new URL("../assets/images/repair-lab.gif", import.meta.url).href;
+const poops = new URL("../assets/images/poops.png", import.meta.url).href;
+const hackathonDataSciencePoster = new URL(
+  "../assets/images/hackathon-data-science-poster.jpg",
+  import.meta.url
+).href;
+const hackathonDataScienceSlides = new URL(
+  "../assets/images/hackathon-data-science-slides.gif",
+  import.meta.url
+).href;
+const graphql = new URL("../assets/images/graphql.png", import.meta.url).href;
+const cluster = new URL("../assets/images/cluster.png", import.meta.url).href;
+const OLAP = new URL("../assets/images/OLAP.gif", import.meta.url).href;
+const brewchat = new URL("../assets/images/brewchat.gif", import.meta.url).href;
+const ESP32 = new URL("../assets/images/ESP32.gif", import.meta.url).href;
 
 const getImageUrl = (imgId) => {
   switch (imgId) {

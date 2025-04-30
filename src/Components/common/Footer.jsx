@@ -10,14 +10,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import devDotToIcon from "../../assets/images/socials/devdotto.svg";
-import envelopeIcon from "../../assets/images/socials/envelope.svg";
-import gitHubIcon from "../../assets/images/socials/github.svg";
-import instagramIcon from "../../assets/images/socials/instagram.svg";
-import linkedInIcon from "../../assets/images/socials/linkedin.svg";
-import mediumIcon from "../../assets/images/socials/medium.svg";
-import twitterIcon from "../../assets/images/socials/twitter.svg";
-import youTubeIcon from "../../assets/images/socials/youtube.svg";
+const devDotToIcon = new URL("../../assets/images/socials/devdotto.svg", import.meta.url).href;
+const envelopeIcon = new URL("../../assets/images/socials/envelope.svg", import.meta.url).href;
+const gitHubIcon = new URL("../../assets/images/socials/github.svg", import.meta.url).href;
+const instagramIcon = new URL("../../assets/images/socials/instagram.svg", import.meta.url).href;
+const linkedInIcon = new URL("../../assets/images/socials/linkedin.svg", import.meta.url).href;
+const mediumIcon = new URL("../../assets/images/socials/medium.svg", import.meta.url).href;
+const twitterIcon = new URL("../../assets/images/socials/twitter.svg", import.meta.url).href;
+const youTubeIcon = new URL("../../assets/images/socials/youtube.svg", import.meta.url).href;
 
 /**
  * 💡 Learning resources

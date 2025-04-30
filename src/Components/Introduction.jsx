@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import arrowSvg from "../assets/images/down-arrow.svg";
-import image from "../assets/images/motion-background.jpg";
 
 const imageAltText = "";
+const arrowSvg = new URL("../assets/images/down-arrow.svg", import.meta.url).href;
+const image = new URL("../assets/images/motion-background.jpg", import.meta.url).href;
 
 const Introduction = ({ name, title }) => {
   return (

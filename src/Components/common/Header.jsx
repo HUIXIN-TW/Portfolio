@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import photo from "../../assets/images/avatar.webp";
 import GitHubButton from "./GitHubButton";
 import ResumeButton from "./ResumeButton";
+
+const photoUrl = new URL("../../assets/images/avatar.webp", import.meta.url).href;
 
 const Header = () => {
   const [toggleDropdown, setToggleDropdown] = useState(false);
@@ -13,7 +14,7 @@ const Header = () => {
       <div className="sm:flex hidden fixed top-0 z-10 justify-between items-center bg-white bg-opacity-75 p-4 w-full">
         <div className="flex items-center gap-4">
           <Link to="/" onClick={toggleDropdown} className="hover:text-blue-600">
-            <img src={photo} alt="Logo" className="w-10 h-10 rounded-full" />
+            <img src={photoUrl} alt="Logo" className="w-10 h-10 rounded-full" />
           </Link>
           <GitHubButton name="HUIXIN-TW" />
         </div>
@@ -55,7 +56,7 @@ const Header = () => {
           className="cursor-pointer" // Apply styling for visual indication of interactivity
           style={{ outline: "none" }} // Optionally remove the focus outline; consider custom focus styles for accessibility
         >
-          <img src={photo} alt="profile" className="h-10 w-10 rounded-full" />
+          <img src={photoUrl} alt="profile" className="h-10 w-10 rounded-full" />
         </div>
 
         {toggleDropdown && (
