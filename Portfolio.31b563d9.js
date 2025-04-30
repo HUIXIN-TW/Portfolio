@@ -11,6 +11,7 @@
   entry,
   mainEntry,
   parcelRequireName,
+  externals,
   distDir,
   publicUrl,
   devServer
@@ -44,6 +45,9 @@
   function newRequire(name, jumped) {
     if (!cache[name]) {
       if (!modules[name]) {
+        if (externals[name]) {
+          return externals[name];
+        }
         // if we cannot find the module within our internal map or
         // cache jump to the current global require ie. the last bundle
         // that was added to the page.
@@ -126,7 +130,7 @@
 
   // Only insert newRequire.load when it is actually used.
   // The code in this file is linted against ES5, so dynamic import is not allowed.
-  // INSERT_LOAD_HERE
+  function $parcel$resolve(url) {  url = importMap[url] || url;  return import.meta.resolve(distDir + url);}newRequire.resolve = $parcel$resolve;
 
   Object.defineProperty(newRequire, 'root', {
     get: function () {
@@ -156,7 +160,7 @@
       });
     }
   }
-})({"ihYAY":[function(require,module,exports,__globalThis) {
+})({"5j6Kf":[function(require,module,exports,__globalThis) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
@@ -288,7 +292,8 @@ if (!parent || !parent.isParcelRequire) {
         if (typeof WebSocket !== 'undefined') try {
             ws = new WebSocket(protocol + '://' + hostname + (port ? ':' + port : '') + '/');
         } catch (err) {
-            if (err.message) console.error(err.message);
+            // Ignore cloudflare workers error.
+            if (err.message && !err.message.includes('Disallowed operation called within global scope')) console.error(err.message);
         }
     }
     if (ws) {
@@ -35660,13 +35665,12 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactRouterDom = require("react-router-dom");
-var _avatarWebp = require("../../assets/images/avatar.webp");
-var _avatarWebpDefault = parcelHelpers.interopDefault(_avatarWebp);
 var _gitHubButton = require("./GitHubButton");
 var _gitHubButtonDefault = parcelHelpers.interopDefault(_gitHubButton);
 var _resumeButton = require("./ResumeButton");
 var _resumeButtonDefault = parcelHelpers.interopDefault(_resumeButton);
 var _s = $RefreshSig$();
+const photoUrl = new URL(require("22996272af130e12")).href;
 const Header = ()=>{
     _s();
     const [toggleDropdown, setToggleDropdown] = (0, _react.useState)(false);
@@ -35683,30 +35687,30 @@ const Header = ()=>{
                                 onClick: toggleDropdown,
                                 className: "hover:text-blue-600",
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                    src: (0, _avatarWebpDefault.default),
+                                    src: photoUrl,
                                     alt: "Logo",
                                     className: "w-10 h-10 rounded-full"
                                 }, void 0, false, {
                                     fileName: "src/Components/common/Header.jsx",
-                                    lineNumber: 16,
+                                    lineNumber: 17,
                                     columnNumber: 13
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/Components/common/Header.jsx",
-                                lineNumber: 15,
+                                lineNumber: 16,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _gitHubButtonDefault.default), {
                                 name: "HUIXIN-TW"
                             }, void 0, false, {
                                 fileName: "src/Components/common/Header.jsx",
-                                lineNumber: 18,
+                                lineNumber: 19,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/Components/common/Header.jsx",
-                        lineNumber: 14,
+                        lineNumber: 15,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35718,7 +35722,7 @@ const Header = ()=>{
                                 children: "About"
                             }, void 0, false, {
                                 fileName: "src/Components/common/Header.jsx",
-                                lineNumber: 21,
+                                lineNumber: 22,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -35727,7 +35731,7 @@ const Header = ()=>{
                                 children: "Education"
                             }, void 0, false, {
                                 fileName: "src/Components/common/Header.jsx",
-                                lineNumber: 24,
+                                lineNumber: 25,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -35736,7 +35740,7 @@ const Header = ()=>{
                                 children: "Experience"
                             }, void 0, false, {
                                 fileName: "src/Components/common/Header.jsx",
-                                lineNumber: 27,
+                                lineNumber: 28,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -35745,7 +35749,7 @@ const Header = ()=>{
                                 children: "Portfolio"
                             }, void 0, false, {
                                 fileName: "src/Components/common/Header.jsx",
-                                lineNumber: 30,
+                                lineNumber: 31,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -35754,19 +35758,19 @@ const Header = ()=>{
                                 children: "Referee"
                             }, void 0, false, {
                                 fileName: "src/Components/common/Header.jsx",
-                                lineNumber: 33,
+                                lineNumber: 34,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/Components/common/Header.jsx",
-                        lineNumber: 20,
+                        lineNumber: 21,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/Components/common/Header.jsx",
-                lineNumber: 13,
+                lineNumber: 14,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35791,17 +35795,17 @@ const Header = ()=>{
                             outline: "none"
                         },
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                            src: (0, _avatarWebpDefault.default),
+                            src: photoUrl,
                             alt: "profile",
                             className: "h-10 w-10 rounded-full"
                         }, void 0, false, {
                             fileName: "src/Components/common/Header.jsx",
-                            lineNumber: 58,
+                            lineNumber: 59,
                             columnNumber: 11
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/Components/common/Header.jsx",
-                        lineNumber: 43,
+                        lineNumber: 44,
                         columnNumber: 9
                     }, undefined),
                     toggleDropdown && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35814,7 +35818,7 @@ const Header = ()=>{
                                 children: "About"
                             }, void 0, false, {
                                 fileName: "src/Components/common/Header.jsx",
-                                lineNumber: 63,
+                                lineNumber: 64,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -35824,7 +35828,7 @@ const Header = ()=>{
                                 children: "Education"
                             }, void 0, false, {
                                 fileName: "src/Components/common/Header.jsx",
-                                lineNumber: 70,
+                                lineNumber: 71,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -35834,7 +35838,7 @@ const Header = ()=>{
                                 children: "Experience"
                             }, void 0, false, {
                                 fileName: "src/Components/common/Header.jsx",
-                                lineNumber: 77,
+                                lineNumber: 78,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -35844,7 +35848,7 @@ const Header = ()=>{
                                 children: "Portfolio"
                             }, void 0, false, {
                                 fileName: "src/Components/common/Header.jsx",
-                                lineNumber: 84,
+                                lineNumber: 85,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -35854,39 +35858,39 @@ const Header = ()=>{
                                 children: "Referee"
                             }, void 0, false, {
                                 fileName: "src/Components/common/Header.jsx",
-                                lineNumber: 91,
+                                lineNumber: 92,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _gitHubButtonDefault.default), {
                                 name: "HUIXIN-TW"
                             }, void 0, false, {
                                 fileName: "src/Components/common/Header.jsx",
-                                lineNumber: 98,
+                                lineNumber: 99,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resumeButtonDefault.default), {
                                 name: "Resume"
                             }, void 0, false, {
                                 fileName: "src/Components/common/Header.jsx",
-                                lineNumber: 99,
+                                lineNumber: 100,
                                 columnNumber: 13
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/Components/common/Header.jsx",
-                        lineNumber: 62,
+                        lineNumber: 63,
                         columnNumber: 11
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/Components/common/Header.jsx",
-                lineNumber: 42,
+                lineNumber: 43,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/Components/common/Header.jsx",
-        lineNumber: 11,
+        lineNumber: 12,
         columnNumber: 5
     }, undefined);
 };
@@ -35901,7 +35905,7 @@ $RefreshReg$(_c, "Header");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","react-router-dom":"61z4w","../../assets/images/avatar.webp":"9fHwj","./GitHubButton":"fmKzD","./ResumeButton":"ak1iZ","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"9fHwj":[function() {},{}],"fmKzD":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","react-router-dom":"61z4w","./GitHubButton":"fmKzD","./ResumeButton":"ak1iZ","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","22996272af130e12":"50Riz"}],"fmKzD":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$5607 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 $parcel$ReactRefreshHelpers$5607.init();
 var prevRefreshReg = globalThis.$RefreshReg$;
@@ -36049,7 +36053,10 @@ $RefreshReg$(_c, "ResumeButton");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","../../assets/images/resume.svg":"9aANj","../../assets/images/resume-white.svg":"bebQf","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"9aANj":[function() {},{}],"bebQf":[function() {},{}],"Cjjls":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","../../assets/images/resume.svg":"9aANj","../../assets/images/resume-white.svg":"bebQf","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"9aANj":[function() {},{}],"bebQf":[function() {},{}],"50Riz":[function(require,module,exports,__globalThis) {
+module.exports = module.bundle.resolve("avatar.1d1d7fe7.webp") + "?" + Date.now();
+
+},{}],"Cjjls":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$f294 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 $parcel$ReactRefreshHelpers$f294.init();
 var prevRefreshReg = globalThis.$RefreshReg$;
@@ -36362,7 +36369,7 @@ $RefreshReg$(_c, "Introduction");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","prop-types":"GNqOQ","../assets/images/motion-background.jpg":"ebVsA","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","../assets/images/down-arrow.svg":"54Y56"}],"ebVsA":[function() {},{}],"54Y56":[function() {},{}],"c3EAn":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","prop-types":"GNqOQ","../assets/images/down-arrow.svg":"54Y56","../assets/images/motion-background.jpg":"ebVsA","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"54Y56":[function() {},{}],"ebVsA":[function() {},{}],"c3EAn":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$fabb = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 $parcel$ReactRefreshHelpers$fabb.init();
 var prevRefreshReg = globalThis.$RefreshReg$;
@@ -38410,8 +38417,8 @@ var _shallowequalDefault = parcelHelpers.interopDefault(_shallowequal);
 var _stylis = require("stylis");
 var _unitless = require("@emotion/unitless");
 var _unitlessDefault = parcelHelpers.interopDefault(_unitless);
-var f = "data-styled", m = "active", y = "data-styled-version", v = "6.1.16", g = "/*!sc*/\n", S = "undefined" != typeof window && "HTMLElement" in window, w = Boolean("boolean" == typeof SC_DISABLE_SPEEDY ? SC_DISABLE_SPEEDY : true), b = {}, E = /invalid hook call/i, N = new Set, P = function(t, n) {
-    var o = n ? ' with the id of "'.concat(n, '"') : "", s = "The component ".concat(t).concat(o, " has been created dynamically.\n") + "You may see this warning because you've called styled inside another component.\nTo resolve this only create new StyledComponents outside of any render method and function component.", i = console.error;
+var f = "data-styled", m = "active", y = "data-styled-version", v = "6.1.17", g = "/*!sc*/\n", S = "undefined" != typeof window && "HTMLElement" in window, w = Boolean("boolean" == typeof SC_DISABLE_SPEEDY ? SC_DISABLE_SPEEDY : true), b = {}, E = /invalid hook call/i, N = new Set, P = function(t, n) {
+    var o = n ? ' with the id of "'.concat(n, '"') : "", s = "The component ".concat(t).concat(o, " has been created dynamically.\n") + "You may see this warning because you've called styled inside another component.\nTo resolve this only create new StyledComponents outside of any render method and function component.\nSee https://styled-components.com/docs/basics#define-styled-components-outside-of-the-render-method for more info.\n", i = console.error;
     try {
         var a = !0;
         console.error = function(t) {
@@ -40745,7 +40752,7 @@ $RefreshReg$(_c, "Portfolio");
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
 },{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","../data/majorproject.json":"4tMsM","./MajorProject":"u6XVY","./TechnologiesButton":"dsGL1","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"4tMsM":[function(require,module,exports,__globalThis) {
-module.exports = JSON.parse("[{\"majorproject\":[{\"project\":\"WhatToEat app\",\"company\":\"Independent Project\",\"url\":\"https://github.com/HUIXIN-TW/what-to-eat\",\"youtubeVideoId\":\"xVK-zeScOwU\",\"occupation\":\"Full Stack developer\",\"period\":\"2024.02 - Current\",\"technologies\":[\"About Software Development\",\"Next.js\",\"JavaScript\",\"React\",\"Tailwind CSS\",\"MongoDB\",\"Vercel\",\"Git\"],\"description\":[\"Spearheaded the development of WhatToEat, an intuitive web application aimed at simplifying daily lunch decision-making through a user-friendly interface.\",\"- Implemented secure user authentication with optional NextAuth.js integration, offering both traditional and Google login methods to accommodate a broad user base.\",\"- Designed and executed a dynamic search functionality, enabling users to discover lunch options based on preferences or tags.\",\"- Fostered community engagement by allowing users to share and explore lunch ideas within the platform.\",\"- Successfully deployed the app using Vercel, ensuring high availability and real-time updates.\",\"- Managed source control with Git, facilitating collaborative development and version control.\"]},{\"project\":\"Repair Labs project\",\"company\":\"CFC\",\"imgId\":\"repairlab\",\"url\":\"https://github.com/codersforcauses/repair-labs\",\"occupation\":\"Full Stack developer\",\"period\":\"2023.06 - 2024.02\",\"technologies\":[\"About Software Development\",\"Next.js\",\"TypeScript\",\"React\",\"Tailwind CSS\",\"Vercel\",\"Prisma\",\"Postgres\",\"Docker\",\"Git\"],\"description\":[\"- Actively contributing as a member of the Repair Labs Project.\",\"- Technology Stack: Next.js, TypeScript, React, Tailwind CSS, and Vercel; Prisma as ORM, Postgres, and Docker for local DB.\",\"- Designed mobile and desktop layouts using Figma, ensuring a user-friendly interface.\",\"- Developed robust APIs to seamlessly connect frontend pages with the backend database, facilitating efficient data retrieval and updates.\",\"- Achievements: Successfully created and merged three pull requests via GitHub into the main branch within one month.\"]},{\"project\":\"Notion Sync with Google Calendar - Command Line Interface\",\"company\":\"Independent Project\",\"url\":\"https://github.com/HUIXIN-TW/NotionSyncGCal\",\"youtubeVideoId\":\"9IbUIj8mNl8\",\"occupation\":\"Full Stack Developer\",\"period\":\"2021 - Current\",\"technologies\":[\"About Software Development\",\"Python\",\"Notion API\",\"Google Calendar API\",\"Docker\",\"Git\"],\"description\":[\"- Developed a command-line interface (CLI) for syncing data between Notion and Google Calendar.\",\"- Implemented the ability to update events from Google Calendar to Notion and vice versa, allowing for seamless management of events between both platforms.\",\"- Offered features such as timezone and date range customization, default length setting for new Google Calendar events, and the option to delete Google Calendar events when marked as 'Done' in Notion.\",\"- Provided support for syncing across multiple calendars and the flexibility to name Notion columns as desired for the code to work.\",\"- Implemented credential and OAuth consent screen integration with Google Calendar scope for secure authentication and access to Google Calendar data.\"]},{\"project\":\"Pets Of Older Persons project\",\"company\":\"CFC\",\"imgId\":\"poops\",\"url\":\"https://github.com/codersforcauses/poops\",\"occupation\":\"Full Stack developer\",\"period\":\"2022.11 - 2023.02\",\"label\":\"\",\"technologies\":[\"About Software Development\",\"Next.js\",\"TypeScript\",\"React\",\"Tailwind CSS\",\"Firebase\",\"Vercel\",\"Git\"],\"description\":[\"- Contributed as a team member in the Pets of Older Persons Project.\",\"- Technology Stack: Next.js, TypeScript, React, Tailwind CSS, Firebase, and Vercel.\",\"- Utilized Figma to craft intuitive mobile and desktop layouts.\",\"- Collaborated effectively with other student volunteers, utilizing Git version control.\"]},{\"project\":\"Smart Air Quality Monitoring System with ESP32\",\"company\":\"University Project (HD)\",\"imgId\":\"ESP32\",\"url\":\"https://github.com/HUIXIN-TW/CITS5506IOT\",\"occupation\":\"Hardware and Arudino Developer with ESP32\",\"period\":\"2023.08 - 2023.11\",\"technologies\":[\"About Data Analysis\",\"ESP32\",\"Arduino\",\"C++\",\"Python\",\"Flask\",\"HTML\",\"CSS\",\"JavaScript\",\"Firebase\",\"Git\"],\"description\":[\"- The system aims to ensure worker safety, regulatory compliance, and environmental impact assessment.\",\"- Specific sensors tailored to monitor key pollutants are described. \",\"- With the ESP32 T-Beam microcontroller used for data collection and transmission through WIFI, data collected securely has been stored in Firebase, and can be accessed through a Flask-based web application for real-time monitoring and data analysis.\",\"- This solution offers an approach to monitoring and ensuring air quality in mining environments, with a primary focus on worker safety, regulatory compliance, and environmental responsibility.\"]},{\"project\":\"LLM Triple Generator project\",\"company\":\"UWA NLP-TLP Team\",\"url\":\"https://www.youtube.com/watch?v=wVBYiyJ0u00\",\"youtubeVideoId\":\"-58HvQYFij8\",\"occupation\":\"Team Leader\",\"period\":\"2023.08 - 2023.11\",\"technologies\":[\"About Software Development\",\"About Data Analysis\",\"Python\",\"Python networkx\",\"Python requests\",\"React\",\"ChatGPT API\",\"ChatGPT Fine Tuning Model\",\"Prompt Engineering\",\"Docker\",\"Git\",\"Git Actions\",\"MongoDB\"],\"description\":[\"- Led a team of 5 members in the development of a triple generator for the LLM project.\",\"- The project aimed to transform unstructured text data into a structured knowledge graph using natural language processing techniques.\",\"- Technologies such as Python, networkx, and requests were employed for data processing and retrieval.\",\"- The React framework was used to create a user-friendly interface for interacting with the triple generator.\",\"- Leveraged the ChatGPT API and ChatGPT Fine Tuning Model for advanced natural language understanding and generation.\",\"- Implemented prompt engineering and feature engineering to enhance the accuracy and efficiency of triple generation.\",\"- Docker was utilized for containerization, ensuring easy deployment and scalability of the application.\",\"- Version control and collaborative development were managed using Git, facilitating efficient teamwork and code management.\"]},{\"project\":\"Data Science Hackathon: Prototype Solution Presentation \",\"company\":\"SLB\",\"occupation\":\"Data Science\",\"imgId\":\"hackathondatascienceslides\",\"period\":\"2023.09 - 2023.10\",\"rank\":\"3rd\",\"technologies\":[\"About Data Analysis\",\"Dataiku\",\"LSTM\",\"Data Collection\",\"Model Development\",\"ETL Process\",\"Feature Engineering\",\"Python\",\"Jupyter Notebook\"],\"description\":[\"- Developed a mining exploration lithology identification model using LSTM.\",\"- Addressed challenges in accurately identifying lithology in mining exploration data.\",\"- Collaborated with a multidisciplinary team on data collection, model development, and ETL frameworks and processes.\",\"- Presented the LSTM solution, showcasing its effectiveness in improving identification accuracy.\"]},{\"project\":\"Data Science Hackathon: Creative Poster at the WA Mining Conference\",\"company\":\"SLB\",\"occupation\":\"Data Science\",\"imgId\":\"hackathondatascienceposter\",\"period\":\"2023.10\",\"rank\":\"4th\",\"technologies\":[\"About Data Analysis\",\"Dataiku\"],\"description\":[\"- Designed an engaging and informative poster showcasing the applications and benefits of the developed model.\",\"- Presented findings at the conference, highlighting the impact of accurate lithology identification in mining exploration.\",\"- Received recognition for the innovative approach to solving exploration challenges.\"]},{\"project\":\"BrewChat Application\",\"company\":\"University Project (Rank: 3th, HD)\",\"occupation\":\"Full Stack Developer\",\"imgId\":\"brewchat\",\"period\":\"2023.04 - 2023.05\",\"technologies\":[\"About Software Development\",\"Python\",\"Flask\",\"SQLAlchemy\",\"HTML\",\"CSS\",\"JavaScript\",\"Unit Testing\",\"Selenium\",\"Eliza Chatbot\",\"Git\"],\"description\":[\"BrewChat is built using HTML, CSS, Flask, AJAX, jQuery, and the SQLAlchemy database framework, with the chat function powered by Socket.IO.\",\"- Client-side (Frontend): The client-side of BrewChat encompasses the user interface developed using HTML, CSS, and JavaScript. It provides an intuitive and visually appealing experience to users, allowing them to interact with the application. AJAX and jQuery are utilized for asynchronous requests and dynamic UI updates, enhancing the user experience.\",\"- Server-side (Backend): The server-side of BrewChat is built using the Flask web framework, which handles the server-side logic and serves the application's routes. Flask enables the processing of client requests, performs business logic, and communicates with databases and other services. Flask-SocketIO facilitates real-time bidirectional communication between clients and the server for chat functionality.\",\"- Chatbot (Backend): BrewChat incorporates the Eliza Chatbot as part of the backend functionality. The Eliza Chatbot, implemented using the Natural Language Toolkit (NLTK), enables chat-based conversations with users. It processes user input, performs natural language processing, generates appropriate responses, and communicates with the client-side interface.\",\"- Database: BrewChat utilizes the SQLAlchemy database framework to interact with the SQLite database. The SQLite database stores user information, conversation pairings, and relevant chat logs. SQLAlchemy provides an Object-Relational Mapping (ORM) tool, simplifying database operations within the application.\",\"The BrewChat application includes a suite of unit tests to ensure the correctness and functionality of the various components. These tests are designed to cover different aspects of the application and help identify any potential issues or bugs. The application also includes a suite of Selenium tests to verify the end-to-end functionality and user experience. These tests simulate user interactions with the application in a browser environment.\"]},{\"project\":\"Graph Database & Graph Data Science\",\"company\":\"University Project (Rank: 4th, HD)\",\"imgId\":\"graphql\",\"url\":\"https://github.com/HUIXIN-TW/CITS5504\",\"occupation\":\"Data Science\",\"period\":\"2023.04 - 2023.05\",\"technologies\":[\"About Data Analysis\",\"Neo4j\",\"Cypher\",\"R\"],\"description\":[]},{\"project\":\"Data Warehousing & Association Rule Mining\",\"company\":\"University Project (Rank: 2nd, HD)\",\"imgId\":\"OLAP\",\"url\":\"https://github.com/HUIXIN-TW/CITS5504\",\"occupation\":\"Data Science\",\"period\":\"2023.03 - 2023.04\",\"technologies\":[\"About Data Analysis\",\"R\",\"MySQL\",\"SSMS\",\"Visual Studio\",\"SSAS\",\"PowerBI\"],\"description\":[\"Dataset:\",\"- For the purposes of this data warehousing project, we leveraged the Crime in Atlanta dataset spanning the years 2009 to 2017.\",\"- This dataset encompasses a wealth of information regarding reported crime incidents, including details such as the neighborhood planning unit (NPU) and the assigned police beat for patrolling.\",\"- Our analysis began with a subset of 225,000 records. Additionally, we supplemented this dataset by manually collecting zone and beat data from maps, enriching our dataset with a comprehensive concept hierarchy illustrating the relationships between zones and beats.\",\"Purpose:\",\"- The primary objective of our analysis is to unearth significant patterns and features within the data, thereby facilitating informed decision-making processes.\",\"- Emphasis is placed on employing visualizations as a powerful tool for insight generation and addressing pertinent business queries.\",\"- To this end, we harnessed the capabilities of Power BI, enabling the creation of dynamic dashboards and reports. The subsequent sections present our findings and visualizations tailored to address specific business queries.\"]},{\"project\":\"Data analysis and Machine learning models\",\"company\":\"University Project (Rank: 1th, HD)\",\"imgId\":\"cluster\",\"url\":\"https://github.com/HUIXIN-TW/RProject\",\"occupation\":\"Data Science\",\"period\":\"2022.04 - 2022.05\",\"technologies\":[\"About Data Analysis\",\"R\",\"RStuido\",\"Git\"],\"description\":[]},{\"project\":\"QuickRecord Financial Application\",\"company\":\"Independent Project\",\"url\":\"https://github.com/HUIXIN-TW/QuickRecord\",\"youtubeVideoId\":\"LcTDTIHJFMQ\",\"occupation\":\"Full Stack Developer\",\"period\":\"2021.12 - 2022.06\",\"technologies\":[\"About Software Development\",\"Python Flask\",\"JavaScript\",\"SQL\",\"CSS\",\"HTML\",\"Git\"],\"description\":[\"- Developed a comprehensive financial recording application, QuickRecord, designed to assist users in managing their financial statements and collaborating with friends or family members.\",\"- Technology Stack: Python Flask for backend services, JavaScript for dynamic client-side functionalities, and SQL for database management; styled with CSS and structured with HTML.\",\"- Implemented core features such as viewing balance and income statements, creating custom accounts, recording transactions, and sending friend requests for collaborative financial management.\",\"- Engineered a system allowing users to share specific account information with friends, displaying all changes on a 'Shared Account Message' page, and ensuring data privacy where necessary.\",\"- Introduced innovative functionalities like historical transaction records, specific date balance checks, and a graphical representation of all account balances using bar charts for enhanced data visualization and user experience.\",\"- Coordinated with a colleague, Remykung, for project development, leveraging collaborative tools and version control systems for efficient project management.\"]}]}]");
+module.exports = JSON.parse("[{\"majorproject\":[{\"project\":\"NotionSyncGCal Website\",\"company\":\"Independent Project\",\"url\":\"https://github.com/HUIXIN-TW/NotionSyncGCalFrontend\",\"youtubeVideoId\":\"e36DuQ0zaLk\",\"occupation\":\"Full Stack Developer\",\"period\":\"2024.04 - Current\",\"technologies\":[\"About Software Development\",\"Next.js\",\"TypeScript\",\"React\",\"Tailwind CSS\",\"AWS Amplify\",\"NextAuth.js\",\"DynamoDB\",\"AWS Lambda\",\"API Gateway\",\"S3\",\"Git\"],\"description\":[\"- Designed a fully serverless architecture controlled entirely from the frontend, connecting users directly to AWS-powered backend services.\",\"- Built a Next.js 14+ web application with secure login flows using NextAuth.js, integrating both Google OAuth and Credentials authentication.\",\"- Developed server actions to register users and perform authenticated API calls from the frontend to AWS Lambda functions for syncing operations.\",\"- Enabled real-time Notion and Google Calendar synchronization via frontend-triggered serverless workflows.\",\"- Integrated DynamoDB and S3 for user data and credential storage, ensuring scalable and secure backend infrastructure.\",\"- Deployed with AWS Amplify for server-side rendering (SSR) and continuous deployment from GitHub.\",\"- Focused on secure API communication, efficient session management, and a future-proof serverless design.\"]},{\"project\":\"WhatToEat app\",\"company\":\"Independent Project\",\"url\":\"https://github.com/HUIXIN-TW/what-to-eat\",\"youtubeVideoId\":\"xVK-zeScOwU\",\"occupation\":\"Full Stack developer\",\"period\":\"2024.02 - Current\",\"technologies\":[\"About Software Development\",\"Next.js\",\"JavaScript\",\"React\",\"Tailwind CSS\",\"MongoDB\",\"Vercel\",\"Git\"],\"description\":[\"Spearheaded the development of WhatToEat, an intuitive web application aimed at simplifying daily lunch decision-making through a user-friendly interface.\",\"- Implemented secure user authentication with optional NextAuth.js integration, offering both traditional and Google login methods to accommodate a broad user base.\",\"- Designed and executed a dynamic search functionality, enabling users to discover lunch options based on preferences or tags.\",\"- Fostered community engagement by allowing users to share and explore lunch ideas within the platform.\",\"- Successfully deployed the app using Vercel, ensuring high availability and real-time updates.\",\"- Managed source control with Git, facilitating collaborative development and version control.\"]},{\"project\":\"Repair Labs project\",\"company\":\"CFC\",\"imgId\":\"repairlab\",\"url\":\"https://github.com/codersforcauses/repair-labs\",\"occupation\":\"Full Stack developer\",\"period\":\"2023.06 - 2024.02\",\"technologies\":[\"About Software Development\",\"Next.js\",\"TypeScript\",\"React\",\"Tailwind CSS\",\"Vercel\",\"Prisma\",\"Postgres\",\"Docker\",\"Git\"],\"description\":[\"- Actively contributing as a member of the Repair Labs Project.\",\"- Technology Stack: Next.js, TypeScript, React, Tailwind CSS, and Vercel; Prisma as ORM, Postgres, and Docker for local DB.\",\"- Designed mobile and desktop layouts using Figma, ensuring a user-friendly interface.\",\"- Developed robust APIs to seamlessly connect frontend pages with the backend database, facilitating efficient data retrieval and updates.\",\"- Achievements: Successfully created and merged three pull requests via GitHub into the main branch within one month.\"]},{\"project\":\"Notion Sync with Google Calendar - Command Line Interface\",\"company\":\"Independent Project\",\"url\":\"https://github.com/HUIXIN-TW/NotionSyncGCal\",\"youtubeVideoId\":\"9IbUIj8mNl8\",\"occupation\":\"Full Stack Developer\",\"period\":\"2021 - Current\",\"technologies\":[\"About Software Development\",\"Python\",\"Notion API\",\"Google Calendar API\",\"Docker\",\"Git\"],\"description\":[\"- Developed a command-line interface (CLI) for syncing data between Notion and Google Calendar.\",\"- Implemented the ability to update events from Google Calendar to Notion and vice versa, allowing for seamless management of events between both platforms.\",\"- Offered features such as timezone and date range customization, default length setting for new Google Calendar events, and the option to delete Google Calendar events when marked as 'Done' in Notion.\",\"- Provided support for syncing across multiple calendars and the flexibility to name Notion columns as desired for the code to work.\",\"- Implemented credential and OAuth consent screen integration with Google Calendar scope for secure authentication and access to Google Calendar data.\"]},{\"project\":\"Pets Of Older Persons project\",\"company\":\"CFC\",\"imgId\":\"poops\",\"url\":\"https://github.com/codersforcauses/poops\",\"occupation\":\"Full Stack developer\",\"period\":\"2022.11 - 2023.02\",\"label\":\"\",\"technologies\":[\"About Software Development\",\"Next.js\",\"TypeScript\",\"React\",\"Tailwind CSS\",\"Firebase\",\"Vercel\",\"Git\"],\"description\":[\"- Contributed as a team member in the Pets of Older Persons Project.\",\"- Technology Stack: Next.js, TypeScript, React, Tailwind CSS, Firebase, and Vercel.\",\"- Utilized Figma to craft intuitive mobile and desktop layouts.\",\"- Collaborated effectively with other student volunteers, utilizing Git version control.\"]},{\"project\":\"Smart Air Quality Monitoring System with ESP32\",\"company\":\"University Project (HD)\",\"imgId\":\"ESP32\",\"url\":\"https://github.com/HUIXIN-TW/CITS5506IOT\",\"occupation\":\"Hardware and Arudino Developer with ESP32\",\"period\":\"2023.08 - 2023.11\",\"technologies\":[\"About Data Analysis\",\"ESP32\",\"Arduino\",\"C++\",\"Python\",\"Flask\",\"HTML\",\"CSS\",\"JavaScript\",\"Firebase\",\"Git\"],\"description\":[\"- The system aims to ensure worker safety, regulatory compliance, and environmental impact assessment.\",\"- Specific sensors tailored to monitor key pollutants are described. \",\"- With the ESP32 T-Beam microcontroller used for data collection and transmission through WIFI, data collected securely has been stored in Firebase, and can be accessed through a Flask-based web application for real-time monitoring and data analysis.\",\"- This solution offers an approach to monitoring and ensuring air quality in mining environments, with a primary focus on worker safety, regulatory compliance, and environmental responsibility.\"]},{\"project\":\"LLM Triple Generator project\",\"company\":\"UWA NLP-TLP Team\",\"url\":\"https://www.youtube.com/watch?v=wVBYiyJ0u00\",\"youtubeVideoId\":\"-58HvQYFij8\",\"occupation\":\"Team Leader\",\"period\":\"2023.08 - 2023.11\",\"technologies\":[\"About Software Development\",\"About Data Analysis\",\"Python\",\"Python networkx\",\"Python requests\",\"React\",\"ChatGPT API\",\"ChatGPT Fine Tuning Model\",\"Prompt Engineering\",\"Docker\",\"Git\",\"Git Actions\",\"MongoDB\"],\"description\":[\"- Led a team of 5 members in the development of a triple generator for the LLM project.\",\"- The project aimed to transform unstructured text data into a structured knowledge graph using natural language processing techniques.\",\"- Technologies such as Python, networkx, and requests were employed for data processing and retrieval.\",\"- The React framework was used to create a user-friendly interface for interacting with the triple generator.\",\"- Leveraged the ChatGPT API and ChatGPT Fine Tuning Model for advanced natural language understanding and generation.\",\"- Implemented prompt engineering and feature engineering to enhance the accuracy and efficiency of triple generation.\",\"- Docker was utilized for containerization, ensuring easy deployment and scalability of the application.\",\"- Version control and collaborative development were managed using Git, facilitating efficient teamwork and code management.\"]},{\"project\":\"Data Science Hackathon: Prototype Solution Presentation \",\"company\":\"SLB\",\"occupation\":\"Data Science\",\"imgId\":\"hackathondatascienceslides\",\"period\":\"2023.09 - 2023.10\",\"rank\":\"3rd\",\"technologies\":[\"About Data Analysis\",\"Dataiku\",\"LSTM\",\"Data Collection\",\"Model Development\",\"ETL Process\",\"Feature Engineering\",\"Python\",\"Jupyter Notebook\"],\"description\":[\"- Developed a mining exploration lithology identification model using LSTM.\",\"- Addressed challenges in accurately identifying lithology in mining exploration data.\",\"- Collaborated with a multidisciplinary team on data collection, model development, and ETL frameworks and processes.\",\"- Presented the LSTM solution, showcasing its effectiveness in improving identification accuracy.\"]},{\"project\":\"Data Science Hackathon: Creative Poster at the WA Mining Conference\",\"company\":\"SLB\",\"occupation\":\"Data Science\",\"imgId\":\"hackathondatascienceposter\",\"period\":\"2023.10\",\"rank\":\"4th\",\"technologies\":[\"About Data Analysis\",\"Dataiku\"],\"description\":[\"- Designed an engaging and informative poster showcasing the applications and benefits of the developed model.\",\"- Presented findings at the conference, highlighting the impact of accurate lithology identification in mining exploration.\",\"- Received recognition for the innovative approach to solving exploration challenges.\"]},{\"project\":\"BrewChat Application\",\"company\":\"University Project (Rank: 3th, HD)\",\"occupation\":\"Full Stack Developer\",\"imgId\":\"brewchat\",\"period\":\"2023.04 - 2023.05\",\"technologies\":[\"About Software Development\",\"Python\",\"Flask\",\"SQLAlchemy\",\"HTML\",\"CSS\",\"JavaScript\",\"Unit Testing\",\"Selenium\",\"Eliza Chatbot\",\"Git\"],\"description\":[\"BrewChat is built using HTML, CSS, Flask, AJAX, jQuery, and the SQLAlchemy database framework, with the chat function powered by Socket.IO.\",\"- Client-side (Frontend): The client-side of BrewChat encompasses the user interface developed using HTML, CSS, and JavaScript. It provides an intuitive and visually appealing experience to users, allowing them to interact with the application. AJAX and jQuery are utilized for asynchronous requests and dynamic UI updates, enhancing the user experience.\",\"- Server-side (Backend): The server-side of BrewChat is built using the Flask web framework, which handles the server-side logic and serves the application's routes. Flask enables the processing of client requests, performs business logic, and communicates with databases and other services. Flask-SocketIO facilitates real-time bidirectional communication between clients and the server for chat functionality.\",\"- Chatbot (Backend): BrewChat incorporates the Eliza Chatbot as part of the backend functionality. The Eliza Chatbot, implemented using the Natural Language Toolkit (NLTK), enables chat-based conversations with users. It processes user input, performs natural language processing, generates appropriate responses, and communicates with the client-side interface.\",\"- Database: BrewChat utilizes the SQLAlchemy database framework to interact with the SQLite database. The SQLite database stores user information, conversation pairings, and relevant chat logs. SQLAlchemy provides an Object-Relational Mapping (ORM) tool, simplifying database operations within the application.\",\"The BrewChat application includes a suite of unit tests to ensure the correctness and functionality of the various components. These tests are designed to cover different aspects of the application and help identify any potential issues or bugs. The application also includes a suite of Selenium tests to verify the end-to-end functionality and user experience. These tests simulate user interactions with the application in a browser environment.\"]},{\"project\":\"Graph Database & Graph Data Science\",\"company\":\"University Project (Rank: 4th, HD)\",\"imgId\":\"graphql\",\"url\":\"https://github.com/HUIXIN-TW/CITS5504\",\"occupation\":\"Data Science\",\"period\":\"2023.04 - 2023.05\",\"technologies\":[\"About Data Analysis\",\"Neo4j\",\"Cypher\",\"R\"],\"description\":[]},{\"project\":\"Data Warehousing & Association Rule Mining\",\"company\":\"University Project (Rank: 2nd, HD)\",\"imgId\":\"OLAP\",\"url\":\"https://github.com/HUIXIN-TW/CITS5504\",\"occupation\":\"Data Science\",\"period\":\"2023.03 - 2023.04\",\"technologies\":[\"About Data Analysis\",\"R\",\"MySQL\",\"SSMS\",\"Visual Studio\",\"SSAS\",\"PowerBI\"],\"description\":[\"Dataset:\",\"- For the purposes of this data warehousing project, we leveraged the Crime in Atlanta dataset spanning the years 2009 to 2017.\",\"- This dataset encompasses a wealth of information regarding reported crime incidents, including details such as the neighborhood planning unit (NPU) and the assigned police beat for patrolling.\",\"- Our analysis began with a subset of 225,000 records. Additionally, we supplemented this dataset by manually collecting zone and beat data from maps, enriching our dataset with a comprehensive concept hierarchy illustrating the relationships between zones and beats.\",\"Purpose:\",\"- The primary objective of our analysis is to unearth significant patterns and features within the data, thereby facilitating informed decision-making processes.\",\"- Emphasis is placed on employing visualizations as a powerful tool for insight generation and addressing pertinent business queries.\",\"- To this end, we harnessed the capabilities of Power BI, enabling the creation of dynamic dashboards and reports. The subsequent sections present our findings and visualizations tailored to address specific business queries.\"]},{\"project\":\"Data analysis and Machine learning models\",\"company\":\"University Project (Rank: 1th, HD)\",\"imgId\":\"cluster\",\"url\":\"https://github.com/HUIXIN-TW/RProject\",\"occupation\":\"Data Science\",\"period\":\"2022.04 - 2022.05\",\"technologies\":[\"About Data Analysis\",\"R\",\"RStuido\",\"Git\"],\"description\":[]},{\"project\":\"QuickRecord Financial Application\",\"company\":\"Independent Project\",\"url\":\"https://github.com/HUIXIN-TW/QuickRecord\",\"youtubeVideoId\":\"LcTDTIHJFMQ\",\"occupation\":\"Full Stack Developer\",\"period\":\"2021.12 - 2022.06\",\"technologies\":[\"About Software Development\",\"Python Flask\",\"JavaScript\",\"SQL\",\"CSS\",\"HTML\",\"Git\"],\"description\":[\"- Developed a comprehensive financial recording application, QuickRecord, designed to assist users in managing their financial statements and collaborating with friends or family members.\",\"- Technology Stack: Python Flask for backend services, JavaScript for dynamic client-side functionalities, and SQL for database management; styled with CSS and structured with HTML.\",\"- Implemented core features such as viewing balance and income statements, creating custom accounts, recording transactions, and sending friend requests for collaborative financial management.\",\"- Engineered a system allowing users to share specific account information with friends, displaying all changes on a 'Shared Account Message' page, and ensuring data privacy where necessary.\",\"- Introduced innovative functionalities like historical transaction records, specific date balance checks, and a graphical representation of all account balances using bar charts for enhanced data visualization and user experience.\",\"- Coordinated with a colleague, Remykung, for project development, leveraging collaborative tools and version control systems for efficient project management.\"]}]}]");
 
 },{}],"u6XVY":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$805d = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
@@ -41597,6 +41604,6 @@ $RefreshReg$(_c3, "ExperienceCard");
 },{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","styled-components":"9aFyZ","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"47Fif":[function(require,module,exports,__globalThis) {
 module.exports = JSON.parse('[{"occupation":"Data Engineer II","industry":"Technology","company":"The U Group & Co","period":"2025.01 - Present","technologies":["Python","SQL","Bash","AWS Cloud","Git","snowflake"],"description":["Managed and optimized data pipelines, utilizing Snowflake, dbt, and SQL to streamline data transformation and storage processes.","Developed and maintained Python-based machine learning pipelines for predictive analytics and data processing tasks.","Used ETLeap to automate data integration and migration tasks, improving efficiency in data workflows.","Designed and orchestrated data pipelines with Dagster, ensuring reliability, monitoring, and efficient task execution.","Leveraged AWS cloud technologies to build scalable, secure data infrastructure."]},{"occupation":"Data Engineer I","industry":"Technology","company":"The U Group & Co","period":"2024.03 - 2025.01","technologies":["Python","SQL","Bash","AWS Cloud","Git","snowflake"],"description":["Delivered high-quality data sets to clients, ensuring timely and accurate reporting","Troubleshot and resolved complex data flow, storage, and accessibility challenges, improving system performance.","Managed and optimized data pipelines, utilizing Snowflake, dbt, and SQL to streamline data transformation and storage processes.","Collaborated with cross-functional teams to ensure data integrity, efficiency, and alignment with client needs."]},{"occupation":"Casual Teaching Assistant","industry":"Education","company":"University of Western Australia","period":"2024.02 - 2024.03","technologies":["Python","HTML","SQL","CSS","Linux","Git"],"description":["CITS5505 - Agile Web Development","CITS1003 - Introduction to Cybersecurity"]},{"occupation":"Full Stack Developer","industry":"Technology","company":"Coder For Causes","period":"2022.07 - 2024.02","technologies":["Figma","Typescript","Javascript","React","Next.js","PostgreSQL","Prisma","Firebase","AWS","Docker","Tailwind CSS","Vercel","Git"],"description":["Developed a web application for a client to manage their business operations."]},{"occupation":"Assistant Manager","industry":"Financial Services","company":"Deloitte","period":"2019.03 - 2020.08","technologies":["US GAAP","IFRS","SOX","COSO framework","Excel","Power BI"],"description":["Possessed sound knowledge of US GAAP, IFRS, and SOX internal control audits.","Performed financial modelling to support and challenge key assumptions, such as DCF models.","Performed risk assessment of material financial statement items under the COSO framework.","Performed valuation analysis of assets, debt, and equity, such as intangible assets impairment and convertible bonds.","Utilized IT skills for data cleaning, manipulation, and mapping.","Led 4 members and managed audit plan for listed companies.","Supervised, coached, and developed junior members of staff within teams, on client premises, and in the office."]},{"occupation":"Staff - Senior Associate","industry":"Financial Services","company":"PwC","period":"2016.09 - 2019.02","technologies":["IFRS9","Financial Analysis","Net Asset Value","Return on Investment","Cash Flow Forecasting"],"description":["Conducted in the Biotechnology Industry\u2019s initial public offering project.","Evaluated investment profiles including local/international, public/private stocks, and bonds under IFRS9.","Evaluated derivative financial instruments.","Recalculated net asset value and return on investment.","Reviewed cash flow forecasts for the prospectus to assess the feasibility of the assumptions.","Assessed financial risk information, including market risk, credit risk, liquidity risk, interest rate risk, and sensitive analysis of each."]},{"occupation":"Intermediate Accounting Instructor","industry":"Education","company":"Tekom Technologies, Inc","period":"2016.03 - 2016.06","technologies":["Intermedia Accounting","Educational Facilitation"],"description":["Provided guidance and delivered effective instruction in Intermediate Accounting, facilitating student understanding and proficiency."]},{"occupation":"Facilitator","industry":"Education","company":"National Chung Cheng University","period":"2015.02 - 2016.06","technologies":["Business Analysis","Accounting","Advanced Accounting","Audit","Statistics"],"description":["Assisted in teaching courses including Business Analysis, Accounting, Advanced Accounting, Audit, and Statistics.","Provided guidance and handouts."]}]');
 
-},{}],"clPKd":[function() {},{}]},["ihYAY","a0t4e"], "a0t4e", "parcelRequire2359", null, null, "http://localhost:1234")
+},{}],"clPKd":[function() {},{}]},["5j6Kf","a0t4e"], "a0t4e", "parcelRequire2359", {}, "./", "/", "http://localhost:1234")
 
 //# sourceMappingURL=Portfolio.31b563d9.js.map
