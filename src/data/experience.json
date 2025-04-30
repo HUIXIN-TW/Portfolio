@@ -77,13 +77,7 @@
     "industry": "Financial Services",
     "company": "PwC",
     "period": "2016.09 - 2019.02",
-    "technologies": [
-      "IFRS9",
-      "Financial Analysis",
-      "Net Asset Value",
-      "Return on Investment",
-      "Cash Flow Forecasting"
-    ],
+    "technologies": ["IFRS9", "Financial Analysis", "Net Asset Value", "Return on Investment", "Cash Flow Forecasting"],
     "description": [
       "Conducted in the Biotechnology Industry’s initial public offering project.",
       "Evaluated investment profiles including local/international, public/private stocks, and bonds under IFRS9.",
@@ -108,13 +102,7 @@
     "industry": "Education",
     "company": "National Chung Cheng University",
     "period": "2015.02 - 2016.06",
-    "technologies": [
-      "Business Analysis",
-      "Accounting",
-      "Advanced Accounting",
-      "Audit",
-      "Statistics"
-    ],
+    "technologies": ["Business Analysis", "Accounting", "Advanced Accounting", "Audit", "Statistics"],
     "description": [
       "Assisted in teaching courses including Business Analysis, Accounting, Advanced Accounting, Audit, and Statistics.",
       "Provided guidance and handouts."

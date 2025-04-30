@@ -24,9 +24,7 @@ const Education = () => {
                     </div>
                     <p className="small">{education.university}</p>
                     <Disclosure.Button className="pt-3 w-full flex items-center justify-center">
-                      <ChevronUpIcon
-                        className={`${open ? "rotate-180 transform" : ""} h-5 w-5 text-gray-500`}
-                      />
+                      <ChevronUpIcon className={`${open ? "rotate-180 transform" : ""} h-5 w-5 text-gray-500`} />
                     </Disclosure.Button>
                     <Disclosure.Panel>
                       <ul>
@@ -34,9 +32,7 @@ const Education = () => {
                           <div key={idx} className="achievementResultPair">
                             <span className="achievementPair">
                               <span className="achievementTitle">{achievement.title}</span>
-                              <span className="achievementTechnologies">
-                                {achievement.technologies}
-                              </span>
+                              <span className="achievementTechnologies">{achievement.technologies}</span>
                             </span>
                             <span className="result">{education.results[idx]}</span>
                           </div>

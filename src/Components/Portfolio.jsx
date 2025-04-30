@@ -25,9 +25,7 @@ const Portfolio = () => {
         {majorprojectData && majorprojectData.length > 0 && (
           <div className="horizonalContainer w-full">
             {majorprojectData
-              .filter((project) =>
-                selectedTechnology ? project.technologies.includes(selectedTechnology) : true
-              )
+              .filter((project) => (selectedTechnology ? project.technologies.includes(selectedTechnology) : true))
               .map((item, index) => (
                 <MajorProject key={index} data={item} />
               ))}

@@ -7,8 +7,8 @@ const Referee = () => {
       <div className="max-w-4xl mx-auto">
         <h2 className="text-center">Referee</h2>
         <p className="text-base text-gray-700 italic mt-4 mb-8 ml-3 mr-3">
-          Should you require further details or wish to establish contact, please do not hesitate to
-          reach out to me directly at{" "}
+          Should you require further details or wish to establish contact, please do not hesitate to reach out to me
+          directly at{" "}
           <a href="mailto:huixin.yang.tw@gmail.com" className="underline text-gray-900">
             huixin.yang.tw@gmail.com
           </a>

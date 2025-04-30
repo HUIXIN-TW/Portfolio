@@ -28,10 +28,7 @@ const ExperienceCard = ({ occupation, technologies, company, description, period
       </ExperienceHeader>
       <div className="text-sm text-gray-900 flex flex-wrap gap-2">
         {technologies.map((technology, index) => (
-          <span
-            key={index}
-            className="text-xs italic bg-gray-200 text-gray-900 rounded-md px-2 py-1"
-          >
+          <span key={index} className="text-xs italic bg-gray-200 text-gray-900 rounded-md px-2 py-1">
             #{technology}
           </span>
         ))}

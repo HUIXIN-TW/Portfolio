@@ -6,12 +6,7 @@
         "occupation": "Business Consultant",
         "company": "UseVerb",
         "period": "2022.07 - 2022.08",
-        "technologies": [
-          "SWOT Analysis",
-          "PESTLE Analysis",
-          "Competitor Analysis",
-          "Digital Marketing"
-        ],
+        "technologies": ["SWOT Analysis", "PESTLE Analysis", "Competitor Analysis", "Digital Marketing"],
         "description": [
           "Collaborated with UseVerb, leveraging my expertise in business consulting to enhance their marketing strategies.",
           "Conducted a comprehensive SWOT analysis to identify strengths, weaknesses, opportunities, and threats, enabling a more targeted approach to marketing and outreach.",

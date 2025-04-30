@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 
 const github = new URL("../../assets/images/socials/github-mark.svg", import.meta.url).href;
-const githubWhite = new URL("../../assets/images/socials/github-mark-white.svg", import.meta.url)
-  .href;
+const githubWhite = new URL("../../assets/images/socials/github-mark-white.svg", import.meta.url).href;
 
 const GitHubButton = ({ name }) => {
   const [isHovered, setIsHovered] = useState(false);

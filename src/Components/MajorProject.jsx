@@ -5,14 +5,8 @@ import ImgDisplay from "./common/ImgDisplay";
 
 const repairLab = new URL("../assets/images/repair-lab.gif", import.meta.url).href;
 const poops = new URL("../assets/images/poops.png", import.meta.url).href;
-const hackathonDataSciencePoster = new URL(
-  "../assets/images/hackathon-data-science-poster.jpg",
-  import.meta.url
-).href;
-const hackathonDataScienceSlides = new URL(
-  "../assets/images/hackathon-data-science-slides.gif",
-  import.meta.url
-).href;
+const hackathonDataSciencePoster = new URL("../assets/images/hackathon-data-science-poster.jpg", import.meta.url).href;
+const hackathonDataScienceSlides = new URL("../assets/images/hackathon-data-science-slides.gif", import.meta.url).href;
 const graphql = new URL("../assets/images/graphql.png", import.meta.url).href;
 const cluster = new URL("../assets/images/cluster.png", import.meta.url).href;
 const OLAP = new URL("../assets/images/OLAP.gif", import.meta.url).href;

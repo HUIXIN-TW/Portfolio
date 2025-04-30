@@ -62,26 +62,20 @@ const Contact = () => {
     <TerminalContainer>
       <TerminalTitle>Stay Tuned!</TerminalTitle>
       <TerminalText>
-        Our contact form is currently under construction. In the meantime, feel free to reach out to
-        us at{" "}
+        Our contact form is currently under construction. In the meantime, feel free to reach out to us at{" "}
         <Highlight>
           <a href="mailto:huixin.yang.tw@gmail.com" className="highlight">
             huixin.yang.tw@gmail.com
           </a>{" "}
         </Highlight>
         or download{" "}
-        <a
-          href="https://huixin-tw.github.io/Resume/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="highlight"
-        >
+        <a href="https://huixin-tw.github.io/Resume/" target="_blank" rel="noopener noreferrer" className="highlight">
           Resume powered by github.io.
         </a>
       </TerminalText>
       <TerminalText>
-        Our new feature harnesses <Highlight>Firebase</Highlight> for seamless real-time data
-        synchronization and secure backend operations.
+        Our new feature harnesses <Highlight>Firebase</Highlight> for seamless real-time data synchronization and secure
+        backend operations.
       </TerminalText>
       <StyledImage src={image} alt="Under Construction" />
     </TerminalContainer>
