@@ -1,9 +1,24 @@
 [
   {
+    "occupation": "Backend Engineer II",
+    "industry": "Technology",
+    "company": "The U Group & Co",
+    "period": "2025.03 - Present",
+    "technologies": ["Typescript", "Python", "SQL", "Bash", "AWS Cloud", "Git", "snowflake"],
+    "description": [
+      "Designed, developed, and maintained backend services using Python and TypeScript, ensuring scalable, reliable, and maintainable systems.",
+      "Built and optimized cross-service APIs to improve interoperability across microservices and enhance developer experience.",
+      "Managed and optimized AWS infrastructure for migration, performance, reliability, and cost-efficiency.",
+      "Implemented CI/CD pipelines and automated deployments to streamline release processes and reduce operational overhead.",
+      "Contributed to frontend features using React for internal tools and dashboards, supporting better visibility into system and data processes.",
+      "Collaborated with data and ML teams to integrate backend services with data pipelines and analytics systems."
+    ]
+  },
+  {
     "occupation": "Data Engineer II",
     "industry": "Technology",
     "company": "The U Group & Co",
-    "period": "2025.01 - Present",
+    "period": "2025.01 - 2025.03",
     "technologies": ["Python", "SQL", "Bash", "AWS Cloud", "Git", "snowflake"],
     "description": [
       "Managed and optimized data pipelines, utilizing Snowflake, dbt, and SQL to streamline data transformation and storage processes.",

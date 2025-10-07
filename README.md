@@ -16,11 +16,15 @@
 
 ### Production: AWS Amplify
 
+Huixin's portfolio [huixinyang.com](https://huixinyang.com) is hosted on AWS Amplify.
+
 - **Environment:** Production
 - **Workflow:**
   - When your changes are merged to the `main` branch, AWS Amplify automatically builds and deploys your site.
 
 ### Staging / Testing Preview: GitHub Pages
+
+Huixin's portfolio [staging](https://huixin-tw.github.io/Portfolio/) is hosted on GitHub Pages.
 
 - **Environment:** Staging (Preview or Development)
 - **Workflow:**
