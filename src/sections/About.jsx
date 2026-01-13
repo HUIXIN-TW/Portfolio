@@ -1,7 +1,7 @@
 import React from "react";
 
 // import image from "../assets/images/motion-background.jpg";
-// import Button from "./common/Button";
+// import Button from "../ui/Button";
 // import Education from "./Education";
 // import Portfolio from "./Portfolio";
 // import Experience from "./Experience";

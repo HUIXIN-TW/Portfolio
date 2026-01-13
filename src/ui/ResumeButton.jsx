@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-const resume = new URL("../../assets/images/resume.svg", import.meta.url).href;
-const resumeWhite = new URL("../../assets/images/resume-white.svg", import.meta.url).href;
+const resume = new URL("../assets/images/resume.svg", import.meta.url).href;
+const resumeWhite = new URL("../assets/images/resume-white.svg", import.meta.url).href;
 
 const ResumeButton = ({ name }) => {
   const [isHovered, setIsHovered] = useState(false);

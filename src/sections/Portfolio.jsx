@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import majorproject from "../data/majorproject.json";
+import majorproject from "../data/major-project.json";
 import MajorProject from "./MajorProject";
-import TechnologiesButton from "./TechnologiesButton";
+import TechnologiesButton from "../ui/TechnologiesButton";
 
 const Portfolio = () => {
   const [selectedTechnology, setSelectedTechnology] = useState(null);

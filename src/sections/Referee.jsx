@@ -1,5 +1,5 @@
 import React from "react";
-import RefereeCard from "./common/RefereeCard";
+import RefereeCard from "../ui/RefereeCard";
 
 const Referee = () => {
   return (

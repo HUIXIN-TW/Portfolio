@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { uniqueTechnologies } from "./UniqueTechnologies";
+import { uniqueTechnologies } from "../sections/UniqueTechnologies";
 
 const sortedTechnologies = [...uniqueTechnologies].sort();
 

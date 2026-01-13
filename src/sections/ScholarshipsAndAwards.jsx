@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import scholarships_and_awardsData from "../data/scholarships_and_awards.json";
+import scholarships_and_awardsData from "../data/scholarships-and-awards.json";
 
 // Styled components
 const AwardsContainer = styled.section`

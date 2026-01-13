@@ -1,4 +1,4 @@
-import data from "../data/majorproject.json";
+import data from "../data/major-project.json";
 
 // Flatten the project data into a single array
 const allProjects = data.flatMap((projectType) => Object.values(projectType).flat());

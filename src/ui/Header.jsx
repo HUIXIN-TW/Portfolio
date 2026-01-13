@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import GitHubButton from "./GitHubButton";
 import ResumeButton from "./ResumeButton";
 
-const photoUrl = new URL("../../assets/images/avatar.webp", import.meta.url).href;
+const photoUrl = new URL("../assets/images/avatar.webp", import.meta.url).href;
 
 const Header = () => {
   const [toggleDropdown, setToggleDropdown] = useState(false);

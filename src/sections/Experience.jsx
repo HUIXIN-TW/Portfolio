@@ -1,5 +1,5 @@
 import React from "react";
-import ExperienceCard from "./common/ExperienceCard";
+import ExperienceCard from "../ui/ExperienceCard";
 import experienceData from "../data/experience.json";
 
 const Experience = () => {

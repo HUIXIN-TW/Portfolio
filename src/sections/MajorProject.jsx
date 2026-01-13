@@ -1,7 +1,7 @@
 import React from "react";
 import { Disclosure } from "@headlessui/react";
-import YouTubeVideo from "./common/YouTubeVideo";
-import ImgDisplay from "./common/ImgDisplay";
+import YouTubeVideo from "../ui/YouTubeVideo";
+import ImgDisplay from "../ui/ImgDisplay";
 
 const repairLab = new URL("../assets/images/repair-lab.gif", import.meta.url).href;
 const poops = new URL("../assets/images/poops.png", import.meta.url).href;
@@ -9,9 +9,9 @@ const hackathonDataSciencePoster = new URL("../assets/images/hackathon-data-scie
 const hackathonDataScienceSlides = new URL("../assets/images/hackathon-data-science-slides.gif", import.meta.url).href;
 const graphql = new URL("../assets/images/graphql.png", import.meta.url).href;
 const cluster = new URL("../assets/images/cluster.png", import.meta.url).href;
-const OLAP = new URL("../assets/images/OLAP.gif", import.meta.url).href;
+const OLAP = new URL("../assets/images/olap.gif", import.meta.url).href;
 const brewchat = new URL("../assets/images/brewchat.gif", import.meta.url).href;
-const ESP32 = new URL("../assets/images/ESP32.gif", import.meta.url).href;
+const ESP32 = new URL("../assets/images/esp32.gif", import.meta.url).href;
 
 const getImageUrl = (imgId) => {
   switch (imgId) {

@@ -1,14 +1,14 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Footer from "./Components/common/Footer";
-import Header from "./Components/common/Header";
-import About from "./Components/About";
-import Home from "./Components/Home";
-import Education from "./Components/Education";
-import Portfolio from "./Components/Portfolio";
-// import Contact from "./Components/Contact";
-import Referee from "./Components/Referee";
-import Experience from "./Components/Experience";
+import Footer from "./ui/Footer";
+import Header from "./ui/Header";
+import About from "./sections/About";
+import Home from "./sections/Home";
+import Education from "./sections/Education";
+import Portfolio from "./sections/Portfolio";
+// import Contact from "./sections/Contact";
+import Referee from "./sections/Referee";
+import Experience from "./sections/Experience";
 
 import "./styles/main.css";
 
