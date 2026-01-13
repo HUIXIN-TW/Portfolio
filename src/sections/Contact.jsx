@@ -69,7 +69,7 @@ const Contact = () => {
           </a>{" "}
         </Highlight>
         or download{" "}
-        <a href="https://huixin-tw.github.io/Resume/" target="_blank" rel="noopener noreferrer" className="highlight">
+        <a href="https://resume.huixinyang.com/" target="_blank" rel="noopener noreferrer" className="highlight">
           Resume powered by github.io.
         </a>
       </TerminalText>

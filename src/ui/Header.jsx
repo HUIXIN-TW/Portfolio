@@ -25,6 +25,9 @@ const Header = () => {
           <Link to="/education" className="hover:text-blue-600">
             Education
           </Link>
+          <Link to="/certificates-awards" className="hover:text-blue-600">
+            Certificates & Awards
+          </Link>
           <Link to="/experience" className="hover:text-blue-600">
             Experience
           </Link>
@@ -74,6 +77,13 @@ const Header = () => {
               onClick={() => setToggleDropdown(!toggleDropdown)}
             >
               Education
+            </Link>
+            <Link
+              to="/certificates-awards"
+              className="text-center hover:text-blue-600"
+              onClick={() => setToggleDropdown(!toggleDropdown)}
+            >
+              Certificates & Awards
             </Link>
             <Link
               to="/experience"

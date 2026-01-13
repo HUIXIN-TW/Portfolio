@@ -1,0 +1,16 @@
+[
+  {
+    "category": "Scholarship",
+    "name": "UWA Global Excellence Scholarship",
+    "description": "Awarded for exceptional academic performance, providing partial tuition support for the full postgraduate study period.",
+    "period": "2021 - 2023",
+    "institution": "University of Western Australia"
+  },
+  {
+    "category": "Scholarship",
+    "name": "Scholarships for Top Three Academic Ranking",
+    "description": "Awarded for ranking in the top three students each semester. The scholarship covered full tuition for the following semester and was government-sponsored. Achieved in: \n- Grade 10, Semester 1 \n- Grade 11, Semester 2 \n- Grade 12, Semesters 1 and 2",
+    "period": "2007 - 2010",
+    "institution": "Kaohsiung Vocational High School of Commerce (KSVCS)"
+  }
+]

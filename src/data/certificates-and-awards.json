@@ -1,0 +1,79 @@
+[
+  {
+    "category": "Certificate",
+    "name": "AWS Certified Solutions Architect - Associate",
+    "institution": "Amazon Web Services (AWS)",
+    "period": "Issued Jul 2025"
+  },
+  {
+    "category": "Certificate",
+    "name": "AWS Certified Cloud Practitioner",
+    "institution": "Amazon Web Services (AWS)",
+    "period": "Issued Feb 2025"
+  },
+  {
+    "category": "Certificate",
+    "name": "CPA Australia",
+    "institution": "CPA Australia",
+    "period": "Issued Jun 2022",
+    "description": ["Completion: 5/5", "FR: HD", "EG: Credit", "DF: Credit", "SMA: Credit", "GLS: Credit"]
+  },
+  {
+    "category": "Certificate",
+    "name": "CPA Taiwan",
+    "period": "Issued Oct 2015",
+    "institution": "Ministry of Examination and Financial Supervisory Commission (FSC)",
+    "description": [
+      "The CPA license is issued by Taiwanese government authorities after passing the national high-level written examination.",
+      "Ministry of Examination: administers the CPA high-level exam.",
+      "Financial Supervisory Commission (FSC): oversees licensing approval and regulation."
+    ]
+  },
+  {
+    "category": "Award",
+    "name": "Prototype Solution 3rd in SLB Data Science Hackathon",
+    "period": "Oct 2023",
+    "institution": "Associated with The University of Western Australia"
+  },
+  {
+    "category": "Award",
+    "name": "KPMG Academic Competition",
+    "period": "Jun 2015",
+    "institution": "Issued by KPMG Taiwan",
+    "description": [
+      "KPMG International Limited is a multinational professional services network and one of the Big Four accounting organizations.",
+      "Each June, KPMG holds an academic competition at my university to recognize professional and practical knowledge.",
+      "Candidates answer intermediate accounting questions under time limits.",
+      "My team won the championship, highlighting our teamwork and professionalism."
+    ]
+  },
+  {
+    "category": "Award",
+    "name": "XBRL Academic Winter Camp",
+    "period": "Jan 2015",
+    "institution": "Issued by Taiwan Stock Exchange Corporation",
+    "description": [
+      "XBRL (eXtensible Business Reporting Language) is a global framework for exchanging business information.",
+      "I attended the Taiwan Stock Exchange XBRL camp (Jan 19-22, 2015), which included two and a half days of training and a competition on the third day.",
+      "We won third place."
+    ]
+  },
+  {
+    "category": "Award",
+    "name": "CCU AIT Camp Lecturer",
+    "period": "Jul 2016",
+    "institution": "Issued by National Chung Cheng University, Department of Accounting and Information Technology",
+    "description": [
+      "Invited as a lecturer for the fifth accounting summer camp on July 10, 2016.",
+      "Designed an interactive game, Fraud and Fraudit, to teach accounting concepts to high school students.",
+      "Teams earned credits by answering questions, then presented financial statements and narratives to win funding.",
+      "Participants acting as accountants identified potential fraud and called \"BLUFF\" when a scandal was detected."
+    ]
+  },
+  {
+    "category": "Award",
+    "name": "Excellent Teaching Assistant",
+    "period": "May 2016",
+    "institution": "Issued by National Chung Cheng University"
+  }
+]

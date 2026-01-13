@@ -3,7 +3,7 @@ import { Disclosure } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/20/solid";
 import educationData from "../data/education.json";
 
-import ScholarshipsAndAwards from "./ScholarshipsAndAwards";
+import Scholarships from "./Scholarships";
 
 const Education = () => {
   return (
@@ -46,7 +46,7 @@ const Education = () => {
           ))}
         </div>
       </div>
-      <ScholarshipsAndAwards />
+      <Scholarships />
     </section>
   );
 };

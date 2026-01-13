@@ -9,7 +9,7 @@ const ResumeButton = ({ name }) => {
   return (
     <div>
       <a
-        href="https://huixin-tw.github.io/Resume/"
+        href="https://resume.huixinyang.com/"
         className="black_btn" // Use hover state to toggle class names
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}

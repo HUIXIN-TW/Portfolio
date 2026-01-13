@@ -5,6 +5,7 @@ import Header from "./ui/Header";
 import About from "./sections/About";
 import Home from "./sections/Home";
 import Education from "./sections/Education";
+import CertificatesAndAwards from "./sections/CertificatesAndAwards";
 import Portfolio from "./sections/Portfolio";
 // import Contact from "./sections/Contact";
 import Referee from "./sections/Referee";
@@ -37,6 +38,7 @@ const App = () => {
           <Route path="/" element={<Home name={siteProps.name} title={siteProps.title} />} />
           <Route path="/about" element={<About />} />
           <Route path="/education" element={<Education />} />
+          <Route path="/certificates-awards" element={<CertificatesAndAwards />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="/portfolio" element={<Portfolio />} />
           {/* <Route path="/contact" element={<Contact />} /> */}

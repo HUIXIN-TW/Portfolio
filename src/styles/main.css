@@ -443,3 +443,15 @@ img.socialIcon {
   background-color: black; /* hover:bg-black */
   color: white; /* hover:text-white */
 }
+
+.icon-swap .icon-hover {
+  display: none;
+}
+
+.icon-swap:hover .icon-default {
+  display: none;
+}
+
+.icon-swap:hover .icon-hover {
+  display: inline-block;
+}
