@@ -9,7 +9,7 @@ const hackathonDataSciencePoster = new URL("../assets/images/hackathon-data-scie
 const hackathonDataScienceSlides = new URL("../assets/images/hackathon-data-science-slides.gif", import.meta.url).href;
 const graphql = new URL("../assets/images/graphql.png", import.meta.url).href;
 const cluster = new URL("../assets/images/cluster.png", import.meta.url).href;
-const OLAP = new URL("../assets/images/olap.gif", import.meta.url).href;
+const OLAP = new URL("../assets/images/OLAP.gif", import.meta.url).href;
 const brewchat = new URL("../assets/images/brewchat.gif", import.meta.url).href;
 const ESP32 = new URL("../assets/images/esp32.gif", import.meta.url).href;
 
