@@ -41370,7 +41370,7 @@ $RefreshReg$(_c, "MajorProject");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","@headlessui/react":"dcwAn","../ui/YouTubeVideo":"2DtVR","../ui/ImgDisplay":"ls2Bl","fb430c6e39203de1":"eoA5J","9eda775725709013":"4MSpV","385496e6c4c7bf1e":"e1M8W","81103874009aa6fd":"lhYC8","c762f02fbba3fd40":"7xkn4","c4abcc6a3fb518f":"bC73h","57cc47108cd2e658":"99JAy","c5165f9c041a97a9":"6aO2I","c153210fd464b725":"3DUTE","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"2DtVR":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","@headlessui/react":"dcwAn","../ui/YouTubeVideo":"2DtVR","../ui/ImgDisplay":"ls2Bl","fb430c6e39203de1":"eoA5J","9eda775725709013":"4MSpV","385496e6c4c7bf1e":"e1M8W","81103874009aa6fd":"lhYC8","c762f02fbba3fd40":"7xkn4","c4abcc6a3fb518f":"bC73h","c5165f9c041a97a9":"6aO2I","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","c153210fd464b725":"3DUTE","57cc47108cd2e658":"99JAy"}],"2DtVR":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$1a6d = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 $parcel$ReactRefreshHelpers$1a6d.init();
 var prevRefreshReg = globalThis.$RefreshReg$;
@@ -41463,14 +41463,14 @@ module.exports = module.bundle.resolve("graphql.5b11257a.png") + "?" + Date.now(
 },{}],"bC73h":[function(require,module,exports,__globalThis) {
 module.exports = module.bundle.resolve("cluster.778b3ade.png") + "?" + Date.now();
 
-},{}],"99JAy":[function(require,module,exports,__globalThis) {
-module.exports = module.bundle.resolve("olap.a99404f2.gif") + "?" + Date.now();
-
 },{}],"6aO2I":[function(require,module,exports,__globalThis) {
 module.exports = module.bundle.resolve("brewchat.115b0199.gif") + "?" + Date.now();
 
 },{}],"3DUTE":[function(require,module,exports,__globalThis) {
 module.exports = module.bundle.resolve("esp32.9b00e1a0.gif") + "?" + Date.now();
+
+},{}],"99JAy":[function(require,module,exports,__globalThis) {
+module.exports = module.bundle.resolve("olap.a99404f2.gif") + "?" + Date.now();
 
 },{}],"2Gmrj":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$a5f5 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
