@@ -64,7 +64,7 @@ const About = () => {
               <p className="text-sm text-gray-600 mb-4">Quick meal ideas for hungry moments.</p>
               <div className="flex flex-wrap gap-2 text-sm">
                 <a
-                  href="https://what-to-eat-huixin-tw.vercel.app/"
+                  href="https://whattoeat.huixinyang.com/"
                   className="black_btn gap-2"
                   target="_blank"
                   rel="noopener noreferrer"
