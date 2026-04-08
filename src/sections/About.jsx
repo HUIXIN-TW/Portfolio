@@ -99,12 +99,7 @@ const About = () => {
               </div>
               <p className="text-sm text-gray-600 mb-4">Sync tool for Notion databases and Google Calendar.</p>
               <div className="flex flex-wrap gap-2 text-sm">
-                <a
-                  href="https://www.notica.studio/"
-                  className="black_btn gap-2"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href="https://notica.studio" className="black_btn gap-2" target="_blank" rel="noopener noreferrer">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
