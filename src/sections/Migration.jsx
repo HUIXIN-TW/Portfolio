@@ -211,7 +211,7 @@ const Migration = () => {
                 <button
                   type="button"
                   onClick={() => window.open(pdfSourceUrl, "_blank", "noopener,noreferrer")}
-                  className={`outline_btn ${!canRefresh ? "opacity-40 cursor-not-allowed" : ""}`}
+                  className="outline_btn"
                 >
                   View source page
                 </button>
