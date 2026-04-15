@@ -7,6 +7,7 @@ import Home from "./sections/Home";
 import Education from "./sections/Education";
 import CertificatesAndAwards from "./sections/CertificatesAndAwards";
 import Portfolio from "./sections/Portfolio";
+import Migration from "./sections/Migration";
 // import Contact from "./sections/Contact";
 import Referee from "./sections/Referee";
 import Experience from "./sections/Experience";
@@ -41,6 +42,7 @@ const App = () => {
           <Route path="/certificates-awards" element={<CertificatesAndAwards />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/migration" element={<Migration />} />
           {/* <Route path="/contact" element={<Contact />} /> */}
           <Route path="/referee" element={<Referee />} />
         </Routes>
