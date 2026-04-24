@@ -1,6 +1,6 @@
 ## 🔗 Demo
 
-- [Live Portfolio](https://huixinyang.com)
+- [Live Portfolio](https://portfolio.huixinyang.com/)
 
 ## 🎮 Tech Stack
 
@@ -10,17 +10,17 @@
 - JavaScript
 - React
 - Node.js
-- Deploying to a production environment: AWS Amplify
+- Deploying to a production environment: Cloudflare
 
 ## Deployment Instructions
 
-### Production: AWS Amplify
+### Production: Cloudflare
 
-Huixin's portfolio [huixinyang.com](https://huixinyang.com) is hosted on AWS Amplify.
+Huixin's portfolio [huixinyang.com](https://portfolio.huixinyang.com/) is hosted on Cloudflare.
 
 - **Environment:** Production
 - **Workflow:**
-  - When your changes are merged to the `main` branch, AWS Amplify automatically builds and deploys your site.
+  - When your changes are merged to the `main` branch, Cloudflare automatically builds and deploys your site.
 
 ### Staging / Testing Preview: GitHub Pages
 
