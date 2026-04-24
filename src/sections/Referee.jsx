@@ -16,7 +16,15 @@ const Referee = () => {
         </p>
 
         <RefereeCard
-          refereeName="Zhi Zhang"
+          refereeName="Vlad"
+          refereeType="Professional"
+          currentPosition="Former Head of Engineering at The U Group & Co"
+          relationship="Professional reference available upon request. Vlad previously worked with me in an engineering leadership capacity."
+          periodWorking="Jun 2025 - Mar 2026"
+        />
+
+        <RefereeCard
+          refereeName="Zhi"
           refereeType="Academic and Professional"
           currentPosition="Lecturer at UWA"
           relationship="Initially my supervisor in 2023, Zhi has been a mentor to me both academically and professionally. After graduation, I assisted in his lab, reinforcing our collaborative efforts."
@@ -24,14 +32,7 @@ const Referee = () => {
         />
 
         <RefereeCard
-          refereeName="Jamie Tang"
-          refereeType="Personal Character"
-          currentPosition="Student Transitions Officer at UniHall"
-          relationship="For one and a half years living at the residential college, Jamie, my residential advisor, closely observed my personal growth and adaptation in Australia. Her support was pivotal in navigating this significant phase of my life."
-          periodWorking="Jul 2022 - Nov 2023"
-        />
-        <RefereeCard
-          refereeName="Remy Kung"
+          refereeName="Remy"
           refereeType="Professional"
           currentPosition="Frontend Developer at Greenbase"
           relationship="As a co-worker at Deloitte, Remy and I collaborated closely on several key projects, which showcased my expertise and teamwork abilities."
@@ -39,11 +40,18 @@ const Referee = () => {
         />
 
         <RefereeCard
-          refereeName="Ken Pan"
+          refereeName="Ken"
           refereeType="Academic and Professional"
           currentPosition="Assistant Professor at Geneseo State College"
           relationship="I was a statistics tutor for Ken's class at CCU, and he was my academic advisor. Ken has seen my academic performance and work ethic, and he can attest to my dedication and commitment to my studies."
           periodWorking="Feb 2015 - Jul 2015"
+        />
+        <RefereeCard
+          refereeName="Jamie"
+          refereeType="Personal Character"
+          currentPosition="Student Transitions Officer at UniHall"
+          relationship="For one and a half years living at the residential college, Jamie, my residential advisor, closely observed my personal growth and adaptation in Australia. Her support was pivotal in navigating this significant phase of my life."
+          periodWorking="Jul 2022 - Nov 2023"
         />
       </div>
     </section>

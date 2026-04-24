@@ -112,14 +112,14 @@ const About = () => {
                   Live Site
                 </a>
                 <a
-                  href="https://github.com/HUIXIN-TW/notica-web"
+                  href="https://github.com/HUIXIN-TW/NotionSyncGCal"
                   className="outline_btn gap-2 icon-swap"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <img src={githubIcon} alt="" className="h-4 w-4 icon-default" aria-hidden="true" />
                   <img src={githubIconWhite} alt="" className="h-4 w-4 icon-hover" aria-hidden="true" />
-                  Cloudflare
+                  NotionSyncGCal
                 </a>
                 <a
                   href="https://github.com/HUIXIN-TW/notica-fullstack-web"

@@ -2,6 +2,63 @@
   {
     "majorproject": [
       {
+        "project": "Notica iOS App - Notion × Google Calendar Sync",
+        "company": "WhatNow Studio",
+        "url": "https://app.notica.studio",
+        "youtubeVideoId": "sTqjQpU7JNw",
+        "occupation": "Founder / Mobile Engineer",
+        "period": "2026.03 - Current",
+        "technologies": [
+          "About Software Development",
+          "TypeScript",
+          "React Native",
+          "Expo",
+          "EAS Build",
+          "Sentry",
+          "NestJS",
+          "AWS Lambda",
+          "DynamoDB",
+          "App Store Connect",
+          "Git"
+        ],
+        "description": [
+          "Designed and developed the Notica iOS app for syncing Notion tasks with Google Calendar from a mobile-first interface.",
+          "Built onboarding, account management, sync status, skipped task review, and settings screens using React Native and Expo.",
+          "Integrated the mobile app with the Notica backend for authenticated sync execution and secure account workflows.",
+          "Prepared production iOS delivery through EAS Build, TestFlight, App Store Connect, and App Store review submission.",
+          "Configured Sentry for mobile observability and production issue monitoring.",
+          "Designed the user experience around a privacy-first sync model where Notion and Google Calendar content is processed without being stored as application data."
+        ]
+      },
+      {
+        "project": "Notica Web - Notion × Google Calendar Sync Dashboard",
+        "company": "WhatNow Studio",
+        "url": "https://app.notica.studio",
+        "youtubeVideoId": "EPsbRK-6gdo",
+        "occupation": "Founder / Full-stack Engineer",
+        "period": "2026.03 - Current",
+        "technologies": [
+          "About Software Development",
+          "TypeScript",
+          "React",
+          "NestJS",
+          "DynamoDB",
+          "AWS Lambda",
+          "API Gateway",
+          "Cloudflare",
+          "Pulumi",
+          "Git"
+        ],
+        "description": [
+          "Designed and developed the Notica web dashboard for configuring Notion and Google Calendar sync workflows.",
+          "Implemented Google and Notion OAuth flows, secure callback handling, encrypted token storage, and authenticated user sessions.",
+          "Built the Notion dashboard embed feature, allowing users to generate a private embed link and access Notica workflows directly inside Notion.",
+          "Developed sync configuration screens, account management flows, and sync status views to help users understand connected integrations and sync outcomes.",
+          "Integrated the frontend with a NestJS backend deployed on AWS serverless infrastructure using Lambda, API Gateway, DynamoDB, and CloudWatch.",
+          "Managed domain, deployment, DNS, and edge configuration using Cloudflare and Pulumi."
+        ]
+      },
+      {
         "project": "NotionSyncGCal Website",
         "company": "Independent Project",
         "url": "https://github.com/HUIXIN-TW/NotionSyncGCalFrontend",

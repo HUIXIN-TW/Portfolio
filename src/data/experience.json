@@ -1,9 +1,38 @@
 [
   {
+    "occupation": "Founder / Product Engineer",
+    "industry": "Technology",
+    "company": "WhatNow Studio",
+    "period": "2026.03 - Present",
+    "technologies": [
+      "TypeScript",
+      "Python",
+      "SQL",
+      "Bash",
+      "AWS Cloud",
+      "Pulumi",
+      "Cloudflare",
+      "NestJS",
+      "React",
+      "React Native",
+      "Expo",
+      "Figma",
+      "Git"
+    ],
+    "description": [
+      "Founded WhatNow Studio to design, build, and ship independent software products across productivity, automation, and developer-led workflows.",
+      "Designed and developed Notica, a privacy-first productivity app that syncs Notion tasks with Google Calendar.",
+      "Built the mobile and web experience using React Native, React, TypeScript, Expo, and Figma, covering onboarding, account management, sync status, and user settings.",
+      "Developed OAuth-based integrations with Google Calendar and Notion, including secure token handling, encrypted storage, session management, and sync orchestration.",
+      "Designed a privacy-first sync architecture where Notion and Google Calendar content is processed in memory without being stored as application data.",
+      "Implemented an embedded Notion dashboard feature and managed cloud infrastructure using Pulumi, AWS serverless services, and Cloudflare."
+    ]
+  },
+  {
     "occupation": "Backend Engineer II",
     "industry": "Technology",
     "company": "The U Group & Co",
-    "period": "2025.03 - Present",
+    "period": "2025.03 - 2026.03",
     "technologies": ["Typescript", "Python", "SQL", "Bash", "AWS Cloud", "Git", "snowflake"],
     "description": [
       "Designed, developed, and maintained backend services using Python and TypeScript, ensuring scalable, reliable, and maintainable systems.",
