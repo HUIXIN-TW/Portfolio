@@ -1,0 +1,46 @@
+{
+  "name": "Ship It Maybe",
+  "icon": "/ship-it-maybe.png",
+  "author": "Huixin Yang",
+  "description": "A casual tech podcast about cloud, software engineering, AI tooling, and building products as independent developers.",
+  "rssUrl": "https://media.rss.com/ship-it-maybe/feed.xml",
+  "websiteUrl": "https://rss.com/podcasts/ship-it-maybe/",
+  "links": [
+    {
+      "label": "Website",
+      "url": "https://rss.com/podcasts/ship-it-maybe/"
+    },
+    {
+      "label": "RSS Feed",
+      "url": "https://media.rss.com/ship-it-maybe/feed.xml"
+    },
+    {
+      "label": "Apple Podcasts",
+      "url": ""
+    },
+    {
+      "label": "Spotify",
+      "url": ""
+    },
+    {
+      "label": "YouTube",
+      "url": ""
+    }
+  ],
+  "episodes": [
+    {
+      "title": "Pilot: Why We Started This Podcast",
+      "date": "2026-04-27",
+      "summary": "A short pilot episode introducing the hosts and the themes of the podcast.",
+      "url": "",
+      "duration": ""
+    },
+    {
+      "title": "AWS, Frontend, and Shipping Side Projects",
+      "date": "2026-05-01",
+      "summary": "A conversation about cloud architecture, frontend development, and the messy middle of shipping real projects.",
+      "url": "",
+      "duration": ""
+    }
+  ]
+}

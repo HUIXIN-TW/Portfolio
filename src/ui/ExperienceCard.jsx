@@ -1,39 +1,23 @@
 import React from "react";
-import styled from "styled-components";
-
-const ExperienceHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
-`;
-
-const ExperienceTitle = styled.h3`
-  text-align: left;
-`;
-
-const ExperiencePeriod = styled.span`
-  text-align: right;
-  font-style: italic;
-`;
+import { card, cardMeta, cardPadding, cardTitle, mutedText, tagPillBase } from "../styles/uiClasses";
 
 const ExperienceCard = ({ occupation, technologies, company, description, period }) => {
   return (
-    <div className="bg-white shadow-md rounded-lg p-6 mb-4 ml-5 mr-5">
-      <ExperienceHeader>
-        <ExperienceTitle>
+    <div className={`${card} ${cardPadding}`}>
+      <div className="mb-3 flex items-center justify-between gap-3">
+        <h3 className={cardTitle}>
           {occupation}, {company}
-        </ExperienceTitle>
-        <ExperiencePeriod className="text-gray-600">{period}</ExperiencePeriod>
-      </ExperienceHeader>
-      <div className="text-sm text-gray-900 flex flex-wrap gap-2">
+        </h3>
+        <span className={cardMeta}>{period}</span>
+      </div>
+      <div className="flex flex-wrap gap-2 text-sm text-slate-900">
         {technologies.map((technology, index) => (
-          <span key={index} className="text-xs italic bg-gray-200 text-gray-900 rounded-md px-2 py-1">
+          <span key={index} className={tagPillBase}>
             #{technology}
           </span>
         ))}
       </div>
-      <ul className="text-sm text-gray-500 m-5">
+      <ul className={`m-4 ${mutedText}`}>
         {description.map((desc, index) => (
           <li key={index} className="list-disc list-inside">
             {desc}

@@ -1,4 +1,14 @@
 import React from "react";
+import {
+  bodyText,
+  card,
+  cardPadding,
+  cardTitle,
+  sectionContainer,
+  sectionTitle,
+  subsectionTitle,
+  tagPillMuted,
+} from "../styles/uiClasses";
 
 const githubIcon = new URL("../assets/images/socials/github-mark.svg", import.meta.url).href;
 const githubIconWhite = new URL("../assets/images/socials/github-mark-white.svg", import.meta.url).href;
@@ -16,25 +26,23 @@ const githubIconWhite = new URL("../assets/images/socials/github-mark-white.svg"
  * Sort description that expands on your title on the Home component.
  */
 const description =
-  "As a software developer with a strong data engineering focus, I build reliable, scalable systems that connect front-end experiences with robust back-end services. I work across AWS infrastructure, data pipelines, and analytics platforms to deliver products that are fast, reliable, and user-centric.";
+  "I am a backend, data, and platform-focused software engineer building scalable cloud systems and product-facing applications.\n\nI currently work on independent software products through WhatNow Studio, including Notica, a Notion × Google Calendar sync app. My work spans React, React Native, TypeScript, NestJS, AWS Lambda, DynamoDB, Cloudflare, Pulumi, CI/CD automation, and privacy-conscious product architecture.\n\nPreviously, I worked across backend engineering and data engineering, building Python and TypeScript services, AWS infrastructure, data pipelines, Snowflake/dbt workflows, Dagster orchestration, and internal React tools. Before software engineering, I worked in audit and accounting with Deloitte and PwC, which gives me a strong foundation in stakeholder communication, business process thinking, documentation, and delivery ownership.";
 
 /**
  * List of some of skills or technologies you work on, are learning,
  * passionate about, or enjoy,
  */
 const skillsList = [
-  "Agile Methodologies",
-  "UI/UX Design & Prototyping",
-  "Full Stack Web Development",
-  "Backend Engineering",
-  "Frontend Engineering",
-  "Mobile App Development",
-  "AWS Infrastructure",
-  "Cloudflare CDN",
-  "Data Warehousing (Snowflake)",
-  "Data Pipelines & Orchestration",
-  "ETL/ELT (ETLeap, dbt)",
-  "Machine Learning & Data Mining",
+  "Backend & Platform Engineering",
+  "Product-facing Full-stack Development",
+  "React & React Native Applications",
+  "AWS Serverless Architecture",
+  "Infrastructure as Code with Pulumi",
+  "CI/CD & Release Automation",
+  "Cloudflare Pages / Edge Deployment",
+  "Data Engineering Pipelines",
+  "Snowflake, dbt & Analytics Workflows",
+  "API Integrations & OAuth Workflows",
 ];
 
 /**
@@ -47,25 +55,25 @@ const detailOrQuote =
 
 const About = () => {
   // const [showDetails, setShowDetails] = useState(false); // State to toggle the visibility of Education and Portfolio
+  const descriptionParagraphs = description.split("\n\n");
 
   return (
     <section className="padding" id="about">
       {/* <img className="background" src={image} alt={imageAltText} /> */}
-      <div className="bg-white w-full p-2 m-auto my-12 text-center sm:p-8 sm:w-3/4">
-        <h2>Live Demo</h2>
-        <div className="text-left text-wrap text-s md:text-xl p-4 md:p-12">
-          <p className="text-sm uppercase tracking-wide text-gray-500 mb-4">Open Source + Live</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="text-lg font-semibold">What to Eat</h3>
-                <span className="text-xs italic bg-gray-200 text-gray-900 rounded-md px-2 py-1">Live</span>
+      <div className={`${sectionContainer} min-w-0`}>
+        <section className="space-y-6">
+          <h2 className={sectionTitle}>Live Demo</h2>
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+            <div className={`${card} ${cardPadding} min-w-0 w-full`}>
+              <div className="mb-2 flex items-center justify-between">
+                <h3 className={cardTitle}>What to Eat</h3>
+                <span className={tagPillMuted}>Live</span>
               </div>
-              <p className="text-sm text-gray-600 mb-4">Quick meal ideas for hungry moments.</p>
+              <p className="mb-4 text-sm text-slate-600 dark:text-[#C7C9D9]">Quick meal ideas for hungry moments.</p>
               <div className="flex flex-wrap gap-2 text-sm">
                 <a
                   href="https://whattoeat.huixinyang.com/"
-                  className="black_btn gap-2"
+                  className="black_btn max-w-full min-w-0 gap-2 whitespace-normal break-words text-left"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -82,7 +90,7 @@ const About = () => {
                 </a>
                 <a
                   href="https://github.com/HUIXIN-TW/what-to-eat"
-                  className="outline_btn gap-2 icon-swap"
+                  className="outline_btn max-w-full min-w-0 gap-2 whitespace-normal break-words text-left icon-swap"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -92,14 +100,21 @@ const About = () => {
                 </a>
               </div>
             </div>
-            <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="text-lg font-semibold">Notica</h3>
-                <span className="text-xs italic bg-gray-200 text-gray-900 rounded-md px-2 py-1">Live</span>
+            <div className={`${card} ${cardPadding} min-w-0 w-full`}>
+              <div className="mb-2 flex items-center justify-between">
+                <h3 className={cardTitle}>Notica</h3>
+                <span className={tagPillMuted}>Live</span>
               </div>
-              <p className="text-sm text-gray-600 mb-4">Sync tool for Notion databases and Google Calendar.</p>
+              <p className="mb-4 text-sm text-slate-600 dark:text-[#C7C9D9]">
+                Sync tool for Notion databases and Google Calendar.
+              </p>
               <div className="flex flex-wrap gap-2 text-sm">
-                <a href="https://notica.studio" className="black_btn gap-2" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://notica.studio"
+                  className="black_btn max-w-full min-w-0 gap-2 whitespace-normal break-words text-left"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -113,7 +128,7 @@ const About = () => {
                 </a>
                 <a
                   href="https://github.com/HUIXIN-TW/NotionSyncGCal"
-                  className="outline_btn gap-2 icon-swap"
+                  className="outline_btn max-w-full min-w-0 gap-2 whitespace-normal break-words text-left icon-swap"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -123,7 +138,7 @@ const About = () => {
                 </a>
                 <a
                   href="https://github.com/HUIXIN-TW/notica-fullstack-web"
-                  className="outline_btn gap-2 icon-swap"
+                  className="outline_btn max-w-full min-w-0 gap-2 whitespace-normal break-words text-left icon-swap"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -134,17 +149,26 @@ const About = () => {
               </div>
             </div>
           </div>
-        </div>
-        <h2>About Myself</h2>
-        <p className="text-left text-wrap text-s md:text-xl p-4 md:p-12">{description}</p>
-        <hr />
-        <ul className="text-left text-s grid grid-cols-1 md:grid-cols-2 sm:text-lg gap-3 m-8">
-          {skillsList.map((skill) => (
-            <li key={skill}>・{skill}</li>
-          ))}
-        </ul>
-        <hr />
-        <p className="text-left text-wrap text-s md:text-xl p-4 md:p-12">{detailOrQuote}</p>
+        </section>
+
+        <section className="mt-16 space-y-8">
+          <h3 className={subsectionTitle}>About Myself</h3>
+          <div className="max-w-4xl space-y-5">
+            {descriptionParagraphs.map((paragraph) => (
+              <p key={paragraph} className={`whitespace-normal break-words text-left ${bodyText}`}>
+                {paragraph}
+              </p>
+            ))}
+          </div>
+          <hr className="my-0 border-slate-200 dark:border-[#44475A]" />
+          <ul className="grid min-w-0 grid-cols-1 gap-x-10 gap-y-3 text-left text-base font-normal text-slate-700 dark:text-[#C7C9D9] sm:grid-cols-2">
+            {skillsList.map((skill) => (
+              <li key={skill}>・{skill}</li>
+            ))}
+          </ul>
+          <hr className="my-0 border-slate-200 dark:border-[#44475A]" />
+          <p className={`max-w-4xl whitespace-normal break-words text-left ${bodyText}`}>{detailOrQuote}</p>
+        </section>
       </div>
       {/* Button to toggle the visibility of Education and Portfolio */}
       {/* <div className="flex justify-center items-center">

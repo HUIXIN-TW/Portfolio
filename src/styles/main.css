@@ -1,5 +1,5 @@
 /* Import Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Montserrat:wght@200;400;600;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap");
 
 /* Import Tailwind CSS Styles */
 @import "tailwindcss/base";
@@ -9,7 +9,9 @@
 /* Global Styles */
 html,
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Inter", "Noto Sans TC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
   height: 100%;
   margin: 0;
   overflow-x: hidden;
@@ -18,30 +20,68 @@ body {
   scroll-behavior: smooth;
 }
 
+html.dark body {
+  background: #282a36;
+  color: #f8f8f2;
+}
+
+#root {
+  min-height: 100vh;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 div#main {
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+  isolation: isolate;
 }
 
 #main::after {
   content: "";
   display: block;
   position: absolute; /* Positioning inside the #main element */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url("/src/assets/images/scattered-forcefields.svg");
+  inset: 0;
+  background-image: url("../assets/images/scattered-forcefields.svg");
+  background-position: center top;
+  background-repeat: no-repeat;
   background-size: cover; /* Or 'contain', depending on how you want to size the image */
+  opacity: 0.18;
   pointer-events: none; /* Prevents the pseudo-element from capturing clicks */
   z-index: -1; /* Ensures the background is behind the content */
+}
+
+#main::before {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 15% 15%, rgba(189, 147, 249, 0.16), transparent 28%),
+    radial-gradient(circle at 82% 12%, rgba(255, 121, 198, 0.14), transparent 24%),
+    radial-gradient(circle at 72% 74%, rgba(80, 250, 123, 0.12), transparent 26%),
+    radial-gradient(circle at 18% 82%, rgba(139, 233, 253, 0.12), transparent 22%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: -2;
+}
+
+html.dark #main::before {
+  opacity: 1;
+}
+
+html.dark #main::after {
+  opacity: 0.09;
+  filter: saturate(1.2) hue-rotate(280deg);
 }
 
 /* Section Styles */
 section {
   position: relative;
-  width: 100vw;
+  width: 100%;
 }
 
 section.min-height {
@@ -68,13 +108,16 @@ section img.background {
 h1 {
   font-size: 7rem;
   font-weight: 400;
-  line-height: 0.8;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
   margin: 0;
 }
 
 h2 {
   font-size: 2rem;
   font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
   margin: 0;
   padding-top: 1rem;
 }
@@ -82,12 +125,14 @@ h2 {
 h3 {
   font-weight: 400;
   font-size: 1.25rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
   margin: 0;
 }
 
 p {
   font-size: 18px;
-  line-height: 1.5;
+  line-height: 1.7;
   margin-bottom: 0;
   font-weight: 300;
 }
@@ -113,12 +158,18 @@ li::marker {
 }
 
 a {
-  color: black;
+  color: inherit;
   text-decoration: none;
 }
 
 a:hover {
-  color: #4e567e;
+  color: inherit;
+}
+
+.content-card-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 /* Container Styles */
@@ -222,26 +273,18 @@ a:hover {
 .horizonalContainerBox {
   break-inside: avoid; /* Prevents boxes from being split across columns */
   margin-bottom: 40px;
-  border-radius: 10px;
-  border: 1px solid rgb(204, 204, 204);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 24px 16px;
-  text-align: center;
-  max-width: 55rem; /* optional, adjust as needed */
+  text-align: left;
 }
 
 /* Media query for smaller screens (e.g., mobile devices) */
 @media (max-width: 640px) {
   .horizonalContainerBox {
-    border-radius: 10px;
-    border: 1px solid rgb(204, 204, 204);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 24px 16px;
-    text-align: center;
     flex: 0 0 auto;
     width: 100%;
   }
@@ -268,6 +311,10 @@ a:hover {
   opacity: 1;
   transition: opacity 0.3s ease;
   z-index: 2; /* Ensure overlay is above images/videos */
+}
+
+html.dark .image-wrapper::before {
+  background: rgba(189, 147, 249, 0.08);
 }
 
 .image-wrapper:hover::before {
@@ -301,18 +348,15 @@ a:hover {
 }
 
 .degree {
-  /* styles for each degree */
-  flex-basis: 40px;
-  font-weight: 400;
-  font-size: 1.25rem;
-  margin: 0;
+  display: inline-block;
   flex-grow: 1;
-  text-align: left;
+  margin: 0;
 }
 
 .gpa {
   /* styles for each GPA */
   font-weight: bold;
+  color: #475569;
   text-align: right;
   white-space: nowrap;
   flex-shrink: 0;
@@ -339,6 +383,7 @@ a:hover {
 .achievementTitle {
   /* styles for each achievement */
   font-size: 1rem;
+  color: #0f172a;
   flex-grow: 1; /* Allow it to grow to fill space */
   text-align: left; /* Align the text to the left */
 }
@@ -354,10 +399,21 @@ a:hover {
   /* styles for each result */
   font-size: 1rem;
   font-weight: bold;
+  color: #475569;
   margin-left: 0.5rem; /* Space between the achievement and the result */
   text-align: right; /* Align the text to the right */
   white-space: nowrap; /* Prevent wrapping to ensure it stays aligned to the right */
   flex-shrink: 0; /* Prevent it from shrinking */
+}
+
+html.dark .gpa,
+html.dark .achievementTitle,
+html.dark .result {
+  color: #a9adc1;
+}
+
+html.dark .achievementTechnologies {
+  color: #c7c9d9;
 }
 
 img.socialIcon {
@@ -413,7 +469,7 @@ img.socialIcon {
   transition: all 0.3s ease; /* transition-all */
   text-align: center; /* text-center */
   font-size: 0.875rem; /* text-sm */
-  font-family: "Inter", sans-serif; /* font-inter */
+  font-family: inherit;
   display: flex; /* flex */
   align-items: center; /* items-center */
   justify-content: center; /* justify-center */
@@ -422,6 +478,17 @@ img.socialIcon {
 .black_btn:hover {
   background-color: white; /* hover:bg-white */
   color: black; /* hover:text-black */
+}
+
+html.dark .black_btn {
+  border-color: #bd93f9;
+  background-color: transparent;
+  color: #f8f8f2;
+}
+
+html.dark .black_btn:hover {
+  background-color: #bd93f9;
+  color: #282a36;
 }
 
 .outline_btn {
@@ -433,7 +500,7 @@ img.socialIcon {
   transition: all 0.3s ease; /* transition-all */
   text-align: center; /* text-center */
   font-size: 0.875rem; /* text-sm */
-  font-family: "Inter", sans-serif; /* font-inter */
+  font-family: inherit;
   display: flex; /* flex */
   align-items: center; /* items-center */
   justify-content: center; /* justify-center */
@@ -442,6 +509,22 @@ img.socialIcon {
 .outline_btn:hover {
   background-color: black; /* hover:bg-black */
   color: white; /* hover:text-white */
+}
+
+html.dark .outline_btn {
+  border-color: #44475a;
+  color: #f8f8f2;
+}
+
+html.dark .outline_btn:hover {
+  background-color: #bd93f9;
+  border-color: #bd93f9;
+  color: #282a36;
+}
+
+html.dark .outline_btn .icon-default,
+html.dark .black_btn .icon-default {
+  filter: brightness(0) invert(1);
 }
 
 .icon-swap .icon-hover {

@@ -6,7 +6,7 @@
     "achievements": [
       {
         "title": "Agile Web application - BrewChat",
-        "technologies": "Javascript, Flask, SQLAlchemy, unittest, Git"
+        "technologies": "JavaScript, Flask, SQLAlchemy, unittest, Git"
       },
       {
         "title": "Data Warehousing & Association Rule Mining",
@@ -22,11 +22,11 @@
       },
       {
         "title": "IOT ESP32 Air Quality Detector",
-        "technologies": "C++, Flask, HTML, CSS, Javascript, Firebase Real-Time DB, Git"
+        "technologies": "C++, Flask, HTML, CSS, JavaScript, Firebase Real-Time DB, Git"
       },
       {
         "title": "Business intelligence report",
-        "technologies": "Python, PowerBI"
+        "technologies": "Python, Power BI"
       },
       {
         "title": "Cybersecurity",

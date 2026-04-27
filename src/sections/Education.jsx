@@ -2,29 +2,31 @@ import React from "react";
 import { Disclosure } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/20/solid";
 import educationData from "../data/education.json";
-
 import Scholarships from "./Scholarships";
+import { card, cardPadding, cardTitle, mutedText, sectionContainer, sectionTitle } from "../styles/uiClasses";
 
 const Education = () => {
   return (
     <section className="padding" id="education">
-      <h2 className="text-center">Education</h2>
-      <div className="flex flex-row lg:item-center">
-        <div className="w-full verticalContainer">
+      <div className={sectionContainer}>
+        <h2 className={sectionTitle}>Education & Scholarships</h2>
+        <div className="content-card-stack">
           {educationData.map((education) => (
-            <div className="box" key={education.degree}>
+            <div className={`${card} ${cardPadding}`} key={education.degree}>
               <Disclosure>
                 {({ open }) => (
                   <>
                     <div className="degreeGpaPair">
                       <a href={education.url} target="_blank" rel="noopener noreferrer">
-                        <span className="degree">{education.degree}</span>
+                        <span className={`degree ${cardTitle}`}>{education.degree}</span>
                       </a>
                       <span className="gpa">GPA: {education.gpa}</span>
                     </div>
-                    <p className="small">{education.university}</p>
-                    <Disclosure.Button className="pt-3 w-full flex items-center justify-center">
-                      <ChevronUpIcon className={`${open ? "rotate-180 transform" : ""} h-5 w-5 text-gray-500`} />
+                    <p className={mutedText}>{education.university}</p>
+                    <Disclosure.Button className="flex w-full items-center justify-center pt-3">
+                      <ChevronUpIcon
+                        className={`${open ? "rotate-180 transform" : ""} h-5 w-5 text-gray-500 dark:text-[#C7C9D9]`}
+                      />
                     </Disclosure.Button>
                     <Disclosure.Panel>
                       <ul>
@@ -45,8 +47,8 @@ const Education = () => {
             </div>
           ))}
         </div>
+        <Scholarships />
       </div>
-      <Scholarships />
     </section>
   );
 };

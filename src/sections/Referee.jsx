@@ -1,58 +1,64 @@
 import React from "react";
 import RefereeCard from "../ui/RefereeCard";
+import { sectionContainer, sectionTitle } from "../styles/uiClasses";
 
 const Referee = () => {
   return (
     <section className="padding" id="referee">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-center">Referee</h2>
-        <p className="text-base text-gray-700 italic mt-4 mb-8 ml-3 mr-3">
+      <div className={sectionContainer}>
+        <h2 className={sectionTitle}>Referee</h2>
+        <p className="mb-8 mt-4 text-base italic text-slate-700 dark:text-[#C7C9D9]">
           Should you require further details or wish to establish contact, please do not hesitate to reach out to me
           directly at{" "}
-          <a href="mailto:huixin.yang.tw@gmail.com" className="underline text-gray-900">
+          <a
+            href="mailto:huixin.yang.tw@gmail.com"
+            className="underline text-slate-900 dark:text-[#8BE9FD] dark:hover:text-[#BD93F9]"
+          >
             huixin.yang.tw@gmail.com
           </a>
           . I am more than happy to provide the contact information upon request.
         </p>
 
-        <RefereeCard
-          refereeName="Vlad"
-          refereeType="Professional"
-          currentPosition="Former Head of Engineering at The U Group & Co"
-          relationship="Professional reference available upon request. Vlad previously worked with me in an engineering leadership capacity."
-          periodWorking="Jun 2025 - Mar 2026"
-        />
+        <div className="content-card-stack">
+          <RefereeCard
+            refereeName="Vlad"
+            refereeType="Professional"
+            currentPosition="Head of Engineering"
+            relationship="Professional reference available upon request. Vlad previously worked with me in an engineering leadership capacity."
+            periodWorking="Jun 2025 - Mar 2026"
+          />
 
-        <RefereeCard
-          refereeName="Zhi"
-          refereeType="Academic and Professional"
-          currentPosition="Lecturer at UWA"
-          relationship="Initially my supervisor in 2023, Zhi has been a mentor to me both academically and professionally. After graduation, I assisted in his lab, reinforcing our collaborative efforts."
-          periodWorking="Feb 2023 - Mar 2024"
-        />
+          <RefereeCard
+            refereeName="Zhi"
+            refereeType="Academic and Professional"
+            currentPosition="Lecturer"
+            relationship="Initially my supervisor in 2023, Zhi has been a mentor to me both academically and professionally. After graduation, I assisted in his lab, reinforcing our collaborative efforts."
+            periodWorking="Feb 2023 - Mar 2024"
+          />
 
-        <RefereeCard
-          refereeName="Remy"
-          refereeType="Professional"
-          currentPosition="Frontend Developer at Greenbase"
-          relationship="As a co-worker at Deloitte, Remy and I collaborated closely on several key projects, which showcased my expertise and teamwork abilities."
-          periodWorking="Mar 2019 - Apr 2020"
-        />
+          <RefereeCard
+            refereeName="Remy"
+            refereeType="Professional"
+            currentPosition="Frontend Developer"
+            relationship="As a co-worker at Deloitte, Remy and I collaborated closely on several key projects, which showcased my expertise and teamwork abilities."
+            periodWorking="Mar 2019 - Apr 2020"
+          />
 
-        <RefereeCard
-          refereeName="Ken"
-          refereeType="Academic and Professional"
-          currentPosition="Assistant Professor at Geneseo State College"
-          relationship="I was a statistics tutor for Ken's class at CCU, and he was my academic advisor. Ken has seen my academic performance and work ethic, and he can attest to my dedication and commitment to my studies."
-          periodWorking="Feb 2015 - Jul 2015"
-        />
-        <RefereeCard
-          refereeName="Jamie"
-          refereeType="Personal Character"
-          currentPosition="Student Transitions Officer at UniHall"
-          relationship="For one and a half years living at the residential college, Jamie, my residential advisor, closely observed my personal growth and adaptation in Australia. Her support was pivotal in navigating this significant phase of my life."
-          periodWorking="Jul 2022 - Nov 2023"
-        />
+          <RefereeCard
+            refereeName="Ken"
+            refereeType="Academic and Professional"
+            currentPosition="Assistant Professor"
+            relationship="I was a statistics tutor for Ken's class at CCU, and he was my academic advisor. Ken has seen my academic performance and work ethic, and he can attest to my dedication and commitment to my studies."
+            periodWorking="Feb 2015 - Jul 2015"
+          />
+          <RefereeCard
+            refereeName="Jamie"
+            refereeType="Personal Character"
+            currentPosition="Student Transitions Officer"
+            relationship="For one and a half years living at the residential college, Jamie, my residential advisor, closely observed my personal growth and adaptation in Australia. Her support was pivotal in navigating this significant phase of my life."
+            periodWorking="Jul 2022 - Nov 2023"
+          />
+        </div>
       </div>
     </section>
   );

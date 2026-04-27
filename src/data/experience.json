@@ -33,7 +33,7 @@
     "industry": "Technology",
     "company": "The U Group & Co",
     "period": "2025.03 - 2026.03",
-    "technologies": ["Typescript", "Python", "SQL", "Bash", "AWS Cloud", "Git", "snowflake"],
+    "technologies": ["TypeScript", "Python", "SQL", "Bash", "AWS Cloud", "Git", "Snowflake"],
     "description": [
       "Designed, developed, and maintained backend services using Python and TypeScript, ensuring scalable, reliable, and maintainable systems.",
       "Built and optimized cross-service APIs to improve interoperability across microservices and enhance developer experience.",
@@ -48,7 +48,7 @@
     "industry": "Technology",
     "company": "The U Group & Co",
     "period": "2025.01 - 2025.03",
-    "technologies": ["Python", "SQL", "Bash", "AWS Cloud", "Git", "snowflake"],
+    "technologies": ["Python", "SQL", "Bash", "AWS Cloud", "Git", "Snowflake"],
     "description": [
       "Managed and optimized data pipelines, utilizing Snowflake, dbt, and SQL to streamline data transformation and storage processes.",
       "Developed and maintained Python-based machine learning pipelines for predictive analytics and data processing tasks.",
@@ -62,7 +62,7 @@
     "industry": "Technology",
     "company": "The U Group & Co",
     "period": "2024.03 - 2025.01",
-    "technologies": ["Python", "SQL", "Bash", "AWS Cloud", "Git", "snowflake"],
+    "technologies": ["Python", "SQL", "Bash", "AWS Cloud", "Git", "Snowflake"],
     "description": [
       "Delivered high-quality data sets to clients, ensuring timely and accurate reporting",
       "Troubleshot and resolved complex data flow, storage, and accessibility challenges, improving system performance.",
@@ -85,8 +85,8 @@
     "period": "2022.07 - 2024.02",
     "technologies": [
       "Figma",
-      "Typescript",
-      "Javascript",
+      "TypeScript",
+      "JavaScript",
       "React",
       "Next.js",
       "PostgreSQL",

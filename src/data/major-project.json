@@ -2,14 +2,13 @@
   {
     "majorproject": [
       {
-        "project": "Notica iOS App - Notion × Google Calendar Sync",
+        "project": "Notica iOS App",
         "company": "WhatNow Studio",
         "url": "https://app.notica.studio",
         "youtubeVideoId": "sTqjQpU7JNw",
         "occupation": "Founder / Mobile Engineer",
         "period": "2026.03 - Current",
         "technologies": [
-          "About Software Development",
           "TypeScript",
           "React Native",
           "Expo",
@@ -22,23 +21,24 @@
           "Git"
         ],
         "description": [
-          "Designed and developed the Notica iOS app for syncing Notion tasks with Google Calendar from a mobile-first interface.",
-          "Built onboarding, account management, sync status, skipped task review, and settings screens using React Native and Expo.",
-          "Integrated the mobile app with the Notica backend for authenticated sync execution and secure account workflows.",
-          "Prepared production iOS delivery through EAS Build, TestFlight, App Store Connect, and App Store review submission.",
-          "Configured Sentry for mobile observability and production issue monitoring.",
-          "Designed the user experience around a privacy-first sync model where Notion and Google Calendar content is processed without being stored as application data."
-        ]
+          "A mobile-first iOS app for managing Notion × Google Calendar sync workflows with secure account handling, sync visibility, and privacy-conscious architecture.",
+          "- Designed and shipped the Notica iOS app, a mobile-first productivity tool for syncing Notion tasks with Google Calendar.",
+          "- Built the core mobile experience with React Native and Expo, including onboarding, account management, sync status, skipped task review, settings, and authenticated user flows.",
+          "- Integrated the app with a NestJS serverless backend to trigger secure sync workflows, retrieve user sync state, and support account-level operations.",
+          "- Prepared the app for iOS production delivery through EAS Build, TestFlight, App Store Connect, and App Store review submission.",
+          "- Added Sentry observability to monitor mobile production issues and improve release confidence.",
+          "- Designed the app around a privacy-first sync model where Notion and Google Calendar content is processed for synchronization without being stored as application data."
+        ],
+        "categories": ["Mobile", "Full-stack", "Cloud / AWS", "Backend", "DevOps"]
       },
       {
-        "project": "Notica Web - Notion × Google Calendar Sync Dashboard",
+        "project": "Notica Web",
         "company": "WhatNow Studio",
         "url": "https://app.notica.studio",
         "youtubeVideoId": "EPsbRK-6gdo",
         "occupation": "Founder / Full-stack Engineer",
         "period": "2026.03 - Current",
         "technologies": [
-          "About Software Development",
           "TypeScript",
           "React",
           "NestJS",
@@ -50,13 +50,15 @@
           "Git"
         ],
         "description": [
-          "Designed and developed the Notica web dashboard for configuring Notion and Google Calendar sync workflows.",
-          "Implemented Google and Notion OAuth flows, secure callback handling, encrypted token storage, and authenticated user sessions.",
-          "Built the Notion dashboard embed feature, allowing users to generate a private embed link and access Notica workflows directly inside Notion.",
-          "Developed sync configuration screens, account management flows, and sync status views to help users understand connected integrations and sync outcomes.",
-          "Integrated the frontend with a NestJS backend deployed on AWS serverless infrastructure using Lambda, API Gateway, DynamoDB, and CloudWatch.",
-          "Managed domain, deployment, DNS, and edge configuration using Cloudflare and Pulumi."
-        ]
+          "A web dashboard for configuring, monitoring, and operating Notion × Google Calendar sync workflows through secure OAuth, serverless infrastructure, and embedded Notion access.",
+          "- Designed and built the Notica web dashboard for configuring and monitoring Notion × Google Calendar sync workflows.",
+          "- Implemented Google and Notion OAuth flows, secure callback handling, encrypted token storage, authenticated sessions, and account connection management.",
+          "- Built user-facing sync configuration, account management, sync status, and integration health screens to make connected workflows easier to understand and operate.",
+          "- Developed the Notion dashboard embed feature, allowing users to generate a private embed link and access Notica workflows directly inside Notion.",
+          "- Integrated the React frontend with a NestJS backend deployed on AWS serverless infrastructure using Lambda, API Gateway, DynamoDB, and CloudWatch.",
+          "- Managed production web delivery, DNS, custom domains, edge configuration, and infrastructure automation using Cloudflare and Pulumi."
+        ],
+        "categories": ["Full-stack", "Cloud / AWS", "Frontend", "Backend", "DevOps"]
       },
       {
         "project": "NotionSyncGCal Website",
@@ -66,7 +68,6 @@
         "occupation": "Full Stack Developer",
         "period": "2024.04 - Current",
         "technologies": [
-          "About Software Development",
           "Next.js",
           "TypeScript",
           "React",
@@ -87,7 +88,8 @@
           "- Integrated DynamoDB and S3 for user data and credential storage, ensuring scalable and secure backend infrastructure.",
           "- Deployed with AWS Amplify for server-side rendering (SSR) and continuous deployment from GitHub.",
           "- Focused on secure API communication, efficient session management, and a future-proof serverless design."
-        ]
+        ],
+        "categories": ["Full-stack", "Cloud / AWS", "Frontend", "Backend"]
       },
       {
         "project": "WhatToEat app",
@@ -96,16 +98,7 @@
         "youtubeVideoId": "xVK-zeScOwU",
         "occupation": "Full Stack developer",
         "period": "2024.02 - Current",
-        "technologies": [
-          "About Software Development",
-          "Next.js",
-          "JavaScript",
-          "React",
-          "Tailwind CSS",
-          "MongoDB",
-          "Vercel",
-          "Git"
-        ],
+        "technologies": ["Next.js", "JavaScript", "React", "Tailwind CSS", "MongoDB", "Vercel", "Git"],
         "description": [
           "Spearheaded the development of WhatToEat, an intuitive web application aimed at simplifying daily lunch decision-making through a user-friendly interface.",
           "- Implemented secure user authentication with optional NextAuth.js integration, offering both traditional and Google login methods to accommodate a broad user base.",
@@ -113,7 +106,8 @@
           "- Fostered community engagement by allowing users to share and explore lunch ideas within the platform.",
           "- Successfully deployed the app using Vercel, ensuring high availability and real-time updates.",
           "- Managed source control with Git, facilitating collaborative development and version control."
-        ]
+        ],
+        "categories": ["Full-stack", "Frontend", "Backend"]
       },
       {
         "project": "Repair Labs project",
@@ -123,7 +117,6 @@
         "occupation": "Full Stack developer",
         "period": "2023.06 - 2024.02",
         "technologies": [
-          "About Software Development",
           "Next.js",
           "TypeScript",
           "React",
@@ -140,7 +133,8 @@
           "- Designed mobile and desktop layouts using Figma, ensuring a user-friendly interface.",
           "- Developed robust APIs to seamlessly connect frontend pages with the backend database, facilitating efficient data retrieval and updates.",
           "- Achievements: Successfully created and merged three pull requests via GitHub into the main branch within one month."
-        ]
+        ],
+        "categories": ["Full-stack", "Frontend", "Backend", "DevOps"]
       },
       {
         "project": "Notion Sync with Google Calendar - Command Line Interface",
@@ -149,14 +143,15 @@
         "youtubeVideoId": "9IbUIj8mNl8",
         "occupation": "Full Stack Developer",
         "period": "2021 - Current",
-        "technologies": ["About Software Development", "Python", "Notion API", "Google Calendar API", "Docker", "Git"],
+        "technologies": ["Python", "Notion API", "Google Calendar API", "Docker", "Git"],
         "description": [
           "- Developed a command-line interface (CLI) for syncing data between Notion and Google Calendar.",
           "- Implemented the ability to update events from Google Calendar to Notion and vice versa, allowing for seamless management of events between both platforms.",
           "- Offered features such as timezone and date range customization, default length setting for new Google Calendar events, and the option to delete Google Calendar events when marked as 'Done' in Notion.",
           "- Provided support for syncing across multiple calendars and the flexibility to name Notion columns as desired for the code to work.",
           "- Implemented credential and OAuth consent screen integration with Google Calendar scope for secure authentication and access to Google Calendar data."
-        ]
+        ],
+        "categories": ["Backend", "DevOps"]
       },
       {
         "project": "Pets Of Older Persons project",
@@ -166,22 +161,14 @@
         "occupation": "Full Stack developer",
         "period": "2022.11 - 2023.02",
         "label": "",
-        "technologies": [
-          "About Software Development",
-          "Next.js",
-          "TypeScript",
-          "React",
-          "Tailwind CSS",
-          "Firebase",
-          "Vercel",
-          "Git"
-        ],
+        "technologies": ["Next.js", "TypeScript", "React", "Tailwind CSS", "Firebase", "Vercel", "Git"],
         "description": [
           "- Contributed as a team member in the Pets of Older Persons Project.",
           "- Technology Stack: Next.js, TypeScript, React, Tailwind CSS, Firebase, and Vercel.",
           "- Utilized Figma to craft intuitive mobile and desktop layouts.",
           "- Collaborated effectively with other student volunteers, utilizing Git version control."
-        ]
+        ],
+        "categories": ["Full-stack", "Frontend", "Backend"]
       },
       {
         "project": "Smart Air Quality Monitoring System with ESP32",
@@ -190,25 +177,14 @@
         "url": "https://github.com/HUIXIN-TW/CITS5506IOT",
         "occupation": "Hardware and Arudino Developer with ESP32",
         "period": "2023.08 - 2023.11",
-        "technologies": [
-          "About Data Analysis",
-          "ESP32",
-          "Arduino",
-          "C++",
-          "Python",
-          "Flask",
-          "HTML",
-          "CSS",
-          "JavaScript",
-          "Firebase",
-          "Git"
-        ],
+        "technologies": ["ESP32", "Arduino", "C++", "Python", "Flask", "HTML", "CSS", "JavaScript", "Firebase", "Git"],
         "description": [
           "- The system aims to ensure worker safety, regulatory compliance, and environmental impact assessment.",
           "- Specific sensors tailored to monitor key pollutants are described. ",
           "- With the ESP32 T-Beam microcontroller used for data collection and transmission through WIFI, data collected securely has been stored in Firebase, and can be accessed through a Flask-based web application for real-time monitoring and data analysis.",
           "- This solution offers an approach to monitoring and ensuring air quality in mining environments, with a primary focus on worker safety, regulatory compliance, and environmental responsibility."
-        ]
+        ],
+        "categories": ["Full-stack", "Data / AI", "Frontend", "Backend"]
       },
       {
         "project": "LLM Triple Generator project",
@@ -218,18 +194,17 @@
         "occupation": "Team Leader",
         "period": "2023.08 - 2023.11",
         "technologies": [
-          "About Software Development",
-          "About Data Analysis",
           "Python",
-          "Python networkx",
-          "Python requests",
+          "NetworkX",
+          "Requests",
           "React",
           "ChatGPT API",
-          "ChatGPT Fine Tuning Model",
+          "Fine-tuning",
           "Prompt Engineering",
+          "Feature Engineering",
           "Docker",
           "Git",
-          "Git Actions",
+          "GitHub Actions",
           "MongoDB"
         ],
         "description": [
@@ -241,7 +216,8 @@
           "- Implemented prompt engineering and feature engineering to enhance the accuracy and efficiency of triple generation.",
           "- Docker was utilized for containerization, ensuring easy deployment and scalability of the application.",
           "- Version control and collaborative development were managed using Git, facilitating efficient teamwork and code management."
-        ]
+        ],
+        "categories": ["Data / AI", "Full-stack", "DevOps", "Frontend", "Backend"]
       },
       {
         "project": "Data Science Hackathon: Prototype Solution Presentation ",
@@ -251,12 +227,11 @@
         "period": "2023.09 - 2023.10",
         "rank": "3rd",
         "technologies": [
-          "About Data Analysis",
           "Dataiku",
           "LSTM",
           "Data Collection",
           "Model Development",
-          "ETL Process",
+          "ETL",
           "Feature Engineering",
           "Python",
           "Jupyter Notebook"
@@ -266,7 +241,8 @@
           "- Addressed challenges in accurately identifying lithology in mining exploration data.",
           "- Collaborated with a multidisciplinary team on data collection, model development, and ETL frameworks and processes.",
           "- Presented the LSTM solution, showcasing its effectiveness in improving identification accuracy."
-        ]
+        ],
+        "categories": ["Data / AI"]
       },
       {
         "project": "Data Science Hackathon: Creative Poster at the WA Mining Conference",
@@ -275,12 +251,13 @@
         "imgId": "hackathondatascienceposter",
         "period": "2023.10",
         "rank": "4th",
-        "technologies": ["About Data Analysis", "Dataiku"],
+        "technologies": ["Dataiku"],
         "description": [
           "- Designed an engaging and informative poster showcasing the applications and benefits of the developed model.",
           "- Presented findings at the conference, highlighting the impact of accurate lithology identification in mining exploration.",
           "- Received recognition for the innovative approach to solving exploration challenges."
-        ]
+        ],
+        "categories": ["Data / AI"]
       },
       {
         "project": "BrewChat Application",
@@ -289,7 +266,6 @@
         "imgId": "brewchat",
         "period": "2023.04 - 2023.05",
         "technologies": [
-          "About Software Development",
           "Python",
           "Flask",
           "SQLAlchemy",
@@ -308,7 +284,8 @@
           "- Chatbot (Backend): BrewChat incorporates the Eliza Chatbot as part of the backend functionality. The Eliza Chatbot, implemented using the Natural Language Toolkit (NLTK), enables chat-based conversations with users. It processes user input, performs natural language processing, generates appropriate responses, and communicates with the client-side interface.",
           "- Database: BrewChat utilizes the SQLAlchemy database framework to interact with the SQLite database. The SQLite database stores user information, conversation pairings, and relevant chat logs. SQLAlchemy provides an Object-Relational Mapping (ORM) tool, simplifying database operations within the application.",
           "The BrewChat application includes a suite of unit tests to ensure the correctness and functionality of the various components. These tests are designed to cover different aspects of the application and help identify any potential issues or bugs. The application also includes a suite of Selenium tests to verify the end-to-end functionality and user experience. These tests simulate user interactions with the application in a browser environment."
-        ]
+        ],
+        "categories": ["Full-stack", "Frontend", "Backend"]
       },
       {
         "project": "Graph Database & Graph Data Science",
@@ -317,8 +294,9 @@
         "url": "https://github.com/HUIXIN-TW/CITS5504",
         "occupation": "Data Science",
         "period": "2023.04 - 2023.05",
-        "technologies": ["About Data Analysis", "Neo4j", "Cypher", "R"],
-        "description": []
+        "technologies": ["Neo4j", "Cypher", "R", "Git"],
+        "description": [],
+        "categories": ["Data / AI"]
       },
       {
         "project": "Data Warehousing & Association Rule Mining",
@@ -327,7 +305,7 @@
         "url": "https://github.com/HUIXIN-TW/CITS5504",
         "occupation": "Data Science",
         "period": "2023.03 - 2023.04",
-        "technologies": ["About Data Analysis", "R", "MySQL", "SSMS", "Visual Studio", "SSAS", "PowerBI"],
+        "technologies": ["R", "MySQL", "SSMS", "Visual Studio", "SSAS", "Power BI", "Git"],
         "description": [
           "Dataset:",
           "- For the purposes of this data warehousing project, we leveraged the Crime in Atlanta dataset spanning the years 2009 to 2017.",
@@ -337,7 +315,8 @@
           "- The primary objective of our analysis is to unearth significant patterns and features within the data, thereby facilitating informed decision-making processes.",
           "- Emphasis is placed on employing visualizations as a powerful tool for insight generation and addressing pertinent business queries.",
           "- To this end, we harnessed the capabilities of Power BI, enabling the creation of dynamic dashboards and reports. The subsequent sections present our findings and visualizations tailored to address specific business queries."
-        ]
+        ],
+        "categories": ["Data / AI"]
       },
       {
         "project": "Data analysis and Machine learning models",
@@ -346,8 +325,9 @@
         "url": "https://github.com/HUIXIN-TW/RProject",
         "occupation": "Data Science",
         "period": "2022.04 - 2022.05",
-        "technologies": ["About Data Analysis", "R", "RStuido", "Git"],
-        "description": []
+        "technologies": ["R", "RStudio", "Git"],
+        "description": [],
+        "categories": ["Data / AI"]
       },
       {
         "project": "QuickRecord Financial Application",
@@ -356,7 +336,7 @@
         "youtubeVideoId": "LcTDTIHJFMQ",
         "occupation": "Full Stack Developer",
         "period": "2021.12 - 2022.06",
-        "technologies": ["About Software Development", "Python Flask", "JavaScript", "SQL", "CSS", "HTML", "Git"],
+        "technologies": ["Python", "Flask", "JavaScript", "SQL", "CSS", "HTML", "Git"],
         "description": [
           "- Developed a comprehensive financial recording application, QuickRecord, designed to assist users in managing their financial statements and collaborating with friends or family members.",
           "- Technology Stack: Python Flask for backend services, JavaScript for dynamic client-side functionalities, and SQL for database management; styled with CSS and structured with HTML.",
@@ -364,7 +344,8 @@
           "- Engineered a system allowing users to share specific account information with friends, displaying all changes on a 'Shared Account Message' page, and ensuring data privacy where necessary.",
           "- Introduced innovative functionalities like historical transaction records, specific date balance checks, and a graphical representation of all account balances using bar charts for enhanced data visualization and user experience.",
           "- Coordinated with a colleague, Remykung, for project development, leveraging collaborative tools and version control systems for efficient project management."
-        ]
+        ],
+        "categories": ["Full-stack", "Frontend", "Backend"]
       }
     ]
   }

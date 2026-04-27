@@ -1,33 +1,17 @@
 import React from "react";
-import styled from "styled-components";
-
-const RefereeHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
-`;
-
-const RefereeTitle = styled.h3`
-  text-align: left;
-`;
-
-const RefereePeriod = styled.span`
-  text-align: right;
-  font-style: italic;
-`;
+import { card, cardMeta, cardPadding, cardTitle, mutedText } from "../styles/uiClasses";
 
 const RefereeCard = ({ refereeName, refereeType, currentPosition, relationship, periodWorking }) => {
   return (
-    <div className="bg-white shadow-md rounded-lg p-6 mb-4 ml-5 mr-5">
-      <RefereeHeader>
-        <RefereeTitle>
+    <div className={`${card} ${cardPadding}`}>
+      <div className="mb-3 flex items-center justify-between gap-3">
+        <h3 className={cardTitle}>
           {refereeName}, {currentPosition}
-        </RefereeTitle>
-        <RefereePeriod className="text-gray-600">{periodWorking}</RefereePeriod>
-      </RefereeHeader>
-      <p className="text-sm text-gray-900">{refereeType}</p>
-      <p className="text-sm text-gray-500">{relationship}</p>
+        </h3>
+        <span className={cardMeta}>{periodWorking}</span>
+      </div>
+      <p className="text-sm text-slate-900">{refereeType}</p>
+      <p className={mutedText}>{relationship}</p>
     </div>
   );
 };

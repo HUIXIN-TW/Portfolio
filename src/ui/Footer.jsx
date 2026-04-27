@@ -9,6 +9,7 @@
  */
 import React from "react";
 import PropTypes from "prop-types";
+import { THEME_DRACULA } from "../utils/theme";
 
 const devDotToIcon = new URL("../assets/images/socials/devdotto.svg", import.meta.url).href;
 const envelopeIcon = new URL("../assets/images/socials/envelope.svg", import.meta.url).href;
@@ -27,72 +28,67 @@ const youTubeIcon = new URL("../assets/images/socials/youtube.svg", import.meta.
  */
 
 const Footer = (props) => {
-  const { devDotTo, email, gitHub, instagram, linkedIn, medium, name, primaryColor, twitter, youTube } = props;
+  const { devDotTo, email, gitHub, instagram, linkedIn, medium, name, theme, twitter, youTube } = props;
 
+  // Keep the footer themeable from App props.
   return (
     <div
       id="footer"
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        gap: "0.5rem",
-        padding: "0.5rem 0 0.5rem",
-        backgroundColor: primaryColor,
-        width: "100vw",
-      }}
+      className={`flex w-full flex-col items-center gap-2 border-t border-slate-200 py-2 text-slate-900 dark:border-[#44475A] dark:bg-[#21222c] dark:text-[#F8F8F2] ${
+        theme === THEME_DRACULA ? "bg-[#21222c]" : "bg-slate-200"
+      }`}
     >
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          gap: "2rem",
-        }}
-      >
+      <div className="flex justify-center gap-8">
         {email && (
           <a href={`mailto:${email}`}>
-            <img src={envelopeIcon} alt="email" className="socialIcon" />
+            <img src={envelopeIcon} alt="email" className="socialIcon dark:brightness-0 dark:invert dark:opacity-90" />
           </a>
         )}
         {devDotTo && (
           <a href={`https://dev.to/${devDotTo}`} target="_blank" rel="noopener noreferrer">
-            <img src={devDotToIcon} alt="Dev.to" className="socialIcon" />
+            <img src={devDotToIcon} alt="Dev.to" className="socialIcon dark:brightness-0 dark:invert dark:opacity-90" />
           </a>
         )}
         {gitHub && (
           <a href={`https://github.com/${gitHub}`} target="_blank" rel="noopener noreferrer">
-            <img src={gitHubIcon} alt="GitHub" className="socialIcon" />
+            <img src={gitHubIcon} alt="GitHub" className="socialIcon dark:brightness-0 dark:invert dark:opacity-90" />
           </a>
         )}
         {instagram && (
           <a href={`https://www.instagram.com/${instagram}`} target="_blank" rel="noopener noreferrer">
-            <img src={instagramIcon} alt="Instagram" className="socialIcon" />
+            <img
+              src={instagramIcon}
+              alt="Instagram"
+              className="socialIcon dark:brightness-0 dark:invert dark:opacity-90"
+            />
           </a>
         )}
         {linkedIn && (
           <a href={`https://www.linkedin.com/in/${linkedIn}`} target="_blank" rel="noopener noreferrer">
-            <img src={linkedInIcon} alt="LinkedIn" className="socialIcon" />
+            <img
+              src={linkedInIcon}
+              alt="LinkedIn"
+              className="socialIcon dark:brightness-0 dark:invert dark:opacity-90"
+            />
           </a>
         )}
         {medium && (
           <a href={`https://medium.com/@${medium}`} target="_blank" rel="noopener noreferrer">
-            <img src={mediumIcon} alt="Medium" className="socialIcon" />
+            <img src={mediumIcon} alt="Medium" className="socialIcon dark:brightness-0 dark:invert dark:opacity-90" />
           </a>
         )}
         {twitter && (
           <a href={`https://twitter.com/${twitter}`} target="_blank" rel="noopener noreferrer">
-            <img src={twitterIcon} alt="Twitter" className="socialIcon" />
+            <img src={twitterIcon} alt="Twitter" className="socialIcon dark:brightness-0 dark:invert dark:opacity-90" />
           </a>
         )}
         {youTube && (
           <a href={`https://www.youtube.com/c/${youTube}`} target="_blank" rel="noopener noreferrer">
-            <img src={youTubeIcon} alt="YouTube" className="socialIcon" />
+            <img src={youTubeIcon} alt="YouTube" className="socialIcon dark:brightness-0 dark:invert dark:opacity-90" />
           </a>
         )}
       </div>
-      <p className="text-xs" style={{ marginTop: 0, color: "black" }}>
-        Created by {name}
-      </p>
+      <p className="mt-0 text-xs text-black dark:text-[#C7C9D9]">Created by {name}</p>
     </div>
   );
 };
@@ -105,7 +101,7 @@ Footer.propTypes = {
   linkedIn: PropTypes.string,
   medium: PropTypes.string,
   name: PropTypes.string.isRequired,
-  primaryColor: PropTypes.string,
+  theme: PropTypes.string,
   twitter: PropTypes.string,
   youTube: PropTypes.string,
 };

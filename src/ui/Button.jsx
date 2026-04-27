@@ -7,7 +7,7 @@ const StyledButton = styled.button`
   flex-direction: column;
   align-items: center;
   padding: 6px 14px;
-  font-family: -apple-system, BlinkMacSystemFont, "Roboto", sans-serif;
+  font-family: inherit;
   border-radius: 6px;
   border: none;
   background: #6e6d70;

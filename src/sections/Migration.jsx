@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { bodyText, card, cardPadding, cardTitle, mutedText, sectionContainer } from "../styles/uiClasses";
 
 const API_ENDPOINT = "https://j69pro1xkj.execute-api.ap-southeast-2.amazonaws.com/?mode=all";
 const REFRESH_COOLDOWN_MS = 60 * 1000;
@@ -146,10 +147,10 @@ const Migration = () => {
 
   return (
     <section className="padding">
-      <div className="max-w-4xl mx-auto px-5 py-6 space-y-6">
+      <div className={`${sectionContainer} max-w-4xl py-6 space-y-6`}>
         {/* Refresh toolbar */}
-        <div className="flex justify-between items-center gap-4">
-          <p>
+        <div className="flex items-center justify-between gap-4">
+          <p className={bodyText}>
             {canRefresh
               ? "Requests are cached at the edge to reduce load."
               : `Refresh available in ${cooldownSeconds}s.`}
@@ -168,23 +169,23 @@ const Migration = () => {
 
         {/* Statistics cards — side by side */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <article className="border rounded-lg p-4 bg-white text-center">
-            <p>Total Invitations</p>
-            <p>{totalInvitations.toLocaleString()}</p>
+          <article className={`${card} ${cardPadding} text-center`}>
+            <p className={mutedText}>Total Invitations</p>
+            <p className={cardTitle}>{totalInvitations.toLocaleString()}</p>
           </article>
-          <article className="border rounded-lg p-4 bg-white text-center">
-            <p>Months Returned</p>
-            <p>{monthEntries.length.toLocaleString()}</p>
+          <article className={`${card} ${cardPadding} text-center`}>
+            <p className={mutedText}>Months Returned</p>
+            <p className={cardTitle}>{monthEntries.length.toLocaleString()}</p>
           </article>
-          <article className="border rounded-lg p-4 bg-white text-center">
-            <p>PDF Links Returned</p>
-            <p>{pdfCount.toLocaleString()}</p>
+          <article className={`${card} ${cardPadding} text-center`}>
+            <p className={mutedText}>PDF Links Returned</p>
+            <p className={cardTitle}>{pdfCount.toLocaleString()}</p>
           </article>
         </div>
 
         {/* Month invitation card */}
-        <div className="border rounded-lg p-4 bg-white">
-          <h2 className="m-0 p-0 text-2xl font-semibold leading-tight">Invitation Number By Month</h2>
+        <div className={`${card} ${cardPadding}`}>
+          <h2 className={cardTitle}>Invitation Number By Month</h2>
 
           {loading && monthEntries.length === 0 ? (
             <div>Loading migration data...</div>
@@ -204,9 +205,9 @@ const Migration = () => {
 
         {/* PDF card */}
         <div className="space-y-4">
-          <div className="rounded-lg border bg-white p-4">
+          <div className={`${card} ${cardPadding}`}>
             <div className="flex flex-wrap items-center justify-between gap-3">
-              <h2 className="m-0 p-0 text-2xl font-semibold leading-tight">Invitation PDF</h2>
+              <h2 className={cardTitle}>Invitation PDF</h2>
               {pdfSourceUrl ? (
                 <button
                   type="button"
@@ -228,12 +229,17 @@ const Migration = () => {
               <ol className="mt-4 space-y-2">
                 {invitationPdfLinks.map((item, index) => (
                   <li className="min-w-0 overflow-hidden" key={`${item.url}-${index}`}>
-                    <a href={item.url} target="_blank" rel="noreferrer" className="block max-w-full min-w-0">
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="block max-w-full min-w-0 text-[#8BE9FD] underline decoration-[#44475A] underline-offset-4 hover:text-[#BD93F9]"
+                    >
                       <strong className="block max-w-full break-words [overflow-wrap:anywhere]">
                         {item.title || item.url}
                       </strong>
                     </a>
-                    <p className="mt-1 max-w-full break-words text-xs leading-5 text-gray-500 [overflow-wrap:anywhere]">
+                    <p className="mt-1 max-w-full break-words text-xs leading-5 text-gray-500 dark:text-[#A9ADC1] [overflow-wrap:anywhere]">
                       {urlDescription(item.url)}
                     </p>
                   </li>
@@ -242,8 +248,8 @@ const Migration = () => {
             )}
           </div>
 
-          <div className="rounded-lg border bg-white p-4">
-            <h2 className="m-0 p-0 text-2xl font-semibold leading-tight">Other PDF</h2>
+          <div className={`${card} ${cardPadding}`}>
+            <h2 className={cardTitle}>Other PDF</h2>
 
             {loading && pdfLinks.length === 0 ? (
               <div className="mt-4">Loading PDF references...</div>
@@ -255,12 +261,17 @@ const Migration = () => {
               <ol className="mt-4 space-y-2">
                 {otherPdfLinks.map((item, index) => (
                   <li className="min-w-0 overflow-hidden" key={`${item.url}-${index}`}>
-                    <a href={item.url} target="_blank" rel="noreferrer" className="block max-w-full min-w-0">
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="block max-w-full min-w-0 text-[#8BE9FD] underline decoration-[#44475A] underline-offset-4 hover:text-[#BD93F9]"
+                    >
                       <strong className="block max-w-full break-words [overflow-wrap:anywhere]">
                         {item.title || item.url}
                       </strong>
                     </a>
-                    <p className="mt-1 max-w-full break-words text-xs leading-5 text-gray-500 [overflow-wrap:anywhere]">
+                    <p className="mt-1 max-w-full break-words text-xs leading-5 text-gray-500 dark:text-[#A9ADC1] [overflow-wrap:anywhere]">
                       {urlDescription(item.url)}
                     </p>
                   </li>

@@ -16,7 +16,13 @@ const GitHubButton = ({ name }) => {
         target="_blank" // Open link in a new tab
         rel="noopener noreferrer" // Security for opening links in a new tab
       >
-        <img src={isHovered ? github : githubWhite} alt="GitHub Logo" width={20} height={20} />
+        <img
+          src={isHovered ? github : githubWhite}
+          alt="GitHub Logo"
+          width={20}
+          height={20}
+          className="dark:brightness-0 dark:invert dark:opacity-90"
+        />
         <span className="ml-2">{name}</span>
       </a>
     </div>
