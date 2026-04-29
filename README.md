@@ -57,4 +57,3 @@ Hosted on **Cloudflare Pages**.
 | `eslint.config.js` | ESLint rules |
 | `.prettierrc` | Prettier formatting rules |
 | `package.json` | Dependencies and scripts |
-| `.devcontainer/` | Codespaces / Dev Container configuration |
