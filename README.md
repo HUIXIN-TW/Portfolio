@@ -4,44 +4,57 @@
 
 ## 🎮 Tech Stack
 
-- HTML
-- CSS
-- Tailwind CSS
-- JavaScript
-- React
-- Node.js
+- React 18 + React Router
 - Vite
-- Deploying to a production environment: Cloudflare
+- Tailwind CSS
+- react-markdown + remark-gfm (blog rendering)
+- @headlessui/react + @heroicons/react (accessible UI primitives)
+- Cloudflare Pages (hosting)
 
-## Deployment Instructions
+## 🗂️ Project Structure
 
-### Production: Cloudflare
+```
+src/
+├── App.jsx              # Root component; defines routes and theme state
+├── main.jsx             # Entry point; mounts React app
+├── assets/images/       # Static images and social icons (loaded via import.meta.url)
+├── blogs/               # Markdown blog posts (loaded via blogLoader.js)
+├── data/                # JSON data files for each portfolio section
+├── sections/            # Page-level route components
+├── styles/              # Global CSS (main.css) and shared Tailwind class strings (uiClasses.js)
+├── ui/                  # Shared presentational components
+└── utils/               # Utilities: blogLoader, theme, projectGalleryFilters
+public/
+├── ship-it-maybe.png    # Podcast cover image (referenced by src/data/podcast.json)
+└── swe.png              # iOS Home Screen icon (referenced by apple-touch-icon in index.html; no JS import)
+```
 
-Huixin's portfolio [huixinyang.com](https://portfolio.huixinyang.com/) is hosted on Cloudflare.
+## 🚀 Scripts
 
-- **Environment:** Production
-- **Workflow:**
+| Command | Description |
+|---|---|
+| `npm run dev` | Start Vite dev server |
+| `npm run build` | Production build into `dist/` |
+| `npm run preview` | Preview the production build locally |
+| `npm run lint:strict` | Run ESLint across all `.js` / `.jsx` files |
 
-  - Cloudflare Pages build command: `npm ci && npm run build`
-  - Cloudflare Pages build output directory: `dist`
-  - Node version: `22.12.0` or any newer `22.x` release; Vite also supports Node `20.19+`
-  - When your changes are merged to the `main` branch, Cloudflare automatically builds and deploys your site.
+## ☁️ Deployment
 
-- To preview the built app locally:
+Hosted on **Cloudflare Pages**.
 
-  ```bash
-  npm run preview
-  ```
+- Build command: `npm ci && npm run build`
+- Output directory: `dist`
+- Node version: `22.x` (also supports `20.19+`)
+- Deploys automatically when changes merge to `main`.
 
-## 🗃️ JavaScript Portfolio
+## 🗃️ Config Files
 
-The repo contains the following:
-
-- `/.devcontainer`
-  - `.devcontainer/Dockerfile`: A configuration file used by Codespaces to determine operating system and other details.
-  - `.devcontainer/devcontainer.json`: A configuration file used by Codespaces to configure Visual Studio Code settings, such as the enabling of additional extensions.
-- `/src`: This directory contains HTML, JS and CSS files used to build this portfolio site.
-- `index.html`: Vite entry HTML at the repository root.
-- `eslint.config.js`: This file contains settings for [ESLint](https://eslint.org/) that is included for code consistency and quality.
-- `.prettierrc`: This file contains settings for [Prettier](https://prettier.io/) that is used to format code.
-- `package.json` and `package-lock.json`: These files define the project information for [Node.js](https://nodejs.org/), dependent packages and the versions needed of each.
+| File | Purpose |
+|---|---|
+| `index.html` | Vite HTML entry; contains inline theme-init script, favicon, and iOS Home Screen metadata |
+| `vite.config.mjs` | Vite configuration |
+| `tailwind.config.js` | Tailwind CSS configuration |
+| `eslint.config.js` | ESLint rules |
+| `.prettierrc` | Prettier formatting rules |
+| `package.json` | Dependencies and scripts |
+| `.devcontainer/` | Codespaces / Dev Container configuration |
