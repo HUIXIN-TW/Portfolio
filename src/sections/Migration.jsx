@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { bodyText, card, cardPadding, cardTitle, mutedText, sectionContainer } from "../styles/uiClasses";
 
-const API_ENDPOINT = "https://j69pro1xkj.execute-api.ap-southeast-2.amazonaws.com/?mode=all";
+const API_ENDPOINT = "https://wp5kzgul4k.execute-api.ap-southeast-2.amazonaws.com/?mode=all";
 const REFRESH_COOLDOWN_MS = 60 * 1000;
 const MONTH_COLUMNS = ["July", "Aug", "Sept", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar", "Apr", "May", "Jun"];
 const TOTAL_COLUMN = "Total to date";
