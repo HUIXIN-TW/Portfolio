@@ -1,0 +1,5 @@
+{
+  "version": 1,
+  "include": ["/japan", "/japan/*", "/japan.html", "/trips/japan/*"],
+  "exclude": []
+}

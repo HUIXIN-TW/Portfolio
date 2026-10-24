@@ -21,7 +21,7 @@ The travel guide is a self-contained feature, not a Portfolio section.
 
 ## Routing and persistence
 
-Canonical routes: `/japan` (zh) and `/japan/en` (en). No legacy redirects. The checklist and meeting time use the current browser storage keys only; previous development-era keys are deliberately not supported.
+Canonical routes: `/japan` (zh) and `/japan/en` (en), served only on `trips.huixinyang.com` (and Pages/local previews). Cloudflare Pages middleware returns HTTP 404 for these routes and their trip assets on `portfolio.huixinyang.com` and other main-site domains; `public/_routes.json` limits Function invocations to trip paths. No legacy redirects. The checklist and meeting time use the current browser storage keys only; previous development-era keys are deliberately not supported.
 
 ## Browser checks
 

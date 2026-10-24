@@ -15,7 +15,7 @@ import BlogPostPage from "./sections/BlogPostPage";
 import { applyThemeToDocument, getInitialTheme, THEME_DRACULA, THEME_LIGHT, THEME_STORAGE_KEY } from "./utils/theme";
 
 import "./styles/main.css";
-import { TRIP_ROUTES } from "./features/trips/japan/data/site";
+import { canServeTrip, TRIP_ROUTES } from "./features/trips/japan/data/site";
 
 const JapanTripPage = React.lazy(() => import("./features/trips/japan/JapanTripPage"));
 
@@ -58,8 +58,11 @@ const App = () => {
 const SiteRoutes = ({ theme, handleThemeToggle, siteProps }) => {
   const { pathname } = useLocation();
   const currentPath = pathname.replace(/\/$/, "") || "/";
-  const isTripsDomain = window.location.hostname === "trips.huixinyang.com";
-  const isTripPage = isTripsDomain || Object.values(TRIP_ROUTES).includes(currentPath);
+  const hostname = window.location.hostname;
+  const isTripsDomain = hostname === "trips.huixinyang.com";
+  const canShowTrip = canServeTrip(hostname);
+  const isTripPage = canShowTrip && (isTripsDomain || Object.values(TRIP_ROUTES).includes(currentPath));
+  const tripUnavailable = <div role="status" className="mx-auto max-w-2xl p-10 text-center">404 · Page not found</div>;
 
   return (
     <div
@@ -70,8 +73,8 @@ const SiteRoutes = ({ theme, handleThemeToggle, siteProps }) => {
       <main className="flex-1 w-full relative">
         <React.Suspense fallback={<div role="status" className="p-8 text-center">Loading trip…</div>}>
           <Routes>
-            <Route path={TRIP_ROUTES.zh} element={<JapanTripPage locale="zh" />} />
-            <Route path={TRIP_ROUTES.en} element={<JapanTripPage locale="en" />} />
+            <Route path={TRIP_ROUTES.zh} element={canShowTrip ? <JapanTripPage locale="zh" /> : tripUnavailable} />
+            <Route path={TRIP_ROUTES.en} element={canShowTrip ? <JapanTripPage locale="en" /> : tripUnavailable} />
             <Route
               path="/"
               element={isTripsDomain

@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint:strict": "eslint \"src/**/*.{js,jsx}\" \"scripts/**/*.mjs\" \"tests/e2e/**/*.mjs\" \"*.config.{js,mjs}\"",
-    "verify:trips": "node scripts/verify-japan-content.mjs",
+    "verify:trips": "node scripts/verify-japan-content.mjs && node --test tests/unit/trip-host-routing.test.mjs",
     "prebuild": "npm run generate:trip",
     "generate:trip": "node scripts/generate-japan-kml.mjs",
     "predev": "npm run generate:trip",

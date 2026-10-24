@@ -38,7 +38,7 @@ export default defineConfig([
     extends: ["js/recommended"],
   },
   {
-    files: ["tests/e2e/**/*.mjs"],
+    files: ["tests/**/*.mjs"],
     languageOptions: {
       globals: { ...globals.node, ...globals.browser },
     },
