@@ -15,8 +15,8 @@ const localizedDays = {
       "day-1-tickets": {
         "title": "Train tickets & ICOCA",
         "details": [
-          "Buy a Nankai Railway ticket (credit card planned) and top up your ICOCA card by about ¥3,500.",
-          "Walk from arrivals to the Nankai ticket gates (around 5–10 minutes)."
+          "From arrivals, walk around 5–10 minutes to the Nankai Railway ticket counters.",
+          "Buy your Nankai Railway ticket (plan to pay by card), then add around ¥3,500 to your ICOCA card."
         ]
       },
       "day-1-nankai": {
@@ -101,7 +101,7 @@ const localizedDays = {
       "day-2-photos": {
         "title": "Gion photo walk",
         "details": [
-          "Explore Hanamikoji Street and the Shirakawa area, allowing roughly 5–15 minutes of walking around each stop."
+          "Explore Hanamikoji Street and the Shirakawa area for photos. Allow roughly 5–15 minutes of walking between stops."
         ]
       },
       "day-2-lunch": {
@@ -239,7 +239,7 @@ const content = {
     "copyPrompt": "Copy the following details:",
     "sharePrompt": "Copy your checklist:",
     "listen": "▶ Listen",
-    "phrasesHelp": "Tap Listen to hear each phrase in Japanese.",
+    "phrasesHelp": "Tap Listen to hear the Japanese pronunciation.",
     "phraseCountUnit": "phrases"
   },
   "hotel": {
@@ -258,7 +258,7 @@ const content = {
     "hotline": "Japan Visitor Hotline"
   },
   "map": {
-    "description": "All {places} places from the original map, grouped into {layers} categories. Search, browse or download the full KML.",
+    "description": "Explore {places} places from the original map, organized into {layers} categories. Download the KML to keep an editable copy.",
     "open": "View original map",
     "download": "Download all places (KML)",
     "directoryTitle": "Saved places ({places})",
@@ -269,7 +269,7 @@ const content = {
     "allLayers": "All categories",
     "noResults": "No matching places. Try a different search.",
     "openPlace": "Open map",
-    "steps": "Want to edit this map? Download the KML and import it into Google My Maps to edit all {places} places across {layers} categories.",
+    "steps": "Download the KML and import it into a new Google My Maps map to create your own editable copy.",
     "caveat": "The embedded map's labels do not change with the page language. The KML keeps places and categories, but some custom icons are not included.",
     "iframeTitle": "Original Osaka and Kyoto trip map"
   },
@@ -307,7 +307,7 @@ const content = {
     "phrase-07": "Could you take a photo for us?",
     "phrase-08": "Where is the toilet?",
     "phrase-09": "How much is this?",
-    "phrase-10": "Welcome! (What shop staff say.)",
+    "phrase-10": "Welcome! (Said by shop staff.)",
     "phrase-11": "Hello / good afternoon.",
     "phrase-12": "Good evening.",
     "phrase-13": "How many people? (Asked by staff.)",
@@ -317,7 +317,7 @@ const content = {
     "phrase-17": "Five people.",
     "phrase-18": "Yes.",
     "phrase-19": "No / no, thank you.",
-    "phrase-20": "Please / thank you for your help.",
+    "phrase-20": "Please / I'd appreciate it.",
     "phrase-21": "Thank you very much.",
     "phrase-22": "Hello, a table for two, please.",
     "phrase-23": "I'm lost. Could you help me?"

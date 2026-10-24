@@ -4,7 +4,7 @@ import { localizeDays } from "../data/itinerary.js";
 const localizedDays = {
   "01": {
     "title": "大阪初印象 · 難波、心齋橋與新世界",
-    "description": "從關西機場進大阪，逛心齋橋、道頓堀與新世界。",
+    "description": "抵達大阪後，走訪難波、心齋橋、道頓堀與新世界。",
     "stops": {
       "day-1-arrival": {
         "title": "抵達關西國際機場",
@@ -15,8 +15,8 @@ const localizedDays = {
       "day-1-tickets": {
         "title": "購票與 ICOCA 儲值",
         "details": [
-          "購買南海電鐵車票（預計使用信用卡），ICOCA 預計儲值 ¥3,500。",
-          "從入境區步行至南海電鐵售票處／閘口（約 5–10 分）。"
+          "入境後步行約 5–10 分鐘至南海電鐵售票處／閘口。",
+          "購買南海電鐵車票（預計刷卡），並為 ICOCA 儲值約 ¥3,500。"
         ]
       },
       "day-1-nankai": {
@@ -101,7 +101,7 @@ const localizedDays = {
       "day-2-photos": {
         "title": "和服散步與拍照",
         "details": [
-          "花見小路、白川南通，可各安排約 5–15 分鐘步行。"
+          "在花見小路、白川南通散步拍照；各段路程約 5–15 分鐘。"
         ]
       },
       "day-2-lunch": {
@@ -160,7 +160,7 @@ const localizedDays = {
       "day-3-shopping": {
         "title": "天神橋筋商店街",
         "details": [
-          "搭大阪 Metro 前往扇町站（約 35 分），再步行約 3–8 分鐘。",
+          "搭大阪 Metro 前往扇町站（約 35 分鐘），再步行 3–8 分鐘。",
           "逛商店街，順便吃午餐與小吃。"
         ]
       },
@@ -197,7 +197,7 @@ const content = {
   "hero": {
     "eyebrow": "OSAKA · KYOTO · 3 DAYS",
     "title": "大阪・京都三日旅行指南",
-    "description": "三天走訪大阪與京都，交通、餐廳選項與旅途實用資訊都整理在這裡。",
+    "description": "三日行程、交通轉乘、餐廳備選與旅行資訊，都能在這裡快速查找。",
     "note": "行程時間與車程為估計值；出發前請確認班次、營業時間與預約資訊。"
   },
   "navigation": {
@@ -239,7 +239,7 @@ const content = {
     "copyPrompt": "請複製以下內容：",
     "sharePrompt": "請複製以下清單：",
     "listen": "朗讀",
-    "phrasesHelp": "點選「朗讀」可聆聽日語發音。",
+    "phrasesHelp": "點選「朗讀」即可聽日語發音。",
     "phraseCountUnit": "句"
   },
   "hotel": {
@@ -258,7 +258,7 @@ const content = {
     "hotline": "觀光諮詢（多語）"
   },
   "map": {
-    "description": "原始地圖的 {places} 個收藏地點，依 {layers} 個分類整理，可搜尋、查看或下載完整 KML。",
+    "description": "原始地圖收藏 {places} 個地點，分為 {layers} 類；可在下方查找地點或下載 KML。",
     "open": "開啟原始地圖",
     "download": "下載完整地點 KML",
     "directoryTitle": "收藏地點（{places}）",
@@ -269,7 +269,7 @@ const content = {
     "allLayers": "所有分類",
     "noResults": "找不到符合條件的地點，請試試其他關鍵字。",
     "openPlace": "開啟地圖",
-    "steps": "想自行編輯地圖？下載 KML 並匯入 Google My Maps，即可修改全部 {places} 個地點及 {layers} 個分類。",
+    "steps": "下載 KML 並匯入 Google My Maps，即可建立自己的可編輯地圖。",
     "caveat": "嵌入地圖的標記名稱不會隨頁面語言切換；KML 保留地點與分類，但部分自訂圖示不會一併匯出。",
     "iframeTitle": "原始大阪京都旅遊地圖"
   },
@@ -307,7 +307,7 @@ const content = {
     "phrase-07": "可以幫我拍照嗎？",
     "phrase-08": "廁所在哪裡？",
     "phrase-09": "這個多少錢？",
-    "phrase-10": "歡迎光臨（店員常用語）。",
+    "phrase-10": "歡迎光臨（店員用語）。",
     "phrase-11": "你好／午安。",
     "phrase-12": "晚上好。",
     "phrase-13": "幾位？（店員詢問）",
