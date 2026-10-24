@@ -2,6 +2,8 @@ import assert from "node:assert/strict";
 import zh from "../src/features/trips/japan/content/zh.js";
 import en from "../src/features/trips/japan/content/en.js";
 import { hotel } from "../src/features/trips/japan/data/hotel.js";
+import { mapLayers, mapPlaces, localizePlace } from "../src/features/trips/japan/data/places.js";
+import { generateJapanKml } from "./generate-japan-kml.mjs";
 import { checklistGroups, checklistIds } from "../src/features/trips/japan/data/checklist.js";
 import { phrases } from "../src/features/trips/japan/data/phrases.js";
 
@@ -43,3 +45,32 @@ for (const content of [zh, en]) {
 assert.notEqual(zh.hero.title, en.hero.title, "Locales must use independently authored wording");
 console.log("Japan trip verified: zh and en, three days each, " + checklistIds.length +
   " checklist items, " + phrases.length + " phrases.");
+
+
+// Imported directly from the complete KMZ: all eight original layers and 41 placemarks.
+const expectedLayerCounts = [5, 5, 2, 4, 4, 2, 13, 6];
+assert.equal(mapPlaces.length, 41, "Original KMZ has 41 places");
+assert.equal(mapLayers.length, 8, "Original KMZ has 8 layers");
+assert.ok(unique(mapPlaces.map((place) => place.id)), "Place IDs must be unique");
+assert.ok(unique(mapPlaces.map((place) => place.lat.toFixed(6) + "," + place.lng.toFixed(6))),
+  "Places must not reuse the same coordinates");
+
+mapLayers.forEach((layer, index) => {
+  assert.equal(mapPlaces.filter((place) => place.layer === layer.id).length, expectedLayerCounts[index]);
+  assert.ok(layer.label.zh && layer.label.en);
+});
+for (const place of mapPlaces) {
+  assert.ok(mapLayers.some((layer) => layer.id === place.layer));
+  assert.ok(place.lat >= 34.5 && place.lat <= 35.2);
+  assert.ok(place.lng >= 135.3 && place.lng <= 135.9);
+  assert.ok(localizePlace(place, "zh") && localizePlace(place, "en"));
+}
+for (const locale of ["zh", "en"]) {
+  const kml = generateJapanKml(locale);
+  assert.equal((kml.match(/<Folder>/g) || []).length, 8, locale + ": missing KML layers");
+  assert.equal((kml.match(/<Placemark>/g) || []).length, 41, locale + ": missing KML places");
+  assert.equal((kml.match(/<coordinates>/g) || []).length, 41, locale + ": missing KML coordinates");
+  assert.ok(kml.includes("GRIDS PREMIUM HOTEL OSAKA NAMBA"), locale + ": missing hotel");
+  assert.ok(kml.includes("Namba"), locale + ": missing Osaka label");
+}
+console.log("Full KMZ import verified: 41 unique places, eight layers and two editable KML exports.");
