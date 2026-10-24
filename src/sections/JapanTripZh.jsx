@@ -348,7 +348,7 @@ export default function JapanTripZh() {
             <div className={styles.preflight} ref={preflightRef}>
               <div className={styles.preflightProgress}>
                 <div className={styles.preflightProgressHeader}>
-                  <span>CHECKLIST BEFORE LEAVING</span>
+                  <span>出發前確認</span>
                   <div className={styles.preflightProgressActions}>
                     <strong>{preflightPercent}%</strong>
                     <button
@@ -356,14 +356,14 @@ export default function JapanTripZh() {
                       className={styles.resetButton}
                       onClick={resetPreflight}
                     >
-                      Reset
+                      重設
                     </button>
                     <button
                       type="button"
                       className={styles.shareButton}
                       onClick={sharePreflight}
                     >
-                      Share
+                      分享
                     </button>
                   </div>
                 </div>
@@ -484,19 +484,19 @@ export default function JapanTripZh() {
                   <div className={styles.preflightRow}>
                     <label className={styles.checkItem}>
                       <input type="checkbox" data-check-id="cold-weather" />
-                      <span>天氣偏冷</span>
+                      <span>確認氣溫與當日天氣預報</span>
                     </label>
                     <div className={styles.preflightSublist}>
                       <div className={styles.preflightRow}>
                         <label className={styles.checkItem}>
                           <input type="checkbox" data-check-id="scarf-gloves" />
-                          <span>圍巾、手套</span>
+                          <span>確認是否需要圍巾、手套</span>
                         </label>
                       </div>
                       <div className={styles.preflightRow}>
                         <label className={styles.checkItem}>
                           <input type="checkbox" data-check-id="extra-layer" />
-                          <span>外套是否需要加一層</span>
+                          <span>確認是否需要多帶一件外套</span>
                         </label>
                       </div>
                     </div>
@@ -504,19 +504,19 @@ export default function JapanTripZh() {
                   <div className={styles.preflightRow}>
                     <label className={styles.checkItem}>
                       <input type="checkbox" data-check-id="sunny-weather" />
-                      <span>天氣晴朗</span>
+                      <span>確認紫外線與降雨機率</span>
                     </label>
                     <div className={styles.preflightSublist}>
                       <div className={styles.preflightRow}>
                         <label className={styles.checkItem}>
                           <input type="checkbox" data-check-id="sunscreen" />
-                          <span>防曬</span>
+                          <span>確認是否需要防曬</span>
                         </label>
                       </div>
                       <div className={styles.preflightRow}>
                         <label className={styles.checkItem}>
                           <input type="checkbox" data-check-id="sunglasses" />
-                          <span>太陽眼鏡</span>
+                          <span>確認是否需要太陽眼鏡</span>
                         </label>
                       </div>
                     </div>
