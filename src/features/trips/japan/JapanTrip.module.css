@@ -231,8 +231,10 @@
 .dayDescription { display: block; margin-top: 5px; font-size: 13px; line-height: 1.55; font-weight: 400; color: #63767e; }
 
 .blockTitle {
-  font-size: 16px; font-weight: 600;
-  color: #183a40; font-weight: 750; letter-spacing: -0.01em;
+  font-size: 16px;
+  color: #183a40;
+  font-weight: 750;
+  letter-spacing: -0.01em;
 }
 .list {
   margin: 0; padding-left: 20px;
@@ -367,7 +369,6 @@
 
 .preflight .checkItem {
   width: 100%;
-  padding: 10px 12px;
   border-radius: 12px;
   background: #fff;
   border: 1px solid #eef2f7;
@@ -467,16 +468,22 @@
 .helperText { font-size: 13px; line-height: 1.6; color: var(--trip-muted); }
 
 .infoList {
-  list-style: none; padding: 0; display: grid; gap: 10px;
-  gap: 8px; margin: 0;
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+  margin: 0;
 }
 .infoList li {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   padding: 10px 12px;
   border-radius: 12px;
-  min-width: 0; gap: 8px; flex-wrap: wrap; background: #f5faf8; align-items: center;
+  min-width: 0;
+  gap: 8px;
+  flex-wrap: wrap;
+  background: #f5faf8;
+  align-items: center;
 }
 .infoLabel {
   font-weight: 600;
@@ -556,12 +563,13 @@
   vertical-align: middle;
 }
 .cardSummary {
-  list-style: none; font-weight: 700; cursor: pointer;
+  list-style: none;
+  font-weight: 700;
+  cursor: pointer;
   padding: 22px 24px;
   color: var(--trip-ink);
   font-size: 16px;
   line-height: 1.45;
-  display: flow-root;
   display: block;
 }
 .cardSummary .sectionKicker { margin-bottom: 8px; }
@@ -573,7 +581,8 @@
 }
 .referenceStack .infoList { margin: 0; }
 .preflightProgressActions {
-  display: inline-flex; align-items: center; gap: 10px;
+  display: inline-flex;
+  align-items: center;
   margin-left: auto;
   gap: 8px;
 }
@@ -583,12 +592,14 @@
   font-variant-numeric: tabular-nums;
 }
 .preflightHeader {
-  display: flex; align-items: center; gap: 12px; margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
   margin-bottom: 12px;
 }
 .preflightTitle {
-  font-weight: 700; color: #0f172a;
-  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
   font-size: 15px;
 }
 
