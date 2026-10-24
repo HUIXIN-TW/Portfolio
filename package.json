@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint:strict": "eslint \"src/**/*.{js,jsx}\"",
-    "verify:trips": "node scripts/verify-japan-content.mjs"
+    "verify:trips": "node scripts/verify-japan-content.mjs",
+    "prebuild": "node scripts/generate-japan-kml.mjs"
   },
   "repository": {
     "type": "git",
