@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from "react";
+import { tripCanonicalUrl, TRIP_ICON } from "../data/site.js";
 
 export function useTripMetadata(meta, locale) {
   useEffect(() => {
-    const canonicalUrl = "https://trips.huixinyang.com" + (locale === "en" ? "/japan/en" : "/japan");
+    const canonicalUrl = tripCanonicalUrl(locale);
     const changes = [];
     const setMeta = (selector, tag, attributes) => {
       let element = document.head.querySelector(selector);
@@ -39,17 +40,17 @@ export function useTripMetadata(meta, locale) {
       name: "apple-mobile-web-app-title", content: meta.title,
     });
     setMeta('link[rel="icon"]', "link", {
-      rel: "icon", type: "image/png", href: "/trips/japan/favicon.png",
+      rel: "icon", type: "image/png", href: TRIP_ICON,
     });
     setMeta('link[rel="apple-touch-icon"]', "link", {
       rel: "apple-touch-icon", href: "/trips/japan/favicon.png",
     });
     setMeta('link[rel="canonical"]', "link", { rel: "canonical", href: canonicalUrl });
     setMeta('link[rel="alternate"][hreflang="zh-Hant"]', "link", {
-      rel: "alternate", hreflang: "zh-Hant", href: "https://trips.huixinyang.com/japan",
+      rel: "alternate", hreflang: "zh-Hant", href: tripCanonicalUrl("zh"),
     });
     setMeta('link[rel="alternate"][hreflang="en"]', "link", {
-      rel: "alternate", hreflang: "en", href: "https://trips.huixinyang.com/japan/en",
+      rel: "alternate", hreflang: "en", href: tripCanonicalUrl("en"),
     });
     return () => {
       for (const undo of changes.reverse()) undo();

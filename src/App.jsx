@@ -15,6 +15,7 @@ import BlogPostPage from "./sections/BlogPostPage";
 import { applyThemeToDocument, getInitialTheme, THEME_DRACULA, THEME_LIGHT, THEME_STORAGE_KEY } from "./utils/theme";
 
 import "./styles/main.css";
+import { TRIP_ROUTES } from "./features/trips/japan/data/site";
 
 const JapanTripPage = React.lazy(() => import("./features/trips/japan/JapanTripPage"));
 
@@ -58,7 +59,7 @@ const SiteRoutes = ({ theme, handleThemeToggle, siteProps }) => {
   const { pathname } = useLocation();
   const currentPath = pathname.replace(/\/$/, "") || "/";
   const isTripsDomain = window.location.hostname === "trips.huixinyang.com";
-  const isTripPage = isTripsDomain || ["/japan", "/japan/en"].includes(currentPath);
+  const isTripPage = isTripsDomain || Object.values(TRIP_ROUTES).includes(currentPath);
 
   return (
     <div
@@ -69,12 +70,12 @@ const SiteRoutes = ({ theme, handleThemeToggle, siteProps }) => {
       <main className="flex-1 w-full relative">
         <React.Suspense fallback={<div role="status" className="p-8 text-center">Loading trip…</div>}>
           <Routes>
-            <Route path="/japan" element={<JapanTripPage locale="zh" />} />
-            <Route path="/japan/en" element={<JapanTripPage locale="en" />} />
+            <Route path={TRIP_ROUTES.zh} element={<JapanTripPage locale="zh" />} />
+            <Route path={TRIP_ROUTES.en} element={<JapanTripPage locale="en" />} />
             <Route
               path="/"
               element={isTripsDomain
-                ? <Navigate to="/japan" replace />
+                ? <Navigate to={TRIP_ROUTES.zh} replace />
                 : <Home name={siteProps.name} title={siteProps.title} />}
             />
             {!isTripsDomain && (

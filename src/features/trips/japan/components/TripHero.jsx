@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "../JapanTrip.module.css";
+import { TRIP_ROUTES } from "../data/site";
 
 const sections = [["itinerary", "itinerary"], ["checklist", "checklist"], ["phrases", "phrases"], ["reference", "reference"], ["trip-map", "map"]];
 
@@ -10,8 +11,8 @@ export default function TripHero({ content }) {
       <div className={styles.heroTop}>
         <span className={styles.eyebrow}>{hero.eyebrow}</span>
         <nav className={styles.languageSwitch} aria-label={navigation.language}>
-          <Link to="/japan" lang="zh" className={locale === "zh" ? styles.languageActive : ""} aria-current={locale === "zh" ? "page" : undefined}>繁中</Link>
-          <Link to="/japan/en" lang="en" className={locale === "en" ? styles.languageActive : ""} aria-current={locale === "en" ? "page" : undefined}>English</Link>
+          <Link to={TRIP_ROUTES.zh} lang="zh" className={locale === "zh" ? styles.languageActive : ""} aria-current={locale === "zh" ? "page" : undefined}>繁中</Link>
+          <Link to={TRIP_ROUTES.en} lang="en" className={locale === "en" ? styles.languageActive : ""} aria-current={locale === "en" ? "page" : undefined}>English</Link>
         </nav>
       </div>
       <h1>{hero.title}</h1>

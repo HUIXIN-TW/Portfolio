@@ -2,6 +2,7 @@ import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import zh from "../src/features/trips/japan/content/zh.js";
 import en from "../src/features/trips/japan/content/en.js";
+import { tripCanonicalUrl, TRIP_ICON } from "../src/features/trips/japan/data/site.js";
 
 const dist = resolve("dist");
 const original = readFileSync(resolve(dist, "index.html"), "utf8");
@@ -11,14 +12,14 @@ const escapeHtml = (value) => String(value)
 
 for (const content of [zh, en]) {
   const locale = content.locale;
-  const url = "https://trips.huixinyang.com" + (locale === "en" ? "/japan/en" : "/japan");
+  const url = tripCanonicalUrl(locale);
   const title = escapeHtml(content.meta.title);
   const description = escapeHtml(content.meta.description);
   const metadata = [
     '<meta name="description" content="' + description + '" />',
     '<link rel="canonical" href="' + url + '" />',
-    '<link rel="alternate" hreflang="zh-Hant" href="https://trips.huixinyang.com/japan" />',
-    '<link rel="alternate" hreflang="en" href="https://trips.huixinyang.com/japan/en" />',
+    '<link rel="alternate" hreflang="zh-Hant" href="' + tripCanonicalUrl("zh") + '" />',
+    '<link rel="alternate" hreflang="en" href="' + tripCanonicalUrl("en") + '" />',
     '<meta property="og:type" content="website" />',
     '<meta property="og:locale" content="' + (locale === "en" ? "en_US" : "zh_TW") + '" />',
     '<meta property="og:url" content="' + url + '" />',
@@ -31,8 +32,8 @@ for (const content of [zh, en]) {
   let html = original
     .replace('<html lang="en">', '<html lang="' + (locale === "en" ? "en" : "zh-Hant") + '">')
     .replace(/<title>[^<]*<\/title>/, "<title>" + title + "</title>\n    " + metadata)
-    .replace(/<link rel="icon"[^>]*>/, '<link rel="icon" type="image/png" href="/trips/japan/favicon.png" />')
-    .replace(/<link rel="apple-touch-icon"[^>]*>/, '<link rel="apple-touch-icon" href="/trips/japan/favicon.png" />')
+    .replace(/<link rel="icon"[^>]*>/, '<link rel="icon" type="image/png" href="' + TRIP_ICON + '" />')
+    .replace(/<link rel="apple-touch-icon"[^>]*>/, '<link rel="apple-touch-icon" href="' + TRIP_ICON + '" />')
     .replace(/<meta name="apple-mobile-web-app-title"[^>]*>/, '<meta name="apple-mobile-web-app-title" content="' + title + '" />')
     .replace(/<noscript\b[^>]*>[\s\S]*?<\/noscript\s*>/i, "<noscript>" +
       escapeHtml(content.hero.title + " — " + content.hero.description) + "</noscript>");
