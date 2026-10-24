@@ -68,7 +68,7 @@ export default function TripMap({ content }) {
       <div className={styles.mapIntroduction}>
         <div>
           <span className={styles.sectionKicker}>05 / MAP</span>
-          <h2 id="trip-map-title">{map.title}</h2>
+          <h2 className={styles.sectionTitle} id="trip-map-title">{map.title}</h2>
           <p>{formatMapCopy(map.description)}</p>
         </div>
         <div className={styles.mapActions}>

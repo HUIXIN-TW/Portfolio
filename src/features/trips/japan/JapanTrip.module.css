@@ -481,7 +481,7 @@
   background: #fff;
 }
 .mapIntroduction { display: flex; align-items: end; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
-.mapIntroduction h2 { margin: 8px 0 5px; font-size: clamp(23px,3vw,29px); font-weight: 800; letter-spacing: -0.025em; color: var(--trip-ink); }
+.mapIntroduction h2 { margin: 8px 0 6px; font-weight: 700; }
 .mapIntroduction p { max-width: 580px; color: var(--trip-muted); font-size: 14px; line-height: 1.7; }
 .mapActions { gap: 8px; }
 .primaryButton, .secondaryButton {
@@ -526,7 +526,26 @@
 }
 .cardSummary { display: block; }
 .cardSummary .sectionKicker { margin-bottom: 8px; }
-.cardHeading { display: inline; }
+.cardHeading {
+  display: inline;
+  margin: 0;
+  font-size: clamp(24px, 3vw, 30px);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+}
+.extras > .card {
+  border-radius: 26px;
+}
+.extras > .card > .cardSummary {
+  padding: clamp(20px, 3.5vw, 40px);
+}
+.extras > .card > .cardBody {
+  padding: 0 clamp(20px, 3.5vw, 40px) clamp(20px, 3.5vw, 40px);
+}
+.extras > .card > .cardSummary .sectionKicker {
+  margin-bottom: 8px;
+}
 .cardSummary::after { margin-left: 12px; }
 .referenceStack .infoList { margin: 0; }
 .preflightProgressActions { gap: 8px; }
@@ -579,6 +598,9 @@
   .sectionNav { margin-top: 24px; gap: 7px; }
   .sectionNav a { padding: 7px 10px; font-size: 11px; }
   .itinerary, .mapSection, .referenceSection { padding: 20px 16px; border-radius: 18px; }
+  .extras > .card { border-radius: 18px; }
+  .extras > .card > .cardSummary { padding: 20px 16px; }
+  .extras > .card > .cardBody { padding: 0 16px 20px; }
   .dayTitle { padding: 18px 0; }
   .day > .blockTitle, .day > .list { margin-left: 16px; margin-right: 16px; }
   .timeline { padding: 2px 0 20px; }
