@@ -48,6 +48,12 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - run: npm run build
       - run: npm run test:e2e
+      - name: Check retired Japan Trip icon
+        if: always()
+        continue-on-error: true
+        run: |
+          curl -fLsS --max-time 15 https://tmp-jp.notica-web.pages.dev/tmp/japan-trip.png -o test-results/original-japan-trip.png
+          file test-results/original-japan-trip.png
       - if: always()
         uses: actions/upload-artifact@v4
         with:
