@@ -340,6 +340,7 @@ export const mapPlaces = [
     "id": "future-01",
     "layer": "future",
     "name": "Yakitori Ichimatsu",
+    "address": "1-5-1 Dojima, Kita-ku, Osaka, 530-0003, Japan",
     "lat": 34.695967,
     "lng": 135.497041
   },

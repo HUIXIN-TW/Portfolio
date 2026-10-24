@@ -18,8 +18,12 @@ function matchesSearch(place, search, locale) {
 }
 
 function getGoogleMapsUrl(place) {
+  // Coordinates alone open a dropped pin, not the business details panel.
+  // Google Maps resolves a named place more reliably with its address or city.
+  const name = place.en || place.name;
+  const location = place.address || (place.lat >= 34.9 ? "Kyoto, Japan" : "Osaka, Japan");
   return "https://www.google.com/maps/search/?api=1&query=" +
-    encodeURIComponent(place.lat + "," + place.lng);
+    encodeURIComponent(name + ", " + location);
 }
 
 export default function TripMap({ content }) {

@@ -71,6 +71,30 @@ test("map search, filtering and accordion are fully React-controlled", async ({ 
   await expect(kyoto).toHaveAttribute("open", "");
 });
 
+test("place links search by business name rather than geographic coordinates", async ({ page }) => {
+  await page.goto("/japan/en");
+
+  // This exact item previously opened only a coordinate pin in Google Maps.
+  await page.getByRole("button", { name: "Future ideas · 6" }).click();
+  const yakitori = page.getByRole("link", { name: "Open map: Yakitori Ichimatsu" });
+  await expect(yakitori).toBeVisible();
+  const yakitoriUrl = new URL(await yakitori.getAttribute("href"));
+  expect(yakitoriUrl.origin).toBe("https://www.google.com");
+  expect(yakitoriUrl.pathname).toBe("/maps/search/");
+  expect(yakitoriUrl.searchParams.get("api")).toBe("1");
+  expect(yakitoriUrl.searchParams.get("query")).toContain("Yakitori Ichimatsu");
+  expect(yakitoriUrl.searchParams.get("query")).toContain("Dojima");
+  expect(yakitoriUrl.searchParams.get("query")).not.toContain("34.695967");
+
+  // Places without a known street address still include a business name and city.
+  await page.getByRole("button", { name: "Coffee · Kyoto · 4" }).click();
+  const gokago = page.getByRole("link", { name: "Open map: GOKAGO" });
+  await expect(gokago).toBeVisible();
+  const gokagoUrl = new URL(await gokago.getAttribute("href"));
+  expect(gokagoUrl.searchParams.get("query")).toBe("GOKAGO, Kyoto, Japan");
+  expect(gokagoUrl.searchParams.get("query")).not.toMatch(/^\\d+[.\\d]*,/);
+});
+
 test("desktop layout and map filters without a horizontal scrollbar", async ({ page }) => {
   await page.goto("/japan");
   const itinerary = page.locator("#itinerary");
