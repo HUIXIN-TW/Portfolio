@@ -21,8 +21,8 @@ The travel guide is a self-contained feature, not a Portfolio section.
 
 ## Routing and persistence
 
-Canonical routes: `/japan` (zh) and `/japan/en` (en), served only on `trips.huixinyang.com` (and Pages/local previews). Cloudflare Pages middleware returns HTTP 404 for these routes and their trip assets on `portfolio.huixinyang.com` and other main-site domains; `public/_routes.json` limits Function invocations to trip paths. No legacy redirects. The checklist and meeting time use the current browser storage keys only; previous development-era keys are deliberately not supported.
+Canonical routes: `/japan` (zh) and `/japan/en` (en), served only on `trips.huixinyang.com` (plus local development). Cloudflare Pages preview domains deliberately return HTTP 404 for trip routes. Cloudflare Pages middleware returns HTTP 404 for these routes and their trip assets on `portfolio.huixinyang.com` and other main-site domains; `public/_routes.json` limits Function invocations to trip paths. No legacy redirects. The checklist and meeting time use the current browser storage keys only; previous development-era keys are deliberately not supported.
 
 ## Browser checks
 
-After `npm ci` and `npx playwright install chromium`, run `npm run build && npm run test:e2e`. The suite verifies localized metadata, language switching, Checklist persistence, map search and accordions, and responsive layout. There are no screenshot baselines or pixel-diff checks; UI changes are reviewed in the preview.
+After `npm ci` and `npx playwright install chromium`, run `npm run build && npm run test:e2e`. The suite verifies localized metadata, language switching, Checklist persistence, map search and accordions, and responsive layout. There are no screenshot baselines or pixel-diff checks; UI changes can be reviewed locally; the production Trips domain serves the deployed guide.

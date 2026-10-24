@@ -24,7 +24,10 @@ async function requestPath(host, path) {
 }
 
 test("portfolio and other main-site domains receive genuine HTTP 404 for trip pages and assets", async () => {
-  for (const host of ["portfolio.huixinyang.com", "huixinyang.com", "www.huixinyang.com"]) {
+  for (const host of [
+    "portfolio.huixinyang.com", "huixinyang.com", "www.huixinyang.com",
+    "portfolio-3oq.pages.dev", "fix-trips-domain-isolation.portfolio-3oq.pages.dev",
+  ]) {
     assert.equal(canServeTrip(host), false);
     for (const path of [
       "/japan", "/japan/", "/japan/en", "/japan/en/", "/japan.html", "/japan/en.html",
@@ -38,11 +41,8 @@ test("portfolio and other main-site domains receive genuine HTTP 404 for trip pa
   }
 });
 
-test("trips domain and the project's Cloudflare previews still serve trip routes", async () => {
-  for (const host of [
-    "trips.huixinyang.com", "portfolio-3oq.pages.dev",
-    "fix-trips-domain-isolation.portfolio-3oq.pages.dev", "localhost", "127.0.0.1",
-  ]) {
+test("only the Trips domain and local development serve trip routes", async () => {
+  for (const host of ["trips.huixinyang.com", "localhost", "127.0.0.1"]) {
     assert.equal(canServeTrip(host), true);
     for (const path of ["/japan", "/japan/en", "/trips/japan/places-zh.kml"]) {
       const { passed, response } = await requestPath(host, path);
