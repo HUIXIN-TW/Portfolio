@@ -66,6 +66,27 @@ export default function JapanTripEnglish() {
   const allItems = packing.flatMap((group) => group[1]);
   const done = allItems.filter((item) => checked[item]).length;
   const percent = Math.round((done / allItems.length) * 100);
+  const [copiedField, setCopiedField] = useState("");
+  const copyHotelDetail = async (field, value) => {
+    try {
+      await navigator.clipboard.writeText(value);
+      setCopiedField(field);
+      window.setTimeout(() => setCopiedField((current) => current === field ? "" : current), 1800);
+    } catch {
+      window.prompt("Copy " + field + ":", value);
+    }
+  };
+  const hotelDetail = (label, value, copyValue = value) => (
+    <li key={label}>
+      <span className={styles.infoLabel}>{label}</span>
+      <span className={styles.infoActions}>
+        <span className={styles.infoValue}>{value}</span>
+        <button type="button" className={styles.copyButton} onClick={() => copyHotelDetail(label, copyValue)} aria-label={`Copy ${label.toLowerCase()}: ${copyValue}`} title={copiedField === label ? "Copied!" : `Copy ${label.toLowerCase()}`}>
+          {copiedField === label ? "✓" : "⧉"}
+        </button>
+      </span>
+    </li>
+  );
   const share = async () => {
     const remaining = allItems.filter((item) => !checked[item]);
     const message = `Ready-to-go checklist: ${done}/${allItems.length} done (${percent}%). ${remaining.length ? "Still to pack/check: " + remaining.join(", ") : "All set!"}. Meet-up time: ${meetingTime || "not set"}.`;
@@ -153,11 +174,11 @@ export default function JapanTripEnglish() {
           <summary className={styles.cardSummary}>Hotel Details</summary>
           <div className={styles.cardBody}>
             <ul className={styles.infoList}>
-              <li><span className={styles.infoLabel}>Hotel</span><span className={styles.infoValue}>GRIDS PREMIUM HOTEL OSAKA NAMBA</span></li>
-              <li><span className={styles.infoLabel}>Address</span><span className={styles.infoValue}>1-7-7 Nambanaka, Naniwa Ward, Osaka</span></li>
-              <li><span className={styles.infoLabel}>Phone</span><a className={styles.infoValue} href="tel:+81666350810">+81 6-6635-0810</a></li>
-              <li><span className={styles.infoLabel}>Check-in</span><span className={styles.infoValue}>3:00 pm</span></li>
-              <li><span className={styles.infoLabel}>Check-out</span><span className={styles.infoValue}>11:00 am</span></li>
+              {hotelDetail("Hotel", "GRIDS PREMIUM HOTEL OSAKA NAMBA")}
+              {hotelDetail("Address", "1-7-7 Nambanaka, Naniwa Ward, Osaka")}
+              {hotelDetail("Phone", "+81 6-6635-0810")}
+              {hotelDetail("Check-in", "3:00 pm")}
+              {hotelDetail("Check-out", "11:00 am")}
             </ul>
           </div>
         </details>
