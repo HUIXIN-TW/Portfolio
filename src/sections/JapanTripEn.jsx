@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./JapanTrip.module.css";
 import {
-  CHECKLIST_KEY, MEETING_TIME_KEY, readChecklist, readMeetingTime,
+  MEETING_TIME_KEY, readChecklist, readMeetingTime,
   saveChecklist, writeStorage, useTripMetadata, useCopyFeedback,
   shareText, JapanTripHero, JapanTripMap,
 } from "./japan-trip/JapanTripShared";
@@ -104,12 +104,12 @@ const packing = [
     ["shopping-bag", "Reusable shopping bag"], ["tax-free", "Tax-free shopping QR code, if needed"],
   ] },
   { title: "Weather check", items: [
-    ["cold-weather", "Cold day? Check the forecast"],
-    ["scarf-gloves", "Scarf & gloves, if needed"],
-    ["extra-layer", "Extra warm layer, if needed"],
-    ["sunny-weather", "Sunny day? Check the forecast"],
-    ["sunscreen", "Sunscreen, if needed"],
-    ["sunglasses", "Sunglasses, if needed"],
+    ["cold-weather", "Check the temperature forecast"],
+    ["scarf-gloves", "Check whether a scarf & gloves are needed"],
+    ["extra-layer", "Check whether an extra layer is needed"],
+    ["sunny-weather", "Check the UV index & chance of rain"],
+    ["sunscreen", "Check whether sunscreen is needed"],
+    ["sunglasses", "Check whether sunglasses are needed"],
   ] },
   { title: "Before closing the door", items: [
     ["appliances", "Switch off room appliances"],
@@ -265,7 +265,7 @@ export default function JapanTripEn() {
                   <span className={styles.jp} lang="ja">{japanese}</span>
                   <span className={styles.romaji}>{romaji}</span>
                   <span className={styles.zh}>{english}</span>
-                  <button type="button" className={styles.speakButton} onClick={() => speak(japanese)} aria-label={"Play Japanese pronunciation: " + english}>Listen ↗</button>
+                  <button type="button" className={styles.speakButton} onClick={() => speak(japanese)} aria-label={"Play Japanese pronunciation: " + english}>▶ Listen</button>
                 </li>
               ))}
             </ol>
