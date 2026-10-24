@@ -32,7 +32,7 @@ const siteProps = {
 
 const App = () => {
   const [theme, setTheme] = React.useState(getInitialTheme);
-  const isJapanTrip = ["/trip/japan-zh", "/trips/japan-en"].includes(window.location.pathname.replace(/\/$/, ""));
+  const isJapanTrip = ["/trips/japan-zh", "/trips/japan-en"].includes(window.location.pathname.replace(/\/$/, ""));
 
   React.useEffect(() => {
     applyThemeToDocument(theme);
@@ -58,7 +58,7 @@ const App = () => {
         <main className="flex-1 w-full relative">
           {/* Define your routes */}
           <Routes>
-            <Route path="/trip/japan-zh" element={<JapanTrip />} />
+            <Route path="/trips/japan-zh" element={<JapanTrip />} />
             <Route path="/trips/japan-en" element={<JapanTripEnglish />} />
             <Route path="/" element={<Home name={siteProps.name} title={siteProps.title} />} />
             <Route path="/about" element={<About />} />
