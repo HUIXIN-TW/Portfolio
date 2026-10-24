@@ -77,6 +77,7 @@ const SiteRoutes = ({ theme, handleThemeToggle, siteProps }) => {
             <Route path="/trips/japan-en" element={<Navigate to="/japan/en" replace />} />
             <Route path="/" element={isTripsDomain ? <Navigate to="/japan" replace /> : <Home name={siteProps.name} title={siteProps.title} />} />
             {!isTripsDomain && (
+              <>
             <Route path="/about" element={<About />} />
             <Route path="/education" element={<Education />} />
             <Route path="/certificates-awards" element={<CertificatesAndAwards />} />
@@ -86,6 +87,7 @@ const SiteRoutes = ({ theme, handleThemeToggle, siteProps }) => {
             <Route path="/blog/:slug" element={<BlogPostPage />} />
             <Route path="/migration" element={<Migration />} />
             <Route path="/referee" element={<Referee />} />
+              </>
             )}
             {isTripsDomain && <Route path="*" element={<Navigate to="/japan" replace />} />}
             </Routes>
