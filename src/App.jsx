@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Footer from "./ui/Footer";
 import Header from "./ui/Header";
 import About from "./sections/About";
@@ -15,6 +15,9 @@ import BlogPostPage from "./sections/BlogPostPage";
 import { applyThemeToDocument, getInitialTheme, THEME_DRACULA, THEME_LIGHT, THEME_STORAGE_KEY } from "./utils/theme";
 
 import "./styles/main.css";
+import { TRIP_ROUTES } from "./features/trips/japan/data/site";
+
+const JapanTripPage = React.lazy(() => import("./features/trips/japan/JapanTripPage"));
 
 const siteProps = {
   name: "Huixin Yang",
@@ -47,29 +50,63 @@ const App = () => {
 
   return (
     <Router>
-      <div
-        id="main"
-        className="min-h-screen flex flex-col bg-white text-slate-900 dark:bg-[#282A36] dark:text-[#F8F8F2]"
-      >
-        <Header theme={theme} onThemeToggle={handleThemeToggle} />
-        <main className="flex-1 w-full relative">
-          {/* Define your routes */}
-          <Routes>
-            <Route path="/" element={<Home name={siteProps.name} title={siteProps.title} />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/education" element={<Education />} />
-            <Route path="/certificates-awards" element={<CertificatesAndAwards />} />
-            <Route path="/experience" element={<Experience />} />
-            <Route path="/portfolio" element={<ProjectsPage />} />
-            <Route path="/blog" element={<BlogPage />} />
-            <Route path="/blog/:slug" element={<BlogPostPage />} />
-            <Route path="/migration" element={<Migration />} />
-            <Route path="/referee" element={<Referee />} />
-          </Routes>
-        </main>
-        <Footer {...siteProps} theme={theme} />
-      </div>
+      <SiteRoutes theme={theme} handleThemeToggle={handleThemeToggle} siteProps={siteProps} />
     </Router>
+  );
+};
+
+const SiteRoutes = ({ theme, handleThemeToggle, siteProps }) => {
+  const { pathname } = useLocation();
+  const currentPath = pathname.replace(/\/$/, "") || "/";
+  const isTripsDomain = window.location.hostname === "trips.huixinyang.com";
+  const isTripPage = isTripsDomain || Object.values(TRIP_ROUTES).includes(currentPath);
+
+  return (
+    <div
+      id="main"
+      className="min-h-screen flex flex-col bg-white text-slate-900 dark:bg-[#282A36] dark:text-[#F8F8F2]"
+    >
+      {!isTripPage && <Header theme={theme} onThemeToggle={handleThemeToggle} />}
+      <main className="flex-1 w-full relative">
+        <React.Suspense fallback={<div role="status" className="p-8 text-center">Loading trip…</div>}>
+          <Routes>
+            <Route path={TRIP_ROUTES.zh} element={<JapanTripPage locale="zh" />} />
+            <Route path={TRIP_ROUTES.en} element={<JapanTripPage locale="en" />} />
+            <Route
+              path="/"
+              element={isTripsDomain
+                ? <Navigate to={TRIP_ROUTES.zh} replace />
+                : <Home name={siteProps.name} title={siteProps.title} />}
+            />
+            {!isTripsDomain && (
+              <>
+                <Route path="/about" element={<About />} />
+                <Route path="/education" element={<Education />} />
+                <Route path="/certificates-awards" element={<CertificatesAndAwards />} />
+                <Route path="/experience" element={<Experience />} />
+                <Route path="/portfolio" element={<ProjectsPage />} />
+                <Route path="/blog" element={<BlogPage />} />
+                <Route path="/blog/:slug" element={<BlogPostPage />} />
+                <Route path="/migration" element={<Migration />} />
+                <Route path="/referee" element={<Referee />} />
+              </>
+            )}
+            {isTripsDomain && (
+              <Route
+                path="*"
+                element={
+                  <div role="status" className="mx-auto max-w-2xl p-10 text-center">
+                    <h1 className="text-2xl font-semibold">404 · Page not found</h1>
+                    <p className="mt-3"><a href="/japan" className="underline">Japan trip / 日本旅行</a></p>
+                  </div>
+                }
+              />
+            )}
+          </Routes>
+        </React.Suspense>
+      </main>
+      {!isTripPage && <Footer {...siteProps} theme={theme} />}
+    </div>
   );
 };
 
