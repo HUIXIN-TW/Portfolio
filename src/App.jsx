@@ -59,7 +59,7 @@ const SiteRoutes = ({ theme, handleThemeToggle, siteProps }) => {
   const { pathname } = useLocation();
   const path = pathname.replace(/\/$/, "") || "/";
   const isTripsDomain = window.location.hostname === "trips.huixinyang.com";
-  const isJapanTrip = isTripsDomain || ["/japan", "/japan/zh", "/japan/en", "/trips/japan-zh", "/trips/japan-en"].includes(path);
+  const isJapanTrip = isTripsDomain || ["/japan", "/japan/zh", "/japan/en"].includes(path);
   return (
     <div
         id="main"
@@ -73,8 +73,6 @@ const SiteRoutes = ({ theme, handleThemeToggle, siteProps }) => {
             <Route path="/japan" element={<JapanTripZh />} />
             <Route path="/japan/zh" element={<JapanTripZh />} />
             <Route path="/japan/en" element={<JapanTripEn />} />
-            <Route path="/trips/japan-zh" element={<Navigate to="/japan/zh" replace />} />
-            <Route path="/trips/japan-en" element={<Navigate to="/japan/en" replace />} />
             <Route path="/" element={isTripsDomain ? <Navigate to="/japan" replace /> : <Home name={siteProps.name} title={siteProps.title} />} />
             {!isTripsDomain && (
               <>
@@ -89,7 +87,7 @@ const SiteRoutes = ({ theme, handleThemeToggle, siteProps }) => {
             <Route path="/referee" element={<Referee />} />
               </>
             )}
-            {isTripsDomain && <Route path="*" element={<Navigate to="/japan" replace />} />}
+            {isTripsDomain && <Route path="*" element={<div role="status" className="mx-auto max-w-2xl p-10 text-center"><h1 className="text-2xl font-semibold">404 · Page not found</h1><p className="mt-3"><a href="/japan" className="underline">Japan trip / 日本旅行</a></p></div>} />}
             </Routes>
           </React.Suspense>
         </main>
