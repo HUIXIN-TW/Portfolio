@@ -312,12 +312,7 @@
   background: #ffffff;
 }
 
-/* .preflightSection {
-  padding: 16px;
-  border-radius: 16px;
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-} */
+
 
 .preflightHeader {
   display: flex;
@@ -492,4 +487,317 @@
   .extras {
     gap: 14px;
   }
+}
+
+
+/* Japan Trip: editorial two-language layout. Shared by JapanTripZh and JapanTripEn. */
+.mapPage {
+  --trip-ink: #12313b;
+  --trip-muted: #61737b;
+  --trip-teal: #087d78;
+  --trip-border: #dce7e6;
+  min-height: 100vh;
+  padding: 36px max(18px, calc((100vw - 1160px) / 2)) 88px;
+  gap: 26px;
+  background: radial-gradient(circle at 90% 0%, #d8efea 0, transparent 420px),
+    linear-gradient(180deg, #f1f7f5 0%, #f8faf8 48%, #f1f7f5 100%);
+  color: var(--trip-ink);
+  font-size: 15px;
+}
+
+.mapPage *,
+.mapPage *::before,
+.mapPage *::after { box-sizing: border-box; }
+
+.tripHero,
+.itinerary,
+.extras,
+.mapSection { width: 100%; max-width: 1100px; }
+
+.tripHero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(26px, 4.5vw, 55px);
+  border-radius: 28px;
+  background: linear-gradient(120deg, #112c38 0%, #154954 62%, #0d665f 100%);
+  color: #fff;
+  box-shadow: 0 20px 55px rgba(16, 61, 67, 0.18);
+}
+
+.tripHero::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  right: -75px;
+  bottom: -180px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  box-shadow: 0 0 0 38px rgba(255, 255, 255, 0.035), 0 0 0 80px rgba(255, 255, 255, 0.025);
+  pointer-events: none;
+}
+
+.heroTop,
+.languageSwitch,
+.sectionNav,
+.mapActions { display: flex; align-items: center; flex-wrap: wrap; }
+
+.heroTop { justify-content: space-between; gap: 16px; position: relative; z-index: 1; }
+.eyebrow, .sectionKicker, .dayNumber {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+.eyebrow { color: #abeee2; }
+
+.languageSwitch {
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+}
+.languageSwitch a {
+  padding: 6px 13px;
+  border-radius: 999px;
+  color: #d5e7e7;
+  font-weight: 700;
+  font-size: 12px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+.languageSwitch a:hover { background: rgba(255,255,255,0.16); color: #fff; }
+.languageSwitch a.languageActive { background: #fff; color: #143d42; }
+
+.tripHero h1 {
+  position: relative;
+  z-index: 1;
+  margin: 38px 0 14px;
+  font-size: clamp(30px, 5.5vw, 54px);
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+  font-weight: 800;
+  color: #fff;
+}
+.heroDescription { max-width: 660px; font-size: clamp(15px, 2vw, 18px); line-height: 1.8; color: #e1f1ef; }
+.heroNote { margin-top: 12px; font-size: 12px; line-height: 1.6; color: #b4d6d2; }
+
+.sectionNav { position: relative; z-index: 1; gap: 9px; margin-top: 32px; }
+.sectionNav a {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(255,255,255,0.28);
+  border-radius: 100px;
+  padding: 8px 14px;
+  text-decoration: none;
+  color: #f4fffd;
+  font-weight: 600;
+  font-size: 12px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.sectionNav a:hover { background: rgba(255,255,255,0.18); transform: translateY(-1px); }
+
+.itinerary {
+  gap: 12px;
+  padding: clamp(20px, 3.5vw, 40px);
+  border: 1px solid var(--trip-border);
+  border-radius: 26px;
+  box-shadow: 0 8px 32px rgba(15, 63, 66, 0.045);
+}
+
+.sectionKicker { color: var(--trip-teal); }
+.sectionTitle { font-size: clamp(24px, 3vw, 30px); letter-spacing: -0.03em; color: var(--trip-ink); }
+.sectionIntro { margin: 0 0 18px; font-size: 14px; line-height: 1.75; color: var(--trip-muted); }
+
+.day {
+  display: block;
+  padding: 0;
+  border: 1px solid #deebe8;
+  background: #f6faf9;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.day[open] { background: #fff; border-color: #b4d9d2; }
+.dayTitle {
+  display: flex;
+  padding: 20px 22px;
+  gap: 14px;
+  color: var(--trip-ink);
+  line-height: 1.5;
+  font-size: clamp(16px, 2vw, 19px);
+}
+.dayTitle > span:first-child { min-width: 0; flex: 1; }
+.dayTitle:hover { background: #edf8f5; }
+.day[open] .dayTitle { border-bottom: 1px solid #e5efed; }
+.dayNumber { margin-bottom: 5px; color: var(--trip-teal); }
+.dayDescription { display: block; margin-top: 5px; font-size: 13px; line-height: 1.55; font-weight: 400; color: #63767e; }
+
+.day > .blockTitle,
+.day > .list { margin-left: 24px; margin-right: 24px; }
+.day > .blockTitle { margin-top: 22px; }
+.day > .list { margin-top: 7px; margin-bottom: 12px; }
+.day > .list:last-child { margin-bottom: 26px; }
+.blockTitle { color: #183a40; font-weight: 750; letter-spacing: -0.01em; }
+.list { line-height: 1.85; font-size: 14px; color: #43575d; }
+.list li + li { margin-top: 4px; }
+
+.timeline { padding: 22px 24px 26px; display: grid; gap: 24px; }
+.timelineItem {
+  display: grid;
+  grid-template-columns: minmax(100px, 145px) minmax(0, 1fr);
+  gap: 18px;
+}
+.timelineTime { color: #0e827a; font-size: 13px; font-weight: 800; padding-top: 2px; }
+.timelineItem .blockTitle { margin: 0 0 7px; }
+.timelineItem .list { margin: 0; padding-left: 19px; }
+
+.extras {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 18px;
+}
+.card {
+  min-width: 0;
+  padding: 0;
+  border-radius: 18px;
+  border: 1px solid var(--trip-border);
+  background: #fff;
+  box-shadow: 0 6px 25px rgba(15,63,66,0.055);
+  overflow: clip;
+}
+.cardSummary {
+  padding: 22px 24px;
+  color: var(--trip-ink);
+  font-size: 16px;
+  line-height: 1.45;
+  display: flow-root;
+}
+.cardSummary::after { font-size: 18px; color: #0b807a; }
+.cardSummary:hover { background: #f4faf8; }
+.card[open] .cardSummary { border-bottom: 1px solid var(--trip-border); }
+.cardBody { margin: 0; padding: 22px 24px 26px; }
+
+.preflightProgress {
+  position: relative;
+  top: auto;
+  z-index: auto;
+  background: #ecf8f5;
+  border-color: #cfe9e4;
+  backdrop-filter: none;
+}
+.preflightProgressHeader { align-items: center; flex-wrap: wrap; gap: 10px; letter-spacing: 0.10em; }
+.preflightProgressActions { margin-left: auto; }
+.preflightProgressHeader strong { color: #07736e; }
+.preflightProgressFill { background: linear-gradient(90deg, #087f77, #21aaa0); }
+.preflightTime { flex-wrap: wrap; font-size: 13px; }
+.preflightTime input { min-width: 125px; }
+
+.preflight .checkItem {
+  min-height: 44px;
+  align-items: center;
+  cursor: pointer;
+  border-color: #e3edeb;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.preflight .checkItem:focus-within { outline: 2px solid #087d78; outline-offset: 2px; }
+.preflight .checkItem input { flex: 0 0 22px; cursor: pointer; }
+.preflight .checkItem input:checked { background: #087d78; border-color: #087d78; }
+.preflightIndex { background: #13434a; }
+.preflightSublist { padding-left: 12px; border-left: 2px solid #e3edeb; }
+.preflightTitle { font-size: 14px; }
+.preflightSection + .preflightSection { padding-top: 10px; border-top: 1px solid #e9f0ee; }
+
+.sentenceList { padding-left: 22px; margin: 0; }
+.sentenceList li { padding: 12px 0 14px; border-bottom: 1px solid #eef3f1; }
+.sentenceList li:last-child { border-bottom: 0; }
+.jp { font-size: 15px; }
+.romaji, .zh { line-height: 1.6; }
+.speakButton { margin-top: 5px; color: #076a66; background: #e1f5f0; }
+.speakButton:hover { background: #caf0e6; }
+.helperText { font-size: 13px; line-height: 1.6; color: var(--trip-muted); }
+
+.infoList { gap: 8px; margin: 0; }
+.infoList li { min-width: 0; gap: 8px; flex-wrap: wrap; background: #f5faf8; align-items: center; }
+.infoLabel { font-size: 13px; color: #3f5b62; }
+.infoActions { min-width: 0; margin-left: auto; max-width: 100%; }
+.infoValue { overflow-wrap: anywhere; font-size: 13px; color: #0a6662; text-decoration-color: #9dd5cc; }
+.copyButton { flex: 0 0 auto; color: #076b67; background: #e1f4ee; }
+.copyButton:hover { background: #cdebe3; }
+
+.mapSection {
+  padding: clamp(20px, 3.5vw, 36px);
+  border: 1px solid var(--trip-border);
+  border-radius: 26px;
+  background: #fff;
+}
+.mapIntroduction { display: flex; align-items: end; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
+.mapIntroduction h2 { margin: 8px 0 5px; font-size: clamp(23px,3vw,29px); font-weight: 800; letter-spacing: -0.025em; color: var(--trip-ink); }
+.mapIntroduction p { max-width: 580px; color: var(--trip-muted); font-size: 14px; line-height: 1.7; }
+.mapActions { gap: 8px; }
+.primaryButton, .secondaryButton {
+  display: inline-flex;
+  padding: 11px 15px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+  font-size: 13px;
+  line-height: 1.3;
+  font-weight: 750;
+  text-decoration: none;
+}
+.primaryButton { background: #087d78; color: #fff; }
+.primaryButton:hover { background: #075d59; }
+.secondaryButton { background: #e8f4f1; color: #08645f; }
+.secondaryButton:hover { background: #d7eee8; }
+.mapSection .frameWrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  box-shadow: none;
+  border: 1px solid #dce7e6;
+  background: #e9f0ef;
+}
+.mapHelp { margin-top: 18px; padding: 15px 16px; border-radius: 12px; background: #f2f8f5; }
+.mapHelp summary { color: #075e59; font-weight: 750; cursor: pointer; }
+.mapHelp p { margin: 12px 0 0; color: #3b565b; font-size: 13px; line-height: 1.7; }
+.mapHelp a { color: #0b7972; font-weight: 750; }
+.mapDisclaimer { margin: 14px 0 0; font-size: 12px; color: #718287; line-height: 1.65; }
+
+.mapPage :is(a, button, summary, input):focus-visible { outline: 3px solid #23b5a8; outline-offset: 3px; }
+.mapPage [id] { scroll-margin-top: 24px; }
+
+@media (max-width: 830px) {
+  .extras { grid-template-columns: 1fr; }
+  .mapSection .frameWrapper { aspect-ratio: 4 / 3; }
+}
+@media (max-width: 600px) {
+  .mapPage { padding: 14px 14px 50px; gap: 15px; }
+  .tripHero { border-radius: 18px; padding: 24px 21px 28px; }
+  .tripHero h1 { margin-top: 32px; font-size: 31px; }
+  .heroDescription { font-size: 15px; }
+  .heroNote { font-size: 11px; }
+  .sectionNav { margin-top: 24px; gap: 7px; }
+  .sectionNav a { padding: 7px 10px; font-size: 11px; }
+  .itinerary, .mapSection { padding: 20px 16px; border-radius: 18px; }
+  .dayTitle { padding: 17px 15px; }
+  .day > .blockTitle, .day > .list { margin-left: 16px; margin-right: 16px; }
+  .timeline { padding: 17px 16px 20px; }
+  .timelineItem { display: block; }
+  .timelineTime { display: block; margin-bottom: 6px; }
+  .cardSummary { padding: 18px 17px; }
+  .cardBody { padding: 17px; }
+  .mapIntroduction { align-items: stretch; }
+  .mapActions { width: 100%; }
+  .mapActions a { flex: 1; }
+  .mapSection .frameWrapper { aspect-ratio: 3 / 4; }
+  .infoList li { align-items: flex-start; }
+  .infoActions { width: 100%; justify-content: space-between; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mapPage *, .mapPage *::before, .mapPage *::after { transition-duration: 0.01ms !important; }
 }
