@@ -265,7 +265,8 @@ const content = {
     "copyPrompt": "請複製以下內容：",
     "sharePrompt": "請複製以下清單：",
     "listen": "朗讀",
-    "phrasesHelp": "點選朗讀按鈕，練習日文發音。"
+    "phrasesHelp": "點選朗讀按鈕，練習日文發音。",
+    "phraseCountUnit": "句"
   },
   "hotel": {
     "labels": {

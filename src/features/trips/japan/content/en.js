@@ -137,7 +137,8 @@ const content = {
     "copyPrompt": "Copy the following details:",
     "sharePrompt": "Copy your checklist:",
     "listen": "▶ Listen",
-    "phrasesHelp": "Some expressions below are things you may hear from local staff."
+    "phrasesHelp": "Some expressions below are things you may hear from local staff.",
+    "phraseCountUnit": "phrases"
   },
   "hotel": {
     "labels": {

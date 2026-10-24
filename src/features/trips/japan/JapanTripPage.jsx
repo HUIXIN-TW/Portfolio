@@ -22,9 +22,11 @@ export default function JapanTripPage({ locale = "zh" }) {
       <Itinerary content={content} />
       <div className={styles.extras}>
         <Checklist content={content} />
+        <div className={styles.referenceGrid}>
+          <HotelInfo content={content} />
+          <EmergencyContacts content={content} />
+        </div>
         <Phrasebook content={content} />
-        <HotelInfo content={content} />
-        <EmergencyContacts content={content} />
       </div>
       <TripMap content={content} />
     </div>
