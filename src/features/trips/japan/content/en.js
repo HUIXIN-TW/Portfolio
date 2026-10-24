@@ -155,13 +155,22 @@ const content = {
     "hotline": "Japan Visitor Hotline"
   },
   "map": {
-    "title": "Explore the map",
-    "description": "Explore the original Google My Maps collection. The embedded map reflects its owner's current places and layers.",
-    "open": "Open the full map",
-    "instructions": "How can I make my own editable copy?",
-    "steps": "Ask the map owner for a complete KML/KMZ export. Open Google My Maps, create a new map, and import the file. This preserves the available place data and layers more reliably than an incomplete CSV. Editing the embedded map requires the owner's permission.",
-    "caveat": "Map labels and sharing permissions are controlled by the original map owner; changing the website language does not translate custom markers.",
-    "iframeTitle": "Osaka and Kyoto trip map"
+    "title": "Explore the trip map",
+    "description": "All 41 places from the original Osaka and Kyoto map, organised into eight categories. Browse the source map or find places below using English labels.",
+    "open": "View original map",
+    "download": "Download all places (KML)",
+    "directoryTitle": "All 41 saved places",
+    "directoryIntro": "Filter by category, search a place, or open its exact coordinates in Google Maps.",
+    "searchLabel": "Search saved places",
+    "searchPlaceholder": "Search cafes, restaurants, attractions…",
+    "filterLabel": "Filter places by category",
+    "allLayers": "All categories",
+    "noResults": "No matching places. Try another search or category.",
+    "openPlace": "Directions",
+    "instructions": "Make your own editable Google My Maps copy",
+    "steps": "Download the full English KML above, open Google My Maps, create a new map and import the file. It includes all 41 locations in the original eight layers and can be edited under your own Google account. No access to Yun-Chuan’s account is required.",
+    "caveat": "The original embedded map may display Chinese names. The searchable list and English KML use English place labels. The KML preserves places, coordinates and layers, but not all custom KMZ icons.",
+    "iframeTitle": "Original Osaka and Kyoto trip map"
   },
   "checklistItems": {
     "passport": "Passport",
