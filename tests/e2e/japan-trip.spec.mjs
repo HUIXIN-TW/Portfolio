@@ -97,8 +97,9 @@ test("desktop layout and map filters without a horizontal scrollbar", async ({ p
   }));
   expect(filterStyles.wrap).toBe("wrap");
   expect(filterStyles.overflowX).not.toBe("auto");
-  await expect(page.locator("#trip-map .mapHelp")).toHaveCount(1);
-  await expect(page.locator("#trip-map details.mapHelp")).toHaveCount(0);
+  const editHelp = page.locator('#trip-map div:has(> p > a[href="https://www.google.com/maps/d/"])');
+  await expect(editHelp).toHaveCount(1);
+  await expect(page.locator('#trip-map details:has(a[href="https://www.google.com/maps/d/"])')).toHaveCount(0);
   const mapInfo = page.locator("#trip-map").getByText("想自行編輯地圖？", { exact: false });
   await expect(mapInfo).toBeVisible();
   const summary = page.locator("#checklist > summary");
