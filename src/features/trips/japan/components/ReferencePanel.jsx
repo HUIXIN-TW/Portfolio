@@ -5,7 +5,7 @@ export default function ReferencePanel({ number, type, title, children }) {
     <details className={styles.card}>
       <summary className={styles.cardSummary}>
         <span className={styles.referenceCardNumber}>{number} / {type}</span>
-        <span className={styles.cardHeading}>{title}</span>
+        <h3 className={styles.cardHeading}>{title}</h3>
       </summary>
       <div className={styles.cardBody}>{children}</div>
     </details>

@@ -215,8 +215,10 @@ const content = {
     "itinerary": "每日行程",
     "itineraryDescription": "展開每天的行程，查看交通、景點與用餐安排。",
     "checklist": "出發前檢查",
+    "checklistDescription": "出門前確認重要物品、天氣與房間安全。",
     "phrases": "旅途中常用日語",
-    "hotel": "飯店資訊 · 點按複製",
+    "phrasesDescription": "常用日語、羅馬拼音與發音，旅途中可快速查找。",
+    "hotel": "飯店資訊",
     "emergency": "日本緊急聯絡電話"
   },
   "checklist": {

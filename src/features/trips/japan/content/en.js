@@ -215,8 +215,10 @@ const content = {
     "itinerary": "Day-by-day itinerary",
     "itineraryDescription": "Expand each day for transport, sights and food options.",
     "checklist": "Before you leave",
+    "checklistDescription": "Check essentials, the weather and your room before heading out.",
     "phrases": "Useful Japanese phrases",
-    "hotel": "Hotel details · Tap to copy",
+    "phrasesDescription": "Everyday Japanese with pronunciation and English translations.",
+    "hotel": "Hotel details",
     "emergency": "Emergency contacts in Japan"
   },
   "checklist": {

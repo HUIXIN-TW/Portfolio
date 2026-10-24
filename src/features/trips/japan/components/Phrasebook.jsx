@@ -11,6 +11,7 @@ export default function Phrasebook({ content }) {
           {content.headings.phrases}
           <span className={styles.phraseCount}>{phrases.length} {content.actions.phraseCountUnit}</span>
         </h2>
+        <p className={styles.sectionIntro}>{content.headings.phrasesDescription}</p>
       </summary>
       <div className={styles.cardBody}>
         <p className={styles.helperText}>{content.actions.phrasesHelp}</p>

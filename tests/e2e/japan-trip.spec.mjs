@@ -42,7 +42,14 @@ test("static localized HTML, page metadata and language switching", async ({ pag
   await expect(page.locator('link[rel="icon"]')).toHaveAttribute(
     "href", "/trips/japan/favicon.png"
   );
-  await page.getByRole("link", { name: "繁中" }).click();
+  const zhButton = page.getByRole("link", { name: "繁中" });
+  const enButton = page.getByRole("link", { name: "English" });
+  await expect(zhButton).toHaveCSS("font-size", "13px");
+  await expect(enButton).toHaveCSS("font-size", "13px");
+  const zhWidth = await zhButton.evaluate((element) => element.getBoundingClientRect().width);
+  const enWidth = await enButton.evaluate((element) => element.getBoundingClientRect().width);
+  expect(zhWidth).toBe(enWidth);
+  await zhButton.click();
   await expect(page).toHaveURL(/\/japan$/);
   await expect(page.getByRole("heading", { name: "大阪・京都三日旅行指南" })).toBeVisible();
 });
@@ -86,6 +93,11 @@ test("desktop layout guard and capture for future visual baselines", async ({ pa
   await expect(itinerary.locator("details").first()).toHaveCSS("border-left-width", "0px");
   await expect(reference.locator("details").first()).toHaveCSS("border-left-width", "0px");
   await expect(page.locator("#checklist")).toBeVisible();
+  const headingFontSizes = await page.locator(
+    '#itinerary > h2, #checklist > summary h2, #phrases > summary h2, #reference > h2, #trip-map .mapIntroduction h2'
+  ).evaluateAll((nodes) => nodes.map((node) => getComputedStyle(node).fontSize));
+  // Only the five main section headings, not Reference's subordinate HOTEL / EMERGENCY headings.
+  expect(new Set(headingFontSizes).size).toBeLessThanOrEqual(2);
   await captureVisualBaseline(itinerary, "desktop-itinerary.png", testInfo);
   await captureVisualBaseline(page.locator("#checklist"), "desktop-checklist.png", testInfo);
   await reference.locator("details summary").first().click();
