@@ -174,8 +174,8 @@ export function JapanTripHero({ lang }) {
       <div className={styles.heroTop}>
         <span className={styles.eyebrow}>{copy.eyebrow}</span>
         <nav className={styles.languageSwitch} aria-label={copy.switchLabel}>
-          <Link to="/trips/japan-zh" lang="zh-TW" className={lang === "zh" ? styles.languageActive : ""} aria-current={lang === "zh" ? "page" : undefined}>繁中</Link>
-          <Link to="/trips/japan-en" lang="en" className={lang === "en" ? styles.languageActive : ""} aria-current={lang === "en" ? "page" : undefined}>English</Link>
+          <Link to="/japan/zh" lang="zh-TW" className={lang === "zh" ? styles.languageActive : ""} aria-current={lang === "zh" ? "page" : undefined}>繁中</Link>
+          <Link to="/japan/en" lang="en" className={lang === "en" ? styles.languageActive : ""} aria-current={lang === "en" ? "page" : undefined}>English</Link>
         </nav>
       </div>
       <h1>{copy.title}</h1>
