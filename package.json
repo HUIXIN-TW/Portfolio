@@ -12,7 +12,8 @@
     "prebuild": "npm run generate:trip",
     "generate:trip": "node scripts/generate-japan-kml.mjs",
     "predev": "npm run generate:trip",
-    "postbuild": "node scripts/generate-trip-pages.mjs && node scripts/verify-trip-pages.mjs"
+    "postbuild": "node scripts/generate-trip-pages.mjs && node scripts/verify-trip-pages.mjs",
+    "test:e2e": "playwright test"
   },
   "repository": {
     "type": "git",

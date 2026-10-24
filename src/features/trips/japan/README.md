@@ -21,3 +21,7 @@ The travel guide is a self-contained feature, not a Portfolio section.
 ## Routing and persistence
 
 Canonical routes: `/japan` (zh) and `/japan/en` (en). No legacy redirects. The checklist and meeting time use the current browser storage keys only; previous development-era keys are deliberately not supported.
+
+## Browser and visual checks
+
+Run `npm install --no-save --package-lock=false @playwright/test@1.55.1` and `npx playwright install chromium`, then `npm run build && npm run test:e2e`. CI runs real Chromium checks for language switching, persisted Checklist state, controlled map accordions and key CSS layout properties. It captures desktop/mobile screenshots as workflow artifacts. Full pixel-diff visual regression requires separately reviewed and committed reference screenshots before broader CSS refactoring; merely taking screenshots is not a pixel-diff baseline.
