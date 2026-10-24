@@ -56,41 +56,56 @@ const App = () => {
 
 const SiteRoutes = ({ theme, handleThemeToggle, siteProps }) => {
   const { pathname } = useLocation();
-  const path = pathname.replace(/\/$/, "") || "/";
+  const currentPath = pathname.replace(/\/$/, "") || "/";
   const isTripsDomain = window.location.hostname === "trips.huixinyang.com";
-  const isJapanTrip = isTripsDomain || ["/japan", "/japan/zh", "/japan/en"].includes(path);
+  const isTripPage = isTripsDomain || ["/japan", "/japan/zh", "/japan/en"].includes(currentPath);
+
   return (
     <div
-        id="main"
-        className="min-h-screen flex flex-col bg-white text-slate-900 dark:bg-[#282A36] dark:text-[#F8F8F2]"
-      >
-        {!isJapanTrip && <Header theme={theme} onThemeToggle={handleThemeToggle} />}
-        <main className="flex-1 w-full relative">
-          {/* Define your routes */}
-          <React.Suspense fallback={<div role="status" className="p-8 text-center">Loading trip…</div>}>
-            <Routes>
+      id="main"
+      className="min-h-screen flex flex-col bg-white text-slate-900 dark:bg-[#282A36] dark:text-[#F8F8F2]"
+    >
+      {!isTripPage && <Header theme={theme} onThemeToggle={handleThemeToggle} />}
+      <main className="flex-1 w-full relative">
+        <React.Suspense fallback={<div role="status" className="p-8 text-center">Loading trip…</div>}>
+          <Routes>
             <Route path="/japan" element={<JapanTripPage locale="zh-TW" />} />
             <Route path="/japan/zh" element={<JapanTripPage locale="zh-TW" />} />
             <Route path="/japan/en" element={<JapanTripPage locale="en" />} />
-            <Route path="/" element={isTripsDomain ? <Navigate to="/japan" replace /> : <Home name={siteProps.name} title={siteProps.title} />} />
+            <Route
+              path="/"
+              element={isTripsDomain
+                ? <Navigate to="/japan" replace />
+                : <Home name={siteProps.name} title={siteProps.title} />}
+            />
             {!isTripsDomain && (
               <>
-            <Route path="/about" element={<About />} />
-            <Route path="/education" element={<Education />} />
-            <Route path="/certificates-awards" element={<CertificatesAndAwards />} />
-            <Route path="/experience" element={<Experience />} />
-            <Route path="/portfolio" element={<ProjectsPage />} />
-            <Route path="/blog" element={<BlogPage />} />
-            <Route path="/blog/:slug" element={<BlogPostPage />} />
-            <Route path="/migration" element={<Migration />} />
-            <Route path="/referee" element={<Referee />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/education" element={<Education />} />
+                <Route path="/certificates-awards" element={<CertificatesAndAwards />} />
+                <Route path="/experience" element={<Experience />} />
+                <Route path="/portfolio" element={<ProjectsPage />} />
+                <Route path="/blog" element={<BlogPage />} />
+                <Route path="/blog/:slug" element={<BlogPostPage />} />
+                <Route path="/migration" element={<Migration />} />
+                <Route path="/referee" element={<Referee />} />
               </>
             )}
-            {isTripsDomain && <Route path="*" element={<div role="status" className="mx-auto max-w-2xl p-10 text-center"><h1 className="text-2xl font-semibold">404 · Page not found</h1><p className="mt-3"><a href="/japan" className="underline">Japan trip / 日本旅行</a></p></div>} />}
-            </Routes>
-          </React.Suspense>
-        </main>
-        {!isJapanTrip && <Footer {...siteProps} theme={theme} />}
+            {isTripsDomain && (
+              <Route
+                path="*"
+                element={
+                  <div role="status" className="mx-auto max-w-2xl p-10 text-center">
+                    <h1 className="text-2xl font-semibold">404 · Page not found</h1>
+                    <p className="mt-3"><a href="/japan" className="underline">Japan trip / 日本旅行</a></p>
+                  </div>
+                }
+              />
+            )}
+          </Routes>
+        </React.Suspense>
+      </main>
+      {!isTripPage && <Footer {...siteProps} theme={theme} />}
     </div>
   );
 };
