@@ -45,4 +45,12 @@ export default defineConfig([
     plugins: { js },
     extends: ["js/recommended"],
   },
+  {
+    files: ["functions/**/*.js"],
+    languageOptions: {
+      globals: globals.serviceworker,
+    },
+    plugins: { js },
+    extends: ["js/recommended"],
+  },
 ]);
