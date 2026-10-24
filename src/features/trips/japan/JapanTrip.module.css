@@ -209,13 +209,12 @@
 .tripHero::after {
   content: "";
   position: absolute;
-  width: 300px;
-  height: 300px;
-  right: -75px;
-  bottom: -180px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 50%;
-  box-shadow: 0 0 0 38px rgba(255, 255, 255, 0.035), 0 0 0 80px rgba(255, 255, 255, 0.025);
+  width: min(42%, 390px);
+  height: 310px;
+  right: -24px;
+  bottom: -12px;
+  background: url("/trips/japan/sakura-decoration.svg") right bottom / contain no-repeat;
+  opacity: 0.72;
   pointer-events: none;
 }
 
@@ -286,7 +285,7 @@
   font-size: 12px;
   transition: background 0.2s ease, transform 0.2s ease;
 }
-.sectionNav a:hover { background: rgba(255,255,255,0.18); transform: translateY(-1px); }
+.sectionNav a:hover { background: rgba(255,255,255,0.15); }
 
 .itinerary {
   gap: 0;
@@ -412,7 +411,7 @@
 }
 .cardSummary::after { font-size: 18px; color: #a72f51; }
 .cardSummary:hover { background: #fff2f5; }
-.card[open] .cardSummary { border-bottom: 1px solid var(--trip-border); }
+.card[open] .cardSummary { border-bottom: 0; }
 .cardBody { margin: 0; padding: 22px 24px 26px; }
 
 .preflightProgress {
@@ -529,10 +528,10 @@
   background: #fdf0f2;
 }
 .mapHelp { margin-top: 18px; padding: 15px 16px; border-radius: 12px; background: #fff3f5; }
-.mapHelp summary { color: #872946; font-weight: 750; cursor: pointer; }
-.mapHelp p { margin: 12px 0 0; color: #695663; font-size: 13px; line-height: 1.7; }
-.mapHelp a { color: #a12d4d; font-weight: 750; }
-.mapDisclaimer { margin: 14px 0 0; font-size: 12px; color: #8c7c87; line-height: 1.65; }
+.mapHelp p { margin: 0; color: #695663; font-size: 13px; line-height: 1.7; }
+.mapHelp a { color: #a12d4d; font-weight: 750; text-decoration: none; }
+.mapHelp a:hover { color: #86223f; text-decoration: none; }
+.mapHelp .mapDisclaimer { margin-top: 8px; font-size: 12px; color: #8c7c87; line-height: 1.65; }
 
 .phraseCount {
   display: inline-block;
@@ -629,6 +628,7 @@
 @media (max-width: 600px) {
   .mapPage { padding: 14px 14px 50px; gap: 15px; }
   .tripHero { border-radius: 18px; padding: 24px 21px 28px; }
+  .tripHero::after { width: 220px; height: 180px; right: -36px; bottom: -22px; opacity: 0.42; }
   .tripHero h1 { margin-top: 32px; font-size: 31px; }
   .heroDescription { font-size: 15px; }
   .heroNote { font-size: 11px; }
@@ -705,11 +705,9 @@
 .layerFilters {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 8px;
-  overflow-x: auto;
-  padding-bottom: 10px;
-  margin-bottom: 13px;
-  scrollbar-width: thin;
+  margin-bottom: 16px;
 }
 .layerFilters button {
   white-space: nowrap;
@@ -751,7 +749,7 @@
   font-size: 12px;
   font-variant-numeric: tabular-nums;
 }
-.layerGroup[open] > summary { border-bottom: 1px solid #f0e0e5; background: #fdeef1; }
+.layerGroup[open] > summary { background: #fdeef1; }
 .placeGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; }
 .placeRow {
   display: flex;
@@ -773,7 +771,7 @@
   text-decoration: none;
   flex: 0 0 auto;
 }
-.placeRow a:hover { text-decoration: underline; }
+.placeRow a:hover { color: #86223f; text-decoration: none; }
 .emptyResults { margin: 18px 0; color: #806d76; font-size: 14px; }
 .srOnly {
   position: absolute;
@@ -787,6 +785,16 @@
   border: 0;
 }
 @media (max-width: 720px) {
+  .layerFilters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    max-width: 100%;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    overscroll-behavior-x: contain;
+  }
+  .layerFilters::-webkit-scrollbar { display: none; }
+  .layerFilters button { flex: 0 0 auto; }
   .placeGrid { grid-template-columns: minmax(0, 1fr); }
   .placesSearch { max-width: none; }
   .placeRow { padding: 13px; }

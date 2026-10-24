@@ -274,8 +274,7 @@ const content = {
     "allLayers": "所有分類",
     "noResults": "找不到符合條件的地點，請試試其他關鍵字。",
     "openPlace": "開啟地圖",
-    "instructions": "如何建立可編輯的地圖？",
-    "steps": "下載 KML，前往 Google My Maps 建立新地圖並匯入。檔案包含全部 {places} 個地點和 {layers} 個分類，可自行編輯。",
+    "steps": "想自行編輯地圖？下載 KML 並匯入 Google My Maps，即可修改全部 {places} 個地點及 {layers} 個分類。",
     "caveat": "嵌入地圖的標記名稱不會隨頁面語言切換；KML 保留地點與分類，但部分自訂圖示不會一併匯出。",
     "iframeTitle": "原始大阪京都旅遊地圖"
   },

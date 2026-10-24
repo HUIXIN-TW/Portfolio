@@ -274,8 +274,7 @@ const content = {
     "allLayers": "All categories",
     "noResults": "No matching places. Try a different search.",
     "openPlace": "Open map",
-    "instructions": "Create your own editable map",
-    "steps": "Download the KML, create a new map in Google My Maps and import it. The file contains all {places} places and {layers} categories, ready for you to edit.",
+    "steps": "Want to edit this map? Download the KML and import it into Google My Maps to edit all {places} places across {layers} categories.",
     "caveat": "The embedded map's labels do not change with the page language. The KML keeps places and categories, but some custom icons are not included.",
     "iframeTitle": "Original Osaka and Kyoto trip map"
   },

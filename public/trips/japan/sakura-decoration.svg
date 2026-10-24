@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 310" role="img" aria-label="Decorative sakura blossoms">
+  <defs>
+    <path id="petal" d="M 0 10 C -10 -3 -27 -7 -30 -24 C -33 -42 -13 -46 0 -34 C 13 -46 33 -42 30 -24 C 27 -7 10 -3 0 10 Z"/>
+    <g id="flower">
+      <use href="#petal" transform="rotate(0)"/>
+      <use href="#petal" transform="rotate(72)"/>
+      <use href="#petal" transform="rotate(144)"/>
+      <use href="#petal" transform="rotate(216)"/>
+      <use href="#petal" transform="rotate(288)"/>
+      <circle r="8" fill="#fff5dc" opacity=".75"/>
+      <circle r="3" fill="#f6a8b8"/>
+    </g>
+  </defs>
+  <g fill="#ffe6eb" stroke="#fff3f5" stroke-width="1.6">
+    <use href="#flower" transform="translate(300 190) scale(2.0)" opacity=".57"/>
+    <use href="#flower" transform="translate(143 249) scale(1.12) rotate(-17)" opacity=".40"/>
+    <use href="#flower" transform="translate(385 68) scale(.9) rotate(14)" opacity=".48"/>
+    <use href="#flower" transform="translate(232 24) scale(.48)" opacity=".35"/>
+    <path d="M 72 76 Q 103 40 113 73 Q 108 94 72 76 Z" opacity=".45"/>
+    <path d="M 48 177 Q 81 164 79 195 Q 63 211 48 177 Z" opacity=".35"/>
+    <path d="M 206 118 Q 238 94 242 126 Q 220 151 206 118 Z" opacity=".32"/>
+    <path d="M 371 266 Q 403 233 418 265 Q 396 291 371 266 Z" opacity=".38"/>
+  </g>
+</svg>

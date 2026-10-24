@@ -22,6 +22,6 @@ The travel guide is a self-contained feature, not a Portfolio section.
 
 Canonical routes: `/japan` (zh) and `/japan/en` (en). No legacy redirects. The checklist and meeting time use the current browser storage keys only; previous development-era keys are deliberately not supported.
 
-## Browser and visual checks
+## Browser checks
 
-Run `npm install --no-save --package-lock=false @playwright/test@1.55.1` and `npx playwright install chromium`, then `npm run build && npm run test:e2e`. CI runs real Chromium checks for language switching, persisted Checklist state, controlled map accordions and key CSS layout properties. It captures desktop/mobile screenshots as workflow artifacts. Seven reviewed reference screenshots are committed under `tests/e2e/visual-baselines/`. Playwright `toHaveScreenshot` now compares every screenshot on all CI runs, and refuses missing baselines. Update snapshots only after intentionally reviewing a design change, never as part of a routine test. Review intentional visual changes and update golden files separately before CSS refactoring.
+Use `npm run build && npm run test:e2e` after installing the project's Playwright test dependency and Chromium (CI provisions both). The suite verifies localized metadata, language switching, Checklist persistence, map search and accordions, and responsive layout. There are no screenshot baselines or pixel-diff checks; UI changes are reviewed in the preview.

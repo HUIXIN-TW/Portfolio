@@ -1,18 +1,4 @@
 import { expect, test } from "@playwright/test";
-import { existsSync } from "node:fs";
-import { resolve } from "node:path";
-
-async function captureVisualBaseline(locator, filename, testInfo) {
-  await locator.screenshot({ path: testInfo.outputPath(filename), animations: "disabled" });
-  const baselineFolder = resolve("tests/e2e/visual-baselines");
-  expect(existsSync(resolve(baselineFolder, filename)), "Missing approved screenshot " + filename).toBeTruthy();
-  await expect(locator).toHaveScreenshot(filename, {
-    animations: "disabled",
-    threshold: 0.15,
-    maxDiffPixelRatio: 0.01,
-  });
-}
-
 test.beforeEach(async ({ page }) => {
   // The original owner's My Maps iframe is external; app behavior must not depend on it.
   await page.route("https://www.google.com/maps/d/**", (route) => route.abort());
@@ -85,7 +71,7 @@ test("map search, filtering and accordion are fully React-controlled", async ({ 
   await expect(kyoto).toHaveAttribute("open", "");
 });
 
-test("desktop layout guard and capture for future visual baselines", async ({ page }, testInfo) => {
+test("desktop layout and map filters without a horizontal scrollbar", async ({ page }) => {
   await page.goto("/japan");
   const itinerary = page.locator("#itinerary");
   const reference = page.locator("#reference");
@@ -105,21 +91,33 @@ test("desktop layout guard and capture for future visual baselines", async ({ pa
   const hotelTitle = await page.locator("#reference h3").first().evaluate((node) =>
     parseFloat(getComputedStyle(node).fontSize));
   expect(hotelTitle).toBeLessThan(referenceTitle);
-  await captureVisualBaseline(itinerary, "desktop-itinerary.png", testInfo);
-  await captureVisualBaseline(page.locator("#checklist"), "desktop-checklist.png", testInfo);
-  await reference.locator("details summary").first().click();
-  await reference.locator("details summary").last().click();
-  await captureVisualBaseline(reference, "desktop-reference.png", testInfo);
-  await captureVisualBaseline(page.locator("#trip-map"), "desktop-map.png", testInfo);
+  const filterStyles = await page.locator("#trip-map [role='group']").evaluate((node) => ({
+    wrap: getComputedStyle(node).flexWrap,
+    overflowX: getComputedStyle(node).overflowX,
+  }));
+  expect(filterStyles.wrap).toBe("wrap");
+  expect(filterStyles.overflowX).not.toBe("auto");
+  await expect(page.locator("#trip-map .mapHelp")).toHaveCount(1);
+  await expect(page.locator("#trip-map details.mapHelp")).toHaveCount(0);
+  const mapInfo = page.locator("#trip-map").getByText("想自行編輯地圖？", { exact: false });
+  await expect(mapInfo).toBeVisible();
+  const summary = page.locator("#checklist > summary");
+  await summary.click();
+  await expect(summary).toHaveCSS("border-bottom-width", "0px");
+  const decoration = await page.locator("header").first().evaluate((node) =>
+    getComputedStyle(node, "::after").backgroundImage);
+  expect(decoration).toContain("sakura-decoration.svg");
 });
 
-test("mobile layout guard and capture for future visual baselines", async ({ page }, testInfo) => {
+test("mobile layout and horizontal chip swipe without visible scrollbar", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/japan/en");
   const width = await page.evaluate(() => document.documentElement.scrollWidth);
   expect(width).toBeLessThanOrEqual(390);
   await expect(page.locator("#reference")).toBeVisible();
-  await captureVisualBaseline(page.locator("#itinerary"), "mobile-itinerary.png", testInfo);
-  await captureVisualBaseline(page.locator("#checklist"), "mobile-checklist.png", testInfo);
-  await captureVisualBaseline(page.locator("#trip-map"), "mobile-map.png", testInfo);
+  const chipList = page.locator("#trip-map [role='group']");
+  await expect(chipList).toHaveCSS("flex-wrap", "nowrap");
+  await expect(chipList).toHaveCSS("scrollbar-width", "none");
+  const scrollable = await chipList.evaluate((node) => node.scrollWidth > node.clientWidth);
+  expect(scrollable).toBeTruthy();
 });

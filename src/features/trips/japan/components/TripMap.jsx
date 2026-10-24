@@ -142,11 +142,10 @@ export default function TripMap({ content }) {
           ))}
         </div>
       </div>
-      <details className={styles.mapHelp}>
-        <summary>{map.instructions}</summary>
+      <div className={styles.mapHelp}>
         <p>{formatMapCopy(map.steps)} <a href="https://www.google.com/maps/d/" target="_blank" rel="noopener noreferrer">Google My Maps ↗</a></p>
-      </details>
-      <p className={styles.mapDisclaimer}>{map.caveat}</p>
+        <p className={styles.mapDisclaimer}>{map.caveat}</p>
+      </div>
     </section>
   );
 }
