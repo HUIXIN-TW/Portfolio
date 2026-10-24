@@ -27,7 +27,7 @@ test("static localized HTML, page metadata and language switching", async ({ pag
     "content", "Three Days in Osaka & Kyoto | Kansai Travel Guide"
   );
   await expect(page.locator('link[rel="icon"]')).toHaveAttribute(
-    "href", "/trips/japan/favicon.svg"
+    "href", "/trips/japan/favicon.png"
   );
   await page.getByRole("link", { name: "繁中" }).click();
   await expect(page).toHaveURL(/\/japan$/);

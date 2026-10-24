@@ -39,7 +39,10 @@ export function useTripMetadata(meta, locale) {
       name: "apple-mobile-web-app-title", content: meta.title,
     });
     setMeta('link[rel="icon"]', "link", {
-      rel: "icon", type: "image/svg+xml", href: "/trips/japan/favicon.svg",
+      rel: "icon", type: "image/png", href: "/trips/japan/favicon.png",
+    });
+    setMeta('link[rel="apple-touch-icon"]', "link", {
+      rel: "apple-touch-icon", href: "/trips/japan/favicon.png",
     });
     setMeta('link[rel="canonical"]', "link", { rel: "canonical", href: canonicalUrl });
     setMeta('link[rel="alternate"][hreflang="zh-Hant"]', "link", {

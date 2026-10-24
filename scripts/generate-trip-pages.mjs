@@ -31,8 +31,8 @@ for (const content of [zh, en]) {
   let html = original
     .replace('<html lang="en">', '<html lang="' + (locale === "en" ? "en" : "zh-Hant") + '">')
     .replace(/<title>[^<]*<\/title>/, "<title>" + title + "</title>\n    " + metadata)
-    .replace(/<link rel="icon"[^>]*>/, '<link rel="icon" type="image/svg+xml" href="/trips/japan/favicon.svg" />')
-    .replace(/<link rel="apple-touch-icon"[^>]*>/, "")
+    .replace(/<link rel="icon"[^>]*>/, '<link rel="icon" type="image/png" href="/trips/japan/favicon.png" />')
+    .replace(/<link rel="apple-touch-icon"[^>]*>/, '<link rel="apple-touch-icon" href="/trips/japan/favicon.png" />')
     .replace(/<meta name="apple-mobile-web-app-title"[^>]*>/, '<meta name="apple-mobile-web-app-title" content="' + title + '" />')
     .replace(/<noscript\b[^>]*>[\s\S]*?<\/noscript\s*>/i, "<noscript>" +
       escapeHtml(content.hero.title + " — " + content.hero.description) + "</noscript>");
