@@ -105,9 +105,12 @@ const content = {
     "itinerary": "Day-by-day plan",
     "checklist": "Packing checklist",
     "phrases": "Japanese phrases",
+    "reference": "Reference",
     "map": "Trip map"
   },
   "headings": {
+    "reference": "Travel reference",
+    "referenceDescription": "Hotel details and essential emergency contacts, together in one place.",
     "itinerary": "Day-by-day itinerary",
     "itineraryDescription": "Open each day for transport tips, places to visit and food stops.",
     "checklist": "Before you leave · Packing & room check",

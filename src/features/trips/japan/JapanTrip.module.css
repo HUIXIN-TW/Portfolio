@@ -344,14 +344,26 @@
 
 /* Short, related reference cards can share a row; large expandable tools
    must stay full-width so a collapsed card never leaves an empty grid cell. */
-.referenceGrid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: start;
-  gap: 18px;
+.referenceSection {
+  width: 100%;
+  padding: clamp(20px, 3.5vw, 40px);
+  border: 1px solid var(--trip-border);
+  border-radius: 26px;
+  background: #fff;
+  box-shadow: 0 8px 32px rgba(15, 63, 66, 0.045);
 }
-.extras > .card,
-.referenceGrid > .card { width: 100%; min-width: 0; }
+.referenceSection .sectionTitle { margin: 8px 0 6px; }
+.referenceStack { display: flex; flex-direction: column; gap: 14px; }
+.referenceStack > .card { width: 100%; min-width: 0; }
+.referenceCardNumber {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  font-weight: 800;
+  color: var(--trip-teal);
+}
+.extras > .card { width: 100%; min-width: 0; }
 .card {
   min-width: 0;
   padding: 0;
@@ -507,7 +519,7 @@
 .cardSummary .sectionKicker { margin-bottom: 8px; }
 .cardHeading { display: inline; }
 .cardSummary::after { margin-left: 12px; }
-.referenceGrid .infoList { margin: 0; }
+.referenceStack .infoList { margin: 0; }
 .preflightProgressActions { gap: 8px; }
 .preflightProgressHeader strong { font-variant-numeric: tabular-nums; }
 .preflightHeader { margin-bottom: 12px; }
@@ -527,7 +539,7 @@
   .mapSection .frameWrapper { aspect-ratio: 4 / 3; }
 }
 @media (max-width: 650px) {
-  .referenceGrid, .sentenceList { grid-template-columns: 1fr; }
+  .sentenceList { grid-template-columns: 1fr; }
   .preflightSection:nth-child(2) .preflightList,
   .preflightSection:nth-child(3) .preflightList { grid-template-columns: 1fr; }
   .preflightProgress { grid-template-columns: 1fr; padding: 16px; row-gap: 13px; }
@@ -557,7 +569,7 @@
   .heroNote { font-size: 11px; }
   .sectionNav { margin-top: 24px; gap: 7px; }
   .sectionNav a { padding: 7px 10px; font-size: 11px; }
-  .itinerary, .mapSection { padding: 20px 16px; border-radius: 18px; }
+  .itinerary, .mapSection, .referenceSection { padding: 20px 16px; border-radius: 18px; }
   .dayTitle { padding: 17px 15px; }
   .day > .blockTitle, .day > .list { margin-left: 16px; margin-right: 16px; }
   .timeline { padding: 17px 16px 20px; }

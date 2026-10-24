@@ -10,7 +10,10 @@ const contacts = [
 export default function EmergencyContacts({ content }) {
   return (
     <details className={styles.card}>
-      <summary className={styles.cardSummary}>{content.headings.emergency}</summary>
+      <summary className={styles.cardSummary}>
+        <span className={styles.referenceCardNumber}>04.2 / EMERGENCY</span>
+        <span className={styles.cardHeading}>{content.headings.emergency}</span>
+      </summary>
       <div className={styles.cardBody}>
         <ul className={styles.infoList}>
           {contacts.map(([id, value, href]) => (

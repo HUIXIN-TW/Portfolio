@@ -35,7 +35,7 @@ export default function TripMap({ content }) {
     <section id="trip-map" className={styles.mapSection} aria-labelledby="trip-map-title">
       <div className={styles.mapIntroduction}>
         <div>
-          <span className={styles.sectionKicker}>04 / MAP</span>
+          <span className={styles.sectionKicker}>05 / MAP</span>
           <h2 id="trip-map-title">{map.title}</h2>
           <p>{map.description}</p>
         </div>

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "../JapanTrip.module.css";
 
-const sections = [["itinerary", "itinerary"], ["checklist", "checklist"], ["phrases", "phrases"], ["trip-map", "map"]];
+const sections = [["itinerary", "itinerary"], ["checklist", "checklist"], ["phrases", "phrases"], ["reference", "reference"], ["trip-map", "map"]];
 
 export default function TripHero({ content }) {
   const { hero, navigation, locale } = content;

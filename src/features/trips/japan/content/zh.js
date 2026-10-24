@@ -288,9 +288,12 @@ const content = {
     "itinerary": "每日行程",
     "checklist": "出門檢查",
     "phrases": "實用日文",
+    "reference": "參考資訊",
     "map": "行程地圖"
   },
   "headings": {
+    "reference": "旅行參考資訊",
+    "referenceDescription": "飯店資料與在地緊急聯絡方式，方便旅途中快速查找。",
     "itinerary": "每日行程",
     "itineraryDescription": "點開每日行程，查看交通方式、步行安排與餐廳選項。",
     "checklist": "出發前檢查 · 重要物品與房間安全",
