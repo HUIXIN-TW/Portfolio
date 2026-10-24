@@ -1,26 +1,34 @@
 /* Japan trip — shared foundations (zh / en) */
-
+.mapPage { display: flex; flex-direction: column; align-items: center; }
 .frameWrapper { overflow: hidden; }
 .frame { width: 100%; height: 100%; border: 0; }
-
-
+.itinerary { display: flex; flex-direction: column; background: #fff; }
+.dayTitle { list-style: none; justify-content: space-between; font-weight: 700; cursor: pointer; }
 .dayTitle::-webkit-details-marker { display: none; }
 .dayTitle::after { content: "＋"; margin-left: 16px; font-size: 20px; color: #64748b; }
 .day[open] .dayTitle::after { content: "−"; }
-
-
-
+.blockTitle { font-size: 16px; font-weight: 600; }
+.list { margin: 0; padding-left: 20px; }
+.cardSummary { list-style: none; font-weight: 700; cursor: pointer; }
 .cardSummary::-webkit-details-marker { display: none; }
-
+.cardSummary::after { content: "＋"; float: right; }
 .card[open] .cardSummary::after { content: "−"; }
-
+.cardBody { display: flex; flex-direction: column; gap: 12px; }
 .checkItem { display: flex; align-items: center; gap: 10px; color: #0f172a; }
-
-
-
+.sentenceList { line-height: 1.7; color: #1f2937; }
+.sentenceList li { display: grid; gap: 4px; }
+.jp { font-weight: 600; }
 .romaji { font-size: 14px; color: #334155; }
 .translation { font-size: 14px; color: #475569; }
-
+.speakButton {
+  align-self: flex-start;
+  border: 0;
+  border-radius: 999px;
+  font-weight: 600;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 13px;
+}
 .preflight {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -36,12 +44,27 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 .preflightSection[data-group="room"] .preflightList { grid-template-columns: 1fr; }
-
-
-
+.preflightProgress {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(190px, 230px);
+  column-gap: 24px;
+  row-gap: 12px;
+  padding: 20px 22px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+}
+.preflightProgressHeader { grid-column: 1; grid-row: 1; align-self: center; }
+.preflightProgressBar { grid-column: 1; grid-row: 2; align-self: center; }
 .preflightProgress > .helperText { grid-column: 1 / -1; margin: 0; }
-
-
+.preflightProgressHeader {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #64748b;
+  font-weight: 700;
+}
+.preflightProgressActions { display: inline-flex; align-items: center; gap: 10px; }
 .resetButton, .shareButton {
   border: none;
   border-radius: 999px;
@@ -55,39 +78,101 @@
 .resetButton:hover { background: #e2e8f0; }
 .shareButton { background: #dcfce7; color: #166534; }
 .shareButton:hover { background: #bbf7d0; }
-
+.preflightProgressHeader strong { font-size: 18px; letter-spacing: normal; }
 .preflightProgressBar {
-  grid-column: 1; grid-row: 2; align-self: center;
   height: 10px;
   margin-top: 0;
   border-radius: 999px;
   background: #e2e8f0;
   overflow: hidden;
 }
-
-
-
-
-
-
+.preflightProgressFill { display: block; height: 100%; transition: width 0.3s ease; }
+.preflightTime {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  margin-top: 0;
+  padding-left: 24px;
+  border-left: 1px solid #cfe5df;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: 10px;
+  color: #475569;
+  font-weight: 600;
+}
+.preflightTime input {
+  width: 100%;
+  min-height: 42px;
+  font-variant-numeric: tabular-nums;
+  font-size: 15px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 6px 10px;
+  color: #0f172a;
+  background: #fff;
+}
+.preflightHeader { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+.preflightIndex {
+  min-width: 28px;
+  height: 28px;
+  padding: 0 10px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 12px;
+}
+.preflightTitle { font-weight: 700; color: #0f172a; }
 .preflightList { display: grid; gap: 8px; line-height: 1.6; }
 .preflightRow { display: grid; gap: 6px; }
-
+.preflight .checkItem {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid #eef2f7;
+}
 .preflight .checkItem:hover { border-color: #86efac; background: #f8fafc; }
-
-
+.preflight .checkItem input {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #cbd5e1;
+  background: #f1f5f9;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.preflight .checkItem input:checked { transform: scale(1.05); }
 .preflight .checkItem input:checked::after { content: "✓"; color: #fff; font-size: 12px; font-weight: 700; }
 .preflight .checkItem input:checked + span { text-decoration: line-through; color: #94a3b8; }
-
-
-
-
-
-
+.infoList { list-style: none; padding: 0; display: grid; gap: 10px; }
+.infoList li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-radius: 12px;
+}
+.infoLabel { font-weight: 600; }
+.infoValue { font-variant-numeric: tabular-nums; }
+.infoActions { display: inline-flex; align-items: center; gap: 10px; }
+.copyButton {
+  border: 0;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
 
 /* Responsive layout and visual design */
 .mapPage {
-  display: flex; flex-direction: column; align-items: center;
   --trip-ink: #12313b;
   --trip-muted: #61737b;
   --trip-teal: #087d78;
@@ -108,7 +193,7 @@
 .tripHero,
 .itinerary,
 .extras,
-
+.mapSection { width: 100%; max-width: 1100px; }
 
 .tripHero {
   position: relative;
@@ -136,7 +221,7 @@
 .heroTop,
 .languageSwitch,
 .sectionNav,
-
+.mapActions { display: flex; align-items: center; flex-wrap: wrap; }
 
 .heroTop { justify-content: space-between; gap: 16px; position: relative; z-index: 1; }
 .eyebrow, .sectionKicker, .dayNumber {
@@ -196,7 +281,6 @@
 .sectionNav a:hover { background: rgba(255,255,255,0.18); transform: translateY(-1px); }
 
 .itinerary {
-  display: flex; flex-direction: column; background: #fff;
   gap: 0;
   padding: clamp(20px, 3.5vw, 40px);
   border: 1px solid var(--trip-border);
@@ -217,7 +301,6 @@
 }
 .day + .day { border-top: 1px solid #e9f0ed; }
 .dayTitle {
-  list-style: none; justify-content: space-between; font-weight: 700; cursor: pointer;
   display: flex;
   padding: 22px 0;
   gap: 14px;
@@ -230,16 +313,13 @@
 .dayNumber { margin-bottom: 5px; color: var(--trip-teal); }
 .dayDescription { display: block; margin-top: 5px; font-size: 13px; line-height: 1.55; font-weight: 400; color: #63767e; }
 
-.blockTitle {
-  font-size: 16px;
-  color: #183a40;
-  font-weight: 750;
-  letter-spacing: -0.01em;
-}
-.list {
-  margin: 0; padding-left: 20px;
-  line-height: 1.85; font-size: 14px; color: #43575d;
-}
+.day > .blockTitle,
+.day > .list { margin-left: 24px; margin-right: 24px; }
+.day > .blockTitle { margin-top: 22px; }
+.day > .list { margin-top: 7px; margin-bottom: 12px; }
+.day > .list:last-child { margin-bottom: 26px; }
+.blockTitle { color: #183a40; font-weight: 750; letter-spacing: -0.01em; }
+.list { line-height: 1.85; font-size: 14px; color: #43575d; }
 .list li + li { margin-top: 4px; }
 
 .timeline { padding: 2px 0 28px; display: grid; gap: 24px; }
@@ -302,76 +382,34 @@
   box-shadow: 0 6px 25px rgba(15,63,66,0.055);
   overflow: clip;
 }
-
-
+.cardSummary {
+  padding: 22px 24px;
+  color: var(--trip-ink);
+  font-size: 16px;
+  line-height: 1.45;
+  display: flow-root;
+}
+.cardSummary::after { font-size: 18px; color: #0b807a; }
 .cardSummary:hover { background: #f4faf8; }
 .card[open] .cardSummary { border-bottom: 1px solid var(--trip-border); }
-.cardBody {
-  display: flex; flex-direction: column; gap: 12px;
-  margin: 0; padding: 22px 24px 26px;
-}
+.cardBody { margin: 0; padding: 22px 24px 26px; }
 
 .preflightProgress {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(190px, 230px);
-  column-gap: 24px;
-  row-gap: 12px;
-  padding: 20px 22px;
-  border-radius: 16px;
-  border: 1px solid #e2e8f0;
   position: relative;
+  top: auto;
+  z-index: auto;
   background: #ecf8f5;
   border-color: #cfe9e4;
+  backdrop-filter: none;
 }
-.preflightProgressHeader {
-  grid-column: 1; grid-row: 1; align-self: center;
-  display: flex;
-  justify-content: space-between;
-  font-size: 11px;
-  text-transform: uppercase;
-  color: #64748b;
-  font-weight: 700;
-  align-items: center; flex-wrap: wrap; gap: 10px; letter-spacing: 0.10em;
-}
-
-
-.preflightProgressFill {
-  display: block; height: 100%; transition: width 0.3s ease;
-  background: linear-gradient(90deg, #087f77, #21aaa0);
-}
-.preflightTime {
-  grid-column: 2;
-  grid-row: 1 / span 2;
-  margin-top: 0;
-  padding-left: 24px;
-  border-left: 1px solid #cfe5df;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
-  gap: 10px;
-  color: #475569;
-  font-weight: 600;
-  flex-wrap: wrap; font-size: 13px;
-}
-.preflightTime input {
-  width: 100%;
-  min-height: 42px;
-  font-variant-numeric: tabular-nums;
-  font-size: 15px;
-  border: 1px solid #e2e8f0;
-  border-radius: 10px;
-  padding: 6px 10px;
-  color: #0f172a;
-  background: #fff;
-  min-width: 125px;
-}
+.preflightProgressHeader { align-items: center; flex-wrap: wrap; gap: 10px; letter-spacing: 0.10em; }
+.preflightProgressActions { margin-left: auto; }
+.preflightProgressHeader strong { color: #07736e; }
+.preflightProgressFill { background: linear-gradient(90deg, #087f77, #21aaa0); }
+.preflightTime { flex-wrap: wrap; font-size: 13px; }
+.preflightTime input { min-width: 125px; }
 
 .preflight .checkItem {
-  width: 100%;
-  border-radius: 12px;
-  background: #fff;
-  border: 1px solid #eef2f7;
   min-height: 48px;
   align-items: center;
   gap: 12px;
@@ -383,40 +421,14 @@
 }
 .preflight .checkItem span { min-width: 0; overflow-wrap: anywhere; }
 .preflight .checkItem:focus-within { outline: 2px solid #087d78; outline-offset: 2px; }
-.preflight .checkItem input {
-  appearance: none;
-  -webkit-appearance: none;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  border: 2px solid #cbd5e1;
-  background: #f1f5f9;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 22px; cursor: pointer;
-}
-.preflight .checkItem input:checked {
-  transform: scale(1.05);
-  background: #087d78; border-color: #087d78;
-}
-.preflightIndex {
-  min-width: 28px;
-  height: 28px;
-  padding: 0 10px;
-  border-radius: 999px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-weight: 700;
-  font-size: 12px;
-  background: #13434a;
-}
-
+.preflight .checkItem input { flex: 0 0 22px; cursor: pointer; }
+.preflight .checkItem input:checked { background: #087d78; border-color: #087d78; }
+.preflightIndex { background: #13434a; }
+.preflightSublist { padding-left: 12px; border-left: 2px solid #e3edeb; }
+.preflightTitle { font-size: 14px; }
+.preflightSection + .preflightSection { padding-top: 0; border-top: none; }
 
 .sentenceList {
-  line-height: 1.7; color: #1f2937;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
@@ -426,7 +438,6 @@
   counter-reset: phrase;
 }
 .sentenceList li {
-  display: grid; gap: 4px;
   position: relative;
   counter-increment: phrase;
   padding: 16px 17px 16px 43px;
@@ -449,67 +460,21 @@
   overflow-wrap: anywhere;
 }
 .sentenceList .speakButton { justify-self: start; min-height: 36px; }
-.jp {
-  font-weight: 600;
-  font-size: 15px;
-}
+.jp { font-size: 15px; }
 .romaji, .translation { line-height: 1.6; }
-.speakButton {
-  align-self: flex-start;
-  border: 0;
-  border-radius: 999px;
-  font-weight: 600;
-  padding: 6px 12px;
-  cursor: pointer;
-  font-size: 13px;
-  margin-top: 5px; color: #076a66; background: #e1f5f0;
-}
+.speakButton { margin-top: 5px; color: #076a66; background: #e1f5f0; }
 .speakButton:hover { background: #caf0e6; }
 .helperText { font-size: 13px; line-height: 1.6; color: var(--trip-muted); }
 
-.infoList {
-  list-style: none;
-  padding: 0;
-  display: grid;
-  gap: 8px;
-  margin: 0;
-}
-.infoList li {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 12px;
-  border-radius: 12px;
-  min-width: 0;
-  gap: 8px;
-  flex-wrap: wrap;
-  background: #f5faf8;
-  align-items: center;
-}
-.infoLabel {
-  font-weight: 600;
-  font-size: 13px; color: #3f5b62;
-}
-.infoActions {
-  display: inline-flex; align-items: center; gap: 10px;
-  min-width: 0; margin-left: auto; max-width: 100%;
-}
-.infoValue {
-  font-variant-numeric: tabular-nums;
-  overflow-wrap: anywhere; font-size: 13px; color: #0a6662; text-decoration-color: #9dd5cc;
-}
-.copyButton {
-  border: 0;
-  border-radius: 999px;
-  padding: 6px 12px;
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  flex: 0 0 auto; color: #076b67; background: #e1f4ee;
-}
+.infoList { gap: 8px; margin: 0; }
+.infoList li { min-width: 0; gap: 8px; flex-wrap: wrap; background: #f5faf8; align-items: center; }
+.infoLabel { font-size: 13px; color: #3f5b62; }
+.infoActions { min-width: 0; margin-left: auto; max-width: 100%; }
+.infoValue { overflow-wrap: anywhere; font-size: 13px; color: #0a6662; text-decoration-color: #9dd5cc; }
+.copyButton { flex: 0 0 auto; color: #076b67; background: #e1f4ee; }
 .copyButton:hover { background: #cdebe3; }
 
 .mapSection {
-  width: 100%; max-width: 1100px;
   padding: clamp(20px, 3.5vw, 36px);
   border: 1px solid var(--trip-border);
   border-radius: 26px;
@@ -518,10 +483,7 @@
 .mapIntroduction { display: flex; align-items: end; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
 .mapIntroduction h2 { margin: 8px 0 5px; font-size: clamp(23px,3vw,29px); font-weight: 800; letter-spacing: -0.025em; color: var(--trip-ink); }
 .mapIntroduction p { max-width: 580px; color: var(--trip-muted); font-size: 14px; line-height: 1.7; }
-.mapActions {
-  display: flex; align-items: center; flex-wrap: wrap;
-  gap: 8px;
-}
+.mapActions { gap: 8px; }
 .primaryButton, .secondaryButton {
   display: inline-flex;
   padding: 11px 15px;
@@ -562,46 +524,15 @@
   font-weight: 700;
   vertical-align: middle;
 }
-.cardSummary {
-  list-style: none;
-  font-weight: 700;
-  cursor: pointer;
-  padding: 22px 24px;
-  color: var(--trip-ink);
-  font-size: 16px;
-  line-height: 1.45;
-  display: block;
-}
+.cardSummary { display: block; }
 .cardSummary .sectionKicker { margin-bottom: 8px; }
 .cardHeading { display: inline; }
-.cardSummary::after {
-  content: "＋"; float: right;
-  font-size: 18px; color: #0b807a;
-  margin-left: 12px;
-}
+.cardSummary::after { margin-left: 12px; }
 .referenceStack .infoList { margin: 0; }
-.preflightProgressActions {
-  display: inline-flex;
-  align-items: center;
-  margin-left: auto;
-  gap: 8px;
-}
-.preflightProgressHeader strong {
-  font-size: 18px; letter-spacing: normal;
-  color: #07736e;
-  font-variant-numeric: tabular-nums;
-}
-.preflightHeader {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
-}
-.preflightTitle {
-  font-weight: 700;
-  color: #0f172a;
-  font-size: 15px;
-}
+.preflightProgressActions { gap: 8px; }
+.preflightProgressHeader strong { font-variant-numeric: tabular-nums; }
+.preflightHeader { margin-bottom: 12px; }
+.preflightTitle { font-size: 15px; }
 
 .mapPage :is(a, button, summary, input):focus-visible { outline: 3px solid #23b5a8; outline-offset: 3px; }
 .mapPage [id] { scroll-margin-top: 24px; }
@@ -649,6 +580,7 @@
   .sectionNav a { padding: 7px 10px; font-size: 11px; }
   .itinerary, .mapSection, .referenceSection { padding: 20px 16px; border-radius: 18px; }
   .dayTitle { padding: 18px 0; }
+  .day > .blockTitle, .day > .list { margin-left: 16px; margin-right: 16px; }
   .timeline { padding: 2px 0 20px; }
   .timelineItem { display: block; }
   .timelineTime { display: block; margin-bottom: 6px; }
