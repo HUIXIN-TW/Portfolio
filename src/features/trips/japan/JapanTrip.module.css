@@ -177,7 +177,6 @@
   --trip-muted: #71646f;
   --trip-accent: #a72f51;
   --trip-border: #efdee2;
-  --trip-soft: #fff1f4;
   min-height: 100vh;
   padding: 36px max(18px, calc((100vw - 1160px) / 2)) 88px;
   gap: 26px;
@@ -441,7 +440,6 @@
 .preflight .checkItem input { flex: 0 0 22px; cursor: pointer; }
 .preflight .checkItem input:checked { background: #a72f51; border-color: #a72f51; }
 .preflightIndex { background: #903d57; }
-.preflightSublist { padding-left: 12px; border-left: 2px solid #f0dee3; }
 .preflightTitle { font-size: 14px; }
 .preflightSection + .preflightSection { padding-top: 0; border-top: none; }
 
