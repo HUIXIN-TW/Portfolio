@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Footer from "./ui/Footer";
 import Header from "./ui/Header";
 import About from "./sections/About";
@@ -57,7 +57,9 @@ const App = () => {
 
 const SiteRoutes = ({ theme, handleThemeToggle, siteProps }) => {
   const { pathname } = useLocation();
-  const isJapanTrip = ["/trips/japan-zh", "/trips/japan-en"].includes(pathname.replace(/\/$/, ""));
+  const path = pathname.replace(/\/$/, "") || "/";
+  const isTripsDomain = window.location.hostname === "trips.huixinyang.com";
+  const isJapanTrip = isTripsDomain || ["/japan", "/japan/zh", "/japan/en", "/trips/japan-zh", "/trips/japan-en"].includes(path);
   return (
     <div
         id="main"
@@ -68,9 +70,13 @@ const SiteRoutes = ({ theme, handleThemeToggle, siteProps }) => {
           {/* Define your routes */}
           <React.Suspense fallback={<div role="status" className="p-8 text-center">Loading trip…</div>}>
             <Routes>
-            <Route path="/trips/japan-zh" element={<JapanTripZh />} />
-            <Route path="/trips/japan-en" element={<JapanTripEn />} />
-            <Route path="/" element={<Home name={siteProps.name} title={siteProps.title} />} />
+            <Route path="/japan" element={<JapanTripZh />} />
+            <Route path="/japan/zh" element={<JapanTripZh />} />
+            <Route path="/japan/en" element={<JapanTripEn />} />
+            <Route path="/trips/japan-zh" element={<Navigate to="/japan/zh" replace />} />
+            <Route path="/trips/japan-en" element={<Navigate to="/japan/en" replace />} />
+            <Route path="/" element={isTripsDomain ? <Navigate to="/japan" replace /> : <Home name={siteProps.name} title={siteProps.title} />} />
+            {!isTripsDomain && (
             <Route path="/about" element={<About />} />
             <Route path="/education" element={<Education />} />
             <Route path="/certificates-awards" element={<CertificatesAndAwards />} />
@@ -80,6 +86,8 @@ const SiteRoutes = ({ theme, handleThemeToggle, siteProps }) => {
             <Route path="/blog/:slug" element={<BlogPostPage />} />
             <Route path="/migration" element={<Migration />} />
             <Route path="/referee" element={<Referee />} />
+            )}
+            {isTripsDomain && <Route path="*" element={<Navigate to="/japan" replace />} />}
             </Routes>
           </React.Suspense>
         </main>
