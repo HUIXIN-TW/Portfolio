@@ -5,14 +5,12 @@ import { resolve } from "node:path";
 async function captureVisualBaseline(locator, filename, testInfo) {
   await locator.screenshot({ path: testInfo.outputPath(filename), animations: "disabled" });
   const baselineFolder = resolve("tests/e2e/visual-baselines");
-  if (existsSync(baselineFolder)) {
-    expect(existsSync(resolve(baselineFolder, filename)), "Missing approved screenshot " + filename).toBeTruthy();
-    await expect(locator).toHaveScreenshot(filename, {
-      animations: "disabled",
-      threshold: 0.15,
-      maxDiffPixelRatio: 0.01,
-    });
-  }
+  expect(existsSync(resolve(baselineFolder, filename)), "Missing approved screenshot " + filename).toBeTruthy();
+  await expect(locator).toHaveScreenshot(filename, {
+    animations: "disabled",
+    threshold: 0.15,
+    maxDiffPixelRatio: 0.01,
+  });
 }
 
 test.beforeEach(async ({ page }) => {
