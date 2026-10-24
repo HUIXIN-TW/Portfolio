@@ -13,7 +13,8 @@ for (const content of [zh, en]) {
   assert.ok(html.includes('name="description" content="' + escape(content.meta.description) + '"'), "Missing description");
   assert.ok(html.includes('property="og:locale" content="' + (content.locale === "en" ? "en_US" : "zh_TW") + '"'));
   assert.ok(html.includes('href="/trips/japan/favicon.svg"'), "Trip favicon missing");
-  assert.ok(!html.includes("The U Group"), "Portfolio-only noscript content leaked into trips");
+  assert.ok(!html.includes("The U Group"), "Portfolio-only noscript content leaked into trips: " +
+    html.slice(Math.max(0, html.indexOf("The U Group") - 120), html.indexOf("The U Group") + 180));
   assert.ok(html.includes('src="/assets/'), "Trip HTML must reference built Vite assets");
 }
 console.log("Trip static HTML metadata verified for both locales.");
