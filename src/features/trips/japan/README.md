@@ -5,7 +5,8 @@ The travel guide is a self-contained feature, not a Portfolio section.
 ## Architecture
 
 - `JapanTripPage.jsx` is the single renderer. The router supplies `zh` or `en`.
-- `content/{zh,en}.js` contains localized prose and itinerary entries. Each stop requires a stable `id`, a display `time`, a `title`, and non-empty `details`.
+- `data/itinerary.js` owns the ordered itinerary stop IDs and planned display times (shared across languages).
+- `content/{zh,en}.js` holds natural-language day and stop descriptions keyed by the stable IDs. `localizeDays` assembles the localized view; do not duplicate schedule times.
 - `components/` contains presentation and user interaction. Avoid putting localized copy or source-of-truth records in components.
 - `data/` contains language-independent checklist IDs, Japanese phrases, hotel facts, and the 41-place map inventory.
 - `utils/` contains browser effects, clipboard/share behavior and optional local storage.

@@ -1,105 +1,83 @@
-// Native English copy with itinerary IDs aligned to content/zh.js.
-const days = [
-  {
-    "number": "01",
+// Localized native English copy. Times and ordering live in data/itinerary.js.
+import { localizeDays } from "../data/itinerary.js";
+
+const localizedDays = {
+  "01": {
     "title": "Osaka · Namba, Dotonbori & Shinsekai",
     "description": "Arrive in Osaka, explore Namba and Shinsaibashi, then spend the evening in Shinsekai.",
-    "stops": [
-      {
-        "id": "day-1-arrival",
-        "time": "07:05–10:55",
+    "stops": {
+      "day-1-arrival": {
         "title": "Arrive at Kansai International Airport",
         "details": [
           "Fly from Kaohsiung (KHH) to Kansai International Airport (KIX). Allow time for immigration and baggage collection."
         ]
       },
-      {
-        "id": "day-1-tickets",
-        "time": "10:55–11:30",
+      "day-1-tickets": {
         "title": "Train tickets & ICOCA",
         "details": [
           "Buy a Nankai Railway ticket (credit card planned) and top up your ICOCA card by about ¥3,500.",
           "Walk from arrivals to the Nankai ticket gates (around 5–10 minutes)."
         ]
       },
-      {
-        "id": "day-1-nankai",
-        "time": "11:30–12:20",
+      "day-1-nankai": {
         "title": "Nankai Railway to Namba",
         "details": [
           "Kansai Airport Station → Namba Station (approximately 45–55 minutes)."
         ]
       },
-      {
-        "id": "day-1-hotel-walk",
-        "time": "12:20–12:35",
+      "day-1-hotel-walk": {
         "title": "Walk to the hotel",
         "details": [
           "Allow 10–15 minutes on foot from Namba Station."
         ]
       },
-      {
-        "id": "day-1-luggage",
-        "time": "12:35–12:50",
+      "day-1-luggage": {
         "title": "Leave your luggage",
         "details": [
           "Check-in begins at 15:00. Ask the hotel whether you can leave your bags beforehand."
         ]
       },
-      {
-        "id": "day-1-lunch",
-        "time": "Lunch",
+      "day-1-lunch": {
         "title": "Lunch options around Namba",
         "details": [
           "Within walking distance: KITAN HIBIKI (around 10 minutes) or Wagyu Sukiyaki Okuwo (around 11 minutes).",
           "Further away: Naniwa Omuraisu (10-minute ride plus a 23-minute walk) or Usamitei Matsubaya (13-minute ride plus a 26-minute walk)."
         ]
       },
-      {
-        "id": "day-1-shopping",
-        "time": "After lunch–16:00",
+      "day-1-shopping": {
         "title": "Shinsaibashi & Dotonbori",
         "details": [
           "Walk from the hotel to Shinsaibashi-suji Shopping Street (around 10–20 minutes).",
           "Continue to Dotonbori (5–10 minutes), including the nearby Glico running-man sign."
         ]
       },
-      {
-        "id": "day-1-tsutenkaku-transfer",
-        "time": "16:20–16:50",
+      "day-1-tsutenkaku-transfer": {
         "title": "Head to Tsutenkaku",
         "details": [
           "Walk to Namba Station (5–15 minutes), then take the Osaka Metro to Dobutsuen-mae (15–20 minutes).",
           "Walk another 8–12 minutes to Tsutenkaku Tower."
         ]
       },
-      {
-        "id": "day-1-shinsekai",
-        "time": "17:00–18:30",
+      "day-1-shinsekai": {
         "title": "Tsutenkaku & Shinsekai",
         "details": [
           "Visit the observation deck, then explore the streets of Shinsekai."
         ]
       },
-      {
-        "id": "day-1-dinner",
-        "time": "19:00",
+      "day-1-dinner": {
         "title": "Dinner & return to Namba",
         "details": [
           "Try Osaka-style kushikatsu in Shinsekai, or head back to Namba for dinner.",
           "For the return journey, allow around 15–20 minutes by metro to Namba, then a 10–15-minute walk to the hotel."
         ]
       }
-    ]
+    }
   },
-  {
-    "number": "02",
+  "02": {
     "title": "Kyoto · Kiyomizu-dera, Gion & Nishiki Market",
     "description": "A morning at Kiyomizu-dera, kimono photos, and an afternoon around central Kyoto.",
-    "stops": [
-      {
-        "id": "day-2-transfer",
-        "time": "Depart 05:30",
+    "stops": {
+      "day-2-transfer": {
         "title": "Osaka → Kyoto",
         "details": [
           "Walk to Namba Station (10–15 minutes), then take the Midosuji Line to Yodoyabashi (8–10 minutes).",
@@ -108,58 +86,44 @@ const days = [
           "Allow at least 90 minutes for the journey. Check first-train times and connections before setting out."
         ]
       },
-      {
-        "id": "day-2-kiyomizu",
-        "time": "On arrival–09:00",
+      "day-2-kiyomizu": {
         "title": "Kiyomizu-dera & Yasaka Shrine",
         "details": [
           "Visit Kiyomizu-dera, then walk through the surrounding streets towards Yasaka Shrine (around 20–30 minutes)."
         ]
       },
-      {
-        "id": "day-2-kimono",
-        "time": "09:00",
+      "day-2-kimono": {
         "title": "Kimono rental at Okamoto",
         "details": [
           "Head to the Kiyomizu branch to change into your kimono. Follow your booking time."
         ]
       },
-      {
-        "id": "day-2-photos",
-        "time": "11:00–12:30",
+      "day-2-photos": {
         "title": "Gion photo walk",
         "details": [
           "Explore Hanamikoji Street and the Shirakawa area, allowing roughly 5–15 minutes of walking around each stop."
         ]
       },
-      {
-        "id": "day-2-lunch",
-        "time": "Lunch",
+      "day-2-lunch": {
         "title": "Lunch & a sweet stop",
         "details": [
           "Choose Ramen Nishiki (about 15 minutes by bus plus a 3–8-minute walk) or Menya Inoichi (around 5 minutes on foot).",
           "For dessert, consider GOKAGO (around a 5–15-minute walk, depending on where you are)."
         ]
       },
-      {
-        "id": "day-2-return-kimono",
-        "time": "By 14:30",
+      "day-2-return-kimono": {
         "title": "Return your kimono",
         "details": [
           "Walk back to the Okamoto rental shop (approximately 10–25 minutes). Confirm the return deadline with the shop."
         ]
       },
-      {
-        "id": "day-2-market",
-        "time": "Afternoon",
+      "day-2-market": {
         "title": "Nishiki Market & the Kamo River",
         "details": [
           "Walk from Gion or Kawaramachi to Nishiki Market (15–25 minutes), then continue to the Kamo River (10–20 minutes)."
         ]
       },
-      {
-        "id": "day-2-back-to-osaka",
-        "time": "15:50–18:00",
+      "day-2-back-to-osaka": {
         "title": "Return to Osaka",
         "details": [
           "Walk to Shijo Station (5–8 minutes), take the Karasuma Line to Kyoto Station (3–5 minutes), then allow 5–10 minutes to transfer to Kintetsu.",
@@ -167,76 +131,62 @@ const days = [
           "Walk from Osaka-Namba Station to the hotel (approximately 10–15 minutes)."
         ]
       },
-      {
-        "id": "day-2-dinner",
-        "time": "18:00",
+      "day-2-dinner": {
         "title": "Dinner around Dotonbori",
         "details": [
           "Choose somewhere around Dotonbori or Kuromon Market, depending on where you end up (around 10–20 minutes on foot)."
         ]
       }
-    ]
+    }
   },
-  {
-    "number": "03",
+  "03": {
     "title": "Osaka Castle, Tenjinbashisuji & home",
     "description": "Morning coffee, Osaka Castle, a final shopping stop and the flight home.",
-    "stops": [
-      {
-        "id": "day-3-coffee",
-        "time": "07:15–08:30",
+    "stops": {
+      "day-3-coffee": {
         "title": "Coffee at SOT COFFEE ROASTER",
         "details": [
           "Walk from the hotel to Namba Station (10–15 minutes), then take the Osaka Metro towards Tanimachi 4-chome (20–30 minutes, including transfers).",
           "Walk another 10–20 minutes to SOT COFFEE ROASTER."
         ]
       },
-      {
-        "id": "day-3-castle",
-        "time": "08:30–11:30",
+      "day-3-castle": {
         "title": "Osaka Castle Park",
         "details": [
           "Walk to Osaka Castle Park (around 20 minutes) and allow roughly two hours for the castle.",
           "If you'd like a boat ride, check the queue or booking arrangements around 09:30. Allow another 30–60 minutes to walk around the grounds."
         ]
       },
-      {
-        "id": "day-3-shopping",
-        "time": "11:30–15:00",
+      "day-3-shopping": {
         "title": "Tenjinbashisuji Shopping Street",
         "details": [
           "Take the Osaka Metro to Ogimachi Station (around 35 minutes), then walk 3–8 minutes to the shopping street.",
           "Stop for lunch, local snacks and last-minute shopping."
         ]
       },
-      {
-        "id": "day-3-luggage",
-        "time": "15:00",
+      "day-3-luggage": {
         "title": "Collect your luggage",
         "details": [
           "Take the metro from Ogimachi back to Namba (25–35 minutes), then walk 10–15 minutes to the hotel."
         ]
       },
-      {
-        "id": "day-3-airport",
-        "time": "Around 15:40",
+      "day-3-airport": {
         "title": "Head to Kansai Airport",
         "details": [
           "Walk to Nankai Namba Station (5–15 minutes) and take the Nankai Railway to KIX (45–55 minutes).",
           "Allow time for tickets, baggage drop and airport security."
         ]
       },
-      {
-        "id": "day-3-flight",
-        "time": "20:20–22:55",
+      "day-3-flight": {
         "title": "Kansai Airport → Kaohsiung",
         "details": [
           "Return flight from KIX to Kaohsiung (local times)."
         ]
       }
-    ]
+    }
   }
-];
+};
+const days = localizeDays(localizedDays, "en");
 
 const content = {
   "locale": "en",

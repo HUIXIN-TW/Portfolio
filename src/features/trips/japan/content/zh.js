@@ -1,104 +1,83 @@
-// Localized copy and itinerary. Shared presentation lives in JapanTripPage.jsx.
-const days = [
-  {
-    "number": "01",
+// Localized Traditional Chinese copy. Times and ordering live in data/itinerary.js.
+import { localizeDays } from "../data/itinerary.js";
+
+const localizedDays = {
+  "01": {
     "title": "大阪初印象 · 難波、心齋橋與新世界",
-    "stops": [
-      {
-        "id": "day-1-arrival",
-        "time": "07:05–10:55",
+    "description": "從關西機場進大阪，逛心齋橋、道頓堀與新世界。",
+    "stops": {
+      "day-1-arrival": {
         "title": "抵達關西國際機場",
         "details": [
           "高雄（KHH）→ 關西國際機場（KIX）；預留入境及領取行李時間。"
         ]
       },
-      {
-        "id": "day-1-tickets",
-        "time": "10:55–11:30",
+      "day-1-tickets": {
         "title": "購票與 ICOCA 儲值",
         "details": [
           "購買南海電鐵車票（預計使用信用卡），ICOCA 預計儲值 ¥3,500。",
           "從入境區步行至南海電鐵售票處／閘口（約 5–10 分）。"
         ]
       },
-      {
-        "id": "day-1-nankai",
-        "time": "11:30–12:20",
+      "day-1-nankai": {
         "title": "搭乘南海電鐵前往難波",
         "details": [
           "關西機場站 → 難波站（約 45–55 分）。"
         ]
       },
-      {
-        "id": "day-1-hotel-walk",
-        "time": "12:20–12:35",
+      "day-1-hotel-walk": {
         "title": "步行前往飯店",
         "details": [
           "難波站 → 飯店（約 10–15 分）。"
         ]
       },
-      {
-        "id": "day-1-luggage",
-        "time": "12:35–12:50",
+      "day-1-luggage": {
         "title": "寄放行李",
         "details": [
           "飯店 15:00 開始辦理入住；可先詢問是否能寄放行李。"
         ]
       },
-      {
-        "id": "day-1-lunch",
-        "time": "午餐",
+      "day-1-lunch": {
         "title": "難波午餐（擇一）",
         "details": [
           "步行可達：㐂舌響 KITAN HIBIKI（約 10 分）、Wagyu Sukiyaki Okuwo（約 11 分）。",
           "需搭車：Naniwa Omuraisu（搭車約 10 分＋步行約 23 分）、Usamitei Matsubaya（搭車約 13 分＋步行約 26 分）。"
         ]
       },
-      {
-        "id": "day-1-shopping",
-        "time": "午餐後–16:00",
+      "day-1-shopping": {
         "title": "心齋橋與道頓堀",
         "details": [
           "飯店 → 心齋橋筋商店街（步行約 10–20 分）。",
           "心齋橋 → 道頓堀（約 5–10 分）；固力果招牌也在附近。"
         ]
       },
-      {
-        "id": "day-1-tsutenkaku-transfer",
-        "time": "16:20–16:50",
+      "day-1-tsutenkaku-transfer": {
         "title": "前往通天閣",
         "details": [
           "飯店 → 難波站（步行約 5–15 分），搭大阪 Metro 至動物園前（約 15–20 分）。",
           "動物園前站 → 通天閣（步行約 8–12 分）。"
         ]
       },
-      {
-        "id": "day-1-shinsekai",
-        "time": "17:00–18:30",
+      "day-1-shinsekai": {
         "title": "通天閣與新世界",
         "details": [
           "登上通天閣觀景台，接著散步逛新世界。"
         ]
       },
-      {
-        "id": "day-1-dinner",
-        "time": "19:00",
+      "day-1-dinner": {
         "title": "新世界晚餐／返回難波",
         "details": [
           "可在新世界吃大阪炸串，或回難波用餐。",
           "回程：動物園前 → 難波（約 15–20 分），再步行回飯店（約 10–15 分）。"
         ]
       }
-    ],
-    "description": "從關西機場進大阪，逛心齋橋、道頓堀與新世界。"
+    }
   },
-  {
-    "number": "02",
+  "02": {
     "title": "京都散策 · 清水寺、和服與錦市場",
-    "stops": [
-      {
-        "id": "day-2-transfer",
-        "time": "05:30 出發",
+    "description": "清水寺晨間散步、和服體驗，再逛錦市場與鴨川。",
+    "stops": {
+      "day-2-transfer": {
         "title": "大阪 → 京都",
         "details": [
           "飯店 → 難波站（步行約 10–15 分），搭御堂筋線至淀屋橋（約 8–10 分）。",
@@ -107,58 +86,44 @@ const days = [
           "全程建議預留至少 90 分鐘，並確認當日首班車與轉乘時間。"
         ]
       },
-      {
-        "id": "day-2-kiyomizu",
-        "time": "抵達後–09:00",
+      "day-2-kiyomizu": {
         "title": "清水寺與八坂神社",
         "details": [
           "先參觀清水寺，再沿街道步行前往八坂神社（約 20–30 分）。"
         ]
       },
-      {
-        "id": "day-2-kimono",
-        "time": "09:00",
+      "day-2-kimono": {
         "title": "岡本和服（清水店）",
         "details": [
           "租借和服並完成著裝；以店家預約時間為準。"
         ]
       },
-      {
-        "id": "day-2-photos",
-        "time": "11:00–12:30",
+      "day-2-photos": {
         "title": "和服散步與拍照",
         "details": [
           "花見小路、白川南通，可各安排約 5–15 分鐘步行。"
         ]
       },
-      {
-        "id": "day-2-lunch",
-        "time": "午餐",
+      "day-2-lunch": {
         "title": "京都午餐與甜點",
         "details": [
           "午餐：Ramen Nishiki（公車約 15 分＋步行 3–8 分），或 Menya Inoichi（步行約 5 分）。",
           "甜點可考慮 GOKAGO（依所在位置，步行約 5–15 分）。"
         ]
       },
-      {
-        "id": "day-2-return-kimono",
-        "time": "14:30 前",
+      "day-2-return-kimono": {
         "title": "歸還和服",
         "details": [
           "從拍照區步行返回岡本和服店（約 10–25 分）；確認店家實際歸還期限。"
         ]
       },
-      {
-        "id": "day-2-market",
-        "time": "下午",
+      "day-2-market": {
         "title": "錦市場與鴨川",
         "details": [
           "祇園／河原町 → 錦市場（步行約 15–25 分），再走至鴨川（約 10–20 分）。"
         ]
       },
-      {
-        "id": "day-2-back-to-osaka",
-        "time": "15:50–18:00",
+      "day-2-back-to-osaka": {
         "title": "搭車返回大阪",
         "details": [
           "錦市場 → 四条站（步行約 5–8 分），搭烏丸線至京都站（約 3–5 分）。",
@@ -166,77 +131,62 @@ const days = [
           "大阪難波站 → 飯店（步行約 10–15 分）。"
         ]
       },
-      {
-        "id": "day-2-dinner",
-        "time": "18:00",
+      "day-2-dinner": {
         "title": "道頓堀或黑門市場晚餐",
         "details": [
           "回到難波後用餐，視位置步行約 10–20 分。"
         ]
       }
-    ],
-    "description": "清水寺晨間散步、和服體驗，再逛錦市場與鴨川。"
+    }
   },
-  {
-    "number": "03",
+  "03": {
     "title": "大阪城與天神橋筋 · 返回高雄",
-    "stops": [
-      {
-        "id": "day-3-coffee",
-        "time": "07:15–08:30",
+    "description": "大阪城、天神橋筋商店街，以及返程安排。",
+    "stops": {
+      "day-3-coffee": {
         "title": "前往 SOT COFFEE ROASTER",
         "details": [
           "飯店 → 難波站（步行約 10–15 分），搭大阪 Metro 至谷町四丁目（含轉乘約 20–30 分）。",
           "谷町四丁目站 → SOT COFFEE ROASTER（步行約 10–20 分）。"
         ]
       },
-      {
-        "id": "day-3-castle",
-        "time": "08:30–11:30",
+      "day-3-castle": {
         "title": "大阪城公園與天守閣",
         "details": [
           "咖啡店 → 大阪城公園（步行約 20 分）；參觀天守閣約 2 小時。",
           "若想搭乘御座船，可於約 09:30 先確認排隊與劃位方式；園內另外預留 30–60 分鐘步行。"
         ]
       },
-      {
-        "id": "day-3-shopping",
-        "time": "11:30–15:00",
+      "day-3-shopping": {
         "title": "天神橋筋商店街",
         "details": [
           "搭大阪 Metro 前往扇町站（約 35 分），再步行約 3–8 分鐘。",
           "逛商店街，順便吃午餐與小吃。"
         ]
       },
-      {
-        "id": "day-3-luggage",
-        "time": "15:00",
+      "day-3-luggage": {
         "title": "返回飯店取行李",
         "details": [
           "扇町 → 難波（搭大阪 Metro 約 25–35 分），再步行至飯店（約 10–15 分）。"
         ]
       },
-      {
-        "id": "day-3-airport",
-        "time": "約 15:40",
+      "day-3-airport": {
         "title": "前往關西國際機場",
         "details": [
           "飯店 → 南海難波站（步行約 5–15 分）；搭南海電鐵至 KIX（約 45–55 分）。",
           "預留購票、行李托運與機場安檢時間。"
         ]
       },
-      {
-        "id": "day-3-flight",
-        "time": "20:20–22:55",
+      "day-3-flight": {
         "title": "關西機場 → 高雄",
         "details": [
           "搭乘 KIX → 高雄的返程航班（當地時間）。"
         ]
       }
-    ],
-    "description": "大阪城、天神橋筋商店街，以及返程安排。"
+    }
   }
-];
+};
+const days = localizeDays(localizedDays, "zh");
 
 const content = {
   "locale": "zh",

@@ -6,9 +6,23 @@ import { mapLayers, mapPlaces, localizePlace } from "../src/features/trips/japan
 import { generateJapanKml } from "./generate-japan-kml.mjs";
 import { checklistGroups, checklistIds } from "../src/features/trips/japan/data/checklist.js";
 import { phrases } from "../src/features/trips/japan/data/phrases.js";
+import { itineraryDays } from "../src/features/trips/japan/data/itinerary.js";
 
 const unique = (values) => new Set(values).size === values.length;
 assert.deepEqual([zh.locale, en.locale], ["zh", "en"]);
+assert.deepEqual(zh.days.map((day) => day.number), itineraryDays.map((day) => day.number));
+assert.ok(unique(itineraryDays.flatMap((day) => day.stops.map((stop) => stop.id))),
+  "Shared stop IDs must be unique");
+for (const localized of [zh, en]) {
+  for (const day of localized.days) {
+    const shared = itineraryDays.find((item) => item.number === day.number);
+    assert.deepEqual(day.stops.map((stop) => stop.id), shared.stops.map((stop) => stop.id));
+    for (let i = 0; i < shared.stops.length; i++) {
+      const time = shared.stops[i].time;
+      assert.equal(day.stops[i].time, typeof time === "string" ? time : time[localized.locale]);
+    }
+  }
+}
 assert.ok(unique(checklistIds), "Checklist IDs must be unique");
 assert.ok(unique(phrases.map((item) => item.id)), "Phrase IDs must be unique");
 assert.equal(checklistGroups.flatMap((group) => group.items).length, checklistIds.length);
