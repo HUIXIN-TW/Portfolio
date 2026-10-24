@@ -73,10 +73,12 @@ test("desktop layout guard and capture for future visual baselines", async ({ pa
   await expect(itinerary.locator("details").first()).toHaveCSS("border-left-width", "0px");
   await expect(reference.locator("details").first()).toHaveCSS("border-left-width", "0px");
   await expect(page.locator("#checklist")).toBeVisible();
-  await page.screenshot({
-    path: testInfo.outputPath("japan-desktop.png"),
-    fullPage: true, animations: "disabled",
-  });
+  await itinerary.screenshot({ path: testInfo.outputPath("desktop-itinerary.png"), animations: "disabled" });
+  await page.locator("#checklist").screenshot({ path: testInfo.outputPath("desktop-checklist.png"), animations: "disabled" });
+  await reference.locator("details summary").first().click();
+  await reference.locator("details summary").last().click();
+  await reference.screenshot({ path: testInfo.outputPath("desktop-reference.png"), animations: "disabled" });
+  await page.locator("#trip-map").screenshot({ path: testInfo.outputPath("desktop-map.png"), animations: "disabled" });
 });
 
 test("mobile layout guard and capture for future visual baselines", async ({ page }, testInfo) => {
@@ -85,8 +87,7 @@ test("mobile layout guard and capture for future visual baselines", async ({ pag
   const width = await page.evaluate(() => document.documentElement.scrollWidth);
   expect(width).toBeLessThanOrEqual(390);
   await expect(page.locator("#reference")).toBeVisible();
-  await page.screenshot({
-    path: testInfo.outputPath("japan-mobile.png"),
-    fullPage: true, animations: "disabled",
-  });
+  await page.locator("#itinerary").screenshot({ path: testInfo.outputPath("mobile-itinerary.png"), animations: "disabled" });
+  await page.locator("#checklist").screenshot({ path: testInfo.outputPath("mobile-checklist.png"), animations: "disabled" });
+  await page.locator("#trip-map").screenshot({ path: testInfo.outputPath("mobile-map.png"), animations: "disabled" });
 });
