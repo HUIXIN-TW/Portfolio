@@ -51,9 +51,8 @@ export function readChecklist() {
 }
 
 export function readMeetingTime() {
-  return readStorage(MEETING_TIME_KEY) ||
-    readStorage("preflightMeetingTime") ||
-    readStorage("japanTripEnMeetingTime") || "";
+  const current = readStorage(MEETING_TIME_KEY);
+  return current !== null ? current : (readStorage("preflightMeetingTime") || readStorage("japanTripEnMeetingTime") || "");
 }
 
 export function saveChecklist(checked) {
