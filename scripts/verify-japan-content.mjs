@@ -19,7 +19,8 @@ for (const content of [zh, en]) {
   assert.ok(content.meta.title && content.hero.title);
   assert.equal(Object.keys(content.checklistItems).length, checklistIds.length);
   assert.equal(Object.keys(content.phraseTranslations).length, phrases.length);
-  assert.equal(content.checklist.sectionTitles.length, checklistGroups.length);
+  assert.deepEqual(Object.keys(content.checklist.sectionTitles).sort(),
+    checklistGroups.map((group) => group.id).sort());
   assert.ok(content.map.title && content.map.open && content.map.iframeTitle);
   assert.ok(content.hotel.labels.name && content.hotel.labels.address);
   assert.ok(hotel.address[content.locale]);
@@ -34,7 +35,10 @@ for (const content of [zh, en]) {
   }
   for (const day of content.days) {
     assert.ok(day.title && day.stops.length >= 5, content.locale + ": incomplete " + day.number);
+    assert.equal(new Set(day.stops.map((stop) => stop.id)).size, day.stops.length,
+      content.locale + ": duplicate stop ID in " + day.number);
     for (const stop of day.stops) {
+      assert.ok(stop.id?.trim(), content.locale + ": missing stable stop ID");
       assert.ok(stop.title?.trim(), content.locale + ": missing stop title");
       assert.ok(stop.details?.length, content.locale + ": stop missing details: " + stop.title);
       assert.ok(stop.details.every((detail) => typeof detail === "string" && detail.trim()),

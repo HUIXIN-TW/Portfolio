@@ -63,7 +63,7 @@ export default function Checklist({ content }) {
             <div className={styles.preflightSection} data-group={group.id} key={group.id}>
               <div className={styles.preflightHeader}>
                 <span className={styles.preflightIndex}>{index + 1}</span>
-                <span className={styles.preflightTitle}>{t.sectionTitles[index]}</span>
+                <span className={styles.preflightTitle}>{t.sectionTitles[group.id]}</span>
               </div>
               <div className={styles.preflightList}>
                 {group.items.map((id) => (

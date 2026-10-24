@@ -25,14 +25,23 @@ export function useTripMetadata(meta, locale) {
   }, [locale, meta.title, meta.description]);
 }
 
+async function writeClipboard(text) {
+  if (!navigator.clipboard?.writeText) return false;
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 export function useCopyFeedback() {
   const [copiedField, setCopiedField] = useState(null);
   const timeoutRef = useRef(null);
   useEffect(() => () => window.clearTimeout(timeoutRef.current), []);
   const copy = async (id, value, fallbackLabel) => {
     try {
-      if (!navigator.clipboard?.writeText) throw new Error("Clipboard unavailable");
-      await navigator.clipboard.writeText(value);
+      if (!(await writeClipboard(value))) throw new Error("Clipboard unavailable");
       setCopiedField(id);
       window.clearTimeout(timeoutRef.current);
       timeoutRef.current = window.setTimeout(() => setCopiedField(null), 1800);
@@ -53,8 +62,7 @@ export async function shareText(message, copyPrompt) {
     }
   }
   try {
-    if (!navigator.clipboard?.writeText) throw new Error("Clipboard unavailable");
-    await navigator.clipboard.writeText(message);
+    if (!(await writeClipboard(message))) throw new Error("Clipboard unavailable");
     return "copied";
   } catch {
     window.prompt(copyPrompt, message);

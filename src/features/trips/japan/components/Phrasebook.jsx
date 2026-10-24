@@ -19,7 +19,7 @@ export default function Phrasebook({ content }) {
             <li key={id}>
               <span className={styles.jp} lang="ja">{japanese}</span>
               <span className={styles.romaji}>{romaji}</span>
-              <span className={styles.zh}>{content.phraseTranslations[id]}</span>
+              <span className={styles.translation}>{content.phraseTranslations[id]}</span>
               <button type="button" className={styles.speakButton} onClick={() => speakJapanese(japanese)}
                 aria-label={content.actions.listen + ": " + content.phraseTranslations[id]}>
                 {content.actions.listen}

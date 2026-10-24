@@ -9,7 +9,9 @@
     "preview": "vite preview",
     "lint:strict": "eslint \"src/**/*.{js,jsx}\"",
     "verify:trips": "node scripts/verify-japan-content.mjs",
-    "prebuild": "node scripts/generate-japan-kml.mjs"
+    "prebuild": "npm run generate:trip",
+    "generate:trip": "node scripts/generate-japan-kml.mjs",
+    "predev": "npm run generate:trip"
   },
   "repository": {
     "type": "git",

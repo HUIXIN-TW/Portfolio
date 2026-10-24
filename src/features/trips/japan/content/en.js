@@ -91,7 +91,7 @@ const content = {
   "locale": "en",
   "meta": {
     "title": "Three Days in Kansai | Osaka & Kyoto",
-    "description": "A practical three-day Osaka and Kyoto itinerary, Japanese phrases, an interactive checklist, hotel details and an editable map CSV."
+    "description": "A practical three-day Osaka and Kyoto itinerary, Japanese phrases, an interactive checklist, hotel details and an editable map KML."
   },
   "hero": {
     "eyebrow": "OSAKA · KYOTO · 3 DAYS",
@@ -128,11 +128,11 @@ const content = {
     "notSet": "not set",
     "summary": "Ready-to-go checklist",
     "progress": "Checklist progress",
-    "sectionTitles": [
-      "Essentials",
-      "Weather check",
-      "Before closing the door"
-    ]
+    "sectionTitles": {
+      "essentials": "Essentials",
+      "weather": "Weather check",
+      "room": "Before closing the door"
+    }
   },
   "actions": {
     "copy": "Copy",

@@ -302,11 +302,11 @@ const content = {
     "notSet": "未填",
     "summary": "出飯店前檢查",
     "progress": "清單完成進度",
-    "sectionTitles": [
-      "隨身重要物品",
-      "天氣對應",
-      "安全與細節"
-    ]
+    "sectionTitles": {
+      "essentials": "隨身重要物品",
+      "weather": "天氣對應",
+      "room": "安全與細節"
+    }
   },
   "actions": {
     "copy": "複製",

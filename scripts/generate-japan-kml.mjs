@@ -17,7 +17,7 @@ export function generateJapanKml(locale) {
     '<kml xmlns="http://www.opengis.net/kml/2.2">',
     '  <Document>',
     '    <name>' + escapeXml(locale === "en" ? "Osaka & Kyoto · Complete Place Collection" : "大阪京都三天美食文化之旅 · 完整地點清單") + '</name>',
-    '    <description>' + escapeXml("41 original placemarks in 8 source layers. Static editable export.") + '</description>',
+    '    <description>' + escapeXml(`${mapPlaces.length} original placemarks in ${mapLayers.length} source layers. Static editable export.`) + '</description>',
   ];
   for (const layer of mapLayers) {
     output.push('    <Folder>');
