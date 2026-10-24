@@ -216,7 +216,7 @@ const days = [
 ];
 
 const content = {
-  "locale": "zh-TW",
+  "locale": "zh",
   "meta": {
     "title": "關西三日旅行手冊｜大阪・京都",
     "description": "大阪與京都三日自由行：每日路線、飯店資訊、出門清單、實用日語與可自訂地圖。"
@@ -268,11 +268,6 @@ const content = {
     "phrasesHelp": "點選朗讀按鈕，練習日文發音。"
   },
   "hotel": {
-    "name": "GRIDS PREMIUM HOTEL OSAKA NAMBA",
-    "address": "大阪府大阪市浪速区難波中1丁目7-7",
-    "phone": "+81 6-6635-0810",
-    "checkin": "15:00",
-    "checkout": "11:00",
     "labels": {
       "name": "飯店名",
       "address": "地址",
@@ -289,12 +284,11 @@ const content = {
   },
   "map": {
     "title": "地點與地圖",
-    "description": "可在地圖中探索行程地點，也能下載地點清單，建立自己的可編輯地圖。",
-    "open": "開啟原始地圖",
-    "download": "下載地點 CSV",
-    "instructions": "如何建立可編輯的副本？",
-    "steps": "下載 CSV → 開啟 Google My Maps 並建立新地圖 → 匯入 CSV，以 Location 欄定位、Name 欄命名。此副本由你自行管理，不需要取得原地圖編輯權限。",
-    "caveat": "嵌入的 My Maps 標記名稱由原地圖決定，切換語言不會自動翻譯。下載的 CSV 提供繁體中文地點名稱。",
+    "description": "直接探索原始 Google My Maps。這裡顯示的是地圖擁有者維護的地點與圖層。",
+    "open": "開啟完整地圖",
+    "instructions": "如何建立自己的可編輯地圖？",
+    "steps": "請原地圖擁有者匯出完整 KML/KMZ。接著開啟 Google My Maps，建立新地圖並匯入檔案。這比不完整的 CSV 更能保留原始地點與圖層資訊。內嵌地圖本身的編輯權限仍由擁有者決定。",
+    "caveat": "原始標記名稱、圖層與分享權限由地圖擁有者控制；切換網頁語言不會自動翻譯自訂標記。",
     "iframeTitle": "大阪與京都旅遊地圖"
   },
   "checklistItems": {

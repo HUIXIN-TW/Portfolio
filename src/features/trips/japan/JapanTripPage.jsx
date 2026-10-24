@@ -1,4 +1,4 @@
-import zhTW from "./content/zh-TW";
+import zh from "./content/zh";
 import en from "./content/en";
 import { useTripMetadata } from "./utils/browser";
 import TripHero from "./components/TripHero";
@@ -10,10 +10,10 @@ import EmergencyContacts from "./components/EmergencyContacts";
 import TripMap from "./components/TripMap";
 import styles from "./JapanTrip.module.css";
 
-const localizedContent = { "zh-TW": zhTW, en };
+const localizedContent = { zh, en };
 
-export default function JapanTripPage({ locale = "zh-TW" }) {
-  const content = localizedContent[locale] || zhTW;
+export default function JapanTripPage({ locale = "zh" }) {
+  const content = localizedContent[locale] || zh;
   useTripMetadata(content.meta, content.locale);
 
   return (

@@ -58,7 +58,7 @@ const SiteRoutes = ({ theme, handleThemeToggle, siteProps }) => {
   const { pathname } = useLocation();
   const currentPath = pathname.replace(/\/$/, "") || "/";
   const isTripsDomain = window.location.hostname === "trips.huixinyang.com";
-  const isTripPage = isTripsDomain || ["/japan", "/japan/zh", "/japan/en"].includes(currentPath);
+  const isTripPage = isTripsDomain || ["/japan", "/japan/en"].includes(currentPath);
 
   return (
     <div
@@ -69,8 +69,7 @@ const SiteRoutes = ({ theme, handleThemeToggle, siteProps }) => {
       <main className="flex-1 w-full relative">
         <React.Suspense fallback={<div role="status" className="p-8 text-center">Loading trip…</div>}>
           <Routes>
-            <Route path="/japan" element={<JapanTripPage locale="zh-TW" />} />
-            <Route path="/japan/zh" element={<JapanTripPage locale="zh-TW" />} />
+            <Route path="/japan" element={<JapanTripPage locale="zh" />} />
             <Route path="/japan/en" element={<JapanTripPage locale="en" />} />
             <Route
               path="/"

@@ -10,7 +10,7 @@ export default function TripHero({ content }) {
       <div className={styles.heroTop}>
         <span className={styles.eyebrow}>{hero.eyebrow}</span>
         <nav className={styles.languageSwitch} aria-label={navigation.language}>
-          <Link to="/japan/zh" lang="zh-TW" className={locale === "zh-TW" ? styles.languageActive : ""} aria-current={locale === "zh-TW" ? "page" : undefined}>繁中</Link>
+          <Link to="/japan" lang="zh" className={locale === "zh" ? styles.languageActive : ""} aria-current={locale === "zh" ? "page" : undefined}>繁中</Link>
           <Link to="/japan/en" lang="en" className={locale === "en" ? styles.languageActive : ""} aria-current={locale === "en" ? "page" : undefined}>English</Link>
         </nav>
       </div>

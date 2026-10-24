@@ -140,11 +140,6 @@ const content = {
     "phrasesHelp": "Some expressions below are things you may hear from local staff."
   },
   "hotel": {
-    "name": "GRIDS PREMIUM HOTEL OSAKA NAMBA",
-    "address": "1-7-7 Nambanaka, Naniwa Ward, Osaka",
-    "phone": "+81 6-6635-0810",
-    "checkin": "3:00 pm",
-    "checkout": "11:00 am",
     "labels": {
       "name": "Hotel",
       "address": "Address",
@@ -161,13 +156,12 @@ const content = {
   },
   "map": {
     "title": "Explore the map",
-    "description": "Browse the shared map or download the places as a CSV to make an editable map of your own.",
-    "open": "Open the original map",
-    "download": "Download places (CSV)",
-    "instructions": "Want to edit the map yourself?",
-    "steps": "Download the CSV, create a map in Google My Maps, then import the file. Choose Location for positioning and Name for labels. Your new map is yours to edit; no access to the original owner's account is needed.",
-    "caveat": "Labels inside the embedded My Maps are maintained by its owner and may remain in Chinese. The downloadable CSV contains English place names.",
-    "iframeTitle": "Osaka and Kyoto itinerary map"
+    "description": "Explore the original Google My Maps collection. The embedded map reflects its owner's current places and layers.",
+    "open": "Open the full map",
+    "instructions": "How can I make my own editable copy?",
+    "steps": "Ask the map owner for a complete KML/KMZ export. Open Google My Maps, create a new map, and import the file. This preserves the available place data and layers more reliably than an incomplete CSV. Editing the embedded map requires the owner's permission.",
+    "caveat": "Map labels and sharing permissions are controlled by the original map owner; changing the website language does not translate custom markers.",
+    "iframeTitle": "Osaka and Kyoto trip map"
   },
   "checklistItems": {
     "passport": "Passport",

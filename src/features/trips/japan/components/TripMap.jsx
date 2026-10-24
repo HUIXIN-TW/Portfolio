@@ -1,10 +1,10 @@
 import styles from "../JapanTrip.module.css";
 
 const mapId = "1I-jR7-sL_QXOJdqcB0a8Go19_VI2dsE";
+const mapPageUrl = "https://www.google.com/maps/d/viewer?mid=" + mapId;
 
 export default function TripMap({ content }) {
   const { map, locale } = content;
-  const csv = locale === "en" ? "/trips/japan/places-en.csv" : "/trips/japan/places-zh-TW.csv";
   const params = new URLSearchParams({ mid: mapId, hl: locale });
   return (
     <section id="trip-map" className={styles.mapSection} aria-labelledby="trip-map-title">
@@ -15,14 +15,18 @@ export default function TripMap({ content }) {
           <p>{map.description}</p>
         </div>
         <div className={styles.mapActions}>
-          <a href={csv} download className={styles.primaryButton}>{map.download}</a>
-          <a href={"https://www.google.com/maps/d/viewer?mid=" + mapId} target="_blank" rel="noopener noreferrer" className={styles.secondaryButton}>{map.open} ↗</a>
+          <a href={mapPageUrl} target="_blank" rel="noopener noreferrer" className={styles.primaryButton}>{map.open} ↗</a>
         </div>
       </div>
       <div className={styles.frameWrapper}>
-        <iframe title={map.iframeTitle} className={styles.frame}
+        <iframe
+          title={map.iframeTitle}
+          className={styles.frame}
           src={"https://www.google.com/maps/d/embed?" + params}
-          loading="lazy" referrerPolicy="no-referrer-when-downgrade" allowFullScreen />
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          allowFullScreen
+        />
       </div>
       <details className={styles.mapHelp}>
         <summary>{map.instructions}</summary>
