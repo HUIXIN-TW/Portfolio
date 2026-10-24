@@ -31,7 +31,23 @@ export function useTripMetadata(meta, locale) {
     setMeta('meta[property="og:description"]', "meta", { property: "og:description", content: meta.description });
     setMeta('meta[property="og:url"]', "meta", { property: "og:url", content: canonicalUrl });
     setMeta('meta[property="og:locale"]', "meta", { property: "og:locale", content: locale === "en" ? "en_US" : "zh_TW" });
+    setMeta('meta[property="og:type"]', "meta", { property: "og:type", content: "website" });
+    setMeta('meta[name="twitter:card"]', "meta", { name: "twitter:card", content: "summary" });
+    setMeta('meta[name="twitter:title"]', "meta", { name: "twitter:title", content: meta.title });
+    setMeta('meta[name="twitter:description"]', "meta", { name: "twitter:description", content: meta.description });
+    setMeta('meta[name="apple-mobile-web-app-title"]', "meta", {
+      name: "apple-mobile-web-app-title", content: meta.title,
+    });
+    setMeta('link[rel="icon"]', "link", {
+      rel: "icon", type: "image/svg+xml", href: "/trips/japan/favicon.svg",
+    });
     setMeta('link[rel="canonical"]', "link", { rel: "canonical", href: canonicalUrl });
+    setMeta('link[rel="alternate"][hreflang="zh-Hant"]', "link", {
+      rel: "alternate", hreflang: "zh-Hant", href: "https://trips.huixinyang.com/japan",
+    });
+    setMeta('link[rel="alternate"][hreflang="en"]', "link", {
+      rel: "alternate", hreflang: "en", href: "https://trips.huixinyang.com/japan/en",
+    });
     return () => {
       for (const undo of changes.reverse()) undo();
       document.documentElement.lang = beforeLang;

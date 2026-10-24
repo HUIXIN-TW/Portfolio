@@ -23,6 +23,12 @@ test("static localized HTML, page metadata and language switching", async ({ pag
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
     "href", "https://trips.huixinyang.com/japan/en"
   );
+  await expect(page.locator('meta[name="twitter:title"]')).toHaveAttribute(
+    "content", "Three Days in Osaka & Kyoto | Kansai Travel Guide"
+  );
+  await expect(page.locator('link[rel="icon"]')).toHaveAttribute(
+    "href", "/trips/japan/favicon.svg"
+  );
   await page.getByRole("link", { name: "繁中" }).click();
   await expect(page).toHaveURL(/\/japan$/);
   await expect(page.getByRole("heading", { name: "大阪・京都三日旅行指南" })).toBeVisible();

@@ -43,5 +43,5 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
   for (const locale of ["zh", "en"]) {
     writeFileSync(resolve(directory, "places-" + locale + ".kml"), generateJapanKml(locale), "utf8");
   }
-  process.stdout.write("Generated full Japan KML downloads (41 places, 8 layers, zh/en).\n");
+  process.stdout.write(`Generated full Japan KML downloads (${mapPlaces.length} places, ${mapLayers.length} layers, zh/en).\n`);
 }
