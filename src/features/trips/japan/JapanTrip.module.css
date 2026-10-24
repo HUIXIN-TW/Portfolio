@@ -801,3 +801,139 @@
 @media (prefers-reduced-motion: reduce) {
   .mapPage *, .mapPage *::before, .mapPage *::after { transition-duration: 0.01ms !important; }
 }
+
+
+/* Complete My Maps directory: compact, searchable, usable without the owner account. */
+.placesDirectory { margin-top: 24px; }
+.directoryHeading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.directoryHeading h3 {
+  color: #163b42;
+  font-size: clamp(19px, 2.3vw, 23px);
+  font-weight: 780;
+  letter-spacing: -0.02em;
+  margin: 0 0 6px;
+}
+.directoryHeading p {
+  color: #597279;
+  font-size: 13px;
+  line-height: 1.65;
+  max-width: 650px;
+  margin: 0;
+}
+.placesCount {
+  padding: 7px 12px;
+  border-radius: 20px;
+  color: #0a6862;
+  background: #e4f4f0;
+  font-size: 13px;
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+}
+.placesSearch { display: block; max-width: 600px; margin-bottom: 14px; }
+.placesSearch input {
+  width: 100%;
+  padding: 13px 16px;
+  color: #173f46;
+  border: 1px solid #c8deda;
+  border-radius: 12px;
+  background: #fff;
+  font-size: 14px;
+}
+.placesSearch input::placeholder { color: #8b9d9f; }
+.layerFilters {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  margin-bottom: 13px;
+  scrollbar-width: thin;
+}
+.layerFilters button {
+  white-space: nowrap;
+  border: 1px solid #d5e5e1;
+  border-radius: 100px;
+  color: #345a60;
+  padding: 9px 13px;
+  background: #f5faf8;
+  font-size: 12px;
+  font-weight: 650;
+  cursor: pointer;
+}
+.layerFilters button:hover { border-color: #5cada2; background: #e7f4f0; }
+.layerFilters button.layerActive {
+  border-color: #0a706a;
+  color: #fff;
+  background: #0a706a;
+}
+.layerDirectory { display: grid; gap: 10px; }
+.layerGroup {
+  border-radius: 13px;
+  border: 1px solid #e0ebe8;
+  background: #f8fbfa;
+  overflow: hidden;
+}
+.layerGroup > summary {
+  cursor: pointer;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 14px 16px;
+  color: #163f43;
+  font-size: 14px;
+  list-style: revert;
+}
+.layerGroup > summary strong { flex: 1; font-weight: 760; }
+.layerGroup > summary span {
+  color: #608482;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+.layerGroup[open] > summary { border-bottom: 1px solid #e0ebe8; background: #eef8f4; }
+.placeGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; }
+.placeRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 66px;
+  padding: 12px 16px;
+  border-bottom: 1px solid #edf3f1;
+  background: white;
+  min-width: 0;
+}
+.placeRow strong { display: block; line-height: 1.5; color: #27464d; font-size: 13px; font-weight: 650; overflow-wrap: anywhere; }
+.placeRow small { color: #677c82; display: block; margin-top: 3px; font-size: 12px; }
+.placeRow a {
+  color: #087c73;
+  font-weight: 750;
+  font-size: 12px;
+  text-decoration: none;
+  flex: 0 0 auto;
+}
+.placeRow a:hover { text-decoration: underline; }
+.emptyResults { margin: 18px 0; color: #637a7e; font-size: 14px; }
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+@media (max-width: 720px) {
+  .placeGrid { grid-template-columns: minmax(0, 1fr); }
+  .placesSearch { max-width: none; }
+  .placeRow { padding: 13px; }
+  .layerGroup > summary { padding: 14px; }
+}
