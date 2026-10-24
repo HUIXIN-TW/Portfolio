@@ -34,8 +34,6 @@ jobs:
 
   e2e:
     name: UI and layout checks
-    permissions:
-      contents: write
     runs-on: ubuntu-latest
     needs: build
     steps:
@@ -49,23 +47,7 @@ jobs:
       - run: npm install --no-save --package-lock=false @playwright/test@1.55.1
       - run: npx playwright install --with-deps chromium
       - run: npm run build
-      # One-time update following user-approved sakura palette and title hierarchy.
-      - run: npm run test:e2e -- --update-snapshots
-        if: github.event_name == 'push' && github.ref_name == 'feat/japan-trip-migration'
       - run: npm run test:e2e
-        if: github.event_name == 'pull_request'
-      - name: Commit reviewed sakura palette baselines
-        if: github.event_name == 'push' && github.ref_name == 'feat/japan-trip-migration'
-        shell: bash
-        run: |
-          set -euo pipefail
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add tests/e2e/visual-baselines
-          if ! git diff --cached --quiet; then
-            git commit -m "test(trips): refresh golden screenshots for sakura design"
-            git push origin HEAD:refs/heads/feat/japan-trip-migration
-          fi
       - if: always()
         uses: actions/upload-artifact@v4
         with:
