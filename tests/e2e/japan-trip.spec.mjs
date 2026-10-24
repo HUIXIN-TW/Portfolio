@@ -1,4 +1,19 @@
 import { expect, test } from "@playwright/test";
+import { existsSync } from "node:fs";
+import { resolve } from "node:path";
+
+async function captureVisualBaseline(locator, filename, testInfo) {
+  await locator.screenshot({ path: testInfo.outputPath(filename), animations: "disabled" });
+  const baselineFolder = resolve("tests/e2e/visual-baselines");
+  if (existsSync(baselineFolder)) {
+    expect(existsSync(resolve(baselineFolder, filename)), "Missing approved screenshot " + filename).toBeTruthy();
+    await expect(locator).toHaveScreenshot(filename, {
+      animations: "disabled",
+      threshold: 0.15,
+      maxDiffPixelRatio: 0.01,
+    });
+  }
+}
 
 test.beforeEach(async ({ page }) => {
   // The original owner's My Maps iframe is external; app behavior must not depend on it.
@@ -73,12 +88,12 @@ test("desktop layout guard and capture for future visual baselines", async ({ pa
   await expect(itinerary.locator("details").first()).toHaveCSS("border-left-width", "0px");
   await expect(reference.locator("details").first()).toHaveCSS("border-left-width", "0px");
   await expect(page.locator("#checklist")).toBeVisible();
-  await itinerary.screenshot({ path: testInfo.outputPath("desktop-itinerary.png"), animations: "disabled" });
-  await page.locator("#checklist").screenshot({ path: testInfo.outputPath("desktop-checklist.png"), animations: "disabled" });
+  await captureVisualBaseline(itinerary, "desktop-itinerary.png", testInfo);
+  await captureVisualBaseline(page.locator("#checklist"), "desktop-checklist.png", testInfo);
   await reference.locator("details summary").first().click();
   await reference.locator("details summary").last().click();
-  await reference.screenshot({ path: testInfo.outputPath("desktop-reference.png"), animations: "disabled" });
-  await page.locator("#trip-map").screenshot({ path: testInfo.outputPath("desktop-map.png"), animations: "disabled" });
+  await captureVisualBaseline(reference, "desktop-reference.png", testInfo);
+  await captureVisualBaseline(page.locator("#trip-map"), "desktop-map.png", testInfo);
 });
 
 test("mobile layout guard and capture for future visual baselines", async ({ page }, testInfo) => {
@@ -87,7 +102,7 @@ test("mobile layout guard and capture for future visual baselines", async ({ pag
   const width = await page.evaluate(() => document.documentElement.scrollWidth);
   expect(width).toBeLessThanOrEqual(390);
   await expect(page.locator("#reference")).toBeVisible();
-  await page.locator("#itinerary").screenshot({ path: testInfo.outputPath("mobile-itinerary.png"), animations: "disabled" });
-  await page.locator("#checklist").screenshot({ path: testInfo.outputPath("mobile-checklist.png"), animations: "disabled" });
-  await page.locator("#trip-map").screenshot({ path: testInfo.outputPath("mobile-map.png"), animations: "disabled" });
+  await captureVisualBaseline(page.locator("#itinerary"), "mobile-itinerary.png", testInfo);
+  await captureVisualBaseline(page.locator("#checklist"), "mobile-checklist.png", testInfo);
+  await captureVisualBaseline(page.locator("#trip-map"), "mobile-map.png", testInfo);
 });

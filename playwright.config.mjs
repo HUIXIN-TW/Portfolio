@@ -2,6 +2,7 @@ import { defineConfig } from "@playwright/test";
 
 export default defineConfig({
   testDir: "./tests/e2e",
+  snapshotPathTemplate: "{testDir}/visual-baselines/{arg}",
   fullyParallel: false,
   retries: process.env.CI ? 1 : 0,
   reporter: [["list"], ["html", { outputFolder: "playwright-report", open: "never" }]],
