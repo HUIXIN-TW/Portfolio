@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Footer from "./ui/Footer";
+import JapanTrip from "./sections/JapanTrip";
 import Header from "./ui/Header";
 import About from "./sections/About";
 import Home from "./sections/Home";
@@ -30,6 +31,7 @@ const siteProps = {
 
 const App = () => {
   const [theme, setTheme] = React.useState(getInitialTheme);
+  const isJapanTrip = window.location.pathname.replace(/\/$/, "") === "/japan";
 
   React.useEffect(() => {
     applyThemeToDocument(theme);
@@ -51,10 +53,11 @@ const App = () => {
         id="main"
         className="min-h-screen flex flex-col bg-white text-slate-900 dark:bg-[#282A36] dark:text-[#F8F8F2]"
       >
-        <Header theme={theme} onThemeToggle={handleThemeToggle} />
+        {!isJapanTrip && <Header theme={theme} onThemeToggle={handleThemeToggle} />}
         <main className="flex-1 w-full relative">
           {/* Define your routes */}
           <Routes>
+            <Route path="/japan" element={<JapanTrip />} />
             <Route path="/" element={<Home name={siteProps.name} title={siteProps.title} />} />
             <Route path="/about" element={<About />} />
             <Route path="/education" element={<Education />} />
@@ -67,7 +70,7 @@ const App = () => {
             <Route path="/referee" element={<Referee />} />
           </Routes>
         </main>
-        <Footer {...siteProps} theme={theme} />
+        {!isJapanTrip && <Footer {...siteProps} theme={theme} />}
       </div>
     </Router>
   );
