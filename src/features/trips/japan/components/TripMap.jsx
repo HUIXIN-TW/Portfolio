@@ -5,6 +5,18 @@ import styles from "../JapanTrip.module.css";
 const mapId = "1I-jR7-sL_QXOJdqcB0a8Go19_VI2dsE";
 const mapPageUrl = "https://www.google.com/maps/d/viewer?mid=" + mapId;
 
+function formatMapCopy(value) {
+  return value.replaceAll("{places}", String(mapPlaces.length))
+    .replaceAll("{layers}", String(mapLayers.length));
+}
+
+function matchesSearch(place, search, locale) {
+  if (!search) return true;
+  const layer = mapLayers.find((item) => item.id === place.layer);
+  return [place.name, place.en || "", localizeNote(place, locale), layer?.label[locale] || ""]
+    .some((part) => part.toLocaleLowerCase().includes(search));
+}
+
 function getGoogleMapsUrl(place) {
   return "https://www.google.com/maps/search/?api=1&query=" +
     encodeURIComponent(place.lat + "," + place.lng);
@@ -14,17 +26,37 @@ export default function TripMap({ content }) {
   const { map, locale } = content;
   const [layerId, setLayerId] = useState("all");
   const [query, setQuery] = useState("");
+  const [expandedLayers, setExpandedLayers] = useState([]);
   const search = query.trim().toLocaleLowerCase();
   const params = new URLSearchParams({ mid: mapId, hl: locale });
 
-  const visible = mapPlaces.filter((place) => {
-    if (layerId !== "all" && place.layer !== layerId) return false;
-    if (!search) return true;
-    const label = localizePlace(place, locale);
-    const layer = mapLayers.find((item) => item.id === place.layer);
-    return [place.name, place.en || "", label, localizeNote(place, locale), layer?.label[locale] || ""]
-      .some((part) => part.toLocaleLowerCase().includes(search));
-  });
+  const visible = mapPlaces.filter((place) =>
+    (layerId === "all" || place.layer === layerId) && matchesSearch(place, search, locale));
+
+  const changeSearch = (value) => {
+    setQuery(value);
+    const term = value.trim().toLocaleLowerCase();
+    setExpandedLayers(term
+      ? mapLayers.filter((layer) =>
+        (layerId === "all" || layer.id === layerId) &&
+        mapPlaces.some((place) => place.layer === layer.id && matchesSearch(place, term, locale))
+      ).map((layer) => layer.id)
+      : layerId === "all" ? [] : [layerId]);
+  };
+  const selectLayer = (id) => {
+    setLayerId(id);
+    const term = query.trim().toLocaleLowerCase();
+    setExpandedLayers(id !== "all"
+      ? [id]
+      : term ? mapLayers.filter((layer) =>
+          mapPlaces.some((place) => place.layer === layer.id && matchesSearch(place, term, locale))
+        ).map((layer) => layer.id)
+        : []);
+  };
+  const toggleLayer = (id) => {
+    setExpandedLayers((previous) =>
+      previous.includes(id) ? previous.filter((item) => item !== id) : [...previous, id]);
+  };
 
   const groups = mapLayers.map((layer) => ({
     ...layer,
@@ -37,7 +69,7 @@ export default function TripMap({ content }) {
         <div>
           <span className={styles.sectionKicker}>05 / MAP</span>
           <h2 id="trip-map-title">{map.title}</h2>
-          <p>{map.description}</p>
+          <p>{formatMapCopy(map.description)}</p>
         </div>
         <div className={styles.mapActions}>
           <a href={"/trips/japan/places-" + locale + ".kml"} download
@@ -59,7 +91,7 @@ export default function TripMap({ content }) {
       <div className={styles.placesDirectory}>
         <div className={styles.directoryHeading}>
           <div>
-            <h3>{map.directoryTitle}</h3>
+            <h3>{formatMapCopy(map.directoryTitle)}</h3>
             <p>{map.directoryIntro}</p>
           </div>
           <span className={styles.placesCount} aria-live="polite">
@@ -68,17 +100,17 @@ export default function TripMap({ content }) {
         </div>
         <label className={styles.placesSearch}>
           <span className={styles.srOnly}>{map.searchLabel}</span>
-          <input type="search" value={query} onChange={(event) => setQuery(event.target.value)}
+          <input type="search" value={query} onChange={(event) => changeSearch(event.target.value)}
             placeholder={map.searchPlaceholder} />
         </label>
         <div className={styles.layerFilters} role="group" aria-label={map.filterLabel}>
           <button type="button" aria-pressed={layerId === "all"}
             className={layerId === "all" ? styles.layerActive : ""}
-            onClick={() => setLayerId("all")}>{map.allLayers} · {mapPlaces.length}</button>
+            onClick={() => selectLayer("all")}>{map.allLayers} · {mapPlaces.length}</button>
           {mapLayers.map((layer) => (
             <button key={layer.id} type="button" aria-pressed={layerId === layer.id}
               className={layerId === layer.id ? styles.layerActive : ""}
-              onClick={() => setLayerId(layer.id)}>
+              onClick={() => selectLayer(layer.id)}>
               {layer.label[locale]} · {mapPlaces.filter((place) => place.layer === layer.id).length}
             </button>
           ))}
@@ -87,8 +119,8 @@ export default function TripMap({ content }) {
         <div className={styles.layerDirectory}>
           {groups.map((group) => (
             <details key={group.id} className={styles.layerGroup}
-              open={search || layerId !== "all" ? true : undefined}>
-              <summary>
+              open={expandedLayers.includes(group.id)}>
+              <summary onClick={(event) => { event.preventDefault(); toggleLayer(group.id); }}>
                 <strong>{group.label[locale]}</strong>
                 <span>{group.places.length}</span>
               </summary>
@@ -112,7 +144,7 @@ export default function TripMap({ content }) {
       </div>
       <details className={styles.mapHelp}>
         <summary>{map.instructions}</summary>
-        <p>{map.steps} <a href="https://www.google.com/maps/d/" target="_blank" rel="noopener noreferrer">Google My Maps ↗</a></p>
+        <p>{formatMapCopy(map.steps)} <a href="https://www.google.com/maps/d/" target="_blank" rel="noopener noreferrer">Google My Maps ↗</a></p>
       </details>
       <p className={styles.mapDisclaimer}>{map.caveat}</p>
     </section>

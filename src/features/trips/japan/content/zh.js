@@ -311,10 +311,10 @@ const content = {
   },
   "map": {
     "title": "大阪・京都地點地圖",
-    "description": "原始地圖的 41 個收藏地點，依 8 個分類整理，可搜尋、查看或下載完整 KML。",
+    "description": "原始地圖的 {places} 個收藏地點，依 {layers} 個分類整理，可搜尋、查看或下載完整 KML。",
     "open": "開啟原始地圖",
     "download": "下載完整地點 KML",
-    "directoryTitle": "收藏地點（41）",
+    "directoryTitle": "收藏地點（{places}）",
     "directoryIntro": "依類別或名稱尋找地點，點選「開啟地圖」可查看位置。",
     "searchLabel": "搜尋收藏地點",
     "searchPlaceholder": "搜尋餐廳、咖啡廳或景點…",
@@ -323,7 +323,7 @@ const content = {
     "noResults": "找不到符合條件的地點，請試試其他關鍵字。",
     "openPlace": "開啟地圖",
     "instructions": "如何建立可編輯的地圖？",
-    "steps": "下載 KML，前往 Google My Maps 建立新地圖並匯入。檔案包含全部 41 個地點和 8 個分類，可自行編輯。",
+    "steps": "下載 KML，前往 Google My Maps 建立新地圖並匯入。檔案包含全部 {places} 個地點和 {layers} 個分類，可自行編輯。",
     "caveat": "嵌入地圖的標記名稱不會隨頁面語言切換；KML 保留地點與分類，但部分自訂圖示不會一併匯出。",
     "iframeTitle": "原始大阪京都旅遊地圖"
   },

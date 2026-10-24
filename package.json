@@ -11,7 +11,8 @@
     "verify:trips": "node scripts/verify-japan-content.mjs",
     "prebuild": "npm run generate:trip",
     "generate:trip": "node scripts/generate-japan-kml.mjs",
-    "predev": "npm run generate:trip"
+    "predev": "npm run generate:trip",
+    "postbuild": "node scripts/generate-trip-pages.mjs && node scripts/verify-trip-pages.mjs"
   },
   "repository": {
     "type": "git",

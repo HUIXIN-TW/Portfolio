@@ -2,25 +2,40 @@ import { useEffect, useRef, useState } from "react";
 
 export function useTripMetadata(meta, locale) {
   useEffect(() => {
-    const root = document.documentElement;
-    const beforeLang = root.lang;
+    const canonicalUrl = "https://trips.huixinyang.com" + (locale === "en" ? "/japan/en" : "/japan");
+    const changes = [];
+    const setMeta = (selector, tag, attributes) => {
+      let element = document.head.querySelector(selector);
+      const created = !element;
+      if (!element) {
+        element = document.createElement(tag);
+        document.head.appendChild(element);
+      }
+      const before = Object.fromEntries(Object.keys(attributes).map((name) =>
+        [name, element.getAttribute(name)]));
+      for (const [name, value] of Object.entries(attributes)) element.setAttribute(name, value);
+      changes.push(() => {
+        if (created) element.remove();
+        else for (const [name, value] of Object.entries(before)) {
+          if (value === null) element.removeAttribute(name);
+          else element.setAttribute(name, value);
+        }
+      });
+    };
+    const beforeLang = document.documentElement.lang;
     const beforeTitle = document.title;
-    const existing = document.querySelector('meta[name="description"]');
-    const beforeDescription = existing?.getAttribute("content");
-    const description = existing || document.createElement("meta");
-    if (!existing) {
-      description.setAttribute("name", "description");
-      document.head.appendChild(description);
-    }
-    root.lang = locale;
+    document.documentElement.lang = locale === "en" ? "en" : "zh-Hant";
     document.title = meta.title;
-    description.setAttribute("content", meta.description);
+    setMeta('meta[name="description"]', "meta", { name: "description", content: meta.description });
+    setMeta('meta[property="og:title"]', "meta", { property: "og:title", content: meta.title });
+    setMeta('meta[property="og:description"]', "meta", { property: "og:description", content: meta.description });
+    setMeta('meta[property="og:url"]', "meta", { property: "og:url", content: canonicalUrl });
+    setMeta('meta[property="og:locale"]', "meta", { property: "og:locale", content: locale === "en" ? "en_US" : "zh_TW" });
+    setMeta('link[rel="canonical"]', "link", { rel: "canonical", href: canonicalUrl });
     return () => {
-      root.lang = beforeLang;
+      for (const undo of changes.reverse()) undo();
+      document.documentElement.lang = beforeLang;
       document.title = beforeTitle;
-      if (!existing) description.remove();
-      else if (beforeDescription === null) description.removeAttribute("content");
-      else description.setAttribute("content", beforeDescription);
     };
   }, [locale, meta.title, meta.description]);
 }

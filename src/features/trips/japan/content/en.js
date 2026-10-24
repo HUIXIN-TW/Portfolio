@@ -311,10 +311,10 @@ const content = {
   },
   "map": {
     "title": "Osaka & Kyoto places map",
-    "description": "All 41 places from the original map, grouped into eight categories. Search, browse or download the full KML.",
+    "description": "All {places} places from the original map, grouped into {layers} categories. Search, browse or download the full KML.",
     "open": "View original map",
     "download": "Download all places (KML)",
-    "directoryTitle": "Saved places (41)",
+    "directoryTitle": "Saved places ({places})",
     "directoryIntro": "Browse by category or name, then open a place in Google Maps.",
     "searchLabel": "Search saved places",
     "searchPlaceholder": "Search restaurants, cafes or sights…",
@@ -323,7 +323,7 @@ const content = {
     "noResults": "No matching places. Try a different search.",
     "openPlace": "Open map",
     "instructions": "Create your own editable map",
-    "steps": "Download the KML, create a new map in Google My Maps and import it. The file contains all 41 places and eight categories, ready for you to edit.",
+    "steps": "Download the KML, create a new map in Google My Maps and import it. The file contains all {places} places and {layers} categories, ready for you to edit.",
     "caveat": "The embedded map's labels do not change with the page language. The KML keeps places and categories, but some custom icons are not included.",
     "iframeTitle": "Original Osaka and Kyoto trip map"
   },
