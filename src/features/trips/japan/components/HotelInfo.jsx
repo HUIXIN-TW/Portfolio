@@ -5,12 +5,7 @@ import styles from "../JapanTrip.module.css";
 const fields = ["name", "address", "phone", "checkin", "checkout"];
 
 function displayValue(field, locale) {
-  if (field === "address") return hotel.address[locale];
-  if (locale === "en" && (field === "checkin" || field === "checkout")) {
-    const [hour, minute] = hotel[field].split(":").map(Number);
-    return (hour % 12 || 12) + ":" + String(minute).padStart(2, "0") + (hour < 12 ? " am" : " pm");
-  }
-  return hotel[field];
+  return field === "address" ? hotel.address[locale] : hotel[field];
 }
 
 export default function HotelInfo({ content }) {

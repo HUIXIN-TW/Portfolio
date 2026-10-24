@@ -74,3 +74,24 @@ for (const locale of ["zh", "en"]) {
   assert.ok(kml.includes("Namba"), locale + ": missing Osaka label");
 }
 console.log("Full KMZ import verified: 41 unique places, eight layers and two editable KML exports.");
+
+
+// Both languages use a 24-hour clock for itinerary times.
+for (const content of [zh, en]) {
+  assert.ok(content.navigation.reference, content.locale + ": reference navigation is required");
+  assert.ok(content.headings.reference && content.headings.referenceDescription,
+    content.locale + ": reference heading and description are required");
+  for (const day of content.days) {
+    for (const stop of day.stops) {
+      assert.ok(typeof stop.time === "string" && stop.time.trim(),
+        content.locale + ": missing timeline time for " + stop.title);
+      assert.ok(!/\b(?:am|pm)\b/i.test(stop.time),
+        content.locale + ": use 24-hour time, not am/pm: " + stop.time);
+      const timeTokens = stop.time.match(/\d{2}:\d{2}/g) || [];
+      for (const token of timeTokens) {
+        const [hour, minute] = token.split(":").map(Number);
+        assert.ok(hour <= 23 && minute <= 59, content.locale + ": invalid time " + token);
+      }
+    }
+  }
+}
