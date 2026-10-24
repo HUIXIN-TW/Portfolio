@@ -34,7 +34,7 @@ for (const content of [zh, en]) {
     .replace(/<link rel="icon"[^>]*>/, '<link rel="icon" type="image/svg+xml" href="/trips/japan/favicon.svg" />')
     .replace(/<link rel="apple-touch-icon"[^>]*>/, "")
     .replace(/<meta name="apple-mobile-web-app-title"[^>]*>/, '<meta name="apple-mobile-web-app-title" content="' + title + '" />')
-    .replace(/<noscript[\s\S]*?<\/noscript>/, "<noscript>" +
+    .replace(/<noscript\b[^>]*>[\s\S]*?<\/noscript\s*>/i, "<noscript>" +
       escapeHtml(content.hero.title + " — " + content.hero.description) + "</noscript>");
   const target = resolve(dist, locale === "en" ? "japan/en.html" : "japan.html");
   if (locale === "en") mkdirSync(resolve(dist, "japan"), { recursive: true });
