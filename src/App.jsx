@@ -1,8 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Footer from "./ui/Footer";
-const JapanTripZh = React.lazy(() => import("./sections/JapanTripZh"));
-const JapanTripEn = React.lazy(() => import("./sections/JapanTripEn"));
 import Header from "./ui/Header";
 import About from "./sections/About";
 import Home from "./sections/Home";
@@ -18,6 +16,9 @@ import { applyThemeToDocument, getInitialTheme, THEME_DRACULA, THEME_LIGHT, THEM
 
 import "./styles/main.css";
 
+const JapanTripZh = React.lazy(() => import("./sections/JapanTripZh"));
+const JapanTripEn = React.lazy(() => import("./sections/JapanTripEn"));
+
 const siteProps = {
   name: "Huixin Yang",
   title: "Software Engineer & CPA Australia",
@@ -32,7 +33,6 @@ const siteProps = {
 
 const App = () => {
   const [theme, setTheme] = React.useState(getInitialTheme);
-
 
   React.useEffect(() => {
     applyThemeToDocument(theme);
@@ -59,7 +59,7 @@ const SiteRoutes = ({ theme, handleThemeToggle, siteProps }) => {
   const { pathname } = useLocation();
   const isJapanTrip = ["/trips/japan-zh", "/trips/japan-en"].includes(pathname.replace(/\/$/, ""));
   return (
-      <div
+    <div
         id="main"
         className="min-h-screen flex flex-col bg-white text-slate-900 dark:bg-[#282A36] dark:text-[#F8F8F2]"
       >
@@ -67,7 +67,7 @@ const SiteRoutes = ({ theme, handleThemeToggle, siteProps }) => {
         <main className="flex-1 w-full relative">
           {/* Define your routes */}
           <React.Suspense fallback={<div role="status" className="p-8 text-center">Loading trip…</div>}>
-          <Routes>
+            <Routes>
             <Route path="/trips/japan-zh" element={<JapanTripZh />} />
             <Route path="/trips/japan-en" element={<JapanTripEn />} />
             <Route path="/" element={<Home name={siteProps.name} title={siteProps.title} />} />
@@ -80,11 +80,11 @@ const SiteRoutes = ({ theme, handleThemeToggle, siteProps }) => {
             <Route path="/blog/:slug" element={<BlogPostPage />} />
             <Route path="/migration" element={<Migration />} />
             <Route path="/referee" element={<Referee />} />
-          </Routes>
+            </Routes>
           </React.Suspense>
         </main>
         {!isJapanTrip && <Footer {...siteProps} theme={theme} />}
-      </div>
+    </div>
   );
 };
 
