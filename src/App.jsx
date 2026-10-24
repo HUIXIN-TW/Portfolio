@@ -16,8 +16,7 @@ import { applyThemeToDocument, getInitialTheme, THEME_DRACULA, THEME_LIGHT, THEM
 
 import "./styles/main.css";
 
-const JapanTripZh = React.lazy(() => import("./sections/JapanTripZh"));
-const JapanTripEn = React.lazy(() => import("./sections/JapanTripEn"));
+const JapanTripPage = React.lazy(() => import("./features/trips/japan/JapanTripPage"));
 
 const siteProps = {
   name: "Huixin Yang",
@@ -70,9 +69,9 @@ const SiteRoutes = ({ theme, handleThemeToggle, siteProps }) => {
           {/* Define your routes */}
           <React.Suspense fallback={<div role="status" className="p-8 text-center">Loading trip…</div>}>
             <Routes>
-            <Route path="/japan" element={<JapanTripZh />} />
-            <Route path="/japan/zh" element={<JapanTripZh />} />
-            <Route path="/japan/en" element={<JapanTripEn />} />
+            <Route path="/japan" element={<JapanTripPage locale="zh-TW" />} />
+            <Route path="/japan/zh" element={<JapanTripPage locale="zh-TW" />} />
+            <Route path="/japan/en" element={<JapanTripPage locale="en" />} />
             <Route path="/" element={isTripsDomain ? <Navigate to="/japan" replace /> : <Home name={siteProps.name} title={siteProps.title} />} />
             {!isTripsDomain && (
               <>
