@@ -1,18 +1,18 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { CHECKLIST_IDS, readChecklist, saveChecklist, readMeetingTime, writeStorage, MEETING_TIME_KEY, useTripMetadata, useCopyFeedback, shareText, JapanTripHero, JapanTripMap } from "./japan-trip/JapanTripShared";
 import styles from "./JapanTrip.module.css";
 
 export default function JapanTripZh() {
   useTripMetadata("zh-TW", "關西三日旅行手冊｜大阪・京都", "大阪與京都三日自由行：每日路線、飯店資訊、出門清單、實用日語與可自訂地圖。");
   const [jaVoice, setJaVoice] = useState(null);
-  const [preflightPercent, setPreflightPercent] = useState(0);
-  const [preflightTotal, setPreflightTotal] = useState(0);
-  const [preflightRemaining, setPreflightRemaining] = useState(0);
-  const [meetingTime, setMeetingTime] = useState("");
+  const [checked, setChecked] = useState(readChecklist);
+  const [meetingTime, setMeetingTime] = useState(readMeetingTime);
+  const preflightTotal = CHECKLIST_IDS.length;
+  const preflightRemaining = CHECKLIST_IDS.filter((id) => checked[id] !== true).length;
+  const preflightPercent = Math.round(((preflightTotal - preflightRemaining) / preflightTotal) * 100);
   const { copiedField, copy } = useCopyFeedback();
-  const preflightRef = useRef(null);
 
 
   useEffect(() => {
@@ -69,75 +69,25 @@ export default function JapanTripZh() {
     window.speechSynthesis.speak(utterance);
   };
 
-  useEffect(() => {
-    const container = preflightRef.current;
-    if (!container || typeof window === "undefined") {
-      return undefined;
-    }
+  useEffect(() => { saveChecklist(checked); }, [checked]);
 
-    const inputs = Array.from(
-      container.querySelectorAll('input[type="checkbox"]'),
-    );
-    const saved = readChecklist();
-    inputs.forEach((input, index) => {
-      input.checked = saved[input.dataset.checkId || CHECKLIST_IDS[index]] === true;
-    });
-    setMeetingTime(readMeetingTime());
-
-    const updateProgress = () => {
-      const total = inputs.length;
-      const checked = inputs.filter((input) => input.checked).length;
-      setPreflightPercent(total ? Math.round((checked / total) * 100) : 0);
-      setPreflightTotal(total);
-      setPreflightRemaining(total - checked);
-      saveChecklist(Object.fromEntries(inputs.map((input, index) => [
-        input.dataset.checkId || CHECKLIST_IDS[index],
-        input.checked,
-      ])));
-    };
-
-    inputs.forEach((input) => input.addEventListener("change", updateProgress));
-    updateProgress();
-
-    return () => {
-      inputs.forEach((input) =>
-        input.removeEventListener("change", updateProgress),
-      );
-    };
-  }, []);
-
-  const resetPreflight = () => {
-    const container = preflightRef.current;
-    if (!container || typeof window === "undefined") {
-      return;
-    }
-    const inputs = Array.from(
-      container.querySelectorAll('input[type="checkbox"]'),
-    );
-    inputs.forEach((input) => {
-      input.checked = false;
-    });
-    setPreflightPercent(0);
-    setPreflightRemaining(inputs.length);
-    setPreflightTotal(inputs.length);
-    saveChecklist(Object.fromEntries(CHECKLIST_IDS.map((id) => [id, false])));
-  };
+  const resetPreflight = () => setChecked({});
 
   const sharePreflight = async () => {
-    const total = preflightTotal || 0;
-    const remaining = preflightRemaining || 0;
-    const container = preflightRef.current;
-    const unchecked = container
-      ? Array.from(
-          container.querySelectorAll('input[type="checkbox"]:not(:checked)'),
-        )
-          .map((input) => {
-            const label = input.closest("label");
-            const textNode = label?.querySelector("span");
-            return textNode?.textContent?.trim() || "";
-          })
-          .filter(Boolean)
-      : [];
+    const total = preflightTotal;
+    const remaining = preflightRemaining;
+    const labels = {
+      "passport": "護照", "wallet": "錢包", "yen": "日圓", "credit-card": "信用卡",
+      "transit-card": "ICOCA / Suica", "phone": "手機電量", "charger": "行動電源與充電線",
+      "mobile-data": "eSIM / 網路", "hotel-key": "飯店房卡",
+      "rubbish-bag": "隨身垃圾袋", "bathroom": "出門前上廁所",
+      "shopping-bag": "購物袋", "tax-free": "免稅購物 QR Code",
+      "cold-weather": "氣溫與天氣預報", "scarf-gloves": "圍巾與手套",
+      "extra-layer": "保暖外套", "sunny-weather": "紫外線與降雨預報",
+      "sunscreen": "防曬", "sunglasses": "太陽眼鏡",
+      "appliances": "關閉電器", "windows": "關窗", "valuables": "收好貴重物品",
+    };
+    const unchecked = CHECKLIST_IDS.filter((id) => checked[id] !== true).map((id) => labels[id]);
     const remainingText = unchecked.length
       ? `未勾項目：${unchecked.join("、")}`
       : "未勾項目：無";
@@ -345,7 +295,7 @@ export default function JapanTripZh() {
         <details id="checklist" className={styles.card} open>
           <summary className={styles.cardSummary}>出發前檢查 · 重要物品與房間安全</summary>
           <div className={styles.cardBody}>
-            <div className={styles.preflight} ref={preflightRef}>
+            <div className={styles.preflight}>
               <div className={styles.preflightProgress}>
                 <div className={styles.preflightProgressHeader}>
                   <span>出發前確認</span>
@@ -394,25 +344,25 @@ export default function JapanTripZh() {
                 <div className={styles.preflightList}>
                   <div className={styles.preflightRow}>
                     <label className={styles.checkItem}>
-                      <input type="checkbox" data-check-id="passport" />
+                      <input type="checkbox" checked={checked["passport"] === true} onChange={(event) => setChecked((previous) => ({ ...previous, ["passport"]: event.target.checked }))} />
                       <span>護照</span>
                     </label>
                   </div>
                   <div className={styles.preflightRow}>
                     <label className={styles.checkItem}>
-                      <input type="checkbox" data-check-id="wallet" />
+                      <input type="checkbox" checked={checked["wallet"] === true} onChange={(event) => setChecked((previous) => ({ ...previous, ["wallet"]: event.target.checked }))} />
                       <span>錢包</span>
                     </label>
                     <div className={styles.preflightSublist}>
                       <div className={styles.preflightRow}>
                         <label className={styles.checkItem}>
-                          <input type="checkbox" data-check-id="yen" />
+                          <input type="checkbox" checked={checked["yen"] === true} onChange={(event) => setChecked((previous) => ({ ...previous, ["yen"]: event.target.checked }))} />
                           <span>日圓 JPY</span>
                         </label>
                       </div>
                       <div className={styles.preflightRow}>
                         <label className={styles.checkItem}>
-                          <input type="checkbox" data-check-id="credit-card" />
+                          <input type="checkbox" checked={checked["credit-card"] === true} onChange={(event) => setChecked((previous) => ({ ...previous, ["credit-card"]: event.target.checked }))} />
                           <span>信用卡</span>
                         </label>
                       </div>
@@ -420,56 +370,56 @@ export default function JapanTripZh() {
                   </div>
                   <div className={styles.preflightRow}>
                     <label className={styles.checkItem}>
-                      <input type="checkbox" data-check-id="transit-card" />
+                      <input type="checkbox" checked={checked["transit-card"] === true} onChange={(event) => setChecked((previous) => ({ ...previous, ["transit-card"]: event.target.checked }))} />
                       <span>ICOCA / Suica（是否有餘額）</span>
                     </label>
                   </div>
                   <div className={styles.preflightRow}>
                     <label className={styles.checkItem}>
-                      <input type="checkbox" data-check-id="phone" />
+                      <input type="checkbox" checked={checked["phone"] === true} onChange={(event) => setChecked((previous) => ({ ...previous, ["phone"]: event.target.checked }))} />
                       <span>手機（確認電量 ≥ 50%）</span>
                     </label>
                   </div>
                   <div className={styles.preflightRow}>
                     <label className={styles.checkItem}>
-                      <input type="checkbox" data-check-id="charger" />
+                      <input type="checkbox" checked={checked["charger"] === true} onChange={(event) => setChecked((previous) => ({ ...previous, ["charger"]: event.target.checked }))} />
                       <span>行動電源 & 充電線</span>
                     </label>
                   </div>
                   <div className={styles.preflightRow}>
                     <label className={styles.checkItem}>
-                      <input type="checkbox" data-check-id="mobile-data" />
+                      <input type="checkbox" checked={checked["mobile-data"] === true} onChange={(event) => setChecked((previous) => ({ ...previous, ["mobile-data"]: event.target.checked }))} />
                       <span>eSIM / 網路是否正常</span>
                     </label>
                   </div>
                   <div className={styles.preflightRow}>
                     <label className={styles.checkItem}>
-                      <input type="checkbox" data-check-id="hotel-key" />
+                      <input type="checkbox" checked={checked["hotel-key"] === true} onChange={(event) => setChecked((previous) => ({ ...previous, ["hotel-key"]: event.target.checked }))} />
                       <span>飯店房卡</span>
                     </label>
                   </div>
                   <div className={styles.preflightRow}>
                     <label className={styles.checkItem}>
-                      <input type="checkbox" data-check-id="rubbish-bag" />
+                      <input type="checkbox" checked={checked["rubbish-bag"] === true} onChange={(event) => setChecked((previous) => ({ ...previous, ["rubbish-bag"]: event.target.checked }))} />
                       <span>隨身小垃圾袋</span>
                     </label>
                   </div>
                 </div>
                 <div className={styles.preflightRow}>
                   <label className={styles.checkItem}>
-                    <input type="checkbox" data-check-id="bathroom" />
+                    <input type="checkbox" checked={checked["bathroom"] === true} onChange={(event) => setChecked((previous) => ({ ...previous, ["bathroom"]: event.target.checked }))} />
                     <span>出門前先上廁所</span>
                   </label>
                 </div>
                 <div className={styles.preflightRow}>
                   <label className={styles.checkItem}>
-                    <input type="checkbox" data-check-id="shopping-bag" />
+                    <input type="checkbox" checked={checked["shopping-bag"] === true} onChange={(event) => setChecked((previous) => ({ ...previous, ["shopping-bag"]: event.target.checked }))} />
                     <span>帶購物用大袋 / 折疊袋</span>
                   </label>
                 </div>
                 <div className={styles.preflightRow}>
                   <label className={styles.checkItem}>
-                    <input type="checkbox" data-check-id="tax-free" />
+                    <input type="checkbox" checked={checked["tax-free"] === true} onChange={(event) => setChecked((previous) => ({ ...previous, ["tax-free"]: event.target.checked }))} />
                     <span>免稅購物 QR Code（如適用）</span>
                   </label>
                 </div>
@@ -483,19 +433,19 @@ export default function JapanTripZh() {
                 <div className={styles.preflightList}>
                   <div className={styles.preflightRow}>
                     <label className={styles.checkItem}>
-                      <input type="checkbox" data-check-id="cold-weather" />
+                      <input type="checkbox" checked={checked["cold-weather"] === true} onChange={(event) => setChecked((previous) => ({ ...previous, ["cold-weather"]: event.target.checked }))} />
                       <span>確認氣溫與當日天氣預報</span>
                     </label>
                     <div className={styles.preflightSublist}>
                       <div className={styles.preflightRow}>
                         <label className={styles.checkItem}>
-                          <input type="checkbox" data-check-id="scarf-gloves" />
+                          <input type="checkbox" checked={checked["scarf-gloves"] === true} onChange={(event) => setChecked((previous) => ({ ...previous, ["scarf-gloves"]: event.target.checked }))} />
                           <span>確認是否需要圍巾、手套</span>
                         </label>
                       </div>
                       <div className={styles.preflightRow}>
                         <label className={styles.checkItem}>
-                          <input type="checkbox" data-check-id="extra-layer" />
+                          <input type="checkbox" checked={checked["extra-layer"] === true} onChange={(event) => setChecked((previous) => ({ ...previous, ["extra-layer"]: event.target.checked }))} />
                           <span>確認是否需要多帶一件外套</span>
                         </label>
                       </div>
@@ -503,19 +453,19 @@ export default function JapanTripZh() {
                   </div>
                   <div className={styles.preflightRow}>
                     <label className={styles.checkItem}>
-                      <input type="checkbox" data-check-id="sunny-weather" />
+                      <input type="checkbox" checked={checked["sunny-weather"] === true} onChange={(event) => setChecked((previous) => ({ ...previous, ["sunny-weather"]: event.target.checked }))} />
                       <span>確認紫外線與降雨機率</span>
                     </label>
                     <div className={styles.preflightSublist}>
                       <div className={styles.preflightRow}>
                         <label className={styles.checkItem}>
-                          <input type="checkbox" data-check-id="sunscreen" />
+                          <input type="checkbox" checked={checked["sunscreen"] === true} onChange={(event) => setChecked((previous) => ({ ...previous, ["sunscreen"]: event.target.checked }))} />
                           <span>確認是否需要防曬</span>
                         </label>
                       </div>
                       <div className={styles.preflightRow}>
                         <label className={styles.checkItem}>
-                          <input type="checkbox" data-check-id="sunglasses" />
+                          <input type="checkbox" checked={checked["sunglasses"] === true} onChange={(event) => setChecked((previous) => ({ ...previous, ["sunglasses"]: event.target.checked }))} />
                           <span>確認是否需要太陽眼鏡</span>
                         </label>
                       </div>
@@ -532,19 +482,19 @@ export default function JapanTripZh() {
                 <div className={styles.preflightList}>
                   <div className={styles.preflightRow}>
                     <label className={styles.checkItem}>
-                      <input type="checkbox" data-check-id="appliances" />
+                      <input type="checkbox" checked={checked["appliances"] === true} onChange={(event) => setChecked((previous) => ({ ...previous, ["appliances"]: event.target.checked }))} />
                       <span>房間電器是否關好（暖氣、吹風機）</span>
                     </label>
                   </div>
                   <div className={styles.preflightRow}>
                     <label className={styles.checkItem}>
-                      <input type="checkbox" data-check-id="windows" />
+                      <input type="checkbox" checked={checked["windows"] === true} onChange={(event) => setChecked((previous) => ({ ...previous, ["windows"]: event.target.checked }))} />
                       <span>窗戶是否關</span>
                     </label>
                   </div>
                   <div className={styles.preflightRow}>
                     <label className={styles.checkItem}>
-                      <input type="checkbox" data-check-id="valuables" />
+                      <input type="checkbox" checked={checked["valuables"] === true} onChange={(event) => setChecked((previous) => ({ ...previous, ["valuables"]: event.target.checked }))} />
                       <span>貴重物品是否已收好（或放保險箱）</span>
                     </label>
                   </div>
