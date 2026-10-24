@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Footer from "./ui/Footer";
 import JapanTrip from "./sections/JapanTrip";
+import JapanTripEnglish from "./sections/JapanTripEnglish";
 import Header from "./ui/Header";
 import About from "./sections/About";
 import Home from "./sections/Home";
@@ -31,7 +32,7 @@ const siteProps = {
 
 const App = () => {
   const [theme, setTheme] = React.useState(getInitialTheme);
-  const isJapanTrip = window.location.pathname.replace(/\/$/, "") === "/trip/japan-zh";
+  const isJapanTrip = ["/trip/japan-zh", "/trips/japan-en"].includes(window.location.pathname.replace(/\/$/, ""));
 
   React.useEffect(() => {
     applyThemeToDocument(theme);
@@ -58,6 +59,7 @@ const App = () => {
           {/* Define your routes */}
           <Routes>
             <Route path="/trip/japan-zh" element={<JapanTrip />} />
+            <Route path="/trips/japan-en" element={<JapanTripEnglish />} />
             <Route path="/" element={<Home name={siteProps.name} title={siteProps.title} />} />
             <Route path="/about" element={<About />} />
             <Route path="/education" element={<Education />} />
