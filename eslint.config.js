@@ -5,7 +5,7 @@ import react from "eslint-plugin-react";
 
 export default defineConfig([
   {
-    ignores: ["dist/**", "node_modules/**", ".parcel-cache/**"],
+    ignores: ["dist/**", "node_modules/**"],
   },
   {
     files: ["src/**/*.{js,jsx}"],
@@ -30,9 +30,17 @@ export default defineConfig([
     },
   },
   {
-    files: ["*.config.js"],
+    files: ["*.config.{js,mjs}", "scripts/**/*.mjs"],
     languageOptions: {
       globals: globals.node,
+    },
+    plugins: { js },
+    extends: ["js/recommended"],
+  },
+  {
+    files: ["tests/e2e/**/*.mjs"],
+    languageOptions: {
+      globals: { ...globals.node, ...globals.browser },
     },
     plugins: { js },
     extends: ["js/recommended"],
