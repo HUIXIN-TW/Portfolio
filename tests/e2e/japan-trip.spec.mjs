@@ -93,11 +93,18 @@ test("desktop layout guard and capture for future visual baselines", async ({ pa
   await expect(itinerary.locator("details").first()).toHaveCSS("border-left-width", "0px");
   await expect(reference.locator("details").first()).toHaveCSS("border-left-width", "0px");
   await expect(page.locator("#checklist")).toBeVisible();
-  const headingFontSizes = await page.locator(
-    '#itinerary > h2, #checklist > summary h2, #phrases > summary h2, #reference > h2, #trip-map .mapIntroduction h2'
-  ).evaluateAll((nodes) => nodes.map((node) => getComputedStyle(node).fontSize));
-  // Only the five main section headings, not Reference's subordinate HOTEL / EMERGENCY headings.
-  expect(new Set(headingFontSizes).size).toBeLessThanOrEqual(2);
+  const mainHeadings = page.locator(
+    '#itinerary > h2, #checklist > summary h2, #phrases > summary h2, #reference > h2, #trip-map h2'
+  );
+  await expect(mainHeadings).toHaveCount(5);
+  const headingFontSizes = await mainHeadings.evaluateAll((nodes) =>
+    nodes.map((node) => getComputedStyle(node).fontSize));
+  expect(new Set(headingFontSizes).size).toBe(1);
+  const referenceTitle = await page.locator("#reference > h2").evaluate((node) =>
+    parseFloat(getComputedStyle(node).fontSize));
+  const hotelTitle = await page.locator("#reference h3").first().evaluate((node) =>
+    parseFloat(getComputedStyle(node).fontSize));
+  expect(hotelTitle).toBeLessThan(referenceTitle);
   await captureVisualBaseline(itinerary, "desktop-itinerary.png", testInfo);
   await captureVisualBaseline(page.locator("#checklist"), "desktop-checklist.png", testInfo);
   await reference.locator("details summary").first().click();
