@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { checklistGroups, checklistIds } from "../data/checklist";
-import { readChecklist, saveChecklist, MEETING_TIME_KEY, readMeetingTime, writeStorage } from "../utils/storage";
+import { readChecklist, saveChecklist, readMeetingTime, saveMeetingTime } from "../utils/storage";
 import { shareText } from "../utils/browser";
 import styles from "../JapanTrip.module.css";
 
@@ -10,7 +10,7 @@ export default function Checklist({ content }) {
   const [feedback, setFeedback] = useState("");
 
   useEffect(() => { saveChecklist(checked); }, [checked]);
-  useEffect(() => { writeStorage(MEETING_TIME_KEY, meetingTime); }, [meetingTime]);
+  useEffect(() => { saveMeetingTime(meetingTime); }, [meetingTime]);
 
   const completed = checklistIds.filter((id) => checked[id] === true).length;
   const total = checklistIds.length;
@@ -60,7 +60,7 @@ export default function Checklist({ content }) {
             {feedback && <p role="status" className={styles.helperText}>{feedback}</p>}
           </div>
           {checklistGroups.map((group, index) => (
-            <div className={styles.preflightSection} key={group.id}>
+            <div className={styles.preflightSection} data-group={group.id} key={group.id}>
               <div className={styles.preflightHeader}>
                 <span className={styles.preflightIndex}>{index + 1}</span>
                 <span className={styles.preflightTitle}>{t.sectionTitles[index]}</span>

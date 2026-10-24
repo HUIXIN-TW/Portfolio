@@ -35,15 +35,15 @@
   align-items: start;
   gap: 24px;
 }
-.preflightProgress, .preflightSection:nth-child(2) { grid-column: 1 / -1; }
+.preflightProgress, .preflightSection[data-group="essentials"] { grid-column: 1 / -1; }
 .preflightSection { min-width: 0; }
-.preflightSection:nth-child(2) .preflightList {
+.preflightSection[data-group="essentials"] .preflightList {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
-.preflightSection:nth-child(3) .preflightList {
+.preflightSection[data-group="weather"] .preflightList {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
-.preflightSection:nth-child(4) .preflightList { grid-template-columns: 1fr; }
+.preflightSection[data-group="room"] .preflightList { grid-template-columns: 1fr; }
 .preflightProgress {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(190px, 230px);
@@ -313,11 +313,6 @@
 .dayNumber { margin-bottom: 5px; color: var(--trip-teal); }
 .dayDescription { display: block; margin-top: 5px; font-size: 13px; line-height: 1.55; font-weight: 400; color: #63767e; }
 
-.day > .blockTitle,
-.day > .list { margin-left: 24px; margin-right: 24px; }
-.day > .blockTitle { margin-top: 22px; }
-.day > .list { margin-top: 7px; margin-bottom: 12px; }
-.day > .list:last-child { margin-bottom: 26px; }
 .blockTitle { color: #183a40; font-weight: 750; letter-spacing: -0.01em; }
 .list { line-height: 1.85; font-size: 14px; color: #43575d; }
 .list li + li { margin-top: 4px; }
@@ -424,9 +419,7 @@
 .preflight .checkItem input { flex: 0 0 22px; cursor: pointer; }
 .preflight .checkItem input:checked { background: #087d78; border-color: #087d78; }
 .preflightIndex { background: #13434a; }
-.preflightSublist { padding-left: 12px; border-left: 2px solid #e3edeb; }
 .preflightTitle { font-size: 14px; }
-.preflightSection + .preflightSection { padding-top: 0; border-top: none; }
 
 .sentenceList {
   display: grid;
@@ -538,19 +531,19 @@
 .mapPage [id] { scroll-margin-top: 24px; }
 
 @media (max-width: 1060px) {
-  .preflightSection:nth-child(2) .preflightList { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .preflightSection:nth-child(3) .preflightList { grid-template-columns: 1fr; }
+  .preflightSection[data-group="essentials"] .preflightList { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .preflightSection[data-group="weather"] .preflightList { grid-template-columns: 1fr; }
 }
 @media (max-width: 830px) {
   .preflight { grid-template-columns: 1fr; }
-  .preflightSection:nth-child(2) { grid-column: 1; }
-  .preflightSection:nth-child(3) .preflightList { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .preflightSection[data-group="essentials"] { grid-column: 1; }
+  .preflightSection[data-group="weather"] .preflightList { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .mapSection .frameWrapper { aspect-ratio: 4 / 3; }
 }
 @media (max-width: 650px) {
   .sentenceList { grid-template-columns: 1fr; }
-  .preflightSection:nth-child(2) .preflightList,
-  .preflightSection:nth-child(3) .preflightList { grid-template-columns: 1fr; }
+  .preflightSection[data-group="essentials"] .preflightList,
+  .preflightSection[data-group="weather"] .preflightList { grid-template-columns: 1fr; }
   .preflightProgress { grid-template-columns: 1fr; padding: 16px; row-gap: 13px; }
   .preflightProgressHeader { grid-column: 1; grid-row: 1; }
   .preflightProgressBar { grid-column: 1; grid-row: 2; }
@@ -580,7 +573,6 @@
   .sectionNav a { padding: 7px 10px; font-size: 11px; }
   .itinerary, .mapSection, .referenceSection { padding: 20px 16px; border-radius: 18px; }
   .dayTitle { padding: 18px 0; }
-  .day > .blockTitle, .day > .list { margin-left: 16px; margin-right: 16px; }
   .timeline { padding: 2px 0 20px; }
   .timelineItem { display: block; }
   .timelineTime { display: block; margin-bottom: 6px; }

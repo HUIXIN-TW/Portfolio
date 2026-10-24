@@ -1,6 +1,7 @@
 import { hotel } from "../data/hotel";
 import { useCopyFeedback } from "../utils/browser";
 import styles from "../JapanTrip.module.css";
+import ReferencePanel from "./ReferencePanel";
 
 const fields = ["name", "address", "phone", "checkin", "checkout"];
 
@@ -13,12 +14,7 @@ export default function HotelInfo({ content }) {
   const { actions, locale } = content;
   const labels = content.hotel.labels;
   return (
-    <details className={styles.card}>
-      <summary className={styles.cardSummary}>
-        <span className={styles.referenceCardNumber}>04.1 / HOTEL</span>
-        <span className={styles.cardHeading}>{content.headings.hotel}</span>
-      </summary>
-      <div className={styles.cardBody}>
+    <ReferencePanel number="04.1" type="HOTEL" title={content.headings.hotel}>
         <ul className={styles.infoList}>
           {fields.map((field) => {
             const value = displayValue(field, locale);
@@ -38,7 +34,6 @@ export default function HotelInfo({ content }) {
             );
           })}
         </ul>
-      </div>
-    </details>
+    </ReferencePanel>
   );
 }

@@ -1,4 +1,5 @@
 import styles from "../JapanTrip.module.css";
+import ReferencePanel from "./ReferencePanel";
 
 const contacts = [
   ["police", "110", "tel:110"],
@@ -9,12 +10,7 @@ const contacts = [
 
 export default function EmergencyContacts({ content }) {
   return (
-    <details className={styles.card}>
-      <summary className={styles.cardSummary}>
-        <span className={styles.referenceCardNumber}>04.2 / EMERGENCY</span>
-        <span className={styles.cardHeading}>{content.headings.emergency}</span>
-      </summary>
-      <div className={styles.cardBody}>
+    <ReferencePanel number="04.2" type="EMERGENCY" title={content.headings.emergency}>
         <ul className={styles.infoList}>
           {contacts.map(([id, value, href]) => (
             <li key={id}>
@@ -23,7 +19,6 @@ export default function EmergencyContacts({ content }) {
             </li>
           ))}
         </ul>
-      </div>
-    </details>
+    </ReferencePanel>
   );
 }

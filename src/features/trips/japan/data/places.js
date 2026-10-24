@@ -8,64 +8,56 @@ export const mapLayers = [
     "label": {
       "zh": "咖啡 · 難波",
       "en": "Coffee · Namba"
-    },
-    "type": "coffee"
+    }
   },
   {
     "id": "osaka-lunch",
     "label": {
       "zh": "午餐 · 難波",
       "en": "Lunch · Namba"
-    },
-    "type": "lunch"
+    }
   },
   {
     "id": "osaka-dinner",
     "label": {
       "zh": "晚餐 · 難波",
       "en": "Dinner · Namba"
-    },
-    "type": "dinner"
+    }
   },
   {
     "id": "kyoto-coffee",
     "label": {
       "zh": "咖啡 · 京都",
       "en": "Coffee · Kyoto"
-    },
-    "type": "coffee"
+    }
   },
   {
     "id": "kyoto-lunch",
     "label": {
       "zh": "午餐 · 京都",
       "en": "Lunch · Kyoto"
-    },
-    "type": "lunch"
+    }
   },
   {
     "id": "osaka-breakfast",
     "label": {
       "zh": "早餐 · 大阪城",
       "en": "Breakfast · Osaka Castle"
-    },
-    "type": "breakfast"
+    }
   },
   {
     "id": "landmarks",
     "label": {
       "zh": "景點與住宿",
       "en": "Sights & stay"
-    },
-    "type": "sights"
+    }
   },
   {
     "id": "future",
     "label": {
       "zh": "未來想去",
       "en": "Future ideas"
-    },
-    "type": "future"
+    }
   }
 ];
 

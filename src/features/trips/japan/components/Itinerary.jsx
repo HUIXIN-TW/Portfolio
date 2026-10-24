@@ -16,9 +16,9 @@ export default function Itinerary({ content }) {
             </span>
           </summary>
           <div className={styles.timeline}>
-            {day.stops.map((stop, index) => (
-              <div className={styles.timelineItem} key={stop.id || day.number + "-" + index}>
-                <span className={styles.timelineTime}>{stop.time || ""}</span>
+            {day.stops.map((stop) => (
+              <div className={styles.timelineItem} key={stop.id}>
+                <span className={styles.timelineTime}>{stop.time}</span>
                 <div>
                   <h3 className={styles.blockTitle}>{stop.title}</h3>
                   <ul className={styles.list}>{stop.details.map((line, i) => <li key={i}>{line}</li>)}</ul>

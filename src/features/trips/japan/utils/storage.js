@@ -1,19 +1,21 @@
 import { checklistIds } from "../data/checklist";
 
-export const CHECKLIST_KEY = "trip:japan:checklist";
-export const MEETING_TIME_KEY = "trip:japan:meetingTime";
+const CHECKLIST_KEY = "trip:japan:checklist";
+const MEETING_TIME_KEY = "trip:japan:meetingTime";
 
-export function readStorage(key) {
-  try { return window.localStorage.getItem(key); } catch { return null; }
+function read(key) {
+  try { return window.localStorage.getItem(key); }
+  catch { return null; }
 }
 
-export function writeStorage(key, value) {
-  try { window.localStorage.setItem(key, value); return true; } catch { return false; }
+function write(key, value) {
+  try { window.localStorage.setItem(key, value); }
+  catch { /* Storage is optional; React state remains usable. */ }
 }
 
 export function readChecklist() {
   try {
-    const saved = JSON.parse(readStorage(CHECKLIST_KEY) || "null");
+    const saved = JSON.parse(read(CHECKLIST_KEY) || "null");
     if (!saved || typeof saved !== "object" || Array.isArray(saved)) return {};
     return Object.fromEntries(checklistIds.map((id) => [id, saved[id] === true]));
   } catch {
@@ -21,10 +23,14 @@ export function readChecklist() {
   }
 }
 
-export function readMeetingTime() {
-  return readStorage(MEETING_TIME_KEY) || "";
+export function saveChecklist(checked) {
+  write(CHECKLIST_KEY, JSON.stringify(checked));
 }
 
-export function saveChecklist(checked) {
-  return writeStorage(CHECKLIST_KEY, JSON.stringify(checked));
+export function readMeetingTime() {
+  return read(MEETING_TIME_KEY) || "";
+}
+
+export function saveMeetingTime(value) {
+  write(MEETING_TIME_KEY, value);
 }

@@ -5,26 +5,26 @@ const days = [
     title: "Osaka · Namba, Dotonbori & Shinsekai",
     description: "Land in Kansai, settle into Namba and discover Osaka after dark.",
     stops: [
-      { time: "07:05–10:55", title: "Fly into Kansai International Airport", details: [
+      { id: "day-1-stop-1", time: "07:05–10:55", title: "Fly into Kansai International Airport", details: [
         "Kaohsiung (KHH) → Kansai International Airport (KIX). Allow time for immigration and baggage collection.",
       ] },
-      { time: "10:55–12:35", title: "Airport → Namba → hotel", details: [
+      { id: "day-1-stop-2", time: "10:55–12:35", title: "Airport → Namba → hotel", details: [
         "Buy a Nankai Railway ticket and top up an ICOCA card (suggested starting balance: ¥3,500).",
         "Take the Nankai Railway to Namba (about 45–55 minutes), then walk 10–15 minutes to the hotel and leave your luggage.",
         "Hotel check-in starts at 15:00; luggage storage may be possible before then.",
       ] },
-      { time: "Lunch", title: "Eat around Namba", details: [
+      { id: "day-1-stop-3", time: "Lunch", title: "Eat around Namba", details: [
         "Nearby choices include KITAN HIBIKI and Wagyu Sukiyaki Okuwo. Other options: Naiwa Omeriasu or Usamitei Matsubaya.",
       ] },
-      { time: "Afternoon", title: "Shinsaibashi & Dotonbori", details: [
+      { id: "day-1-stop-4", time: "Afternoon", title: "Shinsaibashi & Dotonbori", details: [
         "Walk through Shinsaibashi-suji Shopping Street, browse Dotonbori and see the Glico running-man sign.",
         "Most of these sights are within a short walk of one another.",
       ] },
-      { time: "16:20–18:30", title: "Tsutenkaku Tower & Shinsekai", details: [
+      { id: "day-1-stop-5", time: "16:20–18:30", title: "Tsutenkaku Tower & Shinsekai", details: [
         "Take the Osaka Metro from Namba to Dobutsuen-mae, then walk roughly 10 minutes to Tsutenkaku.",
         "Explore the tower area and the retro streets of Shinsekai.",
       ] },
-      { time: "19:00", title: "Dinner in Shinsekai", details: [
+      { id: "day-1-stop-6", time: "19:00", title: "Dinner in Shinsekai", details: [
         "Try kushikatsu (Osaka-style fried skewers), or return to Namba for dinner.",
       ] },
     ],
@@ -34,27 +34,27 @@ const days = [
     title: "Kyoto · Kiyomizu-dera, Gion & Nishiki Market",
     description: "An early start, traditional streets and a day exploring eastern Kyoto.",
     stops: [
-      { time: "From 05:30", title: "Namba → eastern Kyoto", details: [
+      { id: "day-2-stop-1", time: "From 05:30", title: "Namba → eastern Kyoto", details: [
         "Take the Osaka Metro to Yodoyabashi, then the Keihan Railway to Gion-Shijo. Continue towards Kiyomizu-dera by local transport and on foot.",
         "Allow around 90 minutes or more door-to-door, depending on connections. Check the day's first trains before setting off.",
       ] },
-      { time: "Early morning", title: "Kiyomizu-dera & Yasaka Shrine", details: [
+      { id: "day-2-stop-2", time: "Early morning", title: "Kiyomizu-dera & Yasaka Shrine", details: [
         "Visit Kiyomizu-dera before the crowds, then follow the historic lanes towards Yasaka Shrine (roughly 20–30 minutes on foot).",
       ] },
-      { time: "09:00–12:30", title: "Kimono rental & photos", details: [
+      { id: "day-2-stop-3", time: "09:00–12:30", title: "Kimono rental & photos", details: [
         "Head to Okamoto Kimono (Kiyomizu branch) for your fitting.",
         "Explore Hanamikoji Street and the picturesque Shirakawa area for photos.",
       ] },
-      { time: "Lunch", title: "A break in Gion", details: [
+      { id: "day-2-stop-4", time: "Lunch", title: "A break in Gion", details: [
         "Consider Ramen Nishiki or Menya Inoichi; GOKAGO is a possible sweet stop.",
       ] },
-      { time: "By 14:30", title: "Return the kimono", details: [
+      { id: "day-2-stop-5", time: "By 14:30", title: "Return the kimono", details: [
         "Allow time to walk back to the rental branch. Confirm the actual return deadline with the shop.",
       ] },
-      { time: "Afternoon", title: "Nishiki Market & the Kamo River", details: [
+      { id: "day-2-stop-6", time: "Afternoon", title: "Nishiki Market & the Kamo River", details: [
         "Browse Nishiki Market and finish with a stroll by the Kamo River.",
       ] },
-      { time: "From 15:50", title: "Return to Osaka", details: [
+      { id: "day-2-stop-7", time: "From 15:50", title: "Return to Osaka", details: [
         "Take the train back towards Namba and have dinner around Dotonbori.",
         "Some routes via Kintetsu require a transfer; check the full journey before buying a ticket.",
       ] },
@@ -65,21 +65,21 @@ const days = [
     title: "Osaka Castle, Tenjinbashisuji & home",
     description: "Coffee, a castle visit, a final shopping street and the airport.",
     stops: [
-      { time: "07:15–08:30", title: "Coffee near Osaka Castle", details: [
+      { id: "day-3-stop-1", time: "07:15–08:30", title: "Coffee near Osaka Castle", details: [
         "Take the metro from Namba towards Tanimachi 4-chome and walk to SOT COFFEE ROASTER.",
       ] },
-      { time: "08:30–11:30", title: "Osaka Castle Park", details: [
+      { id: "day-3-stop-2", time: "08:30–11:30", title: "Osaka Castle Park", details: [
         "Explore the park and castle museum. The park is large, so allow extra walking time.",
         "If you want a boat ride, check availability and book a slot early.",
       ] },
-      { time: "11:30–15:00", title: "Tenjinbashisuji Shopping Street", details: [
+      { id: "day-3-stop-3", time: "11:30–15:00", title: "Tenjinbashisuji Shopping Street", details: [
         "Take the metro towards Ogimachi and explore the shopping arcade. Stop for lunch and local snacks.",
       ] },
-      { time: "Around 15:00", title: "Collect your luggage", details: [
+      { id: "day-3-stop-4", time: "Around 15:00", title: "Collect your luggage", details: [
         "Travel back to Namba, collect your bags from the hotel and make your way to Nankai Namba Station.",
         "Keep a buffer for the station transfer and the airport journey.",
       ] },
-      { time: "20:20–22:55", title: "Kansai Airport → Kaohsiung", details: [
+      { id: "day-3-stop-5", time: "20:20–22:55", title: "Kansai Airport → Kaohsiung", details: [
         "Nankai Railway from Namba to KIX takes around 45–55 minutes depending on service.",
         "Flight: 20:20–22:55 (local times). Check your airline's baggage drop and boarding deadlines.",
       ] },
