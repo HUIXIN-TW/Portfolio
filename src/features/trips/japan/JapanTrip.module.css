@@ -281,7 +281,7 @@
 .sectionNav a:hover { background: rgba(255,255,255,0.18); transform: translateY(-1px); }
 
 .itinerary {
-  gap: 12px;
+  gap: 0;
   padding: clamp(20px, 3.5vw, 40px);
   border: 1px solid var(--trip-border);
   border-radius: 26px;
@@ -295,24 +295,21 @@
 .day {
   display: block;
   padding: 0;
-  border: 1px solid #deebe8;
-  background: #f6faf9;
-  border-radius: 16px;
-  overflow: hidden;
-  transition: border-color 0.2s ease, background 0.2s ease;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
 }
-.day[open] { background: #fff; border-color: #b4d9d2; }
+.day + .day { border-top: 1px solid #e9f0ed; }
 .dayTitle {
   display: flex;
-  padding: 20px 22px;
+  padding: 22px 0;
   gap: 14px;
   color: var(--trip-ink);
   line-height: 1.5;
   font-size: clamp(16px, 2vw, 19px);
 }
 .dayTitle > span:first-child { min-width: 0; flex: 1; }
-.dayTitle:hover { background: #edf8f5; }
-.day[open] .dayTitle { border-bottom: 1px solid #e5efed; }
+.dayTitle:hover { color: #087d78; }
 .dayNumber { margin-bottom: 5px; color: var(--trip-teal); }
 .dayDescription { display: block; margin-top: 5px; font-size: 13px; line-height: 1.55; font-weight: 400; color: #63767e; }
 
@@ -325,7 +322,7 @@
 .list { line-height: 1.85; font-size: 14px; color: #43575d; }
 .list li + li { margin-top: 4px; }
 
-.timeline { padding: 22px 24px 26px; display: grid; gap: 24px; }
+.timeline { padding: 2px 0 28px; display: grid; gap: 24px; }
 .timelineItem {
   display: grid;
   grid-template-columns: minmax(100px, 145px) minmax(0, 1fr);
@@ -342,8 +339,7 @@
   gap: 18px;
 }
 
-/* Short, related reference cards can share a row; large expandable tools
-   must stay full-width so a collapsed card never leaves an empty grid cell. */
+/* Keep reference details within a single section, not nested boxed cards. */
 .referenceSection {
   width: 100%;
   padding: clamp(20px, 3.5vw, 40px);
@@ -353,8 +349,21 @@
   box-shadow: 0 8px 32px rgba(15, 63, 66, 0.045);
 }
 .referenceSection .sectionTitle { margin: 8px 0 6px; }
-.referenceStack { display: flex; flex-direction: column; gap: 14px; }
-.referenceStack > .card { width: 100%; min-width: 0; }
+.referenceStack { display: flex; flex-direction: column; gap: 0; }
+.referenceStack > .card {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+  overflow: visible;
+}
+.referenceStack > .card + .card { border-top: 1px solid #e9f0ed; }
+.referenceStack .cardSummary { padding: 22px 0; }
+.referenceStack .cardSummary:hover { background: transparent; color: #087d78; }
+.referenceStack .card[open] .cardSummary { border-bottom: 0; }
+.referenceStack .cardBody { padding: 0 0 22px; }
 .referenceCardNumber {
   display: block;
   margin-bottom: 8px;
@@ -570,9 +579,9 @@
   .sectionNav { margin-top: 24px; gap: 7px; }
   .sectionNav a { padding: 7px 10px; font-size: 11px; }
   .itinerary, .mapSection, .referenceSection { padding: 20px 16px; border-radius: 18px; }
-  .dayTitle { padding: 17px 15px; }
+  .dayTitle { padding: 18px 0; }
   .day > .blockTitle, .day > .list { margin-left: 16px; margin-right: 16px; }
-  .timeline { padding: 17px 16px 20px; }
+  .timeline { padding: 2px 0 20px; }
   .timelineItem { display: block; }
   .timelineTime { display: block; margin-bottom: 6px; }
   .cardSummary { padding: 18px 17px; }
