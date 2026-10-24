@@ -283,13 +283,22 @@ const content = {
     "hotline": "觀光諮詢（多語）"
   },
   "map": {
-    "title": "地點與地圖",
-    "description": "直接探索原始 Google My Maps。這裡顯示的是地圖擁有者維護的地點與圖層。",
-    "open": "開啟完整地圖",
-    "instructions": "如何建立自己的可編輯地圖？",
-    "steps": "請原地圖擁有者匯出完整 KML/KMZ。接著開啟 Google My Maps，建立新地圖並匯入檔案。這比不完整的 CSV 更能保留原始地點與圖層資訊。內嵌地圖本身的編輯權限仍由擁有者決定。",
-    "caveat": "原始標記名稱、圖層與分享權限由地圖擁有者控制；切換網頁語言不會自動翻譯自訂標記。",
-    "iframeTitle": "大阪與京都旅遊地圖"
+    "title": "完整行程地圖",
+    "description": "從原始大阪、京都地圖匯入的 41 個地點，共 8 個分類。可查看原始地圖，也能依分類搜尋完整地點清單。",
+    "open": "開啟原始地圖",
+    "download": "下載完整地點 KML",
+    "directoryTitle": "全部 41 個收藏地點",
+    "directoryIntro": "依分類篩選、搜尋地點，或使用原始座標在 Google Maps 查看路線。",
+    "searchLabel": "搜尋收藏地點",
+    "searchPlaceholder": "搜尋咖啡廳、餐廳、景點…",
+    "filterLabel": "依分類篩選地點",
+    "allLayers": "所有分類",
+    "noResults": "沒有符合條件的地點，請調整搜尋內容。",
+    "openPlace": "查看路線",
+    "instructions": "如何建立自己的可編輯 Google My Maps？",
+    "steps": "下載上方完整 KML → 前往 Google My Maps 建立新地圖 → 匯入 KML。檔案包含原始 8 個圖層及全部 41 個地點，可在自己的 Google 帳號中編輯，不需要 Yun-Chuan 的帳號權限。",
+    "caveat": "內嵌原始地圖的標記名稱由擁有者控制。下方清單與 KML 使用獨立地點資料；KML 保留座標與圖層，但部分 KMZ 自訂圖示不會完整保留。",
+    "iframeTitle": "原始大阪京都旅遊地圖"
   },
   "checklistItems": {
     "passport": "護照",
