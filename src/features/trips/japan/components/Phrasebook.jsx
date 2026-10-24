@@ -6,8 +6,11 @@ export default function Phrasebook({ content }) {
   return (
     <details id="phrases" className={styles.card}>
       <summary className={styles.cardSummary}>
-        {content.headings.phrases}
-        <span className={styles.phraseCount}>{phrases.length} {content.actions.phraseCountUnit}</span>
+        <span className={styles.sectionKicker}>03 / PHRASEBOOK</span>
+        <span className={styles.cardHeading}>
+          {content.headings.phrases}
+          <span className={styles.phraseCount}>{phrases.length} {content.actions.phraseCountUnit}</span>
+        </span>
       </summary>
       <div className={styles.cardBody}>
         <p className={styles.helperText}>{content.actions.phrasesHelp}</p>

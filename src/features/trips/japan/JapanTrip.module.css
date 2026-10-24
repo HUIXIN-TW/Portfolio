@@ -504,6 +504,8 @@
   vertical-align: middle;
 }
 .cardSummary { display: block; }
+.cardSummary .sectionKicker { margin-bottom: 8px; }
+.cardHeading { display: inline; }
 .cardSummary::after { margin-left: 12px; }
 .referenceGrid .infoList { margin: 0; }
 .preflightProgressActions { gap: 8px; }

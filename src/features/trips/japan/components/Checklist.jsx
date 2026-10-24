@@ -35,7 +35,10 @@ export default function Checklist({ content }) {
 
   return (
     <details id="checklist" className={styles.card} open>
-      <summary className={styles.cardSummary}>{content.headings.checklist}</summary>
+      <summary className={styles.cardSummary}>
+        <span className={styles.sectionKicker}>02 / CHECKLIST</span>
+        <span className={styles.cardHeading}>{content.headings.checklist}</span>
+      </summary>
       <div className={styles.cardBody}>
         <div className={styles.preflight}>
           <div className={styles.preflightProgress}>

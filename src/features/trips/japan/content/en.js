@@ -169,7 +169,7 @@ const content = {
     "noResults": "No matching places. Try another search or category.",
     "openPlace": "Directions",
     "instructions": "Make your own editable Google My Maps copy",
-    "steps": "Download the full English KML above, open Google My Maps, create a new map and import the file. It includes all 41 locations in the original eight layers and can be edited under your own Google account. No access to Yun-Chuan’s account is required.",
+    "steps": "Download the full English KML above, open Google My Maps, create a new map and import the file. It includes all 41 locations in the original eight layers and can be edited in your own Google account.",
     "caveat": "The original embedded map may display Chinese names. The searchable list and English KML use English place labels. The KML preserves places, coordinates and layers, but not all custom KMZ icons.",
     "iframeTitle": "Original Osaka and Kyoto trip map"
   },
