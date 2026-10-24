@@ -92,7 +92,7 @@ test("place links search by business name rather than geographic coordinates", a
   await expect(gokago).toBeVisible();
   const gokagoUrl = new URL(await gokago.getAttribute("href"));
   expect(gokagoUrl.searchParams.get("query")).toBe("GOKAGO, Kyoto, Japan");
-  expect(gokagoUrl.searchParams.get("query")).not.toMatch(/^\\d+[.\\d]*,/);
+  expect(gokagoUrl.searchParams.get("query")).not.toContain("34.9956509");
 });
 
 test("desktop layout and map filters without a horizontal scrollbar", async ({ page }) => {
