@@ -37,7 +37,7 @@ export default function Checklist({ content }) {
     <details id="checklist" className={styles.card} open>
       <summary className={styles.cardSummary}>
         <span className={styles.sectionKicker}>02 / CHECKLIST</span>
-        <h2 className={styles.cardHeading}>{content.headings.checklist}</h2>
+        <h2 className={styles.sectionTitle}>{content.headings.checklist}</h2>
         <p className={styles.sectionIntro}>{content.headings.checklistDescription}</p>
       </summary>
       <div className={styles.cardBody}>

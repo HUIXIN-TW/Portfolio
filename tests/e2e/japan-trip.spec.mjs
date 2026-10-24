@@ -83,9 +83,22 @@ test("desktop layout and map filters without a horizontal scrollbar", async ({ p
     '#itinerary > h2, #checklist > summary h2, #phrases > summary h2, #reference > h2, #trip-map h2'
   );
   await expect(mainHeadings).toHaveCount(5);
-  const headingFontSizes = await mainHeadings.evaluateAll((nodes) =>
-    nodes.map((node) => getComputedStyle(node).fontSize));
-  expect(new Set(headingFontSizes).size).toBe(1);
+  // One CSS class and one typography contract, including inherited global h2 padding.
+  const headings = await mainHeadings.evaluateAll((nodes) =>
+    nodes.map((node) => {
+      const cs = getComputedStyle(node);
+      return {
+        fontSize: cs.fontSize, fontWeight: cs.fontWeight,
+        lineHeight: cs.lineHeight, letterSpacing: cs.letterSpacing,
+        paddingTop: cs.paddingTop, display: cs.display, marginTop: cs.marginTop,
+        offsetX: Math.round(node.getBoundingClientRect().left),
+      };
+    }));
+  for (const property of ["fontSize", "fontWeight", "lineHeight", "letterSpacing", "paddingTop", "display", "marginTop", "offsetX"]) {
+    expect(new Set(headings.map((h) => h[property])).size, property + " differs: " + JSON.stringify(headings)).toBe(1);
+  }
+  expect(headings[0].paddingTop).toBe("0px");
+  expect(headings[0].display).toBe("block");
   const referenceTitle = await page.locator("#reference > h2").evaluate((node) =>
     parseFloat(getComputedStyle(node).fontSize));
   const hotelTitle = await page.locator("#reference h3").first().evaluate((node) =>
@@ -102,9 +115,28 @@ test("desktop layout and map filters without a horizontal scrollbar", async ({ p
   await expect(page.locator('#trip-map details:has(a[href="https://www.google.com/maps/d/"])')).toHaveCount(0);
   const mapInfo = page.locator("#trip-map").getByText("想自行編輯地圖？", { exact: false });
   await expect(mapInfo).toBeVisible();
-  const summary = page.locator("#checklist > summary");
-  await summary.click();
-  await expect(summary).toHaveCSS("border-bottom-width", "0px");
+  // Hover and open must not introduce a horizontal line or a different-colour header strip.
+  const summaries = [
+    page.locator("#checklist > summary"),
+    page.locator("#phrases > summary"),
+    page.locator("#itinerary details > summary").first(),
+    page.locator("#reference details > summary").first(),
+  ];
+  for (const summary of summaries) {
+    const initial = await summary.evaluate((node) => ({
+      color: getComputedStyle(node).backgroundColor,
+      border: getComputedStyle(node).borderBottomWidth,
+    }));
+    await summary.hover();
+    await expect(summary).toHaveCSS("background-color", initial.color);
+    await expect(summary).toHaveCSS("border-bottom-width", initial.border);
+  }
+  const checklistSummary = page.locator("#checklist > summary");
+  await checklistSummary.click();
+  await expect(checklistSummary).toHaveCSS("border-bottom-width", "0px");
+  await expect(checklistSummary).toHaveCSS("background-color", "rgba(0, 0, 0, 0)");
+  await expect(page.locator("#itinerary details").nth(1)).toHaveCSS("border-top-width", "0px");
+  await expect(page.locator("#reference details").nth(1)).toHaveCSS("border-top-width", "0px");
   const decoration = await page.locator("header").first().evaluate((node) =>
     getComputedStyle(node, "::after").backgroundImage);
   expect(decoration).toContain("sakura-decoration.svg");

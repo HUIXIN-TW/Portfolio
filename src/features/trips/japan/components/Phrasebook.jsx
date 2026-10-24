@@ -7,7 +7,7 @@ export default function Phrasebook({ content }) {
     <details id="phrases" className={styles.card}>
       <summary className={styles.cardSummary}>
         <span className={styles.sectionKicker}>03 / PHRASEBOOK</span>
-        <h2 className={styles.cardHeading}>
+        <h2 className={styles.sectionTitle}>
           {content.headings.phrases}
           <span className={styles.phraseCount}>{phrases.length} {content.actions.phraseCountUnit}</span>
         </h2>
