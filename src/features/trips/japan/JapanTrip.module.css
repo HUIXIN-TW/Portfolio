@@ -348,7 +348,7 @@
   background: #fff;
   box-shadow: 0 8px 32px rgba(15, 63, 66, 0.045);
 }
-.referenceSection .sectionTitle { margin: 8px 0 6px; }
+.referenceSection .sectionTitle { margin: 0 0 6px; }
 .referenceStack { display: flex; flex-direction: column; gap: 0; }
 .referenceStack > .card {
   width: 100%;
@@ -481,7 +481,7 @@
   background: #fff;
 }
 .mapIntroduction { display: flex; align-items: end; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
-.mapIntroduction h2 { margin: 8px 0 6px; font-weight: 700; }
+.mapIntroduction h2 { margin: 0 0 6px; font-weight: 700; }
 .mapIntroduction p { max-width: 580px; color: var(--trip-muted); font-size: 14px; line-height: 1.7; }
 .mapActions { gap: 8px; }
 .primaryButton, .secondaryButton {
@@ -525,7 +525,7 @@
   vertical-align: middle;
 }
 .cardSummary { display: block; }
-.cardSummary .sectionKicker { margin-bottom: 8px; }
+.cardSummary .sectionKicker { margin-bottom: 16px; }
 .cardHeading {
   display: inline;
   margin: 0;
@@ -544,7 +544,7 @@
   padding: 0 clamp(20px, 3.5vw, 40px) clamp(20px, 3.5vw, 40px);
 }
 .extras > .card > .cardSummary .sectionKicker {
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 }
 .cardSummary::after { margin-left: 12px; }
 .referenceStack .infoList { margin: 0; }
