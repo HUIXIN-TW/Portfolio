@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { mapLayers, mapPlaces, localizePlace, localizeNote } from "../data/places";
+import { filterMapPlaces, matchingLayerIds, getGoogleMapsUrl } from "../utils/map";
 import styles from "../JapanTrip.module.css";
 
 const mapId = "1I-jR7-sL_QXOJdqcB0a8Go19_VI2dsE";
@@ -10,52 +11,27 @@ function formatMapCopy(value) {
     .replaceAll("{layers}", String(mapLayers.length));
 }
 
-function matchesSearch(place, search, locale) {
-  if (!search) return true;
-  const layer = mapLayers.find((item) => item.id === place.layer);
-  return [place.name, place.en || "", localizeNote(place, locale), layer?.label[locale] || ""]
-    .some((part) => part.toLocaleLowerCase().includes(search));
-}
-
-function getGoogleMapsUrl(place) {
-  // Coordinates alone open a dropped pin, not the business details panel.
-  // Google Maps resolves a named place more reliably with its address or city.
-  const name = place.en || place.name;
-  const location = place.address || (place.lat >= 34.9 ? "Kyoto, Japan" : "Osaka, Japan");
-  return "https://www.google.com/maps/search/?api=1&query=" +
-    encodeURIComponent(name + ", " + location);
-}
-
 export default function TripMap({ content }) {
   const { map, locale } = content;
   const [layerId, setLayerId] = useState("all");
   const [query, setQuery] = useState("");
   const [expandedLayers, setExpandedLayers] = useState([]);
-  const search = query.trim().toLocaleLowerCase();
   const params = new URLSearchParams({ mid: mapId, hl: locale });
 
-  const visible = mapPlaces.filter((place) =>
-    (layerId === "all" || place.layer === layerId) && matchesSearch(place, search, locale));
+  const visible = filterMapPlaces(layerId, query, locale);
 
   const changeSearch = (value) => {
     setQuery(value);
-    const term = value.trim().toLocaleLowerCase();
-    setExpandedLayers(term
-      ? mapLayers.filter((layer) =>
-        (layerId === "all" || layer.id === layerId) &&
-        mapPlaces.some((place) => place.layer === layer.id && matchesSearch(place, term, locale))
-      ).map((layer) => layer.id)
+    setExpandedLayers(value.trim()
+      ? matchingLayerIds(filterMapPlaces(layerId, value, locale))
       : layerId === "all" ? [] : [layerId]);
   };
+
   const selectLayer = (id) => {
     setLayerId(id);
-    const term = query.trim().toLocaleLowerCase();
     setExpandedLayers(id !== "all"
       ? [id]
-      : term ? mapLayers.filter((layer) =>
-          mapPlaces.some((place) => place.layer === layer.id && matchesSearch(place, term, locale))
-        ).map((layer) => layer.id)
-        : []);
+      : query.trim() ? matchingLayerIds(filterMapPlaces("all", query, locale)) : []);
   };
   const toggleLayer = (id) => {
     setExpandedLayers((previous) =>
@@ -147,7 +123,7 @@ export default function TripMap({ content }) {
         </div>
       </div>
       <div className={styles.mapHelp}>
-        <p>{formatMapCopy(map.steps)} <a href="https://www.google.com/maps/d/" target="_blank" rel="noopener noreferrer">Google My Maps ↗</a></p>
+        <p>{map.steps} <a href="https://www.google.com/maps/d/" target="_blank" rel="noopener noreferrer">Google My Maps ↗</a></p>
         <p className={styles.mapDisclaimer}>{map.caveat}</p>
       </div>
     </section>

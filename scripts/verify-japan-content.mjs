@@ -103,6 +103,7 @@ for (const place of mapPlaces) {
   assert.ok(place.lat >= 34.5 && place.lat <= 35.2);
   assert.ok(place.lng >= 135.3 && place.lng <= 135.9);
   assert.ok(localizePlace(place, "zh") && localizePlace(place, "en"));
+  assert.ok(["osaka", "kyoto"].includes(place.city), "Missing city for " + place.id);
   if (place.address) assert.ok(place.address.includes("Japan"), "Invalid place address: " + place.id);
 }
 for (const locale of ["zh", "en"]) {
