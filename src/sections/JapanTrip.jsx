@@ -9,6 +9,7 @@ export default function MapPage() {
   const [preflightTotal, setPreflightTotal] = useState(0);
   const [preflightRemaining, setPreflightRemaining] = useState(0);
   const [meetingTime, setMeetingTime] = useState("");
+  const [copiedField, setCopiedField] = useState("");
   const preflightRef = useRef(null);
   const preflightStorageKey = "preflightChecklist";
   const preflightTimeKey = "preflightMeetingTime";
@@ -35,6 +36,34 @@ export default function MapPage() {
       window.speechSynthesis.removeEventListener("voiceschanged", pickVoice);
     };
   }, []);
+
+  const copyHotelDetail = async (field, value) => {
+    try {
+      await navigator.clipboard.writeText(value);
+      setCopiedField(field);
+      window.setTimeout(() => setCopiedField((current) => current === field ? "" : current), 1800);
+    } catch {
+      window.prompt(`複製${field}：`, value);
+    }
+  };
+
+  const hotelDetail = (label, value, copyValue = value) => (
+    <li key={label}>
+      <span className={styles.infoLabel}>{label}</span>
+      <span className={styles.infoActions}>
+        <span className={styles.infoValue}>{value}</span>
+        <button
+          type="button"
+          className={styles.copyButton}
+          onClick={() => copyHotelDetail(label, copyValue)}
+          aria-label={`複製${label}`}
+          title={copiedField === label ? "已複製！" : `複製${label}`}
+        >
+          {copiedField === label ? "✓" : "⧉"}
+        </button>
+      </span>
+    </li>
+  );
 
   const speak = (text) => {
     if (typeof window === "undefined" || !("speechSynthesis" in window)) {
@@ -862,32 +891,11 @@ export default function MapPage() {
           <summary className={styles.cardSummary}>飯店資訊卡</summary>
           <div className={styles.cardBody}>
             <ul className={styles.infoList}>
-              <li>
-                <span className={styles.infoLabel}>飯店名</span>
-                <span className={styles.infoValue}>
-                  GRIDS PREMIUM HOTEL OSAKA NAMBA
-                </span>
-              </li>
-              <li>
-                <span className={styles.infoLabel}>地址</span>
-                <span className={styles.infoValue}>
-                  大阪府大阪市浪速区難波中1丁目7-7
-                </span>
-              </li>
-              <li>
-                <span className={styles.infoLabel}>電話</span>
-                <a className={styles.infoValue} href="tel:+81666350810">
-                  +81 6-6635-0810
-                </a>
-              </li>
-              <li>
-                <span className={styles.infoLabel}>入住時間</span>
-                <span className={styles.infoValue}>3pm</span>
-              </li>
-              <li>
-                <span className={styles.infoLabel}>退房時間</span>
-                <span className={styles.infoValue}>11am</span>
-              </li>
+              {hotelDetail("飯店名", "GRIDS PREMIUM HOTEL OSAKA NAMBA")}
+              {hotelDetail("地址", "大阪府大阪市浪速区難波中1丁目7-7")}
+              {hotelDetail("電話", "+81 6-6635-0810")}
+              {hotelDetail("入住時間", "15:00")}
+              {hotelDetail("退房時間", "11:00")}
             </ul>
           </div>
         </details>
