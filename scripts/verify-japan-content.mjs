@@ -31,6 +31,12 @@ for (const content of [zh, en]) {
   assert.equal(content.days.length, 3, content.locale + ": expected three days");
   assert.deepEqual(content.days.map((day) => day.number), ["01", "02", "03"]);
   assert.ok(content.meta.title && content.hero.title);
+  for (const section of ["itinerary", "checklist", "phrases", "reference"]) {
+    assert.equal(content.headings[section], content.navigation[section],
+      content.locale + ": section title must match the navigation label: " + section);
+  }
+  assert.equal(content.map.title, content.navigation.map,
+    content.locale + ": map title must match the navigation label");
   assert.equal(Object.keys(content.checklistItems).length, checklistIds.length);
   assert.equal(Object.keys(content.phraseTranslations).length, phrases.length);
   assert.deepEqual(Object.keys(content.checklist.sectionTitles).sort(),
