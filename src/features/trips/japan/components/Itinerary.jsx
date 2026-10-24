@@ -4,7 +4,7 @@ export default function Itinerary({ content }) {
   return (
     <section id="itinerary" className={styles.itinerary} aria-labelledby="itinerary-title">
       <span className={styles.sectionKicker}>01 / ITINERARY</span>
-      <h2 className={styles.sectionTitle} id="itinerary-title">{content.headings.itinerary}</h2>
+      <h2 className={styles.sectionTitle} id="itinerary-title">{content.navigation.itinerary}</h2>
       <p className={styles.sectionIntro}>{content.headings.itineraryDescription}</p>
       {content.days.map((day) => (
         <details className={styles.day} key={day.number}>

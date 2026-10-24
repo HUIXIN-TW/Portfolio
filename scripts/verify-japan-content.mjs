@@ -31,17 +31,14 @@ for (const content of [zh, en]) {
   assert.equal(content.days.length, 3, content.locale + ": expected three days");
   assert.deepEqual(content.days.map((day) => day.number), ["01", "02", "03"]);
   assert.ok(content.meta.title && content.hero.title);
-  for (const section of ["itinerary", "checklist", "phrases", "reference"]) {
-    assert.equal(content.headings[section], content.navigation[section],
-      content.locale + ": section title must match the navigation label: " + section);
+  for (const section of ["itinerary", "checklist", "phrases", "reference", "map"]) {
+    assert.ok(content.navigation[section]?.trim(), content.locale + ": missing section label " + section);
   }
-  assert.equal(content.map.title, content.navigation.map,
-    content.locale + ": map title must match the navigation label");
   assert.equal(Object.keys(content.checklistItems).length, checklistIds.length);
   assert.equal(Object.keys(content.phraseTranslations).length, phrases.length);
   assert.deepEqual(Object.keys(content.checklist.sectionTitles).sort(),
     checklistGroups.map((group) => group.id).sort());
-  assert.ok(content.map.title && content.map.open && content.map.iframeTitle);
+  assert.ok(content.map.open && content.map.iframeTitle);
   assert.ok(content.hotel.labels.name && content.hotel.labels.address);
   assert.ok(hotel.address[content.locale]);
 
@@ -122,7 +119,7 @@ console.log("Full KMZ import verified: 41 unique places, eight layers and two ed
 // Both languages use a 24-hour clock for itinerary times.
 for (const content of [zh, en]) {
   assert.ok(content.navigation.reference, content.locale + ": reference navigation is required");
-  assert.ok(content.headings.reference && content.headings.referenceDescription,
+  assert.ok(content.navigation.reference && content.headings.referenceDescription,
     content.locale + ": reference heading and description are required");
   for (const day of content.days) {
     for (const stop of day.stops) {

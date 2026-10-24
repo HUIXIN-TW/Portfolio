@@ -25,7 +25,7 @@ export default function JapanTripPage({ locale = "zh" }) {
         <Phrasebook content={content} />
         <section id="reference" className={styles.referenceSection} aria-labelledby="reference-heading">
           <span className={styles.sectionKicker}>04 / REFERENCE</span>
-          <h2 className={styles.sectionTitle} id="reference-heading">{content.headings.reference}</h2>
+          <h2 className={styles.sectionTitle} id="reference-heading">{content.navigation.reference}</h2>
           <p className={styles.sectionIntro}>{content.headings.referenceDescription}</p>
           <div className={styles.referenceStack}>
             <HotelInfo content={content} />

@@ -210,13 +210,9 @@ const content = {
     "map": "地點地圖"
   },
   "headings": {
-    "reference": "旅行資訊",
     "referenceDescription": "飯店地址、入住時間與日本緊急聯絡電話。",
-    "itinerary": "每日行程",
     "itineraryDescription": "展開每天的行程，查看交通、景點與用餐安排。",
-    "checklist": "出門檢查",
     "checklistDescription": "出門前確認重要物品、天氣與房間安全。",
-    "phrases": "實用日語",
     "phrasesDescription": "常用日語、羅馬拼音與發音，旅途中可快速查找。",
     "hotel": "飯店資訊",
     "emergency": "日本緊急聯絡電話"
@@ -262,7 +258,6 @@ const content = {
     "hotline": "觀光諮詢（多語）"
   },
   "map": {
-    "title": "地點地圖",
     "description": "原始地圖的 {places} 個收藏地點，依 {layers} 個分類整理，可搜尋、查看或下載完整 KML。",
     "open": "開啟原始地圖",
     "download": "下載完整地點 KML",

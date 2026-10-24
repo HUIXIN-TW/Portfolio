@@ -210,13 +210,9 @@ const content = {
     "map": "Places map"
   },
   "headings": {
-    "reference": "Travel info",
     "referenceDescription": "Hotel address, check-in details and emergency contacts in Japan.",
-    "itinerary": "Itinerary",
     "itineraryDescription": "Expand each day for transport, sights and food options.",
-    "checklist": "Before you go",
     "checklistDescription": "Check essentials, the weather and your room before heading out.",
-    "phrases": "Useful Japanese",
     "phrasesDescription": "Everyday Japanese with pronunciation and English translations.",
     "hotel": "Hotel details",
     "emergency": "Emergency contacts in Japan"
@@ -262,7 +258,6 @@ const content = {
     "hotline": "Japan Visitor Hotline"
   },
   "map": {
-    "title": "Places map",
     "description": "All {places} places from the original map, grouped into {layers} categories. Search, browse or download the full KML.",
     "open": "View original map",
     "download": "Download all places (KML)",
