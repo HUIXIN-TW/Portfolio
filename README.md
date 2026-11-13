@@ -60,6 +60,9 @@ Hosted on **Cloudflare Pages**.
 
 ## Portfolio route ownership
 
+The Projects page uses the canonical `/projects` route for both desktop/mobile navigation and direct links.
+The retired `/portfolio` path intentionally returns HTTP 404 and does not redirect.
+
 Portfolio does not serve or redirect retired Trips paths, including `/japan`,
 `/japan/en`, HTML aliases, or `/trips/japan/*`. They return HTTP 404
 instead of forwarding to another application.
