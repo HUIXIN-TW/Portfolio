@@ -25,5 +25,9 @@ node_modules/
 # Ignore the PDFs
 src/assets/pdf
 
-# Generated from the canonical Japan trip place inventory
-public/trips/japan/*.kml
+# Playwright diagnostics
+playwright-report/
+test-results/
+
+# Local Cloudflare emulator state
+.wrangler/

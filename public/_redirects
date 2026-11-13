@@ -1,0 +1,9 @@
+# Trips is hosted by its dedicated huixin-trips Worker.
+/japan https://trips.huixinyang.com/japan 301
+/japan.html https://trips.huixinyang.com/japan 301
+/japan/ https://trips.huixinyang.com/japan 301
+/japan/en https://trips.huixinyang.com/japan/en 301
+/japan/en/ https://trips.huixinyang.com/japan/en 301
+/japan/en.html https://trips.huixinyang.com/japan/en 301
+/japan/* https://trips.huixinyang.com/japan/:splat 301
+/trips/japan/* https://trips.huixinyang.com/trips/japan/:splat 301

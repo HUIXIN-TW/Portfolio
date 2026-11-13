@@ -16,7 +16,6 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run lint:strict
-      - run: npm run verify:trips
 
   build:
     name: Build
@@ -34,7 +33,8 @@ jobs:
 
   e2e:
     name: UI and layout checks
-    runs-on: ubuntu-latest
+    # Playwright 1.55.1 does not support ubuntu-latest's Ubuntu 26.04 image.
+    runs-on: ubuntu-24.04
     needs: build
     steps:
       - uses: actions/checkout@v4

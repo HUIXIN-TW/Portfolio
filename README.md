@@ -1,6 +1,7 @@
 ## 🔗 Demo
 
 - [Live Portfolio](https://portfolio.huixinyang.com/)
+- [Trips](https://trips.huixinyang.com/) — separate app and Cloudflare Worker, maintained in [huixin-web-platform](https://github.com/HUIXIN-TW/huixin-web-platform/tree/master/apps/public/trips).
 
 ## 🎮 Tech Stack
 
@@ -57,3 +58,15 @@ Hosted on **Cloudflare Pages**.
 | `eslint.config.js` | ESLint rules |
 | `.prettierrc` | Prettier formatting rules |
 | `package.json` | Dependencies and scripts |
+
+## Trips migration
+
+Portfolio no longer bundles Japan trip pages, content, KML generation or trip assets.
+Cloudflare Pages `public/_redirects` permanently redirects legacy `/japan`, `/japan/en`,
+HTML aliases and `/trips/japan/*` assets to `https://trips.huixinyang.com`.
+A small React route fallback covers client-side navigation to legacy Japan paths.
+The Portfolio root and existing Portfolio routes remain on this Pages project.
+
+`npm run test:e2e` checks Portfolio navigation and the legacy client-side redirects.
+Vite preview does not implement Pages `_redirects`; verify HTTP 301 responses on the
+Cloudflare Pages preview deployment before merging.
