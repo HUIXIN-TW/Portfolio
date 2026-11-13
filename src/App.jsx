@@ -15,7 +15,6 @@ import BlogPostPage from "./sections/BlogPostPage";
 import { applyThemeToDocument, getInitialTheme, THEME_DRACULA, THEME_LIGHT, THEME_STORAGE_KEY } from "./utils/theme";
 
 import "./styles/main.css";
-import LegacyTripRedirect from "./sections/LegacyTripRedirect";
 
 const siteProps = {
   name: "Huixin Yang",
@@ -72,9 +71,15 @@ const SiteRoutes = ({ theme, handleThemeToggle, siteProps }) => {
           <Route path="/blog/:slug" element={<BlogPostPage />} />
           <Route path="/migration" element={<Migration />} />
           <Route path="/referee" element={<Referee />} />
-          <Route path="/japan" element={<LegacyTripRedirect />} />
-          <Route path="/japan/*" element={<LegacyTripRedirect />} />
-          <Route path="/japan.html" element={<LegacyTripRedirect />} />
+          <Route
+            path="*"
+            element={
+              <section className="mx-auto max-w-2xl px-6 py-16 text-center">
+                <h1 className="text-2xl font-semibold">404 · Page not found</h1>
+                <p className="mt-4"><a href="/" className="underline">Back to Portfolio</a></p>
+              </section>
+            }
+          />
         </Routes>
       </main>
       <Footer {...siteProps} theme={theme} />
