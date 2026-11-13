@@ -66,7 +66,7 @@ const SiteRoutes = ({ theme, handleThemeToggle, siteProps }) => {
           <Route path="/education" element={<Education />} />
           <Route path="/certificates-awards" element={<CertificatesAndAwards />} />
           <Route path="/experience" element={<Experience />} />
-          <Route path="/portfolio" element={<ProjectsPage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
           <Route path="/migration" element={<Migration />} />
