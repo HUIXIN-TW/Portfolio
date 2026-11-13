@@ -17,6 +17,9 @@ assert.ok(rules.every(([from, to, code]) => from.startsWith("/") && to === "/ind
 assert.ok(rules.every(([from]) => !/^\/(?:japan(?:[/.]|$)|trips\/japan(?:\/|$))/.test(from)),
   "Retired Trips URLs must not be handled as Portfolio routes");
 
+assert.ok(!rules.some(([from]) => from === "/portfolio" || from === "/portfolio/"),
+  "The old /portfolio URL must return HTTP 404 instead of an internal rewrite or redirect");
+
 const routePaths = [...app.matchAll(/<Route\s+path="(\/[^"]+)"/g)].map((m) => m[1]);
 const expected = new Set(routePaths.flatMap((path) => {
   if (path.includes(":")) return [path.replace(/:[^/]+/g, "*")];
