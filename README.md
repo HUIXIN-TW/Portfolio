@@ -1,7 +1,6 @@
 ## 🔗 Demo
 
 - [Live Portfolio](https://portfolio.huixinyang.com/)
-- [Trips](https://trips.huixinyang.com/) — separate app and Cloudflare Worker, maintained in [huixin-web-platform](https://github.com/HUIXIN-TW/huixin-web-platform/tree/master/apps/public/trips).
 
 ## 🎮 Tech Stack
 
@@ -59,14 +58,18 @@ Hosted on **Cloudflare Pages**.
 | `.prettierrc` | Prettier formatting rules |
 | `package.json` | Dependencies and scripts |
 
-## Trips migration
+## Portfolio route ownership
 
-Portfolio no longer bundles Japan trip pages, content, KML generation or trip assets.
-Cloudflare Pages `public/_redirects` permanently redirects legacy `/japan`, `/japan/en`,
-HTML aliases and `/trips/japan/*` assets to `https://trips.huixinyang.com`.
-A small React route fallback covers client-side navigation to legacy Japan paths.
-The Portfolio root and existing Portfolio routes remain on this Pages project.
+Portfolio does not serve or redirect retired Trips paths, including `/japan`,
+`/japan/en`, HTML aliases, or `/trips/japan/*`. They return HTTP 404
+instead of forwarding to another application.
 
-`npm run test:e2e` checks Portfolio navigation and the legacy client-side redirects.
-Vite preview does not implement Pages `_redirects`; verify HTTP 301 responses on the
-Cloudflare Pages preview deployment before merging.
+Cloudflare Pages normally serves `index.html` for unknown SPA paths.
+`public/404.html` disables that catch-all, and `public/_redirects`
+contains **internal 200 rewrites only for Portfolio routes**, including
+dynamic blog posts. New React Router routes must be added to `_redirects`
+or the production build verification will fail.
+
+`npm run build` verifies the Pages route contract, while the Playwright
+suite covers valid Portfolio navigation and the client-side not-found view.
+Verify actual 404 / 200 HTTP statuses on the Cloudflare Pages deployment.
