@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint:strict": "eslint \"src/**/*.{js,jsx}\" \"tests/e2e/**/*.mjs\" \"*.config.{js,mjs}\"",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "postbuild": "node scripts/verify-pages-routing.mjs"
   },
   "repository": {
     "type": "git",

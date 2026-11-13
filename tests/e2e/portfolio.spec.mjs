@@ -7,18 +7,23 @@ test("Portfolio home and Projects navigation remain available", async ({ page })
   await page.getByRole("link", { name: "Projects", exact: true }).click();
   await expect(page).toHaveURL(/\/portfolio$/);
   await expect(page.locator("#footer")).toBeVisible();
-  await expect(page.getByRole("heading", { name: /大阪|Osaka/ })).toHaveCount(0);
 });
 
-for (const legacy of ["/japan", "/japan/en", "/japan/en.html", "/japan?from=bookmark#checklist"]) {
-  test(`Legacy ${legacy} leaves Portfolio for the Trips origin`, async ({ page }) => {
-    // Do not depend on the live external site; assert the browser's real navigation request.
-    await page.route("https://trips.huixinyang.com/**", route => route.fulfill({
-      contentType: "text/html",
-      body: "<h1>Trips destination</h1>",
-    }));
+test("Portfolio deep links still render on refresh", async ({ page }) => {
+  for (const path of ["/about", "/education", "/portfolio", "/blog"]) {
+    await page.goto(path);
+    await expect(page.locator("#main")).toBeVisible();
+    await expect(page.getByRole("heading", { name: "404 · Page not found" })).toHaveCount(0);
+  }
+});
+
+for (const legacy of ["/japan", "/japan/en", "/trips/japan/"]) {
+  test(`Retired ${legacy} shows a local 404 rather than redirecting to Trips`, async ({ page }) => {
+    // Vite preview tests React's in-app not-found view. Production HTTP 404 comes
+    // from Cloudflare Pages' 404.html (validated by the build route-contract check).
     await page.goto(legacy);
-    await expect(page).toHaveURL(`https://trips.huixinyang.com${legacy}`);
-    await expect(page.getByRole("heading", { name: "Trips destination" })).toBeVisible();
+    await expect(page).toHaveURL(`http://127.0.0.1:4173${legacy}`);
+    await expect(page.getByRole("heading", { name: "404 · Page not found" })).toBeVisible();
+    await expect(page.getByRole("link", { name: "Back to Portfolio" })).toHaveAttribute("href", "/");
   });
 }

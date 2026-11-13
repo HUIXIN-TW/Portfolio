@@ -1,9 +1,20 @@
-# Trips is hosted by its dedicated huixin-trips Worker.
-/japan https://trips.huixinyang.com/japan 301
-/japan.html https://trips.huixinyang.com/japan 301
-/japan/ https://trips.huixinyang.com/japan 301
-/japan/en https://trips.huixinyang.com/japan/en 301
-/japan/en/ https://trips.huixinyang.com/japan/en 301
-/japan/en.html https://trips.huixinyang.com/japan/en 301
-/japan/* https://trips.huixinyang.com/japan/:splat 301
-/trips/japan/* https://trips.huixinyang.com/trips/japan/:splat 301
+# Only Portfolio routes are served by this Pages project.
+# 404.html disables Pages' default SPA catch-all. Rewrite known client routes to /index.html.
+# Do not redirect retired /japan or /trips/japan paths to another application.
+/about /index.html 200
+/about/ /index.html 200
+/education /index.html 200
+/education/ /index.html 200
+/certificates-awards /index.html 200
+/certificates-awards/ /index.html 200
+/experience /index.html 200
+/experience/ /index.html 200
+/portfolio /index.html 200
+/portfolio/ /index.html 200
+/blog /index.html 200
+/blog/ /index.html 200
+/blog/* /index.html 200
+/migration /index.html 200
+/migration/ /index.html 200
+/referee /index.html 200
+/referee/ /index.html 200
