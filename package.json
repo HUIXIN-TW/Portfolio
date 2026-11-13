@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "lint:strict": "eslint \"src/**/*.{js,jsx}\" \"tests/e2e/**/*.mjs\" \"*.config.{js,mjs}\"",
     "test:e2e": "playwright test",
-    "postbuild": "node scripts/verify-pages-routing.mjs"
+    "postbuild": "node scripts/generate-pages-entrypoints.mjs && node scripts/verify-pages-routing.mjs",
+    "preview:pages": "npx --yes wrangler@4.160.0 pages dev dist --ip 127.0.0.1 --port 4173"
   },
   "repository": {
     "type": "git",
