@@ -68,11 +68,20 @@ Portfolio does not serve or redirect retired Trips paths, including `/japan`,
 instead of forwarding to another application.
 
 Cloudflare Pages normally serves `index.html` for unknown SPA paths.
-`public/404.html` disables that catch-all, and `public/_redirects`
-contains **internal 200 rewrites only for Portfolio routes**, including
-dynamic blog posts. New React Router routes must be added to `_redirects`
-or the production build verification will fail.
+`public/404.html` disables that catch-all so retired Trips and Portfolio paths
+return a native HTTP 404. Avoid `_redirects` rewrites to `/index.html`:
+production `/projects` previously returned **HTTP 308 Location: /** instead
+of loading Projects. This regression was missed by Vite's SPA fallback tests.
 
-`npm run build` verifies the Pages route contract, while the Playwright
-suite covers valid Portfolio navigation and the client-side not-found view.
-Verify actual 404 / 200 HTTP statuses on the Cloudflare Pages deployment.
+The production build now generates **physical clean-URL HTML entrypoints**
+(e.g. `dist/projects.html` and `dist/blog/hello-blog.html`) from React Router's
+literal routes and published Markdown blog slugs. Cloudflare Pages serves
+`/projects` directly from `/projects.html` without rewriting to root. Adding
+a new static route or published blog post automatically creates an entrypoint;
+unknown slugs remain HTTP 404. The build validates route ownership and absence
+of redirect rules. Static HTML entries load the same React bundle; content is
+rendered by the existing React Router, not server-rendered.
+
+`npm run test:e2e` uses **Wrangler Pages dev** rather than Vite preview, asserting
+server-level 200/404 statuses and no `Location` header for owned/retired routes.
+Still verify real HTTP responses after the Cloudflare Pages production deploy.
