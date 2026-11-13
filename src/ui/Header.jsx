@@ -73,7 +73,7 @@ const Header = ({ theme, onThemeToggle }) => {
             <NavLink to="/blog" className={navLinkClassName}>
               Blog
             </NavLink>
-            <NavLink to="/portfolio" className={navLinkClassName}>
+            <NavLink to="/projects" className={navLinkClassName}>
               Projects
             </NavLink>
             <NavLink to="/referee" className={navLinkClassName}>
@@ -129,7 +129,7 @@ const Header = ({ theme, onThemeToggle }) => {
               Blog
             </NavLink>
             <NavLink
-              to="/portfolio"
+              to="/projects"
               className={mobileNavLinkClassName}
               onClick={() => setToggleDropdown(!toggleDropdown)}
             >
