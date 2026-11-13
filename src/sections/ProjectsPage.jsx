@@ -31,7 +31,7 @@ const ProjectsPage = () => {
   );
 
   return (
-    <section className="padding" id="portfolio">
+    <section className="padding" id="projects">
       <div className={wideSectionContainer}>
         <h2 className={sectionTitle}>Projects</h2>
 
