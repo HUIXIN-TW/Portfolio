@@ -164,3 +164,21 @@ test('Migration document links remain readable in both appearances and hover sta
     expect(await link.evaluate((node) => getComputedStyle(node).outlineStyle)).not.toBe('none');
   }
 });
+
+test('native error appearance preserves preference and follows System without React', async ({ page }) => {
+  await page.emulateMedia({ colorScheme: 'light' });
+  await page.goto('/');
+  await page.getByRole('combobox', { name: 'Color theme' }).selectOption('dark');
+  const response = await page.goto('/does-not-exist/nested');
+  expect(response.status()).toBe(404);
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+  await expect(page.locator('html')).toHaveCSS('color-scheme', 'dark');
+  expect(await contrast(page.getByRole('link'))).toBeGreaterThanOrEqual(4.5);
+  await page.getByRole('link').click();
+  await page.getByRole('combobox', { name: 'Color theme' }).selectOption('system');
+  await page.goto('/does-not-exist/nested');
+  await page.emulateMedia({ colorScheme: 'dark' });
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+  await page.emulateMedia({ colorScheme: 'light' });
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
+});

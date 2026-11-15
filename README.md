@@ -187,3 +187,4 @@ sets the resolved appearance, native `color-scheme` and browser `theme-color` be
 React renders. The manifest launch background is static; the page updates on load.
 Semantic tokens own all appearance colors; layout and illustration assets are unchanged.
 Existing `theme=light` / `theme=dracula` choices are read when the new preference is absent. Select System to resume OS tracking.
+Native HTTP 404 pages use the same appearance bootstrap and app-colored error tokens without loading React.

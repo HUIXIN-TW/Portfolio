@@ -4,10 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#faf9f7" />
     <title>404 · Page not found | Huixin Portfolio</title>
+    <!-- Native HTTP errors resolve the same preference without loading React. -->
+    <script src="/theme.js" data-light="#faf9f7" data-dark="#191b20" data-legacy="portfolio"></script>
     <style>
-      body { font-family: system-ui, sans-serif; max-width: 42rem; margin: 12vh auto; padding: 0 1.5rem; color: #1f2937; }
-      a { color: inherit; text-decoration: underline; }
+      :root { --error-background: #faf9f7; --error-ink: #25272b; --error-accent: #415e7a; background: var(--error-background); color: var(--error-ink); }
+      :root[data-theme="dark"] { --error-background: #191b20; --error-ink: #f3f4f5; --error-accent: #b0c8e2; }
+      body { font-family: system-ui, sans-serif; max-width: 42rem; margin: 12vh auto; padding: 0 1.5rem; }
+      a { display: inline-flex; align-items: center; min-height: 44px; color: var(--error-accent); text-decoration: underline; }
+      a:focus-visible { outline: 2px solid var(--error-accent); outline-offset: 4px; }
     </style>
   </head>
   <body>
