@@ -107,6 +107,7 @@ for (const width of [320, 390, 1280]) {
         expect(await page.evaluate(() => document.documentElement.scrollWidth - innerWidth)).toBeLessThanOrEqual(1);
         await select.focus();
         await expect(select).toBeFocused();
+        expect(await select.evaluate((node) => parseFloat(getComputedStyle(node).fontSize))).toBeGreaterThanOrEqual(16);
         expect(await select.evaluate((node) => getComputedStyle(node).outlineStyle)).not.toBe('none');
         expect(await select.evaluate((node) => node.getBoundingClientRect().height)).toBeGreaterThanOrEqual(44);
         const expectedMeta = await page.locator('script[src="/theme.js"]').getAttribute('data-' + appearance);

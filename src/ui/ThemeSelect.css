@@ -19,7 +19,11 @@
   padding: 8px 24px 8px 10px;
   color: var(--theme-ink);
   background-color: var(--theme-surface);
-  font: inherit;
+  /* Native iOS form controls stay at 16px to avoid focus zoom. */
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: inherit;
+  line-height: 1.4;
   cursor: pointer;
 }
 .theme-select select:hover { border-color: var(--theme-accent); }
