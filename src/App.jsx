@@ -84,7 +84,7 @@ const SiteRoutes = ({ theme, handleThemeToggle, siteProps }) => {
           />
         </Routes>
       </main>
-      <Footer {...siteProps} theme={theme} />
+      <Footer {...siteProps} />
     </div>
   );
 };

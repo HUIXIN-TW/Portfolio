@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { THEME_DRACULA } from "../utils/theme";
 import { PRIMARY_NAV_ITEMS, SECONDARY_NAV_ITEMS } from "../config/routes.mjs";
+import ExternalLink from "./ExternalLink";
 
 const navClass = ({ isActive }) =>
   isActive ? "editorial-nav-link is-active" : "editorial-nav-link";
@@ -42,18 +43,18 @@ const Header = ({ theme, onThemeToggle }) => {
           {PRIMARY_NAV_ITEMS.map(({ to, label }) => (
             <NavLink key={to} className={navClass} to={to}>{label}</NavLink>
           ))}
-          <a className="editorial-nav-link" href="https://resume.huixinyang.com/">
+          <ExternalLink className="editorial-nav-link" href="https://resume.huixinyang.com/">
             Resume
-          </a>
+          </ExternalLink>
           <details className="editorial-more">
             <summary className="editorial-nav-link">More</summary>
             <div className="editorial-more-links">
               {SECONDARY_NAV_ITEMS.map(({ to, label }) => (
                 <NavLink key={to} className={navClass} to={to}>{label}</NavLink>
               ))}
-              <a className="editorial-nav-link" href="https://github.com/HUIXIN-TW" target="_blank" rel="noopener noreferrer">
+              <ExternalLink className="editorial-nav-link" href="https://github.com/HUIXIN-TW">
                 GitHub
-              </a>
+              </ExternalLink>
             </div>
           </details>
         </nav>
@@ -84,15 +85,15 @@ const Header = ({ theme, onThemeToggle }) => {
               {label}
             </NavLink>
           ))}
-          <a className="editorial-nav-link" href="https://resume.huixinyang.com/">Resume</a>
+          <ExternalLink className="editorial-nav-link" href="https://resume.huixinyang.com/">Resume</ExternalLink>
           {SECONDARY_NAV_ITEMS.map(({ to, label }) => (
             <NavLink key={to} className={navClass} to={to} onClick={() => setMobileOpen(false)}>
               {label}
             </NavLink>
           ))}
-          <a className="editorial-nav-link" href="https://github.com/HUIXIN-TW" target="_blank" rel="noopener noreferrer">
+          <ExternalLink className="editorial-nav-link" href="https://github.com/HUIXIN-TW">
             GitHub
-          </a>
+          </ExternalLink>
         </div>
       </nav>
     </header>

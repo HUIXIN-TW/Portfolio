@@ -1,5 +1,5 @@
 // A single semantic style vocabulary across Home, Projects and supporting routes.
-export const sectionContainer = "mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8";
+export const sectionContainer = "editorial-container";
 export const wideSectionContainer = "mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8";
 export const sectionTitle = "editorial-section-title";
 export const subsectionTitle = "editorial-subsection-title";

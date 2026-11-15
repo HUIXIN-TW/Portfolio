@@ -1,103 +1,71 @@
-/**
- * Footer component
- *
- * Displays avenues to contact you.
- * Contact information is passed in from the App component that
- * renders the Footer.
- *
- * If a social value has an empty string it will not be displayed.
- */
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import { ROUTES } from "../config/routes.mjs";
+import ExternalLink from "./ExternalLink";
 
-const devDotToIcon = new URL("../assets/images/socials/devdotto.svg", import.meta.url).href;
-const envelopeIcon = new URL("../assets/images/socials/envelope.svg", import.meta.url).href;
-const gitHubIcon = new URL("../assets/images/socials/github.svg", import.meta.url).href;
-const instagramIcon = new URL("../assets/images/socials/instagram.svg", import.meta.url).href;
-const linkedInIcon = new URL("../assets/images/socials/linkedin.svg", import.meta.url).href;
-const mediumIcon = new URL("../assets/images/socials/medium.svg", import.meta.url).href;
-const twitterIcon = new URL("../assets/images/socials/twitter.svg", import.meta.url).href;
-const youTubeIcon = new URL("../assets/images/socials/youtube.svg", import.meta.url).href;
+// Editorial footer: identity, useful routes and explicit contact links.
+const Footer = ({ name, email, gitHub, linkedIn, devDotTo, instagram, medium, twitter, youTube }) => {
+  const contactLinks = [
+    email && { label: "Email", href: `mailto:${email}`, external: false },
+    gitHub && { label: "GitHub", href: `https://github.com/${gitHub}`, external: true },
+    linkedIn && { label: "LinkedIn", href: `https://www.linkedin.com/in/${linkedIn}`, external: true },
+    devDotTo && { label: "Dev.to", href: `https://dev.to/${devDotTo}`, external: true },
+    instagram && { label: "Instagram", href: `https://www.instagram.com/${instagram}`, external: true },
+    medium && { label: "Medium", href: `https://medium.com/@${medium}`, external: true },
+    twitter && { label: "Twitter", href: `https://twitter.com/${twitter}`, external: true },
+    youTube && { label: "YouTube", href: `https://www.youtube.com/c/${youTube}`, external: true },
+  ].filter(Boolean);
 
-/**
- * 💡 Learning resources
- *
- *  HTML hyperlinks: https://www.w3schools.com/html/html_links.asp
- *  Opening links in new tabs: https://www.freecodecamp.org/news/how-to-use-html-to-open-link-in-new-tab/
- */
-
-const Footer = (props) => {
-  const { devDotTo, email, gitHub, instagram, linkedIn, medium, name, twitter, youTube } = props;
-
-  // Keep the footer themeable from App props.
   return (
-    <div
-      id="footer"
-      className="editorial-footer flex w-full flex-col items-center gap-2 border-t"
-    >
-      <div className="flex justify-center gap-8">
-        {email && (
-          <a href={`mailto:${email}`}>
-            <img src={envelopeIcon} alt="email" className="socialIcon dark:brightness-0 dark:invert dark:opacity-90" />
+    <footer id="footer" className="editorial-footer">
+      <div className="editorial-container">
+        <div className="editorial-footer-top">
+          <div className="editorial-footer-identity">
+            <Link to={ROUTES.home} className="editorial-footer-brand">
+              {name}<span aria-hidden="true">.</span>
+            </Link>
+            <p>Platform Engineering · Backend Systems</p>
+          </div>
+          <div className="editorial-footer-columns">
+            <nav className="editorial-footer-column" aria-label="Footer pages">
+              <h2>Explore</h2>
+              <Link to={ROUTES.projects}>Work</Link>
+              <Link to={ROUTES.experience}>Experience</Link>
+              <Link to={ROUTES.about}>About</Link>
+              <ExternalLink href="https://resume.huixinyang.com/">Resume</ExternalLink>
+            </nav>
+            <nav className="editorial-footer-column" aria-label="Footer contact">
+              <h2>Connect</h2>
+              {contactLinks.map(({ label, href, external }) =>
+                external ? (
+                  <ExternalLink href={href} key={label}>{label}</ExternalLink>
+                ) : (
+                  <a href={href} key={label}>{label}</a>
+                )
+              )}
+            </nav>
+          </div>
+        </div>
+        <div className="editorial-footer-bottom">
+          <small>© {new Date().getFullYear()} {name}</small>
+          <a href="#main" className="editorial-footer-back-top">
+            Back to top <span aria-hidden="true">↑</span>
           </a>
-        )}
-        {devDotTo && (
-          <a href={`https://dev.to/${devDotTo}`} target="_blank" rel="noopener noreferrer">
-            <img src={devDotToIcon} alt="Dev.to" className="socialIcon dark:brightness-0 dark:invert dark:opacity-90" />
-          </a>
-        )}
-        {gitHub && (
-          <a href={`https://github.com/${gitHub}`} target="_blank" rel="noopener noreferrer">
-            <img src={gitHubIcon} alt="GitHub" className="socialIcon dark:brightness-0 dark:invert dark:opacity-90" />
-          </a>
-        )}
-        {instagram && (
-          <a href={`https://www.instagram.com/${instagram}`} target="_blank" rel="noopener noreferrer">
-            <img
-              src={instagramIcon}
-              alt="Instagram"
-              className="socialIcon dark:brightness-0 dark:invert dark:opacity-90"
-            />
-          </a>
-        )}
-        {linkedIn && (
-          <a href={`https://www.linkedin.com/in/${linkedIn}`} target="_blank" rel="noopener noreferrer">
-            <img
-              src={linkedInIcon}
-              alt="LinkedIn"
-              className="socialIcon dark:brightness-0 dark:invert dark:opacity-90"
-            />
-          </a>
-        )}
-        {medium && (
-          <a href={`https://medium.com/@${medium}`} target="_blank" rel="noopener noreferrer">
-            <img src={mediumIcon} alt="Medium" className="socialIcon dark:brightness-0 dark:invert dark:opacity-90" />
-          </a>
-        )}
-        {twitter && (
-          <a href={`https://twitter.com/${twitter}`} target="_blank" rel="noopener noreferrer">
-            <img src={twitterIcon} alt="Twitter" className="socialIcon dark:brightness-0 dark:invert dark:opacity-90" />
-          </a>
-        )}
-        {youTube && (
-          <a href={`https://www.youtube.com/c/${youTube}`} target="_blank" rel="noopener noreferrer">
-            <img src={youTubeIcon} alt="YouTube" className="socialIcon dark:brightness-0 dark:invert dark:opacity-90" />
-          </a>
-        )}
+        </div>
       </div>
-      <p className="mt-0 text-xs">Created by {name}</p>
-    </div>
+    </footer>
   );
 };
 
 Footer.propTypes = {
-  devDotTo: PropTypes.string,
+  name: PropTypes.string.isRequired,
   email: PropTypes.string,
   gitHub: PropTypes.string,
-  instagram: PropTypes.string,
   linkedIn: PropTypes.string,
+  devDotTo: PropTypes.string,
+  instagram: PropTypes.string,
   medium: PropTypes.string,
-  name: PropTypes.string.isRequired,
   twitter: PropTypes.string,
   youTube: PropTypes.string,
 };
