@@ -17,8 +17,11 @@ const routes = [...app.matchAll(/<Route\s+path="(\/[^"]+)"/g)].map((m) => m[1]);
 assert.ok(routes.includes("/projects"), "Projects must use /projects");
 assert.ok(!routes.includes("/portfolio"), "Old /portfolio must return 404");
 assert.ok(!routes.some((route) => /^\/japan(?:\/|$)/.test(route)), "No Trips routes on Portfolio");
-assert.ok((header.match(/to="\/projects"/g) ?? []).length === 2,
-  "Desktop and mobile Projects links must target /projects");
+// The navigation is data-driven: the same Work target renders on desktop and mobile.
+assert.ok(header.includes('{ to: "/projects", label: "Work" }'),
+  "Work navigation must target the canonical /projects route");
+assert.equal((header.match(/PRIMARY_LINKS\.map/g) ?? []).length, 2,
+  "Desktop and mobile navigation must both use the canonical primary links");
 
 const expected = routes.filter((route) => !route.includes(":") && !route.includes("*"));
 const publishedSlugs = [];
