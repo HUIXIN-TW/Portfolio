@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ProjectDetailsDialog from "./ProjectDetailsDialog";
+import ExternalLink from "./ExternalLink";
 import { getProjectTechnologies } from "../utils/projectFilters";
 import { getProjectDescription } from "../utils/projectDescription";
 
@@ -34,16 +35,23 @@ const ProjectCard = ({ data }) => {
               {technologies.length > 4 ? " / …" : ""}
             </p>
           )}
-          {hasContent && (
-            <button
-              className="editorial-details-toggle"
-              type="button"
-              aria-haspopup="dialog"
-              onClick={() => setDetailsOpen(true)}
-            >
-              View details <span aria-hidden="true">↗</span>
-            </button>
-          )}
+          <div className="editorial-project-card-actions">
+            {data.liveUrl && (
+              <ExternalLink href={data.liveUrl} className="editorial-live-link">
+                Live site
+              </ExternalLink>
+            )}
+            {hasContent && (
+              <button
+                className="editorial-details-toggle"
+                type="button"
+                aria-haspopup="dialog"
+                onClick={() => setDetailsOpen(true)}
+              >
+                View details <span aria-hidden="true">↗</span>
+              </button>
+            )}
+          </div>
         </div>
       </article>
       {hasContent && (

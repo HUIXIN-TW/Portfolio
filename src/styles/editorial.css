@@ -441,3 +441,71 @@ h3 { font-size: 1.25rem; font-weight: 600; line-height: 1.3; }
 @media (max-width: 46rem) {
   .platform-case-grid { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* About is an engineering profile; demos are linked from the Work archive. */
+.editorial-about-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 0.8fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+}
+.editorial-about-story { max-width: 40rem; min-width: 0; }
+.editorial-about-story h2,
+.editorial-about-background h2 {
+  margin: 0 0 1.25rem;
+  padding: 0;
+  font-size: clamp(1.55rem, 3vw, 2rem);
+  font-weight: 650;
+  letter-spacing: -0.04em;
+  line-height: 1.25;
+  color: var(--ed-ink);
+}
+.editorial-about-story p,
+.editorial-about-background-copy p {
+  margin: 0 0 1.1rem;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--ed-muted);
+}
+.editorial-about-actions { display: flex; flex-wrap: wrap; gap: 0.9rem 2rem; margin-top: 1.75rem; }
+.editorial-about-focus {
+  border-top: 1px solid var(--ed-border);
+  padding-top: 1.3rem;
+  min-width: 0;
+}
+.editorial-about-focus .editorial-eyebrow { margin-bottom: 0.5rem; }
+.editorial-about-focus h2 {
+  margin: 0 0 1.25rem;
+  padding: 0;
+  color: var(--ed-ink);
+  font-size: 1.2rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+.editorial-about-focus dl { margin: 0; }
+.editorial-about-focus dl > div { padding: 1.1rem 0; border-top: 1px solid var(--ed-border); }
+.editorial-about-focus dt { margin-bottom: 0.35rem; font-size: 0.94rem; font-weight: 650; color: var(--ed-ink); }
+.editorial-about-focus dd { margin: 0; font-size: 0.92rem; line-height: 1.7; color: var(--ed-muted); }
+.editorial-about-background {
+  border-top: 1px solid var(--ed-border);
+  margin-top: clamp(3rem, 6vw, 5rem);
+  padding-top: clamp(2.5rem, 4vw, 3.5rem);
+}
+.editorial-about-background .editorial-eyebrow { margin-bottom: 0.9rem; }
+.editorial-about-background-copy { max-width: var(--ed-reading-width); }
+.editorial-project-card-actions { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.5rem 1.5rem; }
+.editorial-project-card-actions .editorial-details-toggle { width: auto; min-width: 0; }
+.editorial-project-card-actions .editorial-live-link {
+  min-height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--ed-accent);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+.editorial-project-card-actions .editorial-live-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+@media (max-width: 46rem) {
+  .editorial-about-layout { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; }
+  .editorial-about-actions { gap: 0.75rem 1.25rem; }
+}

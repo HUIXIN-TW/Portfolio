@@ -33,6 +33,7 @@
       },
       {
         "project": "Notica Web",
+        "liveUrl": "https://notica.studio",
         "company": "WhatNow Studio",
         "url": "https://app.notica.studio",
         "youtubeVideoId": "EPsbRK-6gdo",
@@ -93,6 +94,7 @@
       },
       {
         "project": "WhatToEat app",
+        "liveUrl": "https://whattoeat.huixinyang.com/",
         "company": "Independent Project",
         "url": "https://github.com/HUIXIN-TW/what-to-eat",
         "youtubeVideoId": "xVK-zeScOwU",
