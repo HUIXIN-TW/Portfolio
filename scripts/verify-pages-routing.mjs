@@ -17,10 +17,10 @@ assert.ok(!existsSync("public/_redirects"), "Do not reintroduce redirect rules")
 assert.equal(ROUTES.projects, "/projects", "Projects must use /projects");
 assert.equal(ROUTES.blogPost, "/blog/:slug", "Blog slug URL must remain stable");
 assert.ok(!Object.values(ROUTES).includes("/portfolio"), "Old /portfolio must return 404");
-assert.ok(!Object.values(ROUTES).some((route) => /^\\/japan(?:\\/|$)/.test(route)), "No Trips routes on Portfolio");
+assert.ok(!Object.values(ROUTES).some((route) => route === "/japan" || route.startsWith("/japan/")), "No Trips routes on Portfolio");
 assert.ok(PRIMARY_NAV_ITEMS.some(({ to, label }) => to === ROUTES.projects && label === "Work"),
   "Work navigation must target the canonical /projects route");
-assert.equal((header.match(/PRIMARY_NAV_ITEMS\\.map/g) ?? []).length, 2,
+assert.equal(header.split("PRIMARY_NAV_ITEMS.map").length - 1, 2,
   "Desktop and mobile navigation must both use the canonical primary links");
 for (const key of Object.keys(ROUTES)) {
   assert.ok(app.includes(`path={ROUTES.${key}}`), "React Router must mount route: " + key);
