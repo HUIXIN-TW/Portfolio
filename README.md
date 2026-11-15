@@ -7,7 +7,7 @@
 - React 18 + React Router
 - Vite
 - Tailwind CSS
-- react-markdown + remark-gfm (blog rendering)
+- react-markdown + remark-gfm (Writing article rendering)
 - @headlessui/react + @heroicons/react (accessible UI primitives)
 - Cloudflare Pages (hosting)
 
@@ -18,7 +18,7 @@ src/
 ├── App.jsx              # Root component; defines routes and theme state
 ├── main.jsx             # Entry point; mounts React app
 ├── assets/images/       # Static images and social icons (loaded via import.meta.url)
-├── blogs/               # Markdown blog posts (loaded via blogLoader.js)
+├── blogs/               # Markdown article sources (loaded via blogLoader.js)
 ├── data/                # JSON data files for each portfolio section
 ├── sections/            # Page-level route components
 ├── styles/              # Global CSS (main.css) and shared Tailwind class strings (uiClasses.js)
@@ -74,10 +74,10 @@ production `/projects` previously returned **HTTP 308 Location: /** instead
 of loading Projects. This regression was missed by Vite's SPA fallback tests.
 
 The production build now generates **physical clean-URL HTML entrypoints**
-(e.g. `dist/projects.html` and `dist/blog/hello-blog.html`) from React Router's
-literal routes and published Markdown blog slugs. Cloudflare Pages serves
+(e.g. `dist/projects.html` and `dist/writing/building-static-portfolio-blog.html`) from React Router's
+literal routes and published Markdown article slugs. Cloudflare Pages serves
 `/projects` directly from `/projects.html` without rewriting to root. Adding
-a new static route or published blog post automatically creates an entrypoint;
+a new static route or published article automatically creates an entrypoint;
 unknown slugs remain HTTP 404. The build validates route ownership and absence
 of redirect rules. Static HTML entries load the same React bundle; content is
 rendered by the existing React Router, not server-rendered.
@@ -85,3 +85,12 @@ rendered by the existing React Router, not server-rendered.
 `npm run test:e2e` uses **Wrangler Pages dev** rather than Vite preview, asserting
 server-level 200/404 statuses and no `Location` header for owned/retired routes.
 Still verify real HTTP responses after the Cloudflare Pages production deploy.
+
+## Writing route ownership
+
+The public navigation uses `Projects | Experience | Writing`. Writing lives at
+`/writing` with published article detail routes at `/writing/:slug`.
+Older `/blog` URLs are intentionally retired with native HTTP 404, without
+redirects or SPA rewrites. Markdown sources and the internal blog loader retain
+their current names. Unpublished drafts do not receive static HTML entrypoints.
+The Home application's Writing card should point to the canonical `/writing` URL.

@@ -15,6 +15,8 @@ assert.ok(!existsSync("public/_redirects"), "Do not reintroduce redirect rules")
 
 const routes = [...app.matchAll(/<Route\s+path="(\/[^"]+)"/g)].map((m) => m[1]);
 assert.ok(routes.includes("/projects"), "Projects must use /projects");
+assert.ok(routes.includes("/writing") && routes.includes("/writing/:slug"), "Writing routes must be canonical");
+assert.ok(!routes.includes("/blog") && !routes.includes("/blog/:slug"), "Blog routes must remain retired");
 assert.ok(!routes.includes("/portfolio"), "Old /portfolio must return 404");
 assert.ok(!routes.some((route) => /^\/japan(?:\/|$)/.test(route)), "No Trips routes on Portfolio");
 assert.ok((header.match(/to="\/projects"/g) ?? []).length === 2,
@@ -31,13 +33,14 @@ for (const file of readdirSync("src/blogs").filter((f) => f.endsWith(".md"))) {
   const slug = fm.match(/^slug:\s*["']?([^"'\n]+)["']?\s*$/im)?.[1];
   publishedSlugs.push(normalizeSlug(slug || file));
 }
-if (routes.includes("/blog/:slug")) expected.push(...publishedSlugs.map((slug) => "/blog/" + slug));
+if (routes.includes("/writing/:slug")) expected.push(...publishedSlugs.map((slug) => "/writing/" + slug));
 for (const route of expected) {
   const routeHtml = join(dist, route.slice(1) + ".html");
   assert.ok(existsSync(routeHtml), "Missing static route entry: " + route);
   assert.equal(readFileSync(routeHtml, "utf8"), html, "Route must serve React entrypoint: " + route);
 }
-for (const retired of ["/portfolio", "/japan", "/japan/en", "/trips/japan/places-en.kml"]) {
+assert.ok((header.match(/to="\\/writing"/g) ?? []).length === 2, "Desktop and mobile Writing links must target /writing");
+for (const retired of ["/portfolio", "/blog", ...publishedSlugs.map((slug) => "/blog/" + slug), "/japan", "/japan/en", "/trips/japan/places-en.kml"]) {
   assert.ok(!existsSync(join(dist, retired.slice(1) + ".html")), "Retired route emitted: " + retired);
 }
 console.log("Verified " + expected.length + " clean-URL Pages HTML entrypoints and native 404.");
