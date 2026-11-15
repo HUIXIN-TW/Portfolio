@@ -1,4 +1,5 @@
 import React, { useMemo } from "react";
+import PageHeading from "../ui/PageHeading";
 import { Link } from "react-router-dom";
 import { getBlogPostPath } from "../config/routes.mjs";
 import podcastData from "../data/podcast.json";
@@ -9,7 +10,6 @@ import {
   cardPadding,
   cardTitle,
   sectionContainer,
-  sectionTitle,
   subsectionTitle,
   tagPillBase,
   tagPillButton,
@@ -76,15 +76,13 @@ const BlogPage = () => {
   return (
     <section className="padding" id="blog">
       <div className={sectionContainer}>
-        <div className="space-y-4">
-          <h2 className={sectionTitle}>Blog</h2>
-        </div>
+        <PageHeading title="Writing" description="Engineering notes, technical exploration and articles." />
 
         <div className="mt-10 grid gap-6 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]">
           {/* Latest Articles */}
           <div className={`${card} ${cardPadding}`}>
             <div className="mb-5">
-              <h3 className={subsectionTitle}>Latest Articles</h3>
+              <h2 className={subsectionTitle}>Latest Articles</h2>
             </div>
 
             {latestArticles.length > 0 ? (
@@ -94,7 +92,7 @@ const BlogPage = () => {
                     <div className="flex flex-col gap-3">
                       <div className="flex flex-col gap-2">
                         <Link to={getBlogPostPath(post.slug)} className="block">
-                          <h4 className={cardTitle}>{post.title}</h4>
+                          <h3 className={cardTitle}>{post.title}</h3>
                         </Link>
                         <p className={cardMeta}>
                           {formatBlogDate(post.date)}
@@ -125,7 +123,7 @@ const BlogPage = () => {
           {/* Podcast */}
           <div className={`${card} ${cardPadding}`}>
             <div className="mb-5">
-              <h3 className={subsectionTitle}>Podcast</h3>
+              <h2 className={subsectionTitle}>Podcast</h2>
             </div>
 
             {/* Profile */}
@@ -202,7 +200,7 @@ const BlogPage = () => {
 
         {/* All Articles */}
         <div className="mt-12">
-          <h3 className={subsectionTitle}>All Articles</h3>
+          <h2 className={subsectionTitle}>All Articles</h2>
           {allArticles.length > 0 ? (
             <div className={`${card} ${cardPadding}`}>
               <div className="divide-y divide-slate-200 dark:divide-[#44475A]">
@@ -212,7 +210,7 @@ const BlogPage = () => {
                       <div className="flex flex-col gap-2 md:flex-row md:items-start md:justify-between md:gap-4">
                         <div className="min-w-0">
                           <Link to={getBlogPostPath(post.slug)} className="block">
-                            <h4 className={cardTitle}>{post.title}</h4>
+                            <h3 className={cardTitle}>{post.title}</h3>
                           </Link>
                           <p className={cardMeta}>
                             {formatBlogDate(post.date)}

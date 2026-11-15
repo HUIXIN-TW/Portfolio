@@ -1,4 +1,5 @@
 import React from "react";
+import PageHeading from "../ui/PageHeading";
 import {
   bodyText,
   card,
@@ -61,6 +62,7 @@ const AboutPage = () => {
     <section className="padding" id="about">
       {/* <img className="background" src={image} alt={imageAltText} /> */}
       <div className={`${sectionContainer} min-w-0`}>
+        <PageHeading title="About" description="The engineering background and principles behind my work in platforms, backend systems and software products." />
         <section className="space-y-6">
           <h2 className={sectionTitle}>Live Demo</h2>
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
@@ -152,7 +154,7 @@ const AboutPage = () => {
         </section>
 
         <section className="mt-16 space-y-8">
-          <h3 className={subsectionTitle}>About Myself</h3>
+          <h2 className={subsectionTitle}>Background</h2>
           <div className="max-w-4xl space-y-5">
             {descriptionParagraphs.map((paragraph) => (
               <p key={paragraph} className={`whitespace-normal break-words text-left ${bodyText}`}>

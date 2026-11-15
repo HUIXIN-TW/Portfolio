@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from "react";
 import majorProjectGroups from "../data/major-projects.json";
 import ProjectCard from "../ui/ProjectCard";
+import PageHeading from "../ui/PageHeading";
 import ProjectFilters from "../ui/ProjectFilters";
 import PlatformCaseCard from "../ui/PlatformCaseCard";
 import { platformCaseStudies } from "../data/platformCaseStudies";
@@ -21,13 +22,7 @@ const ProjectsPage = () => {
   return (
     <section className="editorial-projects" id="projects">
       <div className="editorial-container">
-        <div className="editorial-projects-heading">
-          <h1>Projects</h1>
-          <p className="editorial-lead">
-            Cloud infrastructure, delivery automation and platform reliability,
-            followed by independent applications and earlier projects.
-          </p>
-        </div>
+        <PageHeading title="Projects" description="Cloud infrastructure, delivery automation and platform reliability, followed by independent applications and earlier projects." />
 
         <div id="platform-work" className="platform-work-section" aria-labelledby="platform-work-heading">
           <div className="platform-section-intro">

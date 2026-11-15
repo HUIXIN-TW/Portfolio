@@ -1,4 +1,5 @@
 import React, { useMemo } from "react";
+import PageHeading from "../ui/PageHeading";
 import { Link, useParams } from "react-router-dom";
 import { ROUTES } from "../config/routes.mjs";
 import ReactMarkdown from "react-markdown";
@@ -119,6 +120,7 @@ const BlogPostPage = () => {
           </Link>
         </div>
 
+        {post && <PageHeading title={post.title} eyebrow="WRITING" />}
         {post ? (
           <article className={`${card} ${cardPadding}`}>
             <div className="space-y-5">
@@ -129,9 +131,7 @@ const BlogPostPage = () => {
                   {post.readingTime && <span className={tagPillMuted}>{post.readingTime}</span>}
                 </div>
 
-                <h1 className="text-3xl font-semibold tracking-tight text-slate-900 dark:text-[#F8F8F2]">
-                  {post.title}
-                </h1>
+                {post.summary && <p className="editorial-article-meta">{post.summary}</p>}
               </div>
 
               {postTags.length > 0 && (

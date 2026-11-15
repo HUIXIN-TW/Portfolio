@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import PageHeading from "../ui/PageHeading";
 import { bodyText, card, cardPadding, cardTitle, mutedText, sectionContainer } from "../styles/uiClasses";
 
 const API_ENDPOINT = "https://wp5kzgul4k.execute-api.ap-southeast-2.amazonaws.com/?mode=all";
@@ -258,7 +259,8 @@ const MigrationPage = () => {
 
   return (
     <section className="padding">
-      <div className={`${sectionContainer} max-w-4xl py-6 space-y-6`}>
+      <div className={`${sectionContainer} space-y-6`}>
+        <PageHeading title="Migration data" description="Published invitation statistics and downloadable references, with cache-aware updates." />
         {/* Refresh toolbar */}
         <div className="flex items-center justify-between gap-4">
           <p className={bodyText}>

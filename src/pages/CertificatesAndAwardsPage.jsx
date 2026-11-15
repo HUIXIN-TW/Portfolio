@@ -1,4 +1,5 @@
 import React from "react";
+import PageHeading from "../ui/PageHeading";
 import certificatesAndAwardsData from "../data/certificates-and-awards.json";
 import {
   card,
@@ -7,7 +8,6 @@ import {
   cardTitle,
   mutedText,
   sectionContainer,
-  sectionTitle,
   tagPillBase,
 } from "../styles/uiClasses";
 
@@ -28,7 +28,7 @@ const CertificatesAndAwardsPage = () => {
   return (
     <section className="padding" id="certificates-awards">
       <div className={sectionContainer}>
-        <h2 className={sectionTitle}>Certificates & Awards</h2>
+        <PageHeading title="Certificates & Awards" description="Professional certifications, recognition and earlier achievements." />
         {Object.entries(groupedItems).map(([category, items]) => (
           <div key={category} className="mb-12">
             <div className="content-card-stack">
