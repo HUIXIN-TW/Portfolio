@@ -26,7 +26,7 @@ const EducationPage = () => {
                     <p className={mutedText}>{education.university}</p>
                     <Disclosure.Button className="flex w-full items-center justify-center pt-3">
                       <ChevronUpIcon
-                        className={`${open ? "rotate-180 transform" : ""} h-5 w-5 text-gray-500 dark:text-[#C7C9D9]`}
+                        className={`${open ? "rotate-180 transform" : ""} h-5 w-5 text-[var(--ed-muted)] `}
                       />
                     </Disclosure.Button>
                     <Disclosure.Panel>

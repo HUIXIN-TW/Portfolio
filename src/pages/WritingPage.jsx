@@ -38,7 +38,7 @@ const WritingPage = () => {
         <div className="mt-10">
           <h2 className={subsectionTitle}>Articles</h2>
           {articles.length > 0 ? (
-            <div className={`${card} ${cardPadding} mt-5 divide-y divide-slate-200 dark:divide-[#44475A]`}>
+            <div className={`${card} ${cardPadding} mt-5 divide-y divide-[var(--ed-border)] `}>
               {articles.map((article) => (
                 <article key={article.slug} className="space-y-3 py-5 first:pt-0 last:pb-0">
                   <Link to={getWritingPostPath(article.slug)} className="block">
@@ -49,7 +49,7 @@ const WritingPage = () => {
                     {article.readingTime ? ` · ${article.readingTime}` : ""}
                   </p>
                   {article.summary && (
-                    <p className="text-base leading-7 text-slate-600 dark:text-[#C7C9D9]">{article.summary}</p>
+                    <p className="text-base leading-7 text-[var(--ed-muted)]">{article.summary}</p>
                   )}
                   {article.tags.length > 0 && (
                     <div className="flex flex-wrap gap-2">
@@ -65,14 +65,14 @@ const WritingPage = () => {
               ))}
             </div>
           ) : (
-            <p className="mt-5 text-sm text-slate-600 dark:text-[#C7C9D9]">No articles are available yet.</p>
+            <p className="mt-5 text-sm text-[var(--ed-muted)]">No articles are available yet.</p>
           )}
         </div>
 
         {podcastUrl && (
           <aside className={`${card} ${cardPadding} mt-12`}>
             <h2 className={subsectionTitle}>Also on the podcast</h2>
-            <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-[#C7C9D9]">
+            <p className="mt-3 text-sm leading-6 text-[var(--ed-muted)]">
               {podcastData.description}
             </p>
             <ExternalLink

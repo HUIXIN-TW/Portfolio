@@ -12,31 +12,7 @@
     <meta name="theme-color" content="#faf9f7" />
     <meta name="apple-mobile-web-app-title" content="Huixin Yang" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <script>
-      (() => {
-        const storageKey = "theme";
-        const light = "light";
-        const dracula = "dracula";
-
-        try {
-          const storedTheme = localStorage.getItem(storageKey);
-          const theme =
-            storedTheme === light || storedTheme === dracula
-              ? storedTheme
-              : window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
-              ? dracula
-              : light;
-
-          document.documentElement.classList.toggle("dark", theme === dracula);
-          document.documentElement.style.colorScheme = theme === dracula ? "dark" : "light";
-          document.documentElement.dataset.theme = theme;
-        } catch {
-          document.documentElement.classList.remove("dark");
-          document.documentElement.style.colorScheme = "light";
-          document.documentElement.dataset.theme = light;
-        }
-      })();
-    </script>
+    <script src="/theme.js" data-light="#faf9f7" data-dark="#191b20" data-legacy="portfolio"></script>
   </head>
   <body>
     <noscript>

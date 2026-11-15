@@ -27,43 +27,43 @@ const formatArticleDate = (value) => {
 
 const markdownComponents = {
   h1: ({ children }) => (
-    <h1 className="mt-10 text-3xl font-semibold tracking-tight text-slate-900 dark:text-[#F8F8F2]">{children}</h1>
+    <h1 className="mt-10 text-3xl font-semibold tracking-tight text-[var(--ed-ink)]">{children}</h1>
   ),
   h2: ({ children }) => (
-    <h2 className="mt-8 text-2xl font-semibold tracking-tight text-slate-900 dark:text-[#F8F8F2]">{children}</h2>
+    <h2 className="mt-8 text-2xl font-semibold tracking-tight text-[var(--ed-ink)]">{children}</h2>
   ),
   h3: ({ children }) => (
-    <h3 className="mt-6 text-xl font-semibold tracking-tight text-slate-900 dark:text-[#F8F8F2]">{children}</h3>
+    <h3 className="mt-6 text-xl font-semibold tracking-tight text-[var(--ed-ink)]">{children}</h3>
   ),
-  p: ({ children }) => <p className="text-base leading-7 text-slate-700 dark:text-[#C7C9D9]">{children}</p>,
+  p: ({ children }) => <p className="text-base leading-7 text-[var(--ed-muted)]">{children}</p>,
   ul: ({ children }) => (
-    <ul className="list-disc space-y-2 pl-6 text-base leading-7 text-slate-700 dark:text-[#C7C9D9]">{children}</ul>
+    <ul className="list-disc space-y-2 pl-6 text-base leading-7 text-[var(--ed-muted)]">{children}</ul>
   ),
   ol: ({ children }) => (
-    <ol className="list-decimal space-y-2 pl-6 text-base leading-7 text-slate-700 dark:text-[#C7C9D9]">{children}</ol>
+    <ol className="list-decimal space-y-2 pl-6 text-base leading-7 text-[var(--ed-muted)]">{children}</ol>
   ),
   li: ({ children }) => <li>{children}</li>,
   a: ({ children, href }) => (
     <a
       href={href}
-      className="text-slate-900 underline decoration-slate-300 underline-offset-4 hover:text-slate-600 dark:text-[#8BE9FD] dark:decoration-[#44475A] dark:hover:text-[#BD93F9]"
+      className="text-[var(--ed-ink)] underline decoration-[var(--ed-border)] underline-offset-4 hover:text-[var(--ed-accent)]"
     >
       {children}
     </a>
   ),
   blockquote: ({ children }) => (
-    <blockquote className="border-l-4 border-slate-200 pl-4 text-base leading-7 text-slate-600 dark:border-[#44475A] dark:text-[#A9ADC1]">
+    <blockquote className="border-l-4 border-[var(--ed-border)] pl-4 text-base leading-7 text-[var(--ed-muted)]">
       {children}
     </blockquote>
   ),
   pre: ({ children }) => (
-    <pre className="overflow-x-auto rounded-xl bg-slate-950 p-4 text-sm leading-6 text-slate-100 dark:bg-[#21222c] dark:text-[#F8F8F2]">
+    <pre className="overflow-x-auto rounded-xl bg-[var(--ed-code-background)] p-4 text-sm leading-6 text-[var(--ed-code-ink)]">
       {children}
     </pre>
   ),
   code: ({ inline, children }) =>
     inline ? (
-      <code className="rounded bg-slate-100 px-1.5 py-0.5 text-sm text-slate-900 dark:bg-[#44475A] dark:text-[#F1FA8C]">
+      <code className="rounded bg-[var(--ed-hover)] px-1.5 py-0.5 text-sm text-[var(--ed-ink)]">
         {children}
       </code>
     ) : (
@@ -75,12 +75,12 @@ const markdownComponents = {
     </div>
   ),
   th: ({ children }) => (
-    <th className="border-b border-slate-200 px-3 py-2 text-left font-semibold text-slate-900 dark:border-[#44475A] dark:text-[#F8F8F2]">
+    <th className="border-b border-[var(--ed-border)] px-3 py-2 text-left font-semibold text-[var(--ed-ink)]">
       {children}
     </th>
   ),
   td: ({ children }) => (
-    <td className="border-b border-slate-100 px-3 py-2 text-slate-700 dark:border-[#44475A] dark:text-[#C7C9D9]">
+    <td className="border-b border-[var(--ed-border)] px-3 py-2 text-[var(--ed-muted)]">
       {children}
     </td>
   ),
@@ -114,7 +114,7 @@ const WritingPostPage = () => {
         <div className="mb-6">
           <Link
             to={ROUTES.writing}
-            className="text-sm font-medium text-slate-600 underline decoration-slate-300 underline-offset-4 dark:text-[#C7C9D9] dark:decoration-[#44475A] dark:hover:text-[#FF79C6]"
+            className="text-sm font-medium text-[var(--ed-muted)] underline decoration-[var(--ed-border)] underline-offset-4"
           >
             Back to Writing
           </Link>
@@ -150,7 +150,7 @@ const WritingPostPage = () => {
                     href={post.sourceUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className={`${tagPillButton} focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-[#BD93F9] dark:focus-visible:ring-offset-[#282A36]`}
+                    className={`${tagPillButton} focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ed-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--ed-background)] `}
                   >
                     Source link
                   </a>
@@ -166,7 +166,7 @@ const WritingPostPage = () => {
           </article>
         ) : (
           <div className={`${card} ${cardPadding}`}>
-            <p className="text-slate-600 dark:text-[#C7C9D9]">Post not found.</p>
+            <p className="text-[var(--ed-muted)]">Post not found.</p>
           </div>
         )}
       </div>

@@ -13,7 +13,6 @@ import RefereePage from "./pages/RefereePage";
 import ExperiencePage from "./pages/ExperiencePage";
 import WritingPage from "./pages/WritingPage";
 import WritingPostPage from "./pages/WritingPostPage";
-import { applyThemeToDocument, getInitialTheme, THEME_DRACULA, THEME_LIGHT, THEME_STORAGE_KEY } from "./utils/theme";
 
 import "./styles/main.css";
 import "./styles/editorial.css";
@@ -31,37 +30,21 @@ const siteProps = {
 };
 
 const App = () => {
-  const [theme, setTheme] = React.useState(getInitialTheme);
-
-  React.useEffect(() => {
-    applyThemeToDocument(theme);
-
-    try {
-      window.localStorage.setItem(THEME_STORAGE_KEY, theme);
-    } catch {
-      // Ignore storage failures; the selected theme still applies for the current session.
-    }
-  }, [theme]);
-
-  const handleThemeToggle = React.useCallback(() => {
-    setTheme((currentTheme) => (currentTheme === THEME_DRACULA ? THEME_LIGHT : THEME_DRACULA));
-  }, []);
-
   return (
     <Router>
       <RouteScrollManager />
-      <SiteRoutes theme={theme} handleThemeToggle={handleThemeToggle} siteProps={siteProps} />
+      <SiteRoutes siteProps={siteProps} />
     </Router>
   );
 };
 
-const SiteRoutes = ({ theme, handleThemeToggle, siteProps }) => {
+const SiteRoutes = ({ siteProps }) => {
   return (
     <div
       id="main"
       className="editorial-shell min-h-screen flex flex-col"
     >
-      <Header theme={theme} onThemeToggle={handleThemeToggle} />
+      <Header />
       <main className="flex-1 w-full relative">
         <Routes>
           <Route path={ROUTES.home} element={<HomePage name={siteProps.name} title={siteProps.title} />} />

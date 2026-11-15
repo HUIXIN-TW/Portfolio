@@ -285,14 +285,14 @@ const MigrationPage = () => {
           <article className={`${card} ${cardPadding} text-center`}>
             <p className={mutedText}>Current Program Year</p>
             <p className={cardTitle}>{formatNumber(currentProgramYearTotal)}</p>
-            <p className="mt-1 text-xs leading-5 text-slate-500 dark:text-[#A9ADC1]">
+            <p className="mt-1 text-xs leading-5 text-[var(--ed-muted)]">
               {currentProgramYear?.programYear || "Current month summary"}
             </p>
           </article>
           <article className={`${card} ${cardPadding} text-center`}>
             <p className={mutedText}>All Years Returned</p>
             <p className={cardTitle}>{formatNumber(allProgramYearTotal || totalInvitations)}</p>
-            <p className="mt-1 text-xs leading-5 text-slate-500 dark:text-[#A9ADC1]">
+            <p className="mt-1 text-xs leading-5 text-[var(--ed-muted)]">
               {programYearCount.toLocaleString()} program years
             </p>
           </article>
@@ -347,20 +347,20 @@ const MigrationPage = () => {
                   </div>
                   <div className="grid grid-cols-3 gap-3 text-right">
                     <div>
-                      <p className="text-xs leading-5 text-slate-500 dark:text-[#A9ADC1]">Total</p>
-                      <p className="text-base font-semibold text-slate-950 dark:text-[#F8F8F2]">
+                      <p className="text-xs leading-5 text-[var(--ed-muted)]">Total</p>
+                      <p className="text-base font-semibold text-[var(--ed-ink)]">
                         {formatNumber(yearItem.total)}
                       </p>
                     </div>
                     <div>
-                      <p className="text-xs leading-5 text-slate-500 dark:text-[#A9ADC1]">Active Months</p>
-                      <p className="text-base font-semibold text-slate-950 dark:text-[#F8F8F2]">
+                      <p className="text-xs leading-5 text-[var(--ed-muted)]">Active Months</p>
+                      <p className="text-base font-semibold text-[var(--ed-ink)]">
                         {yearItem.activeMonthCount.toLocaleString()}
                       </p>
                     </div>
                     <div>
-                      <p className="text-xs leading-5 text-slate-500 dark:text-[#A9ADC1]">Peak Month</p>
-                      <p className="text-base font-semibold text-slate-950 dark:text-[#F8F8F2]">
+                      <p className="text-xs leading-5 text-[var(--ed-muted)]">Peak Month</p>
+                      <p className="text-base font-semibold text-[var(--ed-ink)]">
                         {yearItem.peakMonth.month
                           ? `${yearItem.peakMonth.month} ${formatNumber(yearItem.peakMonth.value)}`
                           : "N/A"}
@@ -373,22 +373,22 @@ const MigrationPage = () => {
                   {yearItem.streamSummary.map((streamItem) => (
                     <div
                       key={`${yearItem.programYear}-${streamItem.stream}`}
-                      className="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-[#44475A] dark:bg-[#282A36]"
+                      className="rounded-xl border border-[var(--ed-border)] bg-[var(--ed-hover)] p-4"
                     >
-                      <p className="text-sm font-semibold leading-6 text-slate-950 dark:text-[#F8F8F2]">
+                      <p className="text-sm font-semibold leading-6 text-[var(--ed-ink)]">
                         {streamItem.stream}
                       </p>
                       <div className="mt-3 grid grid-cols-3 gap-2 text-sm">
                         <div>
-                          <p className="text-xs text-slate-500 dark:text-[#A9ADC1]">Total</p>
+                          <p className="text-xs text-[var(--ed-muted)]">Total</p>
                           <p className="font-semibold">{formatNumber(streamItem.total)}</p>
                         </div>
                         <div>
-                          <p className="text-xs text-slate-500 dark:text-[#A9ADC1]">190</p>
+                          <p className="text-xs text-[var(--ed-muted)]">190</p>
                           <p className="font-semibold">{formatNumber(streamItem.subclass190)}</p>
                         </div>
                         <div>
-                          <p className="text-xs text-slate-500 dark:text-[#A9ADC1]">491</p>
+                          <p className="text-xs text-[var(--ed-muted)]">491</p>
                           <p className="font-semibold">{formatNumber(streamItem.subclass491)}</p>
                         </div>
                       </div>
@@ -399,8 +399,8 @@ const MigrationPage = () => {
                 <div className="mt-5 overflow-x-auto">
                   <table className="min-w-[980px] w-full border-collapse text-left text-sm">
                     <thead>
-                      <tr className="border-b border-slate-200 text-xs uppercase tracking-wide text-slate-500 dark:border-[#44475A] dark:text-[#A9ADC1]">
-                        <th scope="col" className="sticky left-0 bg-white py-3 pr-4 dark:bg-[#343746]">
+                      <tr className="border-b border-[var(--ed-border)] text-xs uppercase tracking-wide text-[var(--ed-muted)]">
+                        <th scope="col" className="sticky left-0 bg-[var(--ed-surface)] py-3 pr-4">
                           Stream
                         </th>
                         <th scope="col" className="py-3 pr-4">
@@ -420,12 +420,12 @@ const MigrationPage = () => {
                       {yearItem.rows.map((row, index) => (
                         <tr
                           key={`${yearItem.programYear}-${row.stream}-${row.visaType}-${index}`}
-                          className="border-b border-slate-100 last:border-0 dark:border-[#44475A]/70"
+                          className="border-b border-[var(--ed-border)] last:border-0"
                         >
-                          <td className="sticky left-0 max-w-[220px] bg-white py-3 pr-4 font-medium text-slate-800 dark:bg-[#343746] dark:text-[#F8F8F2]">
+                          <td className="sticky left-0 max-w-[220px] bg-[var(--ed-surface)] py-3 pr-4 font-medium text-[var(--ed-ink)]">
                             {row.stream}
                           </td>
-                          <td className="py-3 pr-4 font-semibold text-slate-950 dark:text-[#F8F8F2]">{row.visaType}</td>
+                          <td className="py-3 pr-4 font-semibold text-[var(--ed-ink)]">{row.visaType}</td>
                           {MONTH_COLUMNS.map((month) => (
                             <td key={month} className="py-3 pr-4 text-right tabular-nums">
                               {formatNumber(row[month])}
@@ -437,8 +437,8 @@ const MigrationPage = () => {
                         </tr>
                       ))}
                       {yearItem.totals ? (
-                        <tr className="border-t border-slate-300 font-semibold dark:border-[#BD93F9]/60">
-                          <td className="sticky left-0 bg-white py-3 pr-4 dark:bg-[#343746]">All streams</td>
+                        <tr className="border-t border-[var(--ed-border)] font-semibold">
+                          <td className="sticky left-0 bg-[var(--ed-surface)] py-3 pr-4">All streams</td>
                           <td className="py-3 pr-4">Total</td>
                           {MONTH_COLUMNS.map((month) => (
                             <td key={month} className="py-3 pr-4 text-right tabular-nums">
@@ -486,13 +486,13 @@ const MigrationPage = () => {
                       href={item.url}
                       target="_blank"
                       rel="noreferrer"
-                      className="block max-w-full min-w-0 text-[#8BE9FD] underline decoration-[#44475A] underline-offset-4 hover:text-[#BD93F9]"
+                      className="block max-w-full min-w-0 text-[var(--ed-accent)] underline decoration-[var(--ed-border)] underline-offset-4 hover:text-[var(--ed-accent)]"
                     >
                       <strong className="block max-w-full break-words [overflow-wrap:anywhere]">
                         {item.title || item.url}
                       </strong>
                     </a>
-                    <p className="mt-1 max-w-full break-words text-xs leading-5 text-gray-500 dark:text-[#A9ADC1] [overflow-wrap:anywhere]">
+                    <p className="mt-1 max-w-full break-words text-xs leading-5 text-[var(--ed-muted)] [overflow-wrap:anywhere]">
                       {urlDescription(item.url)}
                     </p>
                   </li>
@@ -518,13 +518,13 @@ const MigrationPage = () => {
                       href={item.url}
                       target="_blank"
                       rel="noreferrer"
-                      className="block max-w-full min-w-0 text-[#8BE9FD] underline decoration-[#44475A] underline-offset-4 hover:text-[#BD93F9]"
+                      className="block max-w-full min-w-0 text-[var(--ed-accent)] underline decoration-[var(--ed-border)] underline-offset-4 hover:text-[var(--ed-accent)]"
                     >
                       <strong className="block max-w-full break-words [overflow-wrap:anywhere]">
                         {item.title || item.url}
                       </strong>
                     </a>
-                    <p className="mt-1 max-w-full break-words text-xs leading-5 text-gray-500 dark:text-[#A9ADC1] [overflow-wrap:anywhere]">
+                    <p className="mt-1 max-w-full break-words text-xs leading-5 text-[var(--ed-muted)] [overflow-wrap:anywhere]">
                       {urlDescription(item.url)}
                     </p>
                   </li>

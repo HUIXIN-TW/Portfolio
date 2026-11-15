@@ -10,8 +10,12 @@
   --ed-shadow: 0 18px 46px rgba(28, 31, 36, 0.06);
   --ed-width: 70rem;
   --ed-reading-width: 45rem;
+  --ed-control-border: #7b838b;
+  --ed-code-background: #20252d;
+  --ed-code-ink: #edf2f8;
 }
 html.dark {
+  --ed-control-border: #8c99a8;
   --ed-background: #191b20;
   --ed-surface: #252930;
   --ed-ink: #f3f4f5;
@@ -480,3 +484,13 @@ h3 { font-size: 1.25rem; font-weight: 600; line-height: 1.3; }
   font-weight: 600;
 }
 .editorial-project-card-actions .editorial-live-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+:root {
+  --theme-ink: var(--ed-ink); --theme-muted: var(--ed-muted);
+  --theme-border: var(--ed-border); --theme-control-border: var(--ed-control-border); --theme-surface: var(--ed-surface); --theme-accent: var(--ed-accent);
+}
+
+@media (max-width: 30rem) {
+  .editorial-header-inner { flex-wrap: wrap; gap: 0.5rem; padding-block: 0.65rem; }
+  .editorial-header-actions { width: 100%; justify-content: space-between; }
+}
