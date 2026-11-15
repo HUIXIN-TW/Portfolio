@@ -7,6 +7,8 @@
 @import "tailwindcss/utilities";
 
 /* Global Styles */
+/* Use clip, not hidden, for horizontal clipping. Hidden creates a scroll container
+   and can prevent deep-link anchor navigation from scrolling the viewport. */
 html,
 body {
   font-family: "Inter", "Noto Sans TC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -14,7 +16,7 @@ body {
   line-height: 1.65;
   height: 100%;
   margin: 0;
-  overflow-x: hidden;
+  overflow-x: clip;
   padding: 0;
   width: 100%;
   scroll-behavior: smooth;
@@ -28,7 +30,7 @@ html.dark body {
 #root {
   min-height: 100vh;
   max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 div#main {
@@ -37,7 +39,7 @@ div#main {
   min-height: 100vh;
   position: relative;
   width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
   isolation: isolate;
 }
 
