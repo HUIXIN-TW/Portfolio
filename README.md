@@ -150,3 +150,11 @@ The older project archive uses a two-column grid with cards of varying descripti
 - Older project descriptions are stored as text arrays. `src/utils/projectDescription.js` parses consecutive dash-prefixed entries as semantic bullet lists; plain prose stays in paragraphs and explicit labels such as `Purpose:` become subheadings. Project JSON content stays unchanged.
 - The single-source navigation registry promotes `Work / Experience / About / Writing` to primary route items. Resume is directly accessible afterward as an external link. `More` contains Education, Awards, Referee and GitHub, without changing any URL.
 - The desktop More popup uses compact, clear link spacing and the mobile menu preserves the same priority order. Playwright covers the menu ordering and list structure.
+
+## Shared page heading and footer system
+
+- `src/ui/PageHeading.jsx` provides the Projects-inspired route-level H1 typography, introductory copy and optional section eyebrow. Projects, Experience, About, Writing, Education, Awards, References, Migration data and individual articles reuse it; page sections retain their own smaller semantic headings.
+- `src/styles/uiClasses.js` maps legacy `sectionContainer` to `editorial-container` so page titles and content align at the same width; no published URL or route key changes.
+- `src/ui/ExternalLink.jsx` provides an accessible shared external-link arrow glyph and opens external pages in a new tab with `rel="noopener noreferrer"`. The header's Resume and GitHub and the footer's external links use the same component.
+- `src/ui/Footer.jsx` is an editorial three-zone footer: identity and platform focus, Explore/Connect links, and a compact copyright/back-to-top baseline. It supports existing optional social handles without introducing extra services or analytics.
+- Playwright verifies link targets and glyphs, heading size and left alignment across routes, footer semantics, and narrow screens.

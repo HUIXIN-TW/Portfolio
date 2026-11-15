@@ -4,8 +4,9 @@ test("Portfolio home and Projects navigation remain available", async ({ page })
   const response = await page.goto("/");
   expect(response?.status()).toBe(200);
   await expect(page.getByRole("heading", { name: "Huixin Yang", exact: true })).toBeVisible();
-  await expect(page.getByRole("link", { name: "Work", exact: true })).toBeVisible();
-  await page.getByRole("link", { name: "Work", exact: true }).click();
+  const mainNav = page.getByRole("navigation", { name: "Primary navigation" });
+  await expect(mainNav.getByRole("link", { name: "Work", exact: true })).toBeVisible();
+  await mainNav.getByRole("link", { name: "Work", exact: true }).click();
   await expect(page).toHaveURL(/\/projects$/);
   await expect(page.getByRole("heading", { name: "Projects", exact: true })).toBeVisible();
   await expect(page.locator("#projects")).toBeVisible();
@@ -279,4 +280,74 @@ test("Primary navigation prioritises engineering experience before writing and r
   await expect(mobile.locator(".editorial-mobile-links > a").first()).toHaveText("Work");
   await expect(mobile.locator(".editorial-mobile-links > a").nth(2)).toHaveText("About");
   await expect(mobile.locator(".editorial-mobile-links > a").nth(3)).toHaveText("Writing");
+});
+
+test("Primary header and redesigned footer clearly identify external links", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("/");
+  const desktop = page.getByRole("navigation", { name: "Primary navigation" });
+  const resume = desktop.getByRole("link", { name: "Resume", exact: true });
+  await expect(resume).toHaveAttribute("href", "https://resume.huixinyang.com/");
+  await expect(resume).toHaveAttribute("target", "_blank");
+  await expect(resume).toHaveAttribute("rel", /noopener noreferrer/);
+  await expect(resume.locator(".editorial-external-link-icon")).toBeVisible();
+
+  await desktop.locator("summary").click();
+  const github = desktop.getByRole("link", { name: "GitHub", exact: true });
+  await expect(github).toHaveAttribute("href", "https://github.com/HUIXIN-TW");
+  await expect(github).toHaveAttribute("target", "_blank");
+  await expect(github.locator(".editorial-external-link-icon")).toBeVisible();
+
+  const footer = page.locator("footer#footer");
+  await expect(footer.getByRole("navigation", { name: "Footer pages" }).getByRole("link", { name: "Work" }))
+    .toHaveAttribute("href", "/projects");
+  const footerResume = footer.getByRole("navigation", { name: "Footer pages" }).getByRole("link", { name: "Resume" });
+  await expect(footerResume.locator(".editorial-external-link-icon")).toBeVisible();
+  const footerGithub = footer.getByRole("navigation", { name: "Footer contact" }).getByRole("link", { name: "GitHub" });
+  await expect(footerGithub.locator(".editorial-external-link-icon")).toBeVisible();
+  await expect(footer.getByRole("link", { name: /Back to top/ })).toHaveAttribute("href", "#main");
+  await expect(footer).toContainText("Platform Engineering · Backend Systems");
+});
+
+test("All top-level pages share the Projects editorial H1 scale and alignment", async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
+  const pages = [
+    ["/projects", "Projects"],
+    ["/experience", "Experience"],
+    ["/about", "About"],
+    ["/blog", "Writing"],
+    ["/education", "Education & Scholarships"],
+    ["/certificates-awards", "Certificates & Awards"],
+    ["/referee", "References"],
+    ["/migration", "Migration data"],
+  ];
+  const metrics = [];
+  for (const [url, title] of pages) {
+    await page.goto(url);
+    const heading = page.locator("header.editorial-page-heading h1");
+    await expect(heading).toHaveText(title);
+    await expect(heading).toBeVisible();
+    metrics.push(await heading.evaluate((node) => ({
+      left: node.getBoundingClientRect().left,
+      fontSize: getComputedStyle(node).fontSize,
+      weight: getComputedStyle(node).fontWeight,
+    })));
+    expect(await page.locator("main h1").count()).toBe(1);
+  }
+  for (const item of metrics.slice(1)) {
+    expect(Math.abs(item.left - metrics[0].left)).toBeLessThan(2);
+    expect(item.fontSize).toBe(metrics[0].fontSize);
+    expect(item.weight).toBe(metrics[0].weight);
+  }
+});
+
+test("Editorial footer and page headings fit narrow screens without horizontal overflow", async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 740 });
+  for (const route of ["/projects", "/experience", "/about", "/blog"]) {
+    await page.goto(route);
+    await expect(page.locator(".editorial-page-heading h1")).toBeVisible();
+    await expect(page.locator("footer#footer")).toBeVisible();
+    expect(await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth))
+      .toBeLessThanOrEqual(1);
+  }
 });
