@@ -95,7 +95,7 @@ test("Editorial typography survives 150% text scaling, reduced motion and theme 
   await page.goto("/");
   await page.evaluate(() => { document.documentElement.style.fontSize = "150%"; });
   await expect(page.getByRole("heading", { name: "Huixin Yang", exact: true })).toBeVisible();
-  await expect(page.getByRole("link", { name: "Explore my work" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Explore platform work" })).toBeVisible();
   await page.getByRole("button", { name: "Switch to dark theme" }).click();
   await expect(page.locator("html")).toHaveAttribute("data-theme", "dracula");
   await expect(page.getByRole("button", { name: "Switch to light theme" })).toBeVisible();
