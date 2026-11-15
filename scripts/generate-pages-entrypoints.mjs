@@ -12,7 +12,9 @@ assert.ok(!existsSync(join(dist, "_redirects")), "Do not ship Pages _redirects r
 
 const routes = [...app.matchAll(/<Route\s+path="(\/[^"]+)"/g)].map((match) => match[1]);
 assert.ok(routes.includes("/projects"), "Missing canonical Projects route");
-assert.ok(routes.includes("/blog/:slug"), "Expected blog detail route");
+assert.ok(routes.includes("/writing"), "Missing canonical Writing route");
+assert.ok(routes.includes("/writing/:slug"), "Expected Writing article route");
+assert.ok(!routes.includes("/blog") && !routes.includes("/blog/:slug"), "Retired Blog routes must remain missing");
 assert.ok(!routes.includes("/portfolio"), "Retired /portfolio route must remain missing");
 
 const emitted = new Set();
@@ -43,7 +45,7 @@ for (const file of readdirSync(sourceDir).filter((f) => f.endsWith(".md")).sort(
   assert.match(slug, /^[a-z0-9]+(?:-[a-z0-9]+)*$/, "Invalid blog slug");
   assert.ok(!slugs.has(slug), "Duplicate blog slug: " + slug);
   slugs.add(slug);
-  emit("/blog/" + slug);
+  emit("/writing/" + slug);
 }
 const listed = JSON.parse(readFileSync("src/data/blogPosts.json", "utf8"));
 assert.ok(Array.isArray(listed), "Blog index must be a slug array");

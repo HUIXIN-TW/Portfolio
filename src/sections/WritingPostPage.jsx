@@ -5,7 +5,7 @@ import remarkGfm from "remark-gfm";
 import { getBlogPostBySlug } from "../utils/blogLoader";
 import { card, cardPadding, sectionContainer, tagPillBase, tagPillButton, tagPillMuted } from "../styles/uiClasses";
 
-const formatBlogDate = (value) => {
+const formatArticleDate = (value) => {
   if (!value) {
     return "";
   }
@@ -100,21 +100,21 @@ const stripDuplicateTitleHeading = (markdown, title) => {
   return markdown;
 };
 
-const BlogPostPage = () => {
+const WritingPostPage = () => {
   const { slug } = useParams();
   const post = slug ? getBlogPostBySlug(slug) : null;
 
   const postTags = useMemo(() => (post?.tags?.length ? post.tags : []), [post]);
 
   return (
-    <section className="padding" id="blog-post">
+    <section className="padding" id="writing-article">
       <div className={sectionContainer}>
         <div className="mb-6">
           <Link
-            to="/blog"
+            to="/writing"
             className="text-sm font-medium text-slate-600 underline decoration-slate-300 underline-offset-4 dark:text-[#C7C9D9] dark:decoration-[#44475A] dark:hover:text-[#FF79C6]"
           >
-            Back to Blog
+            Back to Writing
           </Link>
         </div>
 
@@ -123,7 +123,7 @@ const BlogPostPage = () => {
             <div className="space-y-5">
               <div className="space-y-3">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className={tagPillMuted}>{formatBlogDate(post.date)}</span>
+                  <span className={tagPillMuted}>{formatArticleDate(post.date)}</span>
                   {post.category && <span className={tagPillMuted}>{post.category}</span>}
                   {post.readingTime && <span className={tagPillMuted}>{post.readingTime}</span>}
                 </div>
@@ -173,4 +173,4 @@ const BlogPostPage = () => {
   );
 };
 
-export default BlogPostPage;
+export default WritingPostPage;

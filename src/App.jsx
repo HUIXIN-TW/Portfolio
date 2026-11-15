@@ -10,8 +10,8 @@ import ProjectsPage from "./sections/ProjectsPage";
 import Migration from "./sections/Migration";
 import Referee from "./sections/Referee";
 import Experience from "./sections/Experience";
-import BlogPage from "./sections/BlogPage";
-import BlogPostPage from "./sections/BlogPostPage";
+import WritingPage from "./sections/WritingPage";
+import WritingPostPage from "./sections/WritingPostPage";
 import { applyThemeToDocument, getInitialTheme, THEME_DRACULA, THEME_LIGHT, THEME_STORAGE_KEY } from "./utils/theme";
 
 import "./styles/main.css";
@@ -67,8 +67,8 @@ const SiteRoutes = ({ theme, handleThemeToggle, siteProps }) => {
           <Route path="/certificates-awards" element={<CertificatesAndAwards />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="/projects" element={<ProjectsPage />} />
-          <Route path="/blog" element={<BlogPage />} />
-          <Route path="/blog/:slug" element={<BlogPostPage />} />
+          <Route path="/writing" element={<WritingPage />} />
+          <Route path="/writing/:slug" element={<WritingPostPage />} />
           <Route path="/migration" element={<Migration />} />
           <Route path="/referee" element={<Referee />} />
           <Route

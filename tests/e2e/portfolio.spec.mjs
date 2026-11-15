@@ -22,7 +22,7 @@ test("Projects deep link returns HTTP 200 without redirects, not Home", async ({
   await expect(page.getByRole("heading", { name: "Projects", exact: true })).toBeVisible();
 });
 
-for (const route of ["/about", "/education", "/certificates-awards", "/experience", "/blog", "/blog/hello-blog", "/blog/building-static-portfolio-blog", "/migration", "/referee"]) {
+for (const route of ["/about", "/education", "/certificates-awards", "/experience", "/writing", "/writing/building-static-portfolio-blog", "/migration", "/referee"]) {
   test(`Portfolio deep link ${route} serves clean URL without redirect`, async ({ page, request }) => {
     const raw = await request.get(route, { maxRedirects: 0 });
     expect(raw.status()).toBe(200);
@@ -34,7 +34,7 @@ for (const route of ["/about", "/education", "/certificates-awards", "/experienc
   });
 }
 
-for (const legacy of ["/portfolio", "/portfolio/", "/japan", "/japan/en", "/japan/en.html", "/trips/japan/places-en.kml", "/blog/unknown-post"]) {
+for (const legacy of ["/portfolio", "/portfolio/", "/japan", "/japan/en", "/japan/en.html", "/trips/japan/places-en.kml", "/blog", "/blog/hello-blog", "/blog/building-static-portfolio-blog", "/writing/hello-blog", "/writing/unknown-post"]) {
   test(`Unknown or retired ${legacy} returns native HTTP 404 without redirect`, async ({ page, request }) => {
     const raw = await request.get(legacy, { maxRedirects: 0 });
     expect(raw.status()).toBe(404);
@@ -46,3 +46,19 @@ for (const legacy of ["/portfolio", "/portfolio/", "/japan", "/japan/en", "/japa
     await expect(page.getByRole("link", { name: "Back to Portfolio" })).toHaveAttribute("href", "/");
   });
 }
+
+test("Writing uses canonical navigation and retains published article links", async ({ page, request }) => {
+  await page.goto("/");
+  await page.getByRole("navigation").getByRole("link", { name: "Writing" }).click();
+  await expect(page).toHaveURL(/\/writing$/);
+  await expect(page.getByRole("heading", { name: "Writing", exact: true })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Articles", exact: true })).toBeVisible();
+  const article = page.getByRole("link", { name: "Building a Static Portfolio Blog", exact: true });
+  await expect(article).toHaveAttribute("href", "/writing/building-static-portfolio-blog");
+  await article.click();
+  await expect(page).toHaveURL(/\/writing\/building-static-portfolio-blog$/);
+  await expect(page.getByRole("link", { name: "Back to Writing" })).toHaveAttribute("href", "/writing");
+  const raw = await request.get("/writing/building-static-portfolio-blog", { maxRedirects: 0 });
+  expect(raw.status()).toBe(200);
+  expect(raw.headers().location).toBeUndefined();
+});

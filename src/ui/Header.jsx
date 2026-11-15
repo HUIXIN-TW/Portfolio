@@ -58,27 +58,16 @@ const Header = ({ theme, onThemeToggle }) => {
             <GitHubButton name="HUIXIN-TW" />
           </div>
           <nav className="ml-auto flex items-center justify-end gap-4 md:gap-6">
-            <NavLink to="/about" className={navLinkClassName}>
-              About
-            </NavLink>
-            <NavLink to="/education" className={navLinkClassName}>
-              Education & Scholarships
-            </NavLink>
-            <NavLink to="/certificates-awards" className={navLinkClassName}>
-              Certificates & Awards
+            <NavLink to="/projects" className={navLinkClassName}>
+              Projects
             </NavLink>
             <NavLink to="/experience" className={navLinkClassName}>
               Experience
             </NavLink>
-            <NavLink to="/blog" className={navLinkClassName}>
-              Blog
+            <NavLink to="/writing" className={navLinkClassName}>
+              Writing
             </NavLink>
-            <NavLink to="/projects" className={navLinkClassName}>
-              Projects
-            </NavLink>
-            <NavLink to="/referee" className={navLinkClassName}>
-              Referee
-            </NavLink>
+            <ResumeButton name="Resume" />
             <ThemeToggleButton theme={theme} onToggle={onThemeToggle} className="ml-2" />
             {/* <Link to="/contact" className="hover:text-blue-600">
             Contact
@@ -101,46 +90,26 @@ const Header = ({ theme, onThemeToggle }) => {
 
         {toggleDropdown && (
           <div className="absolute left-4 right-4 top-[4.75rem] flex flex-col gap-5 rounded-2xl border border-slate-200 bg-white p-5 shadow-lg dark:border-[#44475A] dark:bg-[#343746]">
-            <NavLink to="/about" className={mobileNavLinkClassName} onClick={() => setToggleDropdown(!toggleDropdown)}>
-              About
-            </NavLink>
-            <NavLink
-              to="/education"
-              className={mobileNavLinkClassName}
-              onClick={() => setToggleDropdown(!toggleDropdown)}
-            >
-              Education & Scholarships
-            </NavLink>
-            <NavLink
-              to="/certificates-awards"
-              className={mobileNavLinkClassName}
-              onClick={() => setToggleDropdown(!toggleDropdown)}
-            >
-              Certificates & Awards
-            </NavLink>
-            <NavLink
-              to="/experience"
-              className={mobileNavLinkClassName}
-              onClick={() => setToggleDropdown(!toggleDropdown)}
-            >
-              Experience
-            </NavLink>
-            <NavLink to="/blog" className={mobileNavLinkClassName} onClick={() => setToggleDropdown(!toggleDropdown)}>
-              Blog
-            </NavLink>
             <NavLink
               to="/projects"
               className={mobileNavLinkClassName}
-              onClick={() => setToggleDropdown(!toggleDropdown)}
+              onClick={() => setToggleDropdown(false)}
             >
               Projects
             </NavLink>
             <NavLink
-              to="/referee"
+              to="/experience"
               className={mobileNavLinkClassName}
-              onClick={() => setToggleDropdown(!toggleDropdown)}
+              onClick={() => setToggleDropdown(false)}
             >
-              Referee
+              Experience
+            </NavLink>
+            <NavLink
+              to="/writing"
+              className={mobileNavLinkClassName}
+              onClick={() => setToggleDropdown(false)}
+            >
+              Writing
             </NavLink>
             <GitHubButton name="HUIXIN-TW" />
             <ResumeButton name="Resume" />
