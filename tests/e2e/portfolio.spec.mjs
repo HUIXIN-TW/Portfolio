@@ -246,3 +246,37 @@ test("PWA rocket identity is consistent for Safari tabs, iOS install and the web
     expect(body).toContain('href="/site.webmanifest"');
   }
 });
+
+test("Project descriptions render semantic bullets rather than repeated loose paragraphs", async ({ page }) => {
+  await page.goto("/projects");
+  const project = page.locator(".editorial-project-card").filter({ hasText: "NotionSyncGCal Website" });
+  await project.getByRole("button", { name: "View details" }).click();
+  const dialog = page.getByRole("dialog");
+  const list = dialog.locator(".editorial-project-description-list");
+  await expect(list).toHaveCount(1);
+  await expect(list.locator("li")).toHaveCount(6);
+  await expect(list.locator("li").first()).toContainText("Built a Next.js 14+ web application");
+  await expect(dialog.getByRole("heading", { name: "Project details" })).toBeVisible();
+  await page.keyboard.press("Escape");
+  await expect(dialog).toHaveCount(0);
+});
+
+test("Primary navigation prioritises engineering experience before writing and resume", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("/");
+  const desktop = page.getByRole("navigation", { name: "Primary navigation" });
+  await expect(desktop.locator(":scope > a.editorial-nav-link")).toHaveText([
+    "Work", "Experience", "About", "Writing", "Resume",
+  ]);
+  await desktop.locator("summary").click();
+  await expect(desktop.getByRole("link", { name: "Education" })).toBeVisible();
+  await expect(desktop.getByRole("link", { name: "Awards" })).toBeVisible();
+  await expect(desktop.getByRole("link", { name: "Referee" })).toBeVisible();
+  await expect(desktop.getByRole("link", { name: "GitHub" })).toBeVisible();
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.getByRole("button", { name: "Menu" }).click();
+  const mobile = page.getByRole("navigation", { name: "Mobile navigation" });
+  await expect(mobile.locator(".editorial-mobile-links > a").first()).toHaveText("Work");
+  await expect(mobile.locator(".editorial-mobile-links > a").nth(2)).toHaveText("About");
+  await expect(mobile.locator(".editorial-mobile-links > a").nth(3)).toHaveText("Writing");
+});

@@ -17,7 +17,7 @@ const projectImageUrls = {
   ESP32: new URL("../assets/images/esp32.gif", import.meta.url).href,
 };
 
-const ProjectDetailsDialog = ({ data, summary, details, technologies, open, onClose }) => {
+const ProjectDetailsDialog = ({ data, summary, detailBlocks, technologies, open, onClose }) => {
   const imageUrl = projectImageUrls[data.imgId];
 
   return (
@@ -44,12 +44,24 @@ const ProjectDetailsDialog = ({ data, summary, details, technologies, open, onCl
           </header>
           <div className="editorial-project-dialog-body">
             {summary && <p className="editorial-project-dialog-summary">{summary}</p>}
-            {details.length > 0 && (
+            {detailBlocks.length > 0 && (
               <section className="editorial-project-dialog-section" aria-label="Project description">
                 <h3>Project details</h3>
-                {details.map((line, index) => (
-                  <p key={index}>{line.replace(/^\s*-\s*/, "").trim()}</p>
-                ))}
+                {detailBlocks.map((block, index) => {
+                  if (block.type === "list") {
+                    return (
+                      <ul className="editorial-project-description-list" key={index}>
+                        {block.items.map((item, itemIndex) => (
+                          <li key={itemIndex}>{item}</li>
+                        ))}
+                      </ul>
+                    );
+                  }
+                  if (block.type === "heading") {
+                    return <h4 className="editorial-project-description-heading" key={index}>{block.text}</h4>;
+                  }
+                  return <p key={index}>{block.text}</p>;
+                })}
               </section>
             )}
             {technologies.length > 0 && (

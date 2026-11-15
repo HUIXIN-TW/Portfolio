@@ -1,27 +1,15 @@
 import React, { useState } from "react";
 import ProjectDetailsDialog from "./ProjectDetailsDialog";
 import { getProjectTechnologies } from "../utils/projectFilters";
-
-// Legacy project descriptions contain prose and dash-prefixed lines.
-// Display only an initial summary in the card; the dialog preserves all content.
-const getDescription = (description) => {
-  const lines = Array.isArray(description)
-    ? description.filter((line) => typeof line === "string" && line.trim())
-    : [];
-  const first = lines.find((line) => !line.trim().startsWith("-")) ?? lines[0] ?? "";
-  return {
-    summary: first.replace(/^\s*-\s*/, "").trim(),
-    details: lines.filter((line) => line !== first),
-  };
-};
+import { getProjectDescription } from "../utils/projectDescription";
 
 const ProjectCard = ({ data }) => {
   const [detailsOpen, setDetailsOpen] = useState(false);
   const technologies = getProjectTechnologies(data);
-  const { summary, details } = getDescription(data.description);
+  const { summary, detailBlocks } = getProjectDescription(data.description);
 
   const hasContent =
-    Boolean(summary || details.length || data.youtubeVideoId || data.imgId) ||
+    Boolean(summary || detailBlocks.length || data.youtubeVideoId || data.imgId) ||
     technologies.length > 0;
 
   return (
@@ -62,7 +50,7 @@ const ProjectCard = ({ data }) => {
         <ProjectDetailsDialog
           data={data}
           summary={summary}
-          details={details}
+          detailBlocks={detailBlocks}
           technologies={technologies}
           open={detailsOpen}
           onClose={() => setDetailsOpen(false)}

@@ -144,3 +144,9 @@ The older project archive uses a two-column grid with cards of varying descripti
 - The dialog is labelled by its project title, supports Escape/backdrop dismissal, restores keyboard focus, and scrolls within the viewport on narrow screens.
 - Preserve the existing project list, filtering, links, description content and media. Do not introduce separate routes for project detail or reorder published projects.
 - Playwright verifies layout stability, dialog close/focus restoration and long-content 320px mobile scrolling.
+
+## Project detail formatting and recruiter navigation
+
+- Older project descriptions are stored as text arrays. `src/utils/projectDescription.js` parses consecutive dash-prefixed entries as semantic bullet lists; plain prose stays in paragraphs and explicit labels such as `Purpose:` become subheadings. Project JSON content stays unchanged.
+- The single-source navigation registry promotes `Work / Experience / About / Writing` to primary route items. Resume is directly accessible afterward as an external link. `More` contains Education, Awards, Referee and GitHub, without changing any URL.
+- The desktop More popup uses compact, clear link spacing and the mobile menu preserves the same priority order. Playwright covers the menu ordering and list structure.

@@ -17,11 +17,11 @@ export const ROUTES = Object.freeze({
 export const PRIMARY_NAV_ITEMS = Object.freeze([
   { to: ROUTES.projects, label: "Work" },
   { to: ROUTES.experience, label: "Experience" },
+  { to: ROUTES.about, label: "About" },
   { to: ROUTES.blog, label: "Writing" },
 ]);
 
 export const SECONDARY_NAV_ITEMS = Object.freeze([
-  { to: ROUTES.about, label: "About" },
   { to: ROUTES.education, label: "Education" },
   { to: ROUTES.certificatesAndAwards, label: "Awards" },
   { to: ROUTES.referee, label: "Referee" },
