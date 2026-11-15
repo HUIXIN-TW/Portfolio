@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { ROUTES } from "../config/routes.mjs";
 
 const capabilities = [
   {
@@ -39,10 +40,10 @@ const EngineeringFocus = () => (
           ))}
         </ul>
         <div className="editorial-overview-links">
-          <Link className="editorial-text-link" to="/experience">
+          <Link className="editorial-text-link" to={ROUTES.experience}>
             Experience <span aria-hidden="true">↗</span>
           </Link>
-          <Link className="editorial-text-link" to="/about">
+          <Link className="editorial-text-link" to={ROUTES.about}>
             Background <span aria-hidden="true">↗</span>
           </Link>
         </div>

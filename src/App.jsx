@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Footer from "./ui/Footer";
+import { ROUTES } from "./config/routes.mjs";
 import Header from "./ui/Header";
 import AboutPage from "./pages/AboutPage";
 import HomePage from "./pages/HomePage";
@@ -62,16 +63,16 @@ const SiteRoutes = ({ theme, handleThemeToggle, siteProps }) => {
       <Header theme={theme} onThemeToggle={handleThemeToggle} />
       <main className="flex-1 w-full relative">
         <Routes>
-          <Route path="/" element={<HomePage name={siteProps.name} title={siteProps.title} />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/education" element={<EducationPage />} />
-          <Route path="/certificates-awards" element={<CertificatesAndAwardsPage />} />
-          <Route path="/experience" element={<ExperiencePage />} />
-          <Route path="/projects" element={<ProjectsPage />} />
-          <Route path="/blog" element={<BlogPage />} />
-          <Route path="/blog/:slug" element={<BlogPostPage />} />
-          <Route path="/migration" element={<MigrationPage />} />
-          <Route path="/referee" element={<RefereePage />} />
+          <Route path={ROUTES.home} element={<HomePage name={siteProps.name} title={siteProps.title} />} />
+          <Route path={ROUTES.about} element={<AboutPage />} />
+          <Route path={ROUTES.education} element={<EducationPage />} />
+          <Route path={ROUTES.certificatesAndAwards} element={<CertificatesAndAwardsPage />} />
+          <Route path={ROUTES.experience} element={<ExperiencePage />} />
+          <Route path={ROUTES.projects} element={<ProjectsPage />} />
+          <Route path={ROUTES.blog} element={<BlogPage />} />
+          <Route path={ROUTES.blogPost} element={<BlogPostPage />} />
+          <Route path={ROUTES.migration} element={<MigrationPage />} />
+          <Route path={ROUTES.referee} element={<RefereePage />} />
           <Route
             path="*"
             element={

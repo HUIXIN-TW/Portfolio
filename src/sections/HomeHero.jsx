@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { ROUTES } from "../config/routes.mjs";
 
 const HomeHero = ({ name, title }) => (
   <section id="introduction" className="editorial-hero">
@@ -14,7 +15,7 @@ const HomeHero = ({ name, title }) => (
           and production reliability, backed by hands-on backend and data engineering.
         </p>
         <div className="editorial-actions">
-          <Link className="editorial-button editorial-button-primary" to="/projects">
+          <Link className="editorial-button editorial-button-primary" to={ROUTES.projects}>
             Explore platform work
           </Link>
           <a className="editorial-button editorial-button-secondary" href="https://resume.huixinyang.com/">

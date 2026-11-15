@@ -1,19 +1,18 @@
 import assert from "node:assert/strict";
 import { copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
+import { ROUTES, STATIC_PAGE_ROUTES, getBlogPostPath } from "../src/config/routes.mjs";
 
 // Cloudflare Pages serves /projects from /projects.html with a real HTTP 200.
 // Rewriting to /index.html via _redirects can instead cause a Pages 308 to /.
 const dist = resolve("dist");
 const entry = join(dist, "index.html");
-const app = readFileSync("src/App.jsx", "utf8");
 assert.ok(existsSync(entry), "Build index.html before generating route entrypoints");
 assert.ok(!existsSync(join(dist, "_redirects")), "Do not ship Pages _redirects rewrites");
 
-const routes = [...app.matchAll(/<Route\s+path="(\/[^"]+)"/g)].map((match) => match[1]);
-assert.ok(routes.includes("/projects"), "Missing canonical Projects route");
-assert.ok(routes.includes("/blog/:slug"), "Expected blog detail route");
-assert.ok(!routes.includes("/portfolio"), "Retired /portfolio route must remain missing");
+assert.ok(STATIC_PAGE_ROUTES.includes(ROUTES.projects), "Missing canonical Projects route");
+assert.equal(ROUTES.blogPost, "/blog/:slug", "Blog detail route must remain stable");
+assert.ok(!Object.values(ROUTES).includes("/portfolio"), "Retired /portfolio route must remain missing");
 
 const emitted = new Set();
 function emit(pathname) {
@@ -25,10 +24,7 @@ function emit(pathname) {
   copyFileSync(entry, output);
 }
 
-for (const route of routes) {
-  if (route.includes(":") || route.includes("*")) continue;
-  emit(route);
-}
+for (const route of STATIC_PAGE_ROUTES) emit(route);
 
 const sourceDir = resolve("src/blogs");
 const normalizeSlug = (value) => value.toLowerCase().trim().replace(/\.md$/i, "")
@@ -43,7 +39,7 @@ for (const file of readdirSync(sourceDir).filter((f) => f.endsWith(".md")).sort(
   assert.match(slug, /^[a-z0-9]+(?:-[a-z0-9]+)*$/, "Invalid blog slug");
   assert.ok(!slugs.has(slug), "Duplicate blog slug: " + slug);
   slugs.add(slug);
-  emit("/blog/" + slug);
+  emit(getBlogPostPath(slug));
 }
 const listed = JSON.parse(readFileSync("src/data/blog-posts.json", "utf8"));
 assert.ok(Array.isArray(listed), "Blog index must be a slug array");

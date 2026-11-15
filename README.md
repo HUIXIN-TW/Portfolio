@@ -18,11 +18,13 @@ src/
 ├── App.jsx              # Root component; defines routes and theme state
 ├── main.jsx             # Entry point; mounts React app
 ├── assets/images/       # Static images and social icons (loaded via import.meta.url)
+├── config/routes.mjs    # Canonical route paths, navigation and blog URL helper
 ├── blogs/               # Markdown blog posts (loaded via blogLoader.js)
 ├── data/                # Data sources (JSON collections and JavaScript career case studies)
-├── sections/            # Page-level route components
+├── pages/               # Route-level components (PascalCase + Page.jsx)
+├── sections/            # Reusable page sections (PascalCase)
 ├── styles/              # Global CSS (main.css) and shared Tailwind class strings (uiClasses.js)
-├── ui/                  # Shared presentational components
+├── ui/                  # Shared UI components (PascalCase)
 └── utils/               # Utilities: blogLoader, theme, projectFilters
 public/
 ├── ship-it-maybe.png    # Podcast cover image (referenced by src/data/podcast.json)
@@ -73,7 +75,7 @@ return a native HTTP 404. Avoid `_redirects` rewrites to `/index.html`:
 production `/projects` previously returned **HTTP 308 Location: /** instead
 of loading Projects. This regression was missed by Vite's SPA fallback tests.
 
-The production build now generates **physical clean-URL HTML entrypoints**
+The route registry in `src/config/routes.mjs` is the single source of URL paths and navigation. Both React Router and the build-time Pages entrypoint scripts import this registry. The production build now generates **physical clean-URL HTML entrypoints**
 (e.g. `dist/projects.html` and `dist/blog/hello-blog.html`) from React Router's
 literal routes and published Markdown blog slugs. Cloudflare Pages serves
 `/projects` directly from `/projects.html` without rewriting to root. Adding
@@ -108,3 +110,12 @@ As of 15 November 2026, the Portfolio prioritises **Platform & Backend Engineeri
 - The original 16 independent and earlier projects remain under Applications & Projects, with existing filters and details preserved.
 - Data Engineering is a connected competency, not the primary headline. Personal products remain visible in the project archive.
 - Do not promote unverified Terraform or Azure DevOps → GitHub Enterprise initiatives to delivered case studies. Avoid publishing private source/evidence URLs, sensitive configuration or unreconciled performance metrics.
+
+## Naming and public URL stability
+
+- React route files: `src/pages/FooPage.jsx` (PascalCase + Page), even where the URL is just `/foo`.
+- Reusable composition sections: `src/sections/FooSection.jsx` or a semantic PascalCase name, e.g. `HomeHero.jsx`.
+- Shared UI: `src/ui/ProjectCard.jsx`, `src/ui/ProjectFilters.jsx`. JavaScript utilities/data modules use camelCase (`blogLoader.js`, `projectFilters.js`, `platformCaseStudies.js`).
+- JSON, image and Markdown filenames use lowercase kebab-case for new files (`blog-posts.json`). Pre-existing data/asset filenames are not mass-renamed if compatibility or provenance is uncertain.
+- Public URLs and blog slugs are lowercase kebab-case and come exclusively from `src/config/routes.mjs` + Markdown frontmatter. Display names may differ from route names (e.g. Work → `/projects`, Writing → `/blog`).
+- Do not rename published routes or blog slugs as a side effect of moving source files. Keep Cloudflare Pages physical HTML entrypoints and native 404 rules intact.

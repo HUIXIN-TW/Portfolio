@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join, resolve } from "node:path";
+import { ROUTES, STATIC_PAGE_ROUTES, PRIMARY_NAV_ITEMS, getBlogPostPath } from "../src/config/routes.mjs";
 
 const dist = resolve("dist");
 const html = readFileSync(join(dist, "index.html"), "utf8");
@@ -13,17 +14,18 @@ assert.ok(!app.includes("LegacyTripRedirect"), "Portfolio must not redirect to T
 assert.ok(!existsSync(join(dist, "_redirects")), "Pages _redirects rewrites must not reappear");
 assert.ok(!existsSync("public/_redirects"), "Do not reintroduce redirect rules");
 
-const routes = [...app.matchAll(/<Route\s+path="(\/[^"]+)"/g)].map((m) => m[1]);
-assert.ok(routes.includes("/projects"), "Projects must use /projects");
-assert.ok(!routes.includes("/portfolio"), "Old /portfolio must return 404");
-assert.ok(!routes.some((route) => /^\/japan(?:\/|$)/.test(route)), "No Trips routes on Portfolio");
-// The navigation is data-driven: the same Work target renders on desktop and mobile.
-assert.ok(header.includes('{ to: "/projects", label: "Work" }'),
+assert.equal(ROUTES.projects, "/projects", "Projects must use /projects");
+assert.equal(ROUTES.blogPost, "/blog/:slug", "Blog slug URL must remain stable");
+assert.ok(!Object.values(ROUTES).includes("/portfolio"), "Old /portfolio must return 404");
+assert.ok(!Object.values(ROUTES).some((route) => /^\\/japan(?:\\/|$)/.test(route)), "No Trips routes on Portfolio");
+assert.ok(PRIMARY_NAV_ITEMS.some(({ to, label }) => to === ROUTES.projects && label === "Work"),
   "Work navigation must target the canonical /projects route");
-assert.equal((header.match(/PRIMARY_LINKS\.map/g) ?? []).length, 2,
+assert.equal((header.match(/PRIMARY_NAV_ITEMS\\.map/g) ?? []).length, 2,
   "Desktop and mobile navigation must both use the canonical primary links");
-
-const expected = routes.filter((route) => !route.includes(":") && !route.includes("*"));
+for (const key of Object.keys(ROUTES)) {
+  assert.ok(app.includes(`path={ROUTES.${key}}`), "React Router must mount route: " + key);
+}
+const expected = [...STATIC_PAGE_ROUTES];
 const publishedSlugs = [];
 const normalizeSlug = (value) => value.toLowerCase().trim().replace(/\.md$/i, "")
   .replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
@@ -34,7 +36,7 @@ for (const file of readdirSync("src/blogs").filter((f) => f.endsWith(".md"))) {
   const slug = fm.match(/^slug:\s*["']?([^"'\n]+)["']?\s*$/im)?.[1];
   publishedSlugs.push(normalizeSlug(slug || file));
 }
-if (routes.includes("/blog/:slug")) expected.push(...publishedSlugs.map((slug) => "/blog/" + slug));
+if (ROUTES.blogPost) expected.push(...publishedSlugs.map(getBlogPostPath));
 for (const route of expected) {
   const routeHtml = join(dist, route.slice(1) + ".html");
   assert.ok(existsSync(routeHtml), "Missing static route entry: " + route);

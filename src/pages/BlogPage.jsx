@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
 import { Link } from "react-router-dom";
+import { getBlogPostPath } from "../config/routes.mjs";
 import podcastData from "../data/podcast.json";
 import { getBlogPosts } from "../utils/blogLoader";
 import {
@@ -92,7 +93,7 @@ const BlogPage = () => {
                   <article key={post.slug} className="py-4 first:pt-0 last:pb-0">
                     <div className="flex flex-col gap-3">
                       <div className="flex flex-col gap-2">
-                        <Link to={`/blog/${post.slug}`} className="block">
+                        <Link to={getBlogPostPath(post.slug)} className="block">
                           <h4 className={cardTitle}>{post.title}</h4>
                         </Link>
                         <p className={cardMeta}>
@@ -108,7 +109,7 @@ const BlogPage = () => {
                       {renderTags(post.tags)}
 
                       <div className="flex flex-wrap items-center gap-2 pt-1">
-                        <Link to={`/blog/${post.slug}`} className={`${tagPillButton} ${LINK_FOCUS}`}>
+                        <Link to={getBlogPostPath(post.slug)} className={`${tagPillButton} ${LINK_FOCUS}`}>
                           Read more
                         </Link>
                       </div>
@@ -210,7 +211,7 @@ const BlogPage = () => {
                     <div className="flex flex-col gap-3">
                       <div className="flex flex-col gap-2 md:flex-row md:items-start md:justify-between md:gap-4">
                         <div className="min-w-0">
-                          <Link to={`/blog/${post.slug}`} className="block">
+                          <Link to={getBlogPostPath(post.slug)} className="block">
                             <h4 className={cardTitle}>{post.title}</h4>
                           </Link>
                           <p className={cardMeta}>
@@ -220,7 +221,7 @@ const BlogPage = () => {
                         </div>
 
                         <div className="flex flex-wrap items-center gap-2">
-                          <Link to={`/blog/${post.slug}`} className={`${tagPillButton} ${LINK_FOCUS}`}>
+                          <Link to={getBlogPostPath(post.slug)} className={`${tagPillButton} ${LINK_FOCUS}`}>
                             Read more
                           </Link>
                         </div>

@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
 import { Link, useParams } from "react-router-dom";
+import { ROUTES } from "../config/routes.mjs";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { getBlogPostBySlug } from "../utils/blogLoader";
@@ -111,7 +112,7 @@ const BlogPostPage = () => {
       <div className={sectionContainer}>
         <div className="mb-6">
           <Link
-            to="/blog"
+            to={ROUTES.blog}
             className="text-sm font-medium text-slate-600 underline decoration-slate-300 underline-offset-4 dark:text-[#C7C9D9] dark:decoration-[#44475A] dark:hover:text-[#FF79C6]"
           >
             Back to Blog

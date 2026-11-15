@@ -2,18 +2,7 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { THEME_DRACULA } from "../utils/theme";
-
-const PRIMARY_LINKS = [
-  { to: "/projects", label: "Work" },
-  { to: "/experience", label: "Experience" },
-  { to: "/blog", label: "Writing" },
-];
-const SECONDARY_LINKS = [
-  { to: "/about", label: "About" },
-  { to: "/education", label: "Education" },
-  { to: "/certificates-awards", label: "Awards" },
-  { to: "/referee", label: "Referee" },
-];
+import { PRIMARY_NAV_ITEMS, SECONDARY_NAV_ITEMS } from "../config/routes.mjs";
 
 const navClass = ({ isActive }) =>
   isActive ? "editorial-nav-link is-active" : "editorial-nav-link";
@@ -50,7 +39,7 @@ const Header = ({ theme, onThemeToggle }) => {
         </Link>
 
         <nav className="editorial-desktop-nav" aria-label="Primary navigation">
-          {PRIMARY_LINKS.map(({ to, label }) => (
+          {PRIMARY_NAV_ITEMS.map(({ to, label }) => (
             <NavLink key={to} className={navClass} to={to}>{label}</NavLink>
           ))}
           <a className="editorial-nav-link" href="https://resume.huixinyang.com/">
@@ -59,7 +48,7 @@ const Header = ({ theme, onThemeToggle }) => {
           <details className="editorial-more">
             <summary className="editorial-nav-link">More</summary>
             <div className="editorial-more-links">
-              {SECONDARY_LINKS.map(({ to, label }) => (
+              {SECONDARY_NAV_ITEMS.map(({ to, label }) => (
                 <NavLink key={to} className={navClass} to={to}>{label}</NavLink>
               ))}
               <a className="editorial-nav-link" href="https://github.com/HUIXIN-TW" target="_blank" rel="noopener noreferrer">
@@ -90,13 +79,13 @@ const Header = ({ theme, onThemeToggle }) => {
         hidden={!mobileOpen}
       >
         <div className="editorial-container editorial-mobile-links">
-          {PRIMARY_LINKS.map(({ to, label }) => (
+          {PRIMARY_NAV_ITEMS.map(({ to, label }) => (
             <NavLink key={to} className={navClass} to={to} onClick={() => setMobileOpen(false)}>
               {label}
             </NavLink>
           ))}
           <a className="editorial-nav-link" href="https://resume.huixinyang.com/">Resume</a>
-          {SECONDARY_LINKS.map(({ to, label }) => (
+          {SECONDARY_NAV_ITEMS.map(({ to, label }) => (
             <NavLink key={to} className={navClass} to={to} onClick={() => setMobileOpen(false)}>
               {label}
             </NavLink>
