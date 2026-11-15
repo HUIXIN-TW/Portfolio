@@ -22,11 +22,6 @@ const Introduction = ({ name, title }) => (
           </a>
         </div>
       </div>
-      <div className="editorial-hero-aside" aria-hidden="true">
-        <span>BACKEND / PLATFORM</span>
-        <span>DATA / INTEGRATIONS</span>
-        <span>PRODUCT ENGINEERING</span>
-      </div>
     </div>
   </section>
 );

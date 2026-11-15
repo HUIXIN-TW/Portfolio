@@ -9,7 +9,6 @@
  */
 import React from "react";
 import PropTypes from "prop-types";
-import { THEME_DRACULA } from "../utils/theme";
 
 const devDotToIcon = new URL("../assets/images/socials/devdotto.svg", import.meta.url).href;
 const envelopeIcon = new URL("../assets/images/socials/envelope.svg", import.meta.url).href;
@@ -28,15 +27,13 @@ const youTubeIcon = new URL("../assets/images/socials/youtube.svg", import.meta.
  */
 
 const Footer = (props) => {
-  const { devDotTo, email, gitHub, instagram, linkedIn, medium, name, theme, twitter, youTube } = props;
+  const { devDotTo, email, gitHub, instagram, linkedIn, medium, name, twitter, youTube } = props;
 
   // Keep the footer themeable from App props.
   return (
     <div
       id="footer"
-      className={`flex w-full flex-col items-center gap-2 border-t border-slate-200 py-2 text-slate-900 dark:border-[#44475A] dark:bg-[#21222c] dark:text-[#F8F8F2] ${
-        theme === THEME_DRACULA ? "bg-[#21222c]" : "bg-slate-200"
-      }`}
+      className="editorial-footer flex w-full flex-col items-center gap-2 border-t"
     >
       <div className="flex justify-center gap-8">
         {email && (
@@ -88,7 +85,7 @@ const Footer = (props) => {
           </a>
         )}
       </div>
-      <p className="mt-0 text-xs text-black dark:text-[#C7C9D9]">Created by {name}</p>
+      <p className="mt-0 text-xs">Created by {name}</p>
     </div>
   );
 };
@@ -101,7 +98,6 @@ Footer.propTypes = {
   linkedIn: PropTypes.string,
   medium: PropTypes.string,
   name: PropTypes.string.isRequired,
-  theme: PropTypes.string,
   twitter: PropTypes.string,
   youTube: PropTypes.string,
 };

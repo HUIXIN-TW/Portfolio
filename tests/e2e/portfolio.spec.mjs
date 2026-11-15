@@ -100,3 +100,32 @@ test("Editorial typography survives 150% text scaling, reduced motion and theme 
   await expect(page.locator("html")).toHaveAttribute("data-theme", "dracula");
   await expect(page.getByRole("button", { name: "Switch to light theme" })).toBeVisible();
 });
+
+test("Editorial palette is graphite-led and consistent in light/dark modes", async ({ page }) => {
+  await page.emulateMedia({ colorScheme: "light" });
+  await page.goto("/");
+  const getPalette = () => page.evaluate(() => {
+    const styles = getComputedStyle(document.documentElement);
+    const shell = getComputedStyle(document.querySelector("#main"));
+    return {
+      background: styles.getPropertyValue("--ed-background").trim(),
+      ink: styles.getPropertyValue("--ed-ink").trim(),
+      accent: styles.getPropertyValue("--ed-accent").trim(),
+      shellBackground: shell.backgroundColor,
+    };
+  });
+  await expect.poll(async () => (await getPalette()).background).toBe("#faf9f7");
+  expect(await getPalette()).toMatchObject({
+    ink: "#25272b",
+    accent: "#415e7a",
+    shellBackground: "rgb(250, 249, 247)",
+  });
+  await page.getByRole("button", { name: "Switch to dark theme" }).click();
+  expect(await getPalette()).toMatchObject({
+    background: "#191b20",
+    ink: "#f3f4f5",
+    accent: "#b0c8e2",
+    shellBackground: "rgb(25, 27, 32)",
+  });
+  await expect(page.locator(".editorial-hero-aside")).toHaveCount(0);
+});

@@ -20,7 +20,6 @@ const ProjectsPage = () => {
     <section className="editorial-projects" id="projects">
       <div className="editorial-container">
         <div className="editorial-projects-heading">
-          <p className="editorial-eyebrow">PROJECT ARCHIVE</p>
           <h1>Projects</h1>
           <p className="editorial-lead">
             A selection of engineering work across cloud platforms, integrations,

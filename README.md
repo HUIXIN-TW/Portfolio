@@ -91,7 +91,7 @@ Still verify real HTTP responses after the Cloudflare Pages production deploy.
 Portfolio uses Direction A (Editorial Engineering), selected on 15 November 2026. This independent repository is not part of the Home/Trips/Space monorepo.
 
 - Semantic light/dark tokens: src/styles/editorial.css; shared primitive classes: src/styles/uiClasses.js.
-- Light palette: warm off-white #F7F7F2, ink #1E302F, sage #365B52 for legible interactive states (the design reference uses #53746A).
+- Light palette: near-neutral warm-white #FAF9F7, graphite #25272B, neutral gray #60656D; slate-blue #415E7A only for interaction accents. Dark mode uses charcoal #191B20, not green.
 - Fonts: Inter/Noto Sans TC/system sans with monospace only for secondary technical labels. The existing Google Fonts request already enables display=swap; no new font files are introduced.
 - Home prioritizes an engineering proposition, featured work and concise biography. The full About, education, awards, referees and other existing routes stay accessible.
 - Projects shows role, summary and leading technologies upfront, with other details/media in an accessible disclosure. Category filtering remains; advanced technology filters start collapsed.
