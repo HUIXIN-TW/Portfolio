@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join, resolve } from "node:path";
-import { ROUTES, LEGACY_ROUTES, STATIC_PAGE_ROUTES, PRIMARY_NAV_ITEMS, SECONDARY_NAV_ITEMS, getBlogPostPath } from "../src/config/routes.mjs";
+import { ROUTES, LEGACY_ROUTES, STATIC_PAGE_ROUTES, PRIMARY_NAV_ITEMS, SECONDARY_NAV_ITEMS, getWritingPostPath } from "../src/config/routes.mjs";
 
 const dist = resolve("dist");
 const html = readFileSync(join(dist, "index.html"), "utf8");
@@ -20,11 +20,11 @@ assert.ok(STATIC_PAGE_ROUTES.includes(LEGACY_ROUTES.about), "Missing legacy Abou
 assert.ok(app.includes("path={LEGACY_ROUTES.about}"), "Legacy About route must be mounted");
 assert.ok(![...PRIMARY_NAV_ITEMS, ...SECONDARY_NAV_ITEMS].some(({ to }) => to === LEGACY_ROUTES.about),
   "Retired About must not appear in navigation");
-assert.equal(ROUTES.blogPost, "/blog/:slug", "Blog slug URL must remain stable");
+assert.equal(ROUTES.writingPost, "/writing/:slug", "Writing slug URL must be canonical");
 assert.ok(!Object.values(ROUTES).includes("/portfolio"), "Old /portfolio must return 404");
 assert.ok(!Object.values(ROUTES).some((route) => route === "/japan" || route.startsWith("/japan/")), "No Trips routes on Portfolio");
-assert.ok(PRIMARY_NAV_ITEMS.some(({ to, label }) => to === ROUTES.projects && label === "Work"),
-  "Work navigation must target the canonical /projects route");
+assert.ok(PRIMARY_NAV_ITEMS.some(({ to, label }) => to === ROUTES.projects && label === "Projects"),
+  "Projects navigation must target the canonical /projects route");
 assert.equal(header.split("PRIMARY_NAV_ITEMS.map").length - 1, 2,
   "Desktop and mobile navigation must both use the canonical primary links");
 for (const key of Object.keys(ROUTES)) {
@@ -41,13 +41,16 @@ for (const file of readdirSync("src/blogs").filter((f) => f.endsWith(".md"))) {
   const slug = fm.match(/^slug:\s*["']?([^"'\n]+)["']?\s*$/im)?.[1];
   publishedSlugs.push(normalizeSlug(slug || file));
 }
-if (ROUTES.blogPost) expected.push(...publishedSlugs.map(getBlogPostPath));
+if (ROUTES.writingPost) expected.push(...publishedSlugs.map(getWritingPostPath));
 for (const route of expected) {
   const routeHtml = join(dist, route.slice(1) + ".html");
   assert.ok(existsSync(routeHtml), "Missing static route entry: " + route);
   assert.equal(readFileSync(routeHtml, "utf8"), html, "Route must serve React entrypoint: " + route);
 }
-for (const retired of ["/portfolio", "/japan", "/japan/en", "/trips/japan/places-en.kml"]) {
+assert.equal(ROUTES.writing, "/writing", "Writing index must be canonical");
+assert.ok(PRIMARY_NAV_ITEMS.some(({ to, label }) => to === ROUTES.writing && label === "Writing"), "Writing navigation must use /writing");
+assert.ok(!Object.values(ROUTES).some((route) => route === "/blog" || route.startsWith("/blog/")), "Blog routes must remain retired");
+for (const retired of ["/blog", "/blog/hello-blog", "/writing/hello-blog", ...publishedSlugs.map((slug) => "/blog/" + slug), "/portfolio", "/japan", "/japan/en", "/trips/japan/places-en.kml"]) {
   assert.ok(!existsSync(join(dist, retired.slice(1) + ".html")), "Retired route emitted: " + retired);
 }
 console.log("Verified " + expected.length + " clean-URL Pages HTML entrypoints and native 404.");

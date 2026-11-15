@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { ROUTES } from "../config/routes.mjs";
+import { ROUTES, PRIMARY_NAV_ITEMS } from "../config/routes.mjs";
 import ExternalLink from "./ExternalLink";
 
 // Editorial footer: identity, useful routes and explicit contact links.
@@ -30,9 +30,9 @@ const Footer = ({ name, email, gitHub, linkedIn, devDotTo, instagram, medium, tw
           <div className="editorial-footer-columns">
             <nav className="editorial-footer-column" aria-label="Footer pages">
               <h2>Explore</h2>
-              <Link to={ROUTES.projects}>Work</Link>
-              <Link to={ROUTES.experience}>Experience</Link>
-              <Link to={ROUTES.blog}>Writing</Link>
+              {PRIMARY_NAV_ITEMS.map(({ to, label }) => (
+                <Link key={to} to={to}>{label}</Link>
+              ))}
               <ExternalLink href="https://resume.huixinyang.com/">Resume</ExternalLink>
             </nav>
             <nav className="editorial-footer-column" aria-label="Footer contact">

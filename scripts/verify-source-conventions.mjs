@@ -11,8 +11,8 @@ assert.equal(routePaths.length, new Set(routePaths).size, "Duplicate public rout
 for (const [key, pathname] of Object.entries(ROUTES)) {
   if (key === "home") {
     assert.equal(pathname, "/");
-  } else if (key === "blogPost") {
-    assert.equal(pathname, "/blog/:slug");
+  } else if (key === "writingPost") {
+    assert.equal(pathname, "/writing/:slug");
   } else {
     assert.match(pathname.slice(1), /^[a-z]+(?:-[a-z]+)*$/, "Routes must be lowercase kebab-case");
   }

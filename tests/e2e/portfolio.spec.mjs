@@ -5,8 +5,8 @@ test("Portfolio home and Projects navigation remain available", async ({ page })
   expect(response?.status()).toBe(200);
   await expect(page.getByRole("heading", { name: "Huixin Yang", exact: true })).toBeVisible();
   const mainNav = page.getByRole("navigation", { name: "Primary navigation" });
-  await expect(mainNav.getByRole("link", { name: "Work", exact: true })).toBeVisible();
-  await mainNav.getByRole("link", { name: "Work", exact: true }).click();
+  await expect(mainNav.getByRole("link", { name: "Projects", exact: true })).toBeVisible();
+  await mainNav.getByRole("link", { name: "Projects", exact: true }).click();
   await expect(page).toHaveURL(/\/projects$/);
   await expect(page.getByRole("heading", { name: "Projects", exact: true })).toBeVisible();
   await expect(page.locator("#projects")).toBeVisible();
@@ -58,7 +58,7 @@ test("Projects deep link returns HTTP 200 without redirects, not Home", async ({
   await expect(page.getByRole("heading", { name: "Projects", exact: true })).toBeVisible();
 });
 
-for (const route of ["/education", "/certificates-awards", "/experience", "/blog", "/blog/hello-blog", "/blog/building-static-portfolio-blog", "/migration", "/referee"]) {
+for (const route of ["/education", "/certificates-awards", "/experience", "/writing", "/writing/building-static-portfolio-blog", "/migration", "/referee"]) {
   test(`Portfolio deep link ${route} serves clean URL without redirect`, async ({ page, request }) => {
     const raw = await request.get(route, { maxRedirects: 0 });
     expect(raw.status()).toBe(200);
@@ -70,7 +70,7 @@ for (const route of ["/education", "/certificates-awards", "/experience", "/blog
   });
 }
 
-for (const legacy of ["/portfolio", "/portfolio/", "/japan", "/japan/en", "/japan/en.html", "/trips/japan/places-en.kml", "/blog/unknown-post"]) {
+for (const legacy of ["/portfolio", "/portfolio/", "/japan", "/japan/en", "/japan/en.html", "/trips/japan/places-en.kml", "/writing/unknown-post", "/writing/hello-blog", "/blog", "/blog/hello-blog", "/blog/building-static-portfolio-blog"]) {
   test(`Unknown or retired ${legacy} returns native HTTP 404 without redirect`, async ({ page, request }) => {
     const raw = await request.get(legacy, { maxRedirects: 0 });
     expect(raw.status()).toBe(404);
@@ -83,6 +83,43 @@ for (const legacy of ["/portfolio", "/portfolio/", "/japan", "/japan/en", "/japa
   });
 }
 
+
+test("Writing uses one canonical article list and omits unpublished drafts", async ({ page }) => {
+  await page.goto("/");
+  await page.getByRole("navigation", { name: "Primary navigation" }).getByRole("link", { name: "Writing", exact: true }).click();
+  await expect(page).toHaveURL(/\/writing$/);
+  await expect(page.getByRole("heading", { name: "Writing", exact: true })).toBeVisible();
+  await expect(page.locator("#writing article")).toHaveCount(1);
+  await expect(page.getByRole("heading", { name: "Hello Blog", exact: true })).toHaveCount(0);
+  await expect(page.getByRole("heading", { name: "Latest Articles", exact: true })).toHaveCount(0);
+  await expect(page.getByRole("link", { name: "Listen to Ship It Maybe" })).toHaveAttribute("target", "_blank");
+  await expect(page.getByRole("navigation", { name: "Footer pages" }).getByRole("link", { name: "Writing", exact: true })).toHaveAttribute("href", "/writing");
+  const article = page.getByRole("link", { name: "Building a Static Portfolio Blog", exact: true });
+  await expect(article).toHaveAttribute("href", "/writing/building-static-portfolio-blog");
+  await article.click();
+  await expect(page).toHaveURL(/\/writing\/building-static-portfolio-blog$/);
+  await expect(page.getByRole("link", { name: "Back to Writing" })).toHaveAttribute("href", "/writing");
+});
+
+test("Client-side navigation resets scroll while same-page and cross-page anchors remain reachable", async ({ page }) => {
+  await page.goto("/projects");
+  await page.locator("footer#footer").scrollIntoViewIfNeeded();
+  expect(await page.evaluate(() => window.scrollY)).toBeGreaterThan(500);
+  await page.getByRole("navigation", { name: "Primary navigation" }).getByRole("link", { name: "Writing", exact: true }).click();
+  await expect(page).toHaveURL(/\/writing$/);
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(0);
+
+  await page.getByRole("link", { name: "Huixin Yang", exact: true }).first().click();
+  await page.getByRole("link", { name: "Background", exact: true }).click();
+  await expect(page).toHaveURL(/\/#background$/);
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(0);
+  await page.getByRole("navigation", { name: "Primary navigation" }).getByRole("link", { name: "Projects", exact: true }).click();
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(0);
+  // The compatibility route must still mount Home before its fragment resolves.
+  await page.goto("/about");
+  await expect(page).toHaveURL(/\/#background$/);
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(0);
+});
 
 test("Editorial Home presents a clear proposition and real featured work", async ({ page }) => {
   await page.goto("/");
@@ -159,7 +196,7 @@ for (const width of [320, 390, 768, 1280]) {
       await expect(menu).toBeVisible();
       await menu.click();
       await expect(page.getByRole("navigation", { name: "Mobile navigation" })).toBeVisible();
-      await page.getByRole("navigation", { name: "Mobile navigation" }).getByRole("link", { name: "Work" }).click();
+      await page.getByRole("navigation", { name: "Mobile navigation" }).getByRole("link", { name: "Projects" }).click();
       await expect(page).toHaveURL(/\/projects$/);
       await expect(page.getByRole("button", { name: "Menu" })).toBeVisible();
     }
@@ -273,7 +310,7 @@ test("PWA rocket identity is consistent for Safari tabs, iOS install and the web
     expect(dimensions).toEqual([expectedSize, expectedSize]);
   }
 
-  for (const route of ["/projects", "/experience", "/blog"]) {
+  for (const route of ["/projects", "/experience", "/writing"]) {
     const routeResponse = await request.get(route, { maxRedirects: 0 });
     expect(routeResponse.status()).toBe(200);
     const body = await routeResponse.text();
@@ -302,7 +339,7 @@ test("Primary navigation prioritises engineering experience before writing and r
   await page.goto("/");
   const desktop = page.getByRole("navigation", { name: "Primary navigation" });
   await expect(desktop.locator(":scope > a.editorial-nav-link")).toHaveText([
-    "Work", "Experience", "Writing", "Resume",
+    "Projects", "Experience", "Writing", "Resume",
   ]);
   await desktop.locator("summary").click();
   await expect(desktop.getByRole("link", { name: "Education" })).toBeVisible();
@@ -312,7 +349,7 @@ test("Primary navigation prioritises engineering experience before writing and r
   await page.setViewportSize({ width: 390, height: 844 });
   await page.getByRole("button", { name: "Menu" }).click();
   const mobile = page.getByRole("navigation", { name: "Mobile navigation" });
-  await expect(mobile.locator(".editorial-mobile-links > a").first()).toHaveText("Work");
+  await expect(mobile.locator(".editorial-mobile-links > a").first()).toHaveText("Projects");
   await expect(mobile.locator(".editorial-mobile-links > a").nth(2)).toHaveText("Writing");
   await expect(mobile.getByRole("link", { name: "About" })).toHaveCount(0);
 });
@@ -334,7 +371,7 @@ test("Primary header and redesigned footer clearly identify external links", asy
   await expect(github.locator(".editorial-external-link-icon")).toBeVisible();
 
   const footer = page.locator("footer#footer");
-  await expect(footer.getByRole("navigation", { name: "Footer pages" }).getByRole("link", { name: "Work" }))
+  await expect(footer.getByRole("navigation", { name: "Footer pages" }).getByRole("link", { name: "Projects" }))
     .toHaveAttribute("href", "/projects");
   const footerResume = footer.getByRole("navigation", { name: "Footer pages" }).getByRole("link", { name: "Resume" });
   await expect(footerResume.locator(".editorial-external-link-icon")).toBeVisible();
@@ -349,7 +386,7 @@ test("All top-level pages share the Projects editorial H1 scale and alignment", 
   const pages = [
     ["/projects", "Projects"],
     ["/experience", "Experience"],
-    ["/blog", "Writing"],
+    ["/writing", "Writing"],
     ["/education", "Education & Scholarships"],
     ["/certificates-awards", "Certificates & Awards"],
     ["/referee", "References"],
@@ -377,11 +414,31 @@ test("All top-level pages share the Projects editorial H1 scale and alignment", 
 
 test("Editorial footer and page headings fit narrow screens without horizontal overflow", async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 740 });
-  for (const route of ["/projects", "/experience", "/blog"]) {
+  for (const route of ["/projects", "/experience", "/writing"]) {
     await page.goto(route);
     await expect(page.locator(".editorial-page-heading h1")).toBeVisible();
     await expect(page.locator("footer#footer")).toBeVisible();
     expect(await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth))
       .toBeLessThanOrEqual(1);
+  }
+});
+
+test("Writing layout remains readable in mobile and desktop light/dark themes", async ({ page }, testInfo) => {
+  for (const width of [320, 390, 1280]) {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto("/writing");
+    for (const theme of ["light", "dark"]) {
+      const desiredButton = theme === "light" ? "Switch to dark theme" : "Switch to light theme";
+      if (!await page.getByRole("button", { name: desiredButton }).isVisible()) {
+        await page.getByRole("button", { name: /Switch to .* theme/ }).click();
+      }
+      await expect(page.getByRole("button", { name: desiredButton })).toBeVisible();
+      await expect(page.locator("html")).toHaveAttribute("data-theme", theme === "dark" ? "dracula" : "light");
+      await expect(page.getByRole("heading", { name: "Writing", exact: true })).toBeVisible();
+      await expect(page.locator("#writing article")).toHaveCount(1);
+      expect(await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth)).toBeLessThanOrEqual(1);
+      // Disable transitions for a deterministic review artifact after the theme change.
+      await page.screenshot({ path: testInfo.outputPath(`writing-${width}-${theme}.png`), fullPage: true, animations: "disabled" });
+    }
   }
 });

@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import RouteScrollManager from "./ui/RouteScrollManager";
 import Footer from "./ui/Footer";
 import { ROUTES, LEGACY_ROUTES } from "./config/routes.mjs";
 import Header from "./ui/Header";
@@ -10,8 +11,8 @@ import ProjectsPage from "./pages/ProjectsPage";
 import MigrationPage from "./pages/MigrationPage";
 import RefereePage from "./pages/RefereePage";
 import ExperiencePage from "./pages/ExperiencePage";
-import BlogPage from "./pages/BlogPage";
-import BlogPostPage from "./pages/BlogPostPage";
+import WritingPage from "./pages/WritingPage";
+import WritingPostPage from "./pages/WritingPostPage";
 import { applyThemeToDocument, getInitialTheme, THEME_DRACULA, THEME_LIGHT, THEME_STORAGE_KEY } from "./utils/theme";
 
 import "./styles/main.css";
@@ -48,6 +49,7 @@ const App = () => {
 
   return (
     <Router>
+      <RouteScrollManager />
       <SiteRoutes theme={theme} handleThemeToggle={handleThemeToggle} siteProps={siteProps} />
     </Router>
   );
@@ -68,8 +70,8 @@ const SiteRoutes = ({ theme, handleThemeToggle, siteProps }) => {
           <Route path={ROUTES.certificatesAndAwards} element={<CertificatesAndAwardsPage />} />
           <Route path={ROUTES.experience} element={<ExperiencePage />} />
           <Route path={ROUTES.projects} element={<ProjectsPage />} />
-          <Route path={ROUTES.blog} element={<BlogPage />} />
-          <Route path={ROUTES.blogPost} element={<BlogPostPage />} />
+          <Route path={ROUTES.writing} element={<WritingPage />} />
+          <Route path={ROUTES.writingPost} element={<WritingPostPage />} />
           <Route path={ROUTES.migration} element={<MigrationPage />} />
           <Route path={ROUTES.referee} element={<RefereePage />} />
           <Route

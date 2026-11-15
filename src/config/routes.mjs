@@ -1,22 +1,22 @@
 // The single source of truth for Portfolio URL paths and navigation.
-// Keep existing public URLs stable: Cloudflare Pages emits physical HTML
-// entrypoints for each static route and published blog slug.
+// Cloudflare Pages route ownership: Cloudflare Pages emits physical HTML
+// entrypoints for each static route and published article slug.
 export const ROUTES = Object.freeze({
   home: "/",
   education: "/education",
   certificatesAndAwards: "/certificates-awards",
   experience: "/experience",
   projects: "/projects",
-  blog: "/blog",
-  blogPost: "/blog/:slug",
+  writing: "/writing",
+  writingPost: "/writing/:slug",
   migration: "/migration",
   referee: "/referee",
 });
 
 export const PRIMARY_NAV_ITEMS = Object.freeze([
-  { to: ROUTES.projects, label: "Work" },
+  { to: ROUTES.projects, label: "Projects" },
   { to: ROUTES.experience, label: "Experience" },
-  { to: ROUTES.blog, label: "Writing" },
+  { to: ROUTES.writing, label: "Writing" },
 ]);
 
 export const SECONDARY_NAV_ITEMS = Object.freeze([
@@ -33,4 +33,4 @@ export const STATIC_PAGE_ROUTES = Object.freeze([
   ...Object.values(LEGACY_ROUTES),
 ]);
 
-export const getBlogPostPath = (slug) => `${ROUTES.blog}/${encodeURIComponent(slug)}`;
+export const getWritingPostPath = (slug) => `${ROUTES.writing}/${encodeURIComponent(slug)}`;

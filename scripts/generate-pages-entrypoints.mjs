@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
-import { ROUTES, STATIC_PAGE_ROUTES, getBlogPostPath } from "../src/config/routes.mjs";
+import { ROUTES, STATIC_PAGE_ROUTES, getWritingPostPath } from "../src/config/routes.mjs";
 
 // Cloudflare Pages serves /projects from /projects.html with a real HTTP 200.
 // Rewriting to /index.html via _redirects can instead cause a Pages 308 to /.
@@ -11,8 +11,11 @@ assert.ok(existsSync(entry), "Build index.html before generating route entrypoin
 assert.ok(!existsSync(join(dist, "_redirects")), "Do not ship Pages _redirects rewrites");
 
 assert.ok(STATIC_PAGE_ROUTES.includes(ROUTES.projects), "Missing canonical Projects route");
-assert.equal(ROUTES.blogPost, "/blog/:slug", "Blog detail route must remain stable");
+assert.equal(ROUTES.writingPost, "/writing/:slug", "Writing detail route must be canonical");
 assert.ok(!Object.values(ROUTES).includes("/portfolio"), "Retired /portfolio route must remain missing");
+
+assert.equal(ROUTES.writing, "/writing", "Writing index must be canonical");
+assert.ok(!Object.values(ROUTES).some((route) => route === "/blog" || route.startsWith("/blog/")), "Blog routes must remain retired");
 
 const emitted = new Set();
 function emit(pathname) {
@@ -39,7 +42,7 @@ for (const file of readdirSync(sourceDir).filter((f) => f.endsWith(".md")).sort(
   assert.match(slug, /^[a-z0-9]+(?:-[a-z0-9]+)*$/, "Invalid blog slug");
   assert.ok(!slugs.has(slug), "Duplicate blog slug: " + slug);
   slugs.add(slug);
-  emit(getBlogPostPath(slug));
+  emit(getWritingPostPath(slug));
 }
 const listed = JSON.parse(readFileSync("src/data/blog-posts.json", "utf8"));
 assert.ok(Array.isArray(listed), "Blog index must be a slug array");

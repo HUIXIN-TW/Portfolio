@@ -1,17 +1,9 @@
-import React, { useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 import { ROUTES } from "../config/routes.mjs";
 
 // The former About page's unique career narrative lives once, on Home.
 const ProfessionalBackground = () => {
-  const { hash } = useLocation();
-
-  useEffect(() => {
-    if (hash === "#background") {
-      document.getElementById("background")?.scrollIntoView({ block: "start" });
-    }
-  }, [hash]);
-
   return (
     <section id="background" className="editorial-background" aria-labelledby="background-heading">
       <div className="editorial-container editorial-background-layout">
