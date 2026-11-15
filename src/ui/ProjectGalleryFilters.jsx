@@ -13,7 +13,7 @@ const ProjectGalleryFilters = ({
   onTechnologyChange,
   onClearFilters,
 }) => {
-  const [showAdvancedFilters, setShowAdvancedFilters] = useState(true);
+  const [showAdvancedFilters, setShowAdvancedFilters] = useState(false);
   const [showAllAdvancedTags, setShowAllAdvancedTags] = useState(false);
 
   const technologyFilters = useMemo(() => getSortedTechnologyFilters(projects), [projects]);
@@ -48,6 +48,7 @@ const ProjectGalleryFilters = ({
               <button
                 key={category}
                 type="button"
+                aria-pressed={isActive}
                 onClick={() => onCategoryChange(category)}
                 className={`${tagPillFilter} flex-shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-[#BD93F9] dark:focus-visible:ring-offset-[#282A36] ${
                   isActive ? `${tagPillFilterActive} shadow-sm` : ""
@@ -98,6 +99,7 @@ const ProjectGalleryFilters = ({
                 <button
                   key={technology}
                   type="button"
+                  aria-pressed={isActive}
                   onClick={() => onTechnologyChange(technology)}
                   className={`${tagPillBase} focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-[#8BE9FD] dark:focus-visible:ring-offset-[#282A36] dark:hover:bg-[#FF79C6] dark:hover:text-[#282A36] ${
                     isActive ? `${tagPillTechActive} shadow-sm` : ""

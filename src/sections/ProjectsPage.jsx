@@ -3,61 +3,62 @@ import majorproject from "../data/major-project.json";
 import ProjectCard from "../ui/ProjectCard";
 import ProjectGalleryFilters from "../ui/ProjectGalleryFilters";
 import { filterProjects } from "../utils/projectGalleryFilters";
-import { sectionTitle, wideSectionContainer } from "../styles/uiClasses";
+
+const majorprojectData =
+  majorproject.find((entry) => Array.isArray(entry.majorproject))?.majorproject ?? [];
 
 const ProjectsPage = () => {
-  const majorprojectObject = majorproject.find((item) => item.majorproject);
-  const majorprojectData = majorprojectObject ? majorprojectObject.majorproject : [];
-
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedTechnology, setSelectedTechnology] = useState(null);
 
-  const handleCategoryClick = (category) => {
-    setSelectedCategory((currentCategory) => (currentCategory === category ? "All" : category));
-  };
-
-  const handleTechnologyClick = (technology) => {
-    setSelectedTechnology((currentTechnology) => (currentTechnology === technology ? null : technology));
-  };
-
-  const handleClearFilters = () => {
-    setSelectedCategory("All");
-    setSelectedTechnology(null);
-  };
-
   const filteredProjects = useMemo(
     () => filterProjects(majorprojectData, selectedCategory, selectedTechnology),
-    [majorprojectData, selectedCategory, selectedTechnology]
+    [selectedCategory, selectedTechnology]
   );
 
   return (
-    <section className="padding" id="projects">
-      <div className={wideSectionContainer}>
-        <h2 className={sectionTitle}>Projects</h2>
+    <section className="editorial-projects" id="projects">
+      <div className="editorial-container">
+        <div className="editorial-projects-heading">
+          <p className="editorial-eyebrow">PROJECT ARCHIVE</p>
+          <h1>Projects</h1>
+          <p className="editorial-lead">
+            A selection of engineering work across cloud platforms, integrations,
+            data systems and product development.
+          </p>
+        </div>
 
         <ProjectGalleryFilters
           projects={majorprojectData}
           selectedCategory={selectedCategory}
           selectedTechnology={selectedTechnology}
           filteredCount={filteredProjects.length}
-          onCategoryChange={handleCategoryClick}
-          onTechnologyChange={handleTechnologyClick}
-          onClearFilters={handleClearFilters}
+          onCategoryChange={(category) =>
+            setSelectedCategory((previous) => previous === category ? "All" : category)
+          }
+          onTechnologyChange={(technology) =>
+            setSelectedTechnology((previous) => previous === technology ? null : technology)
+          }
+          onClearFilters={() => {
+            setSelectedCategory("All");
+            setSelectedTechnology(null);
+          }}
         />
 
-        <div className="mt-6 w-full">
-          {filteredProjects.length > 0 ? (
-            <div className="grid w-full grid-cols-1 gap-6 xl:grid-cols-2">
-              {filteredProjects.map((item, index) => (
-                <ProjectCard key={`${item.project}-${item.company}-${item.period}-${index}`} data={item} />
-              ))}
-            </div>
-          ) : (
-            <div className="w-full rounded-2xl border border-dashed border-slate-300 bg-white/70 px-6 py-10 text-center text-sm text-slate-600 dark:border-[#44475A] dark:bg-[#343746] dark:text-[#C7C9D9]">
-              No projects match the current filters.
-            </div>
-          )}
-        </div>
+        {filteredProjects.length > 0 ? (
+          <div className="editorial-project-grid">
+            {filteredProjects.map((item, index) => (
+              <ProjectCard
+                key={[item.project, item.company, item.period, index].join(":")}
+                data={item}
+              />
+            ))}
+          </div>
+        ) : (
+          <p className="editorial-empty-state" role="status">
+            No projects match the current filters.
+          </p>
+        )}
       </div>
     </section>
   );
