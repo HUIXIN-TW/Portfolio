@@ -39,7 +39,7 @@ for (const route of expected) {
   assert.ok(existsSync(routeHtml), "Missing static route entry: " + route);
   assert.equal(readFileSync(routeHtml, "utf8"), html, "Route must serve React entrypoint: " + route);
 }
-assert.ok((header.match(/to="\\/writing"/g) ?? []).length === 2, "Desktop and mobile Writing links must target /writing");
+assert.ok((header.match(/to="\/writing"/g) ?? []).length === 2, "Desktop and mobile Writing links must target /writing");
 for (const retired of ["/portfolio", "/blog", ...publishedSlugs.map((slug) => "/blog/" + slug), "/japan", "/japan/en", "/trips/japan/places-en.kml"]) {
   assert.ok(!existsSync(join(dist, retired.slice(1) + ".html")), "Retired route emitted: " + retired);
 }
