@@ -271,10 +271,10 @@ test("PWA rocket identity is consistent for Safari tabs, iOS install and the web
   await page.goto("/");
   const favicon = page.locator('link[rel="icon"]');
   const apple = page.locator('link[rel="apple-touch-icon"]');
-  await expect(favicon).toHaveAttribute("href", "/portfolio-rocket-48.png");
+  await expect(favicon).toHaveAttribute("href", "/portfolio-rocket-v2-48.png");
   await expect(favicon).toHaveAttribute("type", "image/png");
   await expect(favicon).toHaveAttribute("sizes", "48x48");
-  await expect(apple).toHaveAttribute("href", "/portfolio-rocket-192.png");
+  await expect(apple).toHaveAttribute("href", "/portfolio-rocket-v2-192.png");
   await expect(apple).toHaveAttribute("sizes", "192x192");
   await expect(page.locator('link[rel="manifest"]')).toHaveAttribute("href", "/site.webmanifest");
 
@@ -289,13 +289,23 @@ test("PWA rocket identity is consistent for Safari tabs, iOS install and the web
     display: "standalone",
   });
   expect(manifest.icons).toEqual([
-    { src: "/portfolio-rocket-192.png", sizes: "192x192", type: "image/png", purpose: "any" },
+    { src: "/portfolio-rocket-v2-192.png", sizes: "192x192", type: "image/png", purpose: "any" },
     { src: "/portfolio-rocket-512.webp", sizes: "512x512", type: "image/webp", purpose: "any" },
   ]);
 
+  // Safari may request conventional filenames independently of declared links.
+  const fallback = await request.get("/favicon.ico");
+  expect(fallback.status()).toBe(200);
+  const ico = await fallback.body();
+  expect([...ico.subarray(0, 6)]).toEqual([0, 0, 1, 0, 3, 0]);
+  const conventionalApple = await request.get("/apple-touch-icon.png");
+  const declaredApple = await request.get("/portfolio-rocket-v2-192.png");
+  expect(conventionalApple.status()).toBe(200);
+  expect(await conventionalApple.body()).toEqual(await declaredApple.body());
+
   for (const [path, expectedSize, mime] of [
-    ["/portfolio-rocket-48.png", 48, "image/png"],
-    ["/portfolio-rocket-192.png", 192, "image/png"],
+    ["/portfolio-rocket-v2-48.png", 48, "image/png"],
+    ["/portfolio-rocket-v2-192.png", 192, "image/png"],
     ["/portfolio-rocket-512.webp", 512, "image/webp"],
   ]) {
     const asset = await request.get(path);
@@ -314,8 +324,8 @@ test("PWA rocket identity is consistent for Safari tabs, iOS install and the web
     const routeResponse = await request.get(route, { maxRedirects: 0 });
     expect(routeResponse.status()).toBe(200);
     const body = await routeResponse.text();
-    expect(body).toContain('href="/portfolio-rocket-48.png"');
-    expect(body).toContain('href="/portfolio-rocket-192.png"');
+    expect(body).toContain('href="/portfolio-rocket-v2-48.png"');
+    expect(body).toContain('href="/portfolio-rocket-v2-192.png"');
     expect(body).toContain('href="/site.webmanifest"');
   }
 });

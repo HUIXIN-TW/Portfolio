@@ -29,8 +29,8 @@ src/
 public/
 ├── ship-it-maybe.png    # Podcast cover image (referenced by src/data/podcast.json)
 ├── swe.png              # Legacy asset retained for URL compatibility
-├── portfolio-rocket-48.png    # Tight crop for Safari's small tab icon
-├── portfolio-rocket-192.png   # iOS Home Screen icon and 192px PWA icon
+├── portfolio-rocket-v2-48.png    # Same artwork for Safari's small tab icon
+├── portfolio-rocket-v2-192.png   # iOS Home Screen icon and 192px PWA icon
 ├── portfolio-rocket-512.webp  # High-resolution PWA icon
 └── site.webmanifest           # Install metadata and icon identity
 ```
@@ -129,8 +129,9 @@ As of 15 November 2026, the Portfolio prioritises **Platform & Backend Engineeri
 
 The rocket artwork was provided by the user on 15 November 2026, and crops of the **same supplied image** are used for all three icon contexts. No vector redraw or alternate icon illustration is introduced.
 
-- Safari favicon: `/portfolio-rocket-48.png`, a tighter 48×48 crop so the rocket remains identifiable at small tab sizes.
-- Apple Touch Icon: `/portfolio-rocket-192.png` (192×192 PNG) for Safari **Add to Home Screen**.
+- Safari favicon: `/portfolio-rocket-v2-48.png`, a 48×48 resize of the same artwork and framing used by the Home Screen and manifest icons.
+- Standard fallbacks: `/favicon.ico` includes 16/32/48px images from the same source; `/apple-touch-icon.png` matches the declared Apple Touch Icon. Versioned PNG URLs give browsers a fresh icon URL after the old lightbulb identity.
+- Apple Touch Icon: `/portfolio-rocket-v2-192.png` (192×192 PNG) for Safari **Add to Home Screen**.
 - Web app manifest: `/site.webmanifest` specifies the same 192×192 PNG plus a 512×512 WebP. The images use the artwork's existing blue/cream palette; no transparent or maskable claims are made.
 - `index.html` uses root-relative paths. Cloudflare Pages' generated physical HTML entrypoints inherit this metadata, including `/projects` and published blog URLs.
 - Existing `public/swe.png` and `src/assets/images/idea-coding-round.svg` are retained as legacy assets to avoid breaking any links outside this app. The live icon references no longer point to them.
