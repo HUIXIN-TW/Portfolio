@@ -185,6 +185,10 @@ tabs. Other subdomains keep independent preferences. Blocked storage falls back 
 system and permits in-session selection. A synchronous, app-local `public/theme.js`
 sets the resolved appearance, native `color-scheme` and browser `theme-color` before
 React renders. The manifest launch background is static; the page updates on load.
-Semantic tokens own all appearance colors; layout and illustration assets are unchanged.
+Semantic tokens own all appearance colors; illustration assets are unchanged.
+Header groups wrap when enlarged text no longer fits on one row, keeping navigation
+and the Theme selector within the viewport. Playwright checks actual control bounds
+at 960/961/1024px in Light and Dark with both standard and 150% text, alongside the
+mobile and desktop route checks.
 Existing `theme=light` / `theme=dracula` choices are read when the new preference is absent. Select System to resume OS tracking.
 Native HTTP 404 pages use the same appearance bootstrap and app-colored error tokens without loading React.

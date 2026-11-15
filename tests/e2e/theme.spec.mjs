@@ -91,6 +91,32 @@ test('appearance resolves before the React application loads', async ({ page }) 
   expect(meta).toBe(await page.locator('script[src="/theme.js"]').getAttribute('data-dark'));
 });
 
+for (const width of [960, 961, 1024]) {
+  test(`header controls stay within the viewport at ${width}px`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto('/');
+    for (const fontSize of [100, 150]) {
+      await page.locator('html').evaluate((node, size) => {
+        node.style.fontSize = `${size}%`;
+      }, fontSize);
+      for (const appearance of ['light', 'dark']) {
+        await page.getByRole('combobox', { name: 'Color theme' }).selectOption(appearance);
+        // overflow-x: clip can hide controls without increasing scrollWidth.
+        const controls = page.locator('.editorial-header-inner').getByRole('link')
+          .or(page.locator('.editorial-header-inner').getByRole('combobox'))
+          .or(page.locator('.editorial-header-inner').getByRole('button'))
+          .or(page.locator('.editorial-header-inner summary'));
+        for (const control of await controls.all()) {
+          if (!await control.isVisible()) continue;
+          const bounds = await control.boundingBox();
+          expect(bounds.x).toBeGreaterThanOrEqual(0);
+          expect(bounds.x + bounds.width).toBeLessThanOrEqual(width);
+        }
+      }
+    }
+  });
+}
+
 for (const width of [320, 390, 1280]) {
   test(`all routes preserve appearance and fit at ${width}px with 150% text`, async ({ page }, testInfo) => {
     test.setTimeout(120_000);
@@ -104,6 +130,9 @@ for (const width of [320, 390, 1280]) {
         await page.addStyleTag({ content: 'html { font-size: 150% !important; }' });
         await expect(page.locator('html')).toHaveCSS('color-scheme', appearance);
         await expect(select).toHaveValue(appearance);
+        const bounds = await select.boundingBox();
+        expect(bounds.x).toBeGreaterThanOrEqual(0);
+        expect(bounds.x + bounds.width).toBeLessThanOrEqual(width);
         expect(await page.evaluate(() => document.documentElement.scrollWidth - innerWidth)).toBeLessThanOrEqual(1);
         await select.focus();
         await expect(select).toBeFocused();
