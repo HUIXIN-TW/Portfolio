@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import majorproject from "../data/major-project.json";
+import majorProjectGroups from "../data/major-projects.json";
 import ProjectCard from "../ui/ProjectCard";
 import ProjectFilters from "../ui/ProjectFilters";
 import PlatformCaseCard from "../ui/PlatformCaseCard";
@@ -7,7 +7,7 @@ import { platformCaseStudies } from "../data/platformCaseStudies";
 import { filterProjects } from "../utils/projectFilters";
 
 const majorprojectData =
-  majorproject.find((entry) => Array.isArray(entry.majorproject))?.majorproject ?? [];
+  majorProjectGroups.find((entry) => Array.isArray(entry.majorproject))?.majorproject ?? [];
 
 const ProjectsPage = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
