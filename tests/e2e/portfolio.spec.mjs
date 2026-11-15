@@ -57,14 +57,55 @@ test("Editorial Home presents a clear proposition and real featured work", async
   await expect(page.getByRole("link", { name: "Explore platform work" })).toHaveAttribute("href", "/projects");
 });
 
-test("Projects show purpose and role before optional details", async ({ page }) => {
+test("Project details open in a dialog without resizing adjacent cards", async ({ page }) => {
   await page.goto("/projects");
-  const first = page.locator(".editorial-project-card").first();
+  const cards = page.locator(".editorial-project-card");
+  await expect(cards).toHaveCount(16);
+  const first = cards.first();
   await expect(first.locator(".editorial-project-summary")).toBeVisible();
   await expect(first.locator(".editorial-project-role")).toBeVisible();
-  await first.getByRole("button", { name: "Architecture & contribution" }).click();
-  await expect(first.locator(".editorial-details-panel")).toBeVisible();
-  await expect(page.locator(".editorial-project-card")).toHaveCount(16);
+
+  const getHeights = () => cards.evaluateAll((elements) =>
+    elements.slice(0, 2).map((element) => element.getBoundingClientRect().height)
+  );
+  const before = await getHeights();
+  const trigger = first.getByRole("button", { name: "View details" });
+  await trigger.click();
+  const dialog = page.getByRole("dialog");
+  await expect(dialog).toBeVisible();
+  await expect(dialog.getByRole("heading", { level: 2 })).toBeVisible();
+  await expect(dialog.getByRole("button", { name: "Close project details" })).toBeVisible();
+  await expect.poll(async () => getHeights()).toEqual(before);
+
+  await page.keyboard.press("Escape");
+  await expect(dialog).toHaveCount(0);
+  await expect(trigger).toBeFocused();
+});
+
+test("Long project descriptions scroll in a mobile dialog, not inside the card grid", async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 640 });
+  await page.goto("/projects");
+  const cards = page.locator(".editorial-project-card");
+  const expanded = cards.filter({ hasText: "Data Warehousing & Association Rule Mining" });
+  await expect(expanded).toHaveCount(1);
+  const before = await expanded.boundingBox();
+  await expanded.getByRole("button", { name: "View details" }).click();
+
+  const dialog = page.getByRole("dialog");
+  await expect(dialog).toBeVisible();
+  await expect(dialog.getByText(/Crime in Atlanta/i)).toBeVisible();
+  const frame = await dialog.locator(".editorial-project-dialog-panel").boundingBox();
+  expect(frame.width).toBeLessThanOrEqual(320);
+  expect(frame.height).toBeLessThanOrEqual(640);
+  const scrollable = await dialog.locator(".editorial-project-dialog-body").evaluate((element) =>
+    element.scrollHeight > element.clientHeight
+  );
+  expect(scrollable).toBe(true);
+  const after = await expanded.boundingBox();
+  expect(Math.abs(after.height - before.height)).toBeLessThan(1);
+
+  await dialog.getByRole("button", { name: "Close project details" }).click();
+  await expect(dialog).toHaveCount(0);
 });
 
 for (const width of [320, 390, 768, 1280]) {

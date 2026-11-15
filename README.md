@@ -135,3 +135,12 @@ The rocket artwork was provided by the user on 15 November 2026, and crops of th
 - `index.html` uses root-relative paths. Cloudflare Pages' generated physical HTML entrypoints inherit this metadata, including `/projects` and published blog URLs.
 - Existing `public/swe.png` and `src/assets/images/idea-coding-round.svg` are retained as legacy assets to avoid breaking any links outside this app. The live icon references no longer point to them.
 - Pixel size, asset decoding, icon MIME, manifest contents and icon paths on deep routes are covered by Playwright tests. After deploy, previously opened Safari tabs or pinned Home Screen shortcuts may continue to show the cached old icon until reopened/reinstalled; no website-data clearing is required.
+
+## Independent project details and grid stability
+
+The older project archive uses a two-column grid with cards of varying description lengths. Full text, technology lists, images and videos now render **only in an accessible Headless UI dialog**, not as in-card accordions. Cards display a short, line-clamped summary and a consistent View details control.
+
+- Opening one project's details must not stretch the neighbouring card or push subsequent rows down.
+- The dialog is labelled by its project title, supports Escape/backdrop dismissal, restores keyboard focus, and scrolls within the viewport on narrow screens.
+- Preserve the existing project list, filtering, links, description content and media. Do not introduce separate routes for project detail or reorder published projects.
+- Playwright verifies layout stability, dialog close/focus restoration and long-content 320px mobile scrolling.
