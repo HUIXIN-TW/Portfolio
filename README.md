@@ -117,5 +117,6 @@ As of 15 November 2026, the Portfolio prioritises **Platform & Backend Engineeri
 - Reusable composition sections: `src/sections/FooSection.jsx` or a semantic PascalCase name, e.g. `HomeHero.jsx`.
 - Shared UI: `src/ui/ProjectCard.jsx`, `src/ui/ProjectFilters.jsx`. JavaScript utilities/data modules use camelCase (`blogLoader.js`, `projectFilters.js`, `platformCaseStudies.js`).
 - JSON, image and Markdown filenames use lowercase kebab-case for new files (`blog-posts.json`). Pre-existing data/asset filenames are not mass-renamed if compatibility or provenance is uncertain.
-- Public URLs and blog slugs are lowercase kebab-case and come exclusively from `src/config/routes.mjs` + Markdown frontmatter. Display names may differ from route names (e.g. Work → `/projects`, Writing → `/blog`).
+- Public URLs and blog slugs are lowercase kebab-case and come exclusively from `src/config/routes.mjs` + Markdown frontmatter.
+- `npm run build` runs `scripts/verify-source-conventions.mjs` before generating Pages route entrypoints, enforcing route-key ↔ page-filename matching and named-file conventions. Display names may differ from route names (e.g. Work → `/projects`, Writing → `/blog`).
 - Do not rename published routes or blog slugs as a side effect of moving source files. Keep Cloudflare Pages physical HTML entrypoints and native 404 rules intact.
