@@ -25,7 +25,7 @@ test("Retired About route leads to Home background without a duplicate page", as
   await expect(page.locator("#about")).toHaveCount(0);
   await expect(page.getByRole("navigation", { name: "Primary navigation" }).getByRole("link", { name: "About" })).toHaveCount(0);
   await expect(page.getByRole("navigation", { name: "Footer pages" }).getByRole("link", { name: "About" })).toHaveCount(0);
-  expect(await page.evaluate(() => window.scrollY)).toBeGreaterThan(0);
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(0);
 });
 
 test("Home background adds distinct career context and Work owns live demos", async ({ page }) => {
