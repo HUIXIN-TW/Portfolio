@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join, resolve } from "node:path";
-import { ROUTES, STATIC_PAGE_ROUTES, PRIMARY_NAV_ITEMS, getBlogPostPath } from "../src/config/routes.mjs";
+import { ROUTES, LEGACY_ROUTES, STATIC_PAGE_ROUTES, PRIMARY_NAV_ITEMS, SECONDARY_NAV_ITEMS, getBlogPostPath } from "../src/config/routes.mjs";
 
 const dist = resolve("dist");
 const html = readFileSync(join(dist, "index.html"), "utf8");
@@ -15,6 +15,11 @@ assert.ok(!existsSync(join(dist, "_redirects")), "Pages _redirects rewrites must
 assert.ok(!existsSync("public/_redirects"), "Do not reintroduce redirect rules");
 
 assert.equal(ROUTES.projects, "/projects", "Projects must use /projects");
+assert.equal(LEGACY_ROUTES.about, "/about", "Published About route must be preserved");
+assert.ok(STATIC_PAGE_ROUTES.includes(LEGACY_ROUTES.about), "Missing legacy About entrypoint");
+assert.ok(app.includes("path={LEGACY_ROUTES.about}"), "Legacy About route must be mounted");
+assert.ok(![...PRIMARY_NAV_ITEMS, ...SECONDARY_NAV_ITEMS].some(({ to }) => to === LEGACY_ROUTES.about),
+  "Retired About must not appear in navigation");
 assert.equal(ROUTES.blogPost, "/blog/:slug", "Blog slug URL must remain stable");
 assert.ok(!Object.values(ROUTES).includes("/portfolio"), "Old /portfolio must return 404");
 assert.ok(!Object.values(ROUTES).some((route) => route === "/japan" || route.startsWith("/japan/")), "No Trips routes on Portfolio");

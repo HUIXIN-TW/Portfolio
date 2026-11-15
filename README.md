@@ -99,7 +99,7 @@ Portfolio uses Direction A (Editorial Engineering), selected on 15 November 2026
 - Semantic light/dark tokens: src/styles/editorial.css; shared primitive classes: src/styles/uiClasses.js.
 - Light palette: near-neutral warm-white #FAF9F7, graphite #25272B, neutral gray #60656D; slate-blue #415E7A only for interaction accents. Dark mode uses charcoal #191B20, not green.
 - Fonts: Inter/Noto Sans TC/system sans with monospace only for secondary technical labels. The existing Google Fonts request already enables display=swap; no new font files are introduced.
-- Home prioritizes an engineering proposition, featured work and concise biography. The full About, education, awards, referees and other existing routes stay accessible.
+- Home prioritizes an engineering proposition, featured work and concise biography. Career background is now a concise section on Home; the standalone About page was removed. Education, awards, references and other supported routes remain.
 - Projects shows role, summary and leading technologies upfront, with other details/media in an accessible disclosure. Category filtering remains; advanced technology filters start collapsed.
 - Navigation: Work, Experience, Writing and Resume; supporting pages stay in More/mobile menu.
 - No route migrations, extra API calls, invented performance metrics, Cloudflare Pages rewrites or particle animation were added.
@@ -148,13 +148,21 @@ The older project archive uses a two-column grid with cards of varying descripti
 ## Project detail formatting and recruiter navigation
 
 - Older project descriptions are stored as text arrays. `src/utils/projectDescription.js` parses consecutive dash-prefixed entries as semantic bullet lists; plain prose stays in paragraphs and explicit labels such as `Purpose:` become subheadings. Project JSON content stays unchanged.
-- The single-source navigation registry promotes `Work / Experience / About / Writing` to primary route items. Resume is directly accessible afterward as an external link. `More` contains Education, Awards, Referee and GitHub, without changing any URL.
+- The single-source navigation registry promotes `Work / Experience / Writing` to primary route items. Resume is directly accessible afterward as an external link. `More` contains Education, Awards, Referee and GitHub, without changing any URL.
 - The desktop More popup uses compact, clear link spacing and the mobile menu preserves the same priority order. Playwright covers the menu ordering and list structure.
 
 ## Shared page heading and footer system
 
-- `src/ui/PageHeading.jsx` provides the Projects-inspired route-level H1 typography, introductory copy and optional section eyebrow. Projects, Experience, About, Writing, Education, Awards, References, Migration data and individual articles reuse it; page sections retain their own smaller semantic headings.
+- `src/ui/PageHeading.jsx` provides the Projects-inspired route-level H1 typography, introductory copy and optional section eyebrow. Projects, Experience, Writing, Education, Awards, References, Migration data and individual articles reuse it; page sections retain their own smaller semantic headings.
 - `src/styles/uiClasses.js` maps legacy `sectionContainer` to `editorial-container` so page titles and content align at the same width; no published URL or route key changes.
 - `src/ui/ExternalLink.jsx` provides an accessible shared external-link arrow glyph and opens external pages in a new tab with `rel="noopener noreferrer"`. The header's Resume and GitHub and the footer's external links use the same component.
 - `src/ui/Footer.jsx` is an editorial three-zone footer: identity and platform focus, Explore/Connect links, and a compact copyright/back-to-top baseline. It supports existing optional social handles without introducing extra services or analytics.
 - Playwright verifies link targets and glyphs, heading size and left alignment across routes, footer semantics, and narrow screens.
+
+## Retired About page and single-owner content strategy
+
+- `src/pages/AboutPage.jsx` was deleted. Home now owns a short `src/sections/ProfessionalBackground.jsx` section (`/#background`) grounded in the original career story: audit/accounting experience at Deloitte and PwC informing risk awareness, traceability, and engineering accountability.
+- Home leads with platform engineering and examples of delivered work; `EngineeringFocus` remains the sole on-page competency summary. Background adds *career context*, not another AWS/CI/CD skill list.
+- `/projects` remains the single location for Notica and WhatToEat Live Site links and the platform case studies. The underlying project descriptions and counts are unchanged.
+- `/about` is a **legacy compatibility URL**, listed separately in `LEGACY_ROUTES`, with a physical Cloudflare Pages entrypoint and a React Router `Navigate` to `/#background`. It is not included in navigation or the required `*Page.jsx` source naming contract. Direct HTTP requests return a 200 entrypoint before the client-side transition.
+- Header contains Work, Experience, Writing, external Resume and More; footer Explore follows the same priorities. Tests cover the legacy URL, target section, absence of the retired page, and Live Site link preservation.

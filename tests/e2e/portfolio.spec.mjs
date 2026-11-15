@@ -13,6 +13,41 @@ test("Portfolio home and Projects navigation remain available", async ({ page })
   await expect(page.locator("#footer")).toBeVisible();
 });
 
+test("Retired About route leads to Home background without a duplicate page", async ({ page, request }) => {
+  const raw = await request.get("/about", { maxRedirects: 0 });
+  expect(raw.status()).toBe(200); // Physical Cloudflare Pages entrypoint remains reachable.
+  const response = await page.goto("/about");
+  expect(response?.status()).toBe(200);
+  await expect(page).toHaveURL(/\/#background$/);
+  await expect(page.getByRole("heading", { name: "From business assurance to platform engineering." })).toBeVisible();
+  await expect(page.locator("#background")).toBeVisible();
+  await expect(page.locator("main h1")).toHaveCount(1);
+  await expect(page.locator("#about")).toHaveCount(0);
+  await expect(page.getByRole("navigation", { name: "Primary navigation" }).getByRole("link", { name: "About" })).toHaveCount(0);
+  await expect(page.getByRole("navigation", { name: "Footer pages" }).getByRole("link", { name: "About" })).toHaveCount(0);
+  expect(await page.evaluate(() => window.scrollY)).toBeGreaterThan(0);
+});
+
+test("Home background adds distinct career context and Work owns live demos", async ({ page }) => {
+  await page.goto("/");
+  const background = page.locator("#background");
+  await expect(background).toContainText("Deloitte and PwC");
+  await expect(background).toContainText("risk, evidence, and accountability");
+  await expect(page.locator("#home")).not.toContainText("Live site");
+  await page.getByRole("link", { name: "Background", exact: true }).click();
+  await expect(page).toHaveURL(/\/#background$/);
+
+  await page.goto("/projects");
+  for (const [project, url] of [
+    ["Notica Web", "https://notica.studio"],
+    ["WhatToEat app", "https://whattoeat.huixinyang.com/"],
+  ]) {
+    const card = page.locator(".editorial-project-card").filter({ hasText: project });
+    await expect(card.getByRole("link", { name: "Live site" })).toHaveAttribute("href", url);
+  }
+  await expect(page.locator(".editorial-project-card")).toHaveCount(16);
+});
+
 test("Projects deep link returns HTTP 200 without redirects, not Home", async ({ page, request }) => {
   const raw = await request.get("/projects", { maxRedirects: 0 });
   expect(raw.status()).toBe(200);
@@ -23,7 +58,7 @@ test("Projects deep link returns HTTP 200 without redirects, not Home", async ({
   await expect(page.getByRole("heading", { name: "Projects", exact: true })).toBeVisible();
 });
 
-for (const route of ["/about", "/education", "/certificates-awards", "/experience", "/blog", "/blog/hello-blog", "/blog/building-static-portfolio-blog", "/migration", "/referee"]) {
+for (const route of ["/education", "/certificates-awards", "/experience", "/blog", "/blog/hello-blog", "/blog/building-static-portfolio-blog", "/migration", "/referee"]) {
   test(`Portfolio deep link ${route} serves clean URL without redirect`, async ({ page, request }) => {
     const raw = await request.get(route, { maxRedirects: 0 });
     expect(raw.status()).toBe(200);
@@ -267,7 +302,7 @@ test("Primary navigation prioritises engineering experience before writing and r
   await page.goto("/");
   const desktop = page.getByRole("navigation", { name: "Primary navigation" });
   await expect(desktop.locator(":scope > a.editorial-nav-link")).toHaveText([
-    "Work", "Experience", "About", "Writing", "Resume",
+    "Work", "Experience", "Writing", "Resume",
   ]);
   await desktop.locator("summary").click();
   await expect(desktop.getByRole("link", { name: "Education" })).toBeVisible();
@@ -278,8 +313,8 @@ test("Primary navigation prioritises engineering experience before writing and r
   await page.getByRole("button", { name: "Menu" }).click();
   const mobile = page.getByRole("navigation", { name: "Mobile navigation" });
   await expect(mobile.locator(".editorial-mobile-links > a").first()).toHaveText("Work");
-  await expect(mobile.locator(".editorial-mobile-links > a").nth(2)).toHaveText("About");
-  await expect(mobile.locator(".editorial-mobile-links > a").nth(3)).toHaveText("Writing");
+  await expect(mobile.locator(".editorial-mobile-links > a").nth(2)).toHaveText("Writing");
+  await expect(mobile.getByRole("link", { name: "About" })).toHaveCount(0);
 });
 
 test("Primary header and redesigned footer clearly identify external links", async ({ page }) => {
@@ -314,7 +349,6 @@ test("All top-level pages share the Projects editorial H1 scale and alignment", 
   const pages = [
     ["/projects", "Projects"],
     ["/experience", "Experience"],
-    ["/about", "About"],
     ["/blog", "Writing"],
     ["/education", "Education & Scholarships"],
     ["/certificates-awards", "Certificates & Awards"],
@@ -343,7 +377,7 @@ test("All top-level pages share the Projects editorial H1 scale and alignment", 
 
 test("Editorial footer and page headings fit narrow screens without horizontal overflow", async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 740 });
-  for (const route of ["/projects", "/experience", "/about", "/blog"]) {
+  for (const route of ["/projects", "/experience", "/blog"]) {
     await page.goto(route);
     await expect(page.locator(".editorial-page-heading h1")).toBeVisible();
     await expect(page.locator("footer#footer")).toBeVisible();
