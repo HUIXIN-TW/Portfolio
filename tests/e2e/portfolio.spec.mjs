@@ -152,3 +152,56 @@ test("Platform-led Home headline is visible and describes supported experience",
   await expect(page.getByRole("heading", { name: "Delivery automation" })).toBeVisible();
   await expect(page.locator(".editorial-featured .platform-case-card")).toHaveCount(2);
 });
+
+test("PWA rocket identity is consistent for Safari tabs, iOS install and the web manifest", async ({ page, request }) => {
+  await page.goto("/");
+  const favicon = page.locator('link[rel="icon"]');
+  const apple = page.locator('link[rel="apple-touch-icon"]');
+  await expect(favicon).toHaveAttribute("href", "/portfolio-rocket-48.png");
+  await expect(favicon).toHaveAttribute("type", "image/png");
+  await expect(favicon).toHaveAttribute("sizes", "48x48");
+  await expect(apple).toHaveAttribute("href", "/portfolio-rocket-192.png");
+  await expect(apple).toHaveAttribute("sizes", "192x192");
+  await expect(page.locator('link[rel="manifest"]')).toHaveAttribute("href", "/site.webmanifest");
+
+  const response = await request.get("/site.webmanifest");
+  expect(response.status()).toBe(200);
+  const manifest = await response.json();
+  expect(manifest).toMatchObject({
+    name: "Huixin Yang — Portfolio",
+    short_name: "Huixin",
+    start_url: "/",
+    scope: "/",
+    display: "standalone",
+  });
+  expect(manifest.icons).toEqual([
+    { src: "/portfolio-rocket-192.png", sizes: "192x192", type: "image/png", purpose: "any" },
+    { src: "/portfolio-rocket-512.webp", sizes: "512x512", type: "image/webp", purpose: "any" },
+  ]);
+
+  for (const [path, expectedSize, mime] of [
+    ["/portfolio-rocket-48.png", 48, "image/png"],
+    ["/portfolio-rocket-192.png", 192, "image/png"],
+    ["/portfolio-rocket-512.webp", 512, "image/webp"],
+  ]) {
+    const asset = await request.get(path);
+    expect(asset.status()).toBe(200);
+    expect(asset.headers()["content-type"]).toContain(mime);
+    const dimensions = await page.evaluate(async (src) => {
+      const image = new Image();
+      image.src = src;
+      await image.decode();
+      return [image.naturalWidth, image.naturalHeight];
+    }, path);
+    expect(dimensions).toEqual([expectedSize, expectedSize]);
+  }
+
+  for (const route of ["/projects", "/experience", "/blog"]) {
+    const routeResponse = await request.get(route, { maxRedirects: 0 });
+    expect(routeResponse.status()).toBe(200);
+    const body = await routeResponse.text();
+    expect(body).toContain('href="/portfolio-rocket-48.png"');
+    expect(body).toContain('href="/portfolio-rocket-192.png"');
+    expect(body).toContain('href="/site.webmanifest"');
+  }
+});

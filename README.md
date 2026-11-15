@@ -28,7 +28,11 @@ src/
 └── utils/               # Utilities: blogLoader, theme, projectFilters
 public/
 ├── ship-it-maybe.png    # Podcast cover image (referenced by src/data/podcast.json)
-└── swe.png              # iOS Home Screen icon (referenced by apple-touch-icon in index.html; no JS import)
+├── swe.png              # Legacy asset retained for URL compatibility
+├── portfolio-rocket-48.png    # Tight crop for Safari's small tab icon
+├── portfolio-rocket-192.png   # iOS Home Screen icon and 192px PWA icon
+├── portfolio-rocket-512.webp  # High-resolution PWA icon
+└── site.webmanifest           # Install metadata and icon identity
 ```
 
 ## 🚀 Scripts
@@ -120,3 +124,14 @@ As of 15 November 2026, the Portfolio prioritises **Platform & Backend Engineeri
 - Public URLs and blog slugs are lowercase kebab-case and come exclusively from `src/config/routes.mjs` + Markdown frontmatter.
 - `npm run build` runs `scripts/verify-source-conventions.mjs` before generating Pages route entrypoints, enforcing route-key ↔ page-filename matching and named-file conventions. Display names may differ from route names (e.g. Work → `/projects`, Writing → `/blog`).
 - Do not rename published routes or blog slugs as a side effect of moving source files. Keep Cloudflare Pages physical HTML entrypoints and native 404 rules intact.
+
+## Portfolio rocket icon identity
+
+The rocket artwork was provided by the user on 15 November 2026, and crops of the **same supplied image** are used for all three icon contexts. No vector redraw or alternate icon illustration is introduced.
+
+- Safari favicon: `/portfolio-rocket-48.png`, a tighter 48×48 crop so the rocket remains identifiable at small tab sizes.
+- Apple Touch Icon: `/portfolio-rocket-192.png` (192×192 PNG) for Safari **Add to Home Screen**.
+- Web app manifest: `/site.webmanifest` specifies the same 192×192 PNG plus a 512×512 WebP. The images use the artwork's existing blue/cream palette; no transparent or maskable claims are made.
+- `index.html` uses root-relative paths. Cloudflare Pages' generated physical HTML entrypoints inherit this metadata, including `/projects` and published blog URLs.
+- Existing `public/swe.png` and `src/assets/images/idea-coding-round.svg` are retained as legacy assets to avoid breaking any links outside this app. The live icon references no longer point to them.
+- Pixel size, asset decoding, icon MIME, manifest contents and icon paths on deep routes are covered by Playwright tests. After deploy, previously opened Safari tabs or pinned Home Screen shortcuts may continue to show the cached old icon until reopened/reinstalled; no website-data clearing is required.
