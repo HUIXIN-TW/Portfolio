@@ -50,13 +50,13 @@ for (const legacy of ["/portfolio", "/portfolio/", "/japan", "/japan/en", "/japa
 test("Writing uses canonical navigation and retains published article links", async ({ page, request }) => {
   await page.goto("/");
   await page.getByRole("navigation").getByRole("link", { name: "Writing" }).click();
-  await expect(page).toHaveURL(/\\/writing$/);
+  await expect(page).toHaveURL(/\/writing$/);
   await expect(page.getByRole("heading", { name: "Writing", exact: true })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Articles", exact: true })).toBeVisible();
   const article = page.getByRole("link", { name: "Building a Static Portfolio Blog", exact: true });
   await expect(article).toHaveAttribute("href", "/writing/building-static-portfolio-blog");
   await article.click();
-  await expect(page).toHaveURL(/\\/writing\\/building-static-portfolio-blog$/);
+  await expect(page).toHaveURL(/\/writing\/building-static-portfolio-blog$/);
   await expect(page.getByRole("link", { name: "Back to Writing" })).toHaveAttribute("href", "/writing");
   const raw = await request.get("/writing/building-static-portfolio-blog", { maxRedirects: 0 });
   expect(raw.status()).toBe(200);
