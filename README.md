@@ -98,3 +98,13 @@ Portfolio uses Direction A (Editorial Engineering), selected on 15 November 2026
 - Navigation: Work, Experience, Writing and Resume; supporting pages stay in More/mobile menu.
 - No route migrations, extra API calls, invented performance metrics, Cloudflare Pages rewrites or particle animation were added.
 - Acceptance: lint/build and Playwright route, responsive, theme and keyboard tests. Actual production screenshots and Safari/150% text review are a separate manual acceptance step.
+
+## Platform-first editorial content
+
+As of 15 November 2026, the Portfolio prioritises **Platform & Backend Engineering**. Public case-study summaries in `src/data/platformCaseStudies.js` were curated from the private Notion Engineering Experience & Skills Library / Engineering Evidence DB (career project records), with only `Delivered` engineering work featured. These are public-friendly summaries, not replicas of confidential architecture or private Notion links.
+
+- Home highlights AWS infrastructure migration, Pulumi IaC, ECS cost optimisation and repeatable CI/CD & cross-service staging validation.
+- `/projects` leads with four delivered career case studies: AWS Platform Migration; CI/CD & Staging; Snowflake Infrastructure & Access Governance; and Data Platform CI Quality Gates.
+- The original 16 independent and earlier projects remain under Applications & Projects, with existing filters and details preserved.
+- Data Engineering is a connected competency, not the primary headline. Personal products remain visible in the project archive.
+- Do not promote unverified Terraform or Azure DevOps → GitHub Enterprise initiatives to delivered case studies. Avoid publishing private source/evidence URLs, sensitive configuration or unreconciled performance metrics.

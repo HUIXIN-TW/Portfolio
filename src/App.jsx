@@ -19,7 +19,7 @@ import "./styles/editorial.css";
 
 const siteProps = {
   name: "Huixin Yang",
-  title: "Software Engineer & CPA Australia",
+  title: "PLATFORM ENGINEERING / BACKEND SYSTEMS",
   email: "huixin.yang.tw@gmail.com",
   gitHub: "HUIXIN-TW",
   instagram: "",

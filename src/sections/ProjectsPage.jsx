@@ -2,6 +2,8 @@ import React, { useMemo, useState } from "react";
 import majorproject from "../data/major-project.json";
 import ProjectCard from "../ui/ProjectCard";
 import ProjectGalleryFilters from "../ui/ProjectGalleryFilters";
+import PlatformCaseCard from "../ui/PlatformCaseCard";
+import { platformCaseStudies } from "../data/platformCaseStudies";
 import { filterProjects } from "../utils/projectGalleryFilters";
 
 const majorprojectData =
@@ -22,11 +24,34 @@ const ProjectsPage = () => {
         <div className="editorial-projects-heading">
           <h1>Projects</h1>
           <p className="editorial-lead">
-            A selection of engineering work across cloud platforms, integrations,
-            data systems and product development.
+            Cloud infrastructure, delivery automation and platform reliability,
+            followed by independent applications and earlier projects.
           </p>
         </div>
 
+        <div id="platform-work" className="platform-work-section" aria-labelledby="platform-work-heading">
+          <div className="platform-section-intro">
+            <p className="editorial-eyebrow">ENGINEERING EXPERIENCE</p>
+            <h2 id="platform-work-heading">Platform engineering case studies</h2>
+            <p>
+              Infrastructure, automation and reliability work drawn from delivered
+              engineering experience. Descriptions summarise my contribution without
+              exposing private implementation details.
+            </p>
+          </div>
+          <div className="platform-case-grid">
+            {platformCaseStudies.map((study) => (
+              <PlatformCaseCard key={study.id} study={study} />
+            ))}
+          </div>
+        </div>
+
+        <div className="platform-project-archive" aria-labelledby="project-archive-heading">
+          <div className="platform-section-intro">
+            <p className="editorial-eyebrow">INDEPENDENT & EARLIER WORK</p>
+            <h2 id="project-archive-heading">Applications & projects</h2>
+            <p>Product development, integrations, research and earlier engineering work.</p>
+          </div>
         <ProjectGalleryFilters
           projects={majorprojectData}
           selectedCategory={selectedCategory}
@@ -58,6 +83,7 @@ const ProjectsPage = () => {
             No projects match the current filters.
           </p>
         )}
+        </div>
       </div>
     </section>
   );

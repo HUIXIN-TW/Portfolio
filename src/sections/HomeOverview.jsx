@@ -1,30 +1,49 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+const capabilities = [
+  {
+    title: "Cloud platforms & IaC",
+    detail: "AWS workload migrations, ECS operations and Pulumi-managed infrastructure.",
+  },
+  {
+    title: "Delivery automation",
+    detail: "GitHub Actions, release validation, container builds and staging quality gates.",
+  },
+  {
+    title: "Platform reliability",
+    detail: "Identity and permissions, operational diagnostics, data-platform governance and cost visibility.",
+  },
+];
+
 const HomeOverview = () => (
   <section className="editorial-overview" aria-labelledby="approach-heading">
     <div className="editorial-container editorial-overview-layout">
       <div>
-        <p className="editorial-eyebrow">APPROACH</p>
-        <h2 id="approach-heading">Technical depth with a product perspective.</h2>
+        <p className="editorial-eyebrow">ENGINEERING FOCUS</p>
+        <h2 id="approach-heading">Make systems repeatable, observable and safe to change.</h2>
       </div>
       <div className="editorial-overview-content">
         <p>
-          My work connects platform architecture, data engineering and product
-          development. I have built AWS-based services, automated data pipelines,
-          and web and mobile experiences that make complex workflows easier to use.
+          I approach platform work through infrastructure, delivery workflows and
+          operational boundaries—not just the services that run on top of them.
+          My backend and data engineering experience informs how those systems
+          behave under real production constraints.
         </p>
-        <p>
-          Before moving into software engineering, I worked in audit and accounting.
-          That experience continues to inform how I approach reliability,
-          communication and delivery.
-        </p>
+        <ul className="platform-capability-list">
+          {capabilities.map(({ title, detail }) => (
+            <li key={title}>
+              <h3>{title}</h3>
+              <p>{detail}</p>
+            </li>
+          ))}
+        </ul>
         <div className="editorial-overview-links">
-          <Link className="editorial-text-link" to="/about">
-            More about me <span aria-hidden="true">↗</span>
-          </Link>
           <Link className="editorial-text-link" to="/experience">
             Experience <span aria-hidden="true">↗</span>
+          </Link>
+          <Link className="editorial-text-link" to="/about">
+            Background <span aria-hidden="true">↗</span>
           </Link>
         </div>
       </div>

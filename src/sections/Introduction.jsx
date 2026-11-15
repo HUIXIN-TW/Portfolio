@@ -8,14 +8,14 @@ const Introduction = ({ name, title }) => (
       <div className="editorial-hero-copy">
         <p className="editorial-eyebrow">{title}</p>
         <h1>{name}</h1>
-        <h2>Engineering reliable systems, from infrastructure to product.</h2>
+        <h2>Building reliable cloud platforms and delivery systems.</h2>
         <p className="editorial-lead">
-          I build backend platforms, data systems and practical software products
-          with a focus on clarity, reliability and thoughtful delivery.
+          I work across AWS infrastructure, Infrastructure as Code, CI/CD automation
+          and production reliability, backed by hands-on backend and data engineering.
         </p>
         <div className="editorial-actions">
           <Link className="editorial-button editorial-button-primary" to="/projects">
-            Explore my work
+            Explore platform work
           </Link>
           <a className="editorial-button editorial-button-secondary" href="https://resume.huixinyang.com/">
             View résumé

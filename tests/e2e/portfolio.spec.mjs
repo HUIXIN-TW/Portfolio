@@ -51,10 +51,10 @@ for (const legacy of ["/portfolio", "/portfolio/", "/japan", "/japan/en", "/japa
 test("Editorial Home presents a clear proposition and real featured work", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByRole("heading", { name: "Huixin Yang", exact: true })).toBeVisible();
-  await expect(page.getByRole("heading", { name: /Engineering reliable systems/i })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "Notica Web" })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "WhatToEat app" })).toBeVisible();
-  await expect(page.getByRole("link", { name: "Explore my work" })).toHaveAttribute("href", "/projects");
+  await expect(page.getByRole("heading", { name: /Building reliable cloud platforms/i })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "AWS Platform Migration & ECS Modernisation" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "CI/CD & Cross-Service Staging Validation" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Explore platform work" })).toHaveAttribute("href", "/projects");
 });
 
 test("Projects show purpose and role before optional details", async ({ page }) => {
@@ -128,4 +128,27 @@ test("Editorial palette is graphite-led and consistent in light/dark modes", asy
     shellBackground: "rgb(25, 27, 32)",
   });
   await expect(page.locator(".editorial-hero-aside")).toHaveCount(0);
+});
+
+test("Platform engineering case studies lead Work while personal projects remain accessible", async ({ page }) => {
+  await page.goto("/projects");
+  const platform = page.locator("#platform-work");
+  await expect(platform.getByRole("heading", { name: "Platform engineering case studies" })).toBeVisible();
+  await expect(platform.locator(".platform-case-card")).toHaveCount(4);
+  await expect(platform.locator(".platform-case-card").first()).toContainText("AWS Platform Migration");
+  await expect(platform.locator(".platform-case-card").nth(1)).toContainText("CI/CD");
+  await expect(page.getByRole("heading", { name: "Applications & projects" })).toBeVisible();
+  await expect(page.locator(".editorial-project-card")).toHaveCount(16);
+  expect(await page.locator("#platform-work").evaluate((element) =>
+    element.compareDocumentPosition(document.querySelector(".platform-project-archive")) & Node.DOCUMENT_POSITION_FOLLOWING
+  )).toBeTruthy();
+});
+
+test("Platform-led Home headline is visible and describes supported experience", async ({ page }) => {
+  await page.goto("/");
+  await expect(page.locator(".editorial-eyebrow").first()).toHaveText("PLATFORM ENGINEERING / BACKEND SYSTEMS");
+  await expect(page.getByRole("heading", { name: /Building reliable cloud platforms/i })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Cloud platforms & IaC" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Delivery automation" })).toBeVisible();
+  await expect(page.locator(".editorial-featured .platform-case-card")).toHaveCount(2);
 });
