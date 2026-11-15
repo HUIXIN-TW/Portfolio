@@ -85,3 +85,16 @@ rendered by the existing React Router, not server-rendered.
 `npm run test:e2e` uses **Wrangler Pages dev** rather than Vite preview, asserting
 server-level 200/404 statuses and no `Location` header for owned/retired routes.
 Still verify real HTTP responses after the Cloudflare Pages production deploy.
+
+## Editorial Engineering visual system
+
+Portfolio uses Direction A (Editorial Engineering), selected on 15 November 2026. This independent repository is not part of the Home/Trips/Space monorepo.
+
+- Semantic light/dark tokens: src/styles/editorial.css; shared primitive classes: src/styles/uiClasses.js.
+- Light palette: warm off-white #F7F7F2, ink #1E302F, sage #365B52 for legible interactive states (the design reference uses #53746A).
+- Fonts: Inter/Noto Sans TC/system sans with monospace only for secondary technical labels. The existing Google Fonts request already enables display=swap; no new font files are introduced.
+- Home prioritizes an engineering proposition, featured work and concise biography. The full About, education, awards, referees and other existing routes stay accessible.
+- Projects shows role, summary and leading technologies upfront, with other details/media in an accessible disclosure. Category filtering remains; advanced technology filters start collapsed.
+- Navigation: Work, Experience, Writing and Resume; supporting pages stay in More/mobile menu.
+- No route migrations, extra API calls, invented performance metrics, Cloudflare Pages rewrites or particle animation were added.
+- Acceptance: lint/build and Playwright route, responsive, theme and keyboard tests. Actual production screenshots and Safari/150% text review are a separate manual acceptance step.

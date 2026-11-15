@@ -4,8 +4,8 @@ test("Portfolio home and Projects navigation remain available", async ({ page })
   const response = await page.goto("/");
   expect(response?.status()).toBe(200);
   await expect(page.getByRole("heading", { name: "Huixin Yang", exact: true })).toBeVisible();
-  await expect(page.getByRole("link", { name: "Projects", exact: true })).toBeVisible();
-  await page.getByRole("link", { name: "Projects", exact: true }).click();
+  await expect(page.getByRole("link", { name: "Work", exact: true })).toBeVisible();
+  await page.getByRole("link", { name: "Work", exact: true }).click();
   await expect(page).toHaveURL(/\/projects$/);
   await expect(page.getByRole("heading", { name: "Projects", exact: true })).toBeVisible();
   await expect(page.locator("#projects")).toBeVisible();
@@ -46,3 +46,57 @@ for (const legacy of ["/portfolio", "/portfolio/", "/japan", "/japan/en", "/japa
     await expect(page.getByRole("link", { name: "Back to Portfolio" })).toHaveAttribute("href", "/");
   });
 }
+
+
+test("Editorial Home presents a clear proposition and real featured work", async ({ page }) => {
+  await page.goto("/");
+  await expect(page.getByRole("heading", { name: "Huixin Yang", exact: true })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /Engineering reliable systems/i })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Notica Web" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "WhatToEat app" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Explore my work" })).toHaveAttribute("href", "/projects");
+});
+
+test("Projects show purpose and role before optional details", async ({ page }) => {
+  await page.goto("/projects");
+  const first = page.locator(".editorial-project-card").first();
+  await expect(first.locator(".editorial-project-summary")).toBeVisible();
+  await expect(first.locator(".editorial-project-role")).toBeVisible();
+  await first.getByRole("button", { name: "Architecture & contribution" }).click();
+  await expect(first.locator(".editorial-details-panel")).toBeVisible();
+  await expect(page.locator(".editorial-project-card")).toHaveCount(16);
+});
+
+for (const width of [320, 390, 768, 1280]) {
+  test("Editorial pages remain usable at " + width + "px", async ({ page }) => {
+    await page.setViewportSize({ width, height: 900 });
+    for (const path of ["/", "/projects"]) {
+      await page.goto(path);
+      await expect(page.locator("#main")).toBeVisible();
+      const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+      expect(overflow).toBeLessThanOrEqual(1);
+    }
+    if (width < 960) {
+      await page.goto("/");
+      const menu = page.getByRole("button", { name: "Menu" });
+      await expect(menu).toBeVisible();
+      await menu.click();
+      await expect(page.getByRole("navigation", { name: "Mobile navigation" })).toBeVisible();
+      await page.getByRole("navigation", { name: "Mobile navigation" }).getByRole("link", { name: "Work" }).click();
+      await expect(page).toHaveURL(/\/projects$/);
+      await expect(page.getByRole("button", { name: "Menu" })).toBeVisible();
+    }
+  });
+}
+
+test("Editorial typography survives 150% text scaling, reduced motion and theme toggle", async ({ page }) => {
+  await page.emulateMedia({ colorScheme: "light", reducedMotion: "reduce" });
+  await page.setViewportSize({ width: 320, height: 760 });
+  await page.goto("/");
+  await page.evaluate(() => { document.documentElement.style.fontSize = "150%"; });
+  await expect(page.getByRole("heading", { name: "Huixin Yang", exact: true })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Explore my work" })).toBeVisible();
+  await page.getByRole("button", { name: "Switch to dark theme" }).click();
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dracula");
+  await expect(page.getByRole("button", { name: "Switch to light theme" })).toBeVisible();
+});
