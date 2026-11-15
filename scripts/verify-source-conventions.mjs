@@ -14,7 +14,7 @@ for (const [key, pathname] of Object.entries(ROUTES)) {
   } else if (key === "blogPost") {
     assert.equal(pathname, "/blog/:slug");
   } else {
-    assert.match(pathname, /^\\/[a-z]+(?:-[a-z]+)*$/, "Routes must be lowercase kebab-case");
+    assert.match(pathname.slice(1), /^[a-z]+(?:-[a-z]+)*$/, "Routes must be lowercase kebab-case");
   }
 }
 for (const { to } of [...PRIMARY_NAV_ITEMS, ...SECONDARY_NAV_ITEMS]) {
@@ -34,20 +34,20 @@ for (const key of routeKeys) {
 }
 for (const dir of ["src/pages", "src/sections", "src/ui"]) {
   for (const file of readdirSync(dir).filter((item) => item.endsWith(".jsx"))) {
-    assert.match(file, /^[A-Z][A-Za-z0-9]*\\.jsx$/, "React components must be PascalCase in " + dir);
+    assert.match(file.slice(0, -4), /^[A-Z][A-Za-z0-9]*$/, "React components must be PascalCase in " + dir);
   }
 }
 for (const file of readdirSync("src/data")) {
   if (file.endsWith(".json")) {
-    assert.match(file, /^[a-z]+(?:-[a-z]+)*\\.json$/, "JSON files must use kebab-case");
+    assert.match(file.slice(0, -5), /^[a-z]+(?:-[a-z]+)*$/, "JSON files must use kebab-case");
   } else if (file.endsWith(".js")) {
-    assert.match(file, /^[a-z][A-Za-z0-9]*\\.js$/, "JavaScript data modules must be camelCase");
+    assert.match(file.slice(0, -3), /^[a-z][A-Za-z0-9]*$/, "JavaScript data modules must be camelCase");
   }
 }
 for (const file of readdirSync("src/utils").filter((name) => name.endsWith(".js"))) {
-  assert.match(file, /^[a-z][A-Za-z0-9]*\\.js$/, "Utility names must be camelCase");
+  assert.match(file.slice(0, -3), /^[a-z][A-Za-z0-9]*$/, "Utility names must be camelCase");
 }
 for (const file of readdirSync("src/blogs").filter((name) => name.endsWith(".md"))) {
-  assert.match(file, /^[a-z]+(?:-[a-z]+)*\\.md$/, "Blog Markdown filenames must be kebab-case");
+  assert.match(file.slice(0, -3), /^[a-z]+(?:-[a-z]+)*$/, "Blog Markdown filenames must be kebab-case");
 }
 console.log("Verified page/component/data naming, canonical routes and navigation targets.");
