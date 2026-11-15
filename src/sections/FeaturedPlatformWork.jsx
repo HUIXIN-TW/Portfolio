@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import PlatformCaseCard from "../ui/PlatformCaseCard";
 import { platformCaseStudies } from "../data/platformCaseStudies";
 
-const FeaturedWork = () => (
+const FeaturedPlatformWork = () => (
   <section className="editorial-featured" aria-labelledby="featured-heading">
     <div className="editorial-container">
       <div className="editorial-section-heading">
@@ -24,4 +24,4 @@ const FeaturedWork = () => (
   </section>
 );
 
-export default FeaturedWork;
+export default FeaturedPlatformWork;

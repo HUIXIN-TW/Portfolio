@@ -1,7 +1,7 @@
 import React from "react";
 import { Disclosure } from "@headlessui/react";
 import YouTubeVideo from "./YouTubeVideo";
-import ImgDisplay from "./ImgDisplay";
+import ProjectImage from "./ProjectImage";
 import { getProjectTechnologies } from "../utils/projectGalleryFilters";
 
 const imageUrls = {
@@ -79,7 +79,7 @@ const ProjectCard = ({ data }) => {
                   )}
                   {imageUrl && (
                     <div className="image-wrapper">
-                      <ImgDisplay imgUrl={imageUrl} />
+                      <ProjectImage imageUrl={imageUrl} alt={`${data.project} project preview`} />
                     </div>
                   )}
                 </Disclosure.Panel>

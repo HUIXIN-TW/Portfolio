@@ -2,7 +2,7 @@ import React from "react";
 import scholarshipsData from "../data/scholarships.json";
 import { card, cardMeta, cardPadding, cardTitle, mutedText } from "../styles/uiClasses";
 
-const Scholarships = () => {
+const ScholarshipsSection = () => {
   const scholarshipItems = scholarshipsData.filter((item) => item.category === "Scholarship");
 
   return (
@@ -25,4 +25,4 @@ const Scholarships = () => {
   );
 };
 
-export default Scholarships;
+export default ScholarshipsSection;

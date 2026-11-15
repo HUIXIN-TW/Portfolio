@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-const Introduction = ({ name, title }) => (
+const HomeHero = ({ name, title }) => (
   <section id="introduction" className="editorial-hero">
     <div className="editorial-container">
       <div className="editorial-hero-copy">
@@ -26,9 +26,9 @@ const Introduction = ({ name, title }) => (
   </section>
 );
 
-Introduction.propTypes = {
+HomeHero.propTypes = {
   name: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 };
 
-export default Introduction;
+export default HomeHero;

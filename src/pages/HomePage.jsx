@@ -1,14 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Introduction from "../sections/Introduction";
-import FeaturedWork from "../sections/FeaturedWork";
-import HomeOverview from "../sections/HomeOverview";
+import HomeHero from "../sections/HomeHero";
+import FeaturedPlatformWork from "../sections/FeaturedPlatformWork";
+import EngineeringFocus from "../sections/EngineeringFocus";
 
 const HomePage = ({ name, title }) => (
   <div id="home">
-    <Introduction name={name} title={title} />
-    <FeaturedWork />
-    <HomeOverview />
+    <HomeHero name={name} title={title} />
+    <FeaturedPlatformWork />
+    <EngineeringFocus />
   </div>
 );
 

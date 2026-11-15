@@ -16,7 +16,7 @@ const capabilities = [
   },
 ];
 
-const HomeOverview = () => (
+const EngineeringFocus = () => (
   <section className="editorial-overview" aria-labelledby="approach-heading">
     <div className="editorial-container editorial-overview-layout">
       <div>
@@ -51,4 +51,4 @@ const HomeOverview = () => (
   </section>
 );
 
-export default HomeOverview;
+export default EngineeringFocus;

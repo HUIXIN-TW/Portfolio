@@ -2,7 +2,7 @@ import React from "react";
 import { Disclosure } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/20/solid";
 import educationData from "../data/education.json";
-import Scholarships from "../sections/Scholarships";
+import ScholarshipsSection from "../sections/ScholarshipsSection";
 import { card, cardPadding, cardTitle, mutedText, sectionContainer, sectionTitle } from "../styles/uiClasses";
 
 const EducationPage = () => {
@@ -47,7 +47,7 @@ const EducationPage = () => {
             </div>
           ))}
         </div>
-        <Scholarships />
+        <ScholarshipsSection />
       </div>
     </section>
   );
