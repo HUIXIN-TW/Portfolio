@@ -43,9 +43,9 @@ const EngineeringFocus = () => (
           <Link className="editorial-text-link" to={ROUTES.experience}>
             Experience <span aria-hidden="true">↗</span>
           </Link>
-          <Link className="editorial-text-link" to={ROUTES.about}>
-            Background <span aria-hidden="true">↗</span>
-          </Link>
+          <a className="editorial-text-link" href="#background">
+            Background <span aria-hidden="true">↓</span>
+          </a>
         </div>
       </div>
     </div>

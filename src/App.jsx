@@ -1,9 +1,8 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Footer from "./ui/Footer";
-import { ROUTES } from "./config/routes.mjs";
+import { ROUTES, LEGACY_ROUTES } from "./config/routes.mjs";
 import Header from "./ui/Header";
-import AboutPage from "./pages/AboutPage";
 import HomePage from "./pages/HomePage";
 import EducationPage from "./pages/EducationPage";
 import CertificatesAndAwardsPage from "./pages/CertificatesAndAwardsPage";
@@ -64,7 +63,7 @@ const SiteRoutes = ({ theme, handleThemeToggle, siteProps }) => {
       <main className="flex-1 w-full relative">
         <Routes>
           <Route path={ROUTES.home} element={<HomePage name={siteProps.name} title={siteProps.title} />} />
-          <Route path={ROUTES.about} element={<AboutPage />} />
+          <Route path={LEGACY_ROUTES.about} element={<Navigate to={`${ROUTES.home}#background`} replace />} />
           <Route path={ROUTES.education} element={<EducationPage />} />
           <Route path={ROUTES.certificatesAndAwards} element={<CertificatesAndAwardsPage />} />
           <Route path={ROUTES.experience} element={<ExperiencePage />} />

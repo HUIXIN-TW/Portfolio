@@ -3,7 +3,6 @@
 // entrypoints for each static route and published blog slug.
 export const ROUTES = Object.freeze({
   home: "/",
-  about: "/about",
   education: "/education",
   certificatesAndAwards: "/certificates-awards",
   experience: "/experience",
@@ -17,7 +16,6 @@ export const ROUTES = Object.freeze({
 export const PRIMARY_NAV_ITEMS = Object.freeze([
   { to: ROUTES.projects, label: "Work" },
   { to: ROUTES.experience, label: "Experience" },
-  { to: ROUTES.about, label: "About" },
   { to: ROUTES.blog, label: "Writing" },
 ]);
 
@@ -27,8 +25,12 @@ export const SECONDARY_NAV_ITEMS = Object.freeze([
   { to: ROUTES.referee, label: "Referee" },
 ]);
 
-export const STATIC_PAGE_ROUTES = Object.freeze(
-  Object.values(ROUTES).filter((route) => route !== ROUTES.home && !route.includes(":"))
-);
+// Preserve incoming links to the former About page, but do not expose it in navigation.
+export const LEGACY_ROUTES = Object.freeze({ about: "/about" });
+
+export const STATIC_PAGE_ROUTES = Object.freeze([
+  ...Object.values(ROUTES).filter((route) => route !== ROUTES.home && !route.includes(":")),
+  ...Object.values(LEGACY_ROUTES),
+]);
 
 export const getBlogPostPath = (slug) => `${ROUTES.blog}/${encodeURIComponent(slug)}`;

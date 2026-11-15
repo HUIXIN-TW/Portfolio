@@ -32,7 +32,7 @@ const Footer = ({ name, email, gitHub, linkedIn, devDotTo, instagram, medium, tw
               <h2>Explore</h2>
               <Link to={ROUTES.projects}>Work</Link>
               <Link to={ROUTES.experience}>Experience</Link>
-              <Link to={ROUTES.about}>About</Link>
+              <Link to={ROUTES.blog}>Writing</Link>
               <ExternalLink href="https://resume.huixinyang.com/">Resume</ExternalLink>
             </nav>
             <nav className="editorial-footer-column" aria-label="Footer contact">
