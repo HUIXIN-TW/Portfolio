@@ -1,5 +1,7 @@
 import React, { useMemo } from "react";
+import PageHeading from "../ui/PageHeading";
 import { Link, useParams } from "react-router-dom";
+import { ROUTES } from "../config/routes.mjs";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { getBlogPostBySlug } from "../utils/blogLoader";
@@ -111,13 +113,14 @@ const WritingPostPage = () => {
       <div className={sectionContainer}>
         <div className="mb-6">
           <Link
-            to="/writing"
+            to={ROUTES.writing}
             className="text-sm font-medium text-slate-600 underline decoration-slate-300 underline-offset-4 dark:text-[#C7C9D9] dark:decoration-[#44475A] dark:hover:text-[#FF79C6]"
           >
             Back to Writing
           </Link>
         </div>
 
+        {post && <PageHeading title={post.title} eyebrow="WRITING" />}
         {post ? (
           <article className={`${card} ${cardPadding}`}>
             <div className="space-y-5">
@@ -128,9 +131,7 @@ const WritingPostPage = () => {
                   {post.readingTime && <span className={tagPillMuted}>{post.readingTime}</span>}
                 </div>
 
-                <h1 className="text-3xl font-semibold tracking-tight text-slate-900 dark:text-[#F8F8F2]">
-                  {post.title}
-                </h1>
+                {post.summary && <p className="editorial-article-meta">{post.summary}</p>}
               </div>
 
               {postTags.length > 0 && (

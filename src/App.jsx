@@ -1,24 +1,26 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import RouteScrollManager from "./ui/RouteScrollManager";
 import Footer from "./ui/Footer";
+import { ROUTES, LEGACY_ROUTES } from "./config/routes.mjs";
 import Header from "./ui/Header";
-import About from "./sections/About";
-import Home from "./sections/Home";
-import Education from "./sections/Education";
-import CertificatesAndAwards from "./sections/CertificatesAndAwards";
-import ProjectsPage from "./sections/ProjectsPage";
-import Migration from "./sections/Migration";
-import Referee from "./sections/Referee";
-import Experience from "./sections/Experience";
-import WritingPage from "./sections/WritingPage";
-import WritingPostPage from "./sections/WritingPostPage";
+import HomePage from "./pages/HomePage";
+import EducationPage from "./pages/EducationPage";
+import CertificatesAndAwardsPage from "./pages/CertificatesAndAwardsPage";
+import ProjectsPage from "./pages/ProjectsPage";
+import MigrationPage from "./pages/MigrationPage";
+import RefereePage from "./pages/RefereePage";
+import ExperiencePage from "./pages/ExperiencePage";
+import WritingPage from "./pages/WritingPage";
+import WritingPostPage from "./pages/WritingPostPage";
 import { applyThemeToDocument, getInitialTheme, THEME_DRACULA, THEME_LIGHT, THEME_STORAGE_KEY } from "./utils/theme";
 
 import "./styles/main.css";
+import "./styles/editorial.css";
 
 const siteProps = {
   name: "Huixin Yang",
-  title: "Software Engineer & CPA Australia",
+  title: "PLATFORM ENGINEERING / BACKEND SYSTEMS",
   email: "huixin.yang.tw@gmail.com",
   gitHub: "HUIXIN-TW",
   instagram: "",
@@ -47,6 +49,7 @@ const App = () => {
 
   return (
     <Router>
+      <RouteScrollManager />
       <SiteRoutes theme={theme} handleThemeToggle={handleThemeToggle} siteProps={siteProps} />
     </Router>
   );
@@ -56,21 +59,21 @@ const SiteRoutes = ({ theme, handleThemeToggle, siteProps }) => {
   return (
     <div
       id="main"
-      className="min-h-screen flex flex-col bg-white text-slate-900 dark:bg-[#282A36] dark:text-[#F8F8F2]"
+      className="editorial-shell min-h-screen flex flex-col"
     >
       <Header theme={theme} onThemeToggle={handleThemeToggle} />
       <main className="flex-1 w-full relative">
         <Routes>
-          <Route path="/" element={<Home name={siteProps.name} title={siteProps.title} />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/education" element={<Education />} />
-          <Route path="/certificates-awards" element={<CertificatesAndAwards />} />
-          <Route path="/experience" element={<Experience />} />
-          <Route path="/projects" element={<ProjectsPage />} />
-          <Route path="/writing" element={<WritingPage />} />
-          <Route path="/writing/:slug" element={<WritingPostPage />} />
-          <Route path="/migration" element={<Migration />} />
-          <Route path="/referee" element={<Referee />} />
+          <Route path={ROUTES.home} element={<HomePage name={siteProps.name} title={siteProps.title} />} />
+          <Route path={LEGACY_ROUTES.about} element={<Navigate to={`${ROUTES.home}#background`} replace />} />
+          <Route path={ROUTES.education} element={<EducationPage />} />
+          <Route path={ROUTES.certificatesAndAwards} element={<CertificatesAndAwardsPage />} />
+          <Route path={ROUTES.experience} element={<ExperiencePage />} />
+          <Route path={ROUTES.projects} element={<ProjectsPage />} />
+          <Route path={ROUTES.writing} element={<WritingPage />} />
+          <Route path={ROUTES.writingPost} element={<WritingPostPage />} />
+          <Route path={ROUTES.migration} element={<MigrationPage />} />
+          <Route path={ROUTES.referee} element={<RefereePage />} />
           <Route
             path="*"
             element={
@@ -82,7 +85,7 @@ const SiteRoutes = ({ theme, handleThemeToggle, siteProps }) => {
           />
         </Routes>
       </main>
-      <Footer {...siteProps} theme={theme} />
+      <Footer {...siteProps} />
     </div>
   );
 };

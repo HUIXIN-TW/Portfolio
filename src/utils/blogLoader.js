@@ -1,4 +1,4 @@
-import blogPostSlugs from "../data/blogPosts.json";
+import blogPostSlugs from "../data/blog-posts.json";
 
 const markdownFiles = import.meta.glob("../blogs/*.md", {
   eager: true,
@@ -157,7 +157,7 @@ const postsBySlug = Object.fromEntries(
     .filter(([, post]) => post.published !== false)
 );
 
-// Order posts according to blogPosts.json.
+// Order posts according to blog-posts.json.
 // Slugs that don't match a markdown file are silently skipped.
 const orderedPosts = Array.isArray(blogPostSlugs) ? blogPostSlugs.map((slug) => postsBySlug[slug]).filter(Boolean) : [];
 

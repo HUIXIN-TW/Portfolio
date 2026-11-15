@@ -1,22 +1,16 @@
 import React from "react";
+import PageHeading from "../ui/PageHeading";
 import RefereeCard from "../ui/RefereeCard";
-import { sectionContainer, sectionTitle } from "../styles/uiClasses";
+import { sectionContainer } from "../styles/uiClasses";
 
-const Referee = () => {
+const RefereePage = () => {
   return (
     <section className="padding" id="referee">
       <div className={sectionContainer}>
-        <h2 className={sectionTitle}>Referee</h2>
-        <p className="mb-8 mt-4 text-base italic text-slate-700 dark:text-[#C7C9D9]">
-          Should you require further details or wish to establish contact, please do not hesitate to reach out to me
-          directly at{" "}
-          <a
-            href="mailto:huixin.yang.tw@gmail.com"
-            className="underline text-slate-900 dark:text-[#8BE9FD] dark:hover:text-[#BD93F9]"
-          >
-            huixin.yang.tw@gmail.com
-          </a>
-          . I am more than happy to provide the contact information upon request.
+        <PageHeading title="References" description="Professional and academic references available on request." />
+        <p className="editorial-reference-intro">
+          Contact details are shared upon request via{" "}
+          <a href="mailto:huixin.yang.tw@gmail.com">email</a>.
         </p>
 
         <div className="content-card-stack">
@@ -64,4 +58,4 @@ const Referee = () => {
   );
 };
 
-export default Referee;
+export default RefereePage;

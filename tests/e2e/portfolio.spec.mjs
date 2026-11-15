@@ -4,12 +4,48 @@ test("Portfolio home and Projects navigation remain available", async ({ page })
   const response = await page.goto("/");
   expect(response?.status()).toBe(200);
   await expect(page.getByRole("heading", { name: "Huixin Yang", exact: true })).toBeVisible();
-  await expect(page.getByRole("link", { name: "Projects", exact: true })).toBeVisible();
-  await page.getByRole("link", { name: "Projects", exact: true }).click();
+  const mainNav = page.getByRole("navigation", { name: "Primary navigation" });
+  await expect(mainNav.getByRole("link", { name: "Projects", exact: true })).toBeVisible();
+  await mainNav.getByRole("link", { name: "Projects", exact: true }).click();
   await expect(page).toHaveURL(/\/projects$/);
   await expect(page.getByRole("heading", { name: "Projects", exact: true })).toBeVisible();
   await expect(page.locator("#projects")).toBeVisible();
   await expect(page.locator("#footer")).toBeVisible();
+});
+
+test("Retired About route leads to Home background without a duplicate page", async ({ page, request }) => {
+  const raw = await request.get("/about", { maxRedirects: 0 });
+  expect(raw.status()).toBe(200); // Physical Cloudflare Pages entrypoint remains reachable.
+  const response = await page.goto("/about");
+  expect(response?.status()).toBe(200);
+  await expect(page).toHaveURL(/\/#background$/);
+  await expect(page.getByRole("heading", { name: "From business assurance to platform engineering." })).toBeVisible();
+  await expect(page.locator("#background")).toBeVisible();
+  await expect(page.locator("main h1")).toHaveCount(1);
+  await expect(page.locator("#about")).toHaveCount(0);
+  await expect(page.getByRole("navigation", { name: "Primary navigation" }).getByRole("link", { name: "About" })).toHaveCount(0);
+  await expect(page.getByRole("navigation", { name: "Footer pages" }).getByRole("link", { name: "About" })).toHaveCount(0);
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(0);
+});
+
+test("Home background adds distinct career context and Work owns live demos", async ({ page }) => {
+  await page.goto("/");
+  const background = page.locator("#background");
+  await expect(background).toContainText("Deloitte and PwC");
+  await expect(background).toContainText("risk, evidence, and accountability");
+  await expect(page.locator("#home")).not.toContainText("Live site");
+  await page.getByRole("link", { name: "Background", exact: true }).click();
+  await expect(page).toHaveURL(/\/#background$/);
+
+  await page.goto("/projects");
+  for (const [project, url] of [
+    ["Notica Web", "https://notica.studio"],
+    ["WhatToEat app", "https://whattoeat.huixinyang.com/"],
+  ]) {
+    const card = page.locator(".editorial-project-card").filter({ hasText: project });
+    await expect(card.getByRole("link", { name: "Live site" })).toHaveAttribute("href", url);
+  }
+  await expect(page.locator(".editorial-project-card")).toHaveCount(16);
 });
 
 test("Projects deep link returns HTTP 200 without redirects, not Home", async ({ page, request }) => {
@@ -22,7 +58,7 @@ test("Projects deep link returns HTTP 200 without redirects, not Home", async ({
   await expect(page.getByRole("heading", { name: "Projects", exact: true })).toBeVisible();
 });
 
-for (const route of ["/about", "/education", "/certificates-awards", "/experience", "/writing", "/writing/building-static-portfolio-blog", "/migration", "/referee"]) {
+for (const route of ["/education", "/certificates-awards", "/experience", "/writing", "/writing/building-static-portfolio-blog", "/migration", "/referee"]) {
   test(`Portfolio deep link ${route} serves clean URL without redirect`, async ({ page, request }) => {
     const raw = await request.get(route, { maxRedirects: 0 });
     expect(raw.status()).toBe(200);
@@ -34,7 +70,7 @@ for (const route of ["/about", "/education", "/certificates-awards", "/experienc
   });
 }
 
-for (const legacy of ["/portfolio", "/portfolio/", "/japan", "/japan/en", "/japan/en.html", "/trips/japan/places-en.kml", "/blog", "/blog/hello-blog", "/blog/building-static-portfolio-blog", "/writing/hello-blog", "/writing/unknown-post"]) {
+for (const legacy of ["/portfolio", "/portfolio/", "/japan", "/japan/en", "/japan/en.html", "/trips/japan/places-en.kml", "/writing/unknown-post", "/writing/hello-blog", "/blog", "/blog/hello-blog", "/blog/building-static-portfolio-blog"]) {
   test(`Unknown or retired ${legacy} returns native HTTP 404 without redirect`, async ({ page, request }) => {
     const raw = await request.get(legacy, { maxRedirects: 0 });
     expect(raw.status()).toBe(404);
@@ -47,18 +83,362 @@ for (const legacy of ["/portfolio", "/portfolio/", "/japan", "/japan/en", "/japa
   });
 }
 
-test("Writing uses canonical navigation and retains published article links", async ({ page, request }) => {
+
+test("Writing uses one canonical article list and omits unpublished drafts", async ({ page }) => {
   await page.goto("/");
-  await page.getByRole("navigation").getByRole("link", { name: "Writing" }).click();
+  await page.getByRole("navigation", { name: "Primary navigation" }).getByRole("link", { name: "Writing", exact: true }).click();
   await expect(page).toHaveURL(/\/writing$/);
   await expect(page.getByRole("heading", { name: "Writing", exact: true })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "Articles", exact: true })).toBeVisible();
+  await expect(page.locator("#writing article")).toHaveCount(1);
+  await expect(page.getByRole("heading", { name: "Hello Blog", exact: true })).toHaveCount(0);
+  await expect(page.getByRole("heading", { name: "Latest Articles", exact: true })).toHaveCount(0);
+  await expect(page.getByRole("link", { name: "Listen to Ship It Maybe" })).toHaveAttribute("target", "_blank");
+  await expect(page.getByRole("navigation", { name: "Footer pages" }).getByRole("link", { name: "Writing", exact: true })).toHaveAttribute("href", "/writing");
   const article = page.getByRole("link", { name: "Building a Static Portfolio Blog", exact: true });
   await expect(article).toHaveAttribute("href", "/writing/building-static-portfolio-blog");
   await article.click();
   await expect(page).toHaveURL(/\/writing\/building-static-portfolio-blog$/);
   await expect(page.getByRole("link", { name: "Back to Writing" })).toHaveAttribute("href", "/writing");
-  const raw = await request.get("/writing/building-static-portfolio-blog", { maxRedirects: 0 });
-  expect(raw.status()).toBe(200);
-  expect(raw.headers().location).toBeUndefined();
+});
+
+test("Client-side navigation resets scroll while same-page and cross-page anchors remain reachable", async ({ page }) => {
+  await page.goto("/projects");
+  await page.locator("footer#footer").scrollIntoViewIfNeeded();
+  expect(await page.evaluate(() => window.scrollY)).toBeGreaterThan(500);
+  await page.getByRole("navigation", { name: "Primary navigation" }).getByRole("link", { name: "Writing", exact: true }).click();
+  await expect(page).toHaveURL(/\/writing$/);
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(0);
+
+  await page.getByRole("link", { name: "Huixin Yang", exact: true }).first().click();
+  await page.getByRole("link", { name: "Background", exact: true }).click();
+  await expect(page).toHaveURL(/\/#background$/);
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(0);
+  await page.getByRole("navigation", { name: "Primary navigation" }).getByRole("link", { name: "Projects", exact: true }).click();
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(0);
+  // The compatibility route must still mount Home before its fragment resolves.
+  await page.goto("/about");
+  await expect(page).toHaveURL(/\/#background$/);
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(0);
+});
+
+test("Editorial Home presents a clear proposition and real featured work", async ({ page }) => {
+  await page.goto("/");
+  await expect(page.getByRole("heading", { name: "Huixin Yang", exact: true })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /Building reliable cloud platforms/i })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "AWS Platform Migration & ECS Modernisation" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "CI/CD & Cross-Service Staging Validation" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Explore platform work" })).toHaveAttribute("href", "/projects");
+});
+
+test("Project details open in a dialog without resizing adjacent cards", async ({ page }) => {
+  await page.goto("/projects");
+  const cards = page.locator(".editorial-project-card");
+  await expect(cards).toHaveCount(16);
+  const first = cards.first();
+  await expect(first.locator(".editorial-project-summary")).toBeVisible();
+  await expect(first.locator(".editorial-project-role")).toBeVisible();
+
+  const getHeights = () => cards.evaluateAll((elements) =>
+    elements.slice(0, 2).map((element) => element.getBoundingClientRect().height)
+  );
+  const before = await getHeights();
+  const trigger = first.getByRole("button", { name: "View details" });
+  await trigger.click();
+  const dialog = page.getByRole("dialog");
+  await expect(dialog).toBeVisible();
+  await expect(dialog.getByRole("heading", { level: 2 })).toBeVisible();
+  await expect(dialog.getByRole("button", { name: "Close project details" })).toBeVisible();
+  await expect.poll(async () => getHeights()).toEqual(before);
+
+  await page.keyboard.press("Escape");
+  await expect(dialog).toHaveCount(0);
+  await expect(trigger).toBeFocused();
+});
+
+test("Long project descriptions scroll in a mobile dialog, not inside the card grid", async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 640 });
+  await page.goto("/projects");
+  const cards = page.locator(".editorial-project-card");
+  const expanded = cards.filter({ hasText: "Data Warehousing & Association Rule Mining" });
+  await expect(expanded).toHaveCount(1);
+  const before = await expanded.boundingBox();
+  await expanded.getByRole("button", { name: "View details" }).click();
+
+  const dialog = page.getByRole("dialog");
+  await expect(dialog).toBeVisible();
+  await expect(dialog.getByText(/Crime in Atlanta/i)).toBeVisible();
+  const frame = await dialog.locator(".editorial-project-dialog-panel").boundingBox();
+  expect(frame.width).toBeLessThanOrEqual(320);
+  expect(frame.height).toBeLessThanOrEqual(640);
+  const scrollable = await dialog.locator(".editorial-project-dialog-body").evaluate((element) =>
+    element.scrollHeight > element.clientHeight
+  );
+  expect(scrollable).toBe(true);
+  const after = await expanded.boundingBox();
+  expect(Math.abs(after.height - before.height)).toBeLessThan(1);
+
+  await dialog.getByRole("button", { name: "Close project details" }).click();
+  await expect(dialog).toHaveCount(0);
+});
+
+for (const width of [320, 390, 768, 1280]) {
+  test("Editorial pages remain usable at " + width + "px", async ({ page }) => {
+    await page.setViewportSize({ width, height: 900 });
+    for (const path of ["/", "/projects"]) {
+      await page.goto(path);
+      await expect(page.locator("#main")).toBeVisible();
+      const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+      expect(overflow).toBeLessThanOrEqual(1);
+    }
+    if (width < 960) {
+      await page.goto("/");
+      const menu = page.getByRole("button", { name: "Menu" });
+      await expect(menu).toBeVisible();
+      await menu.click();
+      await expect(page.getByRole("navigation", { name: "Mobile navigation" })).toBeVisible();
+      await page.getByRole("navigation", { name: "Mobile navigation" }).getByRole("link", { name: "Projects" }).click();
+      await expect(page).toHaveURL(/\/projects$/);
+      await expect(page.getByRole("button", { name: "Menu" })).toBeVisible();
+    }
+  });
+}
+
+test("Editorial typography survives 150% text scaling, reduced motion and theme toggle", async ({ page }) => {
+  await page.emulateMedia({ colorScheme: "light", reducedMotion: "reduce" });
+  await page.setViewportSize({ width: 320, height: 760 });
+  await page.goto("/");
+  await page.evaluate(() => { document.documentElement.style.fontSize = "150%"; });
+  await expect(page.getByRole("heading", { name: "Huixin Yang", exact: true })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Explore platform work" })).toBeVisible();
+  await page.getByRole("button", { name: "Switch to dark theme" }).click();
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dracula");
+  await expect(page.getByRole("button", { name: "Switch to light theme" })).toBeVisible();
+});
+
+test("Editorial palette is graphite-led and consistent in light/dark modes", async ({ page }) => {
+  await page.emulateMedia({ colorScheme: "light" });
+  await page.goto("/");
+  const getPalette = () => page.evaluate(() => {
+    const styles = getComputedStyle(document.documentElement);
+    const shell = getComputedStyle(document.querySelector("#main"));
+    return {
+      background: styles.getPropertyValue("--ed-background").trim(),
+      ink: styles.getPropertyValue("--ed-ink").trim(),
+      accent: styles.getPropertyValue("--ed-accent").trim(),
+      shellBackground: shell.backgroundColor,
+    };
+  });
+  await expect.poll(async () => (await getPalette()).background).toBe("#faf9f7");
+  expect(await getPalette()).toMatchObject({
+    ink: "#25272b",
+    accent: "#415e7a",
+    shellBackground: "rgb(250, 249, 247)",
+  });
+  await page.getByRole("button", { name: "Switch to dark theme" }).click();
+  expect(await getPalette()).toMatchObject({
+    background: "#191b20",
+    ink: "#f3f4f5",
+    accent: "#b0c8e2",
+    shellBackground: "rgb(25, 27, 32)",
+  });
+  await expect(page.locator(".editorial-hero-aside")).toHaveCount(0);
+});
+
+test("Platform engineering case studies lead Work while personal projects remain accessible", async ({ page }) => {
+  await page.goto("/projects");
+  const platform = page.locator("#platform-work");
+  await expect(platform.getByRole("heading", { name: "Platform engineering case studies" })).toBeVisible();
+  await expect(platform.locator(".platform-case-card")).toHaveCount(4);
+  await expect(platform.locator(".platform-case-card").first()).toContainText("AWS Platform Migration");
+  await expect(platform.locator(".platform-case-card").nth(1)).toContainText("CI/CD");
+  await expect(page.getByRole("heading", { name: "Applications & projects" })).toBeVisible();
+  await expect(page.locator(".editorial-project-card")).toHaveCount(16);
+  expect(await page.locator("#platform-work").evaluate((element) =>
+    element.compareDocumentPosition(document.querySelector(".platform-project-archive")) & Node.DOCUMENT_POSITION_FOLLOWING
+  )).toBeTruthy();
+});
+
+test("Platform-led Home headline is visible and describes supported experience", async ({ page }) => {
+  await page.goto("/");
+  await expect(page.locator(".editorial-eyebrow").first()).toHaveText("PLATFORM ENGINEERING / BACKEND SYSTEMS");
+  await expect(page.getByRole("heading", { name: /Building reliable cloud platforms/i })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Cloud platforms & IaC" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Delivery automation" })).toBeVisible();
+  await expect(page.locator(".editorial-featured .platform-case-card")).toHaveCount(2);
+});
+
+test("PWA rocket identity is consistent for Safari tabs, iOS install and the web manifest", async ({ page, request }) => {
+  await page.goto("/");
+  const favicon = page.locator('link[rel="icon"]');
+  const apple = page.locator('link[rel="apple-touch-icon"]');
+  await expect(favicon).toHaveAttribute("href", "/portfolio-rocket-48.png");
+  await expect(favicon).toHaveAttribute("type", "image/png");
+  await expect(favicon).toHaveAttribute("sizes", "48x48");
+  await expect(apple).toHaveAttribute("href", "/portfolio-rocket-192.png");
+  await expect(apple).toHaveAttribute("sizes", "192x192");
+  await expect(page.locator('link[rel="manifest"]')).toHaveAttribute("href", "/site.webmanifest");
+
+  const response = await request.get("/site.webmanifest");
+  expect(response.status()).toBe(200);
+  const manifest = await response.json();
+  expect(manifest).toMatchObject({
+    name: "Huixin Yang — Portfolio",
+    short_name: "Huixin",
+    start_url: "/",
+    scope: "/",
+    display: "standalone",
+  });
+  expect(manifest.icons).toEqual([
+    { src: "/portfolio-rocket-192.png", sizes: "192x192", type: "image/png", purpose: "any" },
+    { src: "/portfolio-rocket-512.webp", sizes: "512x512", type: "image/webp", purpose: "any" },
+  ]);
+
+  for (const [path, expectedSize, mime] of [
+    ["/portfolio-rocket-48.png", 48, "image/png"],
+    ["/portfolio-rocket-192.png", 192, "image/png"],
+    ["/portfolio-rocket-512.webp", 512, "image/webp"],
+  ]) {
+    const asset = await request.get(path);
+    expect(asset.status()).toBe(200);
+    expect(asset.headers()["content-type"]).toContain(mime);
+    const dimensions = await page.evaluate(async (src) => {
+      const image = new Image();
+      image.src = src;
+      await image.decode();
+      return [image.naturalWidth, image.naturalHeight];
+    }, path);
+    expect(dimensions).toEqual([expectedSize, expectedSize]);
+  }
+
+  for (const route of ["/projects", "/experience", "/writing"]) {
+    const routeResponse = await request.get(route, { maxRedirects: 0 });
+    expect(routeResponse.status()).toBe(200);
+    const body = await routeResponse.text();
+    expect(body).toContain('href="/portfolio-rocket-48.png"');
+    expect(body).toContain('href="/portfolio-rocket-192.png"');
+    expect(body).toContain('href="/site.webmanifest"');
+  }
+});
+
+test("Project descriptions render semantic bullets rather than repeated loose paragraphs", async ({ page }) => {
+  await page.goto("/projects");
+  const project = page.locator(".editorial-project-card").filter({ hasText: "NotionSyncGCal Website" });
+  await project.getByRole("button", { name: "View details" }).click();
+  const dialog = page.getByRole("dialog");
+  const list = dialog.locator(".editorial-project-description-list");
+  await expect(list).toHaveCount(1);
+  await expect(list.locator("li")).toHaveCount(6);
+  await expect(list.locator("li").first()).toContainText("Built a Next.js 14+ web application");
+  await expect(dialog.getByRole("heading", { name: "Project details" })).toBeVisible();
+  await page.keyboard.press("Escape");
+  await expect(dialog).toHaveCount(0);
+});
+
+test("Primary navigation prioritises engineering experience before writing and resume", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("/");
+  const desktop = page.getByRole("navigation", { name: "Primary navigation" });
+  await expect(desktop.locator(":scope > a.editorial-nav-link")).toHaveText([
+    "Projects", "Experience", "Writing", "Resume",
+  ]);
+  await desktop.locator("summary").click();
+  await expect(desktop.getByRole("link", { name: "Education" })).toBeVisible();
+  await expect(desktop.getByRole("link", { name: "Awards" })).toBeVisible();
+  await expect(desktop.getByRole("link", { name: "Referee" })).toBeVisible();
+  await expect(desktop.getByRole("link", { name: "GitHub" })).toBeVisible();
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.getByRole("button", { name: "Menu" }).click();
+  const mobile = page.getByRole("navigation", { name: "Mobile navigation" });
+  await expect(mobile.locator(".editorial-mobile-links > a").first()).toHaveText("Projects");
+  await expect(mobile.locator(".editorial-mobile-links > a").nth(2)).toHaveText("Writing");
+  await expect(mobile.getByRole("link", { name: "About" })).toHaveCount(0);
+});
+
+test("Primary header and redesigned footer clearly identify external links", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("/");
+  const desktop = page.getByRole("navigation", { name: "Primary navigation" });
+  const resume = desktop.getByRole("link", { name: "Resume", exact: true });
+  await expect(resume).toHaveAttribute("href", "https://resume.huixinyang.com/");
+  await expect(resume).toHaveAttribute("target", "_blank");
+  await expect(resume).toHaveAttribute("rel", /noopener noreferrer/);
+  await expect(resume.locator(".editorial-external-link-icon")).toBeVisible();
+
+  await desktop.locator("summary").click();
+  const github = desktop.getByRole("link", { name: "GitHub", exact: true });
+  await expect(github).toHaveAttribute("href", "https://github.com/HUIXIN-TW");
+  await expect(github).toHaveAttribute("target", "_blank");
+  await expect(github.locator(".editorial-external-link-icon")).toBeVisible();
+
+  const footer = page.locator("footer#footer");
+  await expect(footer.getByRole("navigation", { name: "Footer pages" }).getByRole("link", { name: "Projects" }))
+    .toHaveAttribute("href", "/projects");
+  const footerResume = footer.getByRole("navigation", { name: "Footer pages" }).getByRole("link", { name: "Resume" });
+  await expect(footerResume.locator(".editorial-external-link-icon")).toBeVisible();
+  const footerGithub = footer.getByRole("navigation", { name: "Footer contact" }).getByRole("link", { name: "GitHub" });
+  await expect(footerGithub.locator(".editorial-external-link-icon")).toBeVisible();
+  await expect(footer.getByRole("link", { name: /Back to top/ })).toHaveAttribute("href", "#main");
+  await expect(footer).toContainText("Platform Engineering · Backend Systems");
+});
+
+test("All top-level pages share the Projects editorial H1 scale and alignment", async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
+  const pages = [
+    ["/projects", "Projects"],
+    ["/experience", "Experience"],
+    ["/writing", "Writing"],
+    ["/education", "Education & Scholarships"],
+    ["/certificates-awards", "Certificates & Awards"],
+    ["/referee", "References"],
+    ["/migration", "Migration data"],
+  ];
+  const metrics = [];
+  for (const [url, title] of pages) {
+    await page.goto(url);
+    const heading = page.locator("header.editorial-page-heading h1");
+    await expect(heading).toHaveText(title);
+    await expect(heading).toBeVisible();
+    metrics.push(await heading.evaluate((node) => ({
+      left: node.getBoundingClientRect().left,
+      fontSize: getComputedStyle(node).fontSize,
+      weight: getComputedStyle(node).fontWeight,
+    })));
+    expect(await page.locator("main h1").count()).toBe(1);
+  }
+  for (const item of metrics.slice(1)) {
+    expect(Math.abs(item.left - metrics[0].left)).toBeLessThan(2);
+    expect(item.fontSize).toBe(metrics[0].fontSize);
+    expect(item.weight).toBe(metrics[0].weight);
+  }
+});
+
+test("Editorial footer and page headings fit narrow screens without horizontal overflow", async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 740 });
+  for (const route of ["/projects", "/experience", "/writing"]) {
+    await page.goto(route);
+    await expect(page.locator(".editorial-page-heading h1")).toBeVisible();
+    await expect(page.locator("footer#footer")).toBeVisible();
+    expect(await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth))
+      .toBeLessThanOrEqual(1);
+  }
+});
+
+test("Writing layout remains readable in mobile and desktop light/dark themes", async ({ page }, testInfo) => {
+  for (const width of [320, 390, 1280]) {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto("/writing");
+    for (const theme of ["light", "dark"]) {
+      const desiredButton = theme === "light" ? "Switch to dark theme" : "Switch to light theme";
+      if (!await page.getByRole("button", { name: desiredButton }).isVisible()) {
+        await page.getByRole("button", { name: /Switch to .* theme/ }).click();
+      }
+      await expect(page.getByRole("button", { name: desiredButton })).toBeVisible();
+      await expect(page.locator("html")).toHaveAttribute("data-theme", theme === "dark" ? "dracula" : "light");
+      await expect(page.getByRole("heading", { name: "Writing", exact: true })).toBeVisible();
+      await expect(page.locator("#writing article")).toHaveCount(1);
+      expect(await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth)).toBeLessThanOrEqual(1);
+      // Disable transitions for a deterministic review artifact after the theme change.
+      await page.screenshot({ path: testInfo.outputPath(`writing-${width}-${theme}.png`), fullPage: true, animations: "disabled" });
+    }
+  }
 });

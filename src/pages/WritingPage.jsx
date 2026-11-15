@@ -1,4 +1,7 @@
 import React from "react";
+import PageHeading from "../ui/PageHeading";
+import ExternalLink from "../ui/ExternalLink";
+import { getWritingPostPath } from "../config/routes.mjs";
 import { Link } from "react-router-dom";
 import podcastData from "../data/podcast.json";
 import { getBlogPosts } from "../utils/blogLoader";
@@ -8,7 +11,6 @@ import {
   cardPadding,
   cardTitle,
   sectionContainer,
-  sectionTitle,
   subsectionTitle,
   tagPillBase,
   tagPillButton,
@@ -32,14 +34,14 @@ const WritingPage = () => {
   return (
     <section className="padding" id="writing">
       <div className={sectionContainer}>
-        <h1 className={sectionTitle}>Writing</h1>
+        <PageHeading title="Writing" description="Engineering notes, technical exploration and articles." />
         <div className="mt-10">
           <h2 className={subsectionTitle}>Articles</h2>
           {articles.length > 0 ? (
             <div className={`${card} ${cardPadding} mt-5 divide-y divide-slate-200 dark:divide-[#44475A]`}>
               {articles.map((article) => (
                 <article key={article.slug} className="space-y-3 py-5 first:pt-0 last:pb-0">
-                  <Link to={`/writing/${article.slug}`} className="block">
+                  <Link to={getWritingPostPath(article.slug)} className="block">
                     <h3 className={cardTitle}>{article.title}</h3>
                   </Link>
                   <p className={cardMeta}>
@@ -56,7 +58,7 @@ const WritingPage = () => {
                       ))}
                     </div>
                   )}
-                  <Link to={`/writing/${article.slug}`} className={tagPillButton}>
+                  <Link to={getWritingPostPath(article.slug)} className={tagPillButton}>
                     Read article
                   </Link>
                 </article>
@@ -73,14 +75,12 @@ const WritingPage = () => {
             <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-[#C7C9D9]">
               {podcastData.description}
             </p>
-            <a
+            <ExternalLink
               href={podcastUrl}
-              target="_blank"
-              rel="noopener noreferrer"
               className={`${tagPillButton} mt-4`}
             >
               Listen to {podcastData.name}
-            </a>
+            </ExternalLink>
           </aside>
         )}
       </div>

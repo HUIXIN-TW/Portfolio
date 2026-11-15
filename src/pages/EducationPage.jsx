@@ -1,15 +1,16 @@
 import React from "react";
+import PageHeading from "../ui/PageHeading";
 import { Disclosure } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/20/solid";
 import educationData from "../data/education.json";
-import Scholarships from "./Scholarships";
-import { card, cardPadding, cardTitle, mutedText, sectionContainer, sectionTitle } from "../styles/uiClasses";
+import ScholarshipsSection from "../sections/ScholarshipsSection";
+import { card, cardPadding, cardTitle, mutedText, sectionContainer } from "../styles/uiClasses";
 
-const Education = () => {
+const EducationPage = () => {
   return (
     <section className="padding" id="education">
       <div className={sectionContainer}>
-        <h2 className={sectionTitle}>Education & Scholarships</h2>
+        <PageHeading title="Education & Scholarships" description="Academic foundations and professional development." />
         <div className="content-card-stack">
           {educationData.map((education) => (
             <div className={`${card} ${cardPadding}`} key={education.degree}>
@@ -47,10 +48,10 @@ const Education = () => {
             </div>
           ))}
         </div>
-        <Scholarships />
+        <ScholarshipsSection />
       </div>
     </section>
   );
 };
 
-export default Education;
+export default EducationPage;

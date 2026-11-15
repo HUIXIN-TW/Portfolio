@@ -1,13 +1,14 @@
 import React from "react";
+import PageHeading from "../ui/PageHeading";
 import ExperienceCard from "../ui/ExperienceCard";
 import experienceData from "../data/experience.json";
-import { sectionContainer, sectionTitle } from "../styles/uiClasses";
+import { sectionContainer } from "../styles/uiClasses";
 
-const Experience = () => {
+const ExperiencePage = () => {
   return (
     <section className="padding" id="experience">
       <div className={sectionContainer}>
-        <h2 className={sectionTitle}>Experience</h2>
+        <PageHeading title="Experience" description="Platform, backend and data engineering work across infrastructure, automation and production systems." />
         <div className="content-card-stack">
           {experienceData.map((exp, index) => (
             <ExperienceCard
@@ -25,4 +26,4 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export default ExperiencePage;
