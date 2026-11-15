@@ -2,7 +2,7 @@ import React from "react";
 import { Disclosure } from "@headlessui/react";
 import YouTubeVideo from "./YouTubeVideo";
 import ProjectImage from "./ProjectImage";
-import { getProjectTechnologies } from "../utils/projectGalleryFilters";
+import { getProjectTechnologies } from "../utils/projectFilters";
 
 const imageUrls = {
   repairlab: new URL("../assets/images/repair-lab.gif", import.meta.url).href,

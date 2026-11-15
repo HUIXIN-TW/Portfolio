@@ -45,7 +45,7 @@ for (const file of readdirSync(sourceDir).filter((f) => f.endsWith(".md")).sort(
   slugs.add(slug);
   emit("/blog/" + slug);
 }
-const listed = JSON.parse(readFileSync("src/data/blogPosts.json", "utf8"));
+const listed = JSON.parse(readFileSync("src/data/blog-posts.json", "utf8"));
 assert.ok(Array.isArray(listed), "Blog index must be a slug array");
 for (const slug of listed) {
   assert.ok(slugs.has(slug), "Blog index references unknown/unpublished slug: " + slug);

@@ -1,10 +1,10 @@
 import React, { useMemo, useState } from "react";
-import { PRIMARY_FILTERS, getSortedTechnologyFilters } from "../utils/projectGalleryFilters";
+import { PRIMARY_FILTERS, getSortedTechnologyFilters } from "../utils/projectFilters";
 import { tagPillBase, tagPillButton, tagPillFilter, tagPillFilterActive, tagPillTechActive } from "../styles/uiClasses";
 
 const ADVANCED_TAG_COLLAPSED_LIMIT = 24;
 
-const ProjectGalleryFilters = ({
+const ProjectFilters = ({
   projects,
   selectedCategory,
   selectedTechnology,
@@ -126,4 +126,4 @@ const ProjectGalleryFilters = ({
   );
 };
 
-export default ProjectGalleryFilters;
+export default ProjectFilters;

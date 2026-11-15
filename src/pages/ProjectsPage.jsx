@@ -1,10 +1,10 @@
 import React, { useMemo, useState } from "react";
 import majorproject from "../data/major-project.json";
 import ProjectCard from "../ui/ProjectCard";
-import ProjectGalleryFilters from "../ui/ProjectGalleryFilters";
+import ProjectFilters from "../ui/ProjectFilters";
 import PlatformCaseCard from "../ui/PlatformCaseCard";
 import { platformCaseStudies } from "../data/platformCaseStudies";
-import { filterProjects } from "../utils/projectGalleryFilters";
+import { filterProjects } from "../utils/projectFilters";
 
 const majorprojectData =
   majorproject.find((entry) => Array.isArray(entry.majorproject))?.majorproject ?? [];
@@ -52,7 +52,7 @@ const ProjectsPage = () => {
             <h2 id="project-archive-heading">Applications & projects</h2>
             <p>Product development, integrations, research and earlier engineering work.</p>
           </div>
-        <ProjectGalleryFilters
+        <ProjectFilters
           projects={majorprojectData}
           selectedCategory={selectedCategory}
           selectedTechnology={selectedTechnology}

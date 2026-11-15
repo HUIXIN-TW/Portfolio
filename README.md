@@ -19,11 +19,11 @@ src/
 ├── main.jsx             # Entry point; mounts React app
 ├── assets/images/       # Static images and social icons (loaded via import.meta.url)
 ├── blogs/               # Markdown blog posts (loaded via blogLoader.js)
-├── data/                # JSON data files for each portfolio section
+├── data/                # Data sources (JSON collections and JavaScript career case studies)
 ├── sections/            # Page-level route components
 ├── styles/              # Global CSS (main.css) and shared Tailwind class strings (uiClasses.js)
 ├── ui/                  # Shared presentational components
-└── utils/               # Utilities: blogLoader, theme, projectGalleryFilters
+└── utils/               # Utilities: blogLoader, theme, projectFilters
 public/
 ├── ship-it-maybe.png    # Podcast cover image (referenced by src/data/podcast.json)
 └── swe.png              # iOS Home Screen icon (referenced by apple-touch-icon in index.html; no JS import)
