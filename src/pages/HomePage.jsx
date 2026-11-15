@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Introduction from "./Introduction";
-import FeaturedWork from "./FeaturedWork";
-import HomeOverview from "./HomeOverview";
+import Introduction from "../sections/Introduction";
+import FeaturedWork from "../sections/FeaturedWork";
+import HomeOverview from "../sections/HomeOverview";
 
-const Home = ({ name, title }) => (
+const HomePage = ({ name, title }) => (
   <div id="home">
     <Introduction name={name} title={title} />
     <FeaturedWork />
@@ -12,9 +12,9 @@ const Home = ({ name, title }) => (
   </div>
 );
 
-Home.propTypes = {
+HomePage.propTypes = {
   name: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 };
 
-export default Home;
+export default HomePage;

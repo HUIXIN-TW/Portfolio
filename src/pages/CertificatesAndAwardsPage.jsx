@@ -11,7 +11,7 @@ import {
   tagPillBase,
 } from "../styles/uiClasses";
 
-const CertificatesAndAwards = () => {
+const CertificatesAndAwardsPage = () => {
   const groupedItems = certificatesAndAwardsData.reduce((acc, item) => {
     if (item.category !== "Certificate" && item.category !== "Award") {
       return acc;
@@ -64,4 +64,4 @@ const CertificatesAndAwards = () => {
   );
 };
 
-export default CertificatesAndAwards;
+export default CertificatesAndAwardsPage;

@@ -3,7 +3,7 @@ import ExperienceCard from "../ui/ExperienceCard";
 import experienceData from "../data/experience.json";
 import { sectionContainer, sectionTitle } from "../styles/uiClasses";
 
-const Experience = () => {
+const ExperiencePage = () => {
   return (
     <section className="padding" id="experience">
       <div className={sectionContainer}>
@@ -25,4 +25,4 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export default ExperiencePage;

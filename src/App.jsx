@@ -2,16 +2,16 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Footer from "./ui/Footer";
 import Header from "./ui/Header";
-import About from "./sections/About";
-import Home from "./sections/Home";
-import Education from "./sections/Education";
-import CertificatesAndAwards from "./sections/CertificatesAndAwards";
-import ProjectsPage from "./sections/ProjectsPage";
-import Migration from "./sections/Migration";
-import Referee from "./sections/Referee";
-import Experience from "./sections/Experience";
-import BlogPage from "./sections/BlogPage";
-import BlogPostPage from "./sections/BlogPostPage";
+import AboutPage from "./pages/AboutPage";
+import HomePage from "./pages/HomePage";
+import EducationPage from "./pages/EducationPage";
+import CertificatesAndAwardsPage from "./pages/CertificatesAndAwardsPage";
+import ProjectsPage from "./pages/ProjectsPage";
+import MigrationPage from "./pages/MigrationPage";
+import RefereePage from "./pages/RefereePage";
+import ExperiencePage from "./pages/ExperiencePage";
+import BlogPage from "./pages/BlogPage";
+import BlogPostPage from "./pages/BlogPostPage";
 import { applyThemeToDocument, getInitialTheme, THEME_DRACULA, THEME_LIGHT, THEME_STORAGE_KEY } from "./utils/theme";
 
 import "./styles/main.css";
@@ -62,16 +62,16 @@ const SiteRoutes = ({ theme, handleThemeToggle, siteProps }) => {
       <Header theme={theme} onThemeToggle={handleThemeToggle} />
       <main className="flex-1 w-full relative">
         <Routes>
-          <Route path="/" element={<Home name={siteProps.name} title={siteProps.title} />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/education" element={<Education />} />
-          <Route path="/certificates-awards" element={<CertificatesAndAwards />} />
-          <Route path="/experience" element={<Experience />} />
+          <Route path="/" element={<HomePage name={siteProps.name} title={siteProps.title} />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/education" element={<EducationPage />} />
+          <Route path="/certificates-awards" element={<CertificatesAndAwardsPage />} />
+          <Route path="/experience" element={<ExperiencePage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
-          <Route path="/migration" element={<Migration />} />
-          <Route path="/referee" element={<Referee />} />
+          <Route path="/migration" element={<MigrationPage />} />
+          <Route path="/referee" element={<RefereePage />} />
           <Route
             path="*"
             element={

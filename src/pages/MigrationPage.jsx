@@ -169,7 +169,7 @@ function getErrorMessage(error) {
   return error?.message || "Unknown error";
 }
 
-const Migration = () => {
+const MigrationPage = () => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -536,4 +536,4 @@ const Migration = () => {
   );
 };
 
-export default Migration;
+export default MigrationPage;

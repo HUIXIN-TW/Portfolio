@@ -2,7 +2,7 @@ import React from "react";
 import RefereeCard from "../ui/RefereeCard";
 import { sectionContainer, sectionTitle } from "../styles/uiClasses";
 
-const Referee = () => {
+const RefereePage = () => {
   return (
     <section className="padding" id="referee">
       <div className={sectionContainer}>
@@ -64,4 +64,4 @@ const Referee = () => {
   );
 };
 
-export default Referee;
+export default RefereePage;

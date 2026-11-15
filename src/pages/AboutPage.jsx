@@ -53,7 +53,7 @@ const skillsList = [
 const detailOrQuote =
   "I enjoy bridging product and data: designing clean user flows while building the infrastructure and pipelines behind them. Recent work includes AWS migrations, Snowflake-based analytics stacks, and ETL automation with ETLeap, all aimed at improving performance, reliability, and decision-making.";
 
-const About = () => {
+const AboutPage = () => {
   // const [showDetails, setShowDetails] = useState(false); // State to toggle the visibility of Education and Portfolio
   const descriptionParagraphs = description.split("\n\n");
 
@@ -190,4 +190,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutPage;
