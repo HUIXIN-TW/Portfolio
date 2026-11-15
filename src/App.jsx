@@ -15,6 +15,7 @@ import BlogPostPage from "./sections/BlogPostPage";
 import { applyThemeToDocument, getInitialTheme, THEME_DRACULA, THEME_LIGHT, THEME_STORAGE_KEY } from "./utils/theme";
 
 import "./styles/main.css";
+import "./styles/editorial.css";
 
 const siteProps = {
   name: "Huixin Yang",
@@ -56,7 +57,7 @@ const SiteRoutes = ({ theme, handleThemeToggle, siteProps }) => {
   return (
     <div
       id="main"
-      className="min-h-screen flex flex-col bg-white text-slate-900 dark:bg-[#282A36] dark:text-[#F8F8F2]"
+      className="editorial-shell min-h-screen flex flex-col"
     >
       <Header theme={theme} onThemeToggle={handleThemeToggle} />
       <main className="flex-1 w-full relative">
