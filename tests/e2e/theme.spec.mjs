@@ -264,7 +264,7 @@ test.describe('touch appearance controls', () => {
   test('large touch screens retain native form legibility', async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 900 });
     await page.goto('/');
-    expect(await page.evaluate(() => matchMedia('(any-pointer: coarse)').matches)).toBe(true);
+    expect(await page.evaluate(() => matchMedia('(pointer: coarse)').matches)).toBe(true);
     await expect(page.getByRole('combobox', { name: 'Color theme' })).toHaveCSS('font-size', '16px');
   });
 });
