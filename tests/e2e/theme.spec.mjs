@@ -237,7 +237,7 @@ test('compact theme and navigation remain reachable with enlarged text', async (
   }
 });
 
-test('theme typography stays secondary to navigation and scales with text', async ({ page }, testInfo) => {
+test('theme typography and icon stay compact and scale with text', async ({ page }, testInfo) => {
   await page.goto('/');
   const select = page.getByRole('combobox', { name: 'Color theme' });
   for (const width of [390, 1280]) {
@@ -247,6 +247,11 @@ test('theme typography stays secondary to navigation and scales with text', asyn
       const expectedSize = (width <= 768 ? 16 : 14) * scale / 100;
       await expect(select).toHaveCSS('font-size', `${expectedSize}px`);
       await expect(select).toHaveCSS('font-weight', '400');
+      const icon = page.locator('.theme-select-icon');
+      const expectedIconSize = 14 * scale / 100;
+      await expect(icon).toHaveCSS('width', `${expectedIconSize}px`);
+      await expect(icon).toHaveCSS('height', `${expectedIconSize}px`);
+      await expect(select).toHaveCSS('padding-left', `${expectedIconSize + 10}px`);
       expect((await select.boundingBox()).height).toBeGreaterThanOrEqual(44);
       for (const mode of ['system', 'light', 'dark']) {
         await select.selectOption(mode);
