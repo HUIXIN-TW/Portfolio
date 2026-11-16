@@ -1,5 +1,21 @@
 import { expect, test } from "@playwright/test";
 
+// Browser acceptance must not depend on third-party fonts, embeds or the live data API.
+// Theme-specific tests cover the same behavior with their own isolated fixtures.
+test.beforeEach(async ({ page }) => {
+  await page.route('**/*', (route) => {
+    const url = new URL(route.request().url());
+    if (url.hostname === '127.0.0.1' || url.hostname === 'localhost') return route.continue();
+    if (url.hostname === 'fonts.googleapis.com') return route.fulfill({ contentType: 'text/css', body: '' });
+    return route.fulfill({ json: {
+      months: { July: 120 },
+      programYears: [{ programYear: '2026-27', title: 'Program year invitations issued',
+        rows: [{ stream: 'General stream', visaType: '190', July: 120 }] }],
+      pdfLinks: [{ title: 'Invitation reference', url: 'https://example.com/reference.pdf' }],
+    } });
+  });
+});
+
 test("Portfolio home and Projects navigation remain available", async ({ page }) => {
   const response = await page.goto("/");
   expect(response?.status()).toBe(200);
@@ -210,9 +226,9 @@ test("Editorial typography survives 150% text scaling, reduced motion and theme 
   await page.evaluate(() => { document.documentElement.style.fontSize = "150%"; });
   await expect(page.getByRole("heading", { name: "Huixin Yang", exact: true })).toBeVisible();
   await expect(page.getByRole("link", { name: "Explore platform work" })).toBeVisible();
-  await page.getByRole("button", { name: "Switch to dark theme" }).click();
-  await expect(page.locator("html")).toHaveAttribute("data-theme", "dracula");
-  await expect(page.getByRole("button", { name: "Switch to light theme" })).toBeVisible();
+  await page.getByRole("combobox", { name: "Color theme" }).selectOption("dark");
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+  await expect(page.getByRole("combobox", { name: "Color theme" })).toHaveValue("dark");
 });
 
 test("Editorial palette is graphite-led and consistent in light/dark modes", async ({ page }) => {
@@ -234,7 +250,7 @@ test("Editorial palette is graphite-led and consistent in light/dark modes", asy
     accent: "#415e7a",
     shellBackground: "rgb(250, 249, 247)",
   });
-  await page.getByRole("button", { name: "Switch to dark theme" }).click();
+  await page.getByRole("combobox", { name: "Color theme" }).selectOption("dark");
   expect(await getPalette()).toMatchObject({
     background: "#191b20",
     ink: "#f3f4f5",
@@ -438,12 +454,8 @@ test("Writing layout remains readable in mobile and desktop light/dark themes", 
     await page.setViewportSize({ width, height: 900 });
     await page.goto("/writing");
     for (const theme of ["light", "dark"]) {
-      const desiredButton = theme === "light" ? "Switch to dark theme" : "Switch to light theme";
-      if (!await page.getByRole("button", { name: desiredButton }).isVisible()) {
-        await page.getByRole("button", { name: /Switch to .* theme/ }).click();
-      }
-      await expect(page.getByRole("button", { name: desiredButton })).toBeVisible();
-      await expect(page.locator("html")).toHaveAttribute("data-theme", theme === "dark" ? "dracula" : "light");
+      await page.getByRole("combobox", { name: "Color theme" }).selectOption(theme);
+      await expect(page.locator("html")).toHaveAttribute("data-theme", theme);
       await expect(page.getByRole("heading", { name: "Writing", exact: true })).toBeVisible();
       await expect(page.locator("#writing article")).toHaveCount(1);
       expect(await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth)).toBeLessThanOrEqual(1);

@@ -10,7 +10,7 @@ const RefereeCard = ({ refereeName, refereeType, currentPosition, relationship, 
         </h3>
         <span className={cardMeta}>{periodWorking}</span>
       </div>
-      <p className="text-sm text-slate-900">{refereeType}</p>
+      <p className="text-sm text-[var(--ed-ink)]">{refereeType}</p>
       <p className={mutedText}>{relationship}</p>
     </div>
   );

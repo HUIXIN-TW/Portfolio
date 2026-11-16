@@ -14,7 +14,7 @@ const ScholarshipsSection = () => {
               <h4 className={cardTitle}>{scholarship.name}</h4>
               {scholarship.period && <span className={cardMeta}>{scholarship.period}</span>}
             </div>
-            {scholarship.institution && <p className="text-sm text-slate-700">{scholarship.institution}</p>}
+            {scholarship.institution && <p className="text-sm text-[var(--ed-muted)]">{scholarship.institution}</p>}
             {scholarship.description && (
               <p className={`mt-3 whitespace-pre-line ${mutedText}`}>{scholarship.description}</p>
             )}

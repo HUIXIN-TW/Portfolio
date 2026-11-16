@@ -50,7 +50,7 @@ const ProjectFilters = ({
                 type="button"
                 aria-pressed={isActive}
                 onClick={() => onCategoryChange(category)}
-                className={`${tagPillFilter} flex-shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-[#BD93F9] dark:focus-visible:ring-offset-[#282A36] ${
+                className={`${tagPillFilter} flex-shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ed-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--ed-background)] ${
                   isActive ? `${tagPillFilterActive} shadow-sm` : ""
                 }`}
               >
@@ -60,13 +60,13 @@ const ProjectFilters = ({
           })}
         </div>
 
-        <div className="flex items-start gap-3 text-sm text-slate-600 dark:text-[#A9ADC1] lg:justify-end">
-          <span className="font-medium leading-6 text-slate-700 dark:text-[#C7C9D9] lg:text-right">{statusText}</span>
+        <div className="flex items-start gap-3 text-sm text-[var(--ed-muted)] lg:justify-end">
+          <span className="font-medium leading-6 text-[var(--ed-muted)] lg:text-right">{statusText}</span>
           {hasActiveFilters && (
             <button
               type="button"
               onClick={onClearFilters}
-              className={`${tagPillButton} focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-[#BD93F9] dark:focus-visible:ring-offset-[#282A36]`}
+              className={`${tagPillButton} focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ed-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--ed-background)] `}
             >
               Clear
             </button>
@@ -75,13 +75,13 @@ const ProjectFilters = ({
       </div>
 
       <div className="flex w-full items-center justify-between gap-3">
-        <h3 className="mb-0 text-sm font-semibold leading-5 tracking-[0.04em] text-slate-600 dark:text-[#C7C9D9]">
+        <h3 className="mb-0 text-sm font-semibold leading-5 tracking-[0.04em] text-[var(--ed-muted)]">
           Advanced tags
         </h3>
         <button
           type="button"
           onClick={() => setShowAdvancedFilters((current) => !current)}
-          className={`${tagPillButton} focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-[#BD93F9] dark:focus-visible:ring-offset-[#282A36]`}
+          className={`${tagPillButton} focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ed-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--ed-background)] `}
           aria-expanded={showAdvancedFilters}
           aria-controls="project-advanced-filters"
         >
@@ -101,7 +101,7 @@ const ProjectFilters = ({
                   type="button"
                   aria-pressed={isActive}
                   onClick={() => onTechnologyChange(technology)}
-                  className={`${tagPillBase} focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-[#8BE9FD] dark:focus-visible:ring-offset-[#282A36] dark:hover:bg-[#FF79C6] dark:hover:text-[#282A36] ${
+                  className={`${tagPillBase} focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ed-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--ed-background)] hover:bg-[var(--ed-hover)] hover:text-[var(--ed-ink)] ${
                     isActive ? `${tagPillTechActive} shadow-sm` : ""
                   }`}
                 >
@@ -115,7 +115,7 @@ const ProjectFilters = ({
             <button
               type="button"
               onClick={() => setShowAllAdvancedTags((current) => !current)}
-              className={`${tagPillButton} focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-[#BD93F9] dark:focus-visible:ring-offset-[#282A36]`}
+              className={`${tagPillButton} focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ed-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--ed-background)] `}
             >
               {showAllAdvancedTags ? "Show fewer tags" : "Show all tags"}
             </button>

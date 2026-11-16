@@ -1,0 +1,31 @@
+/* Shared interaction vocabulary, app-owned semantic colors. */
+.theme-select {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 100%;
+  color: var(--theme-muted);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+.theme-select select {
+  min-height: 44px;
+  max-width: 100%;
+  border: 1px solid var(--theme-control-border);
+  border-radius: 8px;
+  padding: 8px 24px 8px 10px;
+  color: var(--theme-ink);
+  background-color: var(--theme-surface);
+  /* Native iOS form controls stay at 16px to avoid focus zoom. */
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: inherit;
+  line-height: 1.4;
+  cursor: pointer;
+}
+.theme-select select:hover { border-color: var(--theme-accent); }
+.theme-select select:focus-visible { outline: 2px solid var(--theme-accent); outline-offset: 3px; }
+@media (max-width: 400px) { .theme-select > span { display: none; } }

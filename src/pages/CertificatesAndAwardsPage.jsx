@@ -39,7 +39,7 @@ const CertificatesAndAwardsPage = () => {
                     {award.period && <span className={cardMeta}>{award.period}</span>}
                   </div>
                   {award.institution && (
-                    <div className="flex flex-wrap gap-2 text-sm text-slate-900 dark:text-[#F8F8F2]">
+                    <div className="flex flex-wrap gap-2 text-sm text-[var(--ed-ink)]">
                       <span className={tagPillBase}>#{award.institution}</span>
                     </div>
                   )}

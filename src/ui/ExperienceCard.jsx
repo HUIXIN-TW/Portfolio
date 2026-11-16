@@ -10,7 +10,7 @@ const ExperienceCard = ({ occupation, technologies, company, description, period
         </h3>
         <span className={cardMeta}>{period}</span>
       </div>
-      <div className="flex flex-wrap gap-2 text-sm text-slate-900">
+      <div className="flex flex-wrap gap-2 text-sm text-[var(--ed-ink)]">
         {technologies.map((technology, index) => (
           <span key={index} className={tagPillBase}>
             #{technology}

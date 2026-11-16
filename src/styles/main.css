@@ -43,43 +43,6 @@ div#main {
   isolation: isolate;
 }
 
-#main::after {
-  content: "";
-  display: block;
-  position: absolute; /* Positioning inside the #main element */
-  inset: 0;
-  background-image: url("../assets/images/scattered-forcefields.svg");
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-size: cover; /* Or 'contain', depending on how you want to size the image */
-  opacity: 0.18;
-  pointer-events: none; /* Prevents the pseudo-element from capturing clicks */
-  z-index: -1; /* Ensures the background is behind the content */
-}
-
-#main::before {
-  content: "";
-  display: block;
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(circle at 15% 15%, rgba(189, 147, 249, 0.16), transparent 28%),
-    radial-gradient(circle at 82% 12%, rgba(255, 121, 198, 0.14), transparent 24%),
-    radial-gradient(circle at 72% 74%, rgba(80, 250, 123, 0.12), transparent 26%),
-    radial-gradient(circle at 18% 82%, rgba(139, 233, 253, 0.12), transparent 22%);
-  opacity: 0;
-  pointer-events: none;
-  z-index: -2;
-}
-
-html.dark #main::before {
-  opacity: 1;
-}
-
-html.dark #main::after {
-  opacity: 0.09;
-  filter: saturate(1.2) hue-rotate(280deg);
-}
-
 /* Section Styles */
 section {
   position: relative;
@@ -156,7 +119,7 @@ li {
 }
 
 li::marker {
-  color: #4e567e;
+  color: var(--ed-accent);
 }
 
 a {
@@ -184,7 +147,7 @@ a:hover {
 
 .container .box {
   border-radius: 10px;
-  border: 1px solid rgb(204, 204, 204);
+  border: 1px solid var(--ed-border);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -213,24 +176,23 @@ a:hover {
 
 .verticalContainer .box {
   width: 100%;
-  background-color: #fff; /* Set the background color */
+  background-color: var(--ed-surface); /* Set the background color */
   border-radius: 8px;
-  border: 1px solid rgb(204, 204, 204);
+  border: 1px solid var(--ed-border);
   padding: 24px 16px;
   text-align: left;
   position: relative;
   margin-bottom: 1.5rem;
-  transition: background-color 0.2s; /* Smooth transition for hover effect */
   max-width: 100rem;
 }
 
 .box:hover {
-  background-color: rgb(245, 245, 245); /* Slightly darker background on hover */
+  background-color: var(--ed-hover); /* Slightly darker background on hover */
 }
 
 .box li {
   font-size: 0.875rem; /* Smaller font size for details */
-  color: rgb(105, 105, 105); /* Dark gray color */
+  color: var(--ed-muted); /* Dark gray color */
 }
 
 .box ul {
@@ -358,7 +320,7 @@ html.dark .image-wrapper::before {
 .gpa {
   /* styles for each GPA */
   font-weight: bold;
-  color: #475569;
+  color: var(--ed-muted);
   text-align: right;
   white-space: nowrap;
   flex-shrink: 0;
@@ -385,7 +347,7 @@ html.dark .image-wrapper::before {
 .achievementTitle {
   /* styles for each achievement */
   font-size: 1rem;
-  color: #0f172a;
+  color: var(--ed-muted);
   flex-grow: 1; /* Allow it to grow to fill space */
   text-align: left; /* Align the text to the left */
 }
@@ -394,14 +356,14 @@ html.dark .image-wrapper::before {
   /* Styles for the technologies used in the project */
   display: block; /* Ensure it appears on its own line */
   font-size: 0.8rem; /* Smaller font size for technologies */
-  color: #6c757d; /* A lighter color for the technologies, adjust as needed */
+  color: var(--ed-muted); /* A lighter color for the technologies, adjust as needed */
 }
 
 .result {
   /* styles for each result */
   font-size: 1rem;
   font-weight: bold;
-  color: #475569;
+  color: var(--ed-muted);
   margin-left: 0.5rem; /* Space between the achievement and the result */
   text-align: right; /* Align the text to the right */
   white-space: nowrap; /* Prevent wrapping to ensure it stays aligned to the right */
@@ -411,11 +373,11 @@ html.dark .image-wrapper::before {
 html.dark .gpa,
 html.dark .achievementTitle,
 html.dark .result {
-  color: #a9adc1;
+  color: var(--ed-muted);
 }
 
 html.dark .achievementTechnologies {
-  color: #c7c9d9;
+  color: var(--ed-muted);
 }
 
 img.socialIcon {
@@ -462,67 +424,22 @@ img.socialIcon {
 
 /* Customised */
 
-.black_btn {
-  border-radius: 9999px; /* rounded-full */
-  border: 1px solid black; /* border border-black */
-  background-color: black; /* bg-black */
-  padding: 6px 20px; /* py-1.5 px-5, approximately */
-  color: white; /* text-white */
-  transition: all 0.3s ease; /* transition-all */
-  text-align: center; /* text-center */
-  font-size: 0.875rem; /* text-sm */
-  font-family: inherit;
-  display: flex; /* flex */
-  align-items: center; /* items-center */
-  justify-content: center; /* justify-center */
+/* Legacy action components consume the same editorial tokens as the page shell. */
+.black_btn, .outline_btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--ed-border);
+  border-radius: 9999px;
+  padding: 6px 20px;
+  font: inherit;
+  font-size: 0.875rem;
+  text-align: center;
 }
-
-.black_btn:hover {
-  background-color: white; /* hover:bg-white */
-  color: black; /* hover:text-black */
-}
-
-html.dark .black_btn {
-  border-color: var(--ed-ink, #f3f4f5);
-  background-color: transparent;
-  color: var(--ed-ink, #f3f4f5);
-}
-
-html.dark .black_btn:hover {
-  background-color: var(--ed-hover, #303640);
-  color: var(--ed-ink, #f3f4f5);
-}
-
-.outline_btn {
-  border-radius: 9999px; /* rounded-full */
-  border: 1px solid black; /* border border-black */
-  background-color: transparent; /* bg-transparent */
-  padding: 6px 20px; /* py-1.5 px-5, approximately */
-  color: black; /* text-black */
-  transition: all 0.3s ease; /* transition-all */
-  text-align: center; /* text-center */
-  font-size: 0.875rem; /* text-sm */
-  font-family: inherit;
-  display: flex; /* flex */
-  align-items: center; /* items-center */
-  justify-content: center; /* justify-center */
-}
-
-.outline_btn:hover {
-  background-color: black; /* hover:bg-black */
-  color: white; /* hover:text-white */
-}
-
-html.dark .outline_btn {
-  border-color: var(--ed-border, #464b54);
-  color: var(--ed-ink, #f3f4f5);
-}
-
-html.dark .outline_btn:hover {
-  background-color: var(--ed-hover, #303640);
-  border-color: var(--ed-border, #464b54);
-  color: var(--ed-ink, #f3f4f5);
-}
+.black_btn { background: var(--ed-ink); border-color: var(--ed-ink); color: var(--ed-background); }
+.black_btn:hover { background: var(--ed-accent); border-color: var(--ed-accent); color: var(--ed-background); }
+.outline_btn { background: transparent; color: var(--ed-ink); }
+.outline_btn:hover { background: var(--ed-hover); color: var(--ed-ink); }
 
 html.dark .outline_btn .icon-default,
 html.dark .black_btn .icon-default {

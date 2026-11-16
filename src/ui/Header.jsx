@@ -1,30 +1,13 @@
 import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { THEME_DRACULA } from "../utils/theme";
+import ThemeSelect from "./ThemeSelect";
 import { PRIMARY_NAV_ITEMS, SECONDARY_NAV_ITEMS } from "../config/routes.mjs";
 import ExternalLink from "./ExternalLink";
 
 const navClass = ({ isActive }) =>
   isActive ? "editorial-nav-link is-active" : "editorial-nav-link";
 
-const ThemeToggleButton = ({ theme, onToggle }) => (
-  <button
-    type="button"
-    className="editorial-theme-toggle"
-    onClick={onToggle}
-    aria-label={theme === THEME_DRACULA ? "Switch to light theme" : "Switch to dark theme"}
-  >
-    <span aria-hidden="true">{theme === THEME_DRACULA ? "☀" : "◐"}</span>
-  </button>
-);
-
-ThemeToggleButton.propTypes = {
-  theme: PropTypes.string.isRequired,
-  onToggle: PropTypes.func.isRequired,
-};
-
-const Header = ({ theme, onThemeToggle }) => {
+const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const { pathname } = useLocation();
 
@@ -60,7 +43,7 @@ const Header = ({ theme, onThemeToggle }) => {
         </nav>
 
         <div className="editorial-header-actions">
-          <ThemeToggleButton theme={theme} onToggle={onThemeToggle} />
+          <ThemeSelect />
           <button
             className="editorial-menu-toggle"
             type="button"
@@ -100,9 +83,5 @@ const Header = ({ theme, onThemeToggle }) => {
   );
 };
 
-Header.propTypes = {
-  theme: PropTypes.string.isRequired,
-  onThemeToggle: PropTypes.func.isRequired,
-};
 
 export default Header;

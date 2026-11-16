@@ -15,7 +15,7 @@
 
 ```
 src/
-├── App.jsx              # Root component; defines routes and theme state
+├── App.jsx              # Root component; defines routes and page composition
 ├── main.jsx             # Entry point; mounts React app
 ├── assets/images/       # Static images and social icons (loaded via import.meta.url)
 ├── config/routes.mjs    # Canonical route paths, navigation and article URL helper
@@ -25,7 +25,7 @@ src/
 ├── sections/            # Reusable page sections (PascalCase)
 ├── styles/              # Global CSS (main.css) and shared Tailwind class strings (uiClasses.js)
 ├── ui/                  # Shared UI components (PascalCase)
-└── utils/               # Utilities: blogLoader, theme, projectFilters
+└── utils/               # Utilities: blogLoader, projectFilters
 public/
 ├── ship-it-maybe.png    # Podcast cover image (referenced by src/data/podcast.json)
 ├── swe.png              # Legacy asset retained for URL compatibility
@@ -57,7 +57,7 @@ Hosted on **Cloudflare Pages**.
 
 | File | Purpose |
 |---|---|
-| `index.html` | Vite HTML entry; contains inline theme-init script, favicon, and iOS Home Screen metadata |
+| `index.html` | Vite HTML entry; loads the synchronous app-local appearance script, favicon, and iOS Home Screen metadata |
 | `vite.config.mjs` | Vite configuration |
 | `tailwind.config.js` | Tailwind CSS configuration |
 | `eslint.config.js` | ESLint rules |
@@ -175,3 +175,20 @@ The older project archive uses a two-column grid with cards of varying descripti
 - Writing has one article list and a compact external podcast link; Hello Blog stays an unpublished Markdown draft. Internal Markdown/loader filenames need not match public route names.
 - `RouteScrollManager` resets ordinary client-side navigation to the top, resolves same-page and cross-page fragment targets after the route mounts, and leaves Back/Forward scrolling to the browser. Legacy `/about` still leads to `/#background`.
 - The frozen `portfolio-v1-final` tag is preserved; this integration does not alter hosting, production domains or the existing Pages pipeline.
+
+## Color appearance
+
+The Theme selector offers System (default), Light and Dark. System follows OS changes
+immediately; explicit choices remain until changed. The preference is stored as
+`huixin.theme` in this origin's localStorage and synchronized between open same-origin
+tabs. Other subdomains keep independent preferences. Blocked storage falls back to
+system and permits in-session selection. A synchronous, app-local `public/theme.js`
+sets the resolved appearance, native `color-scheme` and browser `theme-color` before
+React renders. The manifest launch background is static; the page updates on load.
+Semantic tokens own all appearance colors; illustration assets are unchanged.
+Header groups wrap when enlarged text no longer fits on one row, keeping navigation
+and the Theme selector within the viewport. Playwright checks actual control bounds
+at 960/961/1024px in Light and Dark with both standard and 150% text, alongside the
+mobile and desktop route checks.
+Existing `theme=light` / `theme=dracula` choices are read when the new preference is absent. Select System to resume OS tracking.
+Native HTTP 404 pages use the same appearance bootstrap and app-colored error tokens without loading React.
