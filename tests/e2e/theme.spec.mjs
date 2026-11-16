@@ -136,7 +136,7 @@ for (const width of [320, 390, 1280]) {
         expect(await page.evaluate(() => document.documentElement.scrollWidth - innerWidth)).toBeLessThanOrEqual(1);
         await select.focus();
         await expect(select).toBeFocused();
-        expect(await select.evaluate((node) => parseFloat(getComputedStyle(node).fontSize))).toBeGreaterThanOrEqual(16);
+        expect(await select.evaluate((node) => parseFloat(getComputedStyle(node).fontSize))).toBeGreaterThanOrEqual(width <= 768 ? 16 : 14);
         expect(await select.evaluate((node) => getComputedStyle(node).outlineStyle)).not.toBe('none');
         expect(await select.evaluate((node) => node.getBoundingClientRect().height)).toBeGreaterThanOrEqual(44);
         const expectedMeta = await page.locator('script[src="/theme.js"]').getAttribute('data-' + appearance);
@@ -235,4 +235,36 @@ test('compact theme and navigation remain reachable with enlarged text', async (
       await expect(select).not.toBeFocused();
     }
   }
+});
+
+test('theme typography stays secondary to navigation and scales with text', async ({ page }, testInfo) => {
+  await page.goto('/');
+  const select = page.getByRole('combobox', { name: 'Color theme' });
+  for (const width of [390, 1280]) {
+    await page.setViewportSize({ width, height: 900 });
+    for (const scale of [100, 150]) {
+      await page.locator('html').evaluate((node, value) => { node.style.fontSize = `${value}%`; }, scale);
+      const expectedSize = (width <= 768 ? 16 : 14) * scale / 100;
+      await expect(select).toHaveCSS('font-size', `${expectedSize}px`);
+      await expect(select).toHaveCSS('font-weight', '400');
+      expect((await select.boundingBox()).height).toBeGreaterThanOrEqual(44);
+      for (const mode of ['system', 'light', 'dark']) {
+        await select.selectOption(mode);
+        await expect(select).toHaveValue(mode);
+        // Show the resting control beside navigation, without its keyboard focus ring.
+        await select.press('Tab');
+        await page.screenshot({ path: testInfo.outputPath(`theme-navigation-${width}-${scale}-${mode}.png`), animations: 'disabled' });
+      }
+    }
+  }
+});
+
+test.describe('touch appearance controls', () => {
+  test.use({ hasTouch: true });
+  test('large touch screens retain native form legibility', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 900 });
+    await page.goto('/');
+    expect(await page.evaluate(() => matchMedia('(any-pointer: coarse)').matches)).toBe(true);
+    await expect(page.getByRole('combobox', { name: 'Color theme' })).toHaveCSS('font-size', '16px');
+  });
 });
