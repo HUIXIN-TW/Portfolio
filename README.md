@@ -178,7 +178,9 @@ The older project archive uses a two-column grid with cards of varying descripti
 
 ## Color appearance
 
-The Theme selector offers System (default), Light and Dark. System follows OS changes
+The borderless navigation Theme selector shows a decorative mode icon and the current
+System (default), Light or Dark preference. Its native select keeps a 44px hit target,
+16px text and a visible keyboard focus ring; hover uses the app accent. System follows OS changes
 immediately; explicit choices remain until changed. The preference is stored as
 `huixin.theme` in this origin's localStorage and synchronized between open same-origin
 tabs. Other subdomains keep independent preferences. Blocked storage falls back to

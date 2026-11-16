@@ -211,3 +211,28 @@ test('native error appearance preserves preference and follows System without Re
   await page.emulateMedia({ colorScheme: 'light' });
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
 });
+
+// Intermediate widths catch clipped navigation even when overflow-x hides it.
+test('compact theme and navigation remain reachable with enlarged text', async ({ page }) => {
+  await page.goto('/');
+  await page.addStyleTag({ content: 'html { font-size: 150% !important; }' });
+  for (const width of [320, 390, 640, 768, 960, 961, 1024, 1280]) {
+    await page.setViewportSize({ width, height: 900 });
+    for (const mode of ['light', 'dark', 'system']) {
+      const select = page.getByRole('combobox', { name: 'Color theme' });
+      await select.selectOption(mode);
+      await expect(select).toHaveValue(mode);
+      const controls = page.locator('header').getByRole('link').or(select);
+      for (const control of await controls.all()) {
+        if (!await control.isVisible()) continue;
+        const bounds = await control.boundingBox();
+        expect(bounds.x).toBeGreaterThanOrEqual(0);
+        expect(bounds.x + bounds.width).toBeLessThanOrEqual(width);
+      }
+      await select.focus();
+      await expect(select).toBeFocused();
+      await select.press('Tab');
+      await expect(select).not.toBeFocused();
+    }
+  }
+});
